@@ -1,52 +1,60 @@
 @extends('admin.body.master')
 @section('title', 'Country')
 @section('content')
-<section class="content">
+    <section class="content">
 
-    <!-- Step wizard -->
-     <div class="box box-default">
-       <div class="box-header with-border">
-         <h4 class="box-title">Add Country</h4>
-       </div>
-       <!-- /.box-header -->
-       <div class="box-body wizard-content">
-           <form action="#" class="tab-wizard wizard-circle">
-               <!-- Step 1 -->
-               <h6>Country Information</h6>
-               <section>
-                   <div class="row">
-                       <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="firstName5">First Name :</label>
-                               <input type="text" class="form-control" id="firstName5"> </div>
-                       </div>
-                       <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="lastName1">Last Name :</label>
-                               <input type="text" class="form-control" id="lastName1"> </div>
-                       </div>
-                   </div>
+        <!-- Step wizard -->
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h4 class="box-title">Add Country</h4>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body wizard-content">
+                <form action="{{route('country.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data">
+                   @csrf
                   
-           </form>
-       </div>
-       <!-- /.box-body -->
-     </div>
-     <!-- /.box -->
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="firstName5">Country Name :</label>
+                                    <input type="text" class="form-control" id="firstName5" value="{{@old('country_name')}}" name="country_name">
+                                    @error('country_name')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="firstName5">Country Description/Image :</label>
+                        <textarea id="my-editor"  class="form-control" name="description"></textarea>
+                        @error('description')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+                        </div>
+                        <div class="box-footer">
+                            <input type="submit" class="btn btn-rounded btn-info pull-right" value="Add Country">
+                        </div>
+
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
 
 
-   </section>
+    </section>
 
-   <textarea id="my-editor" name="content" class="form-control">{!! old('content', 'test editor content') !!}</textarea>
-   <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-   <script>
-     var options = {
-       filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-       filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-       filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-       filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-     };
-   </script>
-<script>
-    CKEDITOR.replace('my-editor', options);
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script>
+        CKEDITOR.replace('my-editor', options);
     </script>
 @endsection
