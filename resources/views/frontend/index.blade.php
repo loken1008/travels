@@ -16,18 +16,18 @@
             <div class="carousel-inner" role="listbox">
                 
                 <!-- Item Slide -->
+                @foreach($getbanner as $banner)
                 <div class="carousel-item active">
 
                     <!-- Slide Background -->
-                    <img src="{{asset('frontend/images/slider/1.jpg')}}" alt="Slider Images"  class="slide-image"/>
+                    <img src="{{$banner->banner_image}}" alt="Slider Images"  class="slide-image" style="width:1905px;height:750px"/>
                     <div class="bs-slider-overlay"></div>
 
                     <div class="container">
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide-style-left st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
+                                <h2>{{$banner->title}}</h2>
                             </div>
                             <!-- Package Box -->
                             <div class="package-box">
@@ -38,55 +38,10 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- End of Slide -->
                 
-                <!-- Item Slide -->
-                <div class="carousel-item">
-
-                    <!-- Slide Background -->
-                    <img src="{{asset('frontend/images/slider/2.jpg')}}" alt="Slider Images"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-                        
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide-style-right st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
-                            </div><!-- Package Box -->
-                            <div class="package-box slide-style-right">
-                                <h1><span>45%</span> off</h1>
-                                <h4>on all package</h4>
-                                <a href="#">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-                
-                <!-- Item Slide -->
-                <div class="carousel-item">
-
-                    <!-- Slide Background -->
-                    <img src="{{asset('frontend/images/slider/3.jpg')}}" alt="Slider Images"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-                        
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide-style-center st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage</h2>
-                                <div class="btn-box">
-                                    <a href="#" class="btn-theme">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
+              
 
             </div><!-- End of Wrapper For Slides -->
 
@@ -159,332 +114,54 @@
                     <div class="tab-style">
                         <nav>
                           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="plc-asia-tab" data-toggle="tab" href="#plc-asia" role="tab" aria-controls="plc-asia" aria-selected="true">Asia</a>
-                            <a class="nav-item nav-link" id="plc-urope-tab" data-toggle="tab" href="#plc-urope" role="tab" aria-controls="plc-urope" aria-selected="false">Urope</a>
-                            <a class="nav-item nav-link" id="plc-africa-tab" data-toggle="tab" href="#plc-africa" role="tab" aria-controls="plc-africa" aria-selected="false">Africa</a>
+                              @foreach($country as $key=> $cutry)
+                            <a class="nav-item nav-link {{ $loop->first ? 'active' : ''}}" id="plc-asia-tab" data-toggle="tab" href="#plc-asia{{$cutry->country_name}}" role="tab" aria-controls="plc-asia" aria-selected="true">{{$cutry->country_name}}</a>
+                            @endforeach
                           </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                           <!-- item start -->
-                          <div class="tab-pane fade show active" id="plc-asia" role="tabpanel" aria-labelledby="plc-asia-tab">
+                          @forelse($getcountry as $key1=> $countrys)
+                          <div class="tab-pane fade show {{ $loop->first ? 'active' : ''}}" id="plc-asia{{$countrys->country_name}}" role="tabpanel" aria-labelledby="plc-asia-tab">
                             <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
+                               @foreach($countrys->tours as $key2=> $tour)
+                               @if($tour->country_id==$countrys->id)
                                 <div class="item">
                                     <div class="special-places">
                                         <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/1.jpg')}}" alt="">
+                                            <img src="{{$tour->mainImage}}" alt="" style="width:350px !important;height:215px !important">
                                         </div>
                                         <div class="content">
                                             <div class="price-box">
-                                                <h5><span>$</span>400</h5>
+                                                <h5><span>$</span>{{$tour->main_price}}</h5>
                                                 <h6>Starts From</h6>
                                             </div>
                                             <div class="title-box">
-                                                <h4>Redilova Tour Place</h4>
-                                                <h3>peelamedu, cbe, india</h3>
+                                                <h4>{{$tour->tour_name}}</h4>
+                                                <h3>{{$tour->place->place_name}}</h3>
                                             </div>
                                             <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
+                                                <li><a href="#"><i class="fa fa-calendar"></i>{{$tour->tour_days}} Days</a></li>
+                                                {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li>
+                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
                                             </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
+                                            <p>{!! Str::limit($tour->description,200)!!}</p>
                                             <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
+                                            <a class="btn-theme" href="{{route('tourdetails',$tour->tour_name)}}">View Details</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Mountain adventure</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>adventure swimming</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/4.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Ratargul gorgeous</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @else
+                               Not Available
+                                @endif
+                               @endforeach
                             </div>
                           </div>
+                          @empty
+                          @endforelse
                           <!-- item end -->
 
-                          <!-- item start -->
-                          <div class="tab-pane fade" id="plc-urope" role="tabpanel" aria-labelledby="plc-urope-tab">
-                            <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/1.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Redilova Tour Place</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Mountain adventure</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>adventure swimming</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/4.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Ratargul gorgeous</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                          <!-- item end -->
-
-                          <!-- item start -->
-                          <div class="tab-pane fade" id="plc-africa" role="tabpanel" aria-labelledby="plc-africa-tab">
-                            <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/1.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Redilova Tour Place</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Mountain adventure</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Adventure swimming</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{{asset('frontend/images/service/4.jpg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Ratargul gorgeous</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                          <!-- item end -->
+                         
                         </div>
                     </div>
                 </div>
@@ -1039,44 +716,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <div class="inner-title mt-25">
-                        <h2>Our Client's Say</h2>
-                        <div class="sec-line mb-40"></div>
-                    </div>
-                    <div class="testimonials-post testimonials_slide owl-carousel owl-theme owl-navst st-three">
-                        <div class="testimonials-item">
-                            <div class="thumb">
-                                <img src="{{asset('frontend/images/testimonials/1.jpg')}}" alt="">
-                            </div>
-                            <div class="content">
-                                <h5>Horem Due <small>- Traveler ut illum</small></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                    <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                </ul>
-                                <p><i class="fa fa-quote-left"></i> If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle often repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                            </div>
-                        </div>
-                        <div class="testimonials-item">
-                            <div class="thumb">
-                                <img src="{{asset('frontend/images/testimonials/1.jpg')}}" alt="">
-                            </div>
-                            <div class="content">
-                                <h5>Horem Due <small>- Traveler ut illum</small></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                    <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                </ul>
-                                <p><i class="fa fa-quote-left"></i> If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle often repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                            </div>
-                        </div>
-                    </div>
+                   @include('frontend.common.testmonial')
                 </div>
             </div>
         </div>

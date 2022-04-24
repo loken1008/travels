@@ -30,6 +30,20 @@ $route=Route::current()->getName();
 
             <li class="header nav-small-cap">User Interface</li>
 
+            <li class="treeview {{($prefix=='/banner')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Banner</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.banner')?'active':''}}"><a class="{{($route=='all.banner')?'active':''}}" href="{{route('all.banner')}}"><i class="ti-more"></i>View Banner</a></li>
+                    </li>
+                </ul>
+            </li>
+
             <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
@@ -105,6 +119,20 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
+            <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Testmonial</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.testmonial')?'active':''}}"><a class="{{($route=='all.testmonial')?'active':''}}" href="{{route('all.testmonial')}}"><i class="ti-more"></i>View Testmonial</a></li>
+                    </li>
+                </ul>
+            </li>
+
 {{-- 
             <li class="treeview">
               

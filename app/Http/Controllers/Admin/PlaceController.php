@@ -18,7 +18,7 @@ class PlaceController extends Controller
     }
     public function createPlace()
     {
-        $getcountry=Country::orderBy('country_name','asc')->get();
+        $getcountry=Country::orderBy('country_name','asc')->where('status','=','1')->get();
         return view('admin.place.create',compact('getcountry'));
     }
 

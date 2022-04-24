@@ -40,7 +40,7 @@ class TourController extends Controller
     public function createTour()
     {
         $getplace=Place::orderBy('place_name','asc')->get();
-        $getcountry=Country::orderBy('country_name','asc')->get();
+        $getcountry=Country::orderBy('country_name','asc')->where('status','=','1')->get();
         $getcategory=Category::orderBy('category_name','asc')->get();
         $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();
         return view('admin.tour.create',compact('getcountry','getplace','getcategory','getsubcategory'));
@@ -129,7 +129,7 @@ class TourController extends Controller
 
     public function edittour($id)
     {
-        $getcountry=Country::orderBy('country_name','asc')->get();
+        $getcountry=Country::orderBy('country_name','asc')->where('status','=','1')->get();
         $getplace=Place::orderBy('place_name','asc')->get();
         $getcategory=Category::orderBy('category_name','asc')->get();
         $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();

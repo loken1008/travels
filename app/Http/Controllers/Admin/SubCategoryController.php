@@ -27,7 +27,7 @@ class SubCategoryController extends Controller
         SubCategory::insert([
             'category_id'=>$request->category_id,
             'sub_category_name'=>$request->sub_category_name,
-            'sub_category_slug'=>strtolower(str_replace(' ','-',$request->sub_category_name)),
+            'sub_category_slug'=>time().strtolower(str_replace(' ','-',$request->sub_category_name)),
         ]);
         $notification=array(
             'message'=>'SubCategory Insert Successfully',
@@ -52,7 +52,7 @@ class SubCategoryController extends Controller
             subCategory::findOrFail($subcategory_id)->update([
                 'category_id'=>$request->category_id,
                 'sub_category_name'=>$request->sub_category_name,
-                'sub_category_slug'=>strtolower(str_replace(' ','-',$request->sub_category_name)),
+                'sub_category_slug'=>time().strtolower(str_replace(' ','-',$request->sub_category_name)),
             ]);
             $notification=array(
                 'message'=>'Subcategory Update Successfully',

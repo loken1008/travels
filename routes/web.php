@@ -96,20 +96,46 @@ Route::post('/coupon/update}',[App\Http\Controllers\Admin\CouponController::clas
 Route::get('/coupon/delete/{id}',[App\Http\Controllers\Admin\CouponController::class,'deleteCoupon'])->name('coupon.delete');
 Route::get('/coupon/changeStatus',[App\Http\Controllers\Admin\CouponController::class,'changeStatus']);
 
+// Admin Banner all route
+Route::prefix('banner')->group(function(){
+    Route::get('/view',[App\Http\Controllers\Admin\BannerController::class,'BannerView'])->name('all.banner');
+    Route::post('/store',[App\Http\Controllers\Admin\BannerController::class,'BannerStore'])->name('store.banner');
+    Route::get('/edit/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerEdit'])->name('edit.banner');
+    Route::post('/update',[App\Http\Controllers\Admin\BannerController::class,'BannerUpdate'])->name('update.banner');
+    Route::get('/active/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerActive'])->name('active.banner');
+    Route::get('/inactive/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerInactive'])->name('inactive.banner');
+    Route::get('/delete/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerDelete'])->name('delete.banner');
+});
+
+// Admin Banner all route
+Route::prefix('testmonial')->group(function(){
+    Route::get('/view',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialView'])->name('all.testmonial');
+    Route::post('/store',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialStore'])->name('store.testmonial');
+    Route::get('/edit/{id}',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialEdit'])->name('edit.testmonial');
+    Route::post('/update',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialUpdate'])->name('update.testmonial');
+    Route::get('/active/{id}',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialActive'])->name('active.testmonial');
+    Route::get('/inactive/{id}',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialInactive'])->name('inactive.testmonial');
+    Route::get('/delete/{id}',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialDelete'])->name('delete.testmonial');
+});
 
 
-// filemanager
-// Route::group(['prefix' => 'laravel-filemanager'], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
 Route::group(['prefix' => '/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 Route::group(['prefix' => 'tour/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-Route::group(['prefix' => 'laravel-filemanager'], function () {
+Route::group(['prefix' => 'country/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+
 // frontend
-Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage']);
+Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage'])->name('home');
+Route::get('/countrydetails/{country_name}',[App\Http\Controllers\User\CountryController::class,'countryDetails'])->name('countrydetails');
+Route::get('/tourdetails/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourDetails'])->name('tourdetails');
+
+// subcategory related details
+Route::get('/tripdetails/{slug_name}',[App\Http\Controllers\User\CategoryController::class,'tripDetails'])->name('tripdetails');
+
+

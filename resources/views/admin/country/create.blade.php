@@ -23,10 +23,35 @@
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="firstName5">Start Price :</label>
+                                    <input type="text" class="form-control" id="firstName5" value="{{@old('start_price')}}" name="start_price">
+                                    @error('start_price')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <label for="firstName5"> Country Image :</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="clfm" data-input="mainthumbnail" data-preview="holder"
+                                            class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="mainthumbnail" class="form-control" type="text" name="country_image">
+
+                                </div>
+                                <img id="holder1" style="margin-top:15px;max-height:100px;">
+                                @error('country_image')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="firstName5">Country Description/Image :</label>
+                          <label for="firstName5">Country Description :</label>
                         <textarea id="my-editor"  class="form-control" name="description"></textarea>
                         @error('description')
                         <span class="text-danger">{{$message}}</span>
@@ -44,8 +69,16 @@
 
 
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var route_prefix = "laravel-filemanager";
+        $('#clfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
     <script>
         var options = {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
