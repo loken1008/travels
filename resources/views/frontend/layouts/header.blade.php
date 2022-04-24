@@ -1,3 +1,8 @@
+@php
+$prefix=Request::route()->getPrefix();
+$route=Route::current()->getName();
+@endphp
+
 <header class="header header-style-1 clearfix">
 
     <div class="top-bar">
@@ -34,7 +39,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <!-- header dropdown buttons end-->
-                    <a class="navbar-brand" href="index-2.html">
+                    <a class="navbar-brand" href="{{url('/')}}">
                         <img id="logo_img" src="{{asset('frontend/images/logo-1.png')}}" alt=""></a> 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -47,50 +52,12 @@
                         <ul class="navbar-nav ml-xl-auto">
 
                             <!-- mega-menu end -->
-                            <li class="nav-item dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-
-                                <div class="dropdown-menu left-1">
-                                    <div class="dropdown">
-                                        <a class="dropdown-item" href="index-2.html">Home style one</a>
-                                        <a class="dropdown-item" href="index-3.html">Home style two</a>
-                                        <a class="dropdown-item" href="index-4.html">Home style three</a>
-                                    </div>
-                                </div>
+                            <li class="nav-item dropdown {{($route=='home')?'active':''}}">
+                                <a href="{{url('/')}}" class="nav-link "
+                                    aria-haspopup="true" aria-expanded="false">Home</a>
                             </li>
-                            <li class="nav-item dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-
-                                <div class="dropdown-menu left-1">
-                                    <div class="dropdown">
-                                        <a class="dropdown-item" href="index-2.html">Home style one</a>
-                                        <a class="dropdown-item" href="index-3.html">Home style two</a>
-                                        <a class="dropdown-item" href="index-4.html">Home style three</a>
-                                    </div>
-                                </div>
-                            </li>
+                           
                             <!-- mega-menu start -->
-
-                            <!-- mega-menu end -->
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Packages</a>
-
-                                <div class="dropdown-menu left-1">
-                                    <div class="dropdown">
-                                        <a class="dropdown-item" href="packages-holiday.html">Holiday Packages</a>
-                                        <a class="dropdown-item" href="packages-vacation.html">Vacation Packages</a>
-                                        <a class="dropdown-item" href="packages-summer.html">Summer Packages</a>
-                                        <a class="dropdown-item" href="packages-winter.html">Winter Packages</a>
-                                        <a class="dropdown-item" href="packages-other.html">Other Packages</a>
-                                        <a class="dropdown-item" href="packages-details.html">Packages Details</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- mega-menu start -->
-
                             <!-- mega-menu end -->
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle"
@@ -98,74 +65,48 @@
 
                                 <div class="dropdown-menu left-1">
                                     <div class="dropdown">
-                                        <a class="dropdown-item" href="places-asia.html">Asia</a>
-                                        <a class="dropdown-item" href="places-urope.html">Urope</a>
-                                        <a class="dropdown-item" href="places-africa.html">Africa</a>
-                                        <a class="dropdown-item" href="places-other.html">Other</a>
-                                        <a class="dropdown-item" href="places-category.html">Category</a>
-                                        <a class="dropdown-item" href="places-slider.html">Slider</a>
-                                        <a class="dropdown-item" href="places-details.html">Place Details</a>
+                                        @foreach($country as $c)
+                                        <a class="dropdown-item" href="{{route('countrydetails',$c->country_name)}}">{{$c->country_name}}</a>
+                                       @endforeach
                                     </div>
                                 </div>
                             </li>
                             <!-- mega-menu start -->
-
-                            <!-- mega-menu end -->
-                            <li class="nav-item dropdown">
+                              <!-- mega-menu end -->
+                              @foreach($category as $cat)
+                              <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$cat->category_name}}</a>
 
                                 <div class="dropdown-menu left-1">
                                     <div class="dropdown">
-                                        <a class="dropdown-item" href="booking.html">Booking</a>
-                                        <a class="dropdown-item" href="about.html">About Us</a>
-                                        <a class="dropdown-item" href="team.html">Our Team</a>
-                                        <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle dropdown-item" data-toggle="dropdown"
-                                               href="#">Hotel</a>
-
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="hotel-1.html">Hotel style one</a>
-                                                <a class="dropdown-item" href="hotel-2.html">Hotel style two</a>
-                                                <a class="dropdown-item" href="hotel-details.html">Hotel Details</a>
-                                            </div>
-                                        </div>
-                                        <a class="dropdown-item" href="shop.html">Shop</a>
-                                        <a class="dropdown-item" href="shop-single.html">Shop details</a>
-                                        <a class="dropdown-item" href="faq.html">Faq</a>
-                                        <a class="dropdown-item" href="404.html">404</a>
+                                        @foreach($cat->subcategory as $subcat)
+                                        <a class="dropdown-item" href="{{route('tripdetails',$subcat->sub_category_slug)}}">{{$subcat->sub_category_name}}</a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </li>
+                            @endforeach
                             <!-- mega-menu start -->
+
 
                             <li class="nav-item dropdown">
                                 <a href="blog.html" class="nav-link dropdown-toggle"
                                    id="seventh-dropdown" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">Blog</a>
 
-                                <div class="dropdown-menu navbar-right" aria-labelledby="seventh-dropdown">
+                                <div class="dropdown-menu navbar-center" aria-labelledby="seventh-dropdown">
                                     <a class="dropdown-item" href="blog.html">Blog</a>
-                                    <a class="dropdown-item" href="blog-right-sidebar.html">Blog right sidebar</a>
-                                    <a class="dropdown-item" href="blog-left-sidebar.html">Blog left sidebar</a>
-                                    <a class="dropdown-item" href="blog-fullwidth.html">Blog full width</a>
-                                    <a class="dropdown-item" href="blog-details.html">Blog details</a>
+                                    
                                 </div>
                             </li>
 
                             <!-- mega-menu end -->
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                                <a href="#" class="nav-link"
+                                   aria-haspopup="true" aria-expanded="false">Contact</a>
 
-                                <div class="dropdown-menu navbar-right">
-                                    <div class="dropdown">
-                                        <a class="dropdown-item" href="contact.html">Contact style 1</a>
-                                        <a class="dropdown-item" href="contact-style-2.html">Contact style 2</a>
-                                    </div>
-                                </div>
+                               
                             </li>
                             <!-- mega-menu start -->
 
@@ -187,30 +128,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="btn-group">
-                                <button type="button" class="btn dropdown-toggle" id="header-drop-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-bag"></i><span class="menu-cart">3</span></button>
-                                <ul class="dropdown-menu dropdown-menu-right cart dropdown-animation" aria-labelledby="header-drop-4">
-                                    <li class="product-item">
-                                        <img src="{{asset('frontend/images/shop/1.jpg')}}" alt="">
-                                        <a href="#">product name</a>
-                                        <span>49.00</span>
-                                    </li>
-                                    <li class="product-item">
-                                        <img src="{{asset('frontend/images/shop/2.jpg')}}" alt="">
-                                        <a href="#">product name</a>
-                                        <span>80.00</span>
-                                    </li>
-                                    <li class="product-item">
-                                        <img src="{{asset('frontend/images/shop/2.jpg')}}" alt="">
-                                        <a href="#">product name</a>
-                                        <span>80.00</span>
-                                    </li>
-                                    <li class="product-item">
-                                       <span>120.30</span>
-                                       <a class="btn-theme" href="#">Read more</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </div>
                         <!-- main-menu end -->
 

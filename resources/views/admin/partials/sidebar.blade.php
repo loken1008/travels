@@ -1,3 +1,7 @@
+@php
+$prefix=Request::route()->getPrefix();
+$route=Route::current()->getName();
+@endphp
 <aside class="main-sidebar">
     <!-- sidebar-->
     <section class="sidebar">
@@ -26,7 +30,21 @@
 
             <li class="header nav-small-cap">User Interface</li>
 
-            <li class="treeview">
+            <li class="treeview {{($prefix=='/banner')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Banner</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.banner')?'active':''}}"><a class="{{($route=='all.banner')?'active':''}}" href="{{route('all.banner')}}"><i class="ti-more"></i>View Banner</a></li>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
                     <span>Country</span>
@@ -35,144 +53,93 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('country.view')}}"><i class="ti-more"></i>View Country</a></li>
-                    <li><a href="{{route('country.create')}}"><i class="ti-more"></i>Add Country</a></li>
+                    <li class="{{($route=='country.view')?'active':''}}"><a class="{{($route=='country.view')?'active':''}}" href="{{route('country.view')}}"><i class="ti-more"></i>View Country</a></li>
+                    <li class="{{($route=='country.create')?'active':''}}"><a class="{{($route=='country.create')?'active':''}}" href="{{route('country.create')}}"><i class="ti-more"></i>Add Country</a></li>
                     </li>
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {($prefix=='/place')?'active':''}}">
                 <a href="#">
-                    <i data-feather="credit-card"></i>
-                    <span>Cards</span>
+                    <i data-feather="grid"></i>
+                    <span>Destination Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="card_advanced.html"><i class="ti-more"></i>Advanced Cards</a></li>
-                    <li><a href="card_basic.html"><i class="ti-more"></i>Basic Cards</a></li>
-                    <li><a href="card_color.html"><i class="ti-more"></i>Cards Color</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="hard-drive"></i>
-                    <span>Content</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="content_typography.html"><i class="ti-more"></i>Typography</a></li>
-                    <li><a href="content_media.html"><i class="ti-more"></i>Media</a></li>
-                    <li><a href="content_grid.html"><i class="ti-more"></i>Grid</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="package"></i>
-                    <span>Utilities</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="utilities_border.html"><i class="ti-more"></i>Border</a></li>
-                    <li><a href="utilities_color.html"><i class="ti-more"></i>Color</a></li>
-                    <li><a href="utilities_ribbons.html"><i class="ti-more"></i>Ribbons</a></li>
-                    <li><a href="utilities_tab.html"><i class="ti-more"></i>Tabs</a></li>
-                    <li><a href="utilities_animations.html"><i class="ti-more"></i>Animation</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="edit-2"></i>
-                    <span>Icons</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="icons_fontawesome.html"><i class="ti-more"></i>Font Awesome</a></li>
-                    <li><a href="icons_glyphicons.html"><i class="ti-more"></i>Glyphicons</a></li>
-                    <li><a href="icons_material.html"><i class="ti-more"></i>Material Icons</a></li>
-                    <li><a href="icons_themify.html"><i class="ti-more"></i>Themify Icons</a></li>
-                    <li><a href="icons_simpleline.html"><i class="ti-more"></i>Simple Line Icons</a>
+                    <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
+                    <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
                     </li>
-                    <li><a href="icons_cryptocoins.html"><i class="ti-more"></i>Cryptocoins Icons</a>
+                </ul>
+            </li>
+            <li class="treeview {{($prefix=='/category')?'active':''}}">
+                <a href="#">
+                    <i data-feather="message-circle"></i>
+                    <span>Category</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.category')}}"><i class="ti-more"></i>All Category</a></li>
+                    <li class="{{($route=='all.subcategory')?'active':''}}"><a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview {($prefix=='/tour')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Tour Place</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li class="{{($route=='tour.create')?'active':''}}"><a class="{{($route=='tour.create')?'active':''}}" href="{{route('tour.create')}}"><i class="ti-more"></i>Add Tour</a></li>
+                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Trip</a></li>
+                    {{-- <li class="{{($route=='package.view')?'active':''}}"><a class="{{($route=='package.view')?'active':''}}" href="{{route('package.view')}}"><i class="ti-more"></i>View Packages</a></li>
+                    <li class="{{($route=='activities.view')?'active':''}}"><a class="{{($route=='activities.view')?'active':''}}" href="{{route('activities.view')}}"><i class="ti-more"></i>View Activities</a></li> --}}
+
                     </li>
-                    <li><a href="icons_flag.html"><i class="ti-more"></i>Flag Icons</a></li>
-                    <li><a href="icons_weather.html"><i class="ti-more"></i>Weather Icons</a></li>
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {($prefix=='/coupon')?'active':''}}">
                 <a href="#">
-                    <i data-feather="inbox"></i>
-                    <span>Forms</span>
+                    <i data-feather="grid"></i>
+                    <span> Discount Coupon</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="forms_advanced.html"><i class="ti-more"></i>Advanced Elements</a></li>
-                    <li><a href="forms_editors.html"><i class="ti-more"></i>Editors</a></li>
-                    <li><a href="forms_code_editor.html"><i class="ti-more"></i>Code Editor</a></li>
-                    <li><a href="forms_validation.html"><i class="ti-more"></i>Form Validation</a></li>
-                    <li><a href="forms_wizard.html"><i class="ti-more"></i>Form Wizard</a></li>
-                    <li><a href="forms_general.html"><i class="ti-more"></i>General Elements</a></li>
-                    <li><a href="forms_dropzone.html"><i class="ti-more"></i>Dropzone</a></li>
+                    <li class="{{($route=='coupon.view')?'active':''}}"><a class="{{($route=='coupon.view')?'active':''}}" href="{{route('coupon.view')}}"><i class="ti-more"></i>View Coupon</a></li>
+                    </li>
                 </ul>
             </li>
-            <li class="treeview">
+            <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
                 <a href="#">
-                    <i data-feather="server"></i>
-                    <span>Tables</span>
+                    <i data-feather="grid"></i>
+                    <span>Testmonial</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="tables_simple.html"><i class="ti-more"></i>Simple tables</a></li>
-                    <li><a href="tables_data.html"><i class="ti-more"></i>Data tables</a></li>
+                    <li class="{{($route=='all.testmonial')?'active':''}}"><a class="{{($route=='all.testmonial')?'active':''}}" href="{{route('all.testmonial')}}"><i class="ti-more"></i>View Testmonial</a></li>
+                    </li>
                 </ul>
             </li>
 
+{{-- 
             <li class="treeview">
-                <a href="#">
-                    <i data-feather="pie-chart"></i>
-                    <span>Charts</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
+              
+                <a id="lfm" data-input="thumbnail" data-preview="holder" style="cursor: pointer">
+                    <i class="fa fa-picture-o"></i>   <span>File Manager</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="charts_chartjs.html"><i class="ti-more"></i>ChartJS</a></li>
-                    <li><a href="charts_flot.html"><i class="ti-more"></i>Flot</a></li>
-                    <li><a href="charts_inline.html"><i class="ti-more"></i>Inline</a></li>
-                    <li><a href="charts_morris.html"><i class="ti-more"></i>Morris</a></li>
-                    <li><a href="charts_peity.html"><i class="ti-more"></i>Peity</a></li>
-                    <li><a href="charts_chartist.html"><i class="ti-more"></i>Chartist</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="map"></i>
-                    <span>Map</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="map_google.html"><i class="ti-more"></i>Google Map</a></li>
-                    <li><a href="map_vector.html"><i class="ti-more"></i>Vector Map</a></li>
-                </ul>
-            </li>
+            </li> --}}
 
             <li class="treeview">
                 <a href="#">
@@ -192,51 +159,13 @@
                 </ul>
             </li>
 
-            <li class="header nav-small-cap">EXTRA</li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="layers"></i>
-                    <span>Multilevel</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Level One</a></li>
-                    <li class="treeview">
-                        <a href="#">Level One
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#">Level Two</a></li>
-                            <li class="treeview">
-                                <a href="#">Level Two
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-right pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#">Level Three</a></li>
-                                    <li><a href="#">Level Three</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Level One</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="auth_login.html">
-                    <i data-feather="lock"></i>
-                    <span>Log Out</span>
-                </a>
-            </li>
-
         </ul>
     </section>
 
 </aside>
+{{-- <script>
+    var route_prefix = "laravel-filemanager";
+    $('#lfm').filemanager('image', {
+        prefix: route_prefix
+    });
+</script> --}}
