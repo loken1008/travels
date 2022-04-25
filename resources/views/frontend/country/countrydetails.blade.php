@@ -119,27 +119,8 @@
     <section class="testimonials-section pt-80 pb-80">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
-                    <div class="testimonial-video mt-0">
-                        <h5>Latest Hotel Reviews</h5>
-                        <div class="sec-line mb-20"></div>
-                        <h3><i class="fa fa-quote-left"></i> If you are going to use a passage of Lorem Ipsum, you
-                            need to be on sure there isn’t anything embarras repeat predefined chunks as.</h3>
-                        <a class="btn-theme popup-youtube" href="../../../www.youtube.com/watchbf1e.html?v=7e90gBu4pas"><i
-                                class="fa fa-play-circle"></i> Play Video</a>
-                        <div class="review-ratings">
-                            <a class="ratings-star" href="#">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-empty"></i>
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                            <a class="ratings-count" href="#">(3 Ratings)</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
+                
+                <div class="col-lg-12">
                     @include('frontend.common.testmonial')
                 </div>
             </div>

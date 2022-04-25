@@ -41,7 +41,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <input type="checkbox" class="switcher-input" data-toggle="toggle"
+                                                <input type="checkbox" class="coupon-input" data-toggle="toggle"
                                                     data-id="{{ $coupon->id }}" {{ $coupon->status ? 'checked' : '' }}
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
                                                     data-offstyle="danger" onchange="changeStatus({{ $coupon->id }})">
@@ -133,7 +133,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
         $(function() {
-            $('.switcher-input').change(function(e) {
+            $('.coupon-input').change(function(e) {
                 e.preventDefault();
                 var status = $(this).prop('checked') == true ? 1 : 0;
                 var coupon_id = $(this).data('id');
@@ -163,11 +163,11 @@
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/country'
+                                window.location.href = '/coupon'
                             }
                         });
                     } else {
-                        window.location.href = '/country'
+                        window.location.href = '/coupon'
                     }
                 })
 

@@ -107,7 +107,7 @@ h6 {
 }
 
 p {
-    color: #9c9c9c;
+    color: black;
     font-family: 'Roboto', sans-serif;
     line-height: 28px;
     margin: 0;
@@ -136,7 +136,7 @@ div {
 }
 
 a {
-    color: #777;
+    color: black;
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2283,7 +2283,7 @@ canvas {
 }
 
 .special-places .content .price-box h6 {
-    color: #a9a8a8;
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     letter-spacing: 0.6px;
@@ -2319,7 +2319,7 @@ canvas {
 }
 
 .special-places .content .title-box h3 {
-    color: #a9a8a8;
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     letter-spacing: 0.6px;
@@ -2348,7 +2348,7 @@ canvas {
 }
 
 .special-places .content .info li a {
-    color: #a9a8a8;
+    color: black;
     margin-right: 12px;
     font-size: 13px;
 }
@@ -2358,7 +2358,7 @@ canvas {
 }
 
 .special-places .content p {
-    color: #a9a8a8;
+    color: black;
     font-size: 13px;
     line-height: 25px;
     margin-bottom: 20px;
@@ -2367,7 +2367,7 @@ canvas {
 
 .special-places .content .share-btn {
     font-family: 'Roboto', sans-serif;
-    color: #a9a8a8;
+    color: black;
     font-size: 16px;
     display: inline-block;
     margin-top: 10px;
@@ -2820,6 +2820,8 @@ canvas {
     font-size: 14px;
     margin-bottom: 30px;
     margin-top: 5px;
+    color:black !important;
+    text-align: justify;
 }
 
 .special-packages.dtl-st .content .small-hotel .text {

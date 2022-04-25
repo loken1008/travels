@@ -36,6 +36,16 @@ Route::post('/country/update/{id}',[App\Http\Controllers\Admin\CountryController
 Route::get('/country/delete/{id}',[App\Http\Controllers\Admin\CountryController::class,'deleteCountry'])->name('country.delete');
 Route::get('/country/changeStatus',[App\Http\Controllers\Admin\CountryController::class,'changeStatus']);
 
+// hotel
+Route::get('/hotel',[App\Http\Controllers\Admin\HotelController::class,'viewHotel'])->name('hotel.view');
+Route::get('/hoteldetails/{id}',[App\Http\Controllers\Admin\HotelController::class,'viewHotelDetails'])->name('hotel.viewdetails');
+Route::get('/hotel/create',[App\Http\Controllers\Admin\HotelController::class,'createHotel'])->name('hotel.create');
+Route::post('/hotel/store',[App\Http\Controllers\Admin\HotelController::class,'storeHotel'])->name('hotel.store');
+Route::get('/hotel/edit/{id}',[App\Http\Controllers\Admin\HotelController::class,'editHotel'])->name('hotel.edit');
+Route::post('/hotel/update/{id}',[App\Http\Controllers\Admin\HotelController::class,'updateHotel'])->name('hotel.update');
+Route::get('/hotel/delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'deleteHotel'])->name('hotel.delete');
+Route::get('/hotel/changeHotelStatus',[App\Http\Controllers\Admin\HotelController::class,'changeHotelStatus']);
+
 // Admin Category all route
 Route::prefix('category')->group(function(){
     Route::get('/view',[App\Http\Controllers\Admin\CategoryController::class,'CategoryView'])->name('all.category');
@@ -119,6 +129,14 @@ Route::prefix('testmonial')->group(function(){
 });
 
 
+// view booking all route
+Route::prefix('booking')->group(function(){
+    Route::get('/viewbooking',[App\Http\Controllers\Admin\HotelController::class,'BookingView'])->name('showbooking.view');
+    Route::get('/viewbooking/details/{id}',[App\Http\Controllers\Admin\HotelController::class,'BookingViewDetails'])->name('showbookingdetails');
+    Route::get('booking/delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'BookingDelete'])->name('delete.booking');
+});
+
+
 Route::group(['prefix' => '/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
@@ -134,8 +152,13 @@ Route::group(['prefix' => 'country/laravel-filemanager'], function () {
 Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage'])->name('home');
 Route::get('/countrydetails/{country_name}',[App\Http\Controllers\User\CountryController::class,'countryDetails'])->name('countrydetails');
 Route::get('/tourdetails/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourDetails'])->name('tourdetails');
-
+Route::get('/hotelviewdetails/{hotel_name}',[App\Http\Controllers\User\IndexController::class,'hotelviewDetails'])->name('hotelviewdetails');
 // subcategory related details
 Route::get('/tripdetails/{slug_name}',[App\Http\Controllers\User\CategoryController::class,'tripDetails'])->name('tripdetails');
+Route::get('/booking/{tour_name}',[App\Http\Controllers\User\BookingController::class,'onlineBooking'])->name('booking');
+Route::post('/booking/store',[App\Http\Controllers\User\BookingController::class,'storeBooking'])->name('store.booking');
+
+
+
 
 

@@ -74,7 +74,7 @@
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
-        var route_prefix = "laravel-filemanager";
+        var route_prefix = "/laravel-filemanager";
         $('#clfm').filemanager('images', {
             prefix: route_prefix
         });
