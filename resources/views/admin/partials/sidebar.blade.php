@@ -132,6 +132,33 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
+            <li class="treeview {{($prefix=='/booking')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>View Booking</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='showbooking.view')?'active':''}}"><a class="{{($route=='showbooking.view')?'active':''}}" href="{{route('showbooking.view')}}"><i class="ti-more"></i>View Booking Details</a></li>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview {{($prefix=='/hotel')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Hotel</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='hotel.view')?'active':''}}"><a class="{{($route=='hotel.view')?'active':''}}" href="{{route('hotel.view')}}"><i class="ti-more"></i>View Hotel</a></li>
+                    </li>
+                </ul>
+            </li>
+
 
 {{-- 
             <li class="treeview">

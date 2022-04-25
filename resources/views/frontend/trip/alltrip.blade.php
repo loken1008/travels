@@ -68,7 +68,7 @@
                                     <img src="images/features/sm2.jpg" alt="">
                                 </div>
                             </div>
-                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
+                            <a class="btn-theme" style="float:left !important" href="{{route('booking',$tourdetails->tour_name)}}">Booking Now</a>
                             <a class="btn-theme" href="{{route('tourdetails',$tourdetails->tour_name)}}">View Details</a>
                         </div>
                     </div>

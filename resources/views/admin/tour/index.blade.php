@@ -48,7 +48,7 @@ $route = Route::current()->getName();
                                             <td >@if(!empty($tour->category->category_name)){{$tour->category->category_name}}@endif</td>
                                             <td>
 
-                                                <input type="checkbox" class="switcher-input" data-toggle="toggle"
+                                                <input type="checkbox" class="tour-input" data-toggle="toggle"
                                                     data-id="{{ $tour->id }}" {{ $tour->status ? 'checked' : '' }}
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
                                                     data-offstyle="danger">
@@ -104,7 +104,7 @@ $route = Route::current()->getName();
 
     <script>
         $(function() {
-            $('.switcher-input').change(function(e) {
+            $('.tour-input').change(function(e) {
                 e.preventDefault();
                 var status = $(this).prop('checked') == true ? 1 : 0;
                 var tour_id = $(this).data('id');
@@ -134,11 +134,11 @@ $route = Route::current()->getName();
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/country'
+                                window.location.href = '/tour'
                             }
                         });
                     } else {
-                        window.location.href = '/country'
+                        window.location.href = '/tour'
                     }
                 })
 
