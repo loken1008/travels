@@ -24,7 +24,7 @@
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getTourdetails->mainImage }}" alt="" style="width:1110px;height:420px">
-                            <div class="offer-price"> Off 40%</div>
+                          
                             <div class="post-title-box">
                                 <div class="price-box">
                                     <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
@@ -75,6 +75,9 @@
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
+                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#map" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Map</a>
 
 
                                             </div>
@@ -210,10 +213,27 @@
                                                 </div>
                                             </div>
                                             <!-- item end -->
+                                             <!-- item start -->
+                                             <div class="tab-pane fade show " id="map" role="tabpanel"
+                                             aria-labelledby="map-tab">
+                                             
+                                                 <div class="item">
+                                                     <div class="special-places">
+                                                         <div class="content">
+
+                                                            <iframe src="{{$getTourdetails->map_url}}" width="100%" height="600" frameborder="0"></iframe>
+
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                         </div>
+                                         <!-- item end -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+            
                             <!-- Latest Hotel Section Start -->
                             <section class="latest-hotel-sec pt-85 pb-80">
                                 <div class="container">
@@ -252,7 +272,12 @@
                                 </div>
                             </section>
                             <!-- Latest Hotel Section End -->
-                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
+                            <div class="d-flex">
+                                <h5 class="share-btn"> Share </h5>
+                                      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                      <div class="addthis_inline_share_toolbox_mi34"></div>
+                            </div>
+                          
                             <a class="btn-theme" href="{{route('booking',$getTourdetails->tour_name)}}">Booking Now</a>
                         </div>
                     </div>
@@ -358,6 +383,6 @@
     </section>
     <!-- Client Section End -->
 
-
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 
 @endsection

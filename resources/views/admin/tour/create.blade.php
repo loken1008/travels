@@ -176,6 +176,16 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5"> Map Url :</label>
+                                <input type="text" class="form-control" id="firstName5"
+                                    value="{{ old('map_url') }}" name="map_url">
+                                {{-- @error('map_url')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror --}}
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label for="firstName5">Place Description/Image :</label>

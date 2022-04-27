@@ -25,7 +25,7 @@
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getcountrydetails->country_image }}" style="width:1110px; height:420px" alt="">
-                            <div class="offer-price"> Off 40%</div>
+                           
                             <div class="post-title-box">
                                 <div class="price-box">
                                     <h5><span>$</span>{{ $getcountrydetails->start_price }}</h5>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                            <a class="btn-theme" href="#">Booking Now</a>
+                            {{-- <a class="btn-theme" href="#">Booking Now</a> --}}
                         </div>
                     </div>
                 </div>

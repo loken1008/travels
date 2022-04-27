@@ -13,7 +13,7 @@ class CountryController extends Controller
     public function countryDetails($country_name)
     {
         $getcountrydetails=Country::where('country_name',$country_name)->first();
-        $gettour=Tour::with('country','place','category')->where('country_id',$getcountrydetails->id)->get();
+        $gettour=Tour::with('country','place','category')->where('country_id',$getcountrydetails->id)->where('status','=','1')->get();
         return view('frontend.country.countrydetails',compact('getcountrydetails','gettour'));
     }
 }

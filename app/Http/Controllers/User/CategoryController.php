@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\SubCategory;
 use App\Models\Tour;
 
-
 class CategoryController extends Controller
 {
     public function tripDetails($slug_name)
@@ -25,4 +24,6 @@ class CategoryController extends Controller
         }      
       
     }
+
+ 
 }

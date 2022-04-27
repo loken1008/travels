@@ -91,14 +91,9 @@ $route=Route::current()->getName();
 
 
                             <li class="nav-item dropdown">
-                                <a href="blog.html" class="nav-link dropdown-toggle"
-                                   id="seventh-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">Blog</a>
-
-                                <div class="dropdown-menu navbar-center" aria-labelledby="seventh-dropdown">
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
-                                    
-                                </div>
+                                <a href="{{route('allblogs')}}" class="nav-link "
+                                   
+                                   aria-expanded="false">Blogs</a>
                             </li>
 
                             <!-- mega-menu end -->

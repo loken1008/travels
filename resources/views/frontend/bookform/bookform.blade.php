@@ -91,7 +91,7 @@
                                         <input type="text" name="fullname" id="fullname" class="form-control" value=""
                                             placeholder="Input Full Name">
                                         @error('fullname')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -101,7 +101,7 @@
                                         <input type="email" name="email" id="email" class="form-control" value=""
                                             placeholder="Input Email">
                                         @error('email')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -111,7 +111,7 @@
                                         <input type="text" name="address" id="address" class="form-control" value=""
                                             placeholder="Input Address">
                                         @error('address')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -121,7 +121,7 @@
                                         <input type="text" name="post_code" id="post_code" class="form-control" value=""
                                             placeholder="Input Postcode">
                                         @error('post_code')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -131,7 +131,7 @@
                                         <input type="text" name="telephone" id="telephone" class="form-control" value=""
                                             placeholder="Input Telephone">
                                         @error('telephone')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -141,7 +141,7 @@
                                         <input type="text" name="mobile" id="mobile" class="form-control" value=""
                                             placeholder="Input Mobile">
                                         @error('mobile')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -152,7 +152,7 @@
                                         <input type="text" name="country" id="country" class="form-control" value=""
                                             placeholder="Input Country">
                                         @error('country')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -162,7 +162,7 @@
                                         <input type="text" name="number_people" id="number_people" class="form-control"
                                             value="" placeholder="Input Number people">
                                         @error('number_people')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -172,7 +172,7 @@
                                         <input type="date" name="arrival_date" id="arrival_date" class="form-control"
                                             value="" placeholder="Input Arrival date">
                                         @error('arrival_date')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -182,7 +182,7 @@
                                         <input type="date" name="departure_date" id="departure_date" class="form-control"
                                             value="" placeholder="Input Departure date">
                                         @error('departure_date')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -191,15 +191,20 @@
                                         <label for="tourName">Message</label>
                                         <textarea name="message" id="message" class="form-control" value=""></textarea>
                                         @error('message')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <strong>Recaptcha:</strong>
+                                      
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
+                                        @error('g-recaptcha-response')
+                                        <span class="text-danger" >
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="contact-textarea text-center">

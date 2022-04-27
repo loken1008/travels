@@ -124,4 +124,12 @@ class HotelController extends Controller
         $detailshotel=Booking::with('country','tour')->where('id',$id)->first();
         return view('admin.booking.details',compact('detailshotel'));
     }
+    public function BookingDelete($id){
+        Booking::findOrfail($id)->delete();
+        $notification=array(
+            'message'=>'Booking Delete Successfully',
+            'alert-type'=>'success'
+        );
+        return back()->with($notification);
+    }
 }

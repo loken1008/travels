@@ -46,6 +46,22 @@ Route::post('/hotel/update/{id}',[App\Http\Controllers\Admin\HotelController::cl
 Route::get('/hotel/delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'deleteHotel'])->name('hotel.delete');
 Route::get('/hotel/changeHotelStatus',[App\Http\Controllers\Admin\HotelController::class,'changeHotelStatus']);
 
+
+// blog
+Route::get('/blog',[App\Http\Controllers\Admin\BlogController::class,'viewBlog'])->name('blog.view');
+Route::get('/blogdetails/{id}',[App\Http\Controllers\Admin\BlogController::class,'viewBlogDetails'])->name('blog.viewdetails');
+Route::get('/blog/create',[App\Http\Controllers\Admin\BlogController::class,'createBlog'])->name('blog.create');
+Route::post('/blog/store',[App\Http\Controllers\Admin\BlogController::class,'storeBlog'])->name('blog.store');
+Route::get('/blog/edit/{id}',[App\Http\Controllers\Admin\BlogController::class,'editBlog'])->name('blog.edit');
+Route::post('/blog/update/{id}',[App\Http\Controllers\Admin\BlogController::class,'updateBlog'])->name('blog.update');
+Route::get('/blog/delete/{id}',[App\Http\Controllers\Admin\BlogController::class,'deleteBlog'])->name('blog.delete');
+Route::get('/blog/changeblogStatus',[App\Http\Controllers\Admin\BlogController::class,'changeBlogStatus']);
+Route::get('/viewblog/comment',[App\Http\Controllers\Admin\BlogController::class,'viewBlogComment'])->name('viewblog.comment');
+Route::get('/viewblog/commentdetails/{id}',[App\Http\Controllers\Admin\BlogController::class,'viewBlogCommentDetails'])->name('blog.viewcommentdetails');
+Route::get('/delete/blogcomment/{id}',[App\Http\Controllers\Admin\BlogController::class,'deleteBlogComment'])->name('blog.commentdelete');
+
+
+
 // Admin Category all route
 Route::prefix('category')->group(function(){
     Route::get('/view',[App\Http\Controllers\Admin\CategoryController::class,'CategoryView'])->name('all.category');
@@ -117,6 +133,15 @@ Route::prefix('banner')->group(function(){
     Route::get('/delete/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerDelete'])->name('delete.banner');
 });
 
+// Aboutus chooseus
+Route::prefix('aboutus')->group(function(){
+    Route::get('/chooseus',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseView'])->name('all.choose');
+    Route::post('chooseus/store',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseStore'])->name('store.choose');
+    Route::get('chooseus/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseEdit'])->name('edit.choose');
+    Route::post('chooseus/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseUpdate'])->name('update.choose');
+    Route::get('chooseus/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseDelete'])->name('delete.choose');
+});
+
 // Admin Banner all route
 Route::prefix('testmonial')->group(function(){
     Route::get('/view',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialView'])->name('all.testmonial');
@@ -152,11 +177,22 @@ Route::group(['prefix' => 'country/laravel-filemanager'], function () {
 Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage'])->name('home');
 Route::get('/countrydetails/{country_name}',[App\Http\Controllers\User\CountryController::class,'countryDetails'])->name('countrydetails');
 Route::get('/tourdetails/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourDetails'])->name('tourdetails');
+Route::get('/tourmap/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourMap'])->name('tourmap');
 Route::get('/hotelviewdetails/{hotel_name}',[App\Http\Controllers\User\IndexController::class,'hotelviewDetails'])->name('hotelviewdetails');
 // subcategory related details
 Route::get('/tripdetails/{slug_name}',[App\Http\Controllers\User\CategoryController::class,'tripDetails'])->name('tripdetails');
 Route::get('/booking/{tour_name}',[App\Http\Controllers\User\BookingController::class,'onlineBooking'])->name('booking');
 Route::post('/booking/store',[App\Http\Controllers\User\BookingController::class,'storeBooking'])->name('store.booking');
+// blogs
+Route::get('/allblogs/',[App\Http\Controllers\User\BlogController::class,'allBlogs'])->name('allblogs');
+Route::get('/blogsdetails/{blog_title}',[App\Http\Controllers\User\BlogController::class,'blogsDetails'])->name('blogsdetails');
+Route::get('/searchblog',[App\Http\Controllers\User\BlogController::class,'searchBlog'])->name('blogsearch');
+Route::post('/storecomment',[App\Http\Controllers\User\BlogController::class,'storeComment'])->name('blog.comment');
+
+// newsletter
+
+Route::post('newsletter','App\Http\Controllers\User\NewsletterController@store');
+
 
 
 
