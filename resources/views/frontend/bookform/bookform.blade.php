@@ -245,11 +245,11 @@
                                     <div class="thumb">
                                         <img src="{{ $tour->mainImage }}" alt=""
                                             style="width:100% !important;height:253px !important">
-                                        <div class="offer-price"> Off 40%</div>
+                                        {{-- <div class="offer-price"> Off 40%</div> --}}
                                         <div class="post-title-box">
                                             <div class="price-box">
                                                 <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                <h6>Starts From</h6>
+                                                {{-- <h6>Starts From</h6> --}}
                                             </div>
                                             <div class="title-box">
                                                 <h4>{{ $tour->tour_name }}</h4>

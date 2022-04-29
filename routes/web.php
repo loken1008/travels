@@ -135,11 +135,40 @@ Route::prefix('banner')->group(function(){
 
 // Aboutus chooseus
 Route::prefix('aboutus')->group(function(){
+
+    // introduction
+    Route::get('/introduction',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionView'])->name('all.introduction');
+    Route::get('introduction/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDetails'])->name('view.introduction');
+    Route::post('introduction/store',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionStore'])->name('store.introduction');
+    Route::get('introduction/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionEdit'])->name('edit.introduction');
+    Route::post('introduction/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionUpdate'])->name('update.introduction');
+    Route::get('introduction/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDelete'])->name('delete.introduction');
+
+       // termsandconditions
+       Route::get('/termsandconditions',[App\Http\Controllers\Admin\AboutUsController::class,'TermsView'])->name('all.termsandconditions');
+       Route::get('termsandconditions/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDetails'])->name('view.termsandconditions');
+       Route::post('termsandconditions/store',[App\Http\Controllers\Admin\AboutUsController::class,'TermsStore'])->name('store.termsandconditions');
+       Route::get('termsandconditions/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsEdit'])->name('edit.termsandconditions');
+       Route::post('termsandconditions/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsUpdate'])->name('update.termsandconditions');
+       Route::get('termsandconditions/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDelete'])->name('delete.termsandconditions');
+
     Route::get('/chooseus',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseView'])->name('all.choose');
     Route::post('chooseus/store',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseStore'])->name('store.choose');
     Route::get('chooseus/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseEdit'])->name('edit.choose');
     Route::post('chooseus/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseUpdate'])->name('update.choose');
     Route::get('chooseus/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseDelete'])->name('delete.choose');
+
+    // our team
+    Route::get('/ourteam',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('all.team');
+    Route::get('/ourteam/create',[App\Http\Controllers\Admin\AboutUsController::class,'TeamCreate'])->name('create.team');
+    Route::post('ourteam/store',[App\Http\Controllers\Admin\AboutUsController::class,'TeamStore'])->name('store.team');
+    Route::get('ourteam/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('view.team');
+    Route::get('ourteam/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamEdit'])->name('edit.team');
+    Route::post('ourteam/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamUpdate'])->name('update.team');
+    Route::get('ourteam/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamDelete'])->name('delete.team');
+    Route::get('ourteam/changeStatus',[App\Http\Controllers\Admin\AboutUsController::class,'TeamChangeStatus']);
+
+
 });
 
 // Admin Banner all route
@@ -192,6 +221,16 @@ Route::post('/storecomment',[App\Http\Controllers\User\BlogController::class,'st
 // newsletter
 
 Route::post('newsletter','App\Http\Controllers\User\NewsletterController@store');
+
+// aboutus our team
+Route::get('/ourteam',[App\Http\Controllers\User\AboutUsController::class,'allTeam'])->name('ourteam');
+Route::get('/ourteam/details/{name}',[App\Http\Controllers\User\AboutUsController::class,'TeamDetails'])->name('ourteam.details');
+Route::get('/travel-with-us',[App\Http\Controllers\User\AboutUsController::class,'travelWithUs'])->name('travelwithus');
+Route::get('/terms-conditions',[App\Http\Controllers\User\AboutUsController::class,'TermsandCondition'])->name('termsconditions');
+Route::get('/privacy-policy',[App\Http\Controllers\User\AboutUsController::class,'PrivacyPolicy'])->name('privacypolicy');
+Route::get('/payment-method',[App\Http\Controllers\User\AboutUsController::class,'PaymentMethod'])->name('paymentmethod');
+
+
 
 
 

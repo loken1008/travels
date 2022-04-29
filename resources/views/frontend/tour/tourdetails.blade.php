@@ -9,6 +9,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h4>{{ $getTourdetails->category->category_name }}</h4>
+                        <h5 style="color:white">{{$getTourdetails->tour_name}}</h5>
                     </div>
                 </div>
             </div>
@@ -88,12 +89,16 @@
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
                                                     @foreach ($getTourdetails->itinerary as $itinerary)
-                                                        <div class="content">
-                                                            <h3 class="font-weight-bold">{{ $itinerary->day_title }}
-                                                            </h3>
+                                                        <div class="content" >
 
-                                                            <p class="text-justify" style="color:black !important">
-                                                                {!! $itinerary->long_description !!}</p>
+                                                            <a data-toggle="collapse" style="justify-content:space-between" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="d-flex"><h5 class="font-weight-bold">{{ $itinerary->day_title }}
+                                                            </h5 ><span><i class="fa fa-plus"></i></span></a>
+                                                            <div class="collapse" id="collapseExample">
+                                                                <p class="text-justify collapse" style="color:black !important"  >
+                                                                    {!! $itinerary->long_description !!}</p>
+                                                            </div>
+
+                                                            
 
                                                         </div>
                                                     @endforeach

@@ -108,7 +108,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Welcome to Touran Travel</h4>
+                    <h4>Welcome to Mountain Guide Trek</h4>
                     <h2>Special <span>Tour</span> Places</h2>
                 </div>
             </div>
@@ -142,7 +142,6 @@
                                                         <div class="content">
                                                             <div class="price-box">
                                                                 <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                                <h6>Starts From</h6>
                                                             </div>
                                                             <div class="title-box">
                                                                 <h4>{{ $tour->tour_name }}</h4>
@@ -151,8 +150,8 @@
                                                             <ul class="info">
                                                                 <li><a href="#"><i
                                                                             class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                                        {{-- Days</a></li>
-                                                                <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
+                                                                        Days</a></li>
+                                                                {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
                                                 <li><a href="{{route('tourmap',$tour->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
                                                             </ul>
                                                             <p>{!! Str::limit($tour->description, 200) !!}</p>
@@ -189,7 +188,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2>Why <span>Choose</span> Touran</h2>
+                    <h2>Why <span>Choose</span> MOuntain Guide Trek</h2>
                 </div>
             </div>
             <div class="row">
@@ -231,13 +230,12 @@
                                     <div class="item">
                                         <div class="special-packages">
                                             <div class="thumb">
-                                                <img src="{{ $tour->mainImage }}" alt=""
-                                                    style="width:100% !important;height:253px !important">
+                                              <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img src="{{ $tour->mainImage }}" alt=""
+                                                    style="width:100% !important;height:253px !important"></a> 
                                             
                                                 <div class="post-title-box">
                                                     <div class="price-box">
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                        <h6>Starts From</h6>
                                                     </div>
                                                     <div class="title-box">
                                                         <h4>{{ $tour->tour_name }}</h4>
@@ -351,7 +349,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Touran Hotel Collection</h4>
+                    <h4>Mountain Guide Trek Hotel Collection</h4>
                     <h2>Latest <span>Hotel</span> Collection</h2>
                 </div>
             </div>
@@ -422,7 +420,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="section-title">
-                    <h4>Touran Travel Gallery</h4>
+                    <h4>Mountain Guide Trek Gallery</h4>
                     <h2>Touran <span>Tour</span> Gallery</h2>
                     <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
                 </div>

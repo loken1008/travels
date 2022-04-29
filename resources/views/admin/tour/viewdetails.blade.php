@@ -34,12 +34,12 @@
                                 <span>{{ $detailstour->category->category_name }}</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Sub Category Name :</label>
                                 <span>@if(!empty($detailstour->subcategory->sub_category_name)){{ $detailstour->subcategory->sub_category_name }}@endif</span>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Tour Name :</label>

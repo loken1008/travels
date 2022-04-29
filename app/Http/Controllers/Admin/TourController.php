@@ -42,8 +42,8 @@ class TourController extends Controller
         $getplace=Place::orderBy('place_name','asc')->get();
         $getcountry=Country::orderBy('country_name','asc')->where('status','=','1')->get();
         $getcategory=Category::orderBy('category_name','asc')->get();
-        $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();
-        return view('admin.tour.create',compact('getcountry','getplace','getcategory','getsubcategory'));
+        // $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();
+        return view('admin.tour.create',compact('getcountry','getplace','getcategory'));
     }
 
     public function getPlace($country_id)
@@ -59,7 +59,7 @@ class TourController extends Controller
             'country_id'=>$request->country_id,
             'place_id'=>$request->place_id,
             'category_id'=>$request->category_id,
-            'subcategory_id'=>$request->subcategory_id,
+            // 'subcategory_id'=>$request->subcategory_id,
             'tour_name'=>$request->tour_name,
             // 'type'=>$request->type,
             'altitude'=>$request->altitude,
@@ -145,7 +145,7 @@ class TourController extends Controller
             'country_id'=>$request->country_id,
             'place_id'=>$request->place_id,
             'category_id'=>$request->category_id,
-            'subcategory_id'=>$request->subcategory_id,
+            // 'subcategory_id'=>$request->subcategory_id,
             'tour_name'=>$request->tour_name,
             // 'type'=>$request->type,
             'altitude'=>$request->altitude,

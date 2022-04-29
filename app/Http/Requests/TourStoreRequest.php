@@ -37,14 +37,14 @@ class TourStoreRequest extends FormRequest
             'description'=>'required',
             'cost_include'=>'required',
             'cost_exclude'=>'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
-            'seats_available' => 'required',
-            'price' => 'required',
-            'equipment_name' => 'required',
-            'equipment_description' => 'required',
-            'day_title'=>'required',
-            'long_description'=>'required',
+            '*.start_date' => 'required',
+            '*.end_date' => 'required',
+            '*.seats_available' => 'required',
+            '*.price' => 'required',
+            '*.equipment_name' => 'required',
+            '*.equipment_description' => 'required',
+            '*.day_title'=>'required',
+            '*.long_description'=>'required',
         ];
     }
 }

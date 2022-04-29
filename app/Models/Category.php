@@ -13,4 +13,7 @@ class Category extends Model
     public function subcategory(){
         return $this->hasMany(SubCategory::class,'category_id','id');
     }
+    public function tour(){
+        return $this->hasMany(Tour::class,'category_id','id');
+    }
 }

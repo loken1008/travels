@@ -33,7 +33,7 @@
                             <div class="post-title-box">
                                 <div class="price-box">
                                     <h5><span>$</span>{{$tourdetails->main_price}}</h5>
-                                    <h6>Starts From</h6>
+                                    {{-- <h6>Starts From</h6> --}}
                                 </div>
                                 <div class="title-box">
                                     <h4>{{$tourdetails->tour_name}}</h4>

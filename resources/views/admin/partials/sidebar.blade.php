@@ -92,7 +92,7 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.category')}}"><i class="ti-more"></i>All Category</a></li>
-                    <li class="{{($route=='all.subcategory')?'active':''}}"><a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li>
+                    {{-- <li class="{{($route=='all.subcategory')?'active':''}}"><a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li> --}}
 
                 </ul>
             </li>
@@ -137,10 +137,10 @@ $route=Route::current()->getName();
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.category')}}"><i class="ti-more"></i>About  Us</a></li>
-                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.category')}}"><i class="ti-more"></i>Our Team</a></li>
+                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.introduction')}}"><i class="ti-more"></i>About  Us</a></li>
+                    <li class="{{($route=='all.team')?'active':''}}"><a href="{{route('all.team')}}"><i class="ti-more"></i>Our Team</a></li>
                     <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.choose')}}"><i class="ti-more"></i>Why Choose Us </a></li>
-
+                    <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.termsandconditions')}}"><i class="ti-more"></i>Terms and Conditions </a></li>
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
