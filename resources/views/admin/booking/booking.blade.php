@@ -16,7 +16,6 @@ $route=Route::current()->getName();
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Booking List</h3>
-                                <a href="{{route('country.create')}}"><input type="submit" class="btn btn-rounded btn-info pull-right" value="Add Country"></a>
                             </div>
                           
                             <!-- /.box-header -->

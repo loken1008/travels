@@ -29,11 +29,11 @@
                     <div class="special-packages">
                         <div class="thumb">
                             <img src="{{$tourdetails->mainImage}}" alt="" style="width:350px;height:200px">
-                            <div class="offer-price"> Off 40%</div>
+                           
                             <div class="post-title-box">
                                 <div class="price-box">
                                     <h5><span>$</span>{{$tourdetails->main_price}}</h5>
-                                    <h6>Starts From</h6>
+                                    {{-- <h6>Starts From</h6> --}}
                                 </div>
                                 <div class="title-box">
                                     <h4>{{$tourdetails->tour_name}}</h4>
@@ -44,11 +44,11 @@
                         <div class="content">
                             <ul class="info">
                                 <li><a href="#"><i class="fa fa-calendar"></i>{{$tourdetails->tour_days}} Days</a></li>
-                                {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
+                                {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
+                                <li><a href="{{route('tourmap',$tourdetails->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
                             </ul>
                             <p>{!!Str::limit($tourdetails->description,150)!!}</p>
-                            <div class="small-hotel">
+                            {{-- <div class="small-hotel">
                                 <div class="text">
                                     <h6>Hotels to Stay</h6>
                                     <h5>Saladi Hasan</h5>
@@ -67,7 +67,7 @@
                                     <img src="images/features/sm1.jpg" alt="">
                                     <img src="images/features/sm2.jpg" alt="">
                                 </div>
-                            </div>
+                            </div> --}}
                             <a class="btn-theme" style="float:left !important" href="{{route('booking',$tourdetails->tour_name)}}">Booking Now</a>
                             <a class="btn-theme" href="{{route('tourdetails',$tourdetails->tour_name)}}">View Details</a>
                         </div>

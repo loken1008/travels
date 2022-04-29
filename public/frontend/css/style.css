@@ -117,6 +117,7 @@ p {
     -o-transition: all 0.4s;
     -ms-transition: all 0.4s;
     transition: all 0.4s;
+    text-align: justify;
 }
 
 i {
@@ -2639,12 +2640,13 @@ canvas {
 
 .special-packages .content p {
     border-bottom: 1px solid rgba(240, 240, 240, 0.7);
-    color: #9c9b9b;
+    color: black;
     font-size: 13px;
     line-height: 25px;
     margin-bottom: 25px;
     padding-bottom: 20px;
     width: 100%;
+    text-align: justify;
 }
 
 .special-packages .content .small-hotel {
@@ -3613,7 +3615,7 @@ Blog Css Style
 /***Blog Small****/
 
 .blog-small-item {
-    margin-bottom: 28px;
+    margin-bottom: 38px;
 }
 
 .blog-small-item img {

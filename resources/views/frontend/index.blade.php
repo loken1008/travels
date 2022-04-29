@@ -18,7 +18,7 @@
 
                 <!-- Item Slide -->
                 @foreach ($getbanner as $banner)
-                    <div class="carousel-item active">
+                    <div class="carousel-item {{$loop->first?'active':''}}">
 
                         <!-- Slide Background -->
                         <img src="{{ $banner->banner_image }}" alt="Slider Images" class="slide-image"
@@ -32,11 +32,13 @@
                                     <h2>{{ $banner->title }}</h2>
                                 </div>
                                 <!-- Package Box -->
+                               @if($getcoupon)
                                 <div class="package-box">
-                                    <h1><span>45%</span> off</h1>
+                                    <h1><span>{{$getcoupon->discount_amount}}%</span> off</h1>
                                     <h4>on all package</h4>
-                                    <a href="#">Book Now</a>
+                                    <h4>{{$getcoupon->coupon_name}}</h4>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -106,9 +108,8 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Welcome to Touran Travel</h4>
+                    <h4>Welcome to Mountain Guide Trek</h4>
                     <h2>Special <span>Tour</span> Places</h2>
-                    <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
                 </div>
             </div>
             <div class="row">
@@ -141,7 +142,6 @@
                                                         <div class="content">
                                                             <div class="price-box">
                                                                 <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                                <h6>Starts From</h6>
                                                             </div>
                                                             <div class="title-box">
                                                                 <h4>{{ $tour->tour_name }}</h4>
@@ -151,8 +151,8 @@
                                                                 <li><a href="#"><i
                                                                             class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                                         Days</a></li>
-                                                                {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
+                                                                {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
+                                                <li><a href="{{route('tourmap',$tour->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
                                                             </ul>
                                                             <p>{!! Str::limit($tour->description, 200) !!}</p>
                                                             <a class="btn-theme" style="float:left !important"
@@ -188,45 +188,23 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Touran Travel Features</h4>
-                    <h2>Why <span>Choose</span> Touran</h2>
-                    <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
+                    <h2>Why <span>Choose</span> MOuntain Guide Trek</h2>
                 </div>
             </div>
             <div class="row">
+                @foreach($chooseus as $choose)
                 <div class="col-md-4">
                     <div class="feature-item">
                         <div class="icon-box">
-                            <i class="flaticon-like"></i>
+                         <img src="{{$choose->image}}" style="height: 50px;width:50px;border-radius:20px" alt="">
                         </div>
                         <div class="content">
-                            <h3><a href="#">Years of <span>experience</span></a></h3>
-                            <p>dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                            <h3><a href="#">{{$choose->title}}</a></h3>
+                            <p>{!!Str::limit($choose->description,200)!!}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div class="icon-box">
-                            <i class="flaticon-manager"></i>
-                        </div>
-                        <div class="content">
-                            <h3><a href="#">Expert Tour <span>Guide</span></a></h3>
-                            <p>dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-item last">
-                        <div class="icon-box">
-                            <i class="flaticon-heart-1"></i>
-                        </div>
-                        <div class="content">
-                            <h3><a href="#">Beautiful <span>Tour Place</span></a></h3>
-                            <p>dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -252,13 +230,12 @@
                                     <div class="item">
                                         <div class="special-packages">
                                             <div class="thumb">
-                                                <img src="{{ $tour->mainImage }}" alt=""
-                                                    style="width:100% !important;height:253px !important">
-                                                <div class="offer-price"> Off 40%</div>
+                                              <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img src="{{ $tour->mainImage }}" alt=""
+                                                    style="width:100% !important;height:253px !important"></a> 
+                                            
                                                 <div class="post-title-box">
                                                     <div class="price-box">
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                        <h6>Starts From</h6>
                                                     </div>
                                                     <div class="title-box">
                                                         <h4>{{ $tour->tour_name }}</h4>
@@ -271,6 +248,7 @@
                                                 <ul class="info">
                                                     <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                             Days</a></li>
+                                                    <li><a href="{{route('tourmap',$tour->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
 
                                                 </ul>
                                                 <p>{!! Str::limit($tour->description, 200) !!}</p>
@@ -371,7 +349,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Touran Hotel Collection</h4>
+                    <h4>Mountain Guide Trek Hotel Collection</h4>
                     <h2>Latest <span>Hotel</span> Collection</h2>
                 </div>
             </div>
@@ -442,7 +420,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="section-title">
-                    <h4>Touran Travel Gallery</h4>
+                    <h4>Mountain Guide Trek Gallery</h4>
                     <h2>Touran <span>Tour</span> Gallery</h2>
                     <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
                 </div>
@@ -584,84 +562,35 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h4>Our latest blog</h4>
-                    <h2>Touran <span>Latest</span> Blog</h2>
-                    <p>Consectetur adipisicing elit. Excepturi nemo tenetur veniam repellat earum inventore modi omnis.</p>
+                    <h2>Our latest blog</h2>
                 </div>
             </div>
             <div class="row">
+               @forelse($getblogs as $blog)
                 <div class="col-md-6 col-lg-4">
                     <div class="blog-post">
                         <div class="thumb">
-                            <img alt="" src="{{ asset('frontend/images/blog/1.jpg') }}">
+                            <img alt="" src="{{ $blog->blog_image}}" style="width:348px;height:442px">
                             <div class="content">
-                                <h3>Summer Vacation Travel On gratest global mounten</h3>
+                                <h3>{{$blog->blog_title}}</h3>
                                 <div class="meta-box">
-                                    <div class="admin-post"> Admin, TributeTheme </div>
+                                    <div class="admin-post"> {{$blog->author_name}} </div>
                                     <div class="inner">
                                         <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i> Feb 24
-                                        </div>
-                                        <div class="comment">
-                                            <i class="fa fa-commenting-o"></i> 8
+                                            <i class="fa fa-calendar-plus-o"></i> {{$blog->created_at->format('M d')}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="blog-details.html" class="read-btn">Continue Reading
+                        <a href="{{route('blogsdetails',$blog->blog_title)}}" class="read-btn">Continue Reading
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-post">
-                        <div class="thumb">
-                            <img alt="" src="{{ asset('frontend/images/blog/2.jpg') }}">
-                            <div class="content">
-                                <h3>Winter Vacation Travel On beautiful tour package</h3>
-                                <div class="meta-box">
-                                    <div class="admin-post"> Admin, TributeTheme </div>
-                                    <div class="inner">
-                                        <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i> Feb 24
-                                        </div>
-                                        <div class="comment">
-                                            <i class="fa fa-commenting-o"></i> 8
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="blog-details.html" class="read-btn">Continue Reading
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0">
-                    <div class="blog-post">
-                        <div class="thumb">
-                            <img alt="" src="{{ asset('frontend/images/blog/3.jpg') }}">
-                            <div class="content">
-                                <h3>Summer Vacation Travel On gratest global Tower</h3>
-                                <div class="meta-box">
-                                    <div class="admin-post"> Admin, TributeTheme </div>
-                                    <div class="inner">
-                                        <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i> Feb 24
-                                        </div>
-                                        <div class="comment">
-                                            <i class="fa fa-commenting-o"></i> 8
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="blog-details.html" class="read-btn">Continue Reading
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
+              @empty 
+              <h4 style="text-align:center !important">No Blog Available</h4>
+                @endforelse
             </div>
         </div>
     </section>

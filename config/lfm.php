@@ -60,6 +60,8 @@ return [
                 'image/gif',
                 'application/pdf',
                 'text/plain',
+                'video/mp4',
+                'video/mpeg',
             ],
         ],
         'image' => [
@@ -74,6 +76,19 @@ return [
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
+            ],
+        ],
+
+        'video' => [
+            'folder_name'  => 'photos',
+            'startup_view' => 'grid',
+            'max_size'     => 50000, // size in KB
+            'thumb' => true,
+            'thumb_width' => 80,
+            'thumb_height' => 80,
+            'valid_mime'   => [
+                'video/mp4',
+                'video/mpeg',
             ],
         ],
     ],
@@ -157,6 +172,9 @@ return [
         'png'  => 'PNG Image',
         'ppt'  => 'Microsoft PowerPoint',
         'pptx' => 'Microsoft PowerPoint',
+        'mp3'  => 'MP3 Audio File',
+        'mp4'  => 'MP4 Video',
+        'mpeg'  => 'MPEG Video',
     ],
 
     /*
@@ -171,6 +189,6 @@ return [
     | directives are not supported.
      */
     'php_ini_overrides'        => [
-        'memory_limit' => '256M',
+        'memory_limit' => '1024M',
     ],
 ];

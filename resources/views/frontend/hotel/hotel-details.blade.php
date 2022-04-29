@@ -37,8 +37,6 @@
                             <h4>{{$gethotelview->hotel_address}}, {{$gethotelview->hotel_phone}}</h4>
                             <p style="color:black !important;text-align:justify">{!! $gethotelview->hotel_description !!}</p>
                             <iframe src="{{$gethotelview->map_link}}" width="100%" height="500" frameborder="0"></iframe>
-                          
-                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
                         </div>
                     </div>
                 </div>

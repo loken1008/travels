@@ -20,7 +20,7 @@ class CreateImagesTable extends Migration
             $table->unsignedBigInteger('activity_id')->nullable();
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
 
-            $table->string('images')->nullable();
+            $table->longText('images')->nullable();
             $table->timestamps();
         });
     }

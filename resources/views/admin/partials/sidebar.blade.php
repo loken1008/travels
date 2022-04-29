@@ -44,6 +44,15 @@ $route=Route::current()->getName();
                 </ul>
             </li>
 
+            <li class="treeview ">
+               
+                        <a href="#" id="filelfm" data-input="mainthumbnail" data-preview="holder"
+                            >
+                            <i class="fa fa-picture-o"></i> File Manager
+                        </a>
+               
+            </li>
+
             <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
@@ -83,7 +92,7 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.category')}}"><i class="ti-more"></i>All Category</a></li>
-                    <li class="{{($route=='all.subcategory')?'active':''}}"><a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li>
+                    {{-- <li class="{{($route=='all.subcategory')?'active':''}}"><a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li> --}}
 
                 </ul>
             </li>
@@ -119,6 +128,21 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
+            <li class="treeview {{($prefix=='/aboutus')?'active':''}}">
+                <a href="#">
+                    <i data-feather="message-circle"></i>
+                    <span>About Us</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.introduction')}}"><i class="ti-more"></i>About  Us</a></li>
+                    <li class="{{($route=='all.team')?'active':''}}"><a href="{{route('all.team')}}"><i class="ti-more"></i>Our Team</a></li>
+                    <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.choose')}}"><i class="ti-more"></i>Why Choose Us </a></li>
+                    <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.termsandconditions')}}"><i class="ti-more"></i>Terms and Conditions </a></li>
+                </ul>
+            </li>
             <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
@@ -143,6 +167,21 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{($route=='showbooking.view')?'active':''}}"><a class="{{($route=='showbooking.view')?'active':''}}" href="{{route('showbooking.view')}}"><i class="ti-more"></i>View Booking Details</a></li>
                     </li>
+                </ul>
+            </li>
+            <li class="treeview {{($prefix=='/blog')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Blog</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='blog.view')?'active':''}}"><a class="{{($route=='blog.view')?'active':''}}" href="{{route('blog.view')}}"><i class="ti-more"></i>View Blog</a></li>
+                    </li>
+                    <li class="{{($route=='viewblog.comment')?'active':''}}"><a class="{{($route=='viewblog.comment')?'active':''}}" href="{{route('viewblog.comment')}}"><i class="ti-more"></i>View Blog Comment</a></li>
+                </li>
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/hotel')?'active':''}}">
@@ -190,9 +229,11 @@ $route=Route::current()->getName();
     </section>
 
 </aside>
-{{-- <script>
-    var route_prefix = "laravel-filemanager";
-    $('#lfm').filemanager('image', {
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>
+    var route_prefix = "/laravel-filemanager";
+    $('#filelfm').filemanager('images', {
         prefix: route_prefix
     });
-</script> --}}
+</script>

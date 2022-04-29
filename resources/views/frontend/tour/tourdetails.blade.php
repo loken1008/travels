@@ -9,6 +9,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h4>{{ $getTourdetails->category->category_name }}</h4>
+                        <h5 style="color:white">{{$getTourdetails->tour_name}}</h5>
                     </div>
                 </div>
             </div>
@@ -24,7 +25,7 @@
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getTourdetails->mainImage }}" alt="" style="width:1110px;height:420px">
-                            <div class="offer-price"> Off 40%</div>
+                          
                             <div class="post-title-box">
                                 <div class="price-box">
                                     <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
@@ -75,6 +76,9 @@
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
+                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#map" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Map</a>
 
 
                                             </div>
@@ -85,12 +89,16 @@
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
                                                     @foreach ($getTourdetails->itinerary as $itinerary)
-                                                        <div class="content">
-                                                            <h3 class="font-weight-bold">{{ $itinerary->day_title }}
-                                                            </h3>
+                                                        <div class="content" >
 
-                                                            <p class="text-justify" style="color:black !important">
-                                                                {!! $itinerary->long_description !!}</p>
+                                                            <a data-toggle="collapse" style="justify-content:space-between" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="d-flex"><h5 class="font-weight-bold">{{ $itinerary->day_title }}
+                                                            </h5 ><span><i class="fa fa-plus"></i></span></a>
+                                                            <div class="collapse" id="collapseExample">
+                                                                <p class="text-justify collapse" style="color:black !important"  >
+                                                                    {!! $itinerary->long_description !!}</p>
+                                                            </div>
+
+                                                            
 
                                                         </div>
                                                     @endforeach
@@ -210,10 +218,27 @@
                                                 </div>
                                             </div>
                                             <!-- item end -->
+                                             <!-- item start -->
+                                             <div class="tab-pane fade show " id="map" role="tabpanel"
+                                             aria-labelledby="map-tab">
+                                             
+                                                 <div class="item">
+                                                     <div class="special-places">
+                                                         <div class="content">
+
+                                                            <iframe src="{{$getTourdetails->map_url}}" width="100%" height="600" frameborder="0"></iframe>
+
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                         </div>
+                                         <!-- item end -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+            
                             <!-- Latest Hotel Section Start -->
                             <section class="latest-hotel-sec pt-85 pb-80">
                                 <div class="container">
@@ -252,7 +277,12 @@
                                 </div>
                             </section>
                             <!-- Latest Hotel Section End -->
-                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
+                            <div class="d-flex">
+                                <h5 class="share-btn"> Share </h5>
+                                      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                      <div class="addthis_inline_share_toolbox_mi34"></div>
+                            </div>
+                          
                             <a class="btn-theme" href="{{route('booking',$getTourdetails->tour_name)}}">Booking Now</a>
                         </div>
                     </div>
@@ -358,6 +388,6 @@
     </section>
     <!-- Client Section End -->
 
-
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 
 @endsection

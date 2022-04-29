@@ -11,4 +11,9 @@ class Booking extends Model
     protected $fillable = [
         'tour_id', 'fullname', 'email', 'address', 'post_code', 'telephone', 'mobile', 'country', 'number_people', 'arrival_date', 'departure_date', 'message',
     ];
+
+    public function tour()
+    {
+        return $this->belongsTo(Tour::class);
+    }
 }

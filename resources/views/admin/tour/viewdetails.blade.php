@@ -34,12 +34,12 @@
                                 <span>{{ $detailstour->category->category_name }}</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Sub Category Name :</label>
                                 <span>@if(!empty($detailstour->subcategory->sub_category_name)){{ $detailstour->subcategory->sub_category_name }}@endif</span>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Tour Name :</label>
@@ -87,7 +87,7 @@
 
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 ">
 
                             <label for="firstName5"> Related Images :</label>
 
@@ -96,6 +96,7 @@
                                     $imagess = explode(',', $image->images);
                                     
                                 @endphp
+                                <div class="d-flex">
                                 @foreach ($imagess as $images)
                                 <div class="input-group d-flex">
                                     <a href="{{ $images }}" target="_blank"><img src="{{ $images }}" alt="" width="200px" height="100px"
@@ -103,9 +104,16 @@
                                     </a>
                                 </div>
                                 @endforeach
+                            </div>
                             @empty
                                 <p>No Image</p>
                             @endforelse
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5">Cost Map :</label>
+                              <iframe src="{{$detailstour->map_url}}" height="400" width="100%" frameborder="0"></iframe>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -129,6 +137,7 @@
                                 <span>{!! $detailstour->cost_exclude !!}</span>
                             </div>
                         </div>
+                        
                     </div>
                     <hr>
                     {{-- dateprice --}}

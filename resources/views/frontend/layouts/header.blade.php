@@ -80,8 +80,8 @@ $route=Route::current()->getName();
 
                                 <div class="dropdown-menu left-1">
                                     <div class="dropdown">
-                                        @foreach($cat->subcategory as $subcat)
-                                        <a class="dropdown-item" href="{{route('tripdetails',$subcat->sub_category_slug)}}">{{$subcat->sub_category_name}}</a>
+                                        @foreach($cat->tour as $tour)
+                                        <a class="dropdown-item" href="{{route('tourdetails',$tour->tour_name)}}">{{$tour->tour_name}}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -91,24 +91,30 @@ $route=Route::current()->getName();
 
 
                             <li class="nav-item dropdown">
-                                <a href="blog.html" class="nav-link dropdown-toggle"
-                                   id="seventh-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">Blog</a>
+                                <a href="{{route('allblogs')}}" class="nav-link "
+                                   
+                                   aria-expanded="false">Blogs</a>
+                            </li>
 
-                                <div class="dropdown-menu navbar-center" aria-labelledby="seventh-dropdown">
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
-                                    
+                              <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+
+                                <div class="dropdown-menu left-1">
+                                    <div class="dropdown">
+                                        <a class="dropdown-item" href="{{route('travelwithus')}}">Introduction</a>
+                                        <a class="dropdown-item" href="{{route('ourteam')}}">Our Team</a>
+                                        <a class="dropdown-item" href="{{route('travelwithus')}}">Why Travels With Us</a>
+                                        <a class="dropdown-item" href="{{route('paymentmethod')}}">Payment Method</a>
+                                        <a class="dropdown-item" href="{{route('privacypolicy')}}">Privacy Policies</a>
+                                        <a class="dropdown-item" href="{{route('termsconditions')}}">Terms and Condition</a>
+
+
+                                    </div>
                                 </div>
                             </li>
 
-                            <!-- mega-menu end -->
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link"
-                                   aria-haspopup="true" aria-expanded="false">Contact</a>
-
-                               
-                            </li>
-                            <!-- mega-menu start -->
+                         
 
                         </ul>
 

@@ -28,8 +28,9 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
-        $category= Category::orderBy('category_name', 'asc')->get();
-          $place = Place::orderBy('place_name', 'asc')->get();
+        $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
+        // dd($category);
+        $place = Place::orderBy('place_name', 'asc')->get();
          View::share('country', $country);
          View::share('category', $category);
          View::share('place', $place);
