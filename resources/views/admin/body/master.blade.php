@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{asset('images/favicon.ico')}}">
 
     <title>Admin | @yield('title')</title>
 
@@ -61,6 +62,12 @@
     <!-- Sunny Admin App -->
     <script src="{{ asset('admin/js/template.js') }}"></script>
     <script src="{{ asset('admin/js/pages/dashboard.js') }}"></script>
+    <script type="text/javascript" src="{{asset('assets/vendor_components/gallery/js/animated-masonry-gallery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/vendor_components/gallery/js/jquery.isotope.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/vendor_components/lightbox-master/dist/ekko-lightbox.js')}}"></script>
+	<script src="{{asset('admin/js/pages/gallery.js')}}"></script>    
+    	
+ 
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

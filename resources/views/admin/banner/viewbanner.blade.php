@@ -30,8 +30,18 @@
                                         @forelse($banners as $banner)
                                             <tr>
                                                 <td>{{ $banner->title }}</td>
-                                                <td><img src="{{asset($banner->banner_image)}}"
+                                                <td>
+                                                    <?php
+                                                        $file_extension = substr(strrchr($banner->banner_image ,'.'),1);
+                                                        $file_extension = strtolower($file_extension);
+                                                    ?>
+                                                        @if ($file_extension == "mp4")
+                                                        <iframe src="{{asset($banner->banner_image)}}" frameborder="0"></iframe>
+                                                   
+                                                        @else  
+                                                        <img src="{{asset($banner->banner_image)}}"
                                                         style="height:100px;width:100px" alt="">
+                                                        @endif
                                                     </td>
                                                     <td>
                                                         @if($banner->status==  1)
@@ -42,11 +52,11 @@
                                                     </td>
                                                 <td>
                                                     <a href="{{route('edit.banner',$banner->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                    <a href="{{route('delete.banner',$banner->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{route('delete.banner',$banner->id)}}" class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
                                                     @if($banner->status==1)
-                                                    <a href="{{route('active.banner',$banner->id)}}" class="btn btn-primary" style="width:5rem" title="Active"><i class="fa fa-unlock"></i></a>
+                                                    <a href="{{route('active.banner',$banner->id)}}" class="btn btn-primary mt-2" style="width:5rem" title="Active"><i class="fa fa-unlock"></i></a>
                                                     @else
-                                                    <a href="{{route('inactive.banner',$banner->id)}}" class="btn btn-warning" style="width:5rem" title="Inactive"><i class="fa fa-lock"></i></a>
+                                                    <a href="{{route('inactive.banner',$banner->id)}}" class="btn btn-warning mt-2" style="width:5rem" title="Inactive"><i class="fa fa-lock"></i></a>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -82,7 +92,7 @@
                                                 @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="">
 
                                                 <label for="firstName5"> Banner Image :</label>
                                                 <div class="input-group">

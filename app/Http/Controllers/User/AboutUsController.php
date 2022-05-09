@@ -8,6 +8,7 @@ use App\Models\OurTeam;
 use App\Models\Tour;
 use App\Models\ChooseUs;
 use App\Models\TermsandCondition;
+use App\Models\AboutUs;
 
 
 class AboutUsController extends Controller
@@ -17,6 +18,11 @@ class AboutUsController extends Controller
        $getallteam=OurTeam::orderBy('id','desc')->where('status','=','1')->paginate(8);
       //  dd($getallteam);
        return view('frontend.aboutus.allteam',compact('getallteam'));
+   }
+   public function Introduction()
+   {
+         $introduction=AboutUs::first();
+         return view('frontend.aboutus.introduction.introduction',compact('introduction'));
    }
 
    public function TeamDetails($name)

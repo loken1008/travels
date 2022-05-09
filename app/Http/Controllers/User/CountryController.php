@@ -6,14 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\Tour;
+use App\Models\Place;
 
 
 class CountryController extends Controller
 {
     public function countryDetails($country_name)
     {
-        $getcountrydetails=Country::where('country_name',$country_name)->first();
+        $getcountrydetails=Country::with('place')->where('country_name',$country_name)->first();
         $gettour=Tour::with('country','place','category')->where('country_id',$getcountrydetails->id)->where('status','=','1')->get();
         return view('frontend.country.countrydetails',compact('getcountrydetails','gettour'));
+    }
+
+    public function placeDetails($place_name)
+    {
+        $getplacedetails=Place::with('tour')->where('place_name',$place_name)->first();
+        return view('frontend.country.placedetails',compact('getplacedetails'));
     }
 }

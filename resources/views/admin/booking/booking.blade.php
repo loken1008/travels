@@ -35,7 +35,7 @@ $route=Route::current()->getName();
                                             @forelse($getbooking as $booking)
                                             <tr>
                                                 <td>{{$booking->tour->tour_name}}</td>
-                                                <td>{{$booking->fullname}}</td>
+                                                <td>{{$booking->first_name}} {{$booking->last_name}}</td>
                                                 <td>{{$booking->address}}</td>
                                                 <td>{{$booking->arrival_date}}</td>
                                               

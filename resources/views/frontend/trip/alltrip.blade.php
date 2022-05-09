@@ -32,7 +32,13 @@
                            
                             <div class="post-title-box">
                                 <div class="price-box">
-                                    <h5><span>$</span>{{$tourdetails->main_price}}</h5>
+                                    @if($getcoupon)
+                                    <h5 class="text-danger"><strike><span>$</span>{{ $tourdetails->main_price }}</strike></h5>
+                                    <h5><span>$</span>{{ $tourdetails->main_price-($getcoupon->discount_amount/100*$tourdetails->main_price)}}</h5>
+
+                                    @else
+                                    <h5><span>$</span>{{ $tourdetails->main_price }}</h5>
+                                    @endif
                                     {{-- <h6>Starts From</h6> --}}
                                 </div>
                                 <div class="title-box">
@@ -47,7 +53,7 @@
                                 {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
                                 <li><a href="{{route('tourmap',$tourdetails->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
                             </ul>
-                            <p>{!!Str::limit($tourdetails->description,150)!!}</p>
+                            <p>{!!Str::limit($tourdetails->description,150,'.')!!}</p>
                             {{-- <div class="small-hotel">
                                 <div class="text">
                                     <h6>Hotels to Stay</h6>

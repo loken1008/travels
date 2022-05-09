@@ -6,11 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Authenticatable
+class Customer extends Authenticatable
 {
     use HasFactory;
-
-    protected $fillable=['name','email','password','admin_type','remember_token'];
-
-    protected $guard = 'admin';
+    protected $guarded=[];
 }

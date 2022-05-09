@@ -27,10 +27,36 @@
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/imageupload.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link href="images/favicon.png" rel="shortcut icon" type="image/png">
-
+    @if(!empty($sitesetting->logo))
+    <link href="{{$sitesetting->logo}}" rel="shortcut icon" type="image/png">
+    @endif
+<style>
+  .view-gallery .read-btn {
+    background-color: #255669;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    bottom: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 16px 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+  }
+</style>
   </head>
 
 <body>
@@ -61,8 +87,7 @@ Main JavaScript
 <script src="{{asset('frontend/js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('frontend/js/popper.min.js')}}"></script>
 <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-
-
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <!-- Optional JavaScript -->
 <script src="{{asset('frontend/js/bootstrap-dropdownhover.min.js')}}"></script>
 <script src="{{asset('frontend/js/bootstrap-slider.js')}}"></script>
@@ -89,5 +114,27 @@ Main JavaScript
   })();
   </script>
   <!--End of Tawk.to Script-->
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script>
+      @if (Session::has('message'))
+          var type="{{ Session::get('alert-type', 'info') }}"
+          switch(type){
+          case 'info':
+          toastr.info("{{ Session::get('message') }}");
+          break;
+      
+          case 'success':
+          toastr.success("{{ Session::get('message') }}");
+          break;
+          case 'warning':
+          toastr.warning("{{ Session::get('message') }}");
+          break;
+          case 'error':
+          toastr.error("{{ Session::get('message') }}");
+          break;
+          }
+      @endif
+  </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h4>{{ $getTourdetails->category->category_name }}</h4>
-                        <h5 style="color:white">{{$getTourdetails->tour_name}}</h5>
+                        <h5 style="color:white">{{ $getTourdetails->tour_name }}</h5>
                     </div>
                 </div>
             </div>
@@ -25,10 +25,16 @@
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getTourdetails->mainImage }}" alt="" style="width:1110px;height:420px">
-                          
+
                             <div class="post-title-box">
                                 <div class="price-box">
+                                    @if($getcoupon)
+                                    <h5 class="text-danger"><strike><span>$</span>{{ $getTourdetails->main_price }}</strike></h5>
+                                    <h5><span>$</span>{{ $getTourdetails->main_price-($getcoupon->discount_amount/100*$getTourdetails->main_price)}}</h5>
+
+                                    @else
                                     <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
+                                    @endif
                                     {{-- <h6><span>Starts From</span>{{$getTourDetails->dateprice->start_date}}</h6> --}}
                                 </div>
                                 <div class="title-box">
@@ -76,9 +82,12 @@
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#map" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Map</a>
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#fqa" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">FQA</a>
 
 
                                             </div>
@@ -88,18 +97,21 @@
                                             <div class="tab-pane fade show " id="plc-asia" role="tabpanel"
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
-                                                    @foreach ($getTourdetails->itinerary as $itinerary)
-                                                        <div class="content" >
-
-                                                            <a data-toggle="collapse" style="justify-content:space-between" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="d-flex"><h5 class="font-weight-bold">{{ $itinerary->day_title }}
-                                                            </h5 ><span><i class="fa fa-plus"></i></span></a>
-                                                            <div class="collapse" id="collapseExample">
-                                                                <p class="text-justify collapse" style="color:black !important"  >
-                                                                    {!! $itinerary->long_description !!}</p>
-                                                            </div>
-
-                                                            
-
+                                                    @foreach ($getTourdetails->itinerary as $itin)
+                                                        <a href="#" data-toggle="collapse"
+                                                            data-target="#collapseExample1{{ $itin->id }}"
+                                                            aria-expanded="false" aria-controls="collapseExample"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            class="d-flex">
+                                                            <h5 class="font-weight-bold">{{ $itin->day_title }}
+                                                            </h5><span><i class="fa fa-plus"></i></span>
+                                                        </a>
+                                                        <div class="collapse"
+                                                            id="collapseExample1{{ $itin->id }}">
+                                                            <p class="text-justify "
+                                                                style="color:black !important;padding:10px !important">
+                                                                {!! $itin->long_description !!}
+                                                            </p>
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -124,17 +136,21 @@
                                                 aria-labelledby="equipment-tab">
                                                 @foreach ($getTourdetails->equipment as $equipment)
                                                     <div class="item">
-                                                        <div class="special-places">
-                                                            <div class="content">
-
-                                                                <h3 class="font-weight-bold">
-                                                                    {{ $equipment->equipment_name }}
-                                                                </h3>
-                                                                <p class="text-justify" style="color:black !important">
-                                                                    {!! $equipment->equipment_description !!}</p>
-
-                                                            </div>
-                                                        </div>
+                                                                    <a href="#" data-toggle="collapse"
+                                                                    data-target="#collapseExample2{{ $equipment->id }}"
+                                                                    aria-expanded="false" aria-controls="collapseExample"
+                                                                    style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                                    class="d-flex">
+                                                                    <h5 class="font-weight-bold">{{ $equipment->equipment_name }}
+                                                                    </h5><span><i class="fa fa-plus"></i></span>
+                                                                </a>
+                                                                <div class="collapse"
+                                                                    id="collapseExample2{{ $equipment->id }}">
+                                                                    <p class="text-justify "
+                                                                        style="color:black !important;padding:10px !important">
+                                                                        {!! $equipment->equipment_description !!}
+                                                                    </p>
+                                                                </div>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -163,14 +179,16 @@
                                                                     <td>{{ $dateprice->seats_available }}</td>
                                                                     <td>{{ $dateprice->price }}</td>
                                                                     <td> <a style="background-color: #255669;
-                                                                        border: 2px solid #255669;
-                                                                        border-radius: 50px;
-                                                                        color: #fff;
-                                                                        display: inline-block;
-                                                                        /* float: right; */
-                                                                        font-weight: 600;
-                                                                        padding: 7px 18px;
-                                                                        vertical-align: top;" href="{{route('booking',$getTourdetails->tour_name)}}">Booking Now</a>
+                                                                                    border: 2px solid #255669;
+                                                                                    border-radius: 50px;
+                                                                                    color: #fff;
+                                                                                    display: inline-block;
+                                                                                    /* float: right; */
+                                                                                    font-weight: 600;
+                                                                                    padding: 7px 18px;
+                                                                                    vertical-align: top;"
+                                                                            href="{{ route('booking', $getTourdetails->tour_name) }}">Booking
+                                                                            Now</a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
@@ -218,27 +236,55 @@
                                                 </div>
                                             </div>
                                             <!-- item end -->
-                                             <!-- item start -->
-                                             <div class="tab-pane fade show " id="map" role="tabpanel"
-                                             aria-labelledby="map-tab">
-                                             
-                                                 <div class="item">
-                                                     <div class="special-places">
-                                                         <div class="content">
 
-                                                            <iframe src="{{$getTourdetails->map_url}}" width="100%" height="600" frameborder="0"></iframe>
+                                            <!-- item start -->
+                                            <div class="tab-pane fade show " id="map" role="tabpanel"
+                                                aria-labelledby="map-tab">
 
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                         </div>
-                                         <!-- item end -->
+                                                <div class="item">
+                                                    <div class="special-places">
+                                                        <div class="content">
+
+                                                            <iframe src="{{ $getTourdetails->map_url }}" width="100%"
+                                                                height="600" frameborder="0"></iframe>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- item end -->
+
+                                            <!-- item start -->
+                                            <div class="tab-pane fade show " id="fqa" role="tabpanel"
+                                                aria-labelledby="fqa-tab">
+
+                                                <div class="item">
+                                                    @foreach ($getTourdetails->fqa as $fqas)
+                                                        <a href="#" class="d-flex"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            data-toggle="collapse"
+                                                            data-target="#collapseExample{{ $fqas->id }}"
+                                                            aria-expanded="false" aria-controls="collapseExample">
+                                                            <h6 class="font-weight-bold">{{ $fqas->question }}</h6>
+                                                            <span><i class="fa fa-plus"></i></span>
+                                                        </a>
+                                                        <div class="collapse"
+                                                            id="collapseExample{{ $fqas->id }}">
+                                                            <p class="text-justify "
+                                                                style="color:black !important;padding:10px">
+                                                                {!! $fqas->answer !!}
+                                                            </p>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            <!-- item end -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-            
+
                             <!-- Latest Hotel Section Start -->
                             <section class="latest-hotel-sec pt-85 pb-80">
                                 <div class="container">
@@ -268,7 +314,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @empty
+                                                @empty
                                                     <p class="text-center">No Hotel Found</p>
                                                 @endforelse
                                             </div>
@@ -279,11 +325,12 @@
                             <!-- Latest Hotel Section End -->
                             <div class="d-flex">
                                 <h5 class="share-btn"> Share </h5>
-                                      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                      <div class="addthis_inline_share_toolbox_mi34"></div>
+                                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                <div class="addthis_inline_share_toolbox_mi34"></div>
                             </div>
-                          
-                            <a class="btn-theme" href="{{route('booking',$getTourdetails->tour_name)}}">Booking Now</a>
+
+                            <a class="btn-theme" href="{{ route('booking', $getTourdetails->tour_name) }}">Booking
+                                Now</a>
                         </div>
                     </div>
                 </div>
@@ -388,6 +435,6 @@
     </section>
     <!-- Client Section End -->
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 
 @endsection

@@ -21,33 +21,34 @@
                                     <thead>
                                         <tr>
                                             <th>Gallery Title</th>
-                                            <th>Image</th>
-                                            <th>Status</th>
+                                            <th>Cover Image</th>
+                                            {{-- <th>Status</th> --}}
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse($gallerys as $gallery)
                                             <tr>
-                                                <td>{{ $gallery->title }}</td>
+                                                <td>{{ $gallery->gallery_title }}</td>
                                                 <td><img src="{{asset($gallery->cover_image)}}"
                                                         style="height:100px;width:100px" alt="">
                                                     </td>
-                                                    <td>
+                                                    {{-- <td>
                                                     @if($gallery->status==  1)
                                                     <span class="badge badge-info">Active</span>
                                                     @else 
                                                     <span class="badge badge-danger">Inactive</span>
                                                     @endif
-                                                    </td>
+                                                    </td> --}}
                                                 <td>
+                                                    <a href="{{route('view.gallery',$gallery->id)}}" class="btn btn-primary" style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
                                                     <a href="{{route('edit.gallery',$gallery->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                    <a href="{{route('delete.gallery',$gallery->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
-                                                    @if($gallery->status==1)
+                                                    <a href="{{route('delete.gallery',$gallery->id)}}" class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
+                                                    {{-- @if($gallery->status==1)
                                                     <a href="{{route('active.gallery',$gallery->id)}}" class="btn btn-primary" style="width:5rem" title="Active"><i class="fa fa-unlock"></i></a>
                                                     @else
                                                     <a href="{{route('inactive.gallery',$gallery->id)}}" class="btn btn-warning" style="width:5rem" title="Inactive"><i class="fa fa-lock"></i></a>
-                                                    @endif
+                                                    @endif --}}
                                                 </td>
                                             </tr>
                                         @empty
@@ -76,14 +77,13 @@
                                             <div class="form-group">
                                                 <h5>Gallery Title<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" name="title" class="form-control">
-                                                    @error('title')
+                                                    <input type="text" name="gallery_title" class="form-control">
+                                                    @error('gallery_title')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
-
+                                            <div>
                                                 <label for="firstName5"> Cover Image :</label>
                                                 <div class="input-group">
                                                     <span class="input-group-btn">
@@ -100,21 +100,20 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="col-md-12">
-
+                                            <div>
                                                 <label for="firstName5"> Related Images :</label>
                                                 <div class="input-group">
                                                     <span class="input-group-btn">
-                                                        <a id="blfm" data-input="mainthumbnail" data-preview="holder"
+                                                        <a id="lfm" data-input="mainthumbnails" data-preview="holder"
                                                             class="btn btn-primary">
                                                             <i class="fa fa-picture-o"></i> Choose
                                                         </a>
                                                     </span>
-                                                    <input id="mainthumbnail" class="form-control" type="text" name="images">
+                                                    <input id="mainthumbnails" class="form-control" type="text" name="gallery_image">
                 
                                                 </div>
                                                 <img id="holder1" style="margin-top:15px;max-height:100px;">
-                                                @error('images')
+                                                @error('gallery_image')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -139,6 +138,12 @@
     <script>
         var route_prefix = "/laravel-filemanager";
         $('#blfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
+     <script>
+        var route_prefix = "/laravel-filemanager";
+        $('#lfm').filemanager('images', {
             prefix: route_prefix
         });
     </script>

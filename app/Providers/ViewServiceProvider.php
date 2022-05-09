@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Providers;
-use App\Models\Category;
-use App\Models\Country;
-use App\Models\Place;
 use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Category;
+use App\Models\Country;
+use App\Models\Place;
+use App\Models\SiteSetting;
+use App\Models\Coupon;
+use Carbon\Carbon;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -31,10 +34,15 @@ class ViewServiceProvider extends ServiceProvider
         $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
         // dd($category);
         $place = Place::orderBy('place_name', 'asc')->get();
+        $sitesetting=SiteSetting::orderBy('id','desc')->first();
+
+        $getdate=Carbon::now()->format('Y-m-d');
+        $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
          View::share('country', $country);
          View::share('category', $category);
          View::share('place', $place);
-
+         View::share('sitesetting', $sitesetting);
+         View::share('getcoupon', $getcoupon);
          Paginator::useBootstrap();
     }
 }

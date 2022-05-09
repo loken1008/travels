@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TourController extends Controller
 {
+   
     public function viewTour()
     {
         $gettour=Tour::with('images','category','subcategory')->orderBy('id','desc')->get();

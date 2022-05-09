@@ -9,11 +9,14 @@ class Booking extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tour_id', 'fullname', 'email', 'address', 'post_code', 'telephone', 'mobile', 'country', 'number_people', 'arrival_date', 'departure_date', 'message',
+        'customer_id', 'tour_id', 'first_name', 'last_name', 'email', 'address', 'post_code', 'telephone', 'mobile', 'country', 'number_people', 'arrival_date', 'departure_date', 'message',
     ];
-
     public function tour()
     {
         return $this->belongsTo(Tour::class);
+    }
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 }

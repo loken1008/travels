@@ -23,7 +23,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Full Name :</label>
-                                <span>@if(!empty($detailshotel->fullname)){{ $detailshotel->fullname}}@endif</span>
+                                <span>@if(!empty($detailshotel->first_name)){{ $detailshotel->first_name}} {{ $detailshotel->last_name}}@endif</span>
                             </div>
                         </div>
                         <div class="col-md-6">

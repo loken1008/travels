@@ -83,7 +83,7 @@
         $(function() {
             $('.team-input').change(function(e) {
                 e.preventDefault();
-                var status = $(this).prop('checked') == true ? 1 : 0;
+                var status = $(this).prop('checked') == true ? '1' : '0';
                 var team_id = $(this).data('id');
                 Swal.fire({
                     title: 'Are you sure?',
@@ -100,7 +100,7 @@
                         $.ajax({
                             type: "GET",
                             dataType: "json",
-                            url: '/ourteam/changeStatus',
+                            url: '/aboutus/ourteam/changeStatus',
                             data: {
                                 'status': status,
                                 'team_id': team_id
@@ -111,11 +111,11 @@
                                     'Status has been changed.',
                                     'success',
                                 )
-                                // window.location.href = '/ourteam'
+                                window.location.href = '/aboutus/all/ourteam'
                             }
                         });
                     } else {
-                        // window.location.href = '/ourteam'
+                        window.location.href = '/aboutus/all/ourteam'
                     }
                 })
 

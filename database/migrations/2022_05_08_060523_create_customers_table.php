@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookingsTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('tour_id');
-            $table->string('fullname');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email');
+            $table->string('password');
             $table->string('address');
-            $table->string('post_code');
-            $table->string('telephone');
             $table->string('mobile');
             $table->string('country');
-            $table->string('number_people');
-            $table->string('arrival_date');
-            $table->string('departure_date');
-            $table->longText('message');
+            $table->string('image')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->string('provider')->nullable();
+            $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }
@@ -38,6 +38,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('customers');
     }
 }

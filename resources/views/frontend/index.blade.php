@@ -18,11 +18,22 @@
 
                 <!-- Item Slide -->
                 @foreach ($getbanner as $banner)
-                    <div class="carousel-item {{$loop->first?'active':''}}">
+                <?php
+                $file_extension = substr(strrchr($banner->banner_image ,'.'),1);
+                $file_extension = strtolower($file_extension);
+            ?>
+               
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
 
                         <!-- Slide Background -->
+                        @if ($file_extension == "mp4")
+                        <video class="slide-video" autoplay loop muted>
+                            <source src="{{asset($banner->banner_image)}}" type="video/mp4">
+                        </video>
+                        @else
                         <img src="{{ $banner->banner_image }}" alt="Slider Images" class="slide-image"
                             style="width:1905px;height:750px" />
+                        @endif
                         <div class="bs-slider-overlay"></div>
 
                         <div class="container">
@@ -32,12 +43,12 @@
                                     <h2>{{ $banner->title }}</h2>
                                 </div>
                                 <!-- Package Box -->
-                               @if($getcoupon)
-                                <div class="package-box">
-                                    <h1><span>{{$getcoupon->discount_amount}}%</span> off</h1>
-                                    <h4>on all package</h4>
-                                    <h4>{{$getcoupon->coupon_name}}</h4>
-                                </div>
+                                @if ($getcoupon)
+                                    <div class="package-box">
+                                        <h1><span>{{ $getcoupon->discount_amount }}%</span> off</h1>
+                                        <h4>on all package</h4>
+                                        <h4>{{ $getcoupon->coupon_name }}</h4>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -141,7 +152,14 @@
                                                         </div>
                                                         <div class="content">
                                                             <div class="price-box">
+                                                                {{-- <h5><span>$</span>{{ $tour->main_price }}</h5> --}}
+                                                                @if($getcoupon)
+                                                                <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
+                                                                <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
+                            
+                                                                @else
                                                                 <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                                @endif
                                                             </div>
                                                             <div class="title-box">
                                                                 <h4>{{ $tour->tour_name }}</h4>
@@ -152,9 +170,11 @@
                                                                             class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                                         Days</a></li>
                                                                 {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
-                                                <li><a href="{{route('tourmap',$tour->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
+                                                                <li><a href="{{ route('tourmap', $tour->tour_name) }}"><i
+                                                                            class="fa fa-map-marker"></i>View on Map</a>
+                                                                </li>
                                                             </ul>
-                                                            <p>{!! Str::limit($tour->description, 200) !!}</p>
+                                                            <p>{!! Str::limit($tour->description, 200,'.') !!}</p>
                                                             <a class="btn-theme" style="float:left !important"
                                                                 href="{{ route('booking', $tour->tour_name) }}">Booking
                                                                 Now</a>
@@ -192,18 +212,19 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($chooseus as $choose)
-                <div class="col-md-4">
-                    <div class="feature-item">
-                        <div class="icon-box">
-                         <img src="{{$choose->image}}" style="height: 50px;width:50px;border-radius:20px" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="#">{{$choose->title}}</a></h3>
-                            <p>{!!Str::limit($choose->description,200)!!}</p>
+                @foreach ($chooseus as $choose)
+                    <div class="col-md-4">
+                        <div class="feature-item">
+                            <div class="icon-box">
+                                <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:20px"
+                                    alt="">
+                            </div>
+                            <div class="content">
+                                <h3><a href="#">{{ $choose->title }}</a></h3>
+                                <p>{!! Str::limit($choose->description, 200) !!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -230,12 +251,19 @@
                                     <div class="item">
                                         <div class="special-packages">
                                             <div class="thumb">
-                                              <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img src="{{ $tour->mainImage }}" alt=""
-                                                    style="width:100% !important;height:253px !important"></a> 
-                                            
+                                                <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img
+                                                        src="{{ $tour->mainImage }}" alt=""
+                                                        style="width:100% !important;height:253px !important"></a>
+
                                                 <div class="post-title-box">
                                                     <div class="price-box">
+                                                        @if($getcoupon)
+                                                        <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
+                                                        <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
+                    
+                                                        @else
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                        @endif
                                                     </div>
                                                     <div class="title-box">
                                                         <h4>{{ $tour->tour_name }}</h4>
@@ -248,10 +276,11 @@
                                                 <ul class="info">
                                                     <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                             Days</a></li>
-                                                    <li><a href="{{route('tourmap',$tour->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
+                                                    <li><a href="{{ route('tourmap', $tour->tour_name) }}"><i
+                                                                class="fa fa-map-marker"></i>View on Map</a></li>
 
                                                 </ul>
-                                                <p>{!! Str::limit($tour->description, 200) !!}</p>
+                                                <p>{!! Str::words($tour->description, 30,'.') !!}</p>
                                                 <a class="btn-theme" style="float:left !important"
                                                     href="{{ route('booking', $tour->tour_name) }}">Booking Now</a>
                                                 <a class="btn-theme"
@@ -385,31 +414,12 @@
     <section class="global-section over-layer-white pt-80 pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7 col-lg-12">
-                    <div class="global-area">
-                        <div class="inner-title">
-                            <h2>Now We Are Globaly Everywhare</h2>
-                            <h3>Discover vestibulum <span>pharetra orci turpis</span>, ut interdum </h3>
-                            <div class="sec-line"></div>
-                        </div>
-                        <p>Pellentesque consectetur condimentum libero, interdum aliquet enim sollic tudin ut. Donec dapibus
-                            tempor odio eu aliquet. Vivamus ultricies augue ut.</p>
-                        <h4>Condimentum at sed sapien:</h4>
-                        <ul>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                        </ul>
-                    </div>
+                <div class="col-xl-12 col-lg-12">
+
+                    <div class="elfsight-app-cd2cc895-2ad1-48aa-9c0c-afdba58dc4c5"></div>
+
                 </div>
-                <div class="col-xl-5 col-lg-8 col-md-10">
-                    <div class="map-area">
-                        <img src="{{ asset('frontend/images/photos/map01.png') }}" alt="image">
-                    </div>
-                    <p class="map-content">Discover vestibulum <span class="color-light">Call:</span>
-                        <span>+88095085363</span>, ut interdum </p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -420,110 +430,42 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="section-title">
-                    <h4>Mountain Guide Trek Gallery</h4>
-                    <h2>Touran <span>Tour</span> Gallery</h2>
-                    <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
+                    <h2>Mountain Guide <span>Tour</span> Gallery</h2>
                 </div>
             </div>
+
             <div class="row gallery-items">
-                <div class="col-sm-4 col-grid">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/1.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/1.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
+                @foreach ($gallery as $gal)
+                    <div class="col-sm-4 col-grid">
+                        <div class="gallery-item">
+                            <div class="thumb">
+                                <img src="{{ $gal->cover_image }}" alt="image" style="width:634px;height:518px">
+                                <div class="overlay">
+                                    <div class="inner">
+                                        <a href="{{ $gal->cover_image }}" class="icon lightbox-image">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                        <h4>{{ $gal->gallery_title }}</h4>
+                                        <p>Tour, Travel</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4 col-grid col-center">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/2.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/2.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-grid">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/3.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/3.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-grid">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/4.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/4.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-grid col-center">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/5.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/5.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-grid">
-                    <div class="gallery-item">
-                        <div class="thumb">
-                            <img src="{{ asset('frontend/images/gallery/6.jpg') }}" alt="image">
-                            <div class="overlay">
-                                <div class="inner">
-                                    <a href="{{ asset('frontend/images/gallery/6.jpg') }}" class="icon lightbox-image">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                    <h4>Beautiful Nature</h4>
-                                    <p>Tour, Travel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
+
+            </div>
+            <div class="row">
+                <div class="view-gallery ">
+                    <a href="{{ route('allgallery') }}" class="read-btn" style="">All Gallery
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
+
         </div>
+
+
     </section>
     <!-- Gallery Section End -->
 
@@ -566,37 +508,39 @@
                 </div>
             </div>
             <div class="row">
-               @forelse($getblogs as $blog)
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-post">
-                        <div class="thumb">
-                            <img alt="" src="{{ $blog->blog_image}}" style="width:348px;height:442px">
-                            <div class="content">
-                                <h3>{{$blog->blog_title}}</h3>
-                                <div class="meta-box">
-                                    <div class="admin-post"> {{$blog->author_name}} </div>
-                                    <div class="inner">
-                                        <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i> {{$blog->created_at->format('M d')}}
+                @forelse($getblogs as $blog)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-post">
+                            <div class="thumb">
+                                <img alt="" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
+                                <div class="content">
+                                    <h3>{{ $blog->blog_title }}</h3>
+                                    <div class="meta-box">
+                                        <div class="admin-post"> {{ $blog->author_name }} </div>
+                                        <div class="inner">
+                                            <div class="date">
+                                                <i class="fa fa-calendar-plus-o"></i>
+                                                {{ $blog->created_at->format('M d') }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <a href="{{ route('blogsdetails', $blog->blog_title) }}" class="read-btn">Continue
+                                Reading
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <a href="{{route('blogsdetails',$blog->blog_title)}}" class="read-btn">Continue Reading
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
                     </div>
-                </div>
-              @empty 
-              <h4 style="text-align:center !important">No Blog Available</h4>
+                @empty
+                    <h4 style="text-align:center !important">No Blog Available</h4>
                 @endforelse
             </div>
         </div>
     </section>
     <!-- Blog Section End -->
 
-   
+
 
     <!-- Client Section Start -->
     <section class="client-section bg-f8 pb-70 pt-70">

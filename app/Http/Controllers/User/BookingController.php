@@ -6,6 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tour;
 use App\Models\Booking;
+use App\Models\Admin;
+// use App\Notifications\BookingNotification;
+use App\Events\BookingNotification;
+use Notification;
+use Mail;
+use App\Mail\BookingMail;
+use Auth;
+
 
 class BookingController extends Controller
 {
@@ -20,7 +28,8 @@ class BookingController extends Controller
    public function storeBooking(Request $request)
    {
          $request->validate([
-              'fullname'=>'required',
+              'first_name'=>'required',
+               'last_name'=>'required',
               'email'=>'required',
               'address'=>'required',
               'post_code'=>'required',
@@ -31,11 +40,16 @@ class BookingController extends Controller
               'arrival_date'=>'required',
               'departure_date'=>'required',
               'message'=>'required',
-              'g-recaptcha-response' => 'required|captcha',
+            //   'g-recaptcha-response' => 'required|captcha',
          ]);
          $booking=new Booking();
+         if(Auth()->guard('customer')->check()){
+         $booking->customer_id=Auth::guard('customer')->user()->id;
+         }
+         
          $booking->tour_id=$request->tour_id;
-         $booking->fullname=$request->fullname;
+         $booking->first_name=$request->first_name;
+         $booking->last_name=$request->last_name;
          $booking->email=$request->email;
          $booking->address=$request->address;
          $booking->post_code=$request->post_code;
@@ -47,6 +61,28 @@ class BookingController extends Controller
          $booking->departure_date=$request->departure_date;
          $booking->message=$request->message;
          $booking->save();
-         return redirect()->back()->with('success','Booking Successfully');
+         // event(new BookingNotification($booking));
+         $getbooking=Booking::with('tour')->orderBy('id','desc')->first();
+          $tourbooking=[
+          'tour_name'=>$getbooking->tour->tour_name,
+          'first_name'=>$getbooking->first_name,
+            'last_name'=>$getbooking->last_name,
+          'email'=>$getbooking->email,
+          'address'=>$getbooking->address,
+          'telephone'=>$getbooking->telephone,
+          'mobile'=>$getbooking->mobile,
+          'country'=>$getbooking->country,
+          'number_people'=>$getbooking->number_people,
+          'arrival_date'=>$getbooking->arrival_date,
+          'departure_date'=>$getbooking->departure_date,
+          'message'=>$getbooking->message,
+          ];
+         
+         Mail::to('lokenchand260@gmail.com')->send(new BookingMail($tourbooking));
+         $notification=array(
+            'message'=>'You Sucessfully Book Your Trip',
+            'alert-type'=>'success'
+        );
+         return redirect()->back()->with($notification);
    }
 }

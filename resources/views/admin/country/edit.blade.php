@@ -23,15 +23,15 @@
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="firstName5">Start Price :</label>
                                     <input type="text" class="form-control" id="firstName5" value="{{$editcountry->start_price}}" name="start_price">
                                     @error('start_price')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
-                                </div>
+                                </div> --}}
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                                 <label for="firstName5"> Country Image :</label>
                                 <div class="input-group">

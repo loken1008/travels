@@ -4641,6 +4641,7 @@ Inner Css Style
     font-weight: 600;
     letter-spacing: 0.9px;
     text-transform: uppercase;
+    margin-top:100px;
 }
 
 .inner-area p {
