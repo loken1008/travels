@@ -52,7 +52,7 @@ public function IntroductionUpdate(Request $request,$id)
 {
     $request->validate([
         'aboutus_title'=>'required',
-            'aboutus_description'=>'required',
+     'aboutus_description'=>'required',
     ]);
     $aboutus_image=AboutUs::findOrfail($id);
     AboutUs::where('id',$id)->update([
@@ -96,6 +96,7 @@ public function IntroductionUpdate(Request $request,$id)
                 'description'=>'required',
                 'type'=>'required'
             ]);
+          
             TermsandCondition::insert([
                 'title'=>$request->title,
                 'description'=>$request->description,
@@ -201,7 +202,7 @@ public function ChooseUpdate(Request $request,$id)
     // Our Team
     public function TeamView()
     {
-        $ourteam=OurTeam::orderBy('id','desc')->where('status',1)->get();
+        $ourteam=OurTeam::orderBy('id','desc')->get();
         return view('admin.aboutus.team.team-view',compact('ourteam'));
     }
 

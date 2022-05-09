@@ -1,3 +1,8 @@
+@php
+  $user_id = Auth::user()->id;
+// dd($user_id);
+  $data = array('user_id' => $user_id);
+@endphp
 <header class="main-header">
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top pl-30">
@@ -136,3 +141,26 @@
         </div>
     </nav>
 </header>
+
+     <!-- receive notifications -->
+     <script src="{{ asset('js/echo.js') }}"></script>
+  
+     <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+           
+         <script>
+           Pusher.logToConsole = true;
+           
+           window.Echo = new Echo({
+             broadcaster: 'pusher',
+             key: 'c91c1b7e8c6ece46053b',
+             cluster: 'ap2',
+             encrypted: true,
+             logToConsole: true
+           });
+           
+           Echo.private('user.{{ $user_id }}')
+           .listen('BookingNotification', (e) => {
+               alert(e.message.message);
+           });
+         </script>
+     <!-- receive notifications -->

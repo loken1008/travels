@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,16 +20,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index']);
+
 
 
 // auth
-// admin
-Route::get('/admin/login',[App\Http\Controllers\Auth\LoginController::class,'showLoginForm']);
-Route::post('/admin/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('admin.login');
+Route::get('/mountain-guide/login',[App\Http\Controllers\Auth\LoginController::class,'showLoginForm']);
+Route::post('/mountain-guide/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('admin.login');
+Route::middleware(['auth','role:admin'])->group(function () {
+Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin.dashboard');
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('admin.logout');
+// user role and permission
+Route::resource('roles', RoleController::class);
+Route::resource('users', UserController::class);
+Route::resource('permissions', PermissionController::class);
 
-// admin 
 // country
 Route::get('/country',[App\Http\Controllers\Admin\CountryController::class,'viewCountry'])->name('country.view');
 Route::get('/country/create',[App\Http\Controllers\Admin\CountryController::class,'createCountry'])->name('country.create');
@@ -35,7 +42,14 @@ Route::get('/country/edit/{id}',[App\Http\Controllers\Admin\CountryController::c
 Route::post('/country/update/{id}',[App\Http\Controllers\Admin\CountryController::class,'updateCountry'])->name('country.update');
 Route::get('/country/delete/{id}',[App\Http\Controllers\Admin\CountryController::class,'deleteCountry'])->name('country.delete');
 Route::get('/country/changeStatus',[App\Http\Controllers\Admin\CountryController::class,'changeStatus']);
-
+// place
+Route::get('/place',[App\Http\Controllers\Admin\PlaceController::class,'viewPlace'])->name('place.view');
+Route::get('/place/create',[App\Http\Controllers\Admin\PlaceController::class,'createPlace'])->name('place.create');
+Route::post('/place/store',[App\Http\Controllers\Admin\PlaceController::class,'storePlace'])->name('place.store');
+Route::get('/place/edit/{id}',[App\Http\Controllers\Admin\PlaceController::class,'editPlace'])->name('place.edit');
+Route::post('/place/update/{id}',[App\Http\Controllers\Admin\PlaceController::class,'updatePlace'])->name('place.update');
+Route::get('/place/delete/{id}',[App\Http\Controllers\Admin\PlaceController::class,'deletePlace'])->name('place.delete');
+Route::get('/place/changeStatus',[App\Http\Controllers\Admin\PlaceController::class,'changeStatus']);
 // hotel
 Route::get('/hotel',[App\Http\Controllers\Admin\HotelController::class,'viewHotel'])->name('hotel.view');
 Route::get('/hoteldetails/{id}',[App\Http\Controllers\Admin\HotelController::class,'viewHotelDetails'])->name('hotel.viewdetails');
@@ -84,16 +98,10 @@ Route::prefix('subcategory')->group(function(){
     Route::post('/update',[App\Http\Controllers\Admin\SubCategoryController::class,'SubCategoryUpdate'])->name('update.subcategory');
     Route::get('/delete/{id}',[App\Http\Controllers\Admin\SubCategoryController::class,'SubCategoryDelete'])->name('delete.subcategory');
 });
-// place
-Route::get('/place',[App\Http\Controllers\Admin\PlaceController::class,'viewPlace'])->name('place.view');
-Route::get('/place/create',[App\Http\Controllers\Admin\PlaceController::class,'createPlace'])->name('place.create');
-Route::post('/place/store',[App\Http\Controllers\Admin\PlaceController::class,'storePlace'])->name('place.store');
-Route::get('/place/edit/{id}',[App\Http\Controllers\Admin\PlaceController::class,'editPlace'])->name('place.edit');
-Route::post('/place/update/{id}',[App\Http\Controllers\Admin\PlaceController::class,'updatePlace'])->name('place.update');
-Route::get('/place/delete/{id}',[App\Http\Controllers\Admin\PlaceController::class,'deletePlace'])->name('place.delete');
-Route::get('/place/changeStatus',[App\Http\Controllers\Admin\PlaceController::class,'changeStatus']);
+
 
 // tour place
+
 Route::get('/tour',[App\Http\Controllers\Admin\TourController::class,'viewTour'])->name('tour.view');
 // Route::get('/package',[App\Http\Controllers\Admin\TourController::class,'viewPackage'])->name('package.view');
 // Route::get('/activities',[App\Http\Controllers\Admin\TourController::class,'viewActivities'])->name('activities.view');
@@ -113,8 +121,20 @@ Route::get('tour/delete/{id}',[App\Http\Controllers\Admin\TourController::class,
 Route::get('/tour/changeStatus',[App\Http\Controllers\Admin\TourController::class,'changeStatus']);
 Route::get('/tour/place/ajax/{category_id}',[App\Http\Controllers\Admin\TourController::class,'getPlace']);
 
+// Admin fqa all route
+Route::prefix('fqa')->group(function(){
+    Route::get('/view',[App\Http\Controllers\Admin\FQAController::class,'FQAView'])->name('all.fqa');
+    Route::get('/viewdetails/{id}',[App\Http\Controllers\Admin\FQAController::class,'FQAViewDetails'])->name('view.fqa');
+    Route::post('/store',[App\Http\Controllers\Admin\FQAController::class,'FQAStore'])->name('store.fqa');
+    Route::get('/edit/{id}',[App\Http\Controllers\Admin\FQAController::class,'FQAEdit'])->name('edit.fqa');
+    Route::post('/update/{id}',[App\Http\Controllers\Admin\FQAController::class,'FQAUpdate'])->name('update.fqa');
+    Route::get('/delete/{id}',[App\Http\Controllers\Admin\FQAController::class,'FQADelete'])->name('delete.fqa');
+Route::get('/changeStatus',[App\Http\Controllers\Admin\FQAController::class,'changeFQAStatus']);
+
+});
+
+
 // coupon
-// place
 Route::get('/coupon',[App\Http\Controllers\Admin\CouponController::class,'viewCoupon'])->name('coupon.view');
 Route::post('/coupon/store',[App\Http\Controllers\Admin\CouponController::class,'storeCoupon'])->name('coupon.store');
 Route::get('/coupon/edit/{id}',[App\Http\Controllers\Admin\CouponController::class,'editCoupon'])->name('coupon.edit');
@@ -133,45 +153,46 @@ Route::prefix('banner')->group(function(){
     Route::get('/delete/{id}',[App\Http\Controllers\Admin\BannerController::class,'BannerDelete'])->name('delete.banner');
 });
 
+
 // Aboutus chooseus
 Route::prefix('aboutus')->group(function(){
 
     // introduction
     Route::get('/introduction',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionView'])->name('all.introduction');
-    Route::get('introduction/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDetails'])->name('view.introduction');
-    Route::post('introduction/store',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionStore'])->name('store.introduction');
-    Route::get('introduction/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionEdit'])->name('edit.introduction');
-    Route::post('introduction/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionUpdate'])->name('update.introduction');
-    Route::get('introduction/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDelete'])->name('delete.introduction');
+    Route::get('/introduction/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDetails'])->name('view.introduction');
+    Route::post('/introduction/store',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionStore'])->name('store.introduction');
+    Route::get('/introduction/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionEdit'])->name('edit.introduction');
+    Route::post('/introduction/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionUpdate'])->name('update.introduction');
+    Route::get('/introduction/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'IntroductionDelete'])->name('delete.introduction');
 
        // termsandconditions
        Route::get('/termsandconditions',[App\Http\Controllers\Admin\AboutUsController::class,'TermsView'])->name('all.termsandconditions');
-       Route::get('termsandconditions/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDetails'])->name('view.termsandconditions');
-       Route::post('termsandconditions/store',[App\Http\Controllers\Admin\AboutUsController::class,'TermsStore'])->name('store.termsandconditions');
-       Route::get('termsandconditions/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsEdit'])->name('edit.termsandconditions');
-       Route::post('termsandconditions/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsUpdate'])->name('update.termsandconditions');
-       Route::get('termsandconditions/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDelete'])->name('delete.termsandconditions');
+       Route::get('/termsandconditions/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDetails'])->name('view.termsandconditions');
+       Route::post('/termsandconditions/store',[App\Http\Controllers\Admin\AboutUsController::class,'TermsStore'])->name('store.termsandconditions');
+       Route::get('/termsandconditions/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsEdit'])->name('edit.termsandconditions');
+       Route::post('/termsandconditions/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsUpdate'])->name('update.termsandconditions');
+       Route::get('/termsandconditions/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TermsDelete'])->name('delete.termsandconditions');
 
     Route::get('/chooseus',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseView'])->name('all.choose');
-    Route::post('chooseus/store',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseStore'])->name('store.choose');
-    Route::get('chooseus/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseEdit'])->name('edit.choose');
-    Route::post('chooseus/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseUpdate'])->name('update.choose');
-    Route::get('chooseus/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseDelete'])->name('delete.choose');
+    Route::post('/chooseus/store',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseStore'])->name('store.choose');
+    Route::get('/chooseus/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseEdit'])->name('edit.choose');
+    Route::post('/chooseus/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseUpdate'])->name('update.choose');
+    Route::get('/chooseus/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'ChooseDelete'])->name('delete.choose');
 
     // our team
-    Route::get('/ourteam',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('all.team');
+    Route::get('/all/ourteam',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('all.team');
     Route::get('/ourteam/create',[App\Http\Controllers\Admin\AboutUsController::class,'TeamCreate'])->name('create.team');
-    Route::post('ourteam/store',[App\Http\Controllers\Admin\AboutUsController::class,'TeamStore'])->name('store.team');
-    Route::get('ourteam/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('view.team');
-    Route::get('ourteam/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamEdit'])->name('edit.team');
-    Route::post('ourteam/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamUpdate'])->name('update.team');
-    Route::get('ourteam/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamDelete'])->name('delete.team');
-    Route::get('ourteam/changeStatus',[App\Http\Controllers\Admin\AboutUsController::class,'TeamChangeStatus']);
+    Route::post('/ourteam/store',[App\Http\Controllers\Admin\AboutUsController::class,'TeamStore'])->name('store.team');
+    Route::get('/ourteam/view/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamView'])->name('view.team');
+    Route::get('/ourteam/edit/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamEdit'])->name('edit.team');
+    Route::post('/ourteam/update/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamUpdate'])->name('update.team');
+    Route::get('/ourteam/delete/{id}',[App\Http\Controllers\Admin\AboutUsController::class,'TeamDelete'])->name('delete.team');
+    Route::get('/ourteam/changeStatus',[App\Http\Controllers\Admin\AboutUsController::class,'TeamChangeStatus']);
 
 
 });
 
-// Admin Banner all route
+// Admin testomonial all route
 Route::prefix('testmonial')->group(function(){
     Route::get('/view',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialView'])->name('all.testmonial');
     Route::post('/store',[App\Http\Controllers\Admin\TestmonialController::class,'TestmonialStore'])->name('store.testmonial');
@@ -190,6 +211,26 @@ Route::prefix('booking')->group(function(){
     Route::get('booking/delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'BookingDelete'])->name('delete.booking');
 });
 
+Route::prefix('gallery')->group(function(){
+    Route::get('/view',[App\Http\Controllers\Admin\GalleryController::class,'GalleryView'])->name('all.gallery');
+    Route::get('/view/details/{id}',[App\Http\Controllers\Admin\GalleryController::class,'GalleryDetails'])->name('view.gallery');
+    Route::post('/store',[App\Http\Controllers\Admin\GalleryController::class,'GalleryStore'])->name('store.gallery');
+    Route::get('/edit/{id}',[App\Http\Controllers\Admin\GalleryController::class,'GalleryEdit'])->name('edit.gallery');
+    Route::post('/update/{id}',[App\Http\Controllers\Admin\GalleryController::class,'GalleryUpdate'])->name('update.gallery');
+    Route::get('/delete/{id}',[App\Http\Controllers\Admin\GalleryController::class,'GalleryDelete'])->name('delete.gallery');
+
+});
+
+Route::prefix('sitesetting')->group(function(){
+    // logo
+    Route::get('/logo',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoView'])->name('all.logo');
+    Route::post('/store/logo',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoStore'])->name('store.logo');
+    Route::get('/edit/logo/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoEdit'])->name('edit.logo');
+    Route::post('/update/logo/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoUpdate'])->name('update.logo');
+    Route::get('/delete/logo/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoDelete'])->name('delete.logo');
+
+});
+
 
 Route::group(['prefix' => '/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -201,10 +242,38 @@ Route::group(['prefix' => 'country/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
+});
+
 
 // frontend
+
+// customer register/login
+Route::get('customer-register',[App\Http\Controllers\Auth\CustomerController::class,'customerRegister'])->name('customer.register');
+Route::post('customer-store',[App\Http\Controllers\Auth\CustomerController::class,'customerStore'])->name('customer.store');
+Route::get('customer-loginform',[App\Http\Controllers\Auth\CustomerController::class,'customerLogin'])->name('customer.login');
+Route::post('customer-storeform',[App\Http\Controllers\Auth\CustomerController::class,'customerLoginStore'])->name('customer-store.login');
+
+
+Route::group(['middleware'=>'customers'], function(){
+
+    Route::get('customer-dashboard',[App\Http\Controllers\User\UserController::class,'CustomerDashboard'])->name('customer.dashboard');
+    Route::get('customer-logout',[App\Http\Controllers\Auth\CustomerController::class,'customerLogout'])->name('customer.logout');
+    // user image upload
+    Route::post('customer-imageupload',[App\Http\Controllers\User\UserController::class,'ImageUpload'])->name('image.store');
+    Route::post('user/profile-update',[App\Http\Controllers\User\UserController::class,'ProfileUpdate'])->name('user.profile.update');
+    Route::post('user/change-password',[App\Http\Controllers\User\UserController::class,'ChangePassword'])->name('user.change.password');
+    Route::get('user/delete-booking/{id}',[App\Http\Controllers\User\UserController::class,'DeleteBooking'])->name('user.delete.booking');
+
+});
+
+
+
+
+
 Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage'])->name('home');
 Route::get('/countrydetails/{country_name}',[App\Http\Controllers\User\CountryController::class,'countryDetails'])->name('countrydetails');
+Route::get('/placedetails/{place_name}',[App\Http\Controllers\User\CountryController::class,'placeDetails'])->name('placedetails');
+
 Route::get('/tourdetails/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourDetails'])->name('tourdetails');
 Route::get('/tourmap/{tour_name}',[App\Http\Controllers\User\IndexController::class,'tourMap'])->name('tourmap');
 Route::get('/hotelviewdetails/{hotel_name}',[App\Http\Controllers\User\IndexController::class,'hotelviewDetails'])->name('hotelviewdetails');
@@ -224,11 +293,16 @@ Route::post('newsletter','App\Http\Controllers\User\NewsletterController@store')
 
 // aboutus our team
 Route::get('/ourteam',[App\Http\Controllers\User\AboutUsController::class,'allTeam'])->name('ourteam');
+Route::get('/introduction',[App\Http\Controllers\User\AboutUsController::class,'Introduction'])->name('introduction');
 Route::get('/ourteam/details/{name}',[App\Http\Controllers\User\AboutUsController::class,'TeamDetails'])->name('ourteam.details');
 Route::get('/travel-with-us',[App\Http\Controllers\User\AboutUsController::class,'travelWithUs'])->name('travelwithus');
 Route::get('/terms-conditions',[App\Http\Controllers\User\AboutUsController::class,'TermsandCondition'])->name('termsconditions');
 Route::get('/privacy-policy',[App\Http\Controllers\User\AboutUsController::class,'PrivacyPolicy'])->name('privacypolicy');
 Route::get('/payment-method',[App\Http\Controllers\User\AboutUsController::class,'PaymentMethod'])->name('paymentmethod');
+
+// gallery
+Route::get('/gallery',[App\Http\Controllers\User\GalleryController::class,'allGallery'])->name('allgallery');
+Route::get('/gallery/details/{gallery_title}',[App\Http\Controllers\User\GalleryController::class,'GalleryDetails'])->name('gallery.details');
 
 
 

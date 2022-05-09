@@ -18,9 +18,14 @@
         </div>
     </section>
     <!-- Inner Section End -->
-
+  
     <!-- Contact Section Start -->
     <section class="contact-section pt-90 pb-20">
+        {{-- @if(Session::has('message'))
+        <div class="alert alert-success text-center">
+            {{ Session::get('message') }}
+        </div>
+        @endif --}}
         <div class="container">
             <div class="row contact-bg">
                 <div class="col-md-12 col-lg-4 p-0">
@@ -55,11 +60,7 @@
                         </div>
                     </div>
                 </div>
-                @if(Session::has('message'))
-                    <div class="alert alert-success">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
+             
                 <div class="col-md-12 col-lg-8 style-2">
 
                     <form class="booking-form" method="POST" action="{{route('store.booking')}}">
@@ -84,13 +85,38 @@
                                     <div class="form-group col-md-12">
                                         <label for="tourName">Tour Name</label>
                                         <input type="text" name="" id="package_name" class="form-control" value="{{$tour->tour_name}}" readonly>
-                                            <input type="hidden" name="tour_id" value="{{$tour->id}}">
+                                         <input type="hidden" name="tour_id" value="{{$tour->id}}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Full Name</label>
-                                        <input type="text" name="fullname" id="fullname" class="form-control" value=""
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->id)
+                                        <input type="hidden" name="customer_id" value="{{Auth()->guard('customer')->user()->id}}">
+                                        @else
+                                        <input type="hidden" name="customer_id" value="">
+                                        @endif
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="tourName">First Name</label>
+                                        @if( Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->first_name)
+                                        <input type="text" name="first_name" id="first_name" class="form-control" value="{{ Auth()->guard('customer')->user()->first_name}}" readonly>
+                                        @else
+                                        <input type="text" name="first_name" id="first_name" class="form-control" value=""
                                             placeholder="Input Full Name">
-                                        @error('fullname')
+                                        @endif
+                                        @error('first_name')
+                                            <span class="text-danger" >
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="tourName">Last Name</label>
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->last_name)
+                                        <input type="text" name="last_name" id="last_name" class="form-control" value="{{ Auth()->guard('customer')->user()->last_name}}" readonly>
+                                        @else
+                                        <input type="text" name="last_name" id="last_name" class="form-control" value=""
+                                            placeholder="Input Full Name">
+                                        @endif
+                                        @error('last_name')
                                             <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -98,8 +124,12 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="tourName">Email</label>
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->email)
+                                        <input type="email" name="email" id="email" class="form-control" value="{{ Auth()->guard('customer')->user()->email}}" readonly>
+                                        @else
                                         <input type="email" name="email" id="email" class="form-control" value=""
                                             placeholder="Input Email">
+                                        @endif
                                         @error('email')
                                             <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
@@ -108,8 +138,12 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="tourName">Address</label>
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->address)
+                                        <input type="text" name="address" id="address" class="form-control" value="{{ Auth()->guard('customer')->user()->address}}" readonly>
+                                        @else
                                         <input type="text" name="address" id="address" class="form-control" value=""
                                             placeholder="Input Address">
+                                        @endif
                                         @error('address')
                                             <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
@@ -138,8 +172,12 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="tourName">Mobile</label>
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->mobile)
+                                        <input type="text" name="mobile" id="mobile" class="form-control" value="{{ Auth()->guard('customer')->user()->mobile}}" readonly>
+                                        @else
                                         <input type="text" name="mobile" id="mobile" class="form-control" value=""
                                             placeholder="Input Mobile">
+                                        @endif
                                         @error('mobile')
                                             <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
@@ -149,8 +187,12 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="tourName">Your Country</label>
+                                        @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->country)
+                                        <input type="text" name="country" id="country" class="form-control" value="{{Auth()->guard('customer')->user()->country}}" readonly>
+                                        @else
                                         <input type="text" name="country" id="country" class="form-control" value=""
                                             placeholder="Input Country">
+                                        @endif
                                         @error('country')
                                             <span class="text-danger" >
                                                 <strong>{{ $message }}</strong>
@@ -196,7 +238,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-12">
+                                    {{-- <div class="form-group col-md-12">
                                       
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
@@ -205,7 +247,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group col-md-6">
                                         <div class="contact-textarea text-center">
                                             <button class="btn btn-theme" type="submit" value="Submit Form">Book
@@ -263,7 +305,7 @@
                                             </li>
 
                                         </ul>
-                                        <p>{!! Str::limit($tour->description, 150) !!}</p>
+                                        <p>{!! Str::words($tour->description,50,'.') !!}</p>
                                         <a class="btn-theme" href="{{ route('tourdetails', $tour->tour_name) }}">View
                                             Details</a>
                                     </div>

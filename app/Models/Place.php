@@ -13,4 +13,9 @@ class Place extends Model
     {
         return $this->belongsTo(Country::class,'country_id');
     }
+
+    public function tour()
+    {
+        return $this->hasMany(Tour::class);
+    }
 }

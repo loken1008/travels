@@ -25,13 +25,13 @@ class CountryController extends Controller
             'country_name'=>'required',
             'description'=>'required',
             'country_image'=>'required',
-            'start_price'=>'required',
+            // 'start_price'=>'required',
         ]);
         $country=Country::Insert([
             'country_name'=>$request->country_name,
             'description'=>$request->description,
             'country_image'=>$request->country_image,
-            'start_price'=>$request->start_price,
+            // 'start_price'=>$request->start_price,
             // 'status'=>0,
             'created_at'=>Carbon::now(),
         ]);
@@ -63,7 +63,7 @@ class CountryController extends Controller
         $request->validate([
             'country_name'=>'required',
             'description'=>'required',
-            'start_price'=>'required',
+            // 'start_price'=>'required',
         ]);
         Country::where('id',$id)->update($request->except('_token'));
         $notification=array(

@@ -22,7 +22,7 @@ class LoginController extends Controller
   public function login(LoginRequest $request)
   {
       $remember_me = $request->has('remember_token') ? true : false;   
-      $admin = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $remember_me);
+      $admin = Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember_me);
       if($admin) {
            return redirect('/dashboard');
       }
@@ -32,7 +32,7 @@ class LoginController extends Controller
 
   public function logout(){
     Session::flush();
-    Auth::guard('admin')->logout();
-    return redirect('/admin/login');
+    Auth::logout();
+    return redirect('/mountain-guide/login');
 }
 }

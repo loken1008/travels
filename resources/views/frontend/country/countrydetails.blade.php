@@ -34,6 +34,15 @@
                                 <div class="title-box">
                                     <h4>{{ $getcountrydetails->country_name }}</h4>
                                 </div>
+                               
+                                <div class=" d-flex">
+                                    @foreach($getcountrydetails->place as $pl)
+                                    @if($pl->status=='1')
+                                    <a href="{{route('placedetails',$pl->place_name)}}"><h5 class="badge badge-pill ml-2" style="background:black;color:white;padding:10px">{{ $pl->place_name }}</h5></a>
+                                    @endif
+                                    @endforeach
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="content">
@@ -45,6 +54,7 @@
                             <p>{!! $getcountrydetails->description !!}</p>
 
                         </div>
+                       
                     </div>
                 </div>
             </div>
@@ -83,7 +93,9 @@
                                                 {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
                                         <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
                                             </ul>
-                                            <p>{!! Str::limit($tour->description, 150) !!}</p>
+                                            <p>{!! Str::limit($tour->description, 150,'.') !!}</p>
+                                            <a class="btn-theme" style="float:left !important"
+                                            href="{{ route('booking', $tour->tour_name) }}">Booking Now</a>
                                             <a class="btn-theme"
                                                 href="{{ route('tourdetails', $tour->tour_name) }}">View Details</a>
                                         </div>

@@ -10,11 +10,13 @@
                         <hr>
                         <h6>Follow<span> Us</span></h6>
                         <ul class="social-icon bg-transparent bordered-theme">
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            @if($sitesetting)
+                            <li><a href="{{$sitesetting->twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="{{$sitesetting->instagram}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="{{$sitesetting->facebook}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{$sitesetting->youtube}}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="{{$sitesetting->pinterest}}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

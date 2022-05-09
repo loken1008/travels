@@ -41,7 +41,7 @@ $route = Route::current()->getName();
                                             <td>{!! $place->description !!}</td>
                                             <td>
 
-                                                <input type="checkbox" class="switcher-input" data-toggle="toggle"
+                                                <input type="checkbox" class="place-input" data-toggle="toggle"
                                                     data-id="{{ $place->id }}" {{ $place->status ? 'checked' : '' }}
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
                                                     data-offstyle="danger">
@@ -78,7 +78,7 @@ $route = Route::current()->getName();
 
     <script>
         $(function() {
-            $('.switcher-input').change(function(e) {
+            $('.place-input').change(function(e) {
                 e.preventDefault();
                 var status = $(this).prop('checked') == true ? 1 : 0;
                 var place_id = $(this).data('id');
@@ -108,11 +108,11 @@ $route = Route::current()->getName();
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href='/country'
+                                window.location.href='/place'
                             }
                         });
                     }else{
-                        window.location.href='/country'
+                        window.location.href='/place'
                     }
                 })
 

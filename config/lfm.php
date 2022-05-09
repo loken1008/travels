@@ -38,6 +38,8 @@ return [
     'allow_shared_folder'      => true,
 
     'shared_folder_name'       => 'shares',
+    'upload_max_filesize=M',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -46,28 +48,31 @@ return [
      */
 
     'folder_categories'        => [
-        'file'  => [
-            'folder_name'  => 'files',
+        'video'  => [
+            'folder_name'  => 'videos',
             'startup_view' => 'list',
-            'max_size'     => 50000, // size in KB
+            'max_size'     => 10000000000, // size in KB
             'thumb' => true,
             'thumb_width' => 80,
             'thumb_height' => 80,
             'valid_mime'   => [
-                'image/jpeg',
-                'image/pjpeg',
-                'image/png',
-                'image/gif',
-                'application/pdf',
-                'text/plain',
                 'video/mp4',
                 'video/mpeg',
             ],
         ],
+        'file'  => [
+            'folder_name'  => 'files',
+            'startup_view' => 'list',
+            'max_size'     => 5000000, // size in KB
+            'thumb' => true,
+            'thumb_width' => 80,
+            'thumb_height' => 80,
+           
+        ],
         'image' => [
             'folder_name'  => 'photos',
             'startup_view' => 'grid',
-            'max_size'     => 50000, // size in KB
+            'max_size'     => 5000000, // size in KB
             'thumb' => true,
             'thumb_width' => 80,
             'thumb_height' => 80,
@@ -76,17 +81,6 @@ return [
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
-            ],
-        ],
-
-        'video' => [
-            'folder_name'  => 'photos',
-            'startup_view' => 'grid',
-            'max_size'     => 50000, // size in KB
-            'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
-            'valid_mime'   => [
                 'video/mp4',
                 'video/mpeg',
             ],
@@ -147,6 +141,8 @@ return [
         'image/jpeg',
         'image/pjpeg',
         'image/png',
+        'video/mp4',
+        'video/mpeg',
     ],
 
     'thumb_img_width'          => 200, // px
@@ -189,6 +185,6 @@ return [
     | directives are not supported.
      */
     'php_ini_overrides'        => [
-        'memory_limit' => '1024M',
+        'memory_limit' => '500M',
     ],
 ];

@@ -32,6 +32,10 @@ class Tour extends Model
     {
         return $this->hasMany(Itinerary::class,'tour_id');
     }
+    public function fqa()
+    {
+        return $this->hasMany(FQA::class,'tour_id');
+    }
     public function images()
     {
         return $this->hasMany(Images::class,'tour_id');

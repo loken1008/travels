@@ -26,7 +26,7 @@ $route=Route::current()->getName();
                                         <thead>
                                             <tr>
                                                 <th>Country Name</th>
-                                                <th>Start Price</th>
+                                                {{-- <th>Start Price</th> --}}
                                                 <th>Image</th>
                                                 <th>Description</th>
                                                 <th>Status</th>
@@ -37,7 +37,7 @@ $route=Route::current()->getName();
                                             @forelse($getcountry as $country)
                                             <tr>
                                                 <td>{{$country->country_name}}</td>
-                                                <td>{{$country->start_price}}</td>
+                                                {{-- <td>{{$country->start_price}}</td> --}}
                                                 <td><img src="{{$country->country_image}}" height="100" width="100" alt=""></td>
                                                 <td>{!!$country->description!!}</td>
                                                 <td>

@@ -29,6 +29,22 @@ $route=Route::current()->getName();
             </li>
 
             <li class="header nav-small-cap">User Interface</li>
+            <li class="treeview {($prefix=='/tour')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Manage Users</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li class="{{($route=='users.index')?'active':''}}"><a class="{{($route=='users.index')?'active':''}}" href="{{route('users.index')}}"><i class="ti-more"></i>Manage User</a></li>
+                    <li class="{{($route=='roles.index')?'active':''}}"><a class="{{($route=='roles.index')?'active':''}}" href="{{route('roles.index')}}"><i class="ti-more"></i>Role</a></li>
+                    <li class="{{($route=='permissions.index')?'active':''}}"><a class="{{($route=='permissions.index')?'active':''}}" href="{{route('permissions.index')}}"><i class="ti-more"></i>Permission</a></li>
+                    </li>
+                </ul>
+            </li>
 
             <li class="treeview {{($prefix=='/banner')?'active':''}}">
                 <a href="#">
@@ -56,7 +72,7 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
-                    <span>Country</span>
+                    <span>Country/Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
@@ -65,10 +81,14 @@ $route=Route::current()->getName();
                     <li class="{{($route=='country.view')?'active':''}}"><a class="{{($route=='country.view')?'active':''}}" href="{{route('country.view')}}"><i class="ti-more"></i>View Country</a></li>
                     <li class="{{($route=='country.create')?'active':''}}"><a class="{{($route=='country.create')?'active':''}}" href="{{route('country.create')}}"><i class="ti-more"></i>Add Country</a></li>
                     </li>
+                    <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
+                    <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
+                    </li>
                 </ul>
+                
             </li>
 
-            <li class="treeview {($prefix=='/place')?'active':''}}">
+            {{-- <li class="treeview {($prefix=='/place')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
                     <span>Destination Place</span>
@@ -81,7 +101,7 @@ $route=Route::current()->getName();
                     <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="treeview {{($prefix=='/category')?'active':''}}">
                 <a href="#">
                     <i data-feather="message-circle"></i>
@@ -114,7 +134,19 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
-
+            <li class="treeview {($prefix=='/fqa')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>FQA</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.fqa')?'active':''}}"><a class="{{($route=='all.fqa')?'active':''}}" href="{{route('all.fqa')}}"><i class="ti-more"></i>View FQA</a></li>
+                    </li>
+                </ul>
+            </li>
             <li class="treeview {($prefix=='/coupon')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
@@ -197,15 +229,34 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
-
-
-{{-- 
-            <li class="treeview">
-              
-                <a id="lfm" data-input="thumbnail" data-preview="holder" style="cursor: pointer">
-                    <i class="fa fa-picture-o"></i>   <span>File Manager</span>
+            <li class="treeview {{($prefix=='/gallery')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Gallery</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
                 </a>
-            </li> --}}
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.gallery')?'active':''}}"><a class="{{($route=='all.gallery')?'active':''}}" href="{{route('all.gallery')}}"><i class="ti-more"></i>View Gallery</a></li>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview {{($prefix=='/sitesetting')?'active':''}}">
+                <a href="#">
+                    <i data-feather="grid"></i>
+                    <span>Site Setting</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.logo')?'active':''}}"><a class="{{($route=='all.logo')?'active':''}}" href="{{route('all.logo')}}"><i class="ti-more"></i>Site Logo/Social Link</a></li>
+                    <li class="{{($route=='all.gallery')?'active':''}}"><a class="{{($route=='all.gallery')?'active':''}}" href="{{route('all.gallery')}}"><i class="ti-more"></i>Contact </a></li>
+
+                    </li>
+                </ul>
+            </li>
 
             <li class="treeview">
                 <a href="#">

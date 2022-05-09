@@ -27,7 +27,7 @@
                                            
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="">
 
                                         <label for="firstName5"> Banner Image :</label>
                                         <div class="input-group">
