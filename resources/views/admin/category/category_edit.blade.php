@@ -12,7 +12,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('update.category',$editcategory->id) }}" method="post">
+                                <form action="{{ route('update.category',$editcategory->id) }}" method="post" id="editcategoryForm">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$editcategory->id}}">
                                     <div class="row">
@@ -44,4 +44,21 @@
             <!-- /.row -->
         </section>
         <!-- /.content -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#editcategoryForm").validate({
+                    rules: {
+                        category_name: {
+                            required: true,
+                        },
+                    },
+                    messages: {
+                        category_name: {
+                            required: "Please enter Category title",
+                        },
+                    },
+                });
+            });
+        </script>
 @endsection

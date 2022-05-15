@@ -75,7 +75,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('coupon.store') }}" method="post">
+                                <form action="{{ route('coupon.store') }}" method="post" id="couponForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
@@ -174,4 +174,37 @@
             })
         })
     </script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+     <script>
+         $(document).ready(function() {
+             $("#couponForm").validate({
+                 rules: {
+                     coupon_name: {
+                         required: true,
+                     },
+                     discount_discount: {
+                         required: true
+ 
+                     },
+                     coupon_validity: {
+                         required: true
+                     },
+                 },
+                 messages: {
+                    coupon_name: {
+                         required: "Enter Coupon Name",
+                     },
+                     discount_discount: {
+                         required: "Enter Discount Amount",
+                     },
+                     coupon_validity: {
+                         required: "Enter Coupon Validity",
+                     },
+ 
+                 },
+             });
+ 
+         });
+     </script>
 @endsection

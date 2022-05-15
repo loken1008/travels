@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SiteSetting;
+use App\Models\Contact;
 
 class SiteSettingController extends Controller
 {
@@ -58,6 +59,64 @@ class SiteSettingController extends Controller
         $logo->delete();
         $notification=array(
             'message'=>'Logo Deleted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
+    // contact 
+    public function ContactView()
+    {
+        $contacts=Contact::orderBy('id','desc')->get();
+        return view('admin.sitesetting.contact.viewcontact',compact('contacts'));
+    }
+    public function ContactStore(Request $request)
+    {
+        $request->validate([
+            'phone'=>'required',
+            'address'=>'required',
+            'email'=>'required|email',
+            'fax'=>'required',
+            'mobile'=>'required',
+
+        ]);
+        $data=$request->all();
+        Contact::create($data);
+        $notification=array(
+            'message'=>'Contact Inserted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function ContactEdit($id)
+    {
+        $editcontact=Contact::findOrFail($id);
+        return view('admin.sitesetting.contact.edit',compact('editcontact'));
+    }
+    public function ContactUpdate(Request $request,$id)
+    {
+        $request->validate([
+            'phone'=>'required',
+            'address'=>'required',
+            'email'=>'required|email',
+            'fax'=>'required',
+            'mobile'=>'required',
+        ]);
+        $updatecontact=Contact::findOrFail($id);
+        $data=$request->all();
+        $updatecontact->update($data);
+        $notification=array(
+            'message'=>'Contact Updated Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->route('all.contact')->with($notification);
+    }
+    public function ContactDelete($id)
+    {
+        $contact=Contact::findOrFail($id);
+        $contact->delete();
+        $notification=array(
+            'message'=>'Contact Deleted Successfully',
             'alert-type'=>'success'
         );
         return redirect()->back()->with($notification);

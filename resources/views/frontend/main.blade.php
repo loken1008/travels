@@ -56,6 +56,11 @@
     transition: all 0.2s ease-in-out;
     width: 100%;
   }
+
+  label.error {
+            color: #dc3545;
+            font-size: 14px;
+        }
 </style>
   </head>
 
@@ -98,7 +103,8 @@ Main JavaScript
 <script src="{{asset('frontend/js/magnific-popup.min.js')}}"></script>
 <script src="{{asset('frontend/js/jquery.fancybox.js')}}"></script>
 <script src="{{asset('frontend/js/player-min.js')}}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="{{asset('frontend/js/jqueryvalidation.js')}}"></script>
 <!-- Custom JavaScript -->
 <script src="{{asset('frontend/js/script.js')}}"></script>
 <!--Start of Tawk.to Script-->
@@ -113,6 +119,7 @@ Main JavaScript
   s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
+  
   <!--End of Tawk.to Script-->
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

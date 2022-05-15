@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Hash;
 use Auth;
+use Socialite;
 
 class CustomerController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest')->except(['logout']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except(['logout']);
+    // }
 
   
     public function customerRegister()
@@ -39,10 +40,14 @@ class CustomerController extends Controller
         );
 
         if ($user) {
-            return redirect()->intended(route('customer.dashboard'));
+            return redirect()->route('customer.dashboard');
         }
+        $notofication = array(
+            'message' => 'Email or Password is incorrect',
+            'alert-type' => 'error'
+        );
 
-        return back()->with(['message' => 'Invalid Credentials!']);
+        return back()->with($notofication);
     }
 
     public function customerStore(Request $request)
@@ -71,5 +76,51 @@ class CustomerController extends Controller
     {
         Auth::guard('customer')->logout();
         return redirect('/');
+    }
+
+    // google login
+    public function redirectToGoogles()
+    {
+        return Socialite::driver('google')->stateless()->redirect();
+    }
+       
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function handleCallbacks()
+    {
+        try {
+     
+            $user = Socialite::driver('google')->stateless()->user();
+        //    dd($user);
+            $finduser = Customer::where('provider_id', $user->id)->first();
+      
+            if($finduser){
+      
+                Auth::guard('customer')->login($finduser);
+     
+                return redirect('/customer-dashboard');
+      
+            }else{
+                $newCustomer = Customer::create([
+                    'first_name' => $user->user['given_name'],
+                    'last_name' => $user->user['family_name'],
+                    'email' => $user->user['email'],
+                    'image'=>$user->user['picture'],
+                    'provider_id'=> $user->id,
+                    'provider'=> 'google',
+                    'password' => encrypt('google'),
+                ]);
+     
+                Auth::guard('customer')->login($newCustomer);
+      
+                return redirect('/customer-dashboard');
+            }
+     
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
     }
 }

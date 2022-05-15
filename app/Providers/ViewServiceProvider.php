@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Place;
 use App\Models\SiteSetting;
 use App\Models\Coupon;
+use App\Models\Contact;
 use Carbon\Carbon;
 
 class ViewServiceProvider extends ServiceProvider
@@ -38,11 +39,14 @@ class ViewServiceProvider extends ServiceProvider
 
         $getdate=Carbon::now()->format('Y-m-d');
         $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
+
+        $getcontact=Contact::orderBy('id','desc')->first();
          View::share('country', $country);
          View::share('category', $category);
          View::share('place', $place);
          View::share('sitesetting', $sitesetting);
          View::share('getcoupon', $getcoupon);
+         View::share('getcontact', $getcontact);
          Paginator::useBootstrap();
     }
 }

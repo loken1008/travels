@@ -23,7 +23,11 @@
             @if (!empty(
                 Auth()->guard('customer')->user()->image
             ))
+            @if(empty(Auth()->guard('customer')->user()->provider_id))
                 <img src="{{asset('frontend/images/users/'. Auth()->guard('customer')->user()->image)}}" style="height:370px">
+            @else
+                <img src="{{Auth()->guard('customer')->user()->image}}" style="height:370px">
+            @endif
                  <!-- Upload image input-->
                  <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
                     <form action="{{route('image.store')}}" method="post" enctype="multipart/form-data">
@@ -104,124 +108,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12 col-lg-8 style-2">
-                        <div class="nav nav-tabs text-center" >
-                            <h5 class="font-weight-bold ml-4 mb-2 mt-2">My Booking Packages</h5>
-                        </div>
-                    <div class="tab-content" id="nav-tabContent">
-                        <table class="table" style="width:112% ">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Sn</th>
-                                    <th scope="col">Tour Name</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Post Code</th>
-                                    <th scope="col">No. Of People</th>
-                                    <th scope="col">Arrival Date</th>
-                                    <th scope="col">Departure Date</th>
-                                    <th>Book Date</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($bookings as $key=> $booking)
-                                <tr>
-                                    <th scope="row">{{$key+1}}</th>
-                                    <td>{{$booking->tour->tour_name}}</td>
-                                    <td>{{$booking->first_name}} {{$booking->last_name}}</td>
-                                    <td>{{$booking->post_code}}</td>
-                                    <td>{{$booking->number_people}}</td>
-                                    <td>{{$booking->arrival_date}}</td>
-                                    <td>{{$booking->departure_date}}</td>
-                                    <td>{{$booking->created_at->format('Y-M-d')}}</td>
-                                    <td>
-                                        <a href="#" title="view" data-toggle="modal" data-target="#exampleModalCenterBook{{$booking->id}}"><i class="fa fa-eye" ></i></a>
-                                        <a href="{{route('user.delete.booking',$booking->id)}}" title="delete" onclick="return confirm('Are You Sure To Delete This Booking?')"><i class="fa fa-trash"></i></a>
 
-                                    </td>
-                                </tr>
-                                <div class="modal fade" id="exampleModalCenterBook{{$booking->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLongTitle">View Booking Details</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Tour Name:</h6>
-                                                    <p>{{$booking->tour->tour_name}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold"> Name:</h6>
-                                                    <p>{{$booking->first_name}} {{$booking->last_name}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Email:</h6>
-                                                    <p>{{$booking->email}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Telephone:</h6>
-                                                    <p>{{$booking->telephone}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Mobile:</h6>
-                                                    <p>{{$booking->mobile}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Country:</h6>
-                                                    <p>{{$booking->country}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Address:</h6>
-                                                    <p>{{$booking->address}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Post Code:</h6>
-                                                    <p>{{$booking->post_code}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Number Of Peoples:</h6>
-                                                    <p>{{$booking->number_people}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Arrival Date:</h6>
-                                                    <p>{{$booking->arrival_date}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Departure:</h6>
-                                                    <p>{{$booking->departure_date}}</p>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6 class="font-weight-bold">Book Date:</h6>
-                                                    <p>{{$booking->created_at->format('Y-M-d')}}</p>
-                                                </div>
-                                                <div class="col-md-12" style="overflow: scroll">
-                                                    <h6 class="font-weight-bold">Message:</h6>
-                                                    <p>{{$booking->message}}</p>
-                                                </div>
-                                            </div>
-
-                                           
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                               @empty 
-                                 <tr>
-                                      <td colspan="7">No Booking Found</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                        <div class="d-flex justify-content-center">
-                            {{$bookings->links()}}
-                   </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

@@ -13,7 +13,9 @@ $route = Route::current()->getName();
                         <ul>
                             <li>
                                 <i class="flaticon-flash"></i>
-                                829, Hasan street melbourne, Australia.
+                                @if(isset($getcontact->address))
+                                {{$getcontact->address}}
+                                @endif
                             </li>
                         </ul>
                     </div>
@@ -41,15 +43,28 @@ $route = Route::current()->getName();
                                 Auth()->guard('customer')->user()
                             ))
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false">{{ Auth()->guard('customer')->user()->first_name }}</a>
+                                    <div class="d-flex">
+
+
+                                        @if (empty(
+                                            Auth()->guard('customer')->user()->provider_id
+                                        ))
+                                            <img class="" src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
+                                                style="height:30px;width:30px;border-radius:50%">
+                                        @else
+                                            <img class="" src="{{ Auth()->guard('customer')->user()->image }}"
+                                            style="height:30px;width:30px;border-radius:50%">
+                                        @endif
+                                        <a href="#" class="nav-link dropdown-toggle mb-2" data-toggle="dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false">{{ Auth()->guard('customer')->user()->first_name }}</a>
+                                    </div>
 
                                     <div class="dropdown-menu left-1">
                                         <div class="dropdown">
                                             <a class="dropdown-item text-dark"
                                                 href="{{ route('customer.dashboard') }}">Dashboard</a>
-                                                <a class="dropdown-item text-dark"
+                                            <a class="dropdown-item text-dark"
                                                 href="{{ route('customer.logout') }}">Logout</a>
                                         </div>
                                     </div>
@@ -169,10 +184,11 @@ $route = Route::current()->getName();
                                 <ul class="dropdown-menu dropdown-menu-right dropdown-animation"
                                     aria-labelledby="header-drop-3">
                                     <li>
-                                        <form role="search" class="search-box">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Search">
-                                                <i class="fa fa-search form-control-feedback"></i>
+                                        <form role="search" class="search-box" method="post" action="{{route('search')}}">
+                                            @csrf
+                                            <div class="form-group d-flex">
+                                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                               <button type="submit"> <i class="fa fa-search form-control-feedback"></i></button>
                                             </div>
                                         </form>
                                     </li>

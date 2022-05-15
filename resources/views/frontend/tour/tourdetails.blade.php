@@ -339,40 +339,6 @@
     </section>
     <!-- Special Packages Section End -->
 
-    <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-80 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-12">
-                    <div class="global-area">
-                        <div class="inner-title">
-                            <h2>Now We Are Globaly Everywhare</h2>
-                            <h3>Discover vestibulum <span>pharetra orci turpis</span>, ut interdum </h3>
-                            <div class="sec-line"></div>
-                        </div>
-                        <p>Pellentesque consectetur condimentum libero, interdum aliquet enim sollic tudin ut. Donec
-                            dapibus tempor odio eu aliquet. Vivamus ultricies augue ut.</p>
-                        <h4>Condimentum at sed sapien:</h4>
-                        <ul>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                            <li>consectetur adipting elit.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-8 col-md-10">
-                    <div class="map-area">
-                        <img src="images/photos/map01.png" alt="image">
-                    </div>
-                    <p class="map-content">Discover vestibulum <span class="color-light">Call:</span>
-                        <span>+88095085363</span>, ut interdum
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Global Section End -->
 
     <!-- Testimonials Section Start -->
     <section class="testimonials-section pt-80 pb-80">
@@ -386,54 +352,6 @@
         </div>
     </section>
     <!-- Testimonials Section End -->
-
-    <!-- Client Section Start -->
-    <section class="client-section bg-f8 style-2 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="client_carousel" class="owl-carousel">
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/5.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Client Section End -->
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 

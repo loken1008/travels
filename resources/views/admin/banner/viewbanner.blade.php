@@ -79,7 +79,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('store.banner') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('store.banner') }}" method="post" enctype="multipart/form-data" id="bannerForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">

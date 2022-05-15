@@ -66,7 +66,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table">
-                            <form action="{{ route('store.introduction') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('store.introduction') }}" method="post" enctype="multipart/form-data" id="introForm">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
@@ -89,7 +89,7 @@
                                                 </a>
                                             </span>
                                             <input id="mainthumbnail" class="form-control" type="text"
-                                                name="aboutus_image">
+                                                name="aboutus_image"><br>
 
                                         </div>
                                         <img id="holder1" style="margin-top:15px;max-height:100px;">
@@ -143,5 +143,37 @@
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#introForm").validate({
+                rules: {
+                    aboutus_title: {
+                        required: true,
+                    },
+                    aboutus_image: {
+                        required: true
+
+                    },
+                    aboutus_description: {
+                        required: true
+                    },
+                },
+                messages: {
+                   aboutus_title: {
+                        required: "About Us Title is required",
+                    },
+                    aboutus_image: {
+                        required: "About Us Image is required",
+                    },
+                    aboutus_description: {
+                        required: "Aboutud Description is required ",
+                    },
+
+                },
+            });
+
+        });
     </script>
 @endsection

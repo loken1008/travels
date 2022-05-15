@@ -26,9 +26,20 @@ use App\Http\Controllers\Admin\PermissionController;
 // auth
 Route::get('/mountain-guide/login',[App\Http\Controllers\Auth\LoginController::class,'showLoginForm']);
 Route::post('/mountain-guide/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('admin.login');
+
+// forget password admin
+Route::get('mountainguide/forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showAdminForgetPasswordForm'])->name('admin.forget.password.get');
+Route::post('mountainguide/forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitAdminForgetPasswordForm'])->name('admin.forget.password.post'); 
+Route::get('mountainguide/reset-password/{token}', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showAdminResetPasswordForm'])->name('admin.reset.password.get');
+Route::post('mountainguide/reset-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitAdminResetPasswordForm'])->name('admin.reset.password.post');
+
 Route::middleware(['auth','role:admin'])->group(function () {
 Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin.dashboard');
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('admin.logout');
+
+// change password
+Route::get('/change-password',[App\Http\Controllers\Admin\ChangePasswordController::class,'changePassword'])->name('admin.change.password');
+Route::post('/change-password',[App\Http\Controllers\Admin\ChangePasswordController::class,'changePasswordStore'])->name('admin.change.password.post');
 // user role and permission
 Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);
@@ -229,8 +240,12 @@ Route::prefix('sitesetting')->group(function(){
     Route::post('/update/logo/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoUpdate'])->name('update.logo');
     Route::get('/delete/logo/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'LogoDelete'])->name('delete.logo');
 
+    Route::get('/contact',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactView'])->name('all.contact');
+    Route::post('/store/contact',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactStore'])->name('store.contact');
+    Route::get('/edit/contact/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactEdit'])->name('edit.contact');
+    Route::post('/update/contact/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactUpdate'])->name('update.contact');
+    Route::get('/delete/contact/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactDelete'])->name('delete.contact');
 });
-
 
 Route::group(['prefix' => '/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -245,6 +260,13 @@ Route::group(['prefix' => 'country/laravel-filemanager'], function () {
 });
 
 
+// forgot password
+
+Route::get('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
 // frontend
 
 // customer register/login
@@ -253,7 +275,12 @@ Route::post('customer-store',[App\Http\Controllers\Auth\CustomerController::clas
 Route::get('customer-loginform',[App\Http\Controllers\Auth\CustomerController::class,'customerLogin'])->name('customer.login');
 Route::post('customer-storeform',[App\Http\Controllers\Auth\CustomerController::class,'customerLoginStore'])->name('customer-store.login');
 
+//  google login
+Route::get('/auth/google/customer', [App\Http\Controllers\Auth\CustomerController::class, 'redirectToGoogles']);
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\CustomerController::class, 'handleCallbacks']);
 
+
+// user dashboard
 Route::group(['middleware'=>'customers'], function(){
 
     Route::get('customer-dashboard',[App\Http\Controllers\User\UserController::class,'CustomerDashboard'])->name('customer.dashboard');
@@ -266,10 +293,7 @@ Route::group(['middleware'=>'customers'], function(){
 
 });
 
-
-
-
-
+// frontend
 Route::get('/',[App\Http\Controllers\User\IndexController::class,'homePage'])->name('home');
 Route::get('/countrydetails/{country_name}',[App\Http\Controllers\User\CountryController::class,'countryDetails'])->name('countrydetails');
 Route::get('/placedetails/{place_name}',[App\Http\Controllers\User\CountryController::class,'placeDetails'])->name('placedetails');
@@ -303,6 +327,13 @@ Route::get('/payment-method',[App\Http\Controllers\User\AboutUsController::class
 // gallery
 Route::get('/gallery',[App\Http\Controllers\User\GalleryController::class,'allGallery'])->name('allgallery');
 Route::get('/gallery/details/{gallery_title}',[App\Http\Controllers\User\GalleryController::class,'GalleryDetails'])->name('gallery.details');
+
+Route::get('/contact-us', function () {
+    return view('frontend.contact.contact');
+})->name('contactus');
+
+// search
+Route::post('/tour-search',[App\Http\Controllers\User\SearchController::class,'tourSearch'])->name('search');
 
 
 
