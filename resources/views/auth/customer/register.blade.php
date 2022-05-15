@@ -17,16 +17,11 @@
 
     <!-- Contact Section Start -->
     <section class="contact-section pt-90 pb-20">
-        @if (Session::has('message'))
-            <div class="alert alert-success text-center">
-                {{ Session::get('message') }}
-            </div>
-        @endif
         <div class="container">
             <div class="row contact-bg">
                 <div class="col-md-12 col-lg-12 style-2">
 
-                    <form class="booking-form" method="POST" action="{{ route('customer.store') }}">
+                    <form class="booking-form" method="POST" action="{{ route('customer.store') }}" id="crform">
                         @csrf
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -41,7 +36,7 @@
                                 <div class="form-row">
 
                                     <div class="form-group col-md-6">
-                                        <label for="name">First Name</label>
+                                        <label for="name">First Name  <span class="text-danger">*</span> </label>
                                         <input type="text" name="first_name" id="first_name" class="form-control"
                                             placeholder="Input First Name">
                                         @error('first_name')
@@ -51,7 +46,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="name">Last Name</label>
+                                        <label for="name">Last Name  <span class="text-danger">*</span> </label>
                                         <input type="text" name="last_name" id="last_name" class="form-control"
                                             placeholder="Input Last Name">
                                         @error('last_name')
@@ -61,7 +56,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Email</label>
+                                        <label for="tourName">Email  <span class="text-danger">*</span> </label>
                                         <input type="email" name="email" id="email" class="form-control"
                                             placeholder="Input Email">
                                         @error('email')
@@ -71,7 +66,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Password</label>
+                                        <label for="tourName">Password  <span class="text-danger">*</span> </label>
                                         <input type="password" name="password" id="password" class="form-control"
                                             placeholder="Input password">
                                         @error('password')
@@ -81,7 +76,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Confirm Password</label>
+                                        <label for="tourName">Confirm Password  <span class="text-danger">*</span> </label>
                                         <input type="password" name="confirm_password" id="confirm_password"
                                             class="form-control" placeholder="Input Confirm password">
                                         @error('confirm_password')
@@ -91,7 +86,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Address</label>
+                                        <label for="tourName">Address  <span class="text-danger">*</span> </label>
                                         <input type="text" name="address" id="address" class="form-control"
                                             placeholder="Input Address">
                                         @error('address')
@@ -102,7 +97,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Mobile</label>
+                                        <label for="tourName">Mobile  <span class="text-danger">*</span> </label>
                                         <input type="text" name="mobile" id="mobile" class="form-control"
                                             placeholder="Input Mobile">
                                         @error('mobile')
@@ -113,7 +108,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Your Country</label>
+                                        <label for="tourName">Your Country  <span class="text-danger">*</span> </label>
                                         <input type="text" name="country" id="country" class="form-control"
                                             placeholder="Input Country">
                                         @error('country')

@@ -35,6 +35,11 @@
                             {{Session::get('error')}}
                         </div>
                         @endif
+						@if(Session::has('message'))
+                        <div class="alert alert-success">
+                            {{Session::get('message')}}
+                        </div>
+                        @endif
 						<div class="p-30 rounded30 box-shadowed b-2 b-dashed">
 							<form action="{{route('admin.login')}}" method="POST">
                                 @csrf
@@ -72,7 +77,7 @@
 									<!-- /.col -->
 									<div class="col-6">
 									 <div class="fog-pwd text-right">
-										<a href="javascript:void(0)" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+										<a href="{{route('admin.forget.password.get')}}" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
 									  </div>
 									</div>
 									<!-- /.col -->

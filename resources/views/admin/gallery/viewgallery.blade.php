@@ -70,7 +70,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('store.gallery') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('store.gallery') }}" method="post" enctype="multipart/form-data" id="galleryForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
@@ -147,4 +147,36 @@
             prefix: route_prefix
         });
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+         <script>
+             $(document).ready(function() {
+                 $("#galleryForm").validate({
+                     rules: {
+                         gallery_title: {
+                             required: true,
+                         },
+                         cover_image: {
+                             required: true
+     
+                         },
+                         gallery_image: {
+                             required: true
+                         },
+                     },
+                     messages: {
+                        gallery_title: {
+                             required: "Gallery Title is required",
+                         },
+                         cover_image: {
+                             required: "Cover Image is required",
+                         },
+                         gallery_image: {
+                             required: "Gallery Images is required ",
+                         },
+     
+                     },
+                 });
+     
+             });
+         </script>
 @endsection

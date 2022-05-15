@@ -63,7 +63,7 @@
              
                 <div class="col-md-12 col-lg-8 style-2">
 
-                    <form class="booking-form" method="POST" action="{{route('store.booking')}}">
+                    <form class="booking-form" method="POST" action="{{route('store.booking')}}" id="bookingForm">
                         @csrf
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -83,7 +83,7 @@
                             <div class=" " id="" role="" aria-labelledby="nav-packagesbk-tab">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Tour Name</label>
+                                        <label for="tourName">Tour Name  <span class="text-danger">*</span> </label>
                                         <input type="text" name="" id="package_name" class="form-control" value="{{$tour->tour_name}}" readonly>
                                          <input type="hidden" name="tour_id" value="{{$tour->id}}">
                                     </div>
@@ -95,7 +95,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">First Name</label>
+                                        <label for="tourName">First Name  <span class="text-danger">*</span> </label>
                                         @if( Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->first_name)
                                         <input type="text" name="first_name" id="first_name" class="form-control" value="{{ Auth()->guard('customer')->user()->first_name}}" readonly>
                                         @else
@@ -109,7 +109,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Last Name</label>
+                                        <label for="tourName">Last Name  <span class="text-danger">*</span> </label>
                                         @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->last_name)
                                         <input type="text" name="last_name" id="last_name" class="form-control" value="{{ Auth()->guard('customer')->user()->last_name}}" readonly>
                                         @else
@@ -123,7 +123,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Email</label>
+                                        <label for="tourName">Email  <span class="text-danger">*</span> </label>
                                         @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->email)
                                         <input type="email" name="email" id="email" class="form-control" value="{{ Auth()->guard('customer')->user()->email}}" readonly>
                                         @else
@@ -137,7 +137,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Address</label>
+                                        <label for="tourName">Address  <span class="text-danger">*</span> </label>
                                         @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->address)
                                         <input type="text" name="address" id="address" class="form-control" value="{{ Auth()->guard('customer')->user()->address}}" readonly>
                                         @else
@@ -151,7 +151,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Post Code</label>
+                                        <label for="tourName">Post Code  <span class="text-danger">*</span> </label>
                                         <input type="text" name="post_code" id="post_code" class="form-control" value=""
                                             placeholder="Input Postcode">
                                         @error('post_code')
@@ -161,7 +161,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Telephone No</label>
+                                        <label for="tourName">Telephone No  <span class="text-danger">*</span> </label>
                                         <input type="text" name="telephone" id="telephone" class="form-control" value=""
                                             placeholder="Input Telephone">
                                         @error('telephone')
@@ -171,7 +171,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Mobile</label>
+                                        <label for="tourName">Mobile  <span class="text-danger">*</span> </label>
                                         @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->mobile)
                                         <input type="text" name="mobile" id="mobile" class="form-control" value="{{ Auth()->guard('customer')->user()->mobile}}" readonly>
                                         @else
@@ -186,7 +186,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Your Country</label>
+                                        <label for="tourName">Your Country  <span class="text-danger">*</span> </label>
                                         @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->country)
                                         <input type="text" name="country" id="country" class="form-control" value="{{Auth()->guard('customer')->user()->country}}" readonly>
                                         @else
@@ -200,7 +200,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Number Of Person</label>
+                                        <label for="tourName">Number Of Person  <span class="text-danger">*</span> </label>
                                         <input type="text" name="number_people" id="number_people" class="form-control"
                                             value="" placeholder="Input Number people">
                                         @error('number_people')
@@ -210,7 +210,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Arrival Date</label>
+                                        <label for="tourName">Arrival Date  <span class="text-danger">*</span> </label>
                                         <input type="date" name="arrival_date" id="arrival_date" class="form-control"
                                             value="" placeholder="Input Arrival date">
                                         @error('arrival_date')
@@ -220,7 +220,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Departure Date</label>
+                                        <label for="tourName">Departure Date  <span class="text-danger">*</span> </label>
                                         <input type="date" name="departure_date" id="departure_date" class="form-control"
                                             value="" placeholder="Input Departure date">
                                         @error('departure_date')
@@ -230,7 +230,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Message</label>
+                                        <label for="tourName">Message  <span class="text-danger">*</span> </label>
                                         <textarea name="message" id="message" class="form-control" value=""></textarea>
                                         @error('message')
                                             <span class="text-danger" >
@@ -319,124 +319,6 @@
         </div>
     </section>
     <!-- Special Places Section End -->
-
-    <!-- Features Section Start -->
-    <section class="funfact-section over-layer-black pt-90 pb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="video-sec">
-                        <h2>Travel <span>Award</span> Year <span>2019</span></h2>
-                        <p> Discover vestibulum <span>pharetra orci turpis</span>, ut interdum </p>
-                        <div class="video-content">
-                            <img src="images/photos/video-img.png" alt="image">
-                            <div class="overlay">
-                                <a href="../../../www.youtube.com/watchbf1e.html?v=7e90gBu4pas" class="popup-youtube"><i
-                                        class="ficon fa fa-play-circle"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-location-arrow"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>2583</h2>
-                                    <h3><a href="#">Travel Package</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-plane"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>1879</h2>
-                                    <h3><a href="#">Locations Made</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-users"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>7215</h2>
-                                    <h3><a href="#">Satisfied Client</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-thumbs-up"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>1639</h2>
-                                    <h3><a href="#">Recomended Trip</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Process Section End -->
-
-    <!-- Client Section Start -->
-    <section class="client-section bg-f8 style-2 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="client_carousel" class="owl-carousel">
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/5.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="images/partner/2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Client Section End -->
-
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection

@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{asset('images/favicon.ico')}}">
+    @if(!empty($sitesetting->logo))
+    <link href="{{$sitesetting->logo}}" rel="shortcut icon" type="image/png">
+    @endif
 
     <title>Admin | @yield('title')</title>
 
@@ -21,6 +23,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <style>
+          label.error {
+            color: #dc3545;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
@@ -67,7 +75,9 @@
     <script type="text/javascript" src="{{asset('assets/vendor_components/lightbox-master/dist/ekko-lightbox.js')}}"></script>
 	<script src="{{asset('admin/js/pages/gallery.js')}}"></script>    
     	
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"  ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js" ></script>
+    <script src="{{asset('admin/js/adminjqueryvalidation.js')}}"></script>
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

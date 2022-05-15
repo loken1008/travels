@@ -11,8 +11,10 @@ $route=Route::current()->getName();
                 <a href="index.html">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="../images/logo-dark.png" alt="">
-                        <h3><b>TOurs</b> & Travels</h3>
+                        @if(!empty($sitesetting->logo))
+                        <img src="{{$sitesetting->logo}}" style="width: 50px;height:50px">
+                        @endif
+                        <h3><b>Tours</b> & Travels</h3>
                     </div>
                 </a>
             </div>
@@ -22,13 +24,13 @@ $route=Route::current()->getName();
         <ul class="sidebar-menu" data-widget="tree">
 
             <li>
-                <a href="index.html">
+                <a href="{{route('admin.dashboard')}}">
                     <i data-feather="pie-chart"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
-            <li class="header nav-small-cap">User Interface</li>
+
             <li class="treeview {($prefix=='/tour')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
@@ -48,7 +50,7 @@ $route=Route::current()->getName();
 
             <li class="treeview {{($prefix=='/banner')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-fw fa-file-photo-o"></i>
                     <span>Banner</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -71,7 +73,7 @@ $route=Route::current()->getName();
 
             <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-address-book"></i>
                     <span>Country/Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -104,7 +106,7 @@ $route=Route::current()->getName();
             </li> --}}
             <li class="treeview {{($prefix=='/category')?'active':''}}">
                 <a href="#">
-                    <i data-feather="message-circle"></i>
+                    <i class="fa fa-bars"></i>
                     <span>Category</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -118,7 +120,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {($prefix=='/tour')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa  fa-institution"></i>
                     <span>Tour Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -136,8 +138,8 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {($prefix=='/fqa')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
-                    <span>FQA</span>
+                    <i class="fa  fa-book"></i>
+                    <span>FAQ</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
@@ -149,7 +151,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {($prefix=='/coupon')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-sort-amount-asc"></i>
                     <span> Discount Coupon</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -162,7 +164,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/aboutus')?'active':''}}">
                 <a href="#">
-                    <i data-feather="message-circle"></i>
+                    <i class="fa fa-shopping-bag"></i>
                     <span>About Us</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -177,7 +179,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-comment-o"></i>
                     <span>Testmonial</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -190,7 +192,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/booking')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-book"></i>
                     <span>View Booking</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -203,7 +205,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/blog')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-newspaper-o"></i>
                     <span>Blog</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -218,7 +220,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/hotel')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-building"></i>
                     <span>Hotel</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -231,7 +233,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/gallery')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-cloud-upload"></i>
                     <span>Gallery</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -244,7 +246,7 @@ $route=Route::current()->getName();
             </li>
             <li class="treeview {{($prefix=='/sitesetting')?'active':''}}">
                 <a href="#">
-                    <i data-feather="grid"></i>
+                    <i class="fa fa-ellipsis-h"></i>
                     <span>Site Setting</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -252,30 +254,11 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.logo')?'active':''}}"><a class="{{($route=='all.logo')?'active':''}}" href="{{route('all.logo')}}"><i class="ti-more"></i>Site Logo/Social Link</a></li>
-                    <li class="{{($route=='all.gallery')?'active':''}}"><a class="{{($route=='all.gallery')?'active':''}}" href="{{route('all.gallery')}}"><i class="ti-more"></i>Contact </a></li>
+                    <li class="{{($route=='all.contact')?'active':''}}"><a class="{{($route=='all.contact')?'active':''}}" href="{{route('all.contact')}}"><i class="ti-more"></i>Contact </a></li>
 
                     </li>
                 </ul>
             </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="alert-triangle"></i>
-                    <span>Authentication</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="auth_login.html"><i class="ti-more"></i>Login</a></li>
-                    <li><a href="auth_register.html"><i class="ti-more"></i>Register</a></li>
-                    <li><a href="auth_lockscreen.html"><i class="ti-more"></i>Lockscreen</a></li>
-                    <li><a href="auth_user_pass.html"><i class="ti-more"></i>Password</a></li>
-                    <li><a href="error_404.html"><i class="ti-more"></i>Error 404</a></li>
-                    <li><a href="error_maintenance.html"><i class="ti-more"></i>Maintenance</a></li>
-                </ul>
-            </li>
-
         </ul>
     </section>
 

@@ -12,7 +12,7 @@
                         <h3 class="box-title">Update SiteSetting</h3>
                         <div class="col-12 mt-4">
                             <form action="{{ route('update.logo', $editlogo->id) }}" method="post"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" id="editsiteForm">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
@@ -100,4 +100,51 @@
             prefix: route_prefix
         });
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+     <script>
+         $(document).ready(function(){
+             $('#editsiteForm').validate({
+                 rules:{
+                     logo:{
+                         required:true,
+                     },
+                     facebook:{
+                         required:true,
+                     },
+                     twitter:{
+                         required:true,
+                     },
+                     instagram:{
+                         required:true,
+                     },
+                     youtube:{
+                         required:true,
+                     },
+                     pinterest:{
+                         required:true,
+                     }
+                 },
+                 messages:{
+                     logo:{
+                         required:'Please upload logo',
+                     },
+                     facebook:{
+                         required:'Please enter facebook url',
+                     },
+                     twitter:{
+                         required:'Please enter twitter url',
+                     },
+                     instagram:{
+                         required:'Please enter instagram url',
+                     },
+                     youtube:{
+                         required:'Please enter youtube url',
+                     },
+                     pinterest:{
+                         required:'Please enter pinterest url',
+                     }
+                 }
+             });
+         });
+     </script>
 @endsection

@@ -70,7 +70,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table">
-                            <form action="{{ route('store.fqa') }}" method="post">
+                            <form action="{{ route('store.fqa') }}" method="post" id="fqaForm">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12 input_fields_wrap" id="fqa">
@@ -93,15 +93,12 @@
                                             <div class="form-group">
                                                 <label>Question<span class="text-danger">*</span></label>
                                                 <div class="controls">
-                                                    <input type="text" name="question[]" class="form-control">
+                                                    <input type="text" name="question[]" class=" form-control" id="id_ct0">
                                                     @error('question[]')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                             </div>
-
-
-
                                             <div class="form-group">
                                                 <label for="firstName5"> Answer :</label>
                                                 <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
@@ -109,7 +106,7 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <a href="#" class="btn btn-sm btn-primary add_field_button">Add More Fields</a>
+                                            <input type="button" class="btn btn-sm btn-primary add_field_button" value="Add More Fields">
 
                                         </div>
                                     </div>
@@ -134,52 +131,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script type="text/javascript">
-     
-        $(document).ready(function() {
-            var max_fields = 10; //maximum input boxes allowed
-            var wrapper = $(".input_fields_wrap"); //Fields wrapper
-            var add_button = $(".add_field_button"); //Add button ID
-
-            var x = 1; //initlal text box count
-            $(add_button).click(function(e) { //on add input button click
-                e.preventDefault();
-                if (x < max_fields) { //max input box allowed
-                    x++; //text box increment
-                    $(wrapper).append(`
-                                        <div >
-
-                                            <div class="form-group">
-                                                <label>Question<span class="text-danger">*</span></label>
-                                                <div class="controls">
-                                                    <input type="text" name="question[]" class="form-control">
-                                                    @error('question[]')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="form-group">
-                                                <label for="firstName5"> Answer :</label>
-                                                <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
-                                                @error('answer[]')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                            <a href="#" class="remove_field btn btn-sm btn-danger">Remove</a>
-                                </div>`); //add input box
-                }
-            });
-
-            $(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
-                e.preventDefault();
-                $(this).parent('div').remove();
-                x--;
-            })
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 
 <script>
     $(function() {
@@ -223,5 +176,85 @@
 
         })
     })
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $.validator.addMethod("mytst", function (value, element) {
+        var flag = true;
+                                
+        $("[name^=question]").each(function (i, j) {
+        $(this).parent('div').find('label.error').remove();
+        $(this).parent('div').find('label.error').remove();                        
+         if ($.trim($(this).val()) == '') {
+            flag = false;
+                                            
+              $(this).parent('div').append('<label  id="id_ct'+i+'-error" class="error">Question is required.</label>');
+                }
+                });
+                 return flag;
+                }, "");
+                $.validator.addMethod("ans", function (value, element) {
+        var flag = true;
+                                
+        $("[name^=answer]").each(function (k, l) {
+        $(this).parent('div').find('label.error').remove();
+        $(this).parent('div').find('label.error').remove();                        
+         if ($.trim($(this).val()) == '') {
+            flag = false;
+                                            
+              $(this).parent('div').append('<label  id="id_at'+k+'-error" class="error">Answer is required.</label>');
+                }
+                });
+                 return flag;
+                }, "");
+                
+        $("#fqaForm").validate({
+            rules: {
+               tour_id:{
+                 required:true,  
+               },
+               "question[]": {
+                mytst: true
+             
+            },
+            "answer[]": {
+                ans: true
+            },
+        },
+            messages: {
+                tour_id: {
+                    required: "Select Tour Name",
+                },
+               
+            },
+            submitHandler: function () {
+        //you can add code here to recombine the variants into one value if you like, before doing a $.post
+         form.submit();
+        alert('successful submit');
+        return false;
+    }
+});
+var max_fields = 10; //maximum input boxes allowed
+            var wrapper = $(".input_fields_wrap"); //Fields wrapper
+            var add_button = $(".add_field_button"); //Add button ID
+
+            var x = 1; //initlal text box count
+            $(add_button).click(function(e) { //on add input button click
+                e.preventDefault();
+                if (x < max_fields) { //max input box allowed
+                    x++; //text box increment
+                    $(wrapper).append('<div ><div class="form-group"> <label>Question<span class="text-danger">*</span></label><div class="controls"><input type="text" name="question[]"  id="id_ct' + x + '" class="form-control"> @error('question[]')<span class="text-danger">{{ $message }}</span>@enderror</div></div><div class="form-group"><label for="firstName5"> Answer :</label><textarea id="id_ct' + x + '" class="form-control" name="answer[]" rows="10" cols="10"></textarea> @error('answer[]')<span class="text-danger">{{ $message }}</span>@enderror </div> <a href="#" class="remove_field btn btn-sm btn-danger">Remove</a></div>'); //add input box
+                }
+            });
+
+            $(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+
+    });
 </script>
 @endsection

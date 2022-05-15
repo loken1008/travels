@@ -85,27 +85,22 @@
                         <div class="icon-box">
                             <i class="fa fa-wifi"></i>
                             <h5>Travel</h5>
-                            <a href="#">view more</a>
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-crosshairs"></i>
                             <h5>Packages</h5>
-                            <a href="#">view more</a>
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-plane"></i>
                             <h5>Vehicle</h5>
-                            <a href="#">view more</a>
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-umbrella"></i>
                             <h5>Hoteel</h5>
-                            <a href="#">view more</a>
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-map-marker"></i>
                             <h5>Location</h5>
-                            <a href="#">view more</a>
                         </div>
                     </div>
                 </div>
@@ -303,76 +298,6 @@
     </section>
     <!-- Special Packages Section End -->
 
-    <!-- Funfact Section Start -->
-    <section class="funfact-section over-layer-black pt-90 pb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="video-sec">
-                        <h2>Travel <span>Award</span> Year <span>2019</span></h2>
-                        <p> Discover vestibulum <span>pharetra orci turpis</span>, ut interdum </p>
-                        <div class="video-content">
-                            <img src="{{ asset('frontend/images/photos/video-img.png') }}" alt="image">
-                            <div class="overlay">
-                                <a href="../../../www.youtube.com/watchbf1e.html?v=7e90gBu4pas" class="popup-youtube"><i
-                                        class="ficon fa fa-play-circle"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-location-arrow"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>2583</h2>
-                                    <h3><a href="#">Travel Package</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-plane"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>1879</h2>
-                                    <h3><a href="#">Locations Made</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-users"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>7215</h2>
-                                    <h3><a href="#">Satisfied Client</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="funfact-item">
-                                <div class="icon-box">
-                                    <i class="fa fa-thumbs-up"></i>
-                                </div>
-                                <div class="content">
-                                    <h2>1639</h2>
-                                    <h3><a href="#">Recomended Trip</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Funfact Section End -->
-
     <!-- Latest Hotel Section Start -->
     <section class="latest-hotel-sec pt-85 pb-80">
         <div class="container">
@@ -543,7 +468,7 @@
 
 
     <!-- Client Section Start -->
-    <section class="client-section bg-f8 pb-70 pt-70">
+    {{-- <section class="client-section bg-f8 pb-70 pt-70">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -587,6 +512,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Client Section End -->
 @endsection

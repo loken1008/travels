@@ -13,7 +13,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('coupon.update') }}" method="post">
+                                <form action="{{ route('coupon.update') }}" method="post" id="editcouponForm">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$editcoupon->id}}">
                                     <div class="row">
@@ -63,4 +63,38 @@
             <!-- /.row -->
         </section>
         <!-- /.content -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#editcouponForm").validate({
+                    rules: {
+                        coupon_name: {
+                            required: true,
+                        },
+                        discount_amount: {
+                            required: true
+    
+                        },
+                        coupon_validity: {
+                            required: true
+                        },
+                    },
+                    messages: {
+                       coupon_name: {
+                            required: "Enter Coupon Name",
+                        },
+                        discount_amount: {
+                            required: "Enter Discount Amount",
+                        },
+                        coupon_validity: {
+                            required: "Enter Coupon Validity",
+                        },
+    
+                    },
+                });
+    
+            });
+        </script>
+   
 @endsection

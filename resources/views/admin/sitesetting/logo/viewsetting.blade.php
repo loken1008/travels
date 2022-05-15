@@ -65,7 +65,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('store.logo') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('store.logo') }}" method="post" enctype="multipart/form-data" id="siteForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
@@ -141,7 +141,7 @@
             <!-- /.row -->
         </section>
         <!-- /.content -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         var route_prefix = "/laravel-filemanager";
@@ -149,4 +149,51 @@
             prefix: route_prefix
         });
     </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+      <script>
+          $(document).ready(function(){
+              $('#siteForm').validate({
+                  rules:{
+                      logo:{
+                          required:true,
+                      },
+                      facebook:{
+                          required:true,
+                      },
+                      twitter:{
+                          required:true,
+                      },
+                      instagram:{
+                          required:true,
+                      },
+                      youtube:{
+                          required:true,
+                      },
+                      pinterest:{
+                          required:true,
+                      }
+                  },
+                  messages:{
+                      logo:{
+                          required:'Please upload logo',
+                      },
+                      facebook:{
+                          required:'Please enter facebook url',
+                      },
+                      twitter:{
+                          required:'Please enter twitter url',
+                      },
+                      instagram:{
+                          required:'Please enter instagram url',
+                      },
+                      youtube:{
+                          required:'Please enter youtube url',
+                      },
+                      pinterest:{
+                          required:'Please enter pinterest url',
+                      }
+                  }
+              });
+          });
+      </script>
 @endsection
