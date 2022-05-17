@@ -73,21 +73,21 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('store.testmonial') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('store.testmonial') }}" method="post" enctype="multipart/form-data" id="testmonialForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5> Name<span class="text-danger">*</span></h5>
+                                                <h5> Name :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" name="name" class="form-control">
+                                                    <input type="text" name="name" class="form-control" id="name">
                                                     @error('name')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5> Message title<span class="text-danger">*</span></h5>
+                                                <h5> Message title :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="message_title" class="form-control">
                                                     @error('message_title')
@@ -95,9 +95,9 @@
                                                 @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="">
 
-                                                <label for="firstName5">  Image :</label>
+                                                <label for="firstName5">  Image :<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <span class="input-group-btn">
                                                         <a id="tlfm" data-input="mainthumbnail" data-preview="holder"
@@ -114,7 +114,7 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <h5> Message Description<span class="text-danger">*</span></h5>
+                                                <h5> Message Description :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <textarea  name="message_description" class="form-control" rows="10" cols="20"></textarea>
                                                     @error('message_description')
@@ -145,6 +145,51 @@
         var route_prefix = "/laravel-filemanager";
         $('#tlfm').filemanager('images', {
             prefix: route_prefix
+        });
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+     <script>
+        $(document).ready(function() {
+          
+            $("#testmonialForm").validate({
+                    ignore: [],
+                    rules: {
+                        name: {
+                            required: true,
+                        },
+                        message_title: {
+                            required: true,
+                        },
+                        message_description: {
+                            required: true,
+                        },
+                        image: {
+                            required: true,
+                        },
+                    },
+ 
+                    messages: {
+                        name: {
+                            required: "Please enter name",
+                        },
+                        message_title: {
+                            required: "Please enter message title",
+                        },
+                        message_description: {
+                            required: "Please enter message description",
+                        },
+                        image: {
+                            required: "Please select image",
+                        },
+                    },
+                submitHandler: function() {
+                    //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                    form.submit();
+                    alert('successful submit');
+                    return false;
+                }
+            });
         });
     </script>
 @endsection

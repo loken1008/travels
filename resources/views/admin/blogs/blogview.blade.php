@@ -25,7 +25,7 @@ $route=Route::current()->getName();
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                
+                                                <th>Tour Name</th>
                                                 <th>Blog Title</th>
                                                 <th>Author Name</th>
                                                 <th>Blog Type</th>
@@ -39,6 +39,7 @@ $route=Route::current()->getName();
                                         <tbody>
                                             @forelse($getblog as $blog)
                                             <tr>
+                                                <td>@if(!empty($blog->tour->tour_name)){{$blog->tour->tour_name}}@endif</td>
                                                 <td>{{$blog->blog_title}}</td>
                                                 <td>{{$blog->author_name}}</td>
                                                 <td>{{$blog->blog_type}}</td>

@@ -28,12 +28,13 @@
 
                             <div class="post-title-box">
                                 <div class="price-box">
-                                    @if($getcoupon)
-                                    <h5 class="text-danger"><strike><span>$</span>{{ $getTourdetails->main_price }}</strike></h5>
-                                    <h5><span>$</span>{{ $getTourdetails->main_price-($getcoupon->discount_amount/100*$getTourdetails->main_price)}}</h5>
-
+                                    @if ($getcoupon)
+                                        <h5 class="text-danger">
+                                            <strike><span>$</span>{{ $getTourdetails->main_price }}</strike></h5>
+                                        <h5><span>$</span>{{ $getTourdetails->main_price - ($getcoupon->discount_amount / 100) * $getTourdetails->main_price }}
+                                        </h5>
                                     @else
-                                    <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
+                                        <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
                                     @endif
                                     {{-- <h6><span>Starts From</span>{{$getTourDetails->dateprice->start_date}}</h6> --}}
                                 </div>
@@ -94,7 +95,7 @@
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="plc-asia" role="tabpanel"
+                                            <div class="tab-pane fade show active" id="plc-asia" role="tabpanel"
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
                                                     @foreach ($getTourdetails->itinerary as $itin)
@@ -107,11 +108,8 @@
                                                             </h5><span><i class="fa fa-plus"></i></span>
                                                         </a>
                                                         <div class="collapse"
-                                                            id="collapseExample1{{ $itin->id }}">
-                                                            <p class="text-justify "
-                                                                style="color:black !important;padding:10px !important">
+                                                            id="collapseExample1{{ $itin->id }}"  style="color:black !important;padding-top:10px !important">
                                                                 {!! $itin->long_description !!}
-                                                            </p>
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -120,12 +118,9 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                                <div class="item">
-
-                                                    <p class="text-justify" style="color:black !important">
-                                                        {!! $getTourdetails->cost_include !!}</p>
-                                                    <p class="text-justify" style="color:black !important">
-                                                        {!! $getTourdetails->cost_exclude !!}</p>
+                                                <div class="item"  style="color:black !important;padding-left:30px;padding-top:10px !important">
+                                                        {!! $getTourdetails->cost_include !!}
+                                                        {!! $getTourdetails->cost_exclude !!}
 
                                                 </div>
                                             </div>
@@ -136,21 +131,19 @@
                                                 aria-labelledby="equipment-tab">
                                                 @foreach ($getTourdetails->equipment as $equipment)
                                                     <div class="item">
-                                                                    <a href="#" data-toggle="collapse"
-                                                                    data-target="#collapseExample2{{ $equipment->id }}"
-                                                                    aria-expanded="false" aria-controls="collapseExample"
-                                                                    style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
-                                                                    class="d-flex">
-                                                                    <h5 class="font-weight-bold">{{ $equipment->equipment_name }}
-                                                                    </h5><span><i class="fa fa-plus"></i></span>
-                                                                </a>
-                                                                <div class="collapse"
-                                                                    id="collapseExample2{{ $equipment->id }}">
-                                                                    <p class="text-justify "
-                                                                        style="color:black !important;padding:10px !important">
-                                                                        {!! $equipment->equipment_description !!}
-                                                                    </p>
-                                                                </div>
+                                                        <a href="#" data-toggle="collapse"
+                                                            data-target="#collapseExample2{{ $equipment->id }}"
+                                                            aria-expanded="false" aria-controls="collapseExample"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            class="d-flex">
+                                                            <h5 class="font-weight-bold">{{ $equipment->equipment_name }}
+                                                            </h5><span><i class="fa fa-plus"></i></span>
+                                                        </a>
+                                                        <div class="collapse"
+                                                            id="collapseExample2{{ $equipment->id }}" style="color:black !important;padding-left:30px;padding-top:10px !important">
+                                            
+                                                                {!! $equipment->equipment_description !!}
+                                                        </div>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -159,7 +152,7 @@
                                             <div class="tab-pane fade show " id="dateprice" role="tabpanel"
                                                 aria-labelledby="dateprice-tab">
 
-                                                <div class="item">
+                                                <div class="item" style="color:black">
 
                                                     <table class="table">
                                                         <thead class="thead-light">
@@ -179,14 +172,14 @@
                                                                     <td>{{ $dateprice->seats_available }}</td>
                                                                     <td>{{ $dateprice->price }}</td>
                                                                     <td> <a style="background-color: #255669;
-                                                                                    border: 2px solid #255669;
-                                                                                    border-radius: 50px;
-                                                                                    color: #fff;
-                                                                                    display: inline-block;
-                                                                                    /* float: right; */
-                                                                                    font-weight: 600;
-                                                                                    padding: 7px 18px;
-                                                                                    vertical-align: top;"
+                                                                                        border: 2px solid #255669;
+                                                                                        border-radius: 50px;
+                                                                                        color: #fff;
+                                                                                        display: inline-block;
+                                                                                        /* float: right; */
+                                                                                        font-weight: 600;
+                                                                                        padding: 7px 18px;
+                                                                                        vertical-align: top;"
                                                                             href="{{ route('booking', $getTourdetails->tour_name) }}">Booking
                                                                             Now</a>
                                                                     </td>
@@ -265,15 +258,13 @@
                                                             data-toggle="collapse"
                                                             data-target="#collapseExample{{ $fqas->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample">
-                                                            <h6 class="font-weight-bold">{{ $fqas->question }}</h6>
+                                                            <h5 class="font-weight-bold">{{ $fqas->question }}</h5>
                                                             <span><i class="fa fa-plus"></i></span>
                                                         </a>
                                                         <div class="collapse"
-                                                            id="collapseExample{{ $fqas->id }}">
-                                                            <p class="text-justify "
-                                                                style="color:black !important;padding:10px">
+                                                            id="collapseExample{{ $fqas->id }}"  style="color:black !important;padding-top:10px !important">
+                                                            
                                                                 {!! $fqas->answer !!}
-                                                            </p>
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -324,7 +315,7 @@
                             </section>
                             <!-- Latest Hotel Section End -->
                             <div class="d-flex">
-                                <h5 class="share-btn"> Share </h5>
+                                <h6 class="share-btn text-dark"> Share: </h6>
                                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                 <div class="addthis_inline_share_toolbox_mi34"></div>
                             </div>
@@ -338,7 +329,46 @@
         </div>
     </section>
     <!-- Special Packages Section End -->
-
+ <!-- Blog Section Start -->
+ <section class="blog-section bg-f8 pt-85 pb-55">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Related blog</h2>
+            </div>
+        </div>
+        <div class="row">
+            @forelse($getTourdetails->blog as $blog)
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post">
+                        <div class="thumb">
+                            <img alt="" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
+                            <div class="content">
+                                <h3>{{ $blog->blog_title }}</h3>
+                                <div class="meta-box">
+                                    <div class="admin-post"> {{ $blog->author_name }} </div>
+                                    <div class="inner">
+                                        <div class="date">
+                                            <i class="fa fa-calendar-plus-o"></i>
+                                            {{ $blog->created_at->format('M d') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ route('blogsdetails', $blog->blog_title) }}" class="read-btn">Continue
+                            Reading
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            @empty
+                <h4 style="text-align:center !important">No Blog Available</h4>
+            @endforelse
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
 
     <!-- Testimonials Section Start -->
     <section class="testimonials-section pt-80 pb-80">

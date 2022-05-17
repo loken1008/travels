@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div>
-                                            <label for="firstName5"> Logo Image <span class="text-danger">*</span>
+                                            <label for="firstName5"> Logo Image 
                                                 :</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
@@ -36,7 +36,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <h5>Facebook</h5>
+                                            <h5>Facebook :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="facebook" class="form-control"
                                                     value="{{ $editlogo->facebook }}">
@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Instagram</h5>
+                                            <h5>Instagram :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="instagram" class="form-control"
                                                     value="{{ $editlogo->instagram }}">
@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Twitter</h5>
+                                            <h5>Twitter :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="twitter" class="form-control"
                                                     value="{{ $editlogo->twitter }}">
@@ -60,7 +60,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Youtube</h5>
+                                            <h5>Youtube :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="youtube" class="form-control"
                                                     value="{{ $editlogo->youtube }}">
@@ -68,7 +68,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Pinterest</h5>
+                                            <h5>Pinterest :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="pinterest" class="form-control"
                                                     value="{{ $editlogo->pinterest }}">

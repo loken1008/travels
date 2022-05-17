@@ -10,15 +10,15 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
-                <form action="{{route('hotel.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data">
+                <form action="{{route('hotel.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data" id="hotelForm">
                    @csrf
                   
                     <section>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="firstName5">Country Name :</label>
-                                    <select class="form-control" id="firstName5" name="country_id">
+                                    <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
+                                    <select class="form-control" id="countryname" name="country_id">
                                         <option value="">Select Country</option>
                                         @foreach($getcountry as $country)
                                         <option value="{{$country->id}}">{{$country->country_name}}</option>
@@ -29,8 +29,8 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Name :</label>
-                                    <select class="form-control" id="firstName5" name="tour_id">
+                                    <label for="firstName5">Tour Name :<span class="text-danger">*</span></label>
+                                    <select class="form-control" id="tourname" name="tour_id">
                                         <option value="">Select Tour</option>
                                         @foreach($gettour as $tour)
                                         <option value="{{$tour->id}}">{{$tour->tour_name}}</option>
@@ -38,29 +38,29 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstName5">Hotel Name :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('hotel_name')}}" name="hotel_name">
+                                    <label for="firstName5">Hotel Name :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="hotelname" value="{{@old('hotel_name')}}" name="hotel_name">
                                     @error('hotel_name')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstName5">Address :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('hotel_address')}}" name="hotel_address">
+                                    <label for="firstName5">Address :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="address" value="{{@old('hotel_address')}}" name="hotel_address">
                                     @error('hotel_address')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstName5">Phone :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('hotel_phone')}}" name="hotel_phone">
+                                    <label for="firstName5">Phone :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="phone" value="{{@old('hotel_phone')}}" name="hotel_phone">
                                     @error('hotel_phone')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstName5">Map Link :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('map_link')}}" name="map_link">
+                                    <label for="firstName5">Map Link :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="maplink" value="{{@old('map_link')}}" name="map_link">
                                     @error('map_link')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-md-12">
 
-                                <label for="firstName5">  Image :</label>
+                                <label for="firstName5">  Image :<span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="clfm" data-input="mainthumbnail" data-preview="holder"
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="firstName5"> Description :</label>
+                          <label for="firstName5"> Description :<span class="text-danger">*</span></label>
                         <textarea id="my-editor"  class="form-control" name="hotel_description"></textarea>
                         @error('hotel_description')
                         <span class="text-danger">{{$message}}</span>
@@ -125,4 +125,76 @@
     <script>
         CKEDITOR.replace('my-editor', options);
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script>
+       $(document).ready(function() {
+           $.validator.addMethod('hrequired', function(value, element, params) {
+               var idname = $(element).attr('id');
+               var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+               return !params || messageLength.length !== 0;
+           }, "Description field is required");
+
+
+           $("#hotelForm").validate({
+                   ignore: [],
+                   rules: {
+                          country_id: {
+                            required: true,
+                          },
+                          tour_id: {
+                            required: true,
+                          },
+                          hotel_name: {
+                            required: true,
+                          },
+                          hotel_address: {
+                            required: true,
+                          },
+                          hotel_phone: {
+                            required: true,
+                          },
+                          image: {
+                            required: true,
+                          },
+                          hotel_description: {
+                            hrequired: true,
+                          },
+                            map_link: {
+                                required: true,
+                            },
+                   },
+
+                   messages: {
+                            country_id: {
+                                required: "Please select country",
+                            },
+                            tour_id: {
+                                required: "Please select tour",
+                            },
+                            hotel_name: {
+                                required: "Please enter hotel name",
+                            },
+                            hotel_address: {
+                                required: "Please enter hotel address",
+                            },
+                            hotel_phone: {
+                                required: "Please enter hotel phone",
+                            },
+                            image: {
+                                required: "Please select hotel image",
+                            },
+                            map_link: {
+                                required: "Please enter map link",
+                            },
+                   },
+               submitHandler: function() {
+                   //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                   form.submit();
+                   alert('successful submit');
+                   return false;
+               }
+           });
+       });
+   </script>
 @endsection

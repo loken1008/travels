@@ -94,7 +94,7 @@
                                                 @enderror
                                             </div> --}}
                                         <div class="form-group">
-                                            <h5>Address</h5>
+                                            <h5>Address :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="address" class="form-control">
                                                 @error('address')
@@ -104,7 +104,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Email</h5>
+                                            <h5>Email :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="email" name="email" class="form-control">
                                                 @error('email')
@@ -113,7 +113,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Phone</h5>
+                                            <h5>Phone :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="phone" class="form-control">
                                                 @error('phone')
@@ -122,7 +122,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Mobile</h5>
+                                            <h5>Mobile :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="mobile" class="form-control">
                                                 @error('mobile')
@@ -131,7 +131,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Fax</h5>
+                                            <h5>Fax :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="fax" class="form-control">
                                                 @error('fax')
@@ -141,14 +141,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Gpo Box</h5>
+                                            <h5>Gpo Box :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="gpo_box" class="form-control">
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Map Url</h5>
+                                            <h5>Map Url :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="map_url" class="form-control">
 
@@ -180,7 +180,7 @@
     </script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 <script>
-    $(docment).ready(function(){
+    $(document).ready(function(){
         $('#contact-form').validate({
             rules:{
                 address:{
@@ -232,6 +232,5 @@
             }
         });
     });
-    })
 </script>
 @endsection

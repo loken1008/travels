@@ -232,8 +232,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="section-title stitle-left">
-                        <h4>Our packages</h4>
-                        <h2>Special <span>Packages</span> Offer</h2>
+                        <h2 class="text-center">Special <span>Packages</span> Offer</h2>
                     </div>
                 </div>
             </div>
@@ -380,18 +379,17 @@
                 @endforeach
 
             </div>
-            <div class="row">
-                <div class="view-gallery ">
-                    <a href="{{ route('allgallery') }}" class="read-btn" style="">All Gallery
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
+           
 
         </div>
-
-
+<div class="text-center mt-4">
+    <a href="{{ route('allgallery') }}" class="read-btn" style=""><h5>View Gallery</h5>
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    </a>
+</div>
+        
     </section>
+   
     <!-- Gallery Section End -->
 
     <!-- Testimonials Section Start -->

@@ -22,7 +22,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa  fa-institution"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Tours</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Tours</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$tours}}
                                 </h3>
                             </div>
@@ -36,7 +36,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-bars"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Category</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Category</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$category}}
                                 </h3>
                             </div>
@@ -50,7 +50,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-address-book"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Country</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Country</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$country}}
                                 </h3>
                             </div>
@@ -64,7 +64,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-address-book"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Place</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Place</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$places}}
                                 </h3>
                             </div>
@@ -78,7 +78,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-book"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Booking </p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Booking </p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$booking}}
                                 </h3>
                             </div>
@@ -92,7 +92,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-newspaper-o"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Total Blog</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Total Blog</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$blog}}
                                 </h3>
                             </div>
@@ -106,7 +106,7 @@ $gallery=App\Models\Gallery::count();
                                 <i class="fa fa-cloud-upload"></i>
                             </div>
                             <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Gallery</p>
+                                <p class="text-dark mt-20 mb-0 font-size-16">Gallery</p>
                                 <h3 class="text-white mb-0 font-weight-500">{{$gallery}}
                                 </h3>
                             </div>

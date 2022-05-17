@@ -14,14 +14,14 @@
             <!-- /.box-header -->
             <div class="box-body wizard-content">
                 <form action="{{ route('tour.update', $edittour->id) }}" method="post" class="tab-wizard wizard-circle"
-                    enctype="multipart/form-data">
+                    enctype="multipart/form-data" id="edittourForm">
                     @csrf
 
                     <section>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Country Name :</label>
+                                    <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="country_id">
                                         @foreach ($getcountry as $country)
                                             <option value="{{ $country->id }}"
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Place Name :</label>
+                                    <label for="firstName5">Place Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="place_id">
                                         @foreach ($getplace as $place)
                                             <option value="{{ $place->id }}"
@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Category :</label>
+                                    <label for="firstName5"> Category :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="category_id">
                                         <option value="">Select Category</option>
                                         @foreach ($getcategory as $category)
@@ -65,7 +65,7 @@
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">SubCategory Name :</label>
+                                    <label for="firstName5">SubCategory Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="subcategory_id">
                                         @foreach ($getsubcategory as $subcategory)
                                         <option value="{{ $subcategory->id }}"{{$subcategory->id==$edittour->subcategory_id?'selected':''}}>{{ $subcategory->sub_category_name }}</option>
@@ -78,7 +78,7 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Name :</label>
+                                    <label for="firstName5">Tour Name :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->tour_name }}" name="tour_name">
                                     @error('tour_name')
@@ -88,7 +88,7 @@
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Type :</label>
+                                    <label for="firstName5">Tour Type :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="type">
                                         <option value="">Select Tours </option>
                                         <option value="trip" {{ $edittour->type=="trip"?'selected':'' }}>Trip</option>
@@ -102,7 +102,7 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Altitude :</label>
+                                    <label for="firstName5">Altitude :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->altitude }}" name="altitude">
                                     @error('altitude')
@@ -113,7 +113,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Days :</label>
+                                    <label for="firstName5">Tour Days :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->tour_days }}" name="tour_days">
                                     @error('tour_days')
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Accomodation :</label>
+                                    <label for="firstName5">Accomodation :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->accomodation }}" name="accomodation">
                                     @error('accomodation')
@@ -133,7 +133,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Transport :</label>
+                                    <label for="firstName5">Transport :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->transport }}" name="transport">
                                     @error('transport')
@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Price :</label>
+                                    <label for="firstName5"> Price :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->main_price }}" name="main_price">
                                     @error('main_price')
@@ -199,7 +199,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5"> Map Url :</label>
+                                <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
                                 {{-- @error('map_url')
@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="firstName5">Place Description/Image :</label>
+                            <label for="firstName5">Place Description/Image :<span class="text-danger">*</span></label>
                             <textarea id="my-editor" class="form-control" name="description"
                                 value="{{ $edittour->description }}">{{ $edittour->description }}</textarea>
                             @error('description')
@@ -221,7 +221,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Include :</label>
+                                    <label for="firstName5">Cost Include :<span class="text-danger">*</span></label>
                                     <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
                                         {{$edittour->cost_include}}
                                     </textarea>
@@ -233,7 +233,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Exclude :</label>
+                                    <label for="firstName5">Cost Exclude :<span class="text-danger">*</span></label>
                                     <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
                                         {{$edittour->cost_exclude}}
                                   </textarea>
@@ -252,7 +252,7 @@
                         <div class="row dateprice" id="dynamicAddRemove">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Start Date :</label>
+                                    <label for="firstName5">Start Date :<span class="text-danger">*</span></label>
                                     <input class="form-control" id="firstName5" "
                                                     name=" start_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{$dateprice->start_date}}">
@@ -264,7 +264,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> End Date :</label>
+                                    <label for="firstName5"> End Date :<span class="text-danger">*</span></label>
                                     <input class="form-control" id="firstName5" "
                                                     name=" end_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{$dateprice->end_date}}">
@@ -276,7 +276,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Seats Available :</label>
+                                    <label for="firstName5">Seats Available :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5" name="seats_available[]" value="{{$dateprice->seats_available}}">
                                         @error('seats_available')
                                             <span class="text-danger">{{ $message }}</span>
@@ -286,7 +286,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Price :</label>
+                                    <label for="firstName5"> Price :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5" name="price[]" value="{{$dateprice->price}}">
                                         @error('price')
                                             <span class="text-danger">{{ $message }}</span>
@@ -307,7 +307,7 @@
                         <div class="row " id="equipment">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Equipment Name :</label>
+                                    <label for="firstName5">Equipment Name :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5" name="equipment_name[]" value="{{$equipment->equipment_name}}">
                                         @error('equipment_name')
                                             <span class="text-danger">{{ $message }}</span>
@@ -317,8 +317,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Description :</label>
-                                    <textarea id="editor3" name="equipment_description[]" rows="10" cols="80" value="{{$equipment->equipment_description}}">
+                                    <label for="firstName5"> Description :<span class="text-danger">*</span></label>
+                                    <textarea id="editor5" class="editor5" name="equipment_description[]" rows="10" cols="80" value="{{$equipment->equipment_description}}">
                                         {{$equipment->equipment_description}}
                                     </textarea>
                                         @error('equipment_description')
@@ -338,7 +338,7 @@
                         <div class="row" id="itinerary">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Day Title :</label>
+                                    <label for="firstName5">Day Title :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5" name="day_title[]" value="{{$itineries->day_title}}">
                                         @error('day_title')
                                             <span class="text-danger">{{ $message }}</span>
@@ -349,8 +349,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName6"> Long Description :</label>
-                                    <textarea id="editor6" name="long_description[]" rows="10" cols="80" value="{{$itineries->long_description}}">
+                                    <label for="firstName6"> Long Description :<span class="text-danger">*</span></label>
+                                    <textarea id="editor6"  name="long_description[]" rows="10" cols="80" value="{{$itineries->long_description}}">
                                         {{$itineries->long_description}}
                                     </textarea>
                                         @error('long_description')
@@ -376,7 +376,11 @@
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
+    <script src="{{asset('assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
+    <script type='text/javascript'>
+        CKEDITOR.replaceAll();
+    </script>
     <script>
         var route_prefix = "/laravel-filemanager";
         $('#elfm').filemanager('images', {

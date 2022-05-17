@@ -71,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>About Us Title<span class="text-danger">*</span></label>
+                                            <label>About Us Title: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="aboutus_title" class="form-control">
                                                 @error('aboutus_title')
@@ -97,7 +97,7 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         <div class="form-group">
-                                            <label for="firstName5"> Description :</label>
+                                            <label for="firstName5"> Description : <span class="text-danger">*</span></label>
                                             <textarea id="my-editor" class="form-control" name="aboutus_description"></textarea>
                                             @error('aboutus_description')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -144,36 +144,47 @@
     <script>
         CKEDITOR.replace('my-editor', options);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#introForm").validate({
-                rules: {
-                    aboutus_title: {
-                        required: true,
-                    },
-                    aboutus_image: {
-                        required: true
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
 
-                    },
-                    aboutus_description: {
-                        required: true
-                    },
-                },
-                messages: {
-                   aboutus_title: {
-                        required: "About Us Title is required",
-                    },
-                    aboutus_image: {
-                        required: "About Us Image is required",
-                    },
-                    aboutus_description: {
-                        required: "Aboutud Description is required ",
-                    },
+   <script>
+       $(document).ready(function() {
+           $.validator.addMethod('irequired', function(value, element, params) {
+               var idname = jQuery(element).attr('id');
+               var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+               return !params || messageLength.length !== 0;
+           }, "About Us Description field is required");
 
-                },
-            });
 
-        });
-    </script>
+           $("#introForm").validate({
+                   ignore: [],
+                   rules: {
+                          aboutus_title: {
+                            required: true,
+                          },
+                          aboutus_image: {
+                            required: true,
+                          },
+                          aboutus_description: {
+                            irequired: true
+                          },
+                   },
+
+                   messages: {
+                          aboutus_title: {
+                            required: "Please enter title",
+                          },
+                          aboutus_image: {
+                            required: "Please upload image",
+                          }
+                   },
+               submitHandler: function() {
+                   //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                   form.submit();
+                   alert('successful submit');
+                   return false;
+               }
+           });
+       });
+   </script>
 @endsection

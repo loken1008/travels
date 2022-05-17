@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Tour;
 
 use Carbon\Carbon;
 
@@ -47,7 +48,8 @@ class BlogController extends Controller
 
     public function createBlog()
     {
-        return view('admin.blogs.create');
+        $tours=Tour::orderBy('id','desc')->get();
+        return view('admin.blogs.create',compact('tours'));
     }
 
     public function storeBlog(Request $request)
@@ -60,6 +62,7 @@ class BlogController extends Controller
             'blog_image'=>'required',
         ]);
         Blog::insert([
+            'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,
@@ -81,7 +84,8 @@ class BlogController extends Controller
     {
       
         $editblog=Blog::findOrfail($id);
-        return view('admin.blogs.edit',compact('editblog'));
+        $tours=Tour::orderBy('id','desc')->get();
+        return view('admin.blogs.edit',compact('editblog','tours'));
       
     }
     public function updateBlog(Request $request,$id)
@@ -94,6 +98,7 @@ class BlogController extends Controller
         ]);
         $ublog=Blog::findOrfail($id);
         Blog::where('id',$id)->update([
+            'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,

@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use Hash;
 use Illuminate\Support\Arr;
 use DB;
+use App\Models\Customer;
 class UserController extends Controller
 {
     /**
@@ -136,4 +137,20 @@ class UserController extends Controller
         return redirect()->route('users.index')
                         ->with($notification);
     }
+
+    public function viewCustomer()
+        {
+            $customers=Customer::orderBy('id','DESC')->get();
+            return view('admin.customer.customer',compact('customers'));
+        }
+    public function deleteCustomer($id)
+        {
+            Customer::find($id)->delete();
+            $notification=array(
+                'message'=>'Successfully Customer Deleted ',
+                'alert-type'=>'success'
+                );
+                return redirect()->back()
+                                ->with($notification);
+        }
 }

@@ -8,7 +8,7 @@ $route=Route::current()->getName();
 
         <div class="user-profile">
             <div class="ulogo">
-                <a href="index.html">
+                <a href="{{route('admin.dashboard')}}">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
                         @if(!empty($sitesetting->logo))
@@ -129,7 +129,7 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
 
                     <li class="{{($route=='tour.create')?'active':''}}"><a class="{{($route=='tour.create')?'active':''}}" href="{{route('tour.create')}}"><i class="ti-more"></i>Add Tour</a></li>
-                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Trip</a></li>
+                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tour</a></li>
                     {{-- <li class="{{($route=='package.view')?'active':''}}"><a class="{{($route=='package.view')?'active':''}}" href="{{route('package.view')}}"><i class="ti-more"></i>View Packages</a></li>
                     <li class="{{($route=='activities.view')?'active':''}}"><a class="{{($route=='activities.view')?'active':''}}" href="{{route('activities.view')}}"><i class="ti-more"></i>View Activities</a></li> --}}
 
@@ -171,7 +171,7 @@ $route=Route::current()->getName();
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{($route=='all.category')?'active':''}}"><a href="{{route('all.introduction')}}"><i class="ti-more"></i>About  Us</a></li>
+                    <li class="{{($route=='all.introduction')?'active':''}}"><a href="{{route('all.introduction')}}"><i class="ti-more"></i>About  Us</a></li>
                     <li class="{{($route=='all.team')?'active':''}}"><a href="{{route('all.team')}}"><i class="ti-more"></i>Our Team</a></li>
                     <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.choose')}}"><i class="ti-more"></i>Why Choose Us </a></li>
                     <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.termsandconditions')}}"><i class="ti-more"></i>Terms and Conditions </a></li>
@@ -241,6 +241,19 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.gallery')?'active':''}}"><a class="{{($route=='all.gallery')?'active':''}}" href="{{route('all.gallery')}}"><i class="ti-more"></i>View Gallery</a></li>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview {{($prefix=='/customers')?'active':''}}">
+                <a href="#">
+                    <i class="fa fa-user-o"></i>
+                    <span>Users</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.customers')?'active':''}}"><a class="{{($route=='all.customers')?'active':''}}" href="{{route('all.customers')}}"><i class="ti-more"></i>View Users</a></li>
                     </li>
                 </ul>
             </li>

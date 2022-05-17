@@ -37,7 +37,7 @@
                                                 @enderror
                                             </div> --}}
                                         <div class="form-group">
-                                            <h5>Address</h5>
+                                            <h5>Address :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="address" class="form-control" value="{{$editcontact->address}}">
                                                 @error('address')
@@ -47,7 +47,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Email</h5>
+                                            <h5>Email :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="email" name="email" class="form-control" value="{{$editcontact->email}}">
                                                 @error('email')
@@ -56,7 +56,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Phone</h5>
+                                            <h5>Phone :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="phone" class="form-control" value="{{$editcontact->phone}}">
                                                 @error('phone')
@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Mobile</h5>
+                                            <h5>Mobile :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="mobile" class="form-control" value="{{$editcontact->mobile}}">
                                                 @error('mobile')
@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Fax</h5>
+                                            <h5>Fax :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="fax" class="form-control" value="{{$editcontact->fax}}">
                                                 @error('fax')
@@ -84,14 +84,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Gpo Box</h5>
+                                            <h5>Gpo Box :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="gpo_box" class="form-control" value="{{$editcontact->gpo_box}}">
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Map Url</h5>
+                                            <h5>Map Url :<span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="url" name="map_url" class="form-control" value="{{$editcontact->map_url}}">
 

@@ -14,4 +14,8 @@ class Blog extends Model
     {
         return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
+    public function tour()
+    {
+        return $this->belongsTo(Tour::class);
+    }
 }

@@ -10,17 +10,19 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
-                <form action="{{route('country.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data">
-                   @csrf
-                  
+                <form action="{{ route('country.store') }}" method="post" class="tab-wizard wizard-circle"
+                    enctype="multipart/form-data" id="categoryForm">
+                    @csrf
+
                     <section>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="firstName5">Country Name :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('country_name')}}" name="country_name">
+                                    <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="firstName5"
+                                        value="{{ @old('country_name') }}" name="country_name">
                                     @error('country_name')
-                                    <span class="text-danger">{{$message}}</span>
+                                        <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 {{-- <div class="form-group">
@@ -33,7 +35,7 @@
                             </div>
                             <div class="col-md-12">
 
-                                <label for="firstName5"> Country Image :</label>
+                                <label for="firstName5"> Country Image :<span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="clfm" data-input="mainthumbnail" data-preview="holder"
@@ -51,11 +53,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="firstName5">Country Description :</label>
-                        <textarea id="my-editor"  class="form-control" name="description"></textarea>
-                        @error('description')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                            <label for="firstName5">Country Description :<span class="text-danger">*</span></label>
+                            <textarea id="my-editor" class="form-control" name="description"></textarea>
+                            @error('description')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="box-footer">
                             <input type="submit" class="btn btn-rounded btn-info pull-right" value="Add Country">
@@ -89,5 +91,48 @@
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.validator.addMethod('crequired', function(value, element, params) {
+                var idname = jQuery(element).attr('id');
+                var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                return !params || messageLength.length !== 0;
+            }, "Description field is required");
+
+
+            $("#categoryForm").validate({
+                    ignore: [],
+                    rules: {
+                        country_name: {
+                            required: true,
+                        },
+                        country_image: {
+                            required: true,
+                        },
+                        description: {
+                            crequired: true,
+                        },
+                    },
+
+                    messages: {
+                        country_name: {
+                            required: "Please enter country name",
+                        },
+                        country_image: {
+                            required: "Please upload country image",
+                        },
+                    },
+                submitHandler: function() {
+                    //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                    form.submit();
+                    alert('successful submit');
+                    return false;
+                }
+            });
+        });
     </script>
 @endsection

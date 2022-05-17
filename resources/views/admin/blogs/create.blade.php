@@ -10,30 +10,41 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
-                <form action="{{route('blog.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data">
+                <form action="{{route('blog.store')}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data" id="blogForm">
                    @csrf
                   
                     <section>
                         <div class="row">
                             <div class="col-md-12">
-                            
                                 <div class="form-group">
-                                    <label for="firstName5">Blog Title :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('blog_title')}}" name="blog_title">
+                                    <label for="firstName5">Tour :</label>
+                                    <select class="form-control" name="tour_id" id="">
+                                        <option value="">Select Tour</option>
+                                        @foreach($tours as $tour)
+                                        <option value="{{$tour->id}}">{{$tour->tour_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('blog_title')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstName5">Blog Title : <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="blogtitle" value="{{@old('blog_title')}}" name="blog_title">
                                     @error('blog_title')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="firstName5">Author Name :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('author_name')}}" name="author_name">
+                                    <input type="text" class="form-control" id="authorname" value="{{@old('author_name')}}" name="author_name">
                                     @error('author_name')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="firstName5">Blog Type :</label>
-                                    <input type="text" class="form-control" id="firstName5" value="{{@old('blog_type')}}" name="blog_type">
+                                    <input type="text" class="form-control" id="blogtype" value="{{@old('blog_type')}}" name="blog_type">
                                     @error('blog_type')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -101,5 +112,59 @@
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+     <script>
+        $(document).ready(function() {
+            $.validator.addMethod('brequired', function(value, element, params) {
+                var idname = $(element).attr('id');
+                var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                return !params || messageLength.length !== 0;
+            }, "Description field is required");
+ 
+ 
+            $("#blogForm").validate({
+                    ignore: [],
+                    rules: {
+                        blog_title: {
+                            required: true,
+                        },
+                        author_name: {
+                            required: true,
+                        },
+                        blog_type: {
+                            required: true,
+                        },
+                        blog_description: {
+                            brequired: true,
+                        },
+                        blog_image: {
+                            required: true,
+                        },
+                    },
+ 
+                    messages: {
+                        blog_title: {
+                            required: "Please enter blog title",
+                        },
+                        author_name: {
+                            required: "Please enter author name",
+                        },
+                        blog_type: {
+                            required: "Please enter blog type",
+                        },
+                        blog_image: {
+                            required: "Please enter blog image",
+                        },
+                    },
+                submitHandler: function() {
+                    //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                    form.submit();
+                    alert('successful submit');
+                    return false;
+                }
+            });
+        });
     </script>
 @endsection
