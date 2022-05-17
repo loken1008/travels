@@ -65,7 +65,13 @@ class CountryController extends Controller
             'description'=>'required',
             // 'start_price'=>'required',
         ]);
-        Country::where('id',$id)->update($request->except('_token'));
+        $ucountry=Country::findOrfail($id);
+        Country::where('id',$id)->update([
+            'country_name'=>$request->country_name,
+            'description'=>$request->description,
+            'country_image'=>$request->country_image?$request->country_image:$ucountry->country_image,
+            'updated_at'=>Carbon::now(),
+        ]);
         $notification=array(
             'message'=>'Country Update Successfully',
             'alert-type'=>'success'

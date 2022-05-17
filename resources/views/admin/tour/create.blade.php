@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Country Name :</label>
+                                    <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="country" name="country_id">
                                         <option value="">Select Country</option>
                                         @foreach ($getcountry as $country)
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="place">Place Name :</label>
+                                    <label for="place">Place Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="place_id">
 
                                     </select>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Category :</label>
+                                    <label for="firstName5"> Category :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="category" name="category_id">
                                         <option value="">Select Category</option>
                                         @foreach ($getcategory as $category)
@@ -57,7 +57,7 @@
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">SubCategory Name :</label>
+                                    <label for="firstName5">SubCategory Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="subcategory_id">
 
                                     </select>
@@ -68,7 +68,7 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="tourname"> Tour Name :</label>
+                                    <label for="tourname"> Tour Name :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="tourname"
                                         value="{{ old('tour_name') }}" name="tour_name">
                                     @error('tour_name')
@@ -78,7 +78,7 @@
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Type :</label>
+                                    <label for="firstName5">Tour Type :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="type">
                                         <option value="">Select Tours </option>
                                         <option value="trip">Trip</option>
@@ -92,7 +92,7 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="altitude">Altitude :</label>
+                                    <label for="altitude">Altitude :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="altitude"
                                         value="{{ old('altitude') }}" name="altitude">
                                     @error('altitude')
@@ -103,7 +103,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="tourdays">Tour Days :</label>
+                                    <label for="tourdays">Tour Days :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="tourdays"
                                         value="{{ old('tour_days') }}" name="tour_days">
                                     @error('tour_days')
@@ -113,7 +113,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accomodation">Accomodation :</label>
+                                    <label for="accomodation">Accomodation :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="accomodation"
                                         value="{{ old('accomodation') }}" name="accomodation">
                                     @error('accomodation')
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="transport">Transport :</label>
+                                    <label for="transport">Transport :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="transport"
                                         value="{{ old('transport') }}" name="transport">
                                     @error('transport')
@@ -133,7 +133,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="price"> Price :</label>
+                                    <label for="price"> Price :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="price"
                                         value="{{ old('main_price') }}" name="main_price">
                                     @error('main_price')
@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <label for="firstName5"> Main Image :</label>
+                                <label for="firstName5"> Main Image :<span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfms" data-input="mainthumbnail" data-preview="holder"
@@ -161,7 +161,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <label for="firstName5"> Related Images :</label>
+                                <label for="firstName5"> Related Images :<span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
@@ -178,7 +178,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="mapurl"> Map Url :</label>
+                                <label for="mapurl"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
                                     name="map_url">
                                 {{-- @error('map_url')
@@ -188,7 +188,7 @@
                         </div>
 
                         <div class="form-group ">
-                            <label for="description">Place Description/Image :</label>
+                            <label for="description">Place Description/Image :<span class="text-danger">*</span></label>
                             <textarea id="my-editor" class="form-control " name="description"
                                 value={{ old('description') }}>{{ old('description') }}</textarea>
                               
@@ -202,7 +202,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costinclude">Cost Include :</label>
+                                    <label for="costinclude">Cost Include :<span class="text-danger">*</span></label>
                                     <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
                                         {{ old('cost_include') }}
                                     </textarea>
@@ -214,7 +214,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costexclude">Cost Exclude :</label>
+                                    <label for="costexclude">Cost Exclude :<span class="text-danger">*</span></label>
                                     <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
                                         {{ old('cost_exclude') }}
                                   </textarea>
@@ -230,32 +230,29 @@
                         <div class="row dateprice" id="dynamicAddRemove">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="startdate">Start Date :</label>
-                                    <input class="form-control" id="startdate" "
-                                                            name=" start_date[]" type="date"
+                                    <label for="startdate">Start Date :<span class="text-danger">*</span></label>
+                                    <input class="form-control" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="enddate"> End Date :<span class="text-danger">*</span></label>
+                                    <input class="form-control" id="id_ed" name="end_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="enddate"> End Date :</label>
-                                    <input class="form-control" id="enddate" "
-                                                            name=" end_date[]" type="date"
-                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="seatsavailable">Seats Available :</label>
+                                    <label for="seatsavailable">Seats Available :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="seatsavailable" name="seats_available[]">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="price"> Price :</label>
+                                    <label for="price"> Price :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="price" name="price[]">
 
                                 </div>
@@ -276,14 +273,14 @@
                         <div class="row " id="equipment">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="equipmentname">Equipment Name :</label>
+                                    <label for="equipmentname">Equipment Name :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="equipmentname" name="equipment_name[]">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="edescription"> Description :</label>
+                                    <label for="edescription"> Description :<span class="text-danger">*</span></label>
                                     <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
 
                                     </textarea>
@@ -304,7 +301,7 @@
                         <div class="row" id="itinerary">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="daytitle">Day Title :</label>
+                                    <label for="daytitle">Day Title :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="daytitle" name="day_title[]">
 
                                 </div>
@@ -312,7 +309,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="longdescription"> Long Description :</label>
+                                    <label for="longdescription"> Long Description :<span class="text-danger">*</span></label>
                                     <textarea id="editor4" name="long_description[]" rows="10" cols="80">
 
                                     </textarea>
@@ -423,9 +420,8 @@
   <script type="text/javascript">
     var i = 0;
     $("#dynamic-ar").click(function() {
-        ++i;
-        $("#dynamicAddRemove").append(
-            '<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :</label><input class="form-control" id="firstName5" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :</label><input class="form-control" id="firstName5" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :</label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :</label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class=""><a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
+        i++;
+        $("#dynamicAddRemove").append('<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :<span class="text-danger">*</span></label><input class="form-control" id="id_ct' + i + '" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :<span class="text-danger">*</span></label><input class="form-control" id="id_ed' + i + '" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class=""><a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
 
         );
     });
@@ -443,7 +439,7 @@
                     i++;
                     var editorId = "editor3" +i;
                     $("#equipment").append(
-                        '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="'+editorId+'"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
+                        '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :<span class="text-danger">*</span></label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :<span class="text-danger">*</span></label> <textarea id="'+editorId+'"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
                     );
                     CKEDITOR.replace(editorId);
                 }
@@ -463,7 +459,7 @@
                     var editorId1 = "editor4" +i;
         $("#itinerary").append(
 
-            '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="'+editorId1+'" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
+            '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :<span class="text-danger">*</span></label><textarea id="'+editorId1+'" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
         );
         CKEDITOR.replace(editorId1);
         }

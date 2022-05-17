@@ -14,12 +14,12 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('update.termsandconditions',$edittermsandconditions->id) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('update.termsandconditions',$edittermsandconditions->id) }}" method="post" enctype="multipart/form-data" id="etermForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Title<span class="text-danger">*</span></h5>
+                                                <h5>Title: <span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="title" class="form-control" value="{{$edittermsandconditions->title}}">
                                                     @error('title')
@@ -28,7 +28,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Type<span class="text-danger">*</span></label>
+                                                <label>Type: <span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <select  name="type" class="form-control">
                                                         <option value="">Select Type</option>
@@ -44,7 +44,7 @@
                                            
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="firstName5"> Description :</label>
+                                                    <label for="firstName5"> Description :<span class="text-danger">*</span></label>
                                                   <textarea id="my-editor"  class="form-control" name="description" value="{{$edittermsandconditions->description}}">{{$edittermsandconditions->description}}</textarea>
                                                   @error('description')
                                                   <span class="text-danger">{{$message}}</span>
@@ -88,4 +88,47 @@
           <script>
             CKEDITOR.replace('my-editor', options);
         </script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+        
+           <script>
+               $(document).ready(function() {
+                   $.validator.addMethod('trequired', function(value, element, params) {
+                       var idname = jQuery(element).attr('id');
+                       var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                       return !params || messageLength.length !== 0;
+                   }, "Description field is required");
+        
+        
+                   $("#etermForm").validate({
+                           ignore: [],
+                           rules: {
+                               title: {
+                                   required: true,
+                               },
+                               type: {
+                                   required: true,
+                               },
+                               description: {
+                                   trequired: true,
+                               },
+                           },
+        
+                           messages: {
+                               title: {
+                                   required: "Title is required",
+                               },
+                               type: {
+                                   required: "Type is required",
+                               },
+                           },
+                       submitHandler: function() {
+                           //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                           form.submit();
+                           alert('successful submit');
+                           return false;
+                       }
+                   });
+               });
+           </script>
 @endsection

@@ -1,5 +1,5 @@
 @extends('admin.body.master')
-@section('title', 'Update FQA ')
+@section('title', 'Update FAQ ')
 @section('content')
 
 
@@ -10,7 +10,7 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Update FQA</h3>
+                        <h3 class="box-title">Update FAQ</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -20,7 +20,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>Tour Name<span class="text-danger">*</span></label>
+                                            <label>Tour Name :<span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <select name="tour_id" class="form-control">
                                                     <option value="">Select Tour</option>
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Question<span class="text-danger">*</span></label>
+                                            <label>Question :<span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="question" class="form-control"
                                                     value="{{ $editfqa->question }}">
@@ -50,7 +50,7 @@
 
 
                                         <div class="form-group">
-                                            <label for="firstName5"> Answer :</label>
+                                            <label for="firstName5"> Answer :<span class="text-danger">*</span></label>
                                             <textarea class="form-control" name="answer" rows="10" cols="10"
                                                 value="{{ $editfqa->answer }}">{{ $editfqa->answer }}</textarea>
                                             @error('answer')
@@ -61,7 +61,7 @@
                                 </div>
 
                                 <div class="text-xs-right" style="float:right">
-                                    <input type="submit" class="btn btn-rounded btn-info" value="Update Fqa" />
+                                    <input type="submit" class="btn btn-rounded btn-info" value="Update Faq" />
                                 </div>
                             </form>
                         </div>

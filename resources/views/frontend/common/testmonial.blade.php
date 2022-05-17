@@ -4,7 +4,7 @@ $gettestmonial=App\Models\Testmonial::where('status',1)->orderBy('id','desc')->g
 @endphp
 
 <div class="inner-title mt-25">
-    <h2>Our Client's Say</h2>
+    <h2 class="text-center">Our Client's Say</h2>
     <div class="sec-line mb-40"></div>
 </div>
 <div class="testimonials-post testimonials_slide owl-carousel owl-theme owl-navst st-three">

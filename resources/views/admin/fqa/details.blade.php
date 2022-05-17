@@ -1,5 +1,5 @@
 @extends('admin.body.master')
-@section('title', 'FQA Details')
+@section('title', 'FAQ Details')
 @section('content')
     <section class="content">
 

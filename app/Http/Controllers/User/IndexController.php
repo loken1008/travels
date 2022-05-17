@@ -31,7 +31,7 @@ class IndexController extends Controller
 
     public function  tourDetails($tour_name)
     {
-        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa')->where('tour_name',$tour_name)->first();
+        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('tour_name',$tour_name)->first();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->where('tour_id',$getTourdetails->id)->get();
         return view('frontend.tour.tourdetails',compact('getTourdetails','gethotel'));
     }

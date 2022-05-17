@@ -153,8 +153,13 @@
                         <input type="hidden" value="{{ $getblogdetails->id }}" name="blog_id">
                         <div class="form-row">
                             <div class="form-group col-md-12">
+                                @if( Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->first_name || Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->last_name)
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Full Name" value="{{Auth()->guard('customer')->user()->first_name}} {{Auth()->guard('customer')->user()->last_name}}" readonly>
+                                @else
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Full Name"
                                     required="">
+                                @endif
                                     @error('name')
                                     <span class="text-danger">
                                         <strong>{{ $message }}</strong>
@@ -163,8 +168,13 @@
                             </div>
 
                             <div class="form-group col-md-12">
+                                @if( Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->email)
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Your Email" value="{{ Auth()->guard('customer')->user()->email }}" readonly>
+                                @else
                                 <input type="email" name="email" id="email" class="form-control" placeholder="Your Email"
                                     required="">
+                                @endif
                                     @error('email')
                                     <span class="text-danger">
                                         <strong>{{ $message }}</strong>

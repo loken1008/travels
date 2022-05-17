@@ -80,7 +80,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Coupon Name<span class="text-danger">*</span></h5>
+                                                <h5>Coupon Name :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="coupon_name" class="form-control"
                                                         value="{{ old('coupon_name') }}">
@@ -91,7 +91,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5> Discount Amount<span class="text-danger">*</span></h5>
+                                                <h5> Discount Amount :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="discount_amount" class="form-control"
                                                         value="{{ old('discount_amount') }}">
@@ -102,7 +102,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5>Coupon Validity <span class="text-danger">*</span></h5>
+                                                <h5>Coupon Validity :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="date" name="coupon_validity" class="form-control"
                                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"
@@ -183,7 +183,7 @@
                      coupon_name: {
                          required: true,
                      },
-                     discount_discount: {
+                     discount_amount: {
                          required: true
  
                      },
@@ -195,7 +195,7 @@
                     coupon_name: {
                          required: "Enter Coupon Name",
                      },
-                     discount_discount: {
+                     discount_amount: {
                          required: "Enter Discount Amount",
                      },
                      coupon_validity: {

@@ -10,14 +10,14 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
-                <form action="{{route('place.update',$editplace->id)}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data">
+                <form action="{{route('place.update',$editplace->id)}}" method="post" class="tab-wizard wizard-circle" enctype="multipart/form-data" id="editplaceForm">
                    @csrf
                   
                     <section>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Country Name :</label>
+                                    <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5"  name="country_id">
                                     @foreach($getcountry as $country)
                                     <option value="{{$country->id}}" {{$editplace->country_id==$country->id?'selected':''}}>{{$country->country_name}}</option>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Place Name :</label>
+                                    <label for="firstName5">Place Name :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5" value="{{$editplace->place_name}}" name="place_name">
                                     @error('place_name')
                                     <span class="text-danger">{{$message}}</span>
@@ -70,4 +70,47 @@
     <script>
         CKEDITOR.replace('my-editor', options);
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+ 
+     <script>
+         $(document).ready(function() {
+             $.validator.addMethod('prequired', function(value, element, params) {
+                 var idname = jQuery(element).attr('id');
+                 var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                 return !params || messageLength.length !== 0;
+             }, "Description field is required");
+ 
+ 
+             $("#editplaceForm").validate({
+                     ignore: [],
+                     rules: {
+                         country_id: {
+                             required: true,
+                         },
+                           place_name: {
+                               required: true,
+                           },
+                           description: {
+                               prequired: true,
+                           },
+                     },
+ 
+                     messages: {
+                         country_id: {
+                             required: "Please select country name",
+                         },
+                           place_name: {
+                               required: "Please enter place name",
+                           },
+                     },
+                 submitHandler: function() {
+                     //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                     form.submit();
+                     alert('successful submit');
+                     return false;
+                 }
+             });
+         });
+     </script>
 @endsection

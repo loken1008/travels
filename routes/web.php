@@ -45,6 +45,11 @@ Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);
 Route::resource('permissions', PermissionController::class);
 
+// customers
+Route::get('/customers',[App\Http\Controllers\Admin\UserController::class,'viewCustomer'])->name('all.customers');
+Route::get('/customers/delete/{id}',[App\Http\Controllers\Admin\UserController::class,'deleteCustomer'])->name('customer.delete');
+
+
 // country
 Route::get('/country',[App\Http\Controllers\Admin\CountryController::class,'viewCountry'])->name('country.view');
 Route::get('/country/create',[App\Http\Controllers\Admin\CountryController::class,'createCountry'])->name('country.create');

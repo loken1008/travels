@@ -82,16 +82,16 @@ $(document).ready(function () {
         });
         return flag;
     }, "");
-    $.validator.addMethod("eqd", function (value, element) {
+    $.validator.addMethod("eeqd", function (value, element) {
         var flag = true;
 
-        $("[name^=equipment_description]").each(function (k, l) {
+        $("[name^=equipment_description]").each(function (m, l) {
             $(this).parent('div').find('label.error').remove();
             $(this).parent('div').find('label.error').remove();
             if ($.trim($(this).val()) == '') {
                 flag = false;
 
-                $(this).parent('div').append('<label  id="id_ed' + k + '-error" class="error">Equipment Description is required.</label>');
+                $(this).parent('div').append('<label  id="editor5' + m + '-error" class="error">Equipment Description is required.</label>');
             }
         });
         return flag;
@@ -111,7 +111,7 @@ $(document).ready(function () {
         });
         return flag;
     }, "");
-    $.validator.addMethod("lgdesc", function (value, element) {
+    $.validator.addMethod("elgdesc", function (value, element) {
         var flag = true;
 
         $("[name^=long_description]").each(function (k, l) {
@@ -120,12 +120,12 @@ $(document).ready(function () {
             if ($.trim($(this).val()) == '') {
                 flag = false;
 
-                $(this).parent('div').append('<label  id="id_ed' + k + '-error" class="error">Description is required.</label>');
+                $(this).parent('div').append('<label  id="editor6' + k + '-error" class="error">Description is required.</label>');
             }
         });
         return flag;
     }, "");
-    $("#tourForm").validate({
+    $("#edittourForm").validate({
         ignore: [],
         rules: {
             country_id: {
@@ -153,12 +153,6 @@ $(document).ready(function () {
                 required: true,
             },
             main_price: {
-                required: true,
-            },
-            mainImage: {
-                required: true,
-            },
-            images: {
                 required: true,
             },
             map_url: {
@@ -189,13 +183,13 @@ $(document).ready(function () {
                 eqn: true,
             },
             "equipment_description[]": {
-                eqd: true,
+                eeqd: true,
             },
             "day_title[]": {
                 daytitle: true,
             },
             "long_description[]": {
-                lgdesc: true,
+                elgdesc: true,
             },
             
         },
@@ -228,12 +222,6 @@ $(document).ready(function () {
             main_price: {
                 required: "Please enter price",
             },
-            mainImage: {
-                required: "Please select main image",
-            },
-            images: {
-                required: "Please select images",
-            },
             map_url: {
                 required: "Please enter map url",
             },
@@ -247,23 +235,4 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    $("#bannerForm").validate({
-        rules: {
-            title: {
-                required: true,
-            },
-            banner_image: {
-                required: true,
-            },
-        },
-        messages: {
-            title: {
-                required: "Please enter banner title",
-            },
-            banner_image: {
-                required: "Please select banner image",
-            },
-        },
-    });
-});
+    

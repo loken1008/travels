@@ -64,7 +64,7 @@ public function IntroductionUpdate(Request $request,$id)
         'message'=>'About Us Update Successfully',
         'alert-type'=>'success'
     );
-    return back()->with($notification);
+    return redirect()->route('all.introduction')->with($notification);
 }
     public function IntroductionDelete($id)
     {
@@ -129,7 +129,7 @@ public function IntroductionUpdate(Request $request,$id)
             'message'=>'Update Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.termsandconditions')->with($notification);
     }
         public function TermsDelete($id)
         {
@@ -187,7 +187,7 @@ public function ChooseUpdate(Request $request,$id)
         'message'=>'Choose Us Update Successfully',
         'alert-type'=>'success'
     );
-    return back()->with($notification);
+    return redirect()->route('all.choose')->with($notification);
 }
     public function ChooseDelete($id)
     {
@@ -235,7 +235,7 @@ public function ChooseUpdate(Request $request,$id)
             'message'=>'Our Team Insert Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.team')->with($notification);
     }
 
     public function TeamEdit($id)
@@ -267,7 +267,7 @@ public function ChooseUpdate(Request $request,$id)
             'message'=>'Our Team Update Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.team')->with($notification);
     }
 
     public function TeamDelete($id)

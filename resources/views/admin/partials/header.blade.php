@@ -111,9 +111,9 @@
 
                 <!-- User Account-->
                 <li class="dropdown user user-menu">
-                    <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0"
-                        data-toggle="dropdown" title="User">
-                        <img src="../images/avatar/1.jpg" alt="">
+                    <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" style="margin-top:22px"
+                        data-toggle="dropdown" title="name">
+                        {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu animated flipInX">
                         <li class="user-body">

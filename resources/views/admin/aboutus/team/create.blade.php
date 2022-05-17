@@ -14,12 +14,12 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table">
-                            <form action="{{ route('store.team') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('store.team') }}" method="post" enctype="multipart/form-data" id="teamForm">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>Name<span class="text-danger">*</span></label>
+                                            <label>Name: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="name" class="form-control">
                                                 @error('name')
@@ -28,7 +28,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Post<span class="text-danger">*</span></label>
+                                            <label>Post: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="post" class="form-control">
                                                 @error('post')
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Language<span class="text-danger">*</span></label>
+                                            <label>Language: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="language" class="form-control">
                                                 @error('language')
@@ -46,7 +46,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Experiences<span class="text-danger">*</span></label>
+                                            <label>Experiences: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <input type="text" name="experiences" class="form-control">
                                                 @error('experiences')
@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Field Type<span class="text-danger">*</span></label>
+                                            <label>Field Type: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <select  name="type" class="form-control">
                                                     <option value="">Select Field Type</option>
@@ -71,7 +71,7 @@
                                             </div>
                                         </div>
 
-                                            <label for="firstName5"> Image :</label>
+                                            <label for="firstName5"> Image : <span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <a id="blfm" data-input="mainthumbnail" data-preview="holder"
@@ -87,7 +87,7 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="form-group">
-                                                <label for="firstName5"> Description :</label>
+                                                <label for="firstName5"> Description : <span class="text-danger">*</span></label>
                                                 <textarea id="my-editor" class="form-control" name="description"></textarea>
                                                 @error('description')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -96,7 +96,7 @@
                                         </div>
 
                                 </div>
-                                <div class="text-xs-right">
+                                <div class="text-xs-right" style="float: right">
                                     <input type="submit" class="btn btn-rounded btn-info" value="Add Team" />
                                 </div>
                             </form>
@@ -130,4 +130,72 @@
       <script>
         CKEDITOR.replace('my-editor', options);
     </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+         <script>
+            $(document).ready(function() {
+                $.validator.addMethod('terequired', function(value, element, params) {
+                    var idname = $(element).attr('id');
+                    var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                    return !params || messageLength.length !== 0;
+                }, "Description field is required");
+     
+     
+                $("#teamForm").validate({
+                        ignore: [],
+                        rules: {
+                            name: {
+                                required: true,
+                            },
+                            post: {
+                                required: true,
+                            },
+                            language: {
+                                required: true,
+                            },
+                            experiences: {
+                                required: true,
+                            },
+                            type: {
+                                required: true,
+                            },
+                            image: {
+                                required: true,
+                            },
+                            description: {
+                                terequired: true,
+                            },
+                            
+                        },
+     
+                        messages: {
+                            name: {
+                                required: "Please enter name",
+                            },
+                            post: {
+                                required: "Please enter post",
+                            },
+                            language: {
+                                required: "Please enter language",
+                            },
+                            experiences: {
+                                required: "Please enter experiences",
+                            },
+                            type: {
+                                required: "Please enter type",
+                            },
+                            image: {
+                                required: "Please enter image",
+                            },
+                           
+                        },
+                    submitHandler: function() {
+                        //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                        form.submit();
+                        alert('successful submit');
+                        return false;
+                    }
+                });
+            });
+        </script>
 @endsection

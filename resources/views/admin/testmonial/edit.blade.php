@@ -14,13 +14,13 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="table">
-                        <form action="{{ route('update.testmonial') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update.testmonial') }}" method="post" enctype="multipart/form-data" id="etestmonialForm">
                             @csrf
                             <input type="hidden" name="id" value="{{$edittestmonial->id}}">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <h5> Name<span class="text-danger">*</span></h5>
+                                        <h5> Name :<span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="name" value="{{$edittestmonial->name}}" class="form-control">
                                             @error('name')
@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <h5> Message title<span class="text-danger">*</span></h5>
+                                        <h5> Message title :<span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="message_title" value="{{$edittestmonial->message_title}}" class="form-control">
                                             @error('message_title')
@@ -37,7 +37,7 @@
                                         @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="">
 
                                         <label for="firstName5">  Image :</label>
                                         <div class="input-group">
@@ -53,7 +53,7 @@
                                         <img id="holder1" style="margin-top:15px;max-height:100px;" src={{$edittestmonial->image}}>
                                     </div>
                                     <div class="form-group">
-                                        <h5> Message Description<span class="text-danger">*</span></h5>
+                                        <h5> Message Description :<span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <textarea  name="message_description"rows="10" cols="20" class="form-control" value="{{$edittestmonial->message_description}}">{{$edittestmonial->message_description}}</textarea>
                                             @error('message_description')
@@ -85,4 +85,40 @@
             prefix: route_prefix
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+   <script>
+      $(document).ready(function() {
+          
+          $("#etestmonialForm").validate({
+                  ignore: [],
+                  rules: {
+                      name: {
+                          required: true,
+                      },
+                      message_title: {
+                          required: true,
+                      },
+                      message_description: {
+                          required: true,
+                      },
+                  },
+
+                  messages: {
+                      name: {
+                          required: "Please enter name",
+                      },
+                      message_title: {
+                          required: "Please enter message title",
+                      },
+                  },
+              submitHandler: function() {
+                  //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                  form.submit();
+                  alert('successful submit');
+                  return false;
+              }
+          });
+      });
+  </script>
 @endsection

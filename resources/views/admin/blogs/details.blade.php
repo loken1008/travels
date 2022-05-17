@@ -14,7 +14,14 @@
 
                 <section>
                     <div class="row">
-                       
+                        @if(!empty($detailsblog->tour->tour_name ))
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5" style="color:white;font-size:14px">Tour Name :</label>
+                                <h5>{{ $detailsblog->tour->tour_name }}</h5>
+                            </div>
+                        </div>
+                       @endif
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="firstName5" style="color:white;font-size:14px">Blog Title :</label>

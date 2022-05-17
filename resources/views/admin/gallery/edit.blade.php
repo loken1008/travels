@@ -19,7 +19,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Gallery Title<span class="text-danger">*</span></h5>
+                                                <h5>Gallery Title :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="gallery_title" class="form-control" value="{{$editgallery->gallery_title}}">
                                                     @error('gallery_title')
@@ -99,25 +99,11 @@
                     gallery_title: {
                         required: true,
                     },
-                    cover_image: {
-                        required: true
-
-                    },
-                    gallery_image: {
-                        required: true
-                    },
                 },
                 messages: {
                    gallery_title: {
                         required: "Gallery Title is required",
                     },
-                    cover_image: {
-                        required: "Cover Image is required",
-                    },
-                    gallery_image: {
-                        required: "Gallery Images is required ",
-                    },
-
                 },
             });
 

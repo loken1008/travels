@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <h5>Old Password<span class="text-danger">*</span></h5>
+                                            <h5>Old Password: <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="password" name="old_password" class="form-control">
                                                 @error('old_password')
@@ -27,7 +27,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>New Password<span class="text-danger">*</span></h5>
+                                            <h5>New Password: <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="password" name="new_password" class="form-control">
                                                 @error('new_password')
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Confirm Password<span class="text-danger">*</span></h5>
+                                            <h5>Confirm Password: <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="password" name="confirm_password" class="form-control">
                                                 @error('confirm_password')

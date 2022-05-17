@@ -3111,7 +3111,7 @@ Testimonials Css Style
 }
 
 .testimonials-post .testimonials-item .thumb img {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 120px;
 }
 
@@ -4156,7 +4156,7 @@ Features Css Style
 ----------------------------------------------------------------*/
 
 .feature-section {
-    background-image: url("../images/bg/px-2.jpg");
+    background-image: url("../images/bg/everest.png");
     background-position: center center;
     background-size: cover;
     padding: 70px 0 77px;
@@ -4347,7 +4347,7 @@ Global Css Style
 ----------------------------------------------------------------*/
 
 .global-section {
-    background-image: url("../images/bg/px-4.jpg");
+    background-image: url("../images/bg/everest.png");
     background-position: center center;
     background-size: cover;
     padding: 70px 0 77px;

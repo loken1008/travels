@@ -75,7 +75,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Gallery Title<span class="text-danger">*</span></h5>
+                                                <h5>Gallery Title :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="gallery_title" class="form-control">
                                                     @error('gallery_title')
@@ -84,7 +84,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <label for="firstName5"> Cover Image :</label>
+                                                <label for="firstName5"> Cover Image :<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <span class="input-group-btn">
                                                         <a id="blfm" data-input="mainthumbnail" data-preview="holder"
@@ -101,7 +101,7 @@
                                                 @enderror
                                             </div>
                                             <div>
-                                                <label for="firstName5"> Related Images :</label>
+                                                <label for="firstName5"> Related Images :<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <span class="input-group-btn">
                                                         <a id="lfm" data-input="mainthumbnails" data-preview="holder"

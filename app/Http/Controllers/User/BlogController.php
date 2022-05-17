@@ -24,7 +24,11 @@ class BlogController extends Controller
                 'email' => $request->email,
                 'comment' => $request->comment,
               ]);
-              return redirect()->back()->with('success','Comment Added Successfully');
+              $notification=array(
+                'message'=>'Comment Successfully',
+                'alert-type'=>'success'
+              );
+              return redirect()->back()->with($notification);
        }
 
        public function allBlogs()

@@ -48,5 +48,9 @@ class Tour extends Model
     {
         return $this->belongsTo(SubCategory::class,'subcategory_id');
     }
+    public function blog()
+    {
+        return $this->hasMany(Blog::class,'tour_id');
+    }
  
 }

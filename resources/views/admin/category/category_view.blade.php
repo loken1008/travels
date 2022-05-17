@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <h5>Category Name<span class="text-danger">*</span></h5>
+                                            <h5>Category Name: <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="category_name" class="form-control">
                                                 @error('category_name')

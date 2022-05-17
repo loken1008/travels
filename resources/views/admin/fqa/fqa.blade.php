@@ -1,5 +1,5 @@
 @extends('admin.body.master')
-@section('title', 'FQA ')
+@section('title', 'FAQ')
 @section('content')
 
 
@@ -12,7 +12,7 @@
 
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">FQA List</h3>
+                        <h3 class="box-title">FAQ List</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -65,7 +65,7 @@
             <div class="col-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add FQA</h3>
+                        <h3 class="box-title">Add FAQ</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -76,7 +76,7 @@
                                     <div class="col-12 input_fields_wrap" id="fqa">
                                         <div>
                                             <div class="form-group">
-                                                <label>Tour Name<span class="text-danger">*</span></label>
+                                                <label>Tour Name :<span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <select name="tour_id" class="form-control">
                                                         <option value="">Select Tour</option>
@@ -91,7 +91,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Question<span class="text-danger">*</span></label>
+                                                <label>Question :<span class="text-danger">*</span></label>
                                                 <div class="controls">
                                                     <input type="text" name="question[]" class=" form-control" id="id_ct0">
                                                     @error('question[]')
@@ -100,7 +100,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="firstName5"> Answer :</label>
+                                                <label for="firstName5"> Answer :<span class="text-danger">*</span></label>
                                                 <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
                                                 @error('answer[]')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -114,7 +114,7 @@
                                 </div>
 
                                 <div class="text-xs-right" style="float:right">
-                                    <input type="submit" class="btn btn-rounded btn-info" value="Add Fqa" />
+                                    <input type="submit" class="btn btn-rounded btn-info" value="Add Faq" />
                                 </div>
                             </form>
                         </div>

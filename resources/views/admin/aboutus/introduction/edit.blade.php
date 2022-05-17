@@ -14,12 +14,12 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table">
-                                <form action="{{ route('update.introduction',$editintroduction->id) }}" method="post" enctype="multipart/form-data" id="editintroForm">
+                                <form action="{{ route('update.introduction',$editintroduction->id) }}" method="post" enctype="multipart/form-data" id="eintroForm">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>About Us Title<span class="text-danger">*</span></h5>
+                                                <h5>About Us Title: <span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="aboutus_title" class="form-control" value="{{$editintroduction->aboutus_title}}">
                                                     @error('aboutus_title')
@@ -45,7 +45,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="firstName5"> Description :</label>
+                                                    <label for="firstName5"> Description : <span class="text-danger">*</span></label>
                                                   <textarea id="my-editor"  class="form-control" name="aboutus_description" value="{{$editintroduction->aboutus_description}}">{{$editintroduction->aboutus_description}}</textarea>
                                                   @error('aboutus_description')
                                                   <span class="text-danger">{{$message}}</span>
@@ -89,36 +89,43 @@
           <script>
             CKEDITOR.replace('my-editor', options);
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $("#editintroForm").validate({
-                    rules: {
-                        aboutus_title: {
-                            required: true,
-                        },
-                        aboutus_image: {
-                            required: true
-    
-                        },
-                        aboutus_description: {
-                            required: true
-                        },
-                    },
-                    messages: {
-                       aboutus_title: {
-                            required: "About Us Title is required",
-                        },
-                        aboutus_image: {
-                            required: "About Us Image is required",
-                        },
-                        aboutus_description: {
-                            required: "Aboutud Description is required ",
-                        },
-    
-                    },
-                });
-    
-            });
-        </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+       
+          <script>
+              $(document).ready(function() {
+                  $.validator.addMethod('irequired', function(value, element, params) {
+                      var idname = jQuery(element).attr('id');
+                      var messageLength = jQuery.trim(CKEDITOR.instances[idname].getData());
+                      return !params || messageLength.length !== 0;
+                  }, "About Us Description field is required");
+       
+       
+                  $("#eintroForm").validate({
+                          ignore: [],
+                          rules: {
+                                 aboutus_title: {
+                                   required: true,
+                                   maxlength: 50
+                                 },
+                                 aboutus_description: {
+                                   irequired: true
+                                 },
+                          },
+       
+                          messages: {
+                                 aboutus_title: {
+                                   required: "Please enter title",
+                                   maxlength: "Title should not be more than 50 characters"
+                                 },
+                          },
+                      submitHandler: function() {
+                          //you can add code here to recombine the variants into one value if you like, before doing a $.post
+                          form.submit();
+                          alert('successful submit');
+                          return false;
+                      }
+                  });
+              });
+          </script>
 @endsection
