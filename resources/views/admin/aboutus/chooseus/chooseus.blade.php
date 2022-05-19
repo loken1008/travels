@@ -120,17 +120,17 @@
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 
     <script>
-        var route_prefix = "/laravel-filemanager";
+        var route_prefix = "/mountainguide-filemanager";
         $('#blfm').filemanager('images', {
             prefix: route_prefix
         });
     </script>
        <script>
         var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+            filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
+            filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
         };
     </script>
       <script>

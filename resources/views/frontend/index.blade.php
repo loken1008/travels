@@ -203,7 +203,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2>Why <span>Choose</span> MOuntain Guide Trek</h2>
+                    <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
                 </div>
             </div>
             <div class="row">
@@ -423,7 +423,7 @@
     <!-- Testimonials Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section bg-f8 pt-85 pb-55">
+    <section class="blog-section over-layer-white bg-f8 pt-85 pb-55">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -456,7 +456,6 @@
                         </div>
                     </div>
                 @empty
-                    <h4 style="text-align:center !important">No Blog Available</h4>
                 @endforelse
             </div>
         </div>

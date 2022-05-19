@@ -33,30 +33,29 @@
                         <h2>We are <span>Booking</span></h2>
                         <h4>Get in Touch</h4>
                         <div class="sec-line mb-20"></div>
-                        <p>Consectetur adipisicing elit. Temporibus error quod necessitatibus</p>
                         <div class="contact-info">
                             <div class="icon-box">
                                 <i class="flaticon-pin-1"></i>
                             </div>
-                            <h6>Street melbourne, Australia</h6>
+                            @if(isset($getcontact->address))
+                            <h6>{{$getcontact->address}}</h6>
+                            @endif
                         </div>
                         <div class="contact-info">
                             <div class="icon-box">
                                 <i class="flaticon-flash"></i>
                             </div>
-                            <h6>+880 195085 363</h6>
+                            @if(isset($getcontact->phone))
+                            <h6>{{$getcontact->phone}}</h6>
+                            @endif
                         </div>
                         <div class="contact-info">
                             <div class="icon-box">
                                 <i class="pe-7s-map"></i>
                             </div>
-                            <h6>info@bdCoderonline.com</h6>
-                        </div>
-                        <div class="contact-info">
-                            <div class="icon-box">
-                                <i class="pe-7s-server"></i>
-                            </div>
-                            <h6><a href="#">http:/bdCoderonline.com</a></h6>
+                            @if(isset($getcontact->email))
+                            <h6>{{$getcontact->email}}</h6>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -290,7 +289,13 @@
                                         {{-- <div class="offer-price"> Off 40%</div> --}}
                                         <div class="post-title-box">
                                             <div class="price-box">
+                                                @if($getcoupon)
+                                                <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
+                                                <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
+            
+                                                @else
                                                 <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                @endif
                                                 {{-- <h6>Starts From</h6> --}}
                                             </div>
                                             <div class="title-box">
@@ -306,6 +311,7 @@
 
                                         </ul>
                                         <p>{!! Str::words($tour->description,50,'.') !!}</p>
+                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',$tour->tour_name)}}">Booking Now</a>
                                         <a class="btn-theme" href="{{ route('tourdetails', $tour->tour_name) }}">View
                                             Details</a>
                                     </div>
@@ -321,4 +327,5 @@
     <!-- Special Places Section End -->
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 @endsection

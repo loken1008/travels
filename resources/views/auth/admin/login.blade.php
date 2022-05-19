@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    @if(!empty($sitesetting->logo))
+    <link href="{{$sitesetting->logo}}" rel="shortcut icon" type="image/png">
+    @endif
 
-    <title>Sunny Admin - Log in </title>
+    <title>Mounatin Guide - Log in </title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('admin/css/vendors_css.css')}}">
@@ -18,7 +20,7 @@
 	<link rel="stylesheet" href="{{asset('admin/css/skin_color.css')}}">	
 
 </head>
-<body class="hold-transition theme-primary bg-gradient-primary">
+<body class="hold-transition over-layer-dark"  style="background-image: url('../frontend/images/bg/ev.jpg');background-repeat: no-repeat;background-size:cover">
 	
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">	
@@ -28,7 +30,7 @@
 					<div class="col-lg-4 col-md-5 col-12">
 						<div class="content-top-agile p-10">
 							<h2 class="text-white">Get started with Us</h2>
-							<p class="text-white-50">Sign in</p>							
+							<p class="text-white">Sign in</p>							
 						</div>
                         @if(Session::has('error'))
                         <div class="alert alert-danger">
@@ -40,7 +42,7 @@
                             {{Session::get('message')}}
                         </div>
                         @endif
-						<div class="p-30 rounded30 box-shadowed b-2 b-dashed">
+						<div class="p-30 rounded30 box-shadowed b-2 b-dashed" style="background: #37373d96;">
 							<form action="{{route('admin.login')}}" method="POST">
                                 @csrf
 								<div class="form-group">

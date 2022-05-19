@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    @if(!empty($sitesetting->logo))
+    <link href="{{$sitesetting->logo}}" rel="shortcut icon" type="image/png">
+    @endif
 
-    <title> Password Reset</title>
+    <title>Mountain Guide|Password Reset</title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('admin/css/vendors_css.css')}}">
@@ -62,6 +64,9 @@
 									  <button type="submit" class="btn btn-info btn-rounded mt-10">Send Reset Link</button>
 									</div>
 									<!-- /.col -->
+									<div class="col-12 text-center mt-4">
+									<a href="{{route('admin.login')}}" class="text-white">Back To Login Page</a>
+									</div>
 								  </div>
 							</form>	
 						</div>

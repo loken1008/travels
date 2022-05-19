@@ -33,7 +33,9 @@
                  </li>
             </ul>
         </div>
-
+        <ul id="myList">
+            <li>Primer mensaje</li>
+          </ul>
         <div class="navbar-custom-menu r-side">
             <ul class="nav navbar-nav">
                 <!-- Notifications -->
@@ -130,26 +132,3 @@
         </div>
     </nav>
 </header>
-
-     <!-- receive notifications -->
-     <script src="{{ asset('js/echo.js') }}"></script>
-  
-     <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
-           
-         <script>
-           Pusher.logToConsole = true;
-           
-           window.Echo = new Echo({
-             broadcaster: 'pusher',
-             key: 'c91c1b7e8c6ece46053b',
-             cluster: 'ap2',
-             encrypted: true,
-             logToConsole: true
-           });
-           
-           Echo.private('user.{{ $user_id }}')
-           .listen('BookingNotification', (e) => {
-               alert(e.message.message);
-           });
-         </script>
-     <!-- receive notifications -->
