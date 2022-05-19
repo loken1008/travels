@@ -64,23 +64,23 @@ class BookingController extends Controller
          $message['message'] =  "Book a tour";
          $success=event(new BookingMessage($message));
          
-         // $getbooking=Booking::with('tour')->orderBy('id','desc')->first();
-         //  $tourbooking=[
-         //  'tour_name'=>$getbooking->tour->tour_name,
-         //  'first_name'=>$getbooking->first_name,
-         //  'last_name'=>$getbooking->last_name,
-         //  'email'=>$getbooking->email,
-         //  'address'=>$getbooking->address,
-         //  'telephone'=>$getbooking->telephone,
-         //  'mobile'=>$getbooking->mobile,
-         //  'country'=>$getbooking->country,
-         //  'number_people'=>$getbooking->number_people,
-         //  'arrival_date'=>$getbooking->arrival_date,
-         //  'departure_date'=>$getbooking->departure_date,
-         //  'message'=>$getbooking->message,
-         //  ];
+         $getbooking=Booking::with('tour')->orderBy('id','desc')->first();
+          $tourbooking=[
+          'tour_name'=>$getbooking->tour->tour_name,
+          'first_name'=>$getbooking->first_name,
+          'last_name'=>$getbooking->last_name,
+          'email'=>$getbooking->email,
+          'address'=>$getbooking->address,
+          'telephone'=>$getbooking->telephone,
+          'mobile'=>$getbooking->mobile,
+          'country'=>$getbooking->country,
+          'number_people'=>$getbooking->number_people,
+          'arrival_date'=>$getbooking->arrival_date,
+          'departure_date'=>$getbooking->departure_date,
+          'message'=>$getbooking->message,
+          ];
          
-         // Mail::to('lokenchand260@gmail.com')->send(new BookingMail($tourbooking));
+         Mail::to('lokenchand260@gmail.com')->send(new BookingMail($tourbooking));
          $notification=array(
             'message'=>'You Sucessfully Book Your Trip',
             'alert-type'=>'success'
