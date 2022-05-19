@@ -31,22 +31,22 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
-        $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
-        // dd($category);
-        $place = Place::orderBy('place_name', 'asc')->get();
-        $sitesetting=SiteSetting::orderBy('id','desc')->first();
+        // $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
+        // $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
+        // // dd($category);
+        // $place = Place::orderBy('place_name', 'asc')->get();
+        // $sitesetting=SiteSetting::orderBy('id','desc')->first();
 
-        $getdate=Carbon::now()->format('Y-m-d');
-        $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
+        // $getdate=Carbon::now()->format('Y-m-d');
+        // $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
 
-        $getcontact=Contact::orderBy('id','desc')->first();
-         View::share('country', $country);
-         View::share('category', $category);
-         View::share('place', $place);
-         View::share('sitesetting', $sitesetting);
-         View::share('getcoupon', $getcoupon);
-         View::share('getcontact', $getcontact);
+        // $getcontact=Contact::orderBy('id','desc')->first();
+        //  View::share('country', $country);
+        //  View::share('category', $category);
+        //  View::share('place', $place);
+        //  View::share('sitesetting', $sitesetting);
+        //  View::share('getcoupon', $getcoupon);
+        //  View::share('getcontact', $getcontact);
          Paginator::useBootstrap();
     }
 }
