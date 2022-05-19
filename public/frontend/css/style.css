@@ -270,7 +270,10 @@ input:-moz-placeholder {
 }
 
 .bg-f8 {
-    background: #f8f8f8 !important;
+    /* background: #f8f8f8 !important; */
+    background-image: url(../images/bg/ev.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bg-f9 {

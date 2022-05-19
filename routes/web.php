@@ -33,7 +33,7 @@ Route::post('mountainguide/forget-password', [App\Http\Controllers\Auth\ForgotPa
 Route::get('mountainguide/reset-password/{token}', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showAdminResetPasswordForm'])->name('admin.reset.password.get');
 Route::post('mountainguide/reset-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitAdminResetPasswordForm'])->name('admin.reset.password.post');
 
-Route::middleware(['auth','role:admin'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin.dashboard');
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('admin.logout');
 
@@ -252,13 +252,13 @@ Route::prefix('sitesetting')->group(function(){
     Route::get('/delete/contact/{id}',[App\Http\Controllers\Admin\SiteSettingController::class,'ContactDelete'])->name('delete.contact');
 });
 
-Route::group(['prefix' => '/laravel-filemanager'], function () {
+Route::group(['prefix' => '/mountainguide-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-Route::group(['prefix' => 'tour/laravel-filemanager'], function () {
+Route::group(['prefix' => 'tour/mountainguide-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-Route::group(['prefix' => 'country/laravel-filemanager'], function () {
+Route::group(['prefix' => 'country/mountainguide-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 

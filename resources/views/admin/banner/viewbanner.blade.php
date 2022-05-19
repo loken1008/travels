@@ -36,7 +36,7 @@
                                                         $file_extension = strtolower($file_extension);
                                                     ?>
                                                         @if ($file_extension == "mp4")
-                                                        <iframe src="{{asset($banner->banner_image)}}" frameborder="0"></iframe>
+                                                        <iframe src="{{asset($banner->banner_image)}}" frameborder="0" ></iframe>
                                                    
                                                         @else  
                                                         <img src="{{asset($banner->banner_image)}}"
@@ -129,7 +129,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
-        var route_prefix = "/laravel-filemanager";
+        var route_prefix = "/mountainguide-filemanager";
         $('#blfm').filemanager('images', {
             prefix: route_prefix
         });

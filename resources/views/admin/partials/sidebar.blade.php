@@ -31,7 +31,7 @@ $route=Route::current()->getName();
             </li>
 
 
-            <li class="treeview {($prefix=='/tour')?'active':''}}">
+            {{-- <li class="treeview {($prefix=='/tour')?'active':''}}">
                 <a href="#">
                     <i data-feather="grid"></i>
                     <span>Manage Users</span>
@@ -46,7 +46,7 @@ $route=Route::current()->getName();
                     <li class="{{($route=='permissions.index')?'active':''}}"><a class="{{($route=='permissions.index')?'active':''}}" href="{{route('permissions.index')}}"><i class="ti-more"></i>Permission</a></li>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li class="treeview {{($prefix=='/banner')?'active':''}}">
                 <a href="#">
@@ -174,7 +174,7 @@ $route=Route::current()->getName();
                     <li class="{{($route=='all.introduction')?'active':''}}"><a href="{{route('all.introduction')}}"><i class="ti-more"></i>About  Us</a></li>
                     <li class="{{($route=='all.team')?'active':''}}"><a href="{{route('all.team')}}"><i class="ti-more"></i>Our Team</a></li>
                     <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.choose')}}"><i class="ti-more"></i>Why Choose Us </a></li>
-                    <li class="{{($route=='all.choose')?'active':''}}"><a href="{{route('all.termsandconditions')}}"><i class="ti-more"></i>Terms and Conditions </a></li>
+                    <li class="{{($route=='all.termsandconditions')?'active':''}}"><a href="{{route('all.termsandconditions')}}"><i class="ti-more"></i>Terms and Conditions </a></li>
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
@@ -279,7 +279,7 @@ $route=Route::current()->getName();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
-    var route_prefix = "/laravel-filemanager";
+    var route_prefix = "/mountainguide-filemanager";
     $('#filelfm').filemanager('images', {
         prefix: route_prefix
     });
