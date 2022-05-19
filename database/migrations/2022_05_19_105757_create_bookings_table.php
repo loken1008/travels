@@ -29,7 +29,6 @@ class CreateBookingsTable extends Migration
             $table->string('arrival_date');
             $table->string('departure_date');
             $table->longText('message');
-
             $table->timestamps();
         });
     }
