@@ -199,7 +199,7 @@
     <!-- Special Places Section End -->
 
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-85 pb-90">
+    <section class="feature-section over-layer-black pt-45 pb-90">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -216,7 +216,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="#">{{ $choose->title }}</a></h3>
-                                <p>{!! Str::limit($choose->description, 200) !!}</p>
+                                <p>{!! Str::limit($choose->description, 200,'.') !!}</p>
                             </div>
                         </div>
                     </div>
@@ -227,11 +227,11 @@
     <!-- Feature Section End -->
 
     <!-- Special Packages Section Start -->
-    <section class="special-packages-sec pt-85 pb-90">
+    <section class="special-packages-sec pt-55 pb-20">
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="section-title stitle-left">
+                <div class="col-md-12">
+                    <div class="section-title ">
                         <h2 class="text-center">Special <span>Packages</span> Offer</h2>
                     </div>
                 </div>
@@ -274,7 +274,7 @@
                                                                 class="fa fa-map-marker"></i>View on Map</a></li>
 
                                                 </ul>
-                                                <p>{!! Str::words($tour->description, 30,'.') !!}</p>
+                                                <p>{!! Str::limit($tour->description,250,'.') !!}</p>
                                                 <a class="btn-theme" style="float:left !important"
                                                     href="{{ route('booking', $tour->tour_name) }}">Booking Now</a>
                                                 <a class="btn-theme"
@@ -298,7 +298,7 @@
     <!-- Special Packages Section End -->
 
     <!-- Latest Hotel Section Start -->
-    <section class="latest-hotel-sec pt-85 pb-80">
+    <section class="latest-hotel-sec pt-15 pb-15">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -313,13 +313,13 @@
                             <div class="item">
                                 <div class="latest-hotel">
                                     <div class="thumb">
-                                        <img src="{{ $hotel->image }}" alt="">
+                                        <img src="{{ $hotel->image }}" alt="" style="height:253px">
                                     </div>
                                     <div class="content">
                                         <h4>{{ $hotel->hotel_name }}</h4>
                                         <h5>{{ $hotel->hotel_address }}</h5>
 
-                                        <p>{!! Str::limit($hotel->hotel_description, 200) !!}</p>
+                                        <p>{!! Str::limit($hotel->hotel_description, 200,'.') !!}</p>
                                         <a class="map-viw"
                                             href="{{ route('hotelviewdetails', $hotel->hotel_name) }}"><i
                                                 class="fa fa-eye"></i>View Details</a>
@@ -335,7 +335,7 @@
     <!-- Latest Hotel Section End -->
 
     <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-80 pb-70">
+    <section class="global-section over-layer-white pt-45 pb-15">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
@@ -350,7 +350,7 @@
     <!-- Global Section End -->
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-85 pb-0">
+    <section class="gallery-section pt-15 pb-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="section-title">
@@ -393,7 +393,7 @@
     <!-- Gallery Section End -->
 
     <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-80 pb-80">
+    <section class="testimonials-section pt-15 pb-15">
         <div class="container">
             <div class="row">
                 {{-- <div class="col-lg-5">
@@ -423,7 +423,7 @@
     <!-- Testimonials Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section over-layer-white bg-f8 pt-85 pb-55">
+    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25">
         <div class="container">
             <div class="row">
                 <div class="section-title">

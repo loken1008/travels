@@ -12,6 +12,8 @@ use Mail;
 use App\Mail\BookingMail;
 use Auth;
 use App\Events\BookingMessage;
+use App\Notifications\BookingNotification;
+use App\Models\User;
 
 
 class BookingController extends Controller
@@ -28,7 +30,7 @@ class BookingController extends Controller
    {
          $request->validate([
               'first_name'=>'required',
-               'last_name'=>'required',
+              'last_name'=>'required',
               'email'=>'required',
               'address'=>'required',
               'post_code'=>'required',
@@ -60,11 +62,14 @@ class BookingController extends Controller
          $booking->departure_date=$request->departure_date;
          $booking->message=$request->message;
          $booking->save();
-         $message['user'] = $request->first_name;
-         $message['message'] =  "Book a tour";
-         $success=event(new BookingMessage($message));
+         $user = User::first();
+         $getbooking=Booking::with('tour')->first();
+         $user->notify(new BookingNotification($booking));
+         $getbooking->notify(new BookingNotification($booking));
          
-         $getbooking=Booking::with('tour')->orderBy('id','desc')->first();
+         event(new BookingMessage($booking['first_name'].'.'.$booking['last_name'].'.'.'has booked'.'.'.$booking['tour']['tour_name']));
+         
+        
           $tourbooking=[
           'tour_name'=>$getbooking->tour->tour_name,
           'first_name'=>$getbooking->first_name,

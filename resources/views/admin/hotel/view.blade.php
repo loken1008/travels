@@ -110,11 +110,11 @@ $route=Route::current()->getName();
                                             'Status has been changed.',
                                             'success',
                                         )
-                                        window.location.href = '/hotel'
+                                        window.location.href = '/hotel/view'
                                     }
                                 });
                             } else {
-                                window.location.href = '/hotel'
+                                window.location.href = '/hotel/view'
                             }
                         })
         

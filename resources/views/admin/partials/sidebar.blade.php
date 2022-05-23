@@ -14,7 +14,7 @@ $route=Route::current()->getName();
                         @if(!empty($sitesetting->logo))
                         <img src="{{$sitesetting->logo}}" style="width: 50px;height:50px">
                         @endif
-                        <h3><b>Tours</b> & Travels</h3>
+                        <h4><b>MountainGuide</b>Tour</h4>
                     </div>
                 </a>
             </div>
@@ -118,7 +118,7 @@ $route=Route::current()->getName();
 
                 </ul>
             </li>
-            <li class="treeview {($prefix=='/tour')?'active':''}}">
+            <li class="treeview {{($prefix=='/tour')?'active':''}}">
                 <a href="#">
                     <i class="fa  fa-institution"></i>
                     <span>Tour Place</span>
@@ -136,7 +136,7 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
-            <li class="treeview {($prefix=='/fqa')?'active':''}}">
+            <li class="treeview {{($prefix=='/fqa')?'active':''}}">
                 <a href="#">
                     <i class="fa  fa-book"></i>
                     <span>FAQ</span>

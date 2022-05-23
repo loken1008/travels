@@ -26,7 +26,7 @@ class SiteSettingController extends Controller
             'message'=>'Logo Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.logo')->with($notification);
     }
 
     public function LogoEdit($id)
@@ -86,7 +86,7 @@ class SiteSettingController extends Controller
             'message'=>'Contact Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.contact')->with($notification);
     }
     public function ContactEdit($id)
     {

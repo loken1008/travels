@@ -83,6 +83,8 @@
                                         <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
                                     </ul>
                                     <p>{!!Str::limit($tour->description,100)!!}</p>
+                                    <a class="btn-theme" style="float:left !important"
+                                    href="{{ route('booking', $tour->tour_name) }}">Booking Now</a>
                                     <a class="btn-theme" href="{{route('tourdetails',$tour->tour_name)}}">View Details</a>
                                 </div>
                             </div>

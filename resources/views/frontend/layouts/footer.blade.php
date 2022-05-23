@@ -62,9 +62,9 @@
                         </div>
                         <ul class="footer-list footer-contact mb-10">
                            @if(isset($getcontact))
-                            <li><i class="pe-7s-call"></i> Phone: {{$getcontact->phone}}</li>
-                            <li><i class="pe-7s-print"></i> Fax: {{$getcontact->fax}}</li>
-                            <li><i class="pe-7s-mail"></i> <a href="mailto:">Email: {{$getcontact->email}}</a></li>
+                            <li><i class="pe-7s-call"></i>  {{$getcontact->phone}}</li>
+                            <li><i class="pe-7s-print"></i>  {{$getcontact->fax}}</li>
+                            <li><i class="pe-7s-mail"></i> <a href="mailto:">{{$getcontact->email}}</a></li>
                             @endif
                         </ul>
                         <div class="footer-item">

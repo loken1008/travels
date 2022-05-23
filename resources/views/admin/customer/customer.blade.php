@@ -16,7 +16,7 @@ $route=Route::current()->getName();
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Users List</h3>
-                                <a href="{{route('blog.create')}}"><input type="submit" class="btn btn-rounded btn-info pull-right" value="Add Blogs"></a>
+                              
                             </div>
                           
                             <!-- /.box-header -->

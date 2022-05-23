@@ -163,11 +163,11 @@
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/coupon'
+                                window.location.href = '/coupon/view'
                             }
                         });
                     } else {
-                        window.location.href = '/coupon'
+                        window.location.href = '/coupon/view'
                     }
                 })
 

@@ -6,7 +6,7 @@
         <!-- Step wizard -->
         <div class="box box-default">
             <div class="box-header with-border">
-                <h4 class="box-title">Update Country</h4>
+                <h4 class="box-title">Update Country</h4>   <a class="btn btn-rounded btn-info pull-right" href="{{route('country.view')}}">View Country</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">

@@ -8,7 +8,7 @@
         <div class="row">
 
 
-            <div class="col-6">
+            <div class="col-8">
 
                 <div class="box">
                     <div class="box-header with-border">
@@ -22,9 +22,6 @@
                                     <tr>
                                         <th>Sn</th>
                                         <th>Tour Name</th>
-                                        <th>Question </th>
-                                        <th>Answer</th>
-                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -32,16 +29,22 @@
                                     @forelse($allfqa as $key=> $fqa)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{ $fqa->tour->tour_name }}</td>
-                                            <td>{{ $fqa->question }}</td>
-                                            <td>{{ Str::limit($fqa->answer,50) }}</td>
-                                            <td>  <input type="checkbox" class="fqa-input" data-toggle="toggle"
+                                            <td><p class="font-weight-bold"  data-toggle="collapse" href="#collapseExample{{$fqa->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ $fqa->tour_name }} <span class="text-info">+</span></p>
+                                                @foreach($fqa->fqa as $key1=> $f)
+                                                <div class="collapse" id="collapseExample{{$f->tour_id}}">
+                                                <p class="font-weight-bold"> {{$key1+1}}. {{ $f->question }}</p> 
+                                                  <p class="text-justify">-> {{ $f->answer }}</p> 
+                                                </div>
+                                                
+                                                 @endforeach
+                                            </p>
+                                                
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" class="fqa-input" data-toggle="toggle"
                                                 data-id="{{ $fqa->id }}" {{ $fqa->status ? 'checked' : '' }}
                                                 data-on="Enabled" data-off="Disabled" data-onstyle="success"
-                                                data-offstyle="danger"></td>
-                                            <td>
-                                                <a href="{{ route('view.fqa', $fqa->id) }}" class="btn btn-primary"
-                                                    style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
+                                                data-offstyle="danger">
                                                   
                                                 <a href="{{ route('edit.fqa', $fqa->id) }}" class="btn btn-info mt-2"
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
@@ -62,7 +65,7 @@
 
             </div>
 
-            <div class="col-6">
+            <div class="col-4">
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">Add FAQ</h3>
@@ -106,7 +109,7 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <input type="button" class="btn btn-sm btn-primary add_field_button" value="Add More Fields">
+                                            <input type="button" class="btn btn-md btn-primary add_field_button" value="Add More Fields">
 
                                         </div>
                                     </div>
@@ -245,7 +248,7 @@ var max_fields = 10; //maximum input boxes allowed
                 e.preventDefault();
                 if (x < max_fields) { //max input box allowed
                     x++; //text box increment
-                    $(wrapper).append('<div ><div class="form-group"> <label>Question<span class="text-danger">*</span></label><div class="controls"><input type="text" name="question[]"  id="id_ct' + x + '" class="form-control"> @error('question[]')<span class="text-danger">{{ $message }}</span>@enderror</div></div><div class="form-group"><label for="firstName5"> Answer :</label><textarea id="id_ct' + x + '" class="form-control" name="answer[]" rows="10" cols="10"></textarea> @error('answer[]')<span class="text-danger">{{ $message }}</span>@enderror </div> <a href="#" class="remove_field btn btn-sm btn-danger">Remove</a></div>'); //add input box
+                    $(wrapper).append('<div ><div class="form-group"> <label>Question<span class="text-danger">*</span></label><div class="controls"><input type="text" name="question[]"  id="id_ct' + x + '" class="form-control"> @error('question[]')<span class="text-danger">{{ $message }}</span>@enderror</div></div><div class="form-group"><label for="firstName5"> Answer :</label><textarea id="id_ct' + x + '" class="form-control" name="answer[]" rows="10" cols="10"></textarea> @error('answer[]')<span class="text-danger">{{ $message }}</span>@enderror </div> <a href="#" class="remove_field btn btn-md btn-danger">Remove</a></div>'); //add input box
                 }
             });
 

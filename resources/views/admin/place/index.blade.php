@@ -48,7 +48,7 @@ $route = Route::current()->getName();
 
                                             </td>
                                             <td>
-                                                <a class="btn btn-info {{ $route == 'place.edit' ? 'active' : '' }}"
+                                                <a class="btn btn-info {{($route=='place.edit')?'active':''}}"
                                                     href="{{ route('place.edit', $place->id) }}" style="width:5rem"
                                                     title="edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('place.delete', $place->id) }}" class="btn btn-danger "
@@ -108,11 +108,11 @@ $route = Route::current()->getName();
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href='/place'
+                                window.location.href='/place/view'
                             }
                         });
                     }else{
-                        window.location.href='/place'
+                        window.location.href='/place/view'
                     }
                 })
 
