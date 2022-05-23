@@ -32,7 +32,7 @@ class TestmonialController extends Controller
             'message'=>'Testmonial Insert Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.testmonial')->with($notification);
     }
     public function TestmonialEdit($id)
     {
@@ -59,7 +59,7 @@ class TestmonialController extends Controller
             'message'=>'Testmonial Update Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.testmonial')->with($notification);
         }
     
     else{

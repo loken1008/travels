@@ -13797,8 +13797,8 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   -webkit-transform-origin: left 0; }
 
 .main-header .navbar-nav > li.dropdown > .dropdown-menu {
-  width: auto;
-  max-width: 250px;
+  width: 400px;
+  /* max-width: 250px; */
   padding: 0;
   margin: 0;
   top: 100%;

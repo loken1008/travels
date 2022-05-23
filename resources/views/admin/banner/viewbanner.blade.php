@@ -52,7 +52,7 @@
                                                     </td>
                                                 <td>
                                                     <a href="{{route('edit.banner',$banner->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                    <a href="{{route('delete.banner',$banner->id)}}" class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{route('delete.banner',$banner->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
                                                     @if($banner->status==1)
                                                     <a href="{{route('active.banner',$banner->id)}}" class="btn btn-primary mt-2" style="width:5rem" title="Active"><i class="fa fa-unlock"></i></a>
                                                     @else

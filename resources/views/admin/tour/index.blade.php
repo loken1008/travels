@@ -134,11 +134,11 @@ $route = Route::current()->getName();
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/tour'
+                                window.location.href = '/tour/view'
                             }
                         });
                     } else {
-                        window.location.href = '/tour'
+                        window.location.href = '/tour/view'
                     }
                 })
 

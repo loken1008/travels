@@ -1,5 +1,5 @@
 @extends('frontend.main')
-@section('title', 'Details')
+@section('title', "$getTourdetails->tour_name ")
 @section('content')
 
     <!-- Inner Section Start -->
@@ -334,7 +334,7 @@
     </section>
     <!-- Special Packages Section End -->
     <!-- Blog Section Start -->
-    <section class="blog-section bg-f8 pt-85 pb-55">
+    <section class="blog-section over-layer-white bg-f8 pt-30 pb-30">
         <div class="container">
             <div class="row">
                 <div class="section-title">

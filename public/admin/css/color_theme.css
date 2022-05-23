@@ -489,9 +489,9 @@ Theme Primary Color
     background-color: rgba(15, 94, 247, 0);
     color: #0f5ef7; }
     .theme-primary.dark-skin .sidebar-menu > li.active .treeview-menu li.active a {
-      color: white !important; }
+      color: #655555 !important; }
       .theme-primary.dark-skin .sidebar-menu > li.active .treeview-menu li.active a > i {
-        color: white; }
+        color: #655555; }
   .theme-primary.dark-skin .sidebar-menu > li.active.menu-open {
     background: transparent;
     -webkit-box-shadow: none;

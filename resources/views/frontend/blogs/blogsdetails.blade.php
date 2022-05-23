@@ -201,7 +201,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="theme-sidebar">
 
-                    <div class="widget search-sidebar">
+                    <div class="widget search-sidebar" >
                         <div class="title-box">
                             <h3>Search <span>Here</span></h3>
                         </div>
@@ -213,7 +213,7 @@
                         </form>
                     </div>
 
-                    <div class="widget">
+                    <div class="widget d-flex" style="flex-direction:column">
                         <div class="title-box">
                             <h3>Recent <span>posts</span></h3>
                         </div>

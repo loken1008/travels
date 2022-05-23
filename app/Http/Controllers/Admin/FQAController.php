@@ -12,7 +12,8 @@ class FQAController extends Controller
    public function FQAView()
    {
        $gettour=Tour::where('status','1')->get();
-       $allfqa=FQA::orderBy('id','desc')->get();
+       $allfqa=Tour::with('fqa')->orderBy('id','desc')->get();
+    //    dd($allfqa);
        return view('admin.fqa.fqa',compact('gettour','allfqa'));
    }
 

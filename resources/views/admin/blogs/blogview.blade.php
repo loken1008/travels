@@ -44,17 +44,17 @@ $route=Route::current()->getName();
                                                 <td>{{$blog->author_name}}</td>
                                                 <td>{{$blog->blog_type}}</td>
                                                 <td><img src="{{$blog->blog_image}}" height="100" width="100" alt=""></td>
-                                                <td>{!!Str::limit($blog->blog_description,100)!!}</td>
+                                                <td class="text-justify">{!!Str::words($blog->blog_description,20,'.')!!}</td>
                                                 <td>{{$blog->created_at->format('M-d-Y')}}</td>
                                                 <td>
                                                     <input type="checkbox" class=" blog-input" data-toggle="toggle"
                                                     data-id="{{ $blog->id }}" {{ $blog->status ? 'checked' : '' }}
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
-                                                    data-offstyle="danger" onchange="changeStatus({{ $blog->id }})">
+                                                    data-offstyle="danger">
                                                 </td>
                                                 <td class="p-1">
                                                     <a class="btn btn-primary {{($route=='blog.viewdetails')?'active':''}}" href="{{route('blog.viewdetails',$blog->id)}}"  style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
-                                                    <a class="btn btn-info{{($route=='blog.edit')?'active':''}}" href="{{route('blog.edit',$blog->id)}}"  style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
+                                                    <a class="btn btn-info {{($route=='blog.edit')?'active':''}}" href="{{route('blog.edit',$blog->id)}}"  style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
                                                     <a href="{{route('blog.delete',$blog->id)}}" class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
@@ -97,7 +97,7 @@ $route=Route::current()->getName();
                                 $.ajax({
                                     type: "GET",
                                     dataType: "json",
-                                    url: '/blog/changeBlogStatus',
+                                    url: '/blog/changeblogStatus',
                                     data: {
                                         'status': status,
                                         'blog_id': blog_id
@@ -108,11 +108,11 @@ $route=Route::current()->getName();
                                             'Status has been changed.',
                                             'success',
                                         )
-                                        window.location.href = '/blog'
+                                        window.location.href = '/blog/view'
                                     }
                                 });
                             } else {
-                                window.location.href = '/blog'
+                                window.location.href = '/blog/view'
                             }
                         })
         

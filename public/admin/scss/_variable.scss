@@ -100,7 +100,7 @@ $light3: #f2f4f4;
 $light4: #dfe3e7;
 $light5: #bac0c7;
 $light6: #eef0f8;
-$white:#ffffff;
+$white:#0000;
 $black:#000000;
 $primary:#0F5EF7;
 $success:#00BC8B;
@@ -135,7 +135,7 @@ $colors: (
   'warning':   $warning,
   'danger':    $danger,
   'dark':      $dark,
-  'white':     $white,
+  'white':     $dark,
   'black':     $black,
   'light':     $light,
 );

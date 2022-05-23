@@ -33,16 +33,18 @@
                  </li>
             </ul>
         </div>
-        <ul id="myList">
-            <li>Primer mensaje</li>
-          </ul>
         <div class="navbar-custom-menu r-side">
             <ul class="nav navbar-nav">
                 <!-- Notifications -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown"
+                <li class="dropdown notifications-menu"   >
+                    <span class="badge badge-custom notific" id="notification-c">  
+                        @if(count($notifications) !== 0){{count($notifications)}} @endif
+                    </span>
+                    <a href="#" id="notification-c" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown"
                         title="Notifications">
+                        
                         <i class="ti-bell"></i>
+                    
                     </a>
                     <ul class="dropdown-menu animated bounceIn">
 
@@ -50,10 +52,10 @@
                             <div class="p-20">
                                 <div class="flexbox">
                                     <div>
-                                        <h4 class="mb-0 mt-0">Notifications</h4>
+                                        <h4 class="mb-0 mt-0 text-white">Notifications</h4>
                                     </div>
                                     <div>
-                                        <a href="#" class="text-danger">Clear All</a>
+                                        <a href="{{route('databasenotifications.markasread')}}" class="text-danger">Mark All As Read</a>
                                     </div>
                                 </div>
                             </div>
@@ -62,51 +64,19 @@
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu sm-scrol">
+
+                                @foreach ($notif as $value)
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc
-                                        suscipit blandit.
-                                    </a>
+                                    <a id="see-all" class="dropdown-item"   href="{{route('showbookingdetails',$value->data->id)}}">{{$value->data->user}} Trip <br>
+                                    <span id="see-all" class="dropdown-item">{{ \Carbon\Carbon::parse($value->created_at)->diffForHumans() }}</span></a>
+                                  
+                                  
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu
-                                        sapien elementum, in semper diam posuere.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor
-                                        commodo porttitor pretium a erat.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et
-                                        nisi
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero
-                                        dictum fermentum.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user text-primary"></i> Nunc fringilla lorem
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam
-                                        interdum, at scelerisque ipsum imperdiet.
-                                    </a>
-                                </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="footer">
-                            <a href="#">View all</a>
+                            <a id="see-all" class="dropdown-item" href="{{route('showbooking.view')}}">View all</a>
                         </li>
                     </ul>
                 </li>
@@ -129,6 +99,33 @@
                 </li>
                
             </ul>
+           
         </div>
     </nav>
 </header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script>
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
+
+    var pusher = new Pusher('f983a77cf27d975168b8', {
+        cluster: 'ap2',
+    });
+    $("#dropdownMenuButton").click(() => $("#notification-c").text(''))
+    var channel = pusher.subscribe('booking');
+    channel.bind('pusher:subscription_succeeded', function(data) {})
+
+    channel.bind('App\\Events\\BookingMessage', function(data) {
+        console.log(data);
+        let count = +$("#notification-c").text() + 1
+       
+        $("#notification-count").text(+count)
+        $("#notification-c").text(+count ? +count : 0);
+        $(`<a class='dropdown-item text-capitalize' href=''>${data.message}</a>`)
+            .insertBefore("#see-all");
+        var audio = new Audio('https://res.cloudinary.com/dxfq3iotg/video/upload/v1557233524/success.mp3');
+        audio.play()
+    });
+</script>

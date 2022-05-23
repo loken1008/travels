@@ -8,7 +8,7 @@ $route = Route::current()->getName();
     <div class="top-bar">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="contact-info">
                         <ul>
                             <li>
@@ -34,10 +34,10 @@ $route = Route::current()->getName();
                     </div>
                 </div>
 
-                <div class="col-md-2 ">
+                <div class="col-md-3">
                     <div class="social-icons">
                         <ul>
-
+                            <a href="{{route('contactus')}}" class="text-white">Contact Us |</a>
 
                             @if (!empty(
                                 Auth()->guard('customer')->user()
@@ -71,7 +71,7 @@ $route = Route::current()->getName();
                                 </li>
                             @else
                                 <li>
-                                    <a href="{{ route('customer.login') }}">Login</a>
+                                    <a href="{{ route('customer.login') }}">Login |</a>
 
                                     <a href="{{ route('customer.register') }}">Register</a>
                             @endif

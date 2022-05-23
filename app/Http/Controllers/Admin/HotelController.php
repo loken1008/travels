@@ -8,7 +8,7 @@ use App\Models\Hotel;
 use App\Models\Country;
 use App\Models\Tour;
 use App\Models\Booking;
-
+use DB;
 use Carbon\Carbon;
 
 class HotelController extends Controller
@@ -57,7 +57,7 @@ class HotelController extends Controller
                 'alert-type'=>'success'
             );
    
-        return redirect('/hotel')->with($notification);
+        return redirect('/hotel/view')->with($notification);
 
     }
 
@@ -94,7 +94,7 @@ class HotelController extends Controller
             'message'=>'Hotel Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/hotel')->with($notification);
+        return redirect('/hotel/view')->with($notification);
     }
 
     public function deleteHotel($id)
@@ -131,5 +131,11 @@ class HotelController extends Controller
             'alert-type'=>'success'
         );
         return back()->with($notification);
+    }
+
+    public function notificationDate()
+    {
+        $getnotic=DB::table('notifications')->orderBy('id','desc')->where('notifiable_type','App\Models\User')->get();
+        return json_encode(array('data'=>$getnotic));
     }
 }
