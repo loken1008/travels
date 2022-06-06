@@ -103,14 +103,14 @@
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExample1{{ $itin->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample"
-                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:10px;margin-top:4px"
                                                             class="d-flex">
-                                                            <h5 class="font-weight-bold">{{ $itin->day_title }}
-                                                            </h5><span><i class="fa fa-plus"></i></span>
+                                                            <h6 class="font-weight-bold">{{ $itin->day_title }}
+                                                            </h6><span><i class="fa fa-plus"></i></span>
                                                         </a>
                                                         <div class="collapse"
                                                             id="collapseExample1{{ $itin->id }}"
-                                                            style="color:black !important;padding-top:10px !important">
+                                                            style="padding:10px 10px 0 10px !important">
                                                             {!! $itin->long_description !!}
                                                         </div>
                                                     @endforeach
@@ -121,7 +121,7 @@
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
                                                 <div class="item"
-                                                    style="color:black !important;padding-left:30px;padding-top:10px !important">
+                                                    style="padding-left:30px;padding-top:10px !important">
                                                     {!! $getTourdetails->cost_include !!}
                                                     {!! $getTourdetails->cost_exclude !!}
 
@@ -137,14 +137,14 @@
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExample2{{ $equipment->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample"
-                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:10px;margin-top:4px"
                                                             class="d-flex">
-                                                            <h5 class="font-weight-bold">{{ $equipment->equipment_name }}
-                                                            </h5><span><i class="fa fa-plus"></i></span>
+                                                            <h6 class="font-weight-bold">{{ $equipment->equipment_name }}
+                                                            </h6><span><i class="fa fa-plus"></i></span>
                                                         </a>
                                                         <div class="collapse"
                                                             id="collapseExample2{{ $equipment->id }}"
-                                                            style="color:black !important;padding-left:30px;padding-top:10px !important">
+                                                            style="padding-left:30px;padding-top:10px !important">
 
                                                             {!! $equipment->equipment_description !!}
                                                         </div>
@@ -156,7 +156,7 @@
                                             <div class="tab-pane fade show " id="dateprice" role="tabpanel"
                                                 aria-labelledby="dateprice-tab">
 
-                                                <div class="item" style="color:black">
+                                                <div class="item">
 
                                                     <table class="table">
                                                         <thead class="thead-light">
@@ -184,7 +184,7 @@
                                                                                             font-weight: 600;
                                                                                             padding: 7px 18px;
                                                                                             vertical-align: top;"
-                                                                            href="{{ route('booking', $getTourdetails->tour_name) }}">Booking
+                                                                            href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Booking
                                                                             Now</a>
                                                                     </td>
                                                                 </tr>
@@ -258,15 +258,15 @@
                                                 <div class="item">
                                                     @foreach ($getTourdetails->fqa as $fqas)
                                                         <a href="#" class="d-flex"
-                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:25px;margin-top:4px"
+                                                            style="justify-content:space-between;background:rgb(180, 213, 245);padding:10px;margin-top:4px"
                                                             data-toggle="collapse"
                                                             data-target="#collapseExample{{ $fqas->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample">
-                                                            <h5 class="font-weight-bold">{{ $fqas->question }}</h5>
+                                                            <h6 class="font-weight-bold">{{ $fqas->question }}</h6>
                                                             <span><i class="fa fa-plus"></i></span>
                                                         </a>
                                                         <div class="collapse" id="collapseExample{{ $fqas->id }}"
-                                                            style="color:black !important;padding-top:10px !important">
+                                                            style="padding-top:10px !important">
 
                                                             {!! $fqas->answer !!}
                                                         </div>
@@ -281,7 +281,7 @@
 
 
                             <!-- Latest Hotel Section Start -->
-                            <section class="latest-hotel-sec pt-85 pb-80">
+                            {{-- <section class="latest-hotel-sec pt-85 pb-80">
                                 <div class="container">
                                     <div class="row">
                                         <div class="section-title">
@@ -316,15 +316,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section> --}}
                             <!-- Latest Hotel Section End -->
-                            <div class="d-flex">
+                            <div class="d-flex mt-5">
                                 <h6 class="share-btn text-dark"> Share: </h6>
                                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                 <div class="addthis_inline_share_toolbox_mi34"></div>
                             </div>
 
-                            <a class="btn-theme" href="{{ route('booking', $getTourdetails->tour_name) }}">Booking
+                            <a class="btn-theme" href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Booking
                                 Now</a>
                         </div>
                     </div>
@@ -356,11 +356,17 @@
                                                 <i class="fa fa-calendar-plus-o"></i>
                                                 {{ $blog->created_at->format('M d') }}
                                             </div>
+                                            @php
+                                            $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
+                                        @endphp
+                                        <div class="comment">
+                                            <i class="fa fa-commenting-o"></i> {{ $getcomment }}
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('blogsdetails', $blog->blog_title) }}" class="read-btn">Continue
+                            <a href="{{ route('blogsdetails', Str::slug($blog->blog_title)) }}" class="read-btn">Continue
                                 Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>

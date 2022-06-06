@@ -51,7 +51,7 @@
                             <ul class="info">
                                 <li><a href="#"><i class="fa fa-calendar"></i>{{$tourdetails->tour_days}} Days</a></li>
                                 {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
-                                <li><a href="{{route('tourmap',$tourdetails->tour_name)}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
+                                <li><a href="{{route('tourmap',Str::slug($tourdetails->tour_name))}}"><i class="fa fa-map-marker"></i>View on Map</a></li>
                             </ul>
                             <p>{!!Str::limit($tourdetails->description,150,'.')!!}</p>
                             {{-- <div class="small-hotel">
@@ -74,8 +74,8 @@
                                     <img src="images/features/sm2.jpg" alt="">
                                 </div>
                             </div> --}}
-                            <a class="btn-theme" style="float:left !important" href="{{route('booking',$tourdetails->tour_name)}}">Booking Now</a>
-                            <a class="btn-theme" href="{{route('tourdetails',$tourdetails->tour_name)}}">View Details</a>
+                            <a class="btn-theme" style="float:left !important" href="{{route('booking',Str::slug($tourdetails->tour_name))}}">Booking Now</a>
+                            <a class="btn-theme" href="{{route('tourdetails',Str::slug($tourdetails->tour_name))}}">View Details</a>
                         </div>
                     </div>
                 </div>
