@@ -76,7 +76,7 @@ class BlogController extends Controller
                 'alert-type'=>'success'
             );
    
-        return redirect('/blog')->with($notification);
+        return redirect('/blog/view')->with($notification);
 
     }
 
@@ -110,7 +110,7 @@ class BlogController extends Controller
             'message'=>'Blog Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/blog')->with($notification);
+        return redirect('/blog/view')->with($notification);
     }
 
     public function deleteBlog($id)

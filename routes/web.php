@@ -720,6 +720,7 @@ Route::post('reset-password', [
 
 // frontend
 
+
 // customer register/login
 Route::get('customer-register', [
     App\Http\Controllers\Auth\CustomerController::class,

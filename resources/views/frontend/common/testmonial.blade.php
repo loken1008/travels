@@ -15,13 +15,13 @@ $gettestmonial=App\Models\Testmonial::where('status',1)->orderBy('id','desc')->g
         </div>
         <div class="content">
             <h5>{{$testmonial->name}} <small>- {{$testmonial->message_title}}</small></h5>
-            <ul>
+            {{-- <ul>
                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                 <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
                 <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-            </ul>
+            </ul> --}}
             <p><i class="fa fa-quote-left"></i> {{$testmonial->message_description}}</p>
         </div>
     </div>

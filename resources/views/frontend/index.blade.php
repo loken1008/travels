@@ -1,6 +1,7 @@
 @extends('frontend.main')
 @section('title', 'Home')
 @section('content')
+
     <!-- Slick Section Start -->
     <section class="slider-wrapper st-two p-0">
         <div id="slider-style-one" class="carousel slide bs-slider control-round indicators-line" data-ride="carousel"
@@ -18,21 +19,21 @@
 
                 <!-- Item Slide -->
                 @foreach ($getbanner as $banner)
-                <?php
-                $file_extension = substr(strrchr($banner->banner_image ,'.'),1);
-                $file_extension = strtolower($file_extension);
-            ?>
-               
+                    <?php
+                    $file_extension = substr(strrchr($banner->banner_image, '.'), 1);
+                    $file_extension = strtolower($file_extension);
+                    ?>
+
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
 
                         <!-- Slide Background -->
-                        @if ($file_extension == "mp4")
-                        <video class="slide-video" autoplay loop muted>
-                            <source src="{{asset($banner->banner_image)}}" type="video/mp4">
-                        </video>
+                        @if ($file_extension == 'mp4')
+                            <video class="slide-video" autoplay loop muted>
+                                <source src="{{ asset($banner->banner_image) }}" type="video/mp4">
+                            </video>
                         @else
-                        <img src="{{ $banner->banner_image }}" alt="Slider Images" class="slide-image"
-                            style="width:1905px;height:750px" />
+                            <img src="{{ $banner->banner_image }}" alt="Slider Images" class="slide-image"
+                                style="width:1905px;height:750px" />
                         @endif
                         <div class="bs-slider-overlay"></div>
 
@@ -148,12 +149,14 @@
                                                         <div class="content">
                                                             <div class="price-box">
                                                                 {{-- <h5><span>$</span>{{ $tour->main_price }}</h5> --}}
-                                                                @if($getcoupon)
-                                                                <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
-                                                                <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
-                            
+                                                                @if ($getcoupon)
+                                                                    <h5 class="text-danger">
+                                                                        <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                                    </h5>
+                                                                    <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                                    </h5>
                                                                 @else
-                                                                <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                                    <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                                 @endif
                                                             </div>
                                                             <div class="title-box">
@@ -165,16 +168,21 @@
                                                                             class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                                         Days</a></li>
                                                                 {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
-                                                                <li><a href="{{ route('tourmap', $tour->tour_name) }}"><i
+                                                                <li><a
+                                                                        href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
                                                                             class="fa fa-map-marker"></i>View on Map</a>
                                                                 </li>
+                                                                <li>
+                                                                    {!! Share::page(url('/' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} 
+                                                                </li>
+
                                                             </ul>
-                                                            <p>{!! Str::limit($tour->description, 200,'.') !!}</p>
+                                                            <p>{!! Str::limit($tour->description, 200, '.') !!}</p>
                                                             <a class="btn-theme" style="float:left !important"
-                                                                href="{{ route('booking', $tour->tour_name) }}">Booking
+                                                                href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking
                                                                 Now</a>
                                                             <a class="btn-theme"
-                                                                href="{{ route('tourdetails', $tour->tour_name) }}">View
+                                                                href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
                                                                 Details</a>
                                                         </div>
                                                     </div>
@@ -216,7 +224,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="#">{{ $choose->title }}</a></h3>
-                                <p>{!! Str::limit($choose->description, 200,'.') !!}</p>
+                                <p>{!! Str::limit($choose->description, 200, '.') !!}</p>
                             </div>
                         </div>
                     </div>
@@ -251,12 +259,14 @@
 
                                                 <div class="post-title-box">
                                                     <div class="price-box">
-                                                        @if($getcoupon)
-                                                        <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
-                                                        <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
-                    
+                                                        @if ($getcoupon)
+                                                            <h5 class="text-danger">
+                                                                <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                            </h5>
+                                                            <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                            </h5>
                                                         @else
-                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                            <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                         @endif
                                                     </div>
                                                     <div class="title-box">
@@ -270,15 +280,22 @@
                                                 <ul class="info">
                                                     <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                             Days</a></li>
-                                                    <li><a href="{{ route('tourmap', $tour->tour_name) }}"><i
+                                                    <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
                                                                 class="fa fa-map-marker"></i>View on Map</a></li>
+                                                                <li>
+
+                                                                    {!! Share::page(url('/' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
+
+                                                                </li>
 
                                                 </ul>
-                                                <p>{!! Str::limit($tour->description,250,'.') !!}</p>
+                                                <p>{!! Str::limit($tour->description, 250, '.') !!}</p>
                                                 <a class="btn-theme" style="float:left !important"
-                                                    href="{{ route('booking', $tour->tour_name) }}">Booking Now</a>
+                                                    href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking
+                                                    Now</a>
                                                 <a class="btn-theme"
-                                                    href="{{ route('tourdetails', $tour->tour_name) }}">View Details</a>
+                                                    href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
+                                                    Details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -287,18 +304,13 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3">
-                    <div class="add-box thumb">
-                        <img src="{{asset('frontend/images/features/ad-1.png')}}" alt="">
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
     <!-- Special Packages Section End -->
 
     <!-- Latest Hotel Section Start -->
-    <section class="latest-hotel-sec pt-15 pb-15">
+    {{-- <section class="latest-hotel-sec pt-15 pb-15">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -331,7 +343,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Latest Hotel Section End -->
 
     <!-- Global Section Start -->
@@ -379,41 +391,24 @@
                 @endforeach
 
             </div>
-           
+
 
         </div>
-<div class="text-center mt-4">
-    <a href="{{ route('allgallery') }}" class="read-btn" style=""><h5>View Gallery</h5>
-        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-    </a>
-</div>
-        
+        <div class="text-center mt-4">
+            <a href="{{ route('allgallery') }}" class="read-btn" style="">
+                <h5>View Gallery</h5>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
     </section>
-   
+
     <!-- Gallery Section End -->
 
     <!-- Testimonials Section Start -->
     <section class="testimonials-section pt-15 pb-15">
         <div class="container">
             <div class="row">
-                {{-- <div class="col-lg-5">
-                    <div class="testimonial-video mt-0">
-                        <h5>Latest Hotel Reviews</h5>
-                        <div class="sec-line mb-20"></div>
-                        <h3><i class="fa fa-quote-left"></i> If you are going to use a passage of Lorem Ipsum, you need to be on sure there isn’t anything embarras repeat predefined chunks as.</h3>
-                        <a class="btn-theme popup-youtube" href="../../../www.youtube.com/watchbf1e.html?v=7e90gBu4pas"><i class="fa fa-play-circle"></i> Play Video</a>
-                        <div class="review-ratings">
-                            <a class="ratings-star" href="#">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-empty"></i>
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                            <a class="ratings-count" href="#">(3 Ratings)</a>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="col-lg-12">
                     @include('frontend.common.testmonial')
                 </div>
@@ -445,11 +440,18 @@
                                                 <i class="fa fa-calendar-plus-o"></i>
                                                 {{ $blog->created_at->format('M d') }}
                                             </div>
+                                            @php
+                                                $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
+                                            @endphp
+                                            <div class="comment">
+                                                <i class="fa fa-commenting-o"></i> {{ $getcomment }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('blogsdetails', $blog->blog_title) }}" class="read-btn">Continue
+                            <a href="{{ route('blogsdetails', Str::slug($blog->blog_title)) }}"
+                                class="read-btn">Continue
                                 Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
@@ -462,53 +464,4 @@
     </section>
     <!-- Blog Section End -->
 
-
-
-    <!-- Client Section Start -->
-    {{-- <section class="client-section bg-f8 pb-70 pt-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="client_carousel" class="owl-carousel">
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/1.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/2.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/3.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/4.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/5.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/6.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-img-item">
-                                <img src="{{ asset('frontend/images/partner/2.png') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- Client Section End -->
 @endsection

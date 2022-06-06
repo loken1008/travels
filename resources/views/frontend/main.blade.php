@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
+
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
@@ -74,6 +75,54 @@
             text-transform: uppercase;
         }
 
+        .ReviewText__Container-sc-1nyg8v7-0 .SimpleShortener__Outer-sc-19xjxqz-0,
+        .ReviewText__Title-sc-1nyg8v7-1 {
+            color: #9c9c9c;
+        }
+
+        .fa-facebook-square::before,
+        .fa-whatsapp::before,
+        .fa-twitter::before,
+        .fa-linkedin::before,
+        .fa-google-plus::before,
+        .fa-pinterest::before,
+        .fa-instagram::before {
+            font-family: 'FontAwesome';
+        }
+
+        .social-btn-sp #social-links {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .social-btn-sp #social-links ul li {
+            display: inline-block;
+        }
+
+        .social-btn-sp #social-links ul li a {
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin: 1px;
+            font-size: 30px;
+        }
+        /* #social-links{
+            display: none;
+        } */
+        table #social-links {
+            display: inline-table;
+        }
+
+        table #social-links ul li {
+            display: inline;
+        }
+
+        table #social-links ul li a {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 1px;
+            font-size: 15px;
+            background: #e3e3ea;
+        }
     </style>
 </head>
 
@@ -121,6 +170,7 @@ Main JavaScript
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
     <!--Start of Tawk.to Script-->
+ 
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();

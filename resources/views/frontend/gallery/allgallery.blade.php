@@ -45,7 +45,7 @@
                     </div>
                 </div>
                     <div class="view-gallery mr-1">
-                        <a href="{{route('gallery.details',$gal->gallery_title)}}" class="read-btn" style="">View Related Images
+                        <a href="{{route('gallery.details',Str::slug($gal->gallery_title))}}" class="read-btn" style="">View Related Images
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>

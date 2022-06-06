@@ -38,8 +38,10 @@ class BlogController extends Controller
        }
        public function blogsDetails($blog_title)
        {
+          
+            $title=str_replace('-',' ',$blog_title);
            $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(6)->get();
-           $getblogdetails=Blog::where('blog_title',$blog_title)->first();
+           $getblogdetails=Blog::where('blog_title',$title)->first();
            $getcomments=Comment::with('replies')->where('blog_id',$getblogdetails->id)->where('parent_id','=',NULL)->get();
            return view('frontend.blogs.blogsdetails',compact('getblogdetails','getblogs','getcomments'));
        }

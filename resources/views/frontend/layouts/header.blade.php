@@ -122,7 +122,7 @@ $route = Route::current()->getName();
                                     <div class="dropdown">
                                         @foreach ($country as $c)
                                             <a class="dropdown-item"
-                                                href="{{ route('countrydetails', $c->country_name) }}">{{ $c->country_name }}</a>
+                                                href="{{ route('countrydetails', strtolower($c->country_name)) }}">{{ $c->country_name }}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@ $route = Route::current()->getName();
                                         <div class="dropdown">
                                             @foreach ($cat->tour as $tour)
                                                 <a class="dropdown-item"
-                                                    href="{{ route('tourdetails', $tour->tour_name) }}">{{ $tour->tour_name }}</a>
+                                                    href="{{ url('tourdetails',Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
                                             @endforeach
                                         </div>
                                     </div>

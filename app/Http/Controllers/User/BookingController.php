@@ -20,8 +20,8 @@ class BookingController extends Controller
 {
    public function onlineBooking($tour_name)
    {
-      
-    $tour=Tour::with('country','place')->where('tour_name',$tour_name)->first();
+   $title = str_replace('-',' ',$tour_name); 
+    $tour=Tour::with('country','place')->where('tour_name',$title)->first();
     $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
        return view('frontend.bookform.bookform',compact('getTour','tour'));
    }
@@ -41,7 +41,7 @@ class BookingController extends Controller
               'arrival_date'=>'required',
               'departure_date'=>'required',
               'message'=>'required',
-            //   'g-recaptcha-response' => 'required|captcha',
+              'g-recaptcha-response' => 'required|captcha',
          ]);
          $booking=new Booking();
          if(Auth()->guard('customer')->check()){
