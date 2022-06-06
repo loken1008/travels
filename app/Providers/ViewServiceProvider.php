@@ -34,29 +34,30 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
-        $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
+       $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting=SiteSetting::orderBy('id','desc')->first();
         $getdate=Carbon::now()->format('Y-m-d');
         $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
-        $getcontact=Contact::orderBy('id','desc')->first();
-        $user = User::first();
-        $notifications = $user->unreadNotifications;
-
+       $getcontact=Contact::orderBy('id','desc')->first();
+     $user = User::first();
+       
+	$notifications = $user->unreadNotifications;
+    
         $notif=DB::table('notifications')
-        ->where('notifiable_type','=','App\Models\User')->orderBy('created_at','desc')
+       ->where('notifiable_type','=','App\Models\User')->orderBy('created_at','desc')
         ->get()
-        ->map(function($item,$key){
+       ->map(function($item,$key){
             $item->data=json_decode($item->data);
             return $item;
         });
         // dd($notif);
 
          View::share('notifications', $notifications);
-         View::share('notif', $notif);
-         View::share('country', $country);
+        View::share('notif', $notif);
+        View::share('country', $country);
          View::share('category', $category);
-         View::share('place', $place);
+        View::share('place', $place);
          View::share('sitesetting', $sitesetting);
          View::share('getcoupon', $getcoupon);
          View::share('getcontact', $getcontact);
