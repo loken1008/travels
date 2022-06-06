@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('blogsdetails',$getblog->blog_title)}}" class="read-btn">Continue Reading
+                                <a href="{{route('blogsdetails',Str::slug($getblog->blog_title))}}" class="read-btn">Continue Reading
                                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>

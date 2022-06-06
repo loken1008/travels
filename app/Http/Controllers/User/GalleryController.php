@@ -16,7 +16,8 @@ class GalleryController extends Controller
 
     public function GalleryDetails($gallery_title)
     {
-        $gallerydetails=Gallery::where('gallery_title',$gallery_title)->first();
+        $title=str_replace('-',' ',$gallery_title);
+        $gallerydetails=Gallery::where('gallery_title',$title)->first();
         return view('frontend.gallery.gallery',compact('gallerydetails'));
     }
 }

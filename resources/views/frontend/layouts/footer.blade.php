@@ -28,6 +28,10 @@
                             <div class="border-style-3"></div>
                         </div>
                         <ul class="footer-list">
+                            <li><a href="{{ route('travelwithus') }}">Why Travels With Us</a></li>
+                            <li><a href="{{ route('paymentmethod') }}">Payment Method</a></li>
+                            <li><a href="{{ route('termsconditions') }}"">Terms and Conditions</a></li>
+                            <li><a href="{{ route('privacypolicy') }}"">Privacy Policies</a></li>
                             <li><a href="{{ route('customer.register') }}">Sign up </a></li>
                             <li><a href="{{ route('customer.login') }}">Log in account</a></li>
                         </ul>
@@ -44,10 +48,9 @@
                         </div>
                         <ul class="footer-list">
                             <li><a href="{{ route('introduction') }}">About Us</a></li>
-                            <li><a href="{{ route('privacypolicy') }}"">Privacy Policies</a></li>
                             <li><a href="{{ route('ourteam') }}">Team</a></li>
                             <li><a href="{{ route('allgallery') }}">Gallery</a></li>
-                            <li><a href="{{ route('allblogs') }}">Blog</a></li>
+                            <li><a href="{{ route('allblogs') }}">Blogs</a></li>
                             <li><a href="{{route('contactus')}}">Contact</a></li>
                         </ul>
 

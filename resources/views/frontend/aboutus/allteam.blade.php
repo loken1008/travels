@@ -21,150 +21,23 @@
     <section class="team-section">
         <div class="container">
             <div class="row">
-
-
-
-                <div class="tab-style">
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab" href="#Administration"
-                                role="tab" aria-controls="plc-asia" aria-selected="true">Administration</a>
-                            <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab" href="#Mountainer" role="tab"
-                                aria-controls="plc-asia" aria-selected="true">Mountainer Guid</a>
-                            <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab" href="#Hiking" role="tab"
-                                aria-controls="plc-asia" aria-selected="true">Hiking/Treeking</a>
-                            <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab" href="#Tourguide" role="tab"
-                                aria-controls="plc-asia" aria-selected="true">Tour Guide</a>
-                            <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab" href="#Safari" role="tab"
-                                aria-controls="plc-asia" aria-selected="true">Safari</a>
-
+                @foreach ($getallteam as $getteam)
+                       
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-col">
+                        <div class="thumb">
+                            <img src="{{ $getteam->image }}" alt="{{$getteam->name}}" style="height:260px; width:255px">
                         </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <!-- item start -->
-
-                        @foreach ($getallteam as $getteam)
-                            @if ($getteam->type == 'Administration')
-                                <a href="{{ route('ourteam.details', $getteam->name) }}">
-                                    <div class="tab-pane fade show " id="Administration" role="tabpanel"
-                                        aria-labelledby="plc-asia-tab">
-                                        <div class="item">
-                                            <div class="col-lg-3 col-md-4 col-sm-6" style="max-width: 35% !important">
-                                                <div class="team-col">
-                                                    <div class="thumb">
-                                                        <img src="{{ $getteam->image }}" alt=""
-                                                            style="width:255px;height:260px">
-                                                    </div>
-                                                    <div class="content text-center">
-                                                        <h4><a href="{{ route('ourteam.details', $getteam->name) }}">{{ $getteam->name }}</a></h4>
-                                                        <h5>{{ $getteam->post }}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-
-                        @foreach ($getallteam as $getteam)
-                            @if ($getteam->type == 'Mountainer')
-                                <a href="{{ route('ourteam.details', $getteam->name) }}">
-                                    <div class="tab-pane fade show " id="Mountainer" role="tabpanel"
-                                        aria-labelledby="plc-asia-tab">
-                                        <div class="item">
-                                            <div class="col-lg-3 col-md-4 col-sm-6" style="max-width: 35% !important">
-                                                <div class="team-col">
-                                                    <div class="thumb">
-                                                        <img src="{{ $getteam->image }}" alt=""
-                                                            style="width:255px;height:260px">
-                                                    </div>
-                                                    <div class="content text-center">
-                                                        <h4><a href="{{ route('ourteam.details', $getteam->name) }}">{{ $getteam->name }}</a></h4>
-                                                        <h5>{{ $getteam->post }}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-                        @foreach ($getallteam as $getteam)
-                            @if ($getteam->type == 'Safari')
-                                <a href="{{ route('ourteam.details', $getteam->name) }}">
-                                    <div class="tab-pane fade show " id="Safari" role="tabpanel"
-                                        aria-labelledby="plc-asia-tab">
-                                        <div class="item">
-                                            <div class="col-lg-3 col-md-4 col-sm-6" style="max-width: 35% !important">
-                                                <div class="team-col">
-                                                    <div class="thumb">
-                                                        <img src="{{ $getteam->image }}" alt=""
-                                                            style="width:255px;height:260px">
-                                                    </div>
-                                                    <div class="content text-center">
-                                                        <h4><a href="{{ route('ourteam.details', $getteam->name) }}">{{ $getteam->name }}</a></h4>
-                                                        <h5>{{ $getteam->post }}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-                        @foreach ($getallteam as $getteam)
-                            @if ($getteam->type == 'Hiking')
-                                <a href="{{ route('ourteam.details', $getteam->name) }}">
-                                    <div class="tab-pane fade show " id="Hiking" role="tabpanel"
-                                        aria-labelledby="plc-asia-tab">
-                                        <div class="item">
-                                            <div class="col-lg-3 col-md-4 col-sm-6" style="max-width: 35% !important">
-                                                <div class="team-col">
-                                                    <div class="thumb">
-                                                        <img src="{{ $getteam->image }}" alt=""
-                                                            style="width:255px;height:260px">
-                                                    </div>
-                                                    <div class="content text-center">
-                                                        <h4><a href="{{ route('ourteam.details', $getteam->name) }}">{{ $getteam->name }}</a></h4>
-                                                        <h5>{{ $getteam->post }}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-
-                        @foreach ($getallteam as $getteam)
-                            @if ($getteam->type == 'Tourguide')
-                                <a href="{{ route('ourteam.details', $getteam->name) }}">
-                                    <div class="tab-pane fade show " id="Tourguide" role="tabpanel"
-                                        aria-labelledby="plc-asia-tab">
-                                        <div class="item">
-                                            <div class="col-lg-3 col-md-4 col-sm-6" style="max-width: 35% !important">
-                                                <div class="team-col">
-                                                    <div class="thumb">
-                                                        <img src="{{ $getteam->image }}" alt=""
-                                                            style="width:255px;height:260px">
-                                                    </div>
-                                                    <div class="content text-center">
-                                                        <h4><a href="{{ route('ourteam.details', $getteam->name) }}">{{ $getteam->name }}</a></h4>
-                                                        <h5>{{ $getteam->post }}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endforeach
-                        <!-- item end -->
-
-
+                        <div class="content text-center">
+                            <h4><a href="{{ route('ourteam.details', Str::slug($getteam->name)) }}">{{ $getteam->name }}</a></h4>
+                            <h5>{{ $getteam->post }}</h5>
+                        </div>
                     </div>
                 </div>
+                @endforeach
+
+
+              
             </div>
         </div>
     </section>
@@ -181,5 +54,4 @@
             </div>
         </div>
     </section>
-
 @endsection

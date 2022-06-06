@@ -31,13 +31,15 @@ class IndexController extends Controller
 
     public function  tourDetails($tour_name)
     {
-        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('tour_name',$tour_name)->first();
+        $title = str_replace('-',' ',$tour_name); 
+        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('tour_name',$title)->first();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->where('tour_id',$getTourdetails->id)->get();
         return view('frontend.tour.tourdetails',compact('getTourdetails','gethotel'));
     }
     public function tourMap($tour_name)
     {
-        $gettourmap=Tour::where('tour_name',$tour_name)->first();
+        $title = str_replace('-',' ',$tour_name); 
+        $gettourmap=Tour::where('tour_name',$title)->first();
         return view('frontend.tour.map',compact('gettourmap'));
     }
 

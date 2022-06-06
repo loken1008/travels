@@ -237,7 +237,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    {{-- <div class="form-group col-md-12">
+                                    <div class="form-group col-md-12">
                                       
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
@@ -246,7 +246,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                    </div> --}}
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <div class="contact-textarea text-center">
                                             <button class="btn btn-theme" type="submit" value="Submit Form">Book
@@ -308,11 +308,17 @@
                                         <ul class="info">
                                             <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }} Days</a>
                                             </li>
+                                            <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
+                                                class="fa fa-map-marker"></i>View on Map</a></li>
+                                                <li>
+                                                    {!! Share::page(url('/tour-search' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
+
+                                                </li>
 
                                         </ul>
                                         <p>{!! Str::words($tour->description,50,'.') !!}</p>
-                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',$tour->tour_name)}}">Booking Now</a>
-                                        <a class="btn-theme" href="{{ route('tourdetails', $tour->tour_name) }}">View
+                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',Str::slug($tour->tour_name))}}">Booking Now</a>
+                                        <a class="btn-theme" href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
                                             Details</a>
                                     </div>
                                 </div>
