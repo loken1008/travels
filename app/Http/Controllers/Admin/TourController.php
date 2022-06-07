@@ -13,6 +13,7 @@ use App\Models\Images;
 use App\Models\Equipment;
 use App\Models\Itinerary;
 use App\Models\DatesPrices;
+use App\Models\FQA;
 use Carbon\Carbon;
 use App\Http\Requests\TourStoreRequest;
 use Illuminate\Support\Facades\Storage;
@@ -117,6 +118,15 @@ class TourController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
+        foreach($request->question as $key3=>$value3)
+     {
+         $fqa=new FQA();
+         $fqa->tour_id=$tour_id;
+         $fqa->question=$request->question[$key3];
+         $fqa->answer=$request->answer[$key3];
+         $fqa->created_at =Carbon::now();
+         $fqa->save();
+     }
         $notification = [
             'message' => 'tour Insert Successfully',
             'alert-type' => 'success',
@@ -134,7 +144,8 @@ class TourController extends Controller
             'itinerary',
             'images',
             'category',
-            'subcategory'
+            'subcategory',
+            'fqa'
         )->findOrfail($id);
         return view('admin.tour.viewdetails', compact('detailstour'));
     }
@@ -154,7 +165,8 @@ class TourController extends Controller
             'dateprice',
             'equipment',
             'itinerary',
-            'images'
+            'images',
+            'fqa'
         )->findOrfail($id);
         return view(
             'admin.tour.edit',
@@ -236,6 +248,20 @@ class TourController extends Controller
                 ];
                 Itinerary::where('id', $request->itineraryid[$key2])->update(
                     $data2
+                );
+            }
+        } else {
+        }
+
+        if ($request->faqid) {
+            foreach ($request->faqid as $key3 => $value3) {
+                $data3 = [
+                    'question' => $request->question[$key3],
+                    'answer' => $request->answer[$key3],
+                    'updated_at' => Carbon::now(),
+                ];
+                FQA::where('id', $request->faqid[$key3])->update(
+                    $data3
                 );
             }
         } else {

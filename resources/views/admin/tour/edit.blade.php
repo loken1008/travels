@@ -221,7 +221,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Include :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Cost Include :</label>
                                     <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
                                         {{$edittour->cost_include}}
                                     </textarea>
@@ -233,7 +233,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Exclude :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Cost Exclude :</label>
                                     <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
                                         {{$edittour->cost_exclude}}
                                   </textarea>
@@ -252,7 +252,7 @@
                         <div class="row dateprice" id="dynamicAddRemove">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Start Date :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Start Date :</label>
                                     <input class="form-control" id="firstName5" "
                                                     name=" start_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{$dateprice->start_date}}">
@@ -264,7 +264,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> End Date :<span class="text-danger">*</span></label>
+                                    <label for="firstName5"> End Date :</label>
                                     <input class="form-control" id="firstName5" "
                                                     name=" end_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{$dateprice->end_date}}">
@@ -276,7 +276,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Seats Available :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Seats Available :</label>
                                     <input type="text" class="form-control" id="firstName5" name="seats_available[]" value="{{$dateprice->seats_available}}">
                                         @error('seats_available')
                                             <span class="text-danger">{{ $message }}</span>
@@ -286,7 +286,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Price :<span class="text-danger">*</span></label>
+                                    <label for="firstName5"> Price :</label>
                                     <input type="text" class="form-control" id="firstName5" name="price[]" value="{{$dateprice->price}}">
                                         @error('price')
                                             <span class="text-danger">{{ $message }}</span>
@@ -307,7 +307,7 @@
                         <div class="row " id="equipment">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Equipment Name :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Equipment Name :</label>
                                     <input type="text" class="form-control" id="firstName5" name="equipment_name[]" value="{{$equipment->equipment_name}}">
                                         @error('equipment_name')
                                             <span class="text-danger">{{ $message }}</span>
@@ -317,7 +317,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5"> Description :<span class="text-danger">*</span></label>
+                                    <label for="firstName5"> Description :</label>
                                     <textarea id="editor5" class="editor5" name="equipment_description[]" rows="10" cols="80" value="{{$equipment->equipment_description}}">
                                         {{$equipment->equipment_description}}
                                     </textarea>
@@ -338,7 +338,7 @@
                         <div class="row" id="itinerary">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Day Title :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Day Title :</label>
                                     <input type="text" class="form-control" id="firstName5" name="day_title[]" value="{{$itineries->day_title}}">
                                         @error('day_title')
                                             <span class="text-danger">{{ $message }}</span>
@@ -349,13 +349,39 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName6"> Long Description :<span class="text-danger">*</span></label>
+                                    <label for="firstName6"> Long Description :</label>
                                     <textarea id="editor6"  name="long_description[]" rows="10" cols="80" value="{{$itineries->long_description}}">
                                         {{$itineries->long_description}}
                                     </textarea>
                                         @error('long_description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
+
+                                </div>
+                            </div>
+                        </div>
+                          @endforeach
+
+                           {{-- faq --}}
+                        @foreach($edittour->fqa as $key=> $fqas)
+                        <input type="hidden" name="faqid[]" value="{{$fqas->id}}">
+
+                        <h6 class="font-weight-bold">FAQ {{$key+1}} Section</h6>
+                        <div class="row" id="itinerary">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="question">Question :</label>
+                                    <input type="text" class="form-control" id="question" name="question[]" value="{{$fqas->question}}">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName6"> Answer :</label>
+                                    <textarea id="editor6"  name="answer[]" rows="10" cols="80" value="{{$fqas->answer}}">
+                                        {{$fqas->answer}}
+                                    </textarea>
 
                                 </div>
                             </div>
