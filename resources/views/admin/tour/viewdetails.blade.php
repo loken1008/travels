@@ -223,6 +223,29 @@
                             </div>
                         </div>
                     @endforeach
+                     {{-- faq --}}
+                     <h6 class="font-weight-bold">FAQ  Section</h6>
+                     @foreach ($detailstour->fqa as $key3 => $fqas)
+                     <hr>
+                    
+                     <div class="row" id="faq">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label for="firstName5">Question :</label>
+                                 <span>{{ $fqas->question }}</span>
+
+                             </div>
+                         </div>
+
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label for="firstName6"> Answer :</label>
+                                 <span>{!! $fqas->answer !!}</span>
+
+                             </div>
+                         </div>
+                     </div>
+                 @endforeach
             </div>
             <!-- /.box-body -->
         </div>

@@ -19,8 +19,8 @@ class CreateEquipmentTable extends Migration
             $table->unsignedBigInteger('package_id')->nullable();
             $table->unsignedBigInteger('activity_id')->nullable();
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
-            $table->string('equipment_name');
-            $table->longText('equipment_description');
+            $table->string('equipment_name')->nullable();
+            $table->longText('equipment_description')->nullable();
             $table->timestamps();
         });
     }

@@ -69,8 +69,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="tourname"> Tour Name :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="tourname"
-                                        value="{{ old('tour_name') }}" name="tour_name">
+                                    <input type="text" class="form-control" id="tourname" value="{{ old('tour_name') }}"
+                                        name="tour_name">
                                     @error('tour_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -92,12 +92,10 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="altitude">Altitude :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="altitude"
-                                        value="{{ old('altitude') }}" name="altitude">
-                                    @error('altitude')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <label for="altitude">Altitude :</label>
+                                    <input type="text" class="form-control" id="altitude" value="{{ old('altitude') }}"
+                                        name="altitude">
+                                   
                                 </div>
                             </div>
 
@@ -113,7 +111,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accomodation">Accomodation :<span class="text-danger">*</span></label>
+                                    <label for="accomodation">Accomodation :</label>
                                     <input type="text" class="form-control" id="accomodation"
                                         value="{{ old('accomodation') }}" name="accomodation">
                                     @error('accomodation')
@@ -134,8 +132,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price"> Price :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="price"
-                                        value="{{ old('main_price') }}" name="main_price">
+                                    <input type="text" class="form-control" id="price" value="{{ old('main_price') }}"
+                                        name="main_price">
                                     @error('main_price')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -161,7 +159,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <label for="firstName5"> Related Images :<span class="text-danger">*</span></label>
+                                <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
@@ -171,14 +169,12 @@
                                     <input id="thumbnail" class="form-control" type="text" name="images">
                                 </div>
                                 <img id="holder" style="margin-top:15px;max-height:100px;">
-                                @error('images')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                              
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="mapurl"> Map Url :<span class="text-danger">*</span></label>
+                                <label for="mapurl"> Map Url :</label>
                                 <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
                                     name="map_url">
                                 {{-- @error('map_url')
@@ -189,9 +185,8 @@
 
                         <div class="form-group ">
                             <label for="description">Place Description/Image :<span class="text-danger">*</span></label>
-                            <textarea id="my-editor" class="form-control " name="description"
-                                value={{ old('description') }}>{{ old('description') }}</textarea>
-                              
+                            <textarea id="my-editor" class="form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
+
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -202,25 +197,21 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costinclude">Cost Include :<span class="text-danger">*</span></label>
+                                    <label for="costinclude">Cost Include :</label>
                                     <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
                                         {{ old('cost_include') }}
                                     </textarea>
-                                    @error('cost_include')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costexclude">Cost Exclude :<span class="text-danger">*</span></label>
+                                    <label for="costexclude">Cost Exclude :</label>
                                     <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
                                         {{ old('cost_exclude') }}
                                   </textarea>
-                                    @error('cost_exclude')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                         </div>
@@ -230,14 +221,15 @@
                         <div class="row dateprice" id="dynamicAddRemove">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="startdate">Start Date :<span class="text-danger">*</span></label>
-                                    <input class="form-control" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
+                                    <label for="startdate">Start Date :</label>
+                                    <input class="form-control" name="start_date[]" type="date"
+                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="enddate"> End Date :<span class="text-danger">*</span></label>
+                                    <label for="enddate"> End Date :</label>
                                     <input class="form-control" id="id_ed" name="end_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
 
@@ -245,21 +237,23 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="seatsavailable">Seats Available :<span class="text-danger">*</span></label>
+                                    <label for="seatsavailable">Seats Available :<span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="seatsavailable" name="seats_available[]">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="price"> Price :<span class="text-danger">*</span></label>
+                                    <label for="price"> Price :</label>
                                     <input type="text" class="form-control" id="price" name="price[]">
 
                                 </div>
                             </div>
 
                             <div class="">
-                                <a href="javascript:void(0)" id="dynamic-ar" class="btn btn-rounded btn-success pull-right addMore"></span>
+                                <a href="javascript:void(0)" id="dynamic-ar"
+                                    class="btn btn-rounded btn-success pull-right addMore"></span>
                                     Add More</a>
                                 {{-- <a href="#" name="add" id="dynamic-ar" class="btn btn-rounded btn-success pull-right">Add
                                 </a> --}}
@@ -273,14 +267,15 @@
                         <div class="row " id="equipment">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="equipmentname">Equipment Name :<span class="text-danger">*</span></label>
+                                    <label for="equipmentname">Equipment Name :<span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="equipmentname" name="equipment_name[]">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="edescription"> Description :<span class="text-danger">*</span></label>
+                                    <label for="edescription"> Description :</label>
                                     <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
 
                                     </textarea>
@@ -301,7 +296,7 @@
                         <div class="row" id="itinerary">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="daytitle">Day Title :<span class="text-danger">*</span></label>
+                                    <label for="daytitle">Day Title :</label>
                                     <input type="text" class="form-control" id="daytitle" name="day_title[]">
 
                                 </div>
@@ -309,7 +304,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="longdescription"> Long Description :<span class="text-danger">*</span></label>
+                                    <label for="longdescription"> Long Description :<span
+                                            class="text-danger">*</span></label>
                                     <textarea id="editor4" name="long_description[]" rows="10" cols="80">
 
                                     </textarea>
@@ -322,11 +318,37 @@
                                     Add More</a>
                             </div>
                         </div>
+                        {{-- itineries --}}
+                        <h6 class="font-weight-bold mt-4">FAQ</h6>
+                        <div class="row " id="faq">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Question :</label>
+                                  
+                                        <input type="text" name="question[]" class=" form-control" id="id_ct0">
+                                      
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName5"> Answer :</label>
+                                    <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
+                                  
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <a href="javascript:void(0)" style="float:left"
+                                    class="btn btn-rounded btn-success pull-right " id="add_field_button"></span>
+                                    Add More</a>
+                            </div>
 
+                        </div>
 
 
                         <div class="box-footer">
-                            <input id="submit-templateeditor" type="submit" class="btn btn-rounded btn-info pull-right" value="Add Tour">
+                            <input id="submit-templateeditor" type="submit" class="btn btn-rounded btn-info pull-right"
+                                value="Add Tour">
                         </div>
                     </section>
                 </form>
@@ -421,7 +443,7 @@
     var i = 0;
     $("#dynamic-ar").click(function() {
         i++;
-        $("#dynamicAddRemove").append('<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :<span class="text-danger">*</span></label><input class="form-control" id="id_ct' + i + '" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :<span class="text-danger">*</span></label><input class="form-control" id="id_ed' + i + '" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class=""><a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
+        $("#dynamicAddRemove").append('<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :</label><input class="form-control" id="id_ct' + i + '" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :</label><input class="form-control" id="id_ed' + i + '" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :</label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :</label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class=""><a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
 
         );
     });
@@ -439,7 +461,7 @@
                     i++;
                     var editorId = "editor3" +i;
                     $("#equipment").append(
-                        '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :<span class="text-danger">*</span></label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :<span class="text-danger">*</span></label> <textarea id="'+editorId+'"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
+                        '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="'+editorId+'"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
                     );
                     CKEDITOR.replace(editorId);
                 }
@@ -459,13 +481,30 @@
                     var editorId1 = "editor4" +i;
         $("#itinerary").append(
 
-            '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :<span class="text-danger">*</span></label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :<span class="text-danger">*</span></label><textarea id="'+editorId1+'" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
+            '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="'+editorId1+'" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
         );
         CKEDITOR.replace(editorId1);
         }
     });
     $(document).on('click', '.removeitinerary', function() {
         $(this).parents('.itineraryCopy').remove();
+    });
+</script>
+<script>
+     var max_fields = 10; 
+          
+            var x = 1; 
+            $("#add_field_button").click(function(e) { 
+                e.preventDefault();
+                if (x < max_fields) { 
+                    x++; 
+                    $("#faq").append('<div class="box-body wizard-content"><section><div class="row faqcopy"> <div class="col-md-12"> <div class="form-group"> <label for="question">Question</label><input type="text" name="question[]"  id="id_ct' + x + '" class="form-control"> </div></div> <div class="col-md-12"> <div class="form-group"> <label for="answer"> Answer :</label> <textarea id="id_ct' + x + '" class="form-control" name="answer[]" rows="10" cols="10"></textarea></div> </div><div class=""> <a href="#" class="remove_field btn btn-rounded btn-danger pull-right">Remove</a> </div></div>  </section> </div>'); //add input box
+                }
+            });
+
+
+            $(document).on('click', '.remove_field', function() {
+        $(this).parents('.faqcopy').remove();
     });
 </script>
 

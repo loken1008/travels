@@ -100,19 +100,7 @@ $route=Route::current()->getName();
                     </li>
                 </ul>
             </li>
-            <li class="treeview {{($prefix=='/fqa')?'active':''}}">
-                <a href="#">
-                    <i class="fa  fa-book"></i>
-                    <span>FAQ</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="{{($route=='all.fqa')?'active':''}}"><a class="{{($route=='all.fqa')?'active':''}}" href="{{route('all.fqa')}}"><i class="ti-more"></i>View FQA</a></li>
-                    </li>
-                </ul>
-            </li>
+            
             <li class="treeview {($prefix=='/coupon')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-sort-amount-asc"></i>
