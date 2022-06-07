@@ -56,11 +56,7 @@
                                         {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
                                         <li><a href="{{ route('tourmap', Str::slug($tourdetails->tour_name)) }}"><i
                                                     class="fa fa-map-marker"></i>View on Map</a></li>
-                                                    <li>
-
-                                                        {!! Share::page(url('/tour-search' . $tourdetails->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
-
-                                                    </li>
+                                                    
                                     </ul>
                                     <p>{!! Str::limit($tourdetails->description, 150, '.') !!}</p>
                                     {{-- <div class="small-hotel">
