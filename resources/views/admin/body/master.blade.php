@@ -43,6 +43,11 @@
             color: #ff0404;
             font-size: 16.5px;
         }
+        .faq-collaspe .toggle{
+            width:100px !important;
+            height:83px;
+            margin-top:10px;
+        }
 
     </style>
 

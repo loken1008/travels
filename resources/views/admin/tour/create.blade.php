@@ -374,7 +374,7 @@
                 var country_id = $(this).val();
                 if (country_id) {
                     $.ajax({
-                        url: "/tour/place/ajax/" + country_id,
+                        url: "/place/ajax/" + country_id,
                         type: "GET",
                         dataType: "json",
                         success: function(data) {

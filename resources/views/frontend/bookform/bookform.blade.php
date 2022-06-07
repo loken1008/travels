@@ -310,10 +310,7 @@
                                             </li>
                                             <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
                                                 class="fa fa-map-marker"></i>View on Map</a></li>
-                                                <li>
-                                                    {!! Share::page(url('/tour-search' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
-
-                                                </li>
+                                               
 
                                         </ul>
                                         <p>{!! Str::words($tour->description,50,'.') !!}</p>

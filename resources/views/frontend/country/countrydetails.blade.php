@@ -89,12 +89,6 @@
                                                         Days</a></li>
                                                 <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
                                                             class="fa fa-map-marker"></i>View on Map</a></li>
-                                                            <li>
-                                                                {!! Share::page(url('/' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} 
-                                                            </li>
-
-                                                {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li> --}}
                                             </ul>
                                             <p>{!! Str::limit($tour->description, 150,'.') !!}</p>
                                             <a class="btn-theme" style="float:left !important"

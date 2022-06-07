@@ -29,25 +29,6 @@ $route=Route::current()->getName();
                     <span>Dashboard</span>
                 </a>
             </li>
-
-
-            {{-- <li class="treeview {($prefix=='/tour')?'active':''}}">
-                <a href="#">
-                    <i data-feather="grid"></i>
-                    <span>Manage Users</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-
-                    <li class="{{($route=='users.index')?'active':''}}"><a class="{{($route=='users.index')?'active':''}}" href="{{route('users.index')}}"><i class="ti-more"></i>Manage User</a></li>
-                    <li class="{{($route=='roles.index')?'active':''}}"><a class="{{($route=='roles.index')?'active':''}}" href="{{route('roles.index')}}"><i class="ti-more"></i>Role</a></li>
-                    <li class="{{($route=='permissions.index')?'active':''}}"><a class="{{($route=='permissions.index')?'active':''}}" href="{{route('permissions.index')}}"><i class="ti-more"></i>Permission</a></li>
-                    </li>
-                </ul>
-            </li> --}}
-
             <li class="treeview {{($prefix=='/banner')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-fw fa-file-photo-o"></i>
@@ -89,21 +70,6 @@ $route=Route::current()->getName();
                 </ul>
                 
             </li>
-
-            {{-- <li class="treeview {($prefix=='/place')?'active':''}}">
-                <a href="#">
-                    <i data-feather="grid"></i>
-                    <span>Destination Place</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
-                    <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
-                    </li>
-                </ul>
-            </li> --}}
             <li class="treeview {{($prefix=='/category')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-bars"></i>
@@ -130,9 +96,7 @@ $route=Route::current()->getName();
 
                     <li class="{{($route=='tour.create')?'active':''}}"><a class="{{($route=='tour.create')?'active':''}}" href="{{route('tour.create')}}"><i class="ti-more"></i>Add Tour</a></li>
                     <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tour</a></li>
-                    {{-- <li class="{{($route=='package.view')?'active':''}}"><a class="{{($route=='package.view')?'active':''}}" href="{{route('package.view')}}"><i class="ti-more"></i>View Packages</a></li>
-                    <li class="{{($route=='activities.view')?'active':''}}"><a class="{{($route=='activities.view')?'active':''}}" href="{{route('activities.view')}}"><i class="ti-more"></i>View Activities</a></li> --}}
-
+                
                     </li>
                 </ul>
             </li>
@@ -254,7 +218,11 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.customers')?'active':''}}"><a class="{{($route=='all.customers')?'active':''}}" href="{{route('all.customers')}}"><i class="ti-more"></i>View Users</a></li>
-                    </li>
+                   
+                </ul>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='all.usermessage')?'active':''}}"><a class="{{($route=='all.usermessage')?'active':''}}" href="{{route('all.usermessage')}}"><i class="ti-more"></i>View Users Message</a></li>
+                    
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/sitesetting')?'active':''}}">

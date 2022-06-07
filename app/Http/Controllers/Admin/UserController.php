@@ -153,4 +153,20 @@ class UserController extends Controller
                 return redirect()->back()
                                 ->with($notification);
         }
+
+    public function usersMessage()
+    {
+       $usermessage= \App\Models\ContactMessage::orderBy('id','DESC')->get();
+        return view('admin.customer.usermessage',compact('usermessage'));
+    }
+    public function deleteUsermessage($id)
+    {
+        \App\Models\ContactMessage::find($id)->delete();
+        $notification=array(
+            'message'=>'Successfully User Message Deleted ',
+            'alert-type'=>'success'
+            );
+            return redirect()->back()
+                            ->with($notification);
+    }
 }

@@ -19,33 +19,94 @@
         <div class="container">
             <div class="section-content">
                 <div class="row">
-                    {{-- <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
                         <h3 class="title">Contact <span>us</span></h3>
-                        <form id="ajax-contact" method="post" action="http://heatmaponline.com/html/touran/php/contact.php">
+                        <form method="post" action="{{route('user.message')}}">
+                            @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <input type="text" name="f_name" id="f_name" class="form-control" placeholder="First Name" required>
+                                    @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->first_name)
+                                    <input type="text" name="f_name" id="f_name" class="form-control" value="{{Auth()->guard('customer')->user()->first_name}}" readonly>
+                                    @else
+                                    <input type="text" name="f_name" id="f_name" class="form-control" placeholder="First Name" required>  
+                                    @endif
+                                    @error('f_name')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
+                                    @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->last_name)
+                                    <input type="text" name="l_name" id="l_name" class="form-control" value="{{Auth()->guard('customer')->user()->last_name}}" readonly>
+                                    @else
                                     <input type="text" name="l_name" id="l_name" class="form-control" placeholder="Last Name" required>
+                                    @endif
+                                    @error('l_name')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
+                                    @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->email)
+                                    <input type="email" name="email" id="email" class="form-control" value="{{Auth()->guard('customer')->user()->email}}" readonly>
+                                    @else
                                     <input type="email" name="email" id="email" class="form-control" placeholder="Your Email"  required>
+                                    @endif
+                                    @error('email')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject" id="subject" required>
+                                    @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->mobile)
+                                    <input type="text" name="phone" id="phone" class="form-control" value="{{Auth()->guard('customer')->user()->mobile}}" readonly>
+                                    @else
+                                    <input type="number" name="phone" id="phone" class="form-control" placeholder="Your Contact Number"  required>
+                                    @endif
+                                    @error('phone')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-12">
+                                    @if(Auth()->guard('customer')->check() && Auth()->guard('customer')->user()->country)
+                                    <input type="text" name="country" id="country" class="form-control" value="{{Auth()->guard('customer')->user()->country}}" readonly>
+                                    @else
+                                    <input type="text" name="country" class="form-control" placeholder="Country" id="country" required>
+                                    @endif
+                                    @error('country')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                    
                                 </div>
                                 <div class="form-group col-md-12">
                                     <div class="contact-textarea">
-                                        <textarea class="form-control" rows="6" placeholder="Wright Message" id="message" name="message" required></textarea>
+                                        <textarea class="form-control" rows="6" placeholder="Write Message" id="message" name="message" required></textarea>
+                                        <div class="mt-4">
+                                      
+                                            {!! NoCaptcha::renderJs() !!}
+                                            {!! NoCaptcha::display() !!}
+                                            @error('g-recaptcha-response')
+                                            <span class="text-danger" >
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        </div>
                                         <button class="btn btn-theme mt-4" type="submit" value="Submit Form">Send Message</button>
                                     </div>
                                 </div>
+                                
                                 <div id="form-messages"></div>
                             </div>
                         </form>
-                    </div> --}}
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" >
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6" >
                         <h3 class="title">Get in <span>Touch</span></h3>
                         <div class="d-flex" style="justify-content:space-around;flex-wrap:wrap">
                             <div class="service-item style-1 border-1px" style="width:256px">

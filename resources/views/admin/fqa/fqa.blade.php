@@ -22,7 +22,6 @@
                                     <tr>
                                         <th>Sn</th>
                                         <th>Tour Name</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,27 +30,27 @@
                                             <td>{{$key+1}}</td>
                                             <td><p class="font-weight-bold"  data-toggle="collapse" href="#collapseExample{{$fqa->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ $fqa->tour_name }} <span class="text-info">+</span></p>
                                                 @foreach($fqa->fqa as $key1=> $f)
-                                                <div class="collapse" id="collapseExample{{$f->tour_id}}">
+                                                <div class="collapse faq-collaspe" id="collapseExample{{$f->tour_id}}">
                                                 <p class="font-weight-bold"> {{$key1+1}}. {{ $f->question }}</p> 
                                                   <p class="text-justify">-> {{ $f->answer }}</p> 
+                                                 
+                                                  <input type="checkbox" class="fqa-input" data-toggle="toggle"
+                                                  data-id="{{ $f->id }}" {{ $f->status ? 'checked' : '' }}
+                                                  data-on="Enabled" data-off="Disabled" data-onstyle="success"
+                                                  data-offstyle="danger">
+                                                    
+                                                  <a href="{{ route('edit.fqa', $f->id) }}" class="btn btn-info mt-2"
+                                                      style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
+                                                  <a href="{{ route('delete.fqa', $f->id) }}"
+                                                      class="btn btn-danger mt-2" style="width:5rem" id="delete"
+                                                      title="delete"><i class="fa fa-trash"></i></a>
                                                 </div>
-                                                
+                                               
                                                  @endforeach
                                             </p>
                                                 
                                             </td>
-                                            <td>
-                                                <input type="checkbox" class="fqa-input" data-toggle="toggle"
-                                                data-id="{{ $fqa->id }}" {{ $fqa->status ? 'checked' : '' }}
-                                                data-on="Enabled" data-off="Disabled" data-onstyle="success"
-                                                data-offstyle="danger">
-                                                  
-                                                <a href="{{ route('edit.fqa', $fqa->id) }}" class="btn btn-info mt-2"
-                                                    style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                <a href="{{ route('delete.fqa', $fqa->id) }}"
-                                                    class="btn btn-danger mt-2" style="width:5rem" id="delete"
-                                                    title="delete"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                           
                                         </tr>
                                     @empty
                                     @endforelse
@@ -141,7 +140,7 @@
     $(function() {
         $('.fqa-input').change(function(e) {
             e.preventDefault();
-            var status = $(this).prop('checked') == true ? '1 ': '0';
+            var status = $(this).prop('checked') == true ? '1': '0';
             var fqa_id = $(this).data('id');
             Swal.fire({
                 title: 'Are you sure?',
