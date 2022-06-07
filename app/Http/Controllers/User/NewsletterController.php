@@ -22,4 +22,23 @@ class NewsletterController extends Controller
         return redirect()->back()->with('failure', 'Sorry! You have already subscribed ');
             
     }
+    public function contactMessage(Request $request)
+    {
+        $request->validate([
+            'f_name'=>'required',
+            'l_name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'country'=>'required',
+            'message'=>'required',
+           'g-recaptcha-response'=>'required|captcha'
+
+        ]);
+        \App\Models\ContactMessage::create($request->except('_token'));
+        $notification = array(
+            'message' => 'Thanks For Contact Us, We will contact you soon',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }

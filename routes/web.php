@@ -84,7 +84,15 @@ Route::middleware(['auth'])->group(function () {
         App\Http\Controllers\Admin\UserController::class,
         'deleteCustomer',
     ])->name('customer.delete');
-
+    // usermessage
+    Route::get('/users-message', [
+        App\Http\Controllers\Admin\UserController::class,
+        'usersMessage',
+    ])->name('all.usermessage');
+    Route::get('/usermessage/delete/{id}', [
+        App\Http\Controllers\Admin\UserController::class,
+        'deleteUsermessage',
+    ])->name('usermessage.delete');
     // country
     Route::prefix('country')->group(function () {
     Route::get('/view', [
@@ -841,6 +849,11 @@ Route::post(
     'newsletter',
     'App\Http\Controllers\User\NewsletterController@store'
 );
+// user message
+Route::get('/contact-us', function () {
+    return view('frontend.contact.contact');
+})->name('contactus');
+Route::post('contact-us-message',[App\Http\Controllers\User\NewsletterController::class,'contactMessage'])->name('user.message');
 
 // aboutus our team
 Route::get('/ourteam', [
@@ -882,9 +895,7 @@ Route::get('/gallery/details/{gallery_title}', [
     'GalleryDetails',
 ])->name('gallery.details');
 
-Route::get('/contact-us', function () {
-    return view('frontend.contact.contact');
-})->name('contactus');
+
 
 // search
 Route::post('/tour-search', [

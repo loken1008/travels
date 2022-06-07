@@ -46,7 +46,7 @@ $route = Route::current()->getName();
                                     <div class="d-flex">
 
 
-                                        @if (empty(
+                                        {{-- @if (empty(
                                             Auth()->guard('customer')->user()->provider_id
                                         ))
                                             <img class="" src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
@@ -54,7 +54,7 @@ $route = Route::current()->getName();
                                         @else
                                             <img class="" src="{{ Auth()->guard('customer')->user()->image }}"
                                             style="height:30px;width:30px;border-radius:50%">
-                                        @endif
+                                        @endif --}}
                                         <a href="#" class="nav-link dropdown-toggle mb-2" data-toggle="dropdown"
                                             aria-haspopup="true"
                                             aria-expanded="false">{{ Auth()->guard('customer')->user()->first_name }}</a>
