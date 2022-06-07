@@ -363,38 +363,6 @@ Route::middleware(['auth'])->group(function () {
         'getPlace',
     ]);
 
-    // Admin fqa all route
-    Route::prefix('fqa')->group(function () {
-        Route::get('/view', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQAView',
-        ])->name('all.fqa');
-        Route::get('/viewdetails/{id}', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQAViewDetails',
-        ])->name('view.fqa');
-        Route::post('/store', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQAStore',
-        ])->name('store.fqa');
-        Route::get('/edit/{id}', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQAEdit',
-        ])->name('edit.fqa');
-        Route::post('/update/{id}', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQAUpdate',
-        ])->name('update.fqa');
-        Route::get('/delete/{id}', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'FQADelete',
-        ])->name('delete.fqa');
-        Route::get('/changeStatus', [
-            App\Http\Controllers\Admin\FQAController::class,
-            'changeFQAStatus',
-        ]);
-    });
-
     // coupon
     Route::prefix('coupon')->group(function(){
     Route::get('/view', [

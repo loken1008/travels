@@ -19,8 +19,8 @@ class CreateItinerariesTable extends Migration
             $table->unsignedBigInteger('package_id')->nullable();
             $table->unsignedBigInteger('activity_id')->nullable();
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
-            $table->longText('day_title');
-            $table->longText('long_description');
+            $table->longText('day_title')->nullable();
+            $table->longText('long_description')->nullable();
             $table->timestamps();
         });
     }

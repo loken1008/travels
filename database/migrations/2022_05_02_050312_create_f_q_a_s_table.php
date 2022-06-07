@@ -16,9 +16,8 @@ class CreateFQASTable extends Migration
         Schema::create('f_q_a_s', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tour_id');
-            $table->longText('question');
-            $table->longText('answer');
-            $table->enum('status',['1','0'])->default('1');
+            $table->longText('question')->nullable();
+            $table->longText('answer')->nullable();
             $table->timestamps();
         });
     }
