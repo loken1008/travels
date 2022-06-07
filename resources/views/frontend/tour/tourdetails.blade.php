@@ -120,7 +120,7 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                                <div class="item"
+                                                <div id="costie" class="item"
                                                     style="padding-left:30px;padding-top:10px !important">
                                                     {!! $getTourdetails->cost_include !!}
                                                     {!! $getTourdetails->cost_exclude !!}
@@ -321,7 +321,7 @@
                             <div class="d-flex mt-5">
                                 <h6 class="share-btn text-dark"> Share: </h6>
                                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                <div class="addthis_inline_share_toolbox_mi34"></div>
+                                <div class="addthis_inline_share_toolbox"></div>
                             </div>
 
                             <a class="btn-theme" href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Booking

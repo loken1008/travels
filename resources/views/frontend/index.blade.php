@@ -173,8 +173,10 @@
                                                                             class="fa fa-map-marker"></i>View on Map</a>
                                                                 </li>
                                                                 <li>
-                                                                    {!! Share::page(url('/' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} 
-                                                                </li>
+                                                                    
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+             <!--   <div class="addthis_inline_share_toolbox"></div>-->
+                                                              </li>
 
                                                             </ul>
                                                             <p>{!! Str::limit($tour->description, 200, '.') !!}</p>
@@ -282,11 +284,13 @@
                                                             Days</a></li>
                                                     <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
                                                                 class="fa fa-map-marker"></i>View on Map</a></li>
-                                                                <li>
+							       <meta property="og:image" content="{{$tour->mainImage}}" />
 
-                                                                    {!! Share::page(url('/' . $tour->tour_name))->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
+                                                               	<li>
 
-                                                                </li>
+                                                                    {!! Share::currentpage()->facebook()->twitter()->whatsapp()->pinterest() !!} </li>
+
+                                                                   </li>
 
                                                 </ul>
                                                 <p>{!! Str::limit($tour->description, 250, '.') !!}</p>
