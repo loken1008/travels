@@ -935,7 +935,7 @@ a.dropdown-item.active {
 }
 
 .header .dropdown-menu {
-    border-top: 2px solid #ffcd22;
+    /* border-top: 2px solid #ffcd22; */
 }
 
 .header ul.navbar-nav li.nav-item div.dropdown-menu .dropdown a.dropdown-item:hover,

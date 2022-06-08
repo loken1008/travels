@@ -13,8 +13,8 @@ $route = Route::current()->getName();
                         <ul>
                             <li>
                                 <i class="flaticon-flash"></i>
-                                @if(isset($getcontact->address))
-                                {{$getcontact->address}}
+                                @if (isset($getcontact->address))
+                                    {{ $getcontact->address }}
                                 @endif
                             </li>
                         </ul>
@@ -37,7 +37,7 @@ $route = Route::current()->getName();
                 <div class="col-md-3">
                     <div class="social-icons">
                         <ul>
-                            <a href="{{route('contactus')}}" class="text-white">Contact Us |</a>
+                            <a href="{{ route('contactus') }}" class="text-white">Contact Us |</a>
 
                             @if (!empty(
                                 Auth()->guard('customer')->user()
@@ -47,8 +47,8 @@ $route = Route::current()->getName();
 
 
                                         {{-- @if (empty(
-                                            Auth()->guard('customer')->user()->provider_id
-                                        ))
+        Auth()->guard('customer')->user()->provider_id
+    ))
                                             <img class="" src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
                                                 style="height:30px;width:30px;border-radius:50%">
                                         @else
@@ -132,21 +132,27 @@ $route = Route::current()->getName();
                             <!-- mega-menu end -->
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
-                                    <a href="{{route('tripdetails',$cat->category_slug)}}" class="nav-link dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">{{ $cat->category_name }}</a>
+                                    <a href="{{ route('tripdetails', $cat->category_slug) }}"
+                                        class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">{{ $cat->category_name }}</a>
 
                                     <div class="dropdown-menu left-1">
                                         <div class="dropdown">
                                             @foreach ($cat->subcategory as $subcat)
-                                                <a class="dropdown-item"
-                                                    href="{{route('tripdetails',$subcat->sub_category_slug)}}">{{ $subcat->sub_category_name }}</a>
+                                                @if ($subcat->count() > 0)
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('tripdetails', $subcat->sub_category_slug) }}">{{ $subcat->sub_category_name }}</a>
+                                                @endif
 
-                                            <div class="dropdown-menu">
-                                                @foreach ($subcat->tour as $tour)
-                                                <a class="dropdown-item"
-                                                href="{{ url('tourdetails',Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
-                                        @endforeach
-                                            </div>
+                                                <div class="dropdown-menu">
+                                                    @foreach ($subcat->tour as $tour)
+                                                    
+                                                        @if ($tour->subcategory_id!==NULL)
+                                                            <a class="dropdown-item"
+                                                                href="{{ url('tourdetails', Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
                                             @endforeach
                                         </div>
                                     </div>
@@ -192,11 +198,14 @@ $route = Route::current()->getName();
                                 <ul class="dropdown-menu dropdown-menu-right dropdown-animation"
                                     aria-labelledby="header-drop-3">
                                     <li>
-                                        <form role="search" class="search-box" method="post" action="{{route('search')}}">
+                                        <form role="search" class="search-box" method="post"
+                                            action="{{ route('search') }}">
                                             @csrf
                                             <div class="form-group d-flex">
-                                                <input type="text" class="form-control" placeholder="Search" name="search">
-                                               <button type="submit"> <i class="fa fa-search form-control-feedback"></i></button>
+                                                <input type="text" class="form-control" placeholder="Search"
+                                                    name="search">
+                                                <button type="submit"> <i
+                                                        class="fa fa-search form-control-feedback"></i></button>
                                             </div>
                                         </form>
                                     </li>
