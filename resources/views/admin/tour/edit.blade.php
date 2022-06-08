@@ -105,9 +105,7 @@
                                     <label for="firstName5">Altitude :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->altitude }}" name="altitude">
-                                    @error('altitude')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                  
                                 </div>
                             </div>
 
@@ -126,9 +124,7 @@
                                     <label for="firstName5">Accomodation :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->accomodation }}" name="accomodation">
-                                    @error('accomodation')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -136,9 +132,7 @@
                                     <label for="firstName5">Transport :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->transport }}" name="transport">
-                                    @error('transport')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -192,9 +186,7 @@
                             @empty
                                 <p>No Image</p>
                             @endforelse
-                                @error('images')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                               
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -202,9 +194,7 @@
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
-                                {{-- @error('map_url')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror --}}
+                               
                             </div>
                         </div>
                         <div class="form-group">
@@ -225,9 +215,7 @@
                                     <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
                                         {{$edittour->cost_include}}
                                     </textarea>
-                                    @error('cost_include')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                  
                                 </div>
                             </div>
 
@@ -237,9 +225,7 @@
                                     <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
                                         {{$edittour->cost_exclude}}
                                   </textarea>
-                                    @error('cost_exclude')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                         </div>
@@ -256,9 +242,7 @@
                                     <input class="form-control" id="firstName5" "
                                                     name=" start_date[]" type="date"
                                         min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{$dateprice->start_date}}">
-                                        @error('start_date')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
 
                                 </div>
                             </div>
@@ -278,9 +262,7 @@
                                 <div class="form-group">
                                     <label for="firstName5">Seats Available :</label>
                                     <input type="text" class="form-control" id="firstName5" name="seats_available[]" value="{{$dateprice->seats_available}}">
-                                        @error('seats_available')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                       
 
                                 </div>
                             </div>
@@ -288,9 +270,7 @@
                                 <div class="form-group">
                                     <label for="firstName5"> Price :</label>
                                     <input type="text" class="form-control" id="firstName5" name="price[]" value="{{$dateprice->price}}">
-                                        @error('price')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                       
 
                                 </div>
                             </div>
@@ -309,9 +289,7 @@
                                 <div class="form-group">
                                     <label for="firstName5">Equipment Name :</label>
                                     <input type="text" class="form-control" id="firstName5" name="equipment_name[]" value="{{$equipment->equipment_name}}">
-                                        @error('equipment_name')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                       
 
                                 </div>
                             </div>
@@ -321,9 +299,7 @@
                                     <textarea id="editor5" class="editor5" name="equipment_description[]" rows="10" cols="80" value="{{$equipment->equipment_description}}">
                                         {{$equipment->equipment_description}}
                                     </textarea>
-                                        @error('equipment_description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
                                 </div>
                             </div>
                         </div>
@@ -340,9 +316,7 @@
                                 <div class="form-group">
                                     <label for="firstName5">Day Title :</label>
                                     <input type="text" class="form-control" id="firstName5" name="day_title[]" value="{{$itineries->day_title}}">
-                                        @error('day_title')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
 
                                 </div>
                             </div>
@@ -353,9 +327,7 @@
                                     <textarea id="editor6"  name="long_description[]" rows="10" cols="80" value="{{$itineries->long_description}}">
                                         {{$itineries->long_description}}
                                     </textarea>
-                                        @error('long_description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                       
 
                                 </div>
                             </div>
