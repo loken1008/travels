@@ -832,10 +832,10 @@ Route::get('/introduction', [
     App\Http\Controllers\User\AboutUsController::class,
     'Introduction',
 ])->name('introduction');
-Route::get('/ourteam/details/{name}', [
-    App\Http\Controllers\User\AboutUsController::class,
-    'TeamDetails',
-])->name('ourteam.details');
+// Route::get('/ourteam/details/{name}', [
+//     App\Http\Controllers\User\AboutUsController::class,
+//     'TeamDetails',
+// ])->name('ourteam.details');
 Route::get('/travel-with-us', [
     App\Http\Controllers\User\AboutUsController::class,
     'travelWithUs',

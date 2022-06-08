@@ -34,7 +34,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
-        $category= Category::with('tour')->orderBy('category_name', 'asc')->get();
+        $category= Category::with('tour','subcategory')->orderBy('category_name', 'asc')->get();
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting=SiteSetting::orderBy('id','desc')->first();
         $getdate=Carbon::now()->format('Y-m-d');
