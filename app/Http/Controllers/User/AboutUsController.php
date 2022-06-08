@@ -15,9 +15,11 @@ class AboutUsController extends Controller
 {
    public function allTeam()
    {
-       $getallteam=OurTeam::orderBy('id','desc')->where('status','=','1')->paginate(8);
+      $team = OurTeam::count();
+       $getteamdetails=OurTeam::where('status','=','1')->paginate(10);
       //  dd($getallteam);
-       return view('frontend.aboutus.allteam',compact('getallteam'));
+      $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
+       return view('frontend.aboutus.allteam',compact('getteamdetails','gettour','team'));
    }
    public function Introduction()
    {
@@ -25,13 +27,13 @@ class AboutUsController extends Controller
          return view('frontend.aboutus.introduction.introduction',compact('introduction'));
    }
 
-   public function TeamDetails($name)
-   {
-         $name=str_replace('-',' ',$name);
-         $getteamdetails=OurTeam::where('name',$name)->where('status',1)->first();
-         $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
-         return view('frontend.aboutus.teamdetails',compact('getteamdetails','gettour'));
-   }
+//    public function TeamDetails($name)
+//    {
+//          $name=str_replace('-',' ',$name);
+//          $getteamdetails=OurTeam::where('name',$name)->where('status',1)->first();
+//          $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
+//          return view('frontend.aboutus.teamdetails',compact('getteamdetails','gettour'));
+//    }
 
    public function travelWithUs()
    {

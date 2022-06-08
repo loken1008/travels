@@ -106,7 +106,7 @@
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
                                             <!-- item start -->
-                                            <div class="tab-pane fade  active" id="plc-asia" role="tabpanel"
+                                            <div class="tab-pane fade show active" id="plc-asia" role="tabpanel"
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
                                                     @foreach ($getTourdetails->itinerary as $itin)

@@ -218,7 +218,7 @@ public function ChooseUpdate(Request $request,$id)
             'post'=>'required',
             'language'=>'required',
             'experiences'=>'required',
-            'type'=>'required',
+            // 'type'=>'required',
             'description'=>'required',
             'image'=>'required'
         ]);
@@ -227,7 +227,7 @@ public function ChooseUpdate(Request $request,$id)
             'post'=>$request->post,
             'language'=>$request->language,
             'experiences'=>$request->experiences,
-            'type'=>$request->type,
+            // 'type'=>$request->type,
             'description'=>$request->description,
             'image'=>$request->image,
         ]);
@@ -250,7 +250,7 @@ public function ChooseUpdate(Request $request,$id)
             'post'=>'required',
             'language'=>'required',
             'experiences'=>'required',
-            'type'=>'required',
+            // 'type'=>'required',
             'description'=>'required',
         ]);
         $teamimage=OurTeam::findOrfail($id);
@@ -259,7 +259,7 @@ public function ChooseUpdate(Request $request,$id)
             'post'=>$request->post,
             'language'=>$request->language,
             'experiences'=>$request->experiences,
-            'type'=>$request->type,
+            // 'type'=>$request->type,
             'description'=>$request->description,
             'image'=>$request->image?$request->image:$teamimage->image,
         ]);

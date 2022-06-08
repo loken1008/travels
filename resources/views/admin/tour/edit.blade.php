@@ -63,7 +63,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">SubCategory Name :<span class="text-danger">*</span></label>
                                     <select class="form-control" id="firstName5" name="subcategory_id">
@@ -75,7 +75,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div> --}}
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Tour Name :<span class="text-danger">*</span></label>
