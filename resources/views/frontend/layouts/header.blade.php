@@ -114,31 +114,39 @@ $route = Route::current()->getName();
 
                             <!-- mega-menu start -->
                             <!-- mega-menu end -->
+                            {{-- <div class="dropdown-menu left-1">
+                                <div class="dropdown">
+                                    @foreach ($country as $c)
+                                        <a class="dropdown-item"
+                                            href="{{ route('countrydetails', strtolower($c->country_name)) }}">{{ $c->country_name }}</a>
+                                    @endforeach
+                                </div>
+                            </div>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Places</a>
 
-                                <div class="dropdown-menu left-1">
-                                    <div class="dropdown">
-                                        @foreach ($country as $c)
-                                            <a class="dropdown-item"
-                                                href="{{ route('countrydetails', strtolower($c->country_name)) }}">{{ $c->country_name }}</a>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </li>
+                               
+                            </li> --}}
                             <!-- mega-menu start -->
                             <!-- mega-menu end -->
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    <a href="{{route('tripdetails',$cat->category_slug)}}" class="nav-link dropdown-toggle" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">{{ $cat->category_name }}</a>
 
                                     <div class="dropdown-menu left-1">
                                         <div class="dropdown">
-                                            @foreach ($cat->tour as $tour)
+                                            @foreach ($cat->subcategory as $subcat)
                                                 <a class="dropdown-item"
-                                                    href="{{ url('tourdetails',Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
+                                                    href="{{route('tripdetails',$subcat->sub_category_slug)}}">{{ $subcat->sub_category_name }}</a>
+
+                                            <div class="dropdown-menu">
+                                                @foreach ($subcat->tour as $tour)
+                                                <a class="dropdown-item"
+                                                href="{{ url('tourdetails',Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
+                                        @endforeach
+                                            </div>
                                             @endforeach
                                         </div>
                                     </div>

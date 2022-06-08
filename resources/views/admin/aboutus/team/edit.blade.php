@@ -54,7 +54,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Field Type: <span class="text-danger">*</span></label>
                                             <div class="controls">
                                                 <select  name="type" class="form-control">
@@ -69,7 +69,7 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                             <label for="firstName5"> Image :</label>
                                             <div class="input-group">

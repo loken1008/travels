@@ -19,7 +19,7 @@ class CreateOurTeamsTable extends Migration
             $table->string('post');
             $table->string('language');
             $table->string('experiences');
-            $table->string('type');
+            $table->string('type')->nullable();
             $table->longText('description');
             $table->string('image');
             $table->enum('status',[1,0])->default(1);
