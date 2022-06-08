@@ -24,15 +24,15 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="blog-details">
                         <div class="details-thumb">
-                            @if(isset($getintroduction->image))
+                            @if(isset($introduction->aboutus_image))
                             <img src="{{ $introduction->aboutus_image }}" alt="" style="width:825px;height:390px">
                             @endif
                         </div>
                         <div class="details-content mb-40">
-                            @if(isset($getintroduction->title))
+                            @if(isset($introduction->aboutus_title))
                             <h4>{{ $introduction->aboutus_title }}</h4>
                             @endif
-                            @if(isset($getintroduction->description))
+                            @if(isset($introduction->aboutus_description))
                             <p class="mb-20" style="text-align:justify!important">{!! $introduction->aboutus_description !!}</p>
                             @endif
 
