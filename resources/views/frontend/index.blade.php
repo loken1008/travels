@@ -139,6 +139,7 @@
                                     aria-labelledby="plc-asia-tab">
                                     <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
                                         @foreach ($countrys->tours as $key2 => $tour)
+                                        @if($tour->status =='1')
                                             @if ($tour->country_id == $countrys->id)
                                                 <div class="item">
                                                     <div class="special-places">
@@ -193,6 +194,7 @@
                                             @else
                                                 Not Available
                                             @endif
+                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
