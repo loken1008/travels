@@ -70,10 +70,12 @@
                                     <div class="tab-style">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#plc-asia" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Itinaries</a>
                                                    
+
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#costie" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Cost Details</a>
@@ -93,6 +95,33 @@
                                                     href="#fqa" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">FQA</a>
 
+                                              
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#costie" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Cost Details</a>
+                                               
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#equipment" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Equipment</a>
+                                            
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#dateprice" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Date & Price</a>
+                                               
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#relatedimages" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Photos</a>
+                                               
+                                                <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab"
+                                                    href="#map" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">Map</a>
+                                              
+                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
+                                                    href="#fqa" role="tab" aria-controls="plc-asia"
+                                                    aria-selected="true">FQA</a>
+                                               
+
+
 
                                             </div>
                                         </nav>
@@ -102,15 +131,18 @@
                                                 aria-labelledby="plc-asia-tab">
                                                 <div class="item">
                                                     @foreach ($getTourdetails->itinerary as $itin)
-                                                    
+                                                    @if($itin->day_title ==!NULL)
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExample1{{ $itin->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample"
                                                             style="justify-content:space-between;background:rgb(180, 213, 245);padding:10px;margin-top:4px"
                                                             class="d-flex">
+                                                          
                                                             <h6 class="font-weight-bold">{{ $itin->day_title }}
                                                             </h6><span><i class="fa fa-plus"></i></span>
+                                                            
                                                         </a>
+                                                        @endif
                                                         <div class="collapse"
                                                             id="collapseExample1{{ $itin->id }}"
                                                             style="padding:10px 10px 0 10px !important">
@@ -123,12 +155,16 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                                <div id="costie" class="item"
+                                 <div id="costie" class="item">
+                                                @if($getTourdetails->cost_include ==!NULL || $getTourdetails->cost_exclude ==!NULL)
+                                                <div class="item"
+
                                                     style="padding-left:30px;padding-top:10px !important">
                                                     {!! $getTourdetails->cost_include !!}
                                                     {!! $getTourdetails->cost_exclude !!}
 
                                                 </div>
+                                                @endif
                                             </div>
                                             <!-- item end -->
 
@@ -137,6 +173,7 @@
                                                 aria-labelledby="equipment-tab">
                                                 @foreach ($getTourdetails->equipment as $equipment)
                                                     <div class="item">
+                                                        @if($equipment->equipment_name ==!NULL)
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExample2{{ $equipment->id }}"
                                                             aria-expanded="false" aria-controls="collapseExample"
@@ -145,6 +182,7 @@
                                                             <h6 class="font-weight-bold">{{ $equipment->equipment_name }}
                                                             </h6><span><i class="fa fa-plus"></i></span>
                                                         </a>
+                                                        @endif
                                                         <div class="collapse"
                                                             id="collapseExample2{{ $equipment->id }}"
                                                             style="padding-left:30px;padding-top:10px !important">
@@ -173,7 +211,8 @@
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($getTourdetails->dateprice as $dateprice)
-                                                                <tr>
+                                                            @if($dateprice->start_date ==!NULL))   
+                                                            <tr>
                                                                     <td>{{ $dateprice->start_date }}</td>
                                                                     <td>{{ $dateprice->end_date }}</td>
                                                                     <td>{{ $dateprice->seats_available }}</td>
@@ -191,6 +230,7 @@
                                                                             Now</a>
                                                                     </td>
                                                                 </tr>
+                                                            @endif
                                                             @endforeach
                                                         </tbody>
                                                     </table>
@@ -210,6 +250,7 @@
                                                                 
                                                             @endphp
                                                             @foreach ($imagess as $images)
+                                                            @if($images ==!NULL)
                                                                 <div class="col-sm-4 col-grid">
                                                                     <div class="gallery-item">
                                                                         <div class="thumb">
@@ -227,6 +268,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                            @endif
                                                             @endforeach
                                                         @empty
                                                             <p>No Image</p>
@@ -243,12 +285,15 @@
 
                                                 <div class="item">
                                                     <div class="special-places">
+                                                        @if($getTourdetails->map_url ==!NULL)
                                                         <div class="content">
-
+                                                           
                                                             <iframe src="{{ $getTourdetails->map_url }}" width="100%"
                                                                 height="600" frameborder="0"></iframe>
-
+                                                           
                                                         </div>
+                                                        @endif
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,6 +305,7 @@
 
                                                 <div class="item">
                                                     @foreach ($getTourdetails->fqa as $fqas)
+                                                    @if($fqas->question ==!NULL)
                                                         <a href="#" class="d-flex"
                                                             style="justify-content:space-between;background:rgb(180, 213, 245);padding:10px;margin-top:4px"
                                                             data-toggle="collapse"
@@ -268,6 +314,7 @@
                                                             <h6 class="font-weight-bold">{{ $fqas->question }}</h6>
                                                             <span><i class="fa fa-plus"></i></span>
                                                         </a>
+                                                        @endif
                                                         <div class="collapse" id="collapseExample{{ $fqas->id }}"
                                                             style="padding-top:10px !important">
 
