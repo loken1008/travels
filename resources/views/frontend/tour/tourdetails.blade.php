@@ -70,45 +70,28 @@
                                     <div class="tab-style">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                @if($getTourdetails->itinerary->count()<2)
-                                               
-                                                @else
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#plc-asia" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Itinaries</a>
                                                    
-                                                @endif
-                                                @if(!empty($getTourdetails->cost_include) and !empty($getTourdetails->cost_exclude))
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#costie" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Cost Details</a>
-                                                @endif
-                                                @if($getTourdetails->equipment->count()>1)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#equipment" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Equipment</a>
-                                                @endif
-                                                @if($getTourdetails->dateprice->count()>1)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#dateprice" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Date & Price</a>
-                                                @endif
-                                                
-                                                @if($getTourdetails->images->count()>0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
-                                                @endif
-                                                @if(!empty($getTourdetails->map_url))
                                                 <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab"
                                                     href="#map" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Map</a>
-                                                @endif
-                                                @if($getTourdetails->fqa->count()>1)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#fqa" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">FQA</a>
-                                                @endif
 
 
                                             </div>

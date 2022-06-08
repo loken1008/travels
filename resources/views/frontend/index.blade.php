@@ -253,12 +253,12 @@
                         <div class="col-lg-12">
                             <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                                 @foreach ($getTour as $key => $tour)
-                                    <div class="item">
+                                    <div class="item {{$key == 0 ? 'active' : '' }}">
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img
                                                         src="{{ $tour->mainImage }}" alt=""
-                                                        style="width:100% !important;height:253px !important"></a>
+                                                        style="height:253px !important"></a>
 
                                                 <div class="post-title-box">
                                                     <div class="price-box">
