@@ -28,7 +28,7 @@
 
                         <!-- Slide Background -->
                         @if ($file_extension == 'mp4')
-                            <video class="slide-video" autoplay loop muted>
+                            <video class="slide-video" autoplay loop muted style="width:100%">
                                 <source src="{{ asset($banner->banner_image) }}" type="video/mp4">
                             </video>
                         @else

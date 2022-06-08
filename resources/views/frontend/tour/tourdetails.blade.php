@@ -70,31 +70,11 @@
                                     <div class="tab-style">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
+                                               
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#plc-asia" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Itinaries</a>
                                                    
-
-                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                    href="#costie" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">Cost Details</a>
-                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                    href="#equipment" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">Equipment</a>
-                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                    href="#dateprice" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">Date & Price</a>
-                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                    href="#relatedimages" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">Photos</a>
-                                                <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab"
-                                                    href="#map" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">Map</a>
-                                                <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                    href="#fqa" role="tab" aria-controls="plc-asia"
-                                                    aria-selected="true">FQA</a>
-
                                               
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#costie" role="tab" aria-controls="plc-asia"
@@ -120,7 +100,6 @@
                                                     href="#fqa" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">FQA</a>
                                                
-
 
 
                                             </div>
@@ -155,10 +134,8 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                 <div id="costie" class="item">
                                                 @if($getTourdetails->cost_include ==!NULL || $getTourdetails->cost_exclude ==!NULL)
                                                 <div class="item"
-
                                                     style="padding-left:30px;padding-top:10px !important">
                                                     {!! $getTourdetails->cost_include !!}
                                                     {!! $getTourdetails->cost_exclude !!}
@@ -371,7 +348,7 @@
                             <div class="d-flex mt-5">
                                 <h6 class="share-btn text-dark"> Share: </h6>
                                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                                <div class="addthis_inline_share_toolbox"></div>
+                                <div class="addthis_inline_share_toolbox_mi34"></div>
                             </div>
 
                             <a class="btn-theme" href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Booking
@@ -445,3 +422,4 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 
 @endsection
+
