@@ -64,7 +64,7 @@ class TourController extends Controller
     {
         $tour_id = Tour::insertGetId([
             'country_id' => $request->country_id,
-            // 'place_id' => $request->place_id,
+            'place_id' => rand(1, 100),
             'category_id' => $request->category_id,
             'subcategory_id'=>$request->subcategory_id,
             'tour_name' => $request->tour_name,
