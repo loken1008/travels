@@ -88,35 +88,35 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <h5>Facebook :<span class="text-danger">*</span></h5>
+                                                <h5>Facebook :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="facebook" class="form-control">
                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5>Instagram :<span class="text-danger">*</span></h5>
+                                                <h5>Instagram :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="instagram" class="form-control">
                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5>Twitter :<span class="text-danger">*</span></h5>
+                                                <h5>Twitter :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="twitter" class="form-control">
                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5>Youtube :<span class="text-danger">*</span></h5>
+                                                <h5>Youtube :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="youtube" class="form-control">
                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5>Pinterest :<span class="text-danger">*</span></h5>
+                                                <h5>Pinterest :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="pinterest" class="form-control">
                                                    
@@ -157,41 +157,13 @@
                       logo:{
                           required:true,
                       },
-                      facebook:{
-                          required:true,
-                      },
-                      twitter:{
-                          required:true,
-                      },
-                      instagram:{
-                          required:true,
-                      },
-                      youtube:{
-                          required:true,
-                      },
-                      pinterest:{
-                          required:true,
-                      }
+                     
                   },
                   messages:{
                       logo:{
                           required:'Please upload logo',
                       },
-                      facebook:{
-                          required:'Please enter facebook url',
-                      },
-                      twitter:{
-                          required:'Please enter twitter url',
-                      },
-                      instagram:{
-                          required:'Please enter instagram url',
-                      },
-                      youtube:{
-                          required:'Please enter youtube url',
-                      },
-                      pinterest:{
-                          required:'Please enter pinterest url',
-                      }
+                     
                   }
               });
           });

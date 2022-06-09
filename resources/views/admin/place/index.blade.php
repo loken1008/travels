@@ -26,6 +26,7 @@ $route = Route::current()->getName();
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>SN</th>
                                         <th>Country</th>
                                         <th>Destination Name</th>
                                         <th>Description/Image</th>
@@ -34,8 +35,9 @@ $route = Route::current()->getName();
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($getplace as $place)
+                                    @forelse($getplace as $key=> $place)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{ $place->country->country_name }}</td>
                                             <td>{{ $place->place_name }}</td>
                                             <td>{!! $place->description !!}</td>

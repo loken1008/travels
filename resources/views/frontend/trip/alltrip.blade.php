@@ -22,14 +22,14 @@
     <section class="special-packages-sec pt-85 pb-60">
        
         <div class="container">
-            <div class="row grid-mb">
+            <div class="row grid-mb" style="justify-content: space-around;">
                 @if(count($getTourdetails)>0)
                @forelse($getTourdetails as $tourdetails)
-               <div class="item" style="width:424px">
+               <div class="item" style="width:340px">
                 <div class="special-places">
                     <div class="thumb">
                         <img src="{{ $tourdetails->mainImage }}" alt=""
-                            style="width:424px !important;height:215px !important">
+                            style="width:340px !important;height:215px !important">
                     </div>
                     <div class="content">
                         <div class="price-box">

@@ -18,13 +18,15 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>SN</th>
                                         <th>Category Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($categories as $category)
+                                    @forelse($categories as $key=> $category)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{ $category->category_name }}</td>
                                             <td>
                                                 <a href="{{ route('edit.category', $category->id) }}" class="btn btn-info"

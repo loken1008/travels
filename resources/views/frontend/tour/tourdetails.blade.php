@@ -295,7 +295,7 @@
                                                         <div class="collapse" id="collapseExample{{ $fqas->id }}"
                                                             style="padding-top:10px !important">
 
-                                                            {!! $fqas->answer !!}
+                                                             {!! $fqas->answer !!}
                                                         </div>
                                                     @endforeach
                                                 </div>
