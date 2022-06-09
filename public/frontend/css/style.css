@@ -116,7 +116,7 @@ h6 {
 }
 
 p {
-    color: #9c9c9c;
+    color: #605d5d;
     font-family: 'Roboto', sans-serif;
     line-height: 28px;
     margin: 0;
@@ -5345,7 +5345,7 @@ Contact Details Css Style
 
 .form-row .form-group input.form-control {
     background-color: #fbfbfb;
-    border: 1px solid #eee;
+    border: 1px solid #5e5a5a;
     font-size: 16px;
     font-family: 'Lora', serif;
     font-weight: 500;
@@ -5357,7 +5357,7 @@ Contact Details Css Style
 
 .form-row textarea.form-control {
     background-color: #fbfbfb;
-    border: 1px solid #eee;
+    border: 1px solid #5e5a5a;
     font-family: 'Lora', serif;
     font-size: 16px;
     font-weight: 500;

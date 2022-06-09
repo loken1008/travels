@@ -30,22 +30,25 @@ $route = Route::current()->getName();
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>SN</th>
                                         <th>Country</th>
-                                        <th>Destination tour</th>
-                                        <th>Tour Name</th>
                                         <th>Category</th>
+                                        <th>Sub category</th>
+                                        <th>Tour Name</th>    
                                         <th>Status</th>
                                         <th>images</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($gettour as $tour)
+                                    @forelse($gettour as $key =>$tour)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{ $tour->country->country_name }}</td>
-                                            <td>{{ $tour->place->place_name }}</td>
-                                            <td>{{ $tour->tour_name }}</td>
                                             <td >@if(!empty($tour->category->category_name)){{$tour->category->category_name}}@endif</td>
+                                            <td >@if(!empty($tour->subcategory->sub_category_name)){{$tour->subcategory->sub_category_name}}@endif</td>
+                                            <td>{{ $tour->tour_name }}</td>
+                                           
                                             <td>
 
                                                 <input type="checkbox" class="tour-input" data-toggle="toggle"

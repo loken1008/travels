@@ -18,14 +18,16 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th>SN</th>
                                             <th>Category</th>
                                             <th>Sub Category Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($subcategories as $subcategory)
+                                        @forelse($subcategories as $key=> $subcategory)
                                             <tr>
+                                                <td>{{$key+1}}</td>
                                                 <td>{{ $subcategory['category']['category_name'] }}</td>
                                                 <td>{{ $subcategory->sub_category_name }}</td>
                                                 <td>

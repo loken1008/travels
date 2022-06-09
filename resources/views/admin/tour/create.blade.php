@@ -30,17 +30,19 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="place">Place Name :<span class="text-danger">*</span></label>
+                                    <label for="place">Place Name :</label>
                                     <select class="form-control" id="firstName5" name="place_id">
 
                                     </select>
                                     @error('place_id')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                    <input type="text" class="form-control" id="place" value="{{ old('place_id') }}"
+                                    name="place_id">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5"> Category :<span class="text-danger">*</span></label>
@@ -57,13 +59,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">SubCategory Name :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">SubCategory Name :</label>
                                     <select class="form-control" id="firstName5" name="subcategory_id">
-
+                                      <option value="">Select Sub Category</option>
                                     </select>
-                                    @error('subcategory_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -403,6 +403,7 @@
                             var d = $('select[name="place_id"]').empty();
                             $.each(data, function(key, value) {
                                 $('select[name="place_id"]').append(
+                                    
                                     '<option value="' + value.id + '">' + value
                                     .place_name + '</option>');
                             });
@@ -425,8 +426,11 @@
                         dataType: "json",
                         success: function(data) {
                             var d = $('select[name="subcategory_id"]').empty();
+                            $('select[name="subcategory_id"]').append(
+                                '<option value="">Select Sub Category</option>');
                             $.each(data, function(key, value) {
                                 $('select[name="subcategory_id"]').append(
+                                   
                                     '<option value="' + value.id + '">' + value
                                     .sub_category_name + '</option>');
                             });

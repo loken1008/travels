@@ -295,7 +295,7 @@
                                                         <div class="collapse" id="collapseExample{{ $fqas->id }}"
                                                             style="padding-top:10px !important">
 
-                                                            {!! $fqas->answer !!}
+                                                             {!! $fqas->answer !!}
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -420,6 +420,7 @@
     <!-- Testimonials Section End -->
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+
 
 @endsection
 
