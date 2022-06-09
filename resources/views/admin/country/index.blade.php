@@ -25,6 +25,7 @@ $route=Route::current()->getName();
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
+                                                <th>SN</th>
                                                 <th>Country Name</th>
                                                 {{-- <th>Start Price</th> --}}
                                                 <th>Image</th>
@@ -34,8 +35,9 @@ $route=Route::current()->getName();
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse($getcountry as $country)
+                                            @forelse($getcountry as $key=> $country)
                                             <tr>
+                                                <td>{{$key+1}}</td>
                                                 <td>{{$country->country_name}}</td>
                                                 {{-- <td>{{$country->start_price}}</td> --}}
                                                 <td><img src="{{$country->country_image}}" height="100" width="100" alt=""></td>

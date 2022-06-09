@@ -55,7 +55,7 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/country')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-address-book"></i>
-                    <span>Country/Place</span>
+                    <span>Country</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
@@ -63,10 +63,10 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{($route=='country.view')?'active':''}}"><a class="{{($route=='country.view')?'active':''}}" href="{{route('country.view')}}"><i class="ti-more"></i>View Country</a></li>
                     <li class="{{($route=='country.create')?'active':''}}"><a class="{{($route=='country.create')?'active':''}}" href="{{route('country.create')}}"><i class="ti-more"></i>Add Country</a></li>
-                    </li>
-                    <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
+                  
+                    {{-- <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
                     <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
-                    </li>
+                    </li> --}}
                 </ul>
                 
             </li>

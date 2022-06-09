@@ -64,7 +64,7 @@ class TourController extends Controller
     {
         $tour_id = Tour::insertGetId([
             'country_id' => $request->country_id,
-            'place_id' => $request->place_id,
+            // 'place_id' => $request->place_id,
             'category_id' => $request->category_id,
             'subcategory_id'=>$request->subcategory_id,
             'tour_name' => $request->tour_name,
@@ -184,7 +184,7 @@ class TourController extends Controller
         $utour = Tour::findOrfail($id);
         Tour::where('id', $id)->update([
             'country_id' => $request->country_id,
-            'place_id' => $request->place_id,
+            // 'place_id' => $request->place_id,
             'category_id' => $request->category_id,
             'subcategory_id'=>$request->subcategory_id,
             'tour_name' => $request->tour_name,

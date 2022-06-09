@@ -22,12 +22,12 @@
                                 <span>{{ $detailstour->country->country_name }}</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Place Name :</label>
                                 <span>{{ $detailstour->place->place_name }}</span>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Category Name :</label>

@@ -5,7 +5,7 @@ $route = Route::current()->getName();
 
 <header class="header header-style-1 clearfix">
 
-    <div class="top-bar">
+    <div class="top-bar" style="background-color:#091426">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -86,7 +86,7 @@ $route = Route::current()->getName();
 
     <div class="menu-style menu-style-1 bg-transparent clearfix">
         <!-- main-navigation start -->
-        <div class="main-navigation main-mega-menu animated">
+        <div class="main-navigation main-mega-menu animated" style="background-color:#091426">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <!-- header dropdown buttons end-->
@@ -128,8 +128,6 @@ $route = Route::current()->getName();
 
                                
                             </li> --}}
-                            <!-- mega-menu start -->
-                            <!-- mega-menu end -->
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
                                     <a href="{{ route('tripdetails', $cat->category_slug) }}"
@@ -137,28 +135,40 @@ $route = Route::current()->getName();
                                         aria-expanded="false">{{ $cat->category_name }}</a>
 
                                     <div class="dropdown-menu left-1">
-                                        <div class="dropdown">
-                                            @foreach ($cat->subcategory as $subcat)
-                                                @if ($subcat->count() > 0)
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('tripdetails', $subcat->sub_category_slug) }}">{{ $subcat->sub_category_name }}</a>
+                                        @foreach ($cat->tour as $tours)
+                                            @if ($tours->subcategory_id === null)
+                                                @if ($tours->status == 1)
+                                                    <div class="dropdown">
+                                                        <a class="dropdown-item"
+                                                            href="{{ url('tourdetails', Str::slug($tours->tour_name)) }}">{{ $tours->tour_name }}</a>
+                                                    </div>
                                                 @endif
+                                            @endif
+                                        @endforeach
+                                        @foreach ($cat->subcategory as $subcat)
+                                            @if ($subcat->category_id == $cat->id)
+                                                <div class="dropdown">
 
-                                                <div class="dropdown-menu">
-                                                    @foreach ($subcat->tour as $tour)
-                                                    
-                                                        @if ($tour->subcategory_id!==NULL)
-                                                            <a class="dropdown-item"
-                                                                href="{{ url('tourdetails', Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
-                                                        @endif
-                                                    @endforeach
+                                                    <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
+                                                        class=" dropdown-item">{{ $subcat->sub_category_name }}</a>
+
+                                                    <div class="dropdown-menu">
+                                                        @foreach ($subcat->tour as $tour)
+                                                            @if ($tour->status == 1)
+                                                                <a class="dropdown-item"
+                                                                    href="{{ url('tourdetails', Str::slug($tour->tour_name)) }}">{{ $tour->tour_name }}</a>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
                                                 </div>
-                                            @endforeach
-                                        </div>
+                                            @endif
+                                        @endforeach
+
                                     </div>
                                 </li>
                             @endforeach
                             <!-- mega-menu start -->
+
 
 
                             <li class="nav-item dropdown">

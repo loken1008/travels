@@ -11,6 +11,8 @@ use App\Models\SiteSetting;
 use App\Models\Coupon;
 use App\Models\Contact;
 use App\Models\User;
+use App\Models\Tour;
+
 use Carbon\Carbon;
 use DB;
 
@@ -35,6 +37,13 @@ class ViewServiceProvider extends ServiceProvider
     {
         $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
         $category= Category::with('tour','subcategory')->orderBy('category_name', 'asc')->get();
+         $tour = Tour::with('country','place','category','subcategory','dateprice','equipment','itinerary','images','fqa','blog')->where('status','=','1')->get();
+         foreach($category as $cat){
+         foreach($cat->tour as $tours){
+            $tour1=$tours;
+         }
+        }
+        //  dd($tour1);
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting=SiteSetting::orderBy('id','desc')->first();
         $getdate=Carbon::now()->format('Y-m-d');
@@ -42,7 +51,7 @@ class ViewServiceProvider extends ServiceProvider
         $getcontact=Contact::orderBy('id','desc')->first();
         $user = User::first();
         $notifications = $user->unreadNotifications;
-
+// dd($tour1);
         $notif=DB::table('notifications')
         ->where('notifiable_type','=','App\Models\User')->orderBy('created_at','desc')
         ->get()
@@ -56,6 +65,8 @@ class ViewServiceProvider extends ServiceProvider
          View::share('notif', $notif);
          View::share('country', $country);
          View::share('category', $category);
+         View::share('tour', $tour);
+         View::share('tour1', $tour1);
          View::share('place', $place);
          View::share('sitesetting', $sitesetting);
          View::share('getcoupon', $getcoupon);

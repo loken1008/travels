@@ -130,9 +130,9 @@ $(document).ready(function() {
             country_id: {
                 required: true,
             },
-            place_id: {
-                required: true,
-            },
+            // place_id: {
+            //     required: true,
+            // },
             category_id: {
                 required: true,
             },
@@ -203,9 +203,9 @@ $(document).ready(function() {
             country_id: {
                 required: "Please select country",
             },
-            place_id: {
-                required: "Please select place",
-            },
+            // place_id: {
+            //     required: "Please select place",
+            // },
             category_id: {
                 required: "Please select category",
             },

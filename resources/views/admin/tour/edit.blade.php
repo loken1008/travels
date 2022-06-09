@@ -34,9 +34,11 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Place Name :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="placeid" value="{{$edittour->place_id}}"
+                                    name="place_id">
                                     <select class="form-control" id="firstName5" name="place_id">
                                         @foreach ($getplace as $place)
                                             <option value="{{ $place->id }}"
@@ -48,7 +50,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5"> Category :<span class="text-danger">*</span></label>
@@ -65,8 +67,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">SubCategory Name :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">SubCategory Name :</label>
                                     <select class="form-control" id="firstName5" name="subcategory_id">
+                                        <option value="">Select Sub category</option>
                                         @foreach ($getsubcategory as $subcategory)
                                         <option value="{{ $subcategory->id }}"{{$subcategory->id==$edittour->subcategory_id?'selected':''}}>{{ $subcategory->sub_category_name }}</option>
                                     @endforeach
@@ -232,7 +235,7 @@
                         <hr>
                         {{-- dateprice --}}
                         
-                        @foreach($edittour->dateprice as $key=> $dateprice)
+                     @foreach($edittour->dateprice as $key=> $dateprice)
                         <input type="hidden" name="dateid[]" value="{{$dateprice->id}}">
                         <h6 class="font-weight-bold">Dates/Price {{$key+1}} Section</h6>
                         <div class="row dateprice" id="dynamicAddRemove">
