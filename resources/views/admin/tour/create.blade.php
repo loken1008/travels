@@ -114,19 +114,15 @@
                                     <label for="accomodation">Accomodation :</label>
                                     <input type="text" class="form-control" id="accomodation"
                                         value="{{ old('accomodation') }}" name="accomodation">
-                                    @error('accomodation')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                   
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="transport">Transport :<span class="text-danger">*</span></label>
+                                    <label for="transport">Transport :</label>
                                     <input type="text" class="form-control" id="transport"
                                         value="{{ old('transport') }}" name="transport">
-                                    @error('transport')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                  
                                 </div>
                             </div>
                             <div class="col-md-6">

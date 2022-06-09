@@ -25,7 +25,7 @@ class TourStoreRequest extends FormRequest
     {
         return [
             'country_id'=>'required',
-            'place_id'=>'required',
+            // 'place_id'=>'required',
             'category_id'=>'required',
             // 'subcategory_id'=>'required',
             'tour_name'=>'required',

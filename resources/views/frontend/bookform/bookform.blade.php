@@ -300,7 +300,7 @@
                                             </div>
                                             <div class="title-box">
                                                 <h4>{{ $tour->tour_name }}</h4>
-                                                <h3>{{ $tour->country->country_name }},{{ $tour->place->place_name }}</h3>
+                                                <h3>{{ $tour->country->country_name }}</h3>
                                             </div>
                                         </div>
                                     </div>

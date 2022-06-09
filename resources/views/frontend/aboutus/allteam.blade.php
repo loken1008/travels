@@ -145,7 +145,7 @@
                                         </div>
                                         <div class="title-box">
                                             <h4>{{ $tour->tour_name }}</h4>
-                                            <h3>{{ $tour->place->place_name }},{{ $tour->country->country_name }}</h3>
+                                            <h3>{{ $tour->country->country_name }}</h3>
                                         </div>
                                         <ul class="info">
                                             <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }} Days</a>

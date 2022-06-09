@@ -42,7 +42,7 @@
                                 <div class="title-box">
                                     <h4>{{ $getTourdetails->tour_name }}</h4>
                                     <h3>{{ $getTourdetails->country->country_name }}
-                                        {{ $getTourdetails->place->place_name }}</h3>
+                                       </h3>
                                 </div>
                             </div>
                         </div>
