@@ -150,24 +150,16 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Post Code  <span class="text-danger">*</span> </label>
+                                        <label for="tourName">Post Code  </label>
                                         <input type="text" name="post_code" id="post_code" class="form-control" value=""
                                             placeholder="Input Postcode">
-                                        @error('post_code')
-                                            <span class="text-danger" >
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Telephone No  <span class="text-danger">*</span> </label>
+                                        <label for="tourName">Telephone No  </label>
                                         <input type="text" name="telephone" id="telephone" class="form-control" value=""
                                             placeholder="Input Telephone">
-                                        @error('telephone')
-                                            <span class="text-danger" >
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="tourName">Mobile  <span class="text-danger">*</span> </label>
@@ -209,33 +201,21 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Arrival Date  <span class="text-danger">*</span> </label>
+                                        <label for="tourName">Arrival Date   </label>
                                         <input type="date" name="arrival_date" id="arrival_date" class="form-control"
                                             value="" placeholder="Input Arrival date">
-                                        @error('arrival_date')
-                                            <span class="text-danger" >
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                       
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="tourName">Departure Date  <span class="text-danger">*</span> </label>
+                                        <label for="tourName">Departure Date  </label>
                                         <input type="date" name="departure_date" id="departure_date" class="form-control"
                                             value="" placeholder="Input Departure date">
-                                        @error('departure_date')
-                                            <span class="text-danger" >
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                       
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="tourName">Message  <span class="text-danger">*</span> </label>
+                                        <label for="tourName">Message  </label>
                                         <textarea name="message" id="message" class="form-control" value=""></textarea>
-                                        @error('message')
-                                            <span class="text-danger" >
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                      
                                     </div>
                                     <div class="form-group col-md-12">
                                       
