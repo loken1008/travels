@@ -33,14 +33,9 @@ class BookingController extends Controller
               'last_name'=>'required',
               'email'=>'required',
               'address'=>'required',
-              'post_code'=>'required',
-              'telephone'=>'required',
               'mobile'=>'required',
               'country'=>'required',
               'number_people'=>'required',
-              'arrival_date'=>'required',
-              'departure_date'=>'required',
-              'message'=>'required',
               'g-recaptcha-response' => 'required|captcha',
          ]);
          $booking=new Booking();
