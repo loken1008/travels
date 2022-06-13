@@ -117,6 +117,7 @@ $route=Route::current()->getName();
                         })
         
                     })
+                    $('#example1 .blog-input').bootstrapToggle();
                 })
             </script>
            

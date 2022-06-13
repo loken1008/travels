@@ -120,6 +120,7 @@
                 })
 
             })
+            $('#example1 .team-input').bootstrapToggle();
         })
     </script>
 @endsection

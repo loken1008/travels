@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.3",
         "pusher/pusher-php-server": "^7.0",
+        "sentry/sentry-laravel": "^2.12",
         "spatie/laravel-newsletter": "^4.11",
         "spatie/laravel-permission": "^5.5",
         "unisharp/laravel-filemanager": "^2.4"

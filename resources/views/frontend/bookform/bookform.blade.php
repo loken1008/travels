@@ -1,5 +1,5 @@
 @extends('frontend.main')
-@section('title', 'OnlineBooking')
+@section('title', 'OnlineBook')
 @section('content')
 
 
@@ -11,7 +11,7 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-12">
-                        <h4>Online Booking</h4>
+                        <h4>Online Book</h4>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="row contact-bg">
                 <div class="col-md-12 col-lg-4 p-0">
                     <div class="contact-text">
-                        <h2>We are <span>Booking</span></h2>
+                        <h2>We are <span>Book</span></h2>
                         <h4>Get in Touch</h4>
                         <div class="sec-line mb-20"></div>
                         <div class="contact-info">
@@ -293,8 +293,8 @@
                                                
 
                                         </ul>
-                                        <p>{!! Str::words($tour->description,50,'.') !!}</p>
-                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',Str::slug($tour->tour_name))}}">Booking Now</a>
+                                        <p>{!! substr($tour->description,0, 300).'.' !!}</p>
+                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',Str::slug($tour->tour_name))}}">Book Now</a>
                                         <a class="btn-theme" href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
                                             Details</a>
                                     </div>

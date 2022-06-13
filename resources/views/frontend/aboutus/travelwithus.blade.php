@@ -4,7 +4,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" data-background="{{asset('frontend/images/bg/px-1.jpg')}}" data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -17,27 +17,77 @@
     </section>
     <!-- Inner Section End -->
 
-    <!-- Blog Section Start -->
-    <section class="blog-section">
+    <section class="shop-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
                     @foreach($getchooseus as $chooseus)
-                    <div class="blog-details">
-                        <div class="details-thumb">
-                            <img src="{{ $chooseus->image }}" alt="" style="width:825px;height:390px">
-                        </div>
-                        <div class="details-content mb-40">
-                            <h4>{{ $chooseus->title }}</h4>
-                            <p class="mb-20" style="text-align:justify!important">{!! $chooseus->description !!}</p>
-
+                    @if ($loop->iteration % 2 !== 0)
+                    <div class="shop-single">
+                        <div class="row " >
+                            <div class="col-lg-12" style="margin-top:40px">
+                                <div class="thumb" style="float:left;margin-right:20px">
+                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="float:left;width:540px;height:310px">
+                                </div>
+                                <div class="content large-content">
+                                    <div class="inner-title">
+                                        <h2 style="font-size:18px">{{ $chooseus->title }}</h2>
+                                      
+                                        <div class="sec-line"></div>
+                                    </div>
+                                 
+                                    <div class="visible-content" style="text-align: justify">
+                                        <p class="mb-25"  style="text-align: justify"> {!! Str::limit($chooseus->description, 500, '') !!}</p>
+                                    </div>
+                                    <div class="invisible-content"><p>{!! $chooseus->description !!}</p></div>
+                                    <button class="btn-theme more-less">Read More</button>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    @else
+                    <div class="shop-single">
+                        <div class="row mt-5">
+                            <div class="col-lg-12" style="margin-top:40px">
+                               
+                                <div class="thumb" style="float:right;margin-left:20px">
+                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="width:540px;height:310px">
+                                </div>
+                                <div class="content large-content">
+                                    <div class="inner-title">
+                                        <h2 style="font-size:18px">{{ $chooseus->title }}</h2>
+                                      
+                                        <div class="sec-line"></div>
+                                    </div>
+                                    <div class="visible-content" style="text-align: justify">
+                                        <p class="mb-25"  style="text-align: justify"> {!! Str::limit($chooseus->description, 500, '') !!}</p>
+                                    </div>
+                                    <div class="invisible-content"><p>{!! $chooseus->description !!}</p></div>
+                                    <button class="btn-theme more-less">Read More</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   @endif
                     @endforeach
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+    @include('frontend.common.tour')
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+$(".invisible-content").hide();
+$(document).on('click', '.btn-theme', function(){
+var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
+$(this).text(moreLessButton);
+$(this).parent('.large-content').find(".invisible-content").toggle();
+$(this).parent('.large-content').find(".visible-content").toggle();
+});
+});
+    </script>
 
 @endsection

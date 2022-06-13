@@ -9,6 +9,7 @@ use App\Models\Tour;
 use App\Models\ChooseUs;
 use App\Models\TermsandCondition;
 use App\Models\AboutUs;
+use App\Models\Blog;
 
 
 class AboutUsController extends Controller
@@ -17,14 +18,14 @@ class AboutUsController extends Controller
    {
       $team = OurTeam::count();
        $getteamdetails=OurTeam::where('status','=','1')->paginate(10);
-      //  dd($getallteam);
-      $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
-       return view('frontend.aboutus.allteam',compact('getteamdetails','gettour','team'));
+    
+       return view('frontend.aboutus.allteam',compact('getteamdetails','team'));
    }
    public function Introduction()
    {
          $introduction=AboutUs::first();
-         return view('frontend.aboutus.introduction.introduction',compact('introduction'));
+         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(5)->get();
+         return view('frontend.aboutus.introduction.introduction',compact('introduction','getblogs'));
    }
 
 //    public function TeamDetails($name)
@@ -37,8 +38,8 @@ class AboutUsController extends Controller
 
    public function travelWithUs()
    {
-       $getchooseus=ChooseUs::orderBy('id','desc')->get();
-         return view('frontend.aboutus.travelwithus',compact('getchooseus'));
+       $getchooseus=ChooseUs::orderBy('id','asc')->get();
+      return view('frontend.aboutus.travelwithus',compact('getchooseus'));
    }
 
    public function TermsandCondition()

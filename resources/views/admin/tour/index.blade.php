@@ -6,8 +6,6 @@ $route = Route::current()->getName();
 @section('title', 'Tour')
 @section('content')
 
-
-
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -51,7 +49,7 @@ $route = Route::current()->getName();
                                            
                                             <td>
 
-                                                <input type="checkbox" class="tour-input" data-toggle="toggle"
+                                                <input type="checkbox" class="tour-input" data-toggle="toggle{{$tour->id}}"
                                                     data-id="{{ $tour->id }}" {{ $tour->status ? 'checked' : '' }}
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
                                                     data-offstyle="danger">
@@ -102,9 +100,9 @@ $route = Route::current()->getName();
         <!-- /.row -->
     </section>
     <!-- /.content -->
-
+   
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
+   
     <script>
         $(function() {
             $('.tour-input').change(function(e) {
@@ -122,7 +120,7 @@ $route = Route::current()->getName();
                     // location.reload();
                 }).then((result) => {
                     if (result.isConfirmed) {
-
+    
                         $.ajax({
                             type: "GET",
                             dataType: "json",
@@ -144,9 +142,12 @@ $route = Route::current()->getName();
                         window.location.href = '/tour/view'
                     }
                 })
-
+    
             })
+          
+    $('#example1 .tour-input').bootstrapToggle();
+
         })
     </script>
-
 @endsection
+

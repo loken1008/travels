@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <title>@yield('title')</title>
+    <title>MountainGuideInfo|@yield('title')</title>
 
 
     <!------------------------------------------
@@ -123,13 +123,18 @@
             font-size: 15px;
             background: #e3e3ea;
         }
-    
+        .costincludeexclude ul li,.equipmentlist ul li,.equipment-collaspe ul li{   
+            list-style: disc;
+            text-align: justify;
+            line-height: 2rem;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div class="preloader"></div>
+    {{-- <div class="preloader"></div> --}}
 
     <!-- Start Page Wrapper  -->
     <div class="page-wrapper">
@@ -152,10 +157,10 @@
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
+
     <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <!-- Optional JavaScript -->
     <script src="{{ asset('frontend/js/bootstrap-dropdownhover.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap-slider.js') }}"></script>
@@ -171,7 +176,17 @@ Main JavaScript
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
     <!--Start of Tawk.to Script-->
- 
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+<!-- Begin widget code -->
+{{-- tripadvisor --}}
+<script>
+var script = document.createElement("script");
+script.type = "module";
+script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";
+document.getElementsByTagName("head")[0].appendChild(script);
+</script>
+<!-- End widget code -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();

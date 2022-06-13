@@ -4,9 +4,11 @@
   $data = array('user_id' => $user_id);
 @endphp
 <header class="main-header">
+   
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top pl-30">
         <!-- Sidebar toggle button-->
+        
         <div>
             <ul class="nav">
                 <li class="btn-group nav-item">
@@ -37,7 +39,7 @@
             <ul class="nav navbar-nav">
                 <!-- Notifications -->
                 <li class="dropdown notifications-menu"   >
-                    <span class="badge badge-custom notific" id="notification-c">  
+                    <span class="badge badge-custom notific mt-2" id="notification-c">  
                         @if(count($notifications) !== 0){{count($notifications)}} @endif
                     </span>
                     <a href="#" id="notification-c" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown"
@@ -66,12 +68,14 @@
                             <ul class="menu sm-scrol">
 
                                 @foreach ($notif as $value)
+                                @if( $value->read_at == null)
                                 <li>
                                     <a id="see-all" class="dropdown-item"   href="{{route('showbookingdetails',$value->data->id)}}">{{$value->data->user}} Trip <br>
                                     <span id="see-all" class="dropdown-item">{{ \Carbon\Carbon::parse($value->created_at)->diffForHumans() }}</span></a>
                                   
                                   
                                 </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </li>

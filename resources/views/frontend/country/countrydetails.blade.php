@@ -92,7 +92,7 @@
                                             </ul>
                                             <p>{!! Str::limit($tour->description, 150,'.') !!}</p>
                                             <a class="btn-theme" style="float:left !important"
-                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking Now</a>
+                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book Now</a>
                                             <a class="btn-theme"
                                                 href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View Details</a>
                                         </div>

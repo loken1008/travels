@@ -236,4 +236,5 @@
         </div>
     </section>
     <!-- Blog Section End -->
+    @include('frontend.common.tour')
 @endsection

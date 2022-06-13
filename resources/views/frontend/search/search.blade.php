@@ -80,7 +80,7 @@
                                 </div>
                             </div> --}}
                                     <a class="btn-theme" style="float:left !important"
-                                        href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Booking Now</a>
+                                        href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Book Now</a>
                                     <a class="btn-theme"
                                         href="{{ route('tourdetails', Str::slug($tourdetails->tour_name)) }}">View Details</a>
                                 </div>

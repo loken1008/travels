@@ -68,4 +68,5 @@
             </div>
         </div>
     </section>
+    @include('frontend.common.tour')
 @endsection
