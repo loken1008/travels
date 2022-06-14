@@ -236,9 +236,10 @@
                         {{-- dateprice --}}
                         
                      @foreach($edittour->dateprice as $key=> $dateprice)
-                        <input type="hidden" name="dateid[]" value="{{$dateprice->id}}">
+                      
                         <h6 class="font-weight-bold">Dates/Price {{$key+1}} Section</h6>
                         <div class="row dateprice" id="dynamicAddRemove">
+                            <input type="hidden" name="dateid[]" value="{{$dateprice->id}}">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Start Date :</label>
@@ -280,8 +281,55 @@
                         </div>
                         <hr>
                         @endforeach
+                        <h6 class="font-weight-bold">Dates/Price {{$key+1}} Section</h6>
+                        <div class="row dateprice" id="dynamicAddRemove2">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName5">Start Date :</label>
+                                    <input class="form-control" id="firstName5" "
+                                                    name=" start_date[]" type="date"
+                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" >
+                                        
 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName5"> End Date :</label>
+                                    <input class="form-control" id="firstName5" "
+                                                    name=" end_date[]" type="date"
+                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" >
+                                       
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName5">Seats Available :</label>
+                                    <input type="text" class="form-control" id="firstName5" name="seats_available[]" >
+                                       
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName5"> Price :</label>
+                                    <input type="text" class="form-control" id="firstName5" name="price[]" >
+                                       
+
+                                </div>
+                            </div>
+                        </div>
                         <hr>
+                        <div class="">
+                            <a href="javascript:void(0)" id="dynamic-ar"
+                                class="btn btn-rounded btn-success pull-right addMore"></span>
+                                Add More</a>
+                            {{-- <a href="#" name="add" id="dynamic-ar" class="btn btn-rounded btn-success pull-right">Add
+                            </a> --}}
+                        </div>
+                        <hr>
+
+
                         {{-- equipment --}}
                         @foreach($edittour->equipment as $key=> $equipment)
                         <input type="hidden" name="equipmentid[]" value="{{$equipment->id}}">
@@ -353,8 +401,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName6"> Answer :</label>
-                                    <textarea id="editor6"  name="answer[]" rows="10" cols="80" value="{{$fqas->answer}}">
+                                    <label for="answer"> Answer :</label>
+                                    <textarea  name="answer[]" rows="10" cols="80" value="{{$fqas->answer}}">
                                         {{$fqas->answer}}
                                     </textarea>
 
@@ -405,5 +453,24 @@
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
+    </script>
+
+    {{-- add remove --}}
+    <script type="text/javascript">
+        var i = 0;
+        $("#dynamic-ar").click(function() {
+            i++;
+            $("#dynamicAddRemove2").append(
+                '<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :</label><input class="form-control" id="id_ct' +
+                i +
+                '" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :</label><input class="form-control" id="id_ed' +
+                i +
+                '" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :</label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :</label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class="">  <a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
+
+            );
+        });
+        $(document).on('click', '.remove-input-field', function() {
+            $(this).parents('.dateprices').remove();
+        });
     </script>
 @endsection

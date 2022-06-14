@@ -4,7 +4,7 @@
 
 
             <!-- Inner Section Start -->
-            <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax"
+            <section class="inner-area parallax-bg" @if(!empty($blogbanner->page_banner))data-background="{{asset($blogbanner->page_banner)}}" @endif data-type="parallax"
                 data-speed="3">
                 <div class="container">
                     <div class="section-content">

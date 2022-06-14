@@ -119,6 +119,7 @@ $route = Route::current()->getName();
                 })
 
             })
+            $('#example1 .place-input').bootstrapToggle();
         })
     </script>
 

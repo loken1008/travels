@@ -4,7 +4,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" data-background="{{asset('frontend/images/bg/ev.jpg')}}" data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -92,7 +92,7 @@
                                             </ul>
                                             <p>{!! Str::limit($tour->description, 150,'.') !!}</p>
                                             <a class="btn-theme" style="float:left !important"
-                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking Now</a>
+                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book Now</a>
                                             <a class="btn-theme"
                                                 href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View Details</a>
                                         </div>

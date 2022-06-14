@@ -1,8 +1,11 @@
+@php 
+$loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','login')->first();
+@endphp
 @extends('frontend.main')
 @section('title', 'User Password Reset')
 @section('content')
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($loginbanner->page_banner))data-background="{{asset($loginbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">

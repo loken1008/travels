@@ -170,7 +170,7 @@
                         window.location.href = '/coupon/view'
                     }
                 })
-
+                $('#example1 .coupon-input').bootstrapToggle();
             })
         })
     </script>

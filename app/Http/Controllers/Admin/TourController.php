@@ -182,6 +182,7 @@ class TourController extends Controller
     public function updateTour(Request $request, $id)
     {
         $utour = Tour::findOrfail($id);
+        // dd($utour);
         Tour::where('id', $id)->update([
             'country_id' => $request->country_id,
             // 'place_id' => $request->place_id,
@@ -224,7 +225,18 @@ class TourController extends Controller
                 DatesPrices::where('id', $request->dateid[$key])->update($data);
             }
         } else {
-        }
+            foreach ($request->start_date as $key11 => $value11) {
+                $data1 = [
+                    'tour_id'=>$id,
+                    'start_date' => $request->start_date[$key11],
+                    'end_date' => $request->end_date[$key11],
+                    'price' => $request->price[$key11],
+                    'seats_available' => $request->seats_available[$key11],
+                    'updated_at' => Carbon::now(),
+                ];
+                DatesPrices::where('tour_id',$id)->create($data1);
+            }
+        }  
         if ($request->equipmentid) {
             foreach ($request->equipmentid as $key1 => $value1) {
                 $data1 = [
@@ -301,9 +313,10 @@ class TourController extends Controller
 
     public function restoreTour($id)
     {
-        Tour::withTrashed()
+        $t=Tour::withTrashed()
             ->where('id', $id)
             ->restore();
+// dd($t);
         $notification = [
             'message' => 'Tour Restore Successfully',
             'alert-type' => 'success',

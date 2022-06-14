@@ -119,6 +119,7 @@ $route=Route::current()->getName();
                         })
         
                     })
+                    $('#example1 .hotel-input').bootstrapToggle();
                 })
             </script>
            

@@ -4,115 +4,115 @@ Author: Psd to Html Expert
 File: scss
 */
 
-@import 'variable'; 
-@import 'mixin'; 
+@import 'variable';
+@import 'mixin';
 @import 'responsive';
 
 /*---light skin---*/
- 
-.light-skin{
-    .main-header{
-        li{
-            &.user-header{
+
+.light-skin {
+    .main-header {
+        li {
+            &.user-header {
                 background-color: $white;
-            } 
-        }
-        .navbar{
-            .sidebar-toggle{
-                color: $dark; 
             }
-            .res-only-view{
+        }
+        .navbar {
+            .sidebar-toggle {
                 color: $dark;
             }
-            .nav{
-                >li{
-                    >a{
+            .res-only-view {
+                color: $dark;
+            }
+            .nav {
+                >li {
+                    >a {
                         color: $light;
-                        @include hover-state{
+                        @include hover-state {
                             background-color: rgba($black, 0.05);
                         }
                     }
                 }
-                .open{
-                    > a{
+                .open {
+                    >a {
                         background-color: rgba($black, 0.05);
-                        @include hover-focus-state{
+                        @include hover-focus-state {
                             background-color: rgba($black, 0.05);
                         }
                     }
                 }
-                >.active{
-                    >a{
-                       background-color: rgba($black, 0.05); 
+                >.active {
+                    >a {
+                        background-color: rgba($black, 0.05);
                     }
                 }
             }
         }
     }
-    .main-sidebar{
-        -webkit-box-shadow: 0 0 21px 0 rgba(89,102,122,0.1);
-    box-shadow: 0 0 21px 0 rgba(89,102,122,0.1);
-        background-color: $white; 
+    .main-sidebar {
+        -webkit-box-shadow: 0 0 21px 0 rgba(89, 102, 122, 0.1);
+        box-shadow: 0 0 21px 0 rgba(89, 102, 122, 0.1);
+        background-color: $white;
     }
-    .user-panel{
-        >.info{
-          color: $white;  
-            >a{
+    .user-panel {
+        >.info {
+            color: $white;
+            >a {
                 color: $white;
             }
         }
     }
-    .sidebar-menu{
-        >li{
-            @include hover-active-state{
-                >a{
-                   color: $dark; 
+    .sidebar-menu {
+        >li {
+            @include hover-active-state {
+                >a {
+                    color: $dark;
                 }
             }
-            &.menu-open{
-                >a{
-                   color: $dark;  
+            &.menu-open {
+                >a {
+                    color: $dark;
                 }
             }
-            >.treeview-menu{
+            >.treeview-menu {
                 margin: 0 0px;
             }
-        } 
+        }
     }
-    &.sidebar-collapse{
-        .sidebar-menu{
-            >li{
-                >.treeview-menu{
+    &.sidebar-collapse {
+        .sidebar-menu {
+            >li {
+                >.treeview-menu {
                     background-color: rgba($light3, 1);
                 }
             }
-        } 
+        }
     }
-    &.sidebar-mini{
-        &.sidebar-collapse{
-            .sidebar-menu{
-                >li{
-                    >a{
-                        >span{
-                            background-color: rgba($light3, 1) !important;                            
+    &.sidebar-mini {
+        &.sidebar-collapse {
+            .sidebar-menu {
+                >li {
+                    >a {
+                        >span {
+                            background-color: rgba($light3, 1) !important;
                         }
                     }
                 }
             }
         }
     }
-    .sidebar{
-        a{
-          color: $dark;  
-            &:hover{
-               text-decoration: none; 
+    .sidebar {
+        a {
+            color: $dark;
+            &:hover {
+                text-decoration: none;
             }
         }
     }
-    .sidebar-form{
+    .sidebar-form {
         border-radius: 3px;
-        border: 1px solid lighten($black, 50%); 
-        input[type="text"]{
+        border: 1px solid lighten($black, 50%);
+        input[type="text"] {
             box-shadow: none;
             background-color: rgba($black, 0.59);
             border: 1px solid rgba($black, 0.59);
@@ -122,16 +122,16 @@ File: scss
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 2px;
-            &:focus{
-               color: $white; 
-                + .input-group-btn{
-                    .btn{
-                       color: $white; 
+            &:focus {
+                color: $white;
+                +.input-group-btn {
+                    .btn {
+                        color: $white;
                     }
                 }
             }
         }
-        .btn{
+        .btn {
             box-shadow: none;
             background-color: rgba($black, 0.59);
             border: 1px solid rgba($black, 0.59);
@@ -143,82 +143,82 @@ File: scss
             border-bottom-left-radius: 0;
         }
     }
-    .control-sidebar{
+    .control-sidebar {
         color: $dark;
         background-color: $white;
-        +.control-sidebar-bg{
+        +.control-sidebar-bg {
             -webkit-box-shadow: 0px 5px 10px 1px rgba(lighten($black, 30%), 0.2);
             -moz-box-shadow: 0px 5px 10px 1px rgba(lighten($black, 30%), 0.2);
-            box-shadow: 0px 5px 10px 1px rgba(lighten($black, 30%), 0.2); 
+            box-shadow: 0px 5px 10px 1px rgba(lighten($black, 30%), 0.2);
         }
-        .nav-tabs{
-            &.control-sidebar-tabs{
+        .nav-tabs {
+            &.control-sidebar-tabs {
                 border-bottom: 1px solid lighten($black, 80%);
-                >li{
-                    >a{
-                       color: $dark;
+                >li {
+                    >a {
+                        color: $dark;
                         border-bottom-color: lighten($black, 80%);
-                        @include hover-state{
+                        @include hover-state {
                             border-bottom-color: lighten($black, 80%);
                             background-color: transparent;
-                            
                         }
-                        &.active{
+                        &.active {
                             background-color: transparent;
-                            @include hover-state{
-                              background-color: transparent;  
+                            @include hover-state {
+                                background-color: transparent;
                             }
                         }
                     }
                 }
             }
         }
-        .control-sidebar-heading{
+        .control-sidebar-heading {
             color: $dark;
         }
-        .control-sidebar-subheading{
+        .control-sidebar-subheading {
             color: $dark;
         }
-        .control-sidebar-menu{
+        .control-sidebar-menu {
             margin-left: -14px;
-            >li{
-                >a{
-                    &:hover{
-                       background-color: $light; 
+            >li {
+                >a {
+                    &:hover {
+                        background-color: $light;
                     }
-                    .menu-info{
-                        >p{
-                           color: lighten($black, 40%); 
+                    .menu-info {
+                        >p {
+                            color: lighten($black, 40%);
                         }
                     }
-                } 
+                }
             }
         }
     }
 }
-.control-sidebar+.control-sidebar-bg{
+
+.control-sidebar+.control-sidebar-bg {
     background-color: $white;
 }
 
-@include screen-sm-max{
-    .light-skin{
-        &.sidebar-mini{
-            &.sidebar-collapse{
-                .sidebar-menu{
-                    >li{
-                        >a{
-                            >span{
-                                background-color: rgba($white,0) !important;
+@include screen-sm-max {
+    .light-skin {
+        &.sidebar-mini {
+            &.sidebar-collapse {
+                .sidebar-menu {
+                    >li {
+                        >a {
+                            >span {
+                                background-color: rgba($white, 0) !important;
                             }
                         }
-                        &.menu-open{
-                            >a{
-                                background-color: rgba($white,0.95) !important;
+                        &.menu-open {
+                            >a {
+                                background-color: rgba($white, 0.95) !important;
                             }
                         }
-                        &.active{
-                            >a{
-                               background-color: rgba($white,0.95) !important; 
+                        &.active {
+                            >a {
+                                background-color: rgba($white, 0.95) !important;
                             }
                         }
                     }
@@ -228,181 +228,225 @@ File: scss
     }
 }
 
-.alert-primary, .alert-danger, .alert-error, .alert-info, .alert-success, .alert-warning, .bg-black, .bg-black-active, .callout.callout-danger, .callout.callout-info, .callout.callout-success, .callout.callout-warning, .callout.callout-primary, .label-danger, .label-info, .label-primary, .label-success, .label-warning, .modal-danger .modal-body, .modal-danger .modal-footer, .modal-danger .modal-header, .modal-info .modal-body, .modal-info .modal-footer, .modal-info .modal-header, .modal-primary .modal-body, .modal-primary .modal-footer, .modal-primary .modal-header, .modal-success .modal-body, .modal-success .modal-footer, .modal-success .modal-header, .modal-warning .modal-body, .modal-warning .modal-footer, .modal-warning .modal-header, .bg-warning, .bg-gray, .modal-primary .modal-header *, .modal-info .modal-header *, .modal-success .modal-header *, .modal-danger .modal-header *, .modal-warning .modal-header *{
+.alert-primary,
+.alert-danger,
+.alert-error,
+.alert-info,
+.alert-success,
+.alert-warning,
+.bg-black,
+.bg-black-active,
+.callout.callout-danger,
+.callout.callout-info,
+.callout.callout-success,
+.callout.callout-warning,
+.callout.callout-primary,
+.label-danger,
+.label-info,
+.label-primary,
+.label-success,
+.label-warning,
+.modal-danger .modal-body,
+.modal-danger .modal-footer,
+.modal-danger .modal-header,
+.modal-info .modal-body,
+.modal-info .modal-footer,
+.modal-info .modal-header,
+.modal-primary .modal-body,
+.modal-primary .modal-footer,
+.modal-primary .modal-header,
+.modal-success .modal-body,
+.modal-success .modal-footer,
+.modal-success .modal-header,
+.modal-warning .modal-body,
+.modal-warning .modal-footer,
+.modal-warning .modal-header,
+.bg-warning,
+.bg-gray,
+.modal-primary .modal-header *,
+.modal-info .modal-header *,
+.modal-success .modal-header *,
+.modal-danger .modal-header *,
+.modal-warning .modal-header * {
     color: $white;
 }
 
 
-
-
 /*---Dark skin---*/
 
-body{
-    &.dark-skin{
+body {
+    &.dark-skin {
         background-color: $body-dark;
-	    color: $dark-text;        
-        .navbar-nav{
-            >.user-menu{
-                >.dropdown-menu{
-                    >.user-body{
+        color: $dark-text;
+        .navbar-nav {
+            >.user-menu {
+                >.dropdown-menu {
+                    >.user-body {
                         border-color: rgba($white, 0.12);
                     }
-                } 
+                }
             }
             >.dropdown {
-                >.dropdown-menu{
-                    >li{
-                        .menu{
-                            >li{
-                                >a{
+                >.dropdown-menu {
+                    >li {
+                        .menu {
+                            >li {
+                                >a {
                                     border-color: rgba($white, 0.12);
                                     color: $dark-text;
-                                    >div{
-                                        >h4{
+                                    >div {
+                                        >h4 {
                                             color: $dark-title;
-                                            >small{
-                                               color: $dark-title; 
+                                            >small {
+                                                color: $dark-title;
                                             }
                                         }
-                                        >span{
-                                            color: $dark-text; 
+                                        >span {
+                                            color: $dark-text;
                                         }
-                                    }                                
-                                    >h3{
+                                    }
+                                    >h3 {
                                         color: $dark-title;
                                     }
-                                    &:hover{
+                                    &:hover {
                                         background-color: rgba($body-dark, 0.2);
                                     }
                                 }
                             }
-                        } 
-                        &.header{
-                            border-color: rgba($white, 0.12) ;
+                        }
+                        &.header {
+                            border-color: rgba($white, 0.12);
                             border-bottom: 1px solid rgba($white, 0.12);
                             color: $dark-text;
                             background-color: lighten($body-dark, 05%);
                         }
                     }
-                } 
+                }
             }
         }
-        .main-sidebar{
+        .main-sidebar {
             .sidebar-footer {
                 background-color: $dark3;
-            }    
+            }
         }
         .user-profile .ulogo h3 {
-            color: $dark-title;;
+            color: $dark-title;
+            ;
         }
     }
 }
-.dark-skin{
-    h1, h2, h3, h4, h5, h6{
-        color: $dark-title; 
+
+.dark-skin {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $dark-title;
     }
-    a{
-        color: $dark-text; 
-        &.bg-light{
-            @include hover-focus-state{
+    a {
+        color: $dark-text;
+        &.bg-light {
+            @include hover-focus-state {
                 background-color: lighten($body-dark, 30%) !important;
             }
         }
     }
-    .form-control{
+    .form-control {
         background-color: $dark3;
-	    color: $dark-text; 
+        color: $dark-text;
     }
-    .search-box{
-        .app-search{
-            .srh-btn{
+    .search-box {
+        .app-search {
+            .srh-btn {
                 background-color: lighten($body-dark, 25%);
             }
-        } 
+        }
     }
-    .content-header{
-        .breadcrumb{
+    .content-header {
+        .breadcrumb {
             color: $dark-text;
-            .breadcrumb-item{
-                a{
+            .breadcrumb-item {
+                a {
                     color: $dark-text;
                 }
-                &.active{
+                &.active {
                     color: $dark2;
                 }
             }
         }
     }
-    .dropdown-menu{
+    .dropdown-menu {
         background-color: lighten($body-dark, 05%);
         border-color: rgba($white, 0.12);
-        >li{
-            >a{
-               color: $dark-text; 
+        >li {
+            >a {
+                color: $dark-text;
             }
         }
     }
-    .dropdown-grid{
+    .dropdown-grid {
         border-color: rgba($white, 0.12);
-        .dropdown-item{
-            &:hover{
+        .dropdown-item {
+            &:hover {
                 border-color: lighten($body-dark, 30%);
             }
         }
     }
-    .dropdown-divider{
+    .dropdown-divider {
         border-color: rgba($white, 0.12);
     }
-    .dropdown-item{
-        @include hover-focus-state{
+    .dropdown-item {
+        @include hover-focus-state {
             background-color: lighten($body-dark, 10%);
             color: $dark-text;
         }
     }
-    .content-header{
-        .page-title{
-           color: $dark-text;
-	       border-color: lighten($body-dark, 50%); 
-        } 
-        .right-title{
-            .dropdown{
-                >.btn{
+    .content-header {
+        .page-title {
+            color: $dark-text;
+            border-color: lighten($body-dark, 50%);
+        }
+        .right-title {
+            .dropdown {
+                >.btn {
                     border-color: rgba($white, 0.12)!important;
                     background-color: lighten($body-dark, 25%);
                 }
-            } 
+            }
         }
     }
-    .subheader_daterange{
+    .subheader_daterange {
         background-color: lighten($body-dark, 25%);
     }
-    .ranges{
-        li{
+    .ranges {
+        li {
             background-color: rgba($body-dark, 0.2);
             border-color: rgba($white, 0.12);
-            color: $dark-text; 
+            color: $dark-text;
         }
     }
-    .btn-default{
+    .btn-default {
         background-color: $dark3;
         color: $dark-text;
         border-color: rgba($white, 0.12);
-        &.hover{
+        &.hover {
             background-color: lighten($body-dark, 25%);
-            border-color: lighten($body-dark, 25%); 
+            border-color: lighten($body-dark, 25%);
         }
-        @include hover-active-state{
+        @include hover-active-state {
             background-color: lighten($body-dark, 25%);
             border-color: lighten($body-dark, 25%);
         }
     }
-    .btn{
-        &.btn-outline{
+    .btn {
+        &.btn-outline {
             color: $dark-text;
             border-color: rgba($white, 0.12);
-            &:hover{
+            &:hover {
                 color: $white;
-                background-color: rgba($body-dark,0.2);
+                background-color: rgba($body-dark, 0.2);
             }
             &.btn-white {
                 color: $dark !important;
@@ -415,67 +459,67 @@ body{
             }
         }
     }
-    .btn-toggle{
-        @include before-after-state{
+    .btn-toggle {
+        @include before-after-state {
             color: $dark-text;
         }
-    }    
-    button{
-        &.bg-light{
-            @include hover-focus-state{
+    }
+    button {
+        &.bg-light {
+            @include hover-focus-state {
                 background-color: lighten($body-dark, 30%) !important;
             }
         }
-    }    
-    .btn-light{        
+    }
+    .btn-light {
         background-color: lighten($body-dark, 05%);
         border-color: rgba($white, 0.12);
         color: $dark-text;
     }
-    .box-controls{
-        li > a{
+    .box-controls {
+        li>a {
             color: $dark-text;
         }
     }
-    .box{
+    .box {
         background-color: lighten($body-dark, 25%);
-        .box-header{
+        .box-header {
             color: $dark-text;
             border-color: rgba($white, 0.12);
-            .box-subtitle{
+            .box-subtitle {
                 color: $dark-text;
-            }            
+            }
         }
-        .box-footer{
+        .box-footer {
             background-color: $dark3;
             border-color: rgba($white, 0.12);
         }
-        .box-transparent{
+        .box-transparent {
             background-color: transparent !important;
             box-shadow: none !important;
         }
-        &[class*=bg-pale]{
-            >.box-header{
+        &[class*=bg-pale] {
+            >.box-header {
                 color: $dark;
             }
         }
-        &.box-solid{
-            .box-body{
+        &.box-solid {
+            .box-body {
                 background-color: $dark3 !important;
                 color: $dark-text;
             }
-            &.box-default{
-                >.box-header{
+            &.box-default {
+                >.box-header {
                     color: $dark;
                     background-color: $light;
-                    .btn{
+                    .btn {
                         color: $dark;
                     }
-                    a{
+                    a {
                         color: $dark;
                     }
-                    >.box-tools{
-                        .btn{
+                    >.box-tools {
+                        .btn {
                             border: 0;
                             box-shadow: none;
                         }
@@ -486,60 +530,66 @@ body{
         .border-right {
             border-right: 1px solid rgba($white, 0.12) !important;
         }
-        .border-left{
+        .border-left {
             border-left: 1px solid rgba($white, 0.12) !important;
         }
-        .overlay{
-           background: rgba($white, .7);
+        .overlay {
+            background: rgba($white, .7);
         }
-        .flex-column{
+        .flex-column {
             >li {
                 border-color: rgba($white, 0.12);
             }
         }
         .knob-label {
             color: lighten($body-dark, 45%);
-        }        
+        }
     }
-    .box-inverse{
+    .box-inverse {
         color: $white !important;
         background-color: lighten($body-dark, 30%);
-        .box-header{
+        .box-header {
             color: $white !important;
             border-color: rgba($white, 0.15);
         }
-        .box-title{
+        .box-title {
             color: $white !important;
         }
-        h1, h2, h3, h4, h5, h6, small{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        small {
             color: $white !important;
         }
-        .box-controls{
-            li{
-                >a{
+        .box-controls {
+            li {
+                >a {
                     color: $dark-text !important;
                 }
             }
         }
-        .box-footer{
+        .box-footer {
             border-color: rgba($white, 0.5);
         }
-        .box-action{
+        .box-action {
             border-color: rgba($white, 0.5);
         }
-        .box-btn-more{
-            @include before-after-state{
+        .box-btn-more {
+            @include before-after-state {
                 border-color: $white;
             }
         }
-    }    
-    .box-gray{
+    }
+    .box-gray {
         background-color: lighten($body-dark, 50%);
-        &.box-bordered{
+        &.box-bordered {
             border-color: lighten($body-dark, 50%);
         }
     }
-    .box-dark{
+    .box-dark {
         background-color: $dark;
         .box-bordered {
             border-color: $dark;
@@ -548,295 +598,296 @@ body{
     .box-bordered {
         border-color: rgba($white, 0.12);
     }
-    .box-profile{
-        &.nav-tabs-custom{
-            >.nav-tabs{
+    .box-profile {
+        &.nav-tabs-custom {
+            >.nav-tabs {
                 background-color: lighten($body-dark, 05%);
-                >li{
-                    >a.active{                       
+                >li {
+                    >a.active {
                         color: $dark-text;
-                        &:hover{
+                        &:hover {
                             color: $dark-text;
                         }
                     }
                 }
             }
         }
-    }    
-    .box-comments{
-        .username{
+    }
+    .box-comments {
+        .username {
             color: $white;
-            .comment-text{
-                color: lighten($body-dark, 65%);;
+            .comment-text {
+                color: lighten($body-dark, 65%);
+                ;
             }
         }
         .box-comment {
             border-color: rgba($white, 0.12);
         }
     }
-    .card{
+    .card {
         background-color: $dark3;
-        .card-header{
+        .card-header {
             background-color: transparent !important;
             border-color: rgba($white, 0.12);
         }
-        .card-footer{
+        .card-footer {
             background-color: transparent !important;
             border-color: rgba($white, 0.12);
         }
     }
-    .left-block{
+    .left-block {
         border-color: rgba($white, 0.12) !important;
         background-color: rgba(lighten($body-dark, 05%), 0.5);
-        .left-content-area{
-            >.box{
-               background-color: lighten($body-dark, 05%); 
+        .left-content-area {
+            >.box {
+                background-color: lighten($body-dark, 05%);
             }
-            >.card{
-               background-color: lighten($body-dark, 05%); 
+            >.card {
+                background-color: lighten($body-dark, 05%);
             }
         }
     }
-    .todo-list{
-        >li{
+    .todo-list {
+        >li {
             color: $dark-text;
         }
     }
-    .btn-box-tool{
-        &:hover{
-           color: $dark-text; 
-        }
-    }
-    .show{
-        .btn-box-tool{
+    .btn-box-tool {
+        &:hover {
             color: $dark-text;
-        }        
-    }
-    .page-header{
-        border-color: rgba($white, 0.12);
-    }
-    .overlay-wrapper{
-        .overlay{
-            background: rgba($white, .7); 
         }
     }
-    .info-box{
-        background-color: $dark3;
+    .show {
+        .btn-box-tool {
+            color: $dark-text;
+        }
     }
-    .badge-default{
-        background-color: $dark3;
-    }
-    code{
+    .page-header {
         border-color: rgba($white, 0.12);
-        background-color: $body-dark; 
+    }
+    .overlay-wrapper {
+        .overlay {
+            background: rgba($white, .7);
+        }
+    }
+    .info-box {
+        background-color: $dark3;
+    }
+    .badge-default {
+        background-color: $dark3;
+    }
+    code {
+        border-color: rgba($white, 0.12);
+        background-color: $body-dark;
     }
     .code-preview {
         border-color: rgba($white, 0.12);
-        background-color: $body-dark; 
+        background-color: $body-dark;
     }
-    .table{
+    .table {
         color: $dark-text;
-        >thead{
-            &.thead-light{
-                th{                    
+        >thead {
+            &.thead-light {
+                th {
                     background-color: $body-dark;
                     color: $dark-title;
                 }
             }
-            >tr{
-                >th{
-                   border-color: rgba($white, 0.12); 
-                } 
-                >td{
-                   border-color: rgba($white, 0.12); 
+            >tr {
+                >th {
+                    border-color: rgba($white, 0.12);
+                }
+                >td {
+                    border-color: rgba($white, 0.12);
                 }
             }
         }
-        >tbody{
-            >tr{
-                >td{
-                   border-color: rgba($white, 0.12); 
+        >tbody {
+            >tr {
+                >td {
+                    border-color: rgba($white, 0.12);
                 }
-                >th{
-                   border-color: rgba($white, 0.12);  
+                >th {
+                    border-color: rgba($white, 0.12);
                 }
             }
         }
-        >tfoot{
-            >tr{
-                >td{
-                   border-color: rgba($white, 0.12); 
-                } 
-                >th{
-                   border-color: rgba($white, 0.12); 
+        >tfoot {
+            >tr {
+                >td {
+                    border-color: rgba($white, 0.12);
                 }
-            } 
+                >th {
+                    border-color: rgba($white, 0.12);
+                }
+            }
         }
     }
-    .table-bordered{
+    .table-bordered {
         border-color: rgba($white, 0.12);
-        >tbody{
-            >tr{
-                >td{
-                   border-color: rgba($white, 0.12); 
-                } 
-                >th{
-                   border-color: rgba($white, 0.12); 
+        >tbody {
+            >tr {
+                >td {
+                    border-color: rgba($white, 0.12);
+                }
+                >th {
+                    border-color: rgba($white, 0.12);
                 }
             }
         }
-        >tfoot{
-            >tr{
-                >td{
-                   border-color: rgba($white, 0.12); 
-                } 
-                >th{
-                   border-color: rgba($white, 0.12); 
+        >tfoot {
+            >tr {
+                >td {
+                    border-color: rgba($white, 0.12);
+                }
+                >th {
+                    border-color: rgba($white, 0.12);
                 }
             }
         }
-        >thead{
-            >tr{
-                >td{
-                   border-color: rgba($white, 0.12); 
-                } 
-                >th{
-                   border-color: rgba($white, 0.12); 
+        >thead {
+            >tr {
+                >td {
+                    border-color: rgba($white, 0.12);
+                }
+                >th {
+                    border-color: rgba($white, 0.12);
                 }
             }
         }
     }
-    .table-active{
+    .table-active {
         background-color: lighten($body-dark, 20%);
-        >th{
-           background-color: lighten($body-dark, 20%); 
+        >th {
+            background-color: lighten($body-dark, 20%);
         }
-        >td{
-           background-color: lighten($body-dark, 20%); 
+        >td {
+            background-color: lighten($body-dark, 20%);
         }
-    }    
-    .table-separated{
-        tbody{
-            tr{
+    }
+    .table-separated {
+        tbody {
+            tr {
                 background-color: $dark;
             }
         }
     }
-    .dataTable{
-        input{            
+    .dataTable {
+        input {
             border-color: rgba($white, 0.12);
             color: lighten($body-dark, 45%);
             background-color: lighten($body-dark, 15%);
         }
-        select{
+        select {
             border-color: rgba($white, 0.12);
             color: lighten($body-dark, 45%);
             background-color: lighten($body-dark, 15%);
         }
     }
-    .page-item{
-        &.disabled{
-            .page-link{
+    .page-item {
+        &.disabled {
+            .page-link {
                 color: $dark-text;
                 background-color: $body-dark;
                 border-color: rgba($white, 0.12);
             }
         }
     }
-    .pagination{
-        >li{
-            >a{
-               background-color: $dark; 
-               color: $dark-text;
+    .pagination {
+        >li {
+            >a {
+                background-color: $dark;
+                color: $dark-text;
             }
         }
     }
-    .paging_simple_numbers{
-        .pagination{
-            .paginate_button{
-               background-color: transparent; 
-                &:hover{
+    .paging_simple_numbers {
+        .pagination {
+            .paginate_button {
+                background-color: transparent;
+                &:hover {
                     background-color: transparent;
                 }
             }
         }
     }
-    .nav{
-        >li{
-            >a{
-                @include hover-state{
+    .nav {
+        >li {
+            >a {
+                @include hover-state {
                     color: lighten($dark, 25%);
                 }
             }
         }
     }
-    .nav-tabs-custom{
-        >.nav-tabs{
-            >li{
-                >a{
-                    &.active{                        
+    .nav-tabs-custom {
+        >.nav-tabs {
+            >li {
+                >a {
+                    &.active {
                         background-color: lighten($body-dark, 10%);
-                        color: $dark-text;                        
+                        color: $dark-text;
                         border-left-color: rgba($white, 0.12);
                         border-right-color: rgba($white, 0.12);
-                        &:hover{                               
+                        &:hover {
                             background-color: lighten($body-dark, 10%);
                             color: $dark-text;
                         }
-                    } 
+                    }
                 }
             }
         }
     }
-    .media-list-hover{
+    .media-list-hover {
         >.media:not(.media-list-header):not(.media-list-footer) {
-            &:hover{
+            &:hover {
                 background-color: rgba($body-dark, 0.2);
             }
         }
-        .media-list-body{
-            >.media{
-                &:hover{
+        .media-list-body {
+            >.media {
+                &:hover {
                     background-color: rgba($body-dark, 0.2);
                 }
             }
         }
     }
-    .media{
-        a:not(.btn):not(.avatar){            
+    .media {
+        a:not(.btn):not(.avatar) {
             color: $dark-text;
-        } 
+        }
     }
-    .modal-content{
+    .modal-content {
         background-color: lighten($body-dark, 30%);
     }
-    .modal-header{
+    .modal-header {
         border-color: rgba($white, 0.12);
     }
-    .modal-footer{
+    .modal-footer {
         border-color: rgba($white, 0.12);
     }
-    .media-body{
-        >p:last-child{
-           color: $dark-text;
+    .media-body {
+        >p:last-child {
+            color: $dark-text;
         }
-    }    
-    .modal-fill{
-        .modal-content{
+    }
+    .modal-fill {
+        .modal-content {
             background-color: $dark;
         }
     }
-    .modal{
+    .modal {
         &.modal-fill {
             background-color: $dark;
         }
     }
     .media-list-divided {
-        >.media:not(.media-list-header):not(.media-list-footer){
+        >.media:not(.media-list-header):not(.media-list-footer) {
             border-bottom-color: rgba($white, 0.2);
         }
         .media-list-body {
-            >.media{                
+            >.media {
                 border-bottom-color: rgba($white, 0.2);
             }
         }
@@ -845,84 +896,84 @@ body{
         color: lighten($body-dark, 60%);
         text-shadow: none;
     }
-    .flex-column{
-        >li{
-            >a{
+    .flex-column {
+        >li {
+            >a {
                 color: lighten($body-dark, 60%);
             }
         }
     }
-    .mailbox-nav{
-        .nav-pills{
-            >li{
-                >a{
-                    @include hover-focus-state{
+    .mailbox-nav {
+        .nav-pills {
+            >li {
+                >a {
+                    @include hover-focus-state {
                         background-color: rgba($body-dark, 0.2);
                     }
-                    &.active{
-                        @include hover-focus-state{
+                    &.active {
+                        @include hover-focus-state {
                             background-color: rgba($body-dark, 0.2);
                         }
                     }
-                } 
+                }
             }
         }
     }
-    .mailbox-messages{
-        table{
-            a{
+    .mailbox-messages {
+        table {
+            a {
                 color: $dark-text;
             }
-        } 
-        .mailbox-date{
+        }
+        .mailbox-date {
             font-size: 12px;
             color: $dark-text;
         }
     }
-    .mailbox-controls{
-        &.with-border{
+    .mailbox-controls {
+        &.with-border {
             border-color: rgba($white, 0.12);
         }
     }
-    .mailbox-read-info{
+    .mailbox-read-info {
         border-color: rgba($white, 0.12);
     }
     .mailbox-read-time {
         color: $dark-text;
     }
-    .mailbox-attachment-info{
+    .mailbox-attachment-info {
         background-color: lighten($body-dark, 15%);
     }
-    .mailbox-attachments{
-        li{
-           border-color: rgba($white, 0.12); 
+    .mailbox-attachments {
+        li {
+            border-color: rgba($white, 0.12);
         }
     }
-    .callout{
-        .highlight{
+    .callout {
+        .highlight {
             background-color: $dark3;
-        } 
+        }
     }
-    .callout code{
+    .callout code {
         background-color: $dark3;
     }
-    .wysihtml5-toolbar{
-        .btn-default{
+    .wysihtml5-toolbar {
+        .btn-default {
             background-color: $dark3;
         }
     }
-    .wysihtml5-sandbox{
-	    background-color: $dark3 !important;
-	    border-color: rgba($white, 0.12) !important;
-        body.placeholder{
-	       background-color: lighten($body-dark, 15%) !important;
-	       border-color: rgba($white, 0.12) !important;
+    .wysihtml5-sandbox {
+        background-color: $dark3 !important;
+        border-color: rgba($white, 0.12) !important;
+        body.placeholder {
+            background-color: lighten($body-dark, 15%) !important;
+            border-color: rgba($white, 0.12) !important;
         }
     }
-    .lookup::before{
+    .lookup::before {
         color: $dark-text;
-    }    
-    .lookup{
+    }
+    .lookup {
         input {
             color: $dark-text;
         }
@@ -930,128 +981,128 @@ body{
     .form-control {
         border-color: rgba($white, 0.12);
     }
-    .form-element{
-        .form-control{
+    .form-element {
+        .form-control {
             color: $dark-text;
             background-image: -webkit-gradient(linear, left top, left bottom, from($warning), to($warning)), -webkit-gradient(linear, left top, left bottom, from(rgba($white, 0.12)), to(rgba($white, 0.12)));
-            background-image: -webkit-linear-gradient($warning , $warning), -webkit-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
-            background-image: -o-linear-gradient($warning , $warning), -o-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
-            background-image: linear-gradient($warning , $warning), linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
-            &:focus{
+            background-image: -webkit-linear-gradient($warning, $warning), -webkit-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+            background-image: -o-linear-gradient($warning, $warning), -o-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+            background-image: linear-gradient($warning, $warning), linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+            &:focus {
                 background-image: -webkit-gradient(linear, left top, left bottom, from($warning), to($warning)), -webkit-gradient(linear, left top, left bottom, from(rgba($white, 0.12)), to(rgba($white, 0.12)));
-                background-image: -webkit-linear-gradient($warning , $warning), -webkit-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
-                background-image: -o-linear-gradient($warning , $warning), -o-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
-                background-image: linear-gradient($warning , $warning), linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+                background-image: -webkit-linear-gradient($warning, $warning), -webkit-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+                background-image: -o-linear-gradient($warning, $warning), -o-linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
+                background-image: linear-gradient($warning, $warning), linear-gradient(rgba($white, 0.12), rgba($white, 0.12));
             }
         }
-        .form-control{
-        }
+        .form-control {}
     }
-    .input-group{
-        .input-group-addon{
+    .input-group {
+        .input-group-addon {
             border-color: rgba($white, 0.12);
             color: $dark-text;
             background-color: lighten($body-dark, 15%);
         }
     }
-    .input-group-text{
-            border-color: rgba($white, 0.12);
-            color: $dark-text;
-            background-color: lighten($body-dark, 15%);
+    .input-group-text {
+        border-color: rgba($white, 0.12);
+        color: $dark-text;
+        background-color: lighten($body-dark, 15%);
     }
-    .direct-chat-text{
+    .direct-chat-text {
         p {
-            background: lighten($body-dark, 15%);    
+            background: lighten($body-dark, 15%);
             color: lighten($body-dark, 75%);
         }
     }
-    .direct-chat-timestamp{
+    .direct-chat-timestamp {
         color: lighten($body-dark, 55%);
     }
-    time{
+    time {
         color: $dark-text;
     }
-    .wizard-content{
-        .wizard{
-            >.steps{
-                >ul{
-                    >li{                        
+    .wizard-content {
+        .wizard {
+            >.steps {
+                >ul {
+                    >li {
                         background-color: lighten($body-dark, 15%);
                         border-color: rgba($white, 0.12);
-                    } 
+                    }
                 }
             }
         }
     }
-    ul{
-        .list-style-none{
-            li{
-                a{                    
+    ul {
+        .list-style-none {
+            li {
+                a {
                     color: lighten($body-dark, 75%);
                 }
             }
-        }  
-    }
-    .divider-dash{
-        color: lighten($body-dark, 75%);
-    }    
-    .divider{
-        @include before-after-state{
-            border-top: 1px solid lighten($body-dark, 30%);;
         }
     }
-    .fc-toolbar{
-        .fc-center{
+    .divider-dash {
+        color: lighten($body-dark, 75%);
+    }
+    .divider {
+        @include before-after-state {
+            border-top: 1px solid lighten($body-dark, 30%);
+            ;
+        }
+    }
+    .fc-toolbar {
+        .fc-center {
             color: $dark-text;
         }
     }
-    .fc-button{
+    .fc-button {
         background-color: lighten($body-dark, 15%);
         border-color: rgba($white, 0.12);
         color: $dark-text;
         text-shadow: none;
     }
-    .fc{
-        th{
-            &[class*=fc-]{
-               background-color: lighten($body-dark, 15%); 
+    .fc {
+        th {
+            &[class*=fc-] {
+                background-color: lighten($body-dark, 15%);
             }
-            &.fc-widget-header{
+            &.fc-widget-header {
                 color: $dark-text;
             }
-        } 
+        }
     }
-    .fc-unthemed{
-        .fc-content{
+    .fc-unthemed {
+        .fc-content {
             border-color: rgba($white, 0.12);
         }
-        .fc-divider{
+        .fc-divider {
             border-color: rgba($white, 0.12);
         }
-        .fc-list-heading{
-            td{
+        .fc-list-heading {
+            td {
                 border-color: rgba($white, 0.12);
             }
         }
-        .fc-list-view{
+        .fc-list-view {
             border-color: rgba($white, 0.12);
         }
-        .fc-popover{
+        .fc-popover {
             border-color: rgba($white, 0.12);
         }
-        .fc-row{
+        .fc-row {
             border-color: rgba($white, 0.12);
         }
-        tbody{
+        tbody {
             border-color: rgba($white, 0.12);
         }
-        td{
+        td {
             border-color: rgba($white, 0.12);
         }
-        th{
+        th {
             border-color: rgba($white, 0.12);
         }
-        thead{
+        thead {
             border-color: rgba($white, 0.12);
         }
         .fc-today {
@@ -1059,49 +1110,49 @@ body{
             background-color: lighten($body-dark, 15%)!important;
         }
     }
-    .fc-day{
+    .fc-day {
         background-color: lighten($dark3, 05%);
     }
-    .publisher-multi{
-        .publisher-input{
+    .publisher-multi {
+        .publisher-input {
             color: $white;
         }
     }
-    .user-block{
+    .user-block {
         .description {
             color: $dark-text;
         }
     }
-    .post{
+    .post {
         border-bottom-color: rgba($white, 0.12);
-        color: $dark-text; 
-    }
-    .blockquote{
         color: $dark-text;
-        footer{
-           color: $dark-text;
+    }
+    .blockquote {
+        color: $dark-text;
+        footer {
+            color: $dark-text;
         }
     }
-    .progress{
+    .progress {
         background-color: lighten($body-dark, 15%);
     }
-    .ribbon-wrapper{
+    .ribbon-wrapper {
         background-color: lighten($body-dark, 15%);
     }
-    .ribbon-wrapper-reverse{
+    .ribbon-wrapper-reverse {
         background-color: lighten($body-dark, 15%);
     }
-    .ribbon-wrapper-bottom{
+    .ribbon-wrapper-bottom {
         background-color: lighten($body-dark, 15%);
     }
-    .ribbon-wrapper-right-bottom{
+    .ribbon-wrapper-right-bottom {
         background-color: lighten($body-dark, 15%);
     }
-    .flexslider{
+    .flexslider {
         background: lighten($body-dark, 30%);
         border-color: transparent;
     }
-    .slider-track{        
+    .slider-track {
         background-color: lighten($body-dark, 15%);
         background-image: -moz-linear-gradient(top, lighten($body-dark, 15%), lighten($body-dark, 15%));
         background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten($body-dark, 15%)), to(lighten($body-dark, 15%)));
@@ -1109,16 +1160,16 @@ body{
         background-image: -o-linear-gradient(top, lighten($body-dark, 15%), lighten($body-dark, 15%));
         background-image: linear-gradient(to bottom, lighten($body-dark, 15%), lighten($body-dark, 15%));
     }
-    .vtabs{
-        .tabs-vertical{
-            li{
-                .nav-link{
+    .vtabs {
+        .tabs-vertical {
+            li {
+                .nav-link {
                     color: $dark-text;
-                } 
+                }
             }
         }
     }
-    .tabcontent-border{
+    .tabcontent-border {
         border-color: rgba($white, 0.12);
     }
     .nav-tabs {
@@ -1126,126 +1177,126 @@ body{
         .nav-link {
             border-color: rgba($white, 0.12);
             color: $dark-text;
-            &.active{
+            &.active {
                 color: $white !important;
             }
         }
     }
-    .nav-pills{
-        >li{
-            >a{
-               color: $dark-text;
-                &.active{
+    .nav-pills {
+        >li {
+            >a {
+                color: $dark-text;
+                &.active {
                     color: $white !important;
                 }
             }
         }
     }
-    .nav-tabs-inverse-mode{
-        .nav-link{
-            &.active{
+    .nav-tabs-inverse-mode {
+        .nav-link {
+            &.active {
                 color: $dark-text !important;
-                @include hover-focus-state{
+                @include hover-focus-state {
                     color: $dark-text !important;
                 }
             }
         }
     }
-    .timeline__post{
-        background-color: lighten($body-dark, 15%); 
+    .timeline__post {
+        background-color: lighten($body-dark, 15%);
     }
-    .timeline{
-        .timeline-item{
-            >.timeline-event{
+    .timeline {
+        .timeline-item {
+            >.timeline-event {
                 background-color: lighten($body-dark, 15%);
                 border-color: rgba($white, 0.12);
-                color: $dark-text; 
-                &.timeline-event-default{
+                color: $dark-text;
+                &.timeline-event-default {
                     background-color: lighten($body-dark, 15%);
                     border-color: rgba($white, 0.12);
-                    color: $dark-text;                    
-                    &:before{
+                    color: $dark-text;
+                    &:before {
                         border-left-color: rgba($white, 0.12);
                         border-right-color: rgba($white, 0.12);
-                    }                    
-                    &:after{                    
+                    }
+                    &:after {
                         border-left-color: lighten($body-dark, 15%);
                         border-right-color: lighten($body-dark, 15%);
                     }
                 }
-                &:before{
+                &:before {
                     border-left-color: rgba($white, 0.12);
                     border-right-color: rgba($white, 0.12);
                 }
-                &:after{                    
+                &:after {
                     border-left-color: lighten($body-dark, 15%);
                     border-right-color: lighten($body-dark, 15%);
                 }
-            } 
+            }
         }
     }
-    .panel{
-       background-color: lighten($body-dark, 15%); 
+    .panel {
+        background-color: lighten($body-dark, 15%);
     }
-    .panel-title{
+    .panel-title {
         color: $dark-text;
     }
-    .fontawesome-icon-list{
-        .fa-hover{
+    .fontawesome-icon-list {
+        .fa-hover {
             color: $dark-text;
-        } 
+        }
     }
-    .ion-icon-list{
+    .ion-icon-list {
         .ion-hover {
             color: $dark-text;
         }
     }
-    .bs-glyphicons{
-        li{            
+    .bs-glyphicons {
+        li {
             border-color: rgba($white, 0.12);
             color: $dark-text;
         }
     }
-    .icon-list-demo{
-        div{
+    .icon-list-demo {
+        div {
             color: $dark-text;
         }
     }
-    .dp-off{
-        background-color: lighten($body-dark, 15%)!important; 
+    .dp-off {
+        background-color: lighten($body-dark, 15%)!important;
     }
-    .dp-divider{
+    .dp-divider {
         border-color: rgba($white, 0.12) !important;
     }
-    .myadmin-dd{
-        .dd-list{
-            .dd-item{
-                .dd-handle{
+    .myadmin-dd {
+        .dd-list {
+            .dd-item {
+                .dd-handle {
                     background-color: lighten($body-dark, 15%);
                 }
             }
-            .dd3-content{
+            .dd3-content {
                 background-color: lighten($body-dark, 15%);
             }
-            .dd3-handle{
+            .dd3-handle {
                 background-color: lighten($body-dark, 15%);
             }
         }
     }
-    .grid-stack-item-content{
+    .grid-stack-item-content {
         background-color: lighten($body-dark, 15%);
         color: $dark-text;
     }
-    .sweet-alert{
+    .sweet-alert {
         background-color: lighten($body-dark, 15%);
-        h2{            
+        h2 {
             color: $dark-text;
         }
-        p{
+        p {
             color: $dark-text;
         }
-        .sa-icon.sa-success{
-            @include before-after-state{
+        .sa-icon.sa-success {
+            @include before-after-state {
                 background-color: lighten($body-dark, 15%);
             }
             .sa-fix {
@@ -1253,71 +1304,71 @@ body{
             }
         }
     }
-    .ct-grid{
+    .ct-grid {
         stroke: rgba($white, 0.2);
     }
-    .ct-label{        
+    .ct-label {
         fill: rgba($white, 0.4);
         color: rgba($white, 0.4);
     }
-    .invoice{
+    .invoice {
         border-color: rgba($white, 0.12);
         background-color: lighten($dark3, 05%);
     }
-    .invoice-details{
+    .invoice-details {
         border-color: rgba($white, 0.12);
         background-color: lighten($dark3, 05%);
     }
-    .product-list-in-box{
+    .product-list-in-box {
         >.item {
             border-color: rgba($white, 0.12);
         }
     }
-    .list-group-item{        
-        background-color: $dark3;   
-	    border: 1px solid rgba($white, 0.12);
+    .list-group-item {
+        background-color: $dark3;
+        border: 1px solid rgba($white, 0.12);
     }
-    .list-style-none{
-        li{
-            &.divider{
-               background-color: lighten($body-dark, 30%); 
-            } 
-        } 
+    .list-style-none {
+        li {
+            &.divider {
+                background-color: lighten($body-dark, 30%);
+            }
+        }
     }
-    .attachment-block{
-        background-color: lighten($body-dark, 30%);    
-	    border-color: rgba($white, 0.12);
-        .attachment-text{
+    .attachment-block {
+        background-color: lighten($body-dark, 30%);
+        border-color: rgba($white, 0.12);
+        .attachment-text {
             color: lighten($body-dark, 45%);
         }
     }
-    .badge-ring{
-        &::after{            
+    .badge-ring {
+        &::after {
             background-color: lighten($body-dark, 25%);
         }
     }
-    :not(pre)>code[class*="language-"]{
+     :not(pre)>code[class*="language-"] {
         background: lighten($body-dark, 15%);
         border: 1px solid lighten($body-dark, 20%);
         border-left: 2px solid $warning;
     }
-    pre[class*="language-"]{
+    pre[class*="language-"] {
         background: lighten($body-dark, 15%);
         border: 1px solid lighten($body-dark, 20%);
         border-left: 2px solid $warning;
     }
-    hr{
+    hr {
         border-top-color: rgba($white, 0.1);
     }
-    .icons-list-demo{
-         div {
+    .icons-list-demo {
+        div {
             color: lighten($body-dark, 70%);
         }
     }
-    .custom-file-label{
+    .custom-file-label {
         background-color: lighten($body-dark, 30%);
         border: 1px solid rgba($white, 0.12);
-        ::after {
+         ::after {
             color: lighten($body-dark, 70%);
             background-color: lighten($body-dark, 30%);
             border-left: 1px solid rgba($white, 0.12);
@@ -1326,101 +1377,100 @@ body{
     .dropzone {
         background-color: lighten($body-dark, 15%);
     }
-    
-    .main-header{
-        .logo-box{
+    .main-header {
+        .logo-box {
             border-right: 1px solid #464d5c;
             background: $body-dark !important;
         }
-        li{
-            &.user-header{                
-                background-color: $white;   
-            } 
+        li {
+            &.user-header {
+                background-color: $white;
+            }
         }
-        .navbar{
+        .navbar {
             background: $dark3;
-            .sidebar-toggle{
+            .sidebar-toggle {
                 color: $white;
             }
-            .res-only-view{
+            .res-only-view {
                 color: $white;
             }
-            .nav{
-                    >li{
-                    >a{
-                       color: $dark-text;
-                            @include hover-state{
-                                background-color: rgba($body-dark, 0.05);
-                            }
+            .nav {
+                >li {
+                    >a {
+                        color: $dark-text;
+                        @include hover-state {
+                            background-color: rgba($body-dark, 0.05);
                         }
                     }
-                    .open{
-                        >a{
-                           background-color: rgba($body-dark, 0.05); 
-                                @include hover-focus-state{
-                                    background-color: rgba($body-dark, 0.05);
-                                }
+                }
+                .open {
+                    >a {
+                        background-color: rgba($body-dark, 0.05);
+                        @include hover-focus-state {
+                            background-color: rgba($body-dark, 0.05);
                         }
                     }
-                    >.active{
-                        >a{
-                           background-color: rgba($body-dark, 0.05); 
-                        }
+                }
+                >.active {
+                    >a {
+                        background-color: rgba($body-dark, 0.05);
                     }
+                }
             }
         }
-    }    
-    .main-footer{
+    }
+    .main-footer {
         background: $body-dark;
         color: $dark-text;
         border-color: rgba($white, 0.12);
     }
-    .main-sidebar{
+    .main-sidebar {
         background-color: $dark3;
     }
-    .left-side{
+    .left-side {
         box-shadow: 0 10px 15px -5px rgba(lighten($dark, 15%), .07);
-        background-color: rgba(lighten($body-dark, 30%), 0.75);  
+        background-color: rgba(lighten($body-dark, 30%), 0.75);
     }
-    .user-panel{
-        >.info{
-           color: $white; 
-            >a{
-                color: $white; 
+    .user-panel {
+        >.info {
+            color: $white;
+            >a {
+                color: $white;
             }
-        } 
+        }
     }
-    .sidebar-menu{
+    .sidebar-menu {
         background: $body-dark;
-        >li{
-            &.treeview.menu-open{  
-                background-color: rgba($body-dark, 0) !important;          
-                >a{
-                   opacity: 1; 
+        >li {
+            &.treeview.menu-open {
+                background-color: rgba($body-dark, 0) !important;
+                >a {
+                    opacity: 1;
                 }
             }
-            &:hover{
-                >a{
-                  color: $dark-text;
-                    >i{
-                       color: $dark-text;
+            &:hover {
+                >a {
+                    color: $dark-text;
+                    >i {
+                        color: $dark-text;
                     }
                 }
             }
-            &.active{
-                >a{
-                  color: $white; 
-                    >i{
-                       color: lighten($body-dark, 60%);
+            &.active {
+                >a {
+                    color: $white;
+                    >i {
+                        color: lighten($body-dark, 60%);
                     }
                 }
             }
-            &.active{
-                >a{
-                    > i{
-                       color: $dark; 
+            &.active {
+                >a {
+                    >i {
+                        color: $dark;
                     }
-                    &:after{
+                    &:after {
                         content: " ";
                         position: absolute;
                         right: 0;
@@ -1434,51 +1484,51 @@ body{
                     }
                 }
             }
-            &.menu-open{
-                >a{
-                  color: $white;  
-                    >i{
-                       color: lighten($body-dark, 60%);
+            &.menu-open {
+                >a {
+                    color: $white;
+                    >i {
+                        color: lighten($body-dark, 60%);
                     }
                 }
             }
-            >a{
-                >i{
-                   color:$dark2; 
+            >a {
+                >i {
+                    color: $dark2;
                 }
             }
-            >.treeview-menu{
+            >.treeview-menu {
                 margin: 0 0px;
             }
-        } 
-        li{
-            &.header{
+        }
+        li {
+            &.header {
                 color: lighten($dark, 10%);
             }
         }
     }
-    &.sidebar-collapse{
-        .sidebar-menu{
-            >li{
-                >.treeview-menu{
+    &.sidebar-collapse {
+        .sidebar-menu {
+            >li {
+                >.treeview-menu {
                     background-color: rgba(lighten($body-dark, 10%), 1);
-                } 
+                }
             }
         }
     }
-    &.sidebar-mini{
-        &.sidebar-collapse{
-            .sidebar-menu{
-                >li{
-                    >a{
-                        >span{
+    &.sidebar-mini {
+        &.sidebar-collapse {
+            .sidebar-menu {
+                >li {
+                    >a {
+                        >span {
                             background-color: rgba(lighten($body-dark, 10%), 1) !important;
-                        } 
+                        }
                     }
                 }
-                >li.active{
-                    >a{
-                        >span{
+                >li.active {
+                    >a {
+                        >span {
                             background-color: rgba(lighten($body-dark, 10%), 1) !important;
                         }
                     }
@@ -1488,24 +1538,24 @@ body{
     }
 }
 
-@include screen-sm-max{
-    .dark-skin{
-        &.sidebar-mini{
-            &.sidebar-collapse{
-                .sidebar-menu{
-                    >li{
-                        >a{
-                            >span{
-                               background-color: rgba(lighten($body-dark, 30%), 0) !important; 
-                            } 
-                        } 
-                        &.menu-open{
-                            >a{
+@include screen-sm-max {
+    .dark-skin {
+        &.sidebar-mini {
+            &.sidebar-collapse {
+                .sidebar-menu {
+                    >li {
+                        >a {
+                            >span {
                                 background-color: rgba(lighten($body-dark, 30%), 0) !important;
                             }
                         }
-                        &.active{
-                            >a{
+                        &.menu-open {
+                            >a {
+                                background-color: rgba(lighten($body-dark, 30%), 0) !important;
+                            }
+                        }
+                        &.active {
+                            >a {
                                 background-color: rgba(lighten($body-dark, 30%), 0) !important;
                             }
                         }
@@ -1515,82 +1565,83 @@ body{
         }
     }
 }
-.dark-skin{
-    .sidebar{
-        a{
-          color: $dark-text;  
+
+.dark-skin {
+    .sidebar {
+        a {
+            color: $dark-text;
             opacity: 1;
-            &:hover{
-               text-decoration: none; 
+            &:hover {
+                text-decoration: none;
             }
         }
     }
-    .sidebar-form{
+    .sidebar-form {
         border: 1px solid lighten($body-dark, 60%);
-        input[type="text"]{
+        input[type="text"] {
             box-shadow: none;
             background-color: rgba($body-dark, 0.59);
             border: 1px solid rgba($body-dark, 0.59);
             color: $white;
-                &:focus{
+            &:focus {
+                color: $white;
+                +.input-group-btn .btn {
                     color: $white;
-                    + .input-group-btn .btn{
-                        color: $white;
-                    }
                 }
+            }
         }
-        .btn{
+        .btn {
             box-shadow: none;
             background-color: rgba($body-dark, 0.59);
             border: 1px solid rgba($body-dark, 0.59);
             color: $light;
         }
     }
-    .main-footer{
-       background-color: $body-dark;
-        color: $white; 
+    .main-footer {
+        background-color: $body-dark;
+        color: $white;
     }
-    .nav-dot-separated{
-        .nav-item::after{
-           color: $dark-text;
-        } 
-        >.nav-link::after{
-           color: $dark-text;
-        } 
+    .nav-dot-separated {
+        .nav-item::after {
+            color: $dark-text;
+        }
+        >.nav-link::after {
+            color: $dark-text;
+        }
     }
-    .box{        
+    .box {
         background-color: $dark3;
-	    box-shadow: -7.829px 11.607px 21px 0px rgba(25, 42, 70, 0.13);
-        &.box-solid{
-            .box-title{
+        box-shadow: -7.829px 11.607px 21px 0px rgba(25, 42, 70, 0.13);
+        &.box-solid {
+            .box-title {
                 color: $white;
             }
         }
     }
-    .box-header{
+    .box-header {
         color: $dark-text;
     }
-    .control-sidebar{
+    .control-sidebar {
         color: $dark-text;
         background-color: lighten($body-dark, 05%);
-        +.control-sidebar-bg{            
+        +.control-sidebar-bg {
             background-color: lighten($body-dark, 05%);
         }
-        .nav-tabs{
-            &.control-sidebar-tabs{
+        .nav-tabs {
+            &.control-sidebar-tabs {
                 border-bottom: 1px solid lighten($body-dark, 35%);
-                >li{
-                    >a{
-                       color: lighten($body-dark, 80%);
-                        &:hove{
+                >li {
+                    >a {
+                        color: lighten($body-dark, 80%);
+                        &:hove {
                             color: $white;
                         }
-                        @include hover-state{
+                        @include hover-state {
                             background-color: transparent;
                         }
-                        &.active{
+                        &.active {
                             background-color: transparent;
-                            @include hover-state{
+                            @include hover-state {
                                 background-color: transparent;
                             }
                         }
@@ -1598,54 +1649,52 @@ body{
                 }
             }
         }
-        .control-sidebar-heading{
+        .control-sidebar-heading {
             color: $dark-text;
         }
-        .control-sidebar-subheading{
-           color: $dark-text; 
+        .control-sidebar-subheading {
+            color: $dark-text;
         }
-        .control-sidebar-menu{
-            >li{
+        .control-sidebar-menu {
+            >li {
                 >a {
-                    .menu-info{
-                        >p{
-                           color: lighten($body-dark, 70%); 
+                    .menu-info {
+                        >p {
+                            color: lighten($body-dark, 70%);
                         }
                     }
                 }
             }
         }
     }
-    .control-sidebar-dark{
-        .control-sidebar-menu{
-            >li{
-                >a:hover{
+    .control-sidebar-dark {
+        .control-sidebar-menu {
+            >li {
+                >a:hover {
                     background-color: lighten($body-dark, 10%);
                 }
             }
         }
     }
-    .dropdown-grid{
+    .dropdown-grid {
         color: $dark-text;
     }
     .text-muted {
         color: $dark2 !important;
     }
     .bg-light {
-      background-color: lighten($dark3, 02%) !important;
+        background-color: lighten($dark3, 02%) !important;
     }
     .bg-lighter {
-      background-color: lighten($dark3, 05%) !important;
+        background-color: lighten($dark3, 05%) !important;
     }
     .bg-lightest {
-      background-color: lighten($dark3, 10%) !important;
+        background-color: lighten($dark3, 10%) !important;
     }
     .table-hover tbody tr:hover {
         color: $dark-title;
     }
-    .btn{
+    .btn {
         color: $white;
     }
 }
-
-
