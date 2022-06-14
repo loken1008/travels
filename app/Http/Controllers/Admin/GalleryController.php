@@ -37,7 +37,7 @@ class GalleryController extends Controller
             'message'=>'Gallery Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect('gallery/view')->with($notification);
     }
     public function GalleryEdit($id)
     {
@@ -60,7 +60,7 @@ class GalleryController extends Controller
             'message'=>'Gallery Updated Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect('/gallery/view')->with($notification);
     }
 
     public function GalleryDelete($id)

@@ -328,6 +328,24 @@ Route::middleware(['auth'])->group(function () {
         App\Http\Controllers\Admin\TourController::class,
         'updateTour',
     ])->name('tour.update');
+
+    Route::post('/add-date-price/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'addDatePrice',
+    ])->name('tour.dateprice');
+    Route::post('/add-equipment/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'addEquipment',
+    ])->name('tour.equipment');
+    Route::post('/add-itinery/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'addItinery',
+    ])->name('tour.itineries');
+    Route::post('/add-faq/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'addFaq',
+    ])->name('tour.faq');
+
     Route::get('/softdelete/{id}', [
         App\Http\Controllers\Admin\TourController::class,
         'softDeleteTour',

@@ -170,7 +170,7 @@ $route=Route::current()->getName();
                 </li>
                 </ul>
             </li>
-            <li class="treeview {{($prefix=='/hotel')?'active':''}}">
+            {{-- <li class="treeview {{($prefix=='/hotel')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-building"></i>
                     <span>Hotel</span>
@@ -182,7 +182,7 @@ $route=Route::current()->getName();
                     <li class="{{($route=='hotel.view')?'active':''}}"><a class="{{($route=='hotel.view')?'active':''}}" href="{{route('hotel.view')}}"><i class="ti-more"></i>View Hotel</a></li>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="treeview {{($prefix=='/gallery')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-cloud-upload"></i>
@@ -206,11 +206,8 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.customers')?'active':''}}"><a class="{{($route=='all.customers')?'active':''}}" href="{{route('all.customers')}}"><i class="ti-more"></i>View Users</a></li>
-                   
-                </ul>
-                <ul class="treeview-menu">
                     <li class="{{($route=='all.usermessage')?'active':''}}"><a class="{{($route=='all.usermessage')?'active':''}}" href="{{route('all.usermessage')}}"><i class="ti-more"></i>View Users Message</a></li>
-                    
+                   
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/sitesetting')?'active':''}}">

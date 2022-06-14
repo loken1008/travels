@@ -8,7 +8,7 @@
         <div class="row">
 
 
-            <div class="col-6">
+            <div class="col-7">
 
                 <div class="box">
                     <div class="box-header with-border">
@@ -58,10 +58,10 @@
 
             </div>
 
-            <div class="col-6">
+            <div class="col-5">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add Choose Us</h3>
+                        <h3 class="box-title">Add About Us</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

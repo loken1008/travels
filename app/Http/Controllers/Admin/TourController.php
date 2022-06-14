@@ -225,17 +225,6 @@ class TourController extends Controller
                 DatesPrices::where('id', $request->dateid[$key])->update($data);
             }
         } else {
-            foreach ($request->start_date as $key11 => $value11) {
-                $data1 = [
-                    'tour_id'=>$id,
-                    'start_date' => $request->start_date[$key11],
-                    'end_date' => $request->end_date[$key11],
-                    'price' => $request->price[$key11],
-                    'seats_available' => $request->seats_available[$key11],
-                    'updated_at' => Carbon::now(),
-                ];
-                DatesPrices::where('tour_id',$id)->create($data1);
-            }
         }  
         if ($request->equipmentid) {
             foreach ($request->equipmentid as $key1 => $value1) {
@@ -285,6 +274,72 @@ class TourController extends Controller
         return redirect('/tour/view')->with($notification);
     }
 
+    public function addDatePrice(Request $request,$id)
+    {
+        foreach ($request->start_date as $key11 => $value11) {
+            $data1 = [
+                'tour_id'=>$request->tour_id,
+                'start_date' => $request->start_date[$key11],
+                'end_date' => $request->end_date[$key11],
+                'price' => $request->price[$key11],
+                'seats_available' => $request->seats_available[$key11],
+                'updated_at' => Carbon::now(),
+            ];
+            DatesPrices::create($data1);
+        }
+        $notification = [
+            'message' => 'Date Price Added Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function addEquipment(Request $request,$id)
+    {
+        foreach ($request->equipment_name as $key21 => $value21) {
+            Equipment::create([
+                'tour_id' => $request->tour_id,
+                'equipment_name' => $request->equipment_name[$key21],
+                'equipment_description' => $request->equipment_description[$key21],
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        $notification = [
+            'message' => 'Equipment Added Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function addItinery(Request $request,$id){
+        foreach ($request->day_title as $key31 => $value31) {
+            Itinerary::create([
+                'tour_id' => $request->tour_id,
+                'day_title' => $request->day_title[$key31],
+                'long_description' => $request->long_description[$key31],
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        $notification = [
+            'message' => 'Itinerary Added Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function addFaq(Request $request,$id){
+        foreach ($request->question as $key41 => $value41) {
+            FQA::create([
+                'tour_id' => $request->tour_id,
+                'question' => $request->question[$key41],
+                'answer' => $request->answer[$key41],
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        $notification = [
+            'message' => 'Faq Added Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+    }
+    
     public function softDeleteTour($id)
     {
         Tour::findOrfail($id)->delete();

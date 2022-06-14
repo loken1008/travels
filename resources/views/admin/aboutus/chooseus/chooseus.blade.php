@@ -30,18 +30,53 @@
                                     @forelse($chooseus as $choose)
                                         <tr>
                                             <td>{{ $choose->title }}</td>
-                                            <td>{!! $choose->description !!}</td>
+                                            <td>{!! Str::limit($choose->description,100) !!}</td>
                                             <td><img src="{{ asset($choose->image) }}" style="height:100px;width:100px"
                                                     alt="">
                                             </td>
                                             <td>
-                                                <a href="{{ route('edit.choose', $choose->id) }}" class="btn btn-info"
+                                                <a href="#" class="btn btn-primary"
+                                                    style="width:5rem" title="view" data-toggle="modal" data-target="#exampleModal{{$choose->id}}"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('edit.choose', $choose->id) }}" class="btn btn-info mt-2"
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('delete.choose', $choose->id) }}"
                                                     class="btn btn-danger mt-2" style="width:5rem" id="delete"
                                                     title="delete"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
+                                        <div class="modal fade" id="exampleModal{{ $choose->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content bg-white" >
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">View Detail</h5>
+                                                        <input type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close" style="height:10px;margin-top:-5px">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </input>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p><span class="font-weight-bold">Title:</span> {{ $choose->title }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <img src="{{ $choose->image }}" height="300"
+                                                                    width="100%" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-md-12">
+                                                                <p class="text-justify"><span class="font-weight-bold">Description:</span> {!! $choose->description !!}</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @empty
                                     @endforelse
                                 </tbody>
@@ -53,7 +88,7 @@
                 <!-- /.box -->
 
             </div>
-            @if($chooseus->count()<3)
+         
             <div class="col-4">
                 <div class="box">
                     <div class="box-header with-border">
@@ -109,7 +144,6 @@
                     </div>
                 </div>
             </div>
-            @endif
             <!-- /.col -->
         </div>
         <!-- /.row -->
