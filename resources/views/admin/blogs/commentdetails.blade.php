@@ -17,19 +17,19 @@
                        
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5" style="color:white;font-size:14px">Blog Title :</label>
+                                <label for="firstName5" style="font-size:14px">Blog Title :</label>
                                 <h5>@if(!empty( $detailscomment->blogs->blog_title)){{ $detailscomment->blogs->blog_title }}@endif</h5>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="firstName5 h2 " style="color:white;font-size:14px"> Name :</label>
+                                <label for="firstName5 h2 " style="font-size:14px"> Name :</label>
                                 <span>@if(!empty( $detailscomment->blogs->blog_title)){{ $detailscomment->name }}@endif</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="firstName5 h2 " style="color:white;font-size:14px"> Email :</label>
+                                <label for="firstName5 h2 " style="font-size:14px"> Email :</label>
                                 <span>@if(!empty($detailscomment->email)){{ $detailscomment->email }}@endif</span>
                             </div>
                         </div>

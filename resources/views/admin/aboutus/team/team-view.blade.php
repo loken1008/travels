@@ -21,11 +21,11 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>Sn</th>
                                         <th> Name</th>
                                         <th>Post </th>
                                         <th>Language</th>
                                         <th>Experiences</th>
-                                        <th>Field Type</th>
                                         <th>Description</th>
                                         <th>Image</th>
                                         <th>Status</th>
@@ -33,14 +33,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($ourteam as $team)
+                                    @forelse($ourteam as $key=> $team)
                                         <tr>
+                                            <th>{{$key+1}}</th>
                                             <td>{{ $team->name }}</td>
                                             <td>{{ $team->post }}</td>
                                             <td>{{ $team->language }}</td>
                                             <td>{{ $team->experiences }}</td>
-                                            <td>{{ $team->type }}</td>
-                                            <td>{!! Str::limit($team->description,200) !!}</td>
+                                            <td>{!! Str::limit($team->description,80) !!}</td>
                                             <td><img src="{{ asset($team->image) }}" style="height:100px;width:100px"
                                                     alt="">
                                             </td>
@@ -51,7 +51,8 @@
                                                 data-offstyle="danger" onchange="changeStatus({{ $team->id }})">
                                             </td>
                                             <td>
-                                                <a href="{{ route('view.team', $team->id) }}" class="btn btn-primary"
+                                                <a href="#" class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#exampleModal{{ $team->id }}"
                                                     style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
                                                 <a href="{{ route('edit.team', $team->id) }}" class="btn btn-info mt-2"
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
@@ -60,6 +61,55 @@
                                                     title="delete"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
+                                           <!-- Modal -->
+                                           <div class="modal fade" id="exampleModal{{ $team->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content bg-white" >
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">View Detail</h5>
+                                                        <input type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close" style="height:10px;margin-top:-5px">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </input>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <p><span class="font-weight-bold">Name:</span> {{ $team->name }}</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p><span class="font-weight-bold">Post:</span> {{ $team->post }}</p>
+                                                            </div>
+                                                        </div>
+                    
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p><span class="font-weight-bold">Language:</span> {{ $team->language }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p><span class="font-weight-bold">Experience:</span> {{ $team->experiences }}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <img src="{{ $team->image }}" height="300"
+                                                                    width="100%" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-md-12">
+                                                                <p class="text-justify"><span class="font-weight-bold">Description:</span> {!! $team->description !!}</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @empty
                                     @endforelse
                                 </tbody>

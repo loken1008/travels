@@ -17,20 +17,20 @@
                        
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5" style="color:white;font-size:14px">Title :</label>
+                                <label for="firstName5" style="font-size:14px">Title :</label>
                                 <h5>{{ $detailstermsandconditions->title }}</h5>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5" style="color:white;font-size:14px">Type :</label>
+                                <label for="firstName5" style="font-size:14px">Type :</label>
                                 <h5>{{ $detailstermsandconditions->type }}</h5>
                             </div>
                         </div>
 
                         <div class="col-md-12 mt-4">
                             <div class="form-group">
-                                <label for="firstName5 h2 " style="color:white;font-size:14px">Description :</label>
+                                <label for="firstName5 h2 " style="font-size:14px">Description :</label>
                                 <p class="text-justify">{!! $detailstermsandconditions->description !!}</p>
                             </div>
                         </div>
