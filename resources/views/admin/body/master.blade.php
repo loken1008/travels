@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('admin/css/skin_color.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <style>
         label.error {
@@ -38,17 +39,15 @@
 
         .notific {
             position: fixed;
-            top: 15px;
-            right: 121px;
             color: #ff0404;
             font-size: 16.5px;
         }
-        .faq-collaspe .toggle{
-            width:100px !important;
-            height:83px;
-            margin-top:10px;
-        }
 
+        .faq-collaspe .toggle {
+            width: 100px !important;
+            height: 83px;
+            margin-top: 10px;
+        }
     </style>
 
 </head>
@@ -71,17 +70,12 @@
 
         @include('admin.partials.footer')
 
-        <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+
         <div class="control-sidebar-bg"></div>
 
     </div>
     <!-- ./wrapper -->
 
-    {{-- <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-      Echo.channel('bookevent')
-          .listen('BookingMessage', (e) => alert('BookingMessage: ' + e.message));
-  </script> --}}
 
     <!-- Vendor JS -->
     <script src="{{ asset('admin/js/vendors.min.js') }}"></script>
@@ -96,7 +90,8 @@
     {{-- <script src="{{ asset('admin/js/pages/dashboard.js') }}"></script> --}}
     <script type="text/javascript" src="{{ asset('assets/vendor_components/gallery/js/animated-masonry-gallery.js') }}">
     </script>
-    <script type="text/javascript" src="{{ asset('assets/vendor_components/gallery/js/jquery.isotope.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor_components/gallery/js/jquery.isotope.min.js') }}">
+    </script>
     <script type="text/javascript" src="{{ asset('assets/vendor_components/lightbox-master/dist/ekko-lightbox.js') }}">
     </script>
     <script src="{{ asset('admin/js/pages/gallery.js') }}"></script>
@@ -106,8 +101,11 @@
     <script src="{{ asset('admin/js/adminjqueryvalidation.js') }}"></script>
     <script src="{{ asset('admin/js/edittourvalidation.js') }}"></script>
 
+
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
     <script>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
@@ -256,6 +254,8 @@
                 })
 
             })
+            $('#example1 .switcher-input').bootstrapToggle();
+
         })
     </script>
 

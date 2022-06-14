@@ -5,7 +5,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($tourbanner->page_banner))data-background="{{asset($tourbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -80,7 +80,7 @@
                                 </div>
                             </div> --}}
                                     <a class="btn-theme" style="float:left !important"
-                                        href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Booking Now</a>
+                                        href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Book Now</a>
                                     <a class="btn-theme"
                                         href="{{ route('tourdetails', Str::slug($tourdetails->tour_name)) }}">View Details</a>
                                 </div>

@@ -5,7 +5,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($gallerybanner->page_banner))data-background="{{asset($gallerybanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -31,8 +31,8 @@
             @foreach($allgallery as $gal)
             <div class="col-sm-4 col-grid">
                 <div class="gallery-item">
-                    <div class="thumb">
-                        <img src="{{$gal->cover_image}}" alt="image" style="width:634px;height:518px">
+                    <div class="thumb" style="height:270px">
+                        <img src="{{$gal->cover_image}}" alt="image" style="width:634px;height:270px">
                         <div class="overlay">
                             <div class="inner">
                                 <a href="{{$gal->cover_image}}" class="icon lightbox-image">
@@ -62,5 +62,5 @@
     </div>
 </section>
 <!-- Gallery Section End -->
-
+@include('frontend.common.tour')
 @endsection

@@ -9,6 +9,8 @@ use App\Models\Tour;
 use App\Models\ChooseUs;
 use App\Models\TermsandCondition;
 use App\Models\AboutUs;
+use App\Models\Blog;
+use App\Models\PageBanner;
 
 
 class AboutUsController extends Controller
@@ -17,14 +19,15 @@ class AboutUsController extends Controller
    {
       $team = OurTeam::count();
        $getteamdetails=OurTeam::where('status','=','1')->paginate(10);
-      //  dd($getallteam);
-      $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
-       return view('frontend.aboutus.allteam',compact('getteamdetails','gettour','team'));
+       $teambanner=PageBanner::orderBy('id','desc')->where('page_name','team')->first();
+       return view('frontend.aboutus.allteam',compact('getteamdetails','team','teambanner'));
    }
    public function Introduction()
    {
          $introduction=AboutUs::first();
-         return view('frontend.aboutus.introduction.introduction',compact('introduction'));
+         $intropagebanner=PageBanner::orderBy('id','desc')->where('page_name','introduction')->first();
+         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(5)->get();
+         return view('frontend.aboutus.introduction.introduction',compact('introduction','getblogs','intropagebanner'));
    }
 
 //    public function TeamDetails($name)
@@ -37,23 +40,27 @@ class AboutUsController extends Controller
 
    public function travelWithUs()
    {
-       $getchooseus=ChooseUs::orderBy('id','desc')->get();
-         return view('frontend.aboutus.travelwithus',compact('getchooseus'));
+       $getchooseus=ChooseUs::orderBy('id','asc')->get();
+       $chooseus=PageBanner::orderBy('id','desc')->where('page_name','chooseus')->first();
+         return view('frontend.aboutus.travelwithus',compact('getchooseus','chooseus'));
    }
 
    public function TermsandCondition()
    {
          $gettermsandcondition=TermsandCondition::where('type','=','TermsConditions')->first();
-            return view('frontend.aboutus.termsandcondition',compact('gettermsandcondition'));
+         $terms=PageBanner::orderBy('id','desc')->where('page_name','terms')->first();
+            return view('frontend.aboutus.termsandcondition',compact('gettermsandcondition','terms'));
    }
    public function PrivacyPolicy()
    {
          $getprivacypolicy=TermsandCondition::where('type','=','PrivacyPolicies')->first();
-            return view('frontend.aboutus.privacypolicy',compact('getprivacypolicy'));
+         $privacy=PageBanner::orderBy('id','desc')->where('page_name','privacy')->first();
+            return view('frontend.aboutus.privacypolicy',compact('getprivacypolicy','privacy'));
    }
    public function PaymentMethod()
    {
          $getpaymentmethod=TermsandCondition::where('type','=','PaymentMethod')->first();
-            return view('frontend.aboutus.paymentmethod',compact('getpaymentmethod'));
+         $payment=PageBanner::orderBy('id','desc')->where('page_name','payment')->first();
+            return view('frontend.aboutus.paymentmethod',compact('getpaymentmethod','payment'));
    }
 }

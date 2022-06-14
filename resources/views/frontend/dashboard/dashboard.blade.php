@@ -2,7 +2,7 @@
 @section('title', 'User Dashboard')
 @section('content')
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($userbanner->page_banner))data-background="{{asset($userbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-md-12 col-lg-8 style-2">
                     <div class="nav nav-tabs text-center">
-                        <h5 class="font-weight-bold ml-4 mb-2 mt-2">My Booking Packages</h5>
+                        <h5 class="font-weight-bold ml-4 mb-2 mt-2">My Book Packages</h5>
                     </div>
                     <div class="tab-content" id="nav-tabContent">
                         <table class="table" style="width:112% ">
@@ -149,7 +149,7 @@
                                                 data-target="#exampleModalCenterBook{{ $booking->id }}"><i
                                                     class="fa fa-eye"></i></a>
                                             <a href="{{ route('user.delete.booking', $booking->id) }}" title="delete"
-                                                onclick="return confirm('Are You Sure To Delete This Booking?')"><i
+                                                onclick="return confirm('Are You Sure To Delete This Book?')"><i
                                                     class="fa fa-trash"></i></a>
 
                                         </td>
@@ -160,7 +160,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">View Booking
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">View Book
                                                         Details</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
@@ -230,7 +230,7 @@
                                     </div>
                                 @empty
                                     <tr>
-                                        <td colspan="7">No Booking Found</td>
+                                        <td colspan="7">No Book Found</td>
                                     </tr>
                                 @endforelse
                             </tbody>

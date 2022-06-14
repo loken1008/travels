@@ -223,6 +223,7 @@ $route=Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.logo')?'active':''}}"><a class="{{($route=='all.logo')?'active':''}}" href="{{route('all.logo')}}"><i class="ti-more"></i>Site Logo/Social Link</a></li>
+                    <li class="{{($route=='all.pagebanner')?'active':''}}"><a class="{{($route=='all.pagebanner')?'active':''}}" href="{{route('all.pagebanner')}}"><i class="ti-more"></i>Page Banner</a></li>
                     <li class="{{($route=='all.contact')?'active':''}}"><a class="{{($route=='all.contact')?'active':''}}" href="{{route('all.contact')}}"><i class="ti-more"></i>Contact </a></li>
 
                     </li>

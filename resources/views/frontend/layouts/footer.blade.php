@@ -63,7 +63,7 @@
                             <h4>Quick <span>Contact</span></h4>
                             <div class="border-style-3"></div>
                         </div>
-                        <ul class="footer-list footer-contact mb-10">
+                        <ul class="footer-list footer-contact mb-10" style="color:#989898">
                            @if(isset($getcontact))
                             <li><i class="pe-7s-call"></i>  {{$getcontact->phone}}</li>
                             <li><i class="pe-7s-print"></i>  {{$getcontact->fax}}</li>

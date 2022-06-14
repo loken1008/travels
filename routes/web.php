@@ -651,6 +651,25 @@ Route::middleware(['auth'])->group(function () {
             App\Http\Controllers\Admin\SiteSettingController::class,
             'ContactDelete',
         ])->name('delete.contact');
+      
+        // pageBanner
+        Route::get('/pagebanner', [
+            App\Http\Controllers\Admin\SiteSettingController::class,
+            'pageBannerView',
+        ])->name('all.pagebanner');
+        Route::post('/store/pagebanner', [
+            App\Http\Controllers\Admin\SiteSettingController::class,
+            'pageBannerStore',
+        ])->name('store.pagebanner');
+    
+        Route::post('/update/pagebanner/{id}', [
+            App\Http\Controllers\Admin\SiteSettingController::class,
+            'pageBannerUpdate',
+        ])->name('update.pagebanner');
+        Route::get('/delete/pagebanner/{id}', [
+            App\Http\Controllers\Admin\SiteSettingController::class,
+            'pageBannerDelete',
+        ])->name('delete.pagebanner');
     });
 
     Route::group(['prefix' => '/mountainguide-filemanager'], function () {

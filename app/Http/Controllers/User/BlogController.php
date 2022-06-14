@@ -6,10 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\PageBanner;
 
 
 class BlogController extends Controller
 {
+      public function __construct()
+        {
+          $blogbanner=PageBanner::orderBy('id','desc')->where('page_name','blogs')->first();
+          view()->share('blogbanner',$blogbanner);
+        }
        public function storeComment(Request $request)
        {
               $request->validate([

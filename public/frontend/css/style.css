@@ -70,7 +70,8 @@ Creation Date: 15 January 2019
 
 body {
     background-color: #fff;
-    color: #999999;
+    /* color: #999999; */
+    color: #5a5555;
     line-height: 1.65;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -116,7 +117,7 @@ h6 {
 }
 
 p {
-    color: #9c9c9c;
+    color: #575757;
     font-family: 'Roboto', sans-serif;
     line-height: 28px;
     margin: 0;
@@ -126,7 +127,7 @@ p {
     -o-transition: all 0.4s;
     -ms-transition: all 0.4s;
     transition: all 0.4s;
-    /* text-align: justify; */
+    text-align: justify;
 }
 
 i {
@@ -199,7 +200,7 @@ img {
 section {
     position: relative;
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 30px;
     padding-bottom: 45px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -415,7 +416,7 @@ input:-moz-placeholder {
 }
 
 .section-title h2 {
-    color: # #363d48;
+    color: #363d48;
     font-family: 'Lora', serif;
     font-size: 36px;
     font-weight: 600;
@@ -741,6 +742,7 @@ a.scrollup:focus i {
 
 .top-bar {
     position: relative;
+    border-bottom: 1px solid;
 }
 
 .top-bar .contact-info {
@@ -2503,7 +2505,7 @@ canvas {
     font-weight: 700;
     letter-spacing: 0.8px;
     margin-bottom: 4px;
-    margin-right: 2px;
+    margin-right: 19px;
     min-width: 122px;
     padding: 10px 20px;
     text-align: center;
@@ -2873,7 +2875,7 @@ canvas {
     font-size: 14px;
     margin-bottom: 0px;
     margin-top: 0px;
-    color: #9c9b9b;
+    color: #605c5c;
     text-align: justify;
 }
 
@@ -4408,9 +4410,10 @@ Global Css Style
 }
 
 .global-area p {
-    color: #6f6a6a;
+    color: #5a5757;
     font-size: 15px;
     margin-bottom: 30px;
+    text-align: justify;
 }
 
 .global-area h4 {
@@ -5467,7 +5470,7 @@ Footer Css Style
     font-weight: 600;
     height: 52px;
     letter-spacing: 0.9px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     padding-bottom: 10px;
 }
 
@@ -6578,7 +6581,7 @@ footer ul.social-icon {
     font-weight: 600;
     letter-spacing: 0.4px;
     margin-left: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;

@@ -27,7 +27,6 @@ $route = Route::current()->getName();
                                 <thead>
                                     <tr>
                                         <th>Country</th>
-                                        <th>Destination tour</th>
                                         <th>Tour Name</th>
                                         <th>Tour Type</th>
                                         <th>images</th>
@@ -38,7 +37,6 @@ $route = Route::current()->getName();
                                     @forelse($trashedTour as $tour)
                                         <tr>
                                             <td>{{ $tour->country->country_name }}</td>
-                                            <td>{{ $tour->place->place_name }}</td>
                                             <td>{{ $tour->tour_name }}</td>
                                             <td >{{$tour->type=="trip"?'Trip':''}}</td>
                                            

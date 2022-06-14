@@ -4,7 +4,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg"  @if(!empty($terms->page_banner))data-background="{{asset($terms->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -24,12 +24,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
-                    <div class="blog-details">
-                       
-                        <div class="details-content mb-40">
-                            @if(isset($gettermsandcondition->description))
+                    <div class="faq-col">
+                        <div class="panel-group">
+                            @if(isset($gettermsandcondition->title))
+                            <h4 class="panel-title">{{$gettermsandcondition->title}}</h4>
+                            @endif
+                           
+                            <div class="content">
+                                @if(isset($gettermsandcondition->description))
                             <p class="mb-20" style="text-align:justify!important">{!! $gettermsandcondition->description !!}</p>
                             @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -37,4 +42,5 @@
         </div>
     </section>
     <!-- Blog Section End -->
+    @include('frontend.common.tour')
 @endsection

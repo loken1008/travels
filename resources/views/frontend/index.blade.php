@@ -28,7 +28,7 @@
 
                         <!-- Slide Background -->
                         @if ($file_extension == 'mp4')
-                            <video class="slide-video" autoplay loop muted>
+                            <video class="slide-video" autoplay loop muted style="width:100%">
                                 <source src="{{ asset($banner->banner_image) }}" type="video/mp4">
                             </video>
                         @else
@@ -97,7 +97,7 @@
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-umbrella"></i>
-                            <h5>Hoteel</h5>
+                            <h5>Hotel</h5>
                         </div>
                         <div class="icon-box">
                             <i class="fa fa-map-marker"></i>
@@ -115,6 +115,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
+                    
                     <h4>Welcome to Mountain Guide Trek</h4>
                     <h2>Special <span>Tour</span> Places</h2>
                 </div>
@@ -176,9 +177,9 @@
                                                                
 
                                                             </ul>
-                                                            <p>{!! Str::limit($tour->description, 200, '.') !!}</p>
+                                                            <p>{!! substr($tour->description,0, 300).'.' !!}</p>
                                                             <a class="btn-theme" style="float:left !important"
-                                                                href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking
+                                                                href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book
                                                                 Now</a>
                                                             <a class="btn-theme"
                                                                 href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
@@ -207,12 +208,14 @@
     <!-- Special Places Section End -->
 
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-45 pb-90">
+    <section class="feature-section over-layer-black pt-45 pb-90" style="@if(!empty($homepagebannerone->page_banner))background-image:url({{asset($homepagebannerone->page_banner)}}) @endif">
         <div class="container">
             <div class="row">
+                @if($chooseus->count() > 0)
                 <div class="section-title">
                     <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
                 </div>
+                @endif
             </div>
             <div class="row">
                 @foreach ($chooseus as $choose)
@@ -239,15 +242,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    @if($getTour->count() > 0)
                     <div class="section-title ">
                         <h2 class="text-center">Special <span>Packages</span> Offer</h2>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
                             <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                                 @foreach ($getTour as $key => $tour)
                                     <div class="item">
@@ -285,9 +288,9 @@
                                                                
 
                                                 </ul>
-                                                <p>{!! Str::limit($tour->description, 250, '.') !!}</p>
+                                                <p>{!! substr($tour->description,0, 300).'.' !!}</p>
                                                 <a class="btn-theme" style="float:left !important"
-                                                    href="{{ route('booking', Str::slug($tour->tour_name)) }}">Booking
+                                                    href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book
                                                     Now</a>
                                                 <a class="btn-theme"
                                                     href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
@@ -297,8 +300,6 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -343,26 +344,29 @@
     <!-- Latest Hotel Section End -->
 
     <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-45 pb-15">
-        <div class="container">
-            <div class="row">
+    <section class="global-section over-layer-white pt-45 pb-25" style="@if(!empty($homepagebannertwo->page_banner))background-image:url({{asset($homepagebannertwo->page_banner)}}) @endif">
+        <div class="row">
+            <div class="section-title">
+                <h2>Message <span>From</span> Customer's</h2>
+            </div>
+        </div>
                 <div class="col-xl-12 col-lg-12">
 
-                    <div class="elfsight-app-cd2cc895-2ad1-48aa-9c0c-afdba58dc4c5"></div>
+                    <div data-rw-slider="30323"></div>
 
                 </div>
 
-            </div>
-        </div>
     </section>
     <!-- Global Section End -->
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-15 pb-0">
+    <section class="gallery-section pt-25 pb-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="section-title">
+                    @if($gallery->count()>0)
                     <h2>Mountain Guide <span>Tour</span> Gallery</h2>
+                    @endif
                 </div>
             </div>
 
@@ -370,8 +374,8 @@
                 @foreach ($gallery as $gal)
                     <div class="col-sm-4 col-grid">
                         <div class="gallery-item">
-                            <div class="thumb">
-                                <img src="{{ $gal->cover_image }}" alt="image" style="width:634px;height:518px">
+                            <div class="thumb" style="height:270px">
+                                <img src="{{ $gal->cover_image }}" alt="image" style="width:634px;height:270px">
                                 <div class="overlay">
                                     <div class="inner">
                                         <a href="{{ $gal->cover_image }}" class="icon lightbox-image">
@@ -414,18 +418,20 @@
     <!-- Testimonials Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25">
+    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25" style="@if(!empty($homepagebannerthree->page_banner))background-image:url({{asset($homepagebannerthree->page_banner)}}) @endif">
         <div class="container">
             <div class="row">
+                @if($getblogs->count()>0)
                 <div class="section-title">
                     <h2>Our latest blog</h2>
                 </div>
+                @endif
             </div>
             <div class="row">
                 @forelse($getblogs as $blog)
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
-                            <div class="thumb">
+                            <div class="thumb" >
                                 <img alt="" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
