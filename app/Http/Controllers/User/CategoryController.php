@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $getsubcat=SubCategory::with('category','tour')->where('sub_category_slug',$slug_name)->first();
         if(!empty($getsubcat))
         {
-            $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images')->where('subcategory_id',$getsubcat->id)->paginate(9);
+            $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images')->where('subcategory_id',$getsubcat->id)->where('status','1')->paginate(9);
             
             return view('frontend.trip.alltrip',compact('getTourdetails','getsubcat'));
         }
