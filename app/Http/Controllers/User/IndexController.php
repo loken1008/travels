@@ -30,7 +30,7 @@ class IndexController extends Controller
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
-        $chooseus=ChooseUs::orderBy('id','desc')->get();
+        $chooseus=ChooseUs::orderBy('id','desc')->limit(3)->get();
         $gallery=Gallery::orderBy('id','desc')->limit(6)->get();
         $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
         $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();

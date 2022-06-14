@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td>{{ $testmonial->name }}</td>
                                                 <td>{{ $testmonial->message_title }}</td>
-                                                <td>{{$testmonial->message_description}}</td>
+                                                <td>{{ Str::limit($testmonial->message_description,100)}}</td>
                                                 <td><img src="{{asset($testmonial->image)}}"
                                                         style="height:100px;width:100px" alt="">
                                                     </td>
@@ -45,7 +45,9 @@
                                                     @endif
                                                     </td>
                                                 <td>
-                                                    <a href="{{route('edit.testmonial',$testmonial->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$testmonial->id}}" style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
+
+                                                    <a href="{{route('edit.testmonial',$testmonial->id)}}" class="btn btn-info mt-2" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
                                                     <a href="{{route('delete.testmonial',$testmonial->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
                                                     @if($testmonial->status==1)
                                                     <a href="{{route('active.testmonial',$testmonial->id)}}" class="btn btn-primary mt-2" style="width:5rem" title="Active"><i class="fa fa-unlock"></i></a>
@@ -54,6 +56,45 @@
                                                     @endif
                                                 </td>
                                             </tr>
+                                            <div class="modal fade" id="exampleModal{{ $testmonial->id }}" tabindex="-1"
+                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content bg-white" >
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">View Detail</h5>
+                                                            <input type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close" style="height:10px;margin-top:-5px">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </input>
+                                                        </div>
+                                                        <div class="modal-body">
+    
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <p><span class="font-weight-bold"> Name:</span> {{ $testmonial->name }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <img src="{{ $testmonial->image }}" height="300"
+                                                                        width="50%" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-4">
+                                                                <div class="col-md-12">
+                                                                    <p><span class="font-weight-bold"> Title:</span> {{ $testmonial->message_title }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-2">
+                                                                <div class="col-md-12">
+                                                                    <p class="text-justify"><span class="font-weight-bold">Description:</span> {!! $testmonial->message_description !!}</p>
+                                                                </div>
+                                                            </div>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @empty
                                         @endforelse
                                     </tbody>

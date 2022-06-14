@@ -37,7 +37,7 @@
                                                     class="btn btn-primary" style="width:5rem" title="view"><i
                                                         class="fa fa-eye"></i></a>
                                                 <a href="{{ route('edit.termsandconditions', $terms->id) }}"
-                                                    class="btn btn-info " style="width:5rem" title="edit"><i
+                                                    class="btn btn-info mt-2" style="width:5rem" title="edit"><i
                                                         class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('delete.termsandconditions', $terms->id) }}"
                                                     class="btn btn-danger mt-2" style="width:5rem" id="delete"
