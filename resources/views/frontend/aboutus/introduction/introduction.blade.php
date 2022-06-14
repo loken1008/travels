@@ -27,9 +27,10 @@
                         <div class="inner-title">
                             @if(isset($introduction->aboutus_title))
                             <h2>{{ $introduction->aboutus_title }}</h2>
+                            <div class="sec-line"></div>
                             @endif
                           
-                            <div class="sec-line"></div>
+                            
                         </div>
                         @if(isset($introduction->aboutus_description))
                         <p >{!! $introduction->aboutus_description !!}</p>
@@ -43,6 +44,7 @@
                         <img src="{{ $introduction->aboutus_image }}" alt="{{ $introduction->aboutus_title }}" style="height:350px" >
                         @endif
                     </div>
+                    @if($getblogs->count() > 0)
                     <div class="widget d-flex mt-6" style="flex-direction:column">
                         <div class="title-box">
                             <h3>Recent <span>Blogs</span></h3>
@@ -62,6 +64,7 @@
                             </div>
                         @endforeach
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

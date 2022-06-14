@@ -150,7 +150,15 @@ $route = Route::current()->getName();
                                                 <div class="dropdown">
 
                                                     <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
-                                                        class=" dropdown-item" >{{ $subcat->sub_category_name }} <i class="fa fas fa-angle-double-right mt-1" style="float:right"></i> </a>
+                                                        class=" dropdown-item" >{{ $subcat->sub_category_name }} 
+                                                        @foreach($subcat->tour->take(1) as $t)
+                                                        @if($subcat->id == $t->subcategory_id)
+                                                        @if($t->status == '1')
+                                                        <i class="fa fas fa-angle-double-right mt-1" style="float:right"></i> 
+                                                        @endif
+                                                        @endif
+                                                        @endforeach
+                                                    </a>
 
                                                     <div class="dropdown-menu">
                                                         @foreach ($subcat->tour as $tour)

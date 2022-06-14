@@ -111,14 +111,16 @@
     <!-- Welcome Section End -->
 
     <!-- Special Places Section Start -->
-    <section class="special-places-sec pb-80">
+    <section class="special-places-sec pt-90 pb-80">
         <div class="container">
             <div class="row">
+                @if($getTour->count() > 0)
                 <div class="section-title">
                     
-                    <h4>Welcome to Mountain Guide Trek</h4>
+                    <h4>Welcome to Mountain Guide Tour</h4>
                     <h2>Special <span>Tour</span> Places</h2>
                 </div>
+                @endif
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -394,13 +396,14 @@
 
 
         </div>
+        @if($gallery->count()>0)
         <div class="text-center mt-4">
             <a href="{{ route('allgallery') }}" class="read-btn" style="">
                 <h5>View Gallery</h5>
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
-
+@endif
     </section>
 
     <!-- Gallery Section End -->
