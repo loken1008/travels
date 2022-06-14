@@ -12,6 +12,7 @@ use App\Models\Coupon;
 use App\Models\Contact;
 use App\Models\User;
 use App\Models\Tour;
+use App\Models\PageBanner;
 
 use Carbon\Carbon;
 use DB;
@@ -45,7 +46,6 @@ class ViewServiceProvider extends ServiceProvider
         $getcontact=Contact::orderBy('id','desc')->first();
         $user = User::first();
         $notifications = $user->unreadNotifications;
-// dd($tour1);
         $notif=DB::table('notifications')
         ->where('notifiable_type','=','App\Models\User')->orderBy('created_at','desc')
         ->get()
@@ -53,8 +53,7 @@ class ViewServiceProvider extends ServiceProvider
             $item->data=json_decode($item->data);
             return $item;
         });
-        // dd($notif);
-
+       
          View::share('notifications', $notifications);
          View::share('notif', $notif);
          View::share('country', $country);

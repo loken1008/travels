@@ -6,7 +6,7 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($bookbanner->page_banner))data-background="{{asset($bookbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -250,63 +250,7 @@
     <!-- Contact Section End -->
 
     <!-- Special Places Section Start -->
-    <section class="special-places-sec pb-80">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2>Special <span>Tour</span> Places</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="specialplaces_carousel owl-carousel owl-theme owl-navst">
-                        @foreach ($getTour as $key => $tour)
-                            <div class="item">
-                                <div class="special-packages">
-                                    <div class="thumb">
-                                        <img src="{{ $tour->mainImage }}" alt=""
-                                            style="width:100% !important;height:253px !important">
-                                        {{-- <div class="offer-price"> Off 40%</div> --}}
-                                        <div class="post-title-box">
-                                            <div class="price-box">
-                                                @if($getcoupon)
-                                                <h5 class="text-danger"><strike><span>$</span>{{ $tour->main_price }}</strike></h5>
-                                                <h5><span>$</span>{{ $tour->main_price-($getcoupon->discount_amount/100*$tour->main_price)}}</h5>
-            
-                                                @else
-                                                <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                @endif
-                                                {{-- <h6>Starts From</h6> --}}
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>{{ $tour->tour_name }}</h4>
-                                                <h3>{{ $tour->country->country_name }}</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <ul class="info">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }} Days</a>
-                                            </li>
-                                            <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
-                                                class="fa fa-map-marker"></i>View on Map</a></li>
-                                               
-
-                                        </ul>
-                                        <p>{!! substr($tour->description,0, 300).'.' !!}</p>
-                                        <a class="btn-theme" style="float:left !important" href="{{route('booking',Str::slug($tour->tour_name))}}">Book Now</a>
-                                        <a class="btn-theme" href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
-                                            Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontend.common.tour')
     <!-- Special Places Section End -->
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

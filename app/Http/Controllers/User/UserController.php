@@ -10,9 +10,15 @@ use Auth;
 use App\Rules\CheckOldPassword;
 use Hash;
 use App\Models\Booking;
+use App\Models\PageBanner;
 
 class UserController extends Controller
 { 
+    public function __construct()
+    {
+        $userbanner = PageBanner::orderBy('id', 'desc')->where('page_name', 'homepageone')->first();
+        view()->share('userbanner', $userbanner);
+    }
     public function CustomerDashboard()
     {
 

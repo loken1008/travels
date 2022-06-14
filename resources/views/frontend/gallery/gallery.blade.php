@@ -5,12 +5,13 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($gallerybanner->page_banner))data-background="{{asset($gallerybanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
                     <div class="col-12">
                         <h4>Related Images</h4>
+                        <a href="{{ route('allgallery') }}"><h5 class="text-info">Back to Gallery</h5></a>
                     </div>
                 </div>
             </div>
@@ -50,4 +51,5 @@
     </div>
 </section>
 <!-- Gallery Section End -->
+@include('frontend.common.tour')
 @endsection

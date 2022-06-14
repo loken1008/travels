@@ -12,21 +12,31 @@ use App\Models\Coupon;
 use App\Models\Blog;
 use App\Models\ChooseUs;
 use App\Models\Gallery;
+use App\Models\PageBanner;
 use Carbon\Carbon;
 
 class IndexController extends Controller
 {
 
+    public function __construct()
+    {
+        $tourbanner = PageBanner::orderBy('id', 'desc')->where('page_name', 'tour')->first();
+        view()->share('tourbanner', $tourbanner);
+    }
     public function homePage()
     {
-        $getcountry=Country::with('tours')->orderBy('id','desc')->where('status','=','1')->get();
+        $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
         $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
         $chooseus=ChooseUs::orderBy('id','desc')->get();
         $gallery=Gallery::orderBy('id','desc')->limit(6)->get();
-        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery'));
+        $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
+        $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
+        $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
+
+        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree'));
     }
 
     public function  tourDetails($tour_name)

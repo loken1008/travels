@@ -80,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="footer">
-                            <a id="see-all" class="dropdown-item" href="{{route('showbooking.view')}}">View all</a>
+                            <a id="see-all" class="" href="{{route('showbooking.view')}}">View all</a>
                         </li>
                     </ul>
                 </li>

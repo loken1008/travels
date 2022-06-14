@@ -1,9 +1,9 @@
 @extends('frontend.main')
-@section('title', 'Tour Map')
+@section('title', "$gettourmap->tour_name")
 @section('content')
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($tourbanner->page_banner))data-background="{{asset($tourbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -43,5 +43,6 @@
         </div>
     </section>
     <!-- Testimonials Section End -->
+    @include('frontend.common.tour')
 
 @endsection

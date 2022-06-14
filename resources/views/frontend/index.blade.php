@@ -208,10 +208,10 @@
     <!-- Special Places Section End -->
 
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-45 pb-90">
+    <section class="feature-section over-layer-black pt-45 pb-90" style="@if(!empty($homepagebannerone->page_banner))background-image:url({{asset($homepagebannerone->page_banner)}}) @endif">
         <div class="container">
             <div class="row">
-                @if($chooseus->count() > 0)))
+                @if($chooseus->count() > 0)
                 <div class="section-title">
                     <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
                 </div>
@@ -344,7 +344,7 @@
     <!-- Latest Hotel Section End -->
 
     <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-45 pb-25">
+    <section class="global-section over-layer-white pt-45 pb-25" style="@if(!empty($homepagebannertwo->page_banner))background-image:url({{asset($homepagebannertwo->page_banner)}}) @endif">
         <div class="row">
             <div class="section-title">
                 <h2>Message <span>From</span> Customer's</h2>
@@ -418,7 +418,7 @@
     <!-- Testimonials Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25">
+    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25" style="@if(!empty($homepagebannerthree->page_banner))background-image:url({{asset($homepagebannerthree->page_banner)}}) @endif">
         <div class="container">
             <div class="row">
                 @if($getblogs->count()>0)

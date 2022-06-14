@@ -1,8 +1,11 @@
+@php 
+$contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','contactus')->first();
+@endphp
 @extends('frontend.main')
 @section('title', 'Contact Us')
 @section('content')
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg" @if(!empty($contactbanner->page_banner))data-background="{{asset($contactbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">

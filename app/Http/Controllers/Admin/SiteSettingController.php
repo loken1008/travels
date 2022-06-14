@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SiteSetting;
 use App\Models\Contact;
+use App\Models\PageBanner;
+
 
 class SiteSettingController extends Controller
 {
@@ -121,4 +123,57 @@ class SiteSettingController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    // pagebanner
+    public function pagebannerView()
+    {
+        $pagebanner=PageBanner::orderBy('id','desc')->get();
+        return view('admin.sitesetting.pagebanner.pagebanner',compact('pagebanner'));
+    }
+    public function pagebannerStore(Request $request)
+    {
+        $request->validate([
+            'page_banner'=>'required',
+            'page_name'=>'required',
+        ]);
+        $data=$request->except('_token');
+        PageBanner::create($data);
+        $notification=array(
+            'message'=>'Page Banner Inserted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->route('all.pagebanner')->with($notification);
+    }
+    public function pageBannerUpdate(Request $request,$id)
+    {
+        $request->validate([
+            'page_name'=>'required',
+        ]);
+        $updatepagebanner=PageBanner::findOrFail($id);
+        if($request->page_banner){
+            $updatepagebanner->page_banner=$request->page_banner;
+            $updatepagebanner->page_name=$request->page_name;
+            $updatepagebanner->save();
+        }
+        else{
+            $updatepagebanner->page_name=$request->page_name;
+            $updatepagebanner->save();
+        }
+        $notification=array(
+            'message'=>'Page Banner Updated Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->route('all.pagebanner')->with($notification);
+    }
+    public function pageBannerDelete($id)
+    {
+        $pagebanner=PageBanner::findOrFail($id);
+        $pagebanner->delete();
+        $notification=array(
+            'message'=>'Page Banner Deleted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
 }

@@ -14,6 +14,7 @@ use Auth;
 use App\Events\BookingMessage;
 use App\Notifications\BookingNotification;
 use App\Models\User;
+use App\Models\PageBanner;
 
 
 class BookingController extends Controller
@@ -23,7 +24,8 @@ class BookingController extends Controller
    $title = str_replace('-',' ',$tour_name); 
     $tour=Tour::with('country','place')->where('tour_name',$title)->first();
     $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
-       return view('frontend.bookform.bookform',compact('getTour','tour'));
+    $bookbanner=PageBanner::orderBy('id','desc')->where('page_name','booking')->first();
+       return view('frontend.bookform.bookform',compact('getTour','tour','bookbanner'));
    }
 
    public function storeBooking(Request $request)
