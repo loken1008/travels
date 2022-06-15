@@ -293,6 +293,16 @@ class TourController extends Controller
         ];
         return redirect()->back()->with($notification);
     }
+    public function deleteDatePrice($id){
+        DatesPrices::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Date Price Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+        
+    }
+
     public function addEquipment(Request $request,$id)
     {
         foreach ($request->equipment_name as $key21 => $value21) {
@@ -309,6 +319,15 @@ class TourController extends Controller
         ];
         return redirect()->back()->with($notification);
     }
+    public function deleteEquipment($id){
+        Equipment::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Equipment Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+        
+    }
     public function addItinery(Request $request,$id){
         foreach ($request->day_title as $key31 => $value31) {
             Itinerary::create([
@@ -324,6 +343,15 @@ class TourController extends Controller
         ];
         return redirect()->back()->with($notification);
     }
+    public function deleteItineries($id){
+        Itinerary::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Itinerary Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+        
+    }
     public function addFaq(Request $request,$id){
         foreach ($request->question as $key41 => $value41) {
             FQA::create([
@@ -338,6 +366,15 @@ class TourController extends Controller
             'alert-type' => 'success',
         ];
         return redirect()->back()->with($notification);
+    }
+    public function deleteFaq($id){
+        FQA::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Faq Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()->back()->with($notification);
+        
     }
     
     public function softDeleteTour($id)
