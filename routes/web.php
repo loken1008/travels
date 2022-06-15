@@ -333,18 +333,34 @@ Route::middleware(['auth'])->group(function () {
         App\Http\Controllers\Admin\TourController::class,
         'addDatePrice',
     ])->name('tour.dateprice');
+    Route::get('/delete-dateprice/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'deleteDatePrice',
+    ])->name('dateprice.delete');
     Route::post('/add-equipment/{id}', [
         App\Http\Controllers\Admin\TourController::class,
         'addEquipment',
     ])->name('tour.equipment');
+    Route::get('/delete-equipment/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'deleteEquipment',
+    ])->name('equipment.delete');
     Route::post('/add-itinery/{id}', [
         App\Http\Controllers\Admin\TourController::class,
         'addItinery',
     ])->name('tour.itineries');
+    Route::get('/delete-itineries/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'deleteItineries',
+    ])->name('itineries.delete');
     Route::post('/add-faq/{id}', [
         App\Http\Controllers\Admin\TourController::class,
         'addFaq',
     ])->name('tour.faq');
+    Route::get('/delete-faq/{id}', [
+        App\Http\Controllers\Admin\TourController::class,
+        'deleteFaq',
+    ])->name('faq.delete');
 
     Route::get('/softdelete/{id}', [
         App\Http\Controllers\Admin\TourController::class,
