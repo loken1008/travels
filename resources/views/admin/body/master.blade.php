@@ -70,7 +70,7 @@
     <script src="{{ asset('assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js') }}"></script>
     <script src="{{ asset('admin/js/pages/editor.js') }}"></script>
-    <script src="{{ asset('admin/js/template.js') }}"></script>}
+    <script src="{{ asset('admin/js/template.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/vendor_components/gallery/js/animated-masonry-gallery.js') }}">
     </script>
     <script type="text/javascript" src="{{ asset('assets/vendor_components/gallery/js/jquery.isotope.min.js') }}">
@@ -104,7 +104,6 @@
         $('#lfms').filemanager('images', {
             prefix: route_prefix
         });
-        var route_prefix = "/mountainguide-filemanager";
         $('#tlfm').filemanager('images', {
             prefix: route_prefix
         });

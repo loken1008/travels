@@ -41,5 +41,3 @@ $(function() {
     $('#example1 .switcher-input').bootstrapToggle();
 
 });
-
-//tour
