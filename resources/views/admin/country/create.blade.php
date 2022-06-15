@@ -72,7 +72,25 @@
 
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var route_prefix = "/mountainguide-filemanager";
+        $('#clfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
+            filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script>
+        CKEDITOR.replace('my-editor', options);
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
 

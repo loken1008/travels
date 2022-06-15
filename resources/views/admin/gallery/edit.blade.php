@@ -77,8 +77,20 @@
             <!-- /.row -->
         </section>
         <!-- /.content -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var route_prefix = "/mountainguide-filemanager";
+        $('#blfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
+     <script>
+        var route_prefix = "/mountainguide-filemanager";
+        $('#lfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script>
         $(document).ready(function() {
