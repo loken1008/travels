@@ -108,7 +108,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <p>© {{Carbon\Carbon::now()->format('Y')}}, All Rights Reserved, Design & Developed By:<a href="www.dristicode.com" target="_blank"> Dristicode Solutions Pvt. Ltd</a></p>
+                <p>© {{Carbon\Carbon::now()->format('Y')}}, All Rights Reserved, Design & Developed By:<a  href="https://www.dristicode.com/" target="__blank"> Dristicode Solutions Pvt. Ltd</a></p>
+                
             </div>
         </div>
     </div>

@@ -127,14 +127,32 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Cost Include :</label>
-                                <span>{!! $detailstour->cost_include !!}</span>
+                                @php 
+                                    $cost_include = json_decode($detailstour->cost_include);
+                                @endphp
+                                <ul>
+                                    @if(!empty($cost_include))
+                                        @foreach($cost_include as $cost_include)
+                                            <li>{{ $cost_include }}</li>
+                                        @endforeach
+                                    @endif
+                                </ul>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Cost Exclude :</label>
-                                <span>{!! $detailstour->cost_exclude !!}</span>
+                                @php 
+                                    $cost_exclude = json_decode( $detailstour->cost_exclude);
+                                @endphp
+                                <ul>
+                                    @if(!empty($cost_exclude))
+                                    @foreach ($cost_exclude as $cost_exclude)
+                                        <li>{{ $cost_exclude }}</li>
+                                    @endforeach
+                                    @endif
+                                </ul>
                             </div>
                         </div>
                         

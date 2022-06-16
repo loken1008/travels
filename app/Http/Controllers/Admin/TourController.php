@@ -14,6 +14,8 @@ use App\Models\Equipment;
 use App\Models\Itinerary;
 use App\Models\DatesPrices;
 use App\Models\FQA;
+use App\Models\CostInclude;
+use App\Models\CostExclude;
 use Carbon\Carbon;
 use App\Http\Requests\TourStoreRequest;
 use Illuminate\Support\Facades\Storage;
@@ -47,10 +49,17 @@ class TourController extends Controller
             ->where('status', '=', '1')
             ->get();
         $getcategory = Category::orderBy('category_name', 'asc')->get();
-        $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();
-        return view(
-            'admin.tour.create',
-            compact('getcountry', 'getplace', 'getcategory', 'getsubcategory')
+        $getsubcategory = Subcategory::orderBy('sub_category_name','asc')->get();
+        $costinclude = CostInclude::orderBy('id', 'asc')->get();
+        $costexclude = CostExclude::orderBy('id', 'asc')->get();
+        return view('admin.tour.create',compact(
+                'getcountry',
+                'getplace',
+                'getcategory',
+                'getsubcategory',
+                'costinclude',
+                'costexclude'
+            )
         );
     }
 
@@ -66,7 +75,7 @@ class TourController extends Controller
             'country_id' => $request->country_id,
             'place_id' => rand(1, 100),
             'category_id' => $request->category_id,
-            'subcategory_id'=>$request->subcategory_id,
+            'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
             // 'type'=>$request->type,
             'altitude' => $request->altitude,
@@ -74,8 +83,8 @@ class TourController extends Controller
             'accomodation' => $request->accomodation,
             'transport' => $request->transport,
             'main_price' => $request->main_price,
-            'cost_include' => $request->cost_include,
-            'cost_exclude' => $request->cost_exclude,
+            'cost_include' => json_encode($request->cost_include),
+            'cost_exclude' => json_encode($request->cost_exclude),
             'description' => $request->description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage,
@@ -118,15 +127,14 @@ class TourController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
-        foreach($request->question as $key3=>$value3)
-     {
-         $fqa=new FQA();
-         $fqa->tour_id=$tour_id;
-         $fqa->question=$request->question[$key3];
-         $fqa->answer=$request->answer[$key3];
-         $fqa->created_at =Carbon::now();
-         $fqa->save();
-     }
+        foreach ($request->question as $key3 => $value3) {
+            $fqa = new FQA();
+            $fqa->tour_id = $tour_id;
+            $fqa->question = $request->question[$key3];
+            $fqa->answer = $request->answer[$key3];
+            $fqa->created_at = Carbon::now();
+            $fqa->save();
+        }
         $notification = [
             'message' => 'tour Insert Successfully',
             'alert-type' => 'success',
@@ -161,6 +169,8 @@ class TourController extends Controller
             'sub_category_name',
             'asc'
         )->get();
+        $costinclude = CostInclude::orderBy('id', 'asc')->get();
+        $costexclude = CostExclude::orderBy('id', 'asc')->get();
         $edittour = Tour::with(
             'dateprice',
             'equipment',
@@ -168,14 +178,15 @@ class TourController extends Controller
             'images',
             'fqa'
         )->findOrfail($id);
-        return view(
-            'admin.tour.edit',
+        return view( 'admin.tour.edit',
             compact(
                 'edittour',
                 'getcountry',
                 'getplace',
                 'getcategory',
-                'getsubcategory'
+                'getsubcategory',
+                'costinclude',
+                'costexclude'
             )
         );
     }
@@ -187,7 +198,7 @@ class TourController extends Controller
             'country_id' => $request->country_id,
             // 'place_id' => $request->place_id,
             'category_id' => $request->category_id,
-            'subcategory_id'=>$request->subcategory_id,
+            'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
             // 'type'=>$request->type,
             'altitude' => $request->altitude,
@@ -195,8 +206,8 @@ class TourController extends Controller
             'accomodation' => $request->accomodation,
             'transport' => $request->transport,
             'main_price' => $request->main_price,
-            'cost_include' => $request->cost_include,
-            'cost_exclude' => $request->cost_exclude,
+            'cost_include' => json_encode($request->cost_include),
+            'cost_exclude' => json_encode($request->cost_exclude),
             'description' => $request->description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage
@@ -225,7 +236,7 @@ class TourController extends Controller
                 DatesPrices::where('id', $request->dateid[$key])->update($data);
             }
         } else {
-        }  
+        }
         if ($request->equipmentid) {
             foreach ($request->equipmentid as $key1 => $value1) {
                 $data1 = [
@@ -261,9 +272,7 @@ class TourController extends Controller
                     'answer' => $request->answer[$key3],
                     'updated_at' => Carbon::now(),
                 ];
-                FQA::where('id', $request->faqid[$key3])->update(
-                    $data3
-                );
+                FQA::where('id', $request->faqid[$key3])->update($data3);
             }
         } else {
         }
@@ -274,11 +283,11 @@ class TourController extends Controller
         return redirect('/tour/view')->with($notification);
     }
 
-    public function addDatePrice(Request $request,$id)
+    public function addDatePrice(Request $request, $id)
     {
         foreach ($request->start_date as $key11 => $value11) {
             $data1 = [
-                'tour_id'=>$request->tour_id,
+                'tour_id' => $request->tour_id,
                 'start_date' => $request->start_date[$key11],
                 'end_date' => $request->end_date[$key11],
                 'price' => $request->price[$key11],
@@ -291,15 +300,30 @@ class TourController extends Controller
             'message' => 'Date Price Added Successfully',
             'alert-type' => 'success',
         ];
-        return redirect()->back()->with($notification);
+        return redirect()
+            ->back()
+            ->with($notification);
     }
-    public function addEquipment(Request $request,$id)
+    public function deleteDatePrice($id)
+    {
+        DatesPrices::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Date Price Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
+    }
+
+    public function addEquipment(Request $request, $id)
     {
         foreach ($request->equipment_name as $key21 => $value21) {
             Equipment::create([
                 'tour_id' => $request->tour_id,
                 'equipment_name' => $request->equipment_name[$key21],
-                'equipment_description' => $request->equipment_description[$key21],
+                'equipment_description' =>
+                    $request->equipment_description[$key21],
                 'created_at' => Carbon::now(),
             ]);
         }
@@ -307,9 +331,23 @@ class TourController extends Controller
             'message' => 'Equipment Added Successfully',
             'alert-type' => 'success',
         ];
-        return redirect()->back()->with($notification);
+        return redirect()
+            ->back()
+            ->with($notification);
     }
-    public function addItinery(Request $request,$id){
+    public function deleteEquipment($id)
+    {
+        Equipment::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Equipment Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
+    }
+    public function addItinery(Request $request, $id)
+    {
         foreach ($request->day_title as $key31 => $value31) {
             Itinerary::create([
                 'tour_id' => $request->tour_id,
@@ -322,9 +360,23 @@ class TourController extends Controller
             'message' => 'Itinerary Added Successfully',
             'alert-type' => 'success',
         ];
-        return redirect()->back()->with($notification);
+        return redirect()
+            ->back()
+            ->with($notification);
     }
-    public function addFaq(Request $request,$id){
+    public function deleteItineries($id)
+    {
+        Itinerary::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Itinerary Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
+    }
+    public function addFaq(Request $request, $id)
+    {
         foreach ($request->question as $key41 => $value41) {
             FQA::create([
                 'tour_id' => $request->tour_id,
@@ -337,9 +389,22 @@ class TourController extends Controller
             'message' => 'Faq Added Successfully',
             'alert-type' => 'success',
         ];
-        return redirect()->back()->with($notification);
+        return redirect()
+            ->back()
+            ->with($notification);
     }
-    
+    public function deleteFaq($id)
+    {
+        FQA::findorFail($id)->delete();
+        $notification = [
+            'message' => 'Faq Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
+    }
+
     public function softDeleteTour($id)
     {
         Tour::findOrfail($id)->delete();
@@ -368,10 +433,10 @@ class TourController extends Controller
 
     public function restoreTour($id)
     {
-        $t=Tour::withTrashed()
+        $t = Tour::withTrashed()
             ->where('id', $id)
             ->restore();
-// dd($t);
+        // dd($t);
         $notification = [
             'message' => 'Tour Restore Successfully',
             'alert-type' => 'success',

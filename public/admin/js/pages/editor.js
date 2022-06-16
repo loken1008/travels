@@ -4,7 +4,7 @@
 //Primary use:   Used only for the wysihtml5 Editor
 
 //Add text editor
-$(document).ready(function () {
+$(document).ready(function() {
     "use strict";
 
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -15,7 +15,7 @@ $(document).ready(function () {
 });
 
 //Add text editor
-$(document).ready(function () {
+$(document).ready(function() {
     "use strict";
 
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -26,7 +26,7 @@ $(document).ready(function () {
 });
 
 //Add text editor
-$(document).ready(function () {
+$(document).ready(function() {
     "use strict";
 
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -37,13 +37,10 @@ $(document).ready(function () {
 });
 
 //Add text editor
-$(document).ready(function () {
-  // Replace the <textarea id="editor1"> with a CKEditor
-  // instance, using default configuration.
-  CKEDITOR.replace("editor4");
-  //bootstrap WYSIHTML5 - text editor
-  $(".textarea").wysihtml5();
+$(document).ready(function() {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace("editor4");
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
 });
-
-
-

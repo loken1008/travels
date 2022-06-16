@@ -4412,7 +4412,7 @@ Global Css Style
 .global-area p {
     color: #5a5757;
     font-size: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     text-align: justify;
 }
 
@@ -4870,7 +4870,8 @@ Shop Css Style
 }
 
 .theme-sidebar .widget {
-    margin-bottom: 40px;
+    margin-left: 25px;
+    margin-bottom: 0px;
 }
 
 
@@ -4940,11 +4941,13 @@ input::-moz-placeholder {
 .cat-item {}
 
 .cat-item ul li {
-    margin-bottom: 22px;
+    margin-bottom: 9px;
+    margin-left: 20px;
+    list-style-type: disclosure-closed;
 }
 
 .cat-item ul li a {
-    color: #989898;
+    color: #6db0ef;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.4px;

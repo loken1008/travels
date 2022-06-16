@@ -188,25 +188,28 @@
                             @enderror
                         </div>
                         <hr>
-                        <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
                         <div class="row">
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="costinclude">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
-                                        {{ old('cost_include') }}
-                                    </textarea>
+                                    <label for="costexclude">Cost Include :</label>
+                                    <select name="cost_include[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Include Values</option>
+                                       @foreach($costinclude as $key=> $costi)
+                                        <option value="{{ $costi->cost_include }}">{{$key+1}}.{{ $costi->cost_include }}</option>
+                                        @endforeach
+                                    </select>
 
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
-                                        {{ old('cost_exclude') }}
-                                  </textarea>
+                                    <select name="cost_exclude[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Exclude Values </option>
+                                       @foreach($costexclude as $key=> $coste)
+                                        <option value="{{ $coste->cost_exclude }}">{{$key+1}}.{{ $coste->cost_exclude  }}</option>
+                                        @endforeach
+                                    </select>
 
                                 </div>
                             </div>
@@ -382,145 +385,8 @@
         $('#lfm').filemanager('images', {
             prefix: route_prefix
         });
-    </script>
-
-    <script>
-        var route_prefix = "mountainguide-filemanager";
-        $('#lfms').filemanager('images', {
+         $('#lfms').filemanager('images', {
             prefix: route_prefix
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('select[name="country_id"]').on('change', function() {
-                var country_id = $(this).val();
-                if (country_id) {
-                    $.ajax({
-                        url: "/place/ajax/" + country_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            var d = $('select[name="place_id"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="place_id"]').append(
-
-                                    '<option value="' + value.id + '">' + value
-                                    .place_name + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    alert('danger');
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('select[name="category_id"]').on('change', function() {
-                var category_id = $(this).val();
-                if (category_id) {
-                    $.ajax({
-                        url: "/subcategory/ajax/" + category_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            var d = $('select[name="subcategory_id"]').empty();
-                            $('select[name="subcategory_id"]').append(
-                                '<option value="">Select Sub Category</option>');
-                            $.each(data, function(key, value) {
-                                $('select[name="subcategory_id"]').append(
-
-                                    '<option value="' + value.id + '">' + value
-                                    .sub_category_name + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    alert('danger');
-                }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        var i = 0;
-        $("#dynamic-ar").click(function() {
-            i++;
-            $("#dynamicAddRemove").append(
-                '<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :</label><input class="form-control" id="id_ct' +
-                i +
-                '" name="start_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :</label><input class="form-control" id="id_ed' +
-                i +
-                '" name="end_date[]" type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}"></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :</label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :</label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class="">  <a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
-
-            );
-        });
-       
-        $(document).on('click', '.remove-input-field', function() {
-            $(this).parents('.dateprices').remove();
-        });
-    </script>
-
-    <script type="text/javascript">
-        var i = 0;
-        $("#addequipment").click(function(e) {
-
-            i++;
-            var editorId = "editor3" + i;
-            $("#equipment").append(
-                '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="' +
-                editorId +
-                '"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
-            );
-            CKEDITOR.replace(editorId);
-        });
-       
-        $(document).on('click', '.remove-equipment-field', function() {
-            $(this).parents('.equipmentCopy').remove();
-        });
-    </script>
-
-    <script type="text/javascript">
-        var i = 1;
-        $("#addMoreitinerary").click(function(e) {
-
-            i++;
-            var editorId1 = "editor4" + i;
-            $("#itinerary").append(
-
-                '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="' +
-                editorId1 +
-                '" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
-            );
-            CKEDITOR.replace(editorId1);
-
-        });
-       
-        $(document).on('click', '.removeitinerary', function() {
-            $(this).parents('.itineraryCopy').remove();
-        });
-    </script>
-    <script>
-        var x = 1;
-        $("#add_field_button").click(function(e) {
-
-
-            x++;
-            $("#faq").append(
-                '<div class="box-body wizard-content"><section><div class="row faqcopy"> <div class="col-md-6"> <div class="form-group"> <label for="question">Question</label><input type="text" name="question[]"  id="id_ct' +
-                x +
-                '" class="form-control"> </div></div> <div class="col-md-6"> <div class="form-group"> <label for="answer"> Answer :</label> <textarea id="id_ct' +
-                x +
-                '" class="form-control" name="answer[]" rows="10" cols="10"></textarea></div> </div><div class=""><a href="#" class="remove_field btn btn-rounded btn-danger pull-right">Remove</a> </div></div>  </section> </div>'
-                ); //add input box
-
-        });
-        
-
-        $(document).on('click', '.remove_field', function() {
-            $(this).parents('.faqcopy').remove();
         });
     </script>
 

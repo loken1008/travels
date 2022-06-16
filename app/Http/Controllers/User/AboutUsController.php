@@ -11,10 +11,19 @@ use App\Models\TermsandCondition;
 use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\PageBanner;
+use App\Models\Category;
 
 
 class AboutUsController extends Controller
 {
+
+   public function __construct()
+    {
+       $getcategory=Category::with('tour')->orderBy('id','desc')->limit(3)->get();
+       $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(5)->get();
+       view()->share('getcategory',$getcategory);
+         view()->share('getblogs',$getblogs);
+    }
    public function allTeam()
    {
       $team = OurTeam::count();
@@ -26,8 +35,7 @@ class AboutUsController extends Controller
    {
          $introduction=AboutUs::first();
          $intropagebanner=PageBanner::orderBy('id','desc')->where('page_name','introduction')->first();
-         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(5)->get();
-         return view('frontend.aboutus.introduction.introduction',compact('introduction','getblogs','intropagebanner'));
+         return view('frontend.aboutus.introduction.introduction',compact('introduction','intropagebanner'));
    }
 
 //    public function TeamDetails($name)
