@@ -212,25 +212,43 @@
                             @enderror
                         </div>
                         <hr>
-                        <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
                         <div class="row">
-
-                            <div class="col-md-6">
+                            @php 
+                                        $ecost_include =json_decode($edittour->cost_include);
+                                        // dd($ecost_include);
+                                        @endphp
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{ $edittour->cost_include }}">
-                                        {{ $edittour->cost_include }}
-                                    </textarea>
+                                    <label for="costexclude">Cost Include :</label>
+                                    <select name="cost_include[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Include Values</option>
+                                       
+                                      
+                                        @if(!empty($edittour->cost_include))
+                                       @foreach($costinclude as $key=> $costi)
+                                        <option value="{{ $costi->cost_include }}" @if(!empty($ecost_include ))@foreach($ecost_include as $ecost_includes){{$ecost_includes==$costi->cost_include?'selected':''}} @endforeach @endif>
+                                            {{$key+1}}.{{ $costi->cost_include  }}
+                                        </option>
+                                        @endforeach
+                                        @endif
+                                    </select>
 
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="firstName5">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{ $edittour->cost_exclude }}">
-                                        {{ $edittour->cost_exclude }}
-                                  </textarea>
+                                    <label for="costexclude">Cost Exclude :</label>
+                                    <select name="cost_exclude[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Exclude Values </option>
+                                        @php 
+                                        $ecost_exclude = json_decode($edittour->cost_exclude);
+                                        @endphp
+                                        @if(!empty($edittour->cost_exclude))
+                                       @foreach($costexclude as $key=> $coste)
+                                        <option value="{{ $coste->cost_exclude }}" @if(!empty($ecost_exclude))@foreach($ecost_exclude as $ecost_excludes){{$ecost_excludes==$coste->cost_exclude?'selected':''}} @endforeach @endif>{{$key+1}}.{{ $coste->cost_exclude  }}</option>
+                                        @endforeach
+                                        @endif
+                                    </select>
 
                                 </div>
                             </div>
@@ -634,7 +652,7 @@
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
     <script src="{{ asset('assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
     <script type='text/javascript'>
       

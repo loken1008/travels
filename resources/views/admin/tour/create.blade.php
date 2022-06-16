@@ -188,25 +188,28 @@
                             @enderror
                         </div>
                         <hr>
-                        <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
                         <div class="row">
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="costinclude">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
-                                        {{ old('cost_include') }}
-                                    </textarea>
+                                    <label for="costexclude">Cost Include :</label>
+                                    <select name="cost_include[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Include Values</option>
+                                       @foreach($costinclude as $key=> $costi)
+                                        <option value="{{ $costi->cost_include }}">{{$key+1}}.{{ $costi->cost_include }}</option>
+                                        @endforeach
+                                    </select>
 
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
-                                        {{ old('cost_exclude') }}
-                                  </textarea>
+                                    <select name="cost_exclude[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                        <option value="">Select Cost Exclude Values </option>
+                                       @foreach($costexclude as $key=> $coste)
+                                        <option value="{{ $coste->cost_exclude }}">{{$key+1}}.{{ $coste->cost_exclude  }}</option>
+                                        @endforeach
+                                    </select>
 
                                 </div>
                             </div>

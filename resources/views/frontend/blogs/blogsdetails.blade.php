@@ -223,7 +223,7 @@
                                 <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="">
                                 <div class="tex">
                                     <h5><a
-                                            href="{{ route('blogsdetails', $getblog->blog_title) }}">{{ $getblog->blog_title }}</a>
+                                            href="{{ route('blogsdetails', Str::slug($getblog->blog_title)) }}">{{ $getblog->blog_title }}</a>
                                     </h5>
                                 </div>
                             </div>
