@@ -148,7 +148,16 @@
                                                             id="collapseExamplecost{{ $getTourdetails->id }}"
                                                             style="padding-left:24px;padding-top:10px !important">
 
-                                                            {!! $getTourdetails->cost_include !!}
+                                                            @php 
+                                                            $cost_include = json_decode($getTourdetails->cost_include);
+                                                          @endphp
+                                                        <ul>
+                                                            @if(!empty($cost_include))
+                                                                @foreach($cost_include as $cost_include)
+                                                                    <li>{{ $cost_include }}</li>
+                                                                @endforeach
+                                                            @endif
+                                                        </ul>
                                                         </div>
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExampleexcludecost{{ $getTourdetails->id }}"
@@ -163,7 +172,16 @@
                                                             id="collapseExampleexcludecost{{ $getTourdetails->id }}"
                                                             style="padding-left:24px;padding-top:10px !important">
 
-                                                            {!! $getTourdetails->cost_exclude !!}
+                                                            @php 
+                                                            $cost_exclude = json_decode($getTourdetails->cost_exclude);
+                                                          @endphp
+                                                        <ul>
+                                                            @if(!empty($cost_exclude))
+                                                                @foreach($cost_exclude as $cost_exclude)
+                                                                    <li>{{ $cost_exclude }}</li>
+                                                                @endforeach
+                                                            @endif
+                                                        </ul>
                                                         </div>
 
 
