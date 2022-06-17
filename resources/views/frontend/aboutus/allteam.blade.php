@@ -34,7 +34,7 @@
     <!-- Inner Section End -->
 
     <!-- Contact Section Start -->
-    <section class="contact-section pt-90 pb-0">
+    <section class="contact-section pt-90 pb-80">
         <div class="container">
             <h2 class="text-dark">Our Experienced and Skilled Team</span></h2>
             @foreach ($getteamdetails as $teamdetails)

@@ -26,11 +26,11 @@ class IndexController extends Controller
     public function homePage()
     {
         $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
-        $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
+        $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->whereRaw('LENGTH(description) > ?', [50])->get();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
-        $chooseus=ChooseUs::orderBy('id','desc')->limit(3)->get();
+        $chooseus=ChooseUs::orderBy('id','asc')->limit(3)->get();
         $gallery=Gallery::orderBy('id','desc')->limit(6)->get();
         $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
         $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();

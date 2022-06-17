@@ -140,7 +140,7 @@ header.header .container {
 
 .header .navbar-nav li li:hover a,
 .header .navbar-nav li.mega-menu .menu-item>li:hover>a {
-    background: #ffcd22;
+    background: #F5A13A;
     color: #fff;
     font-size: 14px;
 }
@@ -237,7 +237,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
 .dropdown-item:active,
 .dropdown-item:hover {
     color: #fff;
-    background-color: #255669;
+    background-color: #0E4D94;
 }
 
 .menu-item .dropdown-item i {
@@ -310,7 +310,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background: #ffcd22;
+    background: #F5A13A;
     color: #ffffff;
 }
 
@@ -326,7 +326,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
 .dropdown-buttons .btn-group .btn:hover,
 .dropdown-buttons .btn-group .btn.active,
 .dropdown-buttons .btn-group .btn:active {
-    background: #ffcd22;
+    background: #F5A13A;
     color: #fff;
 }
 
@@ -408,7 +408,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     position: absolute;
     text-align: center;
     margin-top: 0px;
-    background: #ffcd22;
+    background: #F5A13A;
     color: #fff;
     cursor: pointer;
     -webkit-transition: all 0.2s ease-in-out;
@@ -492,7 +492,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
 /* Menu Hover & Amination Style Css */
 
 .bg-transparent {
-    z-index: 22;
+    z-index: 8;
     position: absolute;
     width: 100%;
     left: 0;
@@ -536,19 +536,19 @@ ul.navbar-nav li.nav-item.mega-menu div.dropdown-menu .menu-item a.dropdown-item
 .header .menu-style.bg-transparent .navbar-nav li.active a.nav-link,
 .header .menu-style.bg-transparent .navbar-nav li:focus a.nav-link,
 .header .menu-style.bg-transparent .navbar-nav li:hover a.nav-link {
-    color: #ffcd22;
+    color: #F5A13A;
 }
 
 .header .menu-style .navbar-nav li.active a.nav-link,
 .header .menu-style .navbar-nav li:focus a.nav-link,
 .header .menu-style .navbar-nav li:hover a.nav-link {
-    color: #ffcd22;
+    color: #F5A13A;
 }
 
 .header .menu-style.menu-hover-1 .navbar-nav li.active a.nav-link,
 .header .menu-style.menu-hover-1 .navbar-nav li:focus a.nav-link,
 .header .menu-style.menu-hover-1 .navbar-nav li:hover a.nav-link {
-    background: #ffcd22;
+    background: #F5A13A;
     color: #fff;
 }
 
