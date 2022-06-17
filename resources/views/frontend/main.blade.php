@@ -127,6 +127,8 @@
         }
 
     </style>
+     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" async="async"></script>
+
 </head>
 
 <body>
@@ -172,9 +174,7 @@ Main JavaScript
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
-    <!--Start of Tawk.to Script-->
- <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+   
 <!-- Begin widget code -->
 {{-- tripadvisor --}}
 <script>
@@ -197,6 +197,8 @@ document.getElementsByTagName("head")[0].appendChild(script);
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+
+    <!--End of Tawk.to Script-->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
 <script>
@@ -206,7 +208,6 @@ document.getElementsByTagName("head")[0].appendChild(script);
 
   gtag('config', 'G-5EJF8NFWL9');
 </script>
-    <!--End of Tawk.to Script-->
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
