@@ -19,7 +19,8 @@
         "pusher/pusher-php-server": "^7.0",
         "spatie/laravel-newsletter": "^4.11",
         "spatie/laravel-permission": "^5.5",
-        "unisharp/laravel-filemanager": "^2.4"
+        "unisharp/laravel-filemanager": "^2.4",
+        "digitaldream/laravel-seo-tools": "1.*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

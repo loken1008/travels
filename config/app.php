@@ -179,6 +179,8 @@ return [
         App\Providers\ViewServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        SEO\SeoServiceProvider::class
+
 
     ],
 
@@ -236,6 +238,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        
+
+
     ],
 
 ];

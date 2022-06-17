@@ -46,4 +46,8 @@ class User extends Authenticatable
     {
         return 'booking'.$this->id;
     }
+    public function isSuperAdmin()
+    {
+        return true;
+    }
 }

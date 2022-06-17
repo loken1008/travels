@@ -17,6 +17,7 @@ use App\Models\FQA;
 use Carbon\Carbon;
 use App\Http\Requests\TourStoreRequest;
 use Illuminate\Support\Facades\Storage;
+use SEO\Seo;
 
 class TourController extends Controller
 {
@@ -42,6 +43,7 @@ class TourController extends Controller
     // }
     public function createTour()
     {
+        $model=new Tour;
         $getplace = Place::orderBy('place_name', 'asc')->get();
         $getcountry = Country::orderBy('country_name', 'asc')
             ->where('status', '=', '1')
@@ -50,7 +52,7 @@ class TourController extends Controller
         $getsubcategory=Subcategory::orderBy('sub_category_name','asc')->get();
         return view(
             'admin.tour.create',
-            compact('getcountry', 'getplace', 'getcategory', 'getsubcategory')
+            compact('getcountry', 'getplace', 'getcategory', 'getsubcategory','model')
         );
     }
 
@@ -62,6 +64,15 @@ class TourController extends Controller
 
     public function storeTour(TourStoreRequest $request)
     {
+        
+    $model=new Tour;
+    $t=$model->fill($request->except('start_date','end_date','seats_available','price','equipment_name','equipment_description','day_title','long_description','question','answer','images'));
+    // dd($t);
+     if ($t->save()) {
+        Seo::save($model, route('tour.viewdetails', $model->country_id), [
+            'country_id' => $model->country_id,
+        ]);
+       }
         $tour_id = Tour::insertGetId([
             'country_id' => $request->country_id,
             'place_id' => rand(1, 100),

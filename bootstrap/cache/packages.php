@@ -21,6 +21,16 @@
       'WebSocketRouter' => 'BeyondCode\\LaravelWebSockets\\Facades\\WebSocketRouter',
     ),
   ),
+  'digitaldream/laravel-seo-tools' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'SEO\\SeoServiceProvider',
+    ),
+    'aliases' => 
+    array (
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

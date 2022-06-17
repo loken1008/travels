@@ -23,7 +23,7 @@ class AdminSeeder extends Seeder
             'password'=>Hash::make('password') //password
         ]);
     
-        $role = Role::create(['name' => 'admin']);
+        $role = Role::create(['name' => 'isSuperAdmin']);
      
         $permissions = Permission::pluck('id','id')->all();
    
