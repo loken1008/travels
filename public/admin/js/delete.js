@@ -58,13 +58,13 @@ $(function() {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Trashed it!'
+            confirmButtonText: 'Yes, Restore it!'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = link;
                 Swal.fire(
-                    'Trashed!',
-                    'Your file has been move to trashed.',
+                    'Restore!',
+                    'Your file has been restore.',
                     'success'
                 )
             }
