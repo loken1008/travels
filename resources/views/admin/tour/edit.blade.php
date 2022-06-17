@@ -175,7 +175,8 @@
                                 <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <a id="elfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <a id="elfm" data-input="thumbnail" data-preview="holder"
+                                            class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
@@ -213,50 +214,57 @@
                         </div>
                         <hr>
                         <div class="row">
-                            @php 
-                                        $ecost_include =json_decode($edittour->cost_include);
-                                        // dd($ecost_include);
-                                        @endphp
+                            @php
+                                $ecost_include = json_decode($edittour->cost_include);
+                                // dd($ecost_include);
+                            @endphp
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Include :</label>
-                                    <select name="cost_include[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                    <select name="cost_include[]" multiple id="" class="form-control"
+                                        style="overflow: auto;height:140px">
                                         <option value="">Select Cost Include Values</option>
-                                       
-                                      
-                                        @if(!empty($edittour->cost_include))
-                                       @foreach($costinclude as $key=> $costi)
-                                        <option value="{{ $costi->cost_include }}" @if(!empty($ecost_include ))@foreach($ecost_include as $ecost_includes){{$ecost_includes==$costi->cost_include?'selected':''}} @endforeach @endif>
-                                            {{$key+1}}.{{ $costi->cost_include  }}
-                                        </option>
-                                        @endforeach
+
+
+                                        @if (!empty($edittour->cost_include))
+                                            @foreach ($costinclude as $key => $costi)
+                                                <option value="{{ $costi->cost_include }}"
+                                                    @if (!empty($ecost_include)) @foreach ($ecost_include as $ecost_includes){{ $ecost_includes == $costi->cost_include ? 'selected' : '' }} @endforeach @endif>
+                                                    {{ $key + 1 }}.{{ $costi->cost_include }}
+                                                </option>
+                                            @endforeach
                                         @endif
                                     </select>
-
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cibd-example-modal-lg">Add Cost Include</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecibd-example-modal-lg">Update Cost Include</a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <select name="cost_exclude[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                    <select name="cost_exclude[]" multiple id="" class="form-control"
+                                        style="overflow: auto;height:140px">
                                         <option value="">Select Cost Exclude Values </option>
-                                        @php 
-                                        $ecost_exclude = json_decode($edittour->cost_exclude);
+                                        @php
+                                            $ecost_exclude = json_decode($edittour->cost_exclude);
                                         @endphp
-                                        @if(!empty($edittour->cost_exclude))
-                                       @foreach($costexclude as $key=> $coste)
-                                        <option value="{{ $coste->cost_exclude }}" @if(!empty($ecost_exclude))@foreach($ecost_exclude as $ecost_excludes){{$ecost_excludes==$coste->cost_exclude?'selected':''}} @endforeach @endif>{{$key+1}}.{{ $coste->cost_exclude  }}</option>
-                                        @endforeach
+                                        @if (!empty($edittour->cost_exclude))
+                                            @foreach ($costexclude as $key => $coste)
+                                                <option value="{{ $coste->cost_exclude }}"
+                                                    @if (!empty($ecost_exclude)) @foreach ($ecost_exclude as $ecost_excludes){{ $ecost_excludes == $coste->cost_exclude ? 'selected' : '' }} @endforeach @endif>
+                                                    {{ $key + 1 }}.{{ $coste->cost_exclude }}</option>
+                                            @endforeach
                                         @endif
                                     </select>
-
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cebd-example-modal-lg">Add Cost Exclude</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecebd-example-modal-lg">Update Cost Exclude</a>
                                 </div>
                             </div>
                         </div>
                         <hr>
                         {{-- dateprice --}}
 
-                     
+
                         @foreach ($edittour->dateprice as $key => $dateprice)
                             <h6 class="font-weight-bold">Dates/Price {{ $key + 1 }} Section</h6>
                             <div class="row dateprice" id="dynamicAddRemove">
@@ -265,25 +273,24 @@
                                     <div class="form-group">
                                         <label for="firstName5">Start Date :</label>
                                         <input class="form-control" id="firstName5" "
-                                                                name=" start_date[]" type="date"
-                                            value="{{ $dateprice->start_date }}">
+                                                                    name=" start_date[]" type="date"
+                                                value="{{ $dateprice->start_date }}">
 
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="firstName5"> End Date :</label>
-                                        <input class="form-control" id="firstName5" "
-                                                                name=" end_date[]" type="date"
-                                            value="{{ $dateprice->end_date }}">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstName5"> End Date :</label>
+                                            <input class="form-control" id="firstName5" " name=" end_date[]"
+                                            type="date" value="{{ $dateprice->end_date }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstName5">Seats Available :</label>
-                                        <input type="text" class="form-control" id="firstName5" name="seats_available[]"
-                                            value="{{ $dateprice->seats_available }}">
+                                        <input type="text" class="form-control" id="firstName5"
+                                            name="seats_available[]" value="{{ $dateprice->seats_available }}">
 
 
                                     </div>
@@ -298,9 +305,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('dateprice.delete',$dateprice->id)}}" class="btn btn-warning mt-1"
-                                style="width:5rem;" id="delete" title="trash"><i
-                                    class="fa fa-trash"></i></a>
+                            <a href="{{ route('dateprice.delete', $dateprice->id) }}" class="btn btn-warning mt-1"
+                                style="width:5rem;" id="delete" title="trash"><i class="fa fa-trash"></i></a>
                         @endforeach
                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                             Add More Dates/Price
@@ -319,8 +325,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstName5">Equipment Name :</label>
-                                        <input type="text" class="form-control" id="firstName5" name="equipment_name[]"
-                                            value="{{ $equipment->equipment_name }}">
+                                        <input type="text" class="form-control" id="firstName5"
+                                            name="equipment_name[]" value="{{ $equipment->equipment_name }}">
 
 
                                     </div>
@@ -336,11 +342,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('equipment.delete',$equipment->id)}}" class="btn btn-warning mt-1"
-                                style="width:5rem;" id="delete" title="trash"><i
-                                    class="fa fa-trash"></i></a>
+                            <a href="{{ route('equipment.delete', $equipment->id) }}" class="btn btn-warning mt-1"
+                                style="width:5rem;" id="delete" title="trash"><i class="fa fa-trash"></i></a>
                         @endforeach
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLongequipment">
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLongequipment">
                             Add More Equipments
                         </a>
                         <hr>
@@ -363,7 +369,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstName6"> Long Description :</label>
-                                        <textarea id="editor6" name="long_description[]" rows="10" cols="80" value="{{ $itineries->long_description }}">
+                                        <textarea id="editor6" name="long_description[]" rows="10" cols="80"
+                                            value="{{ $itineries->long_description }}">
                                         {{ $itineries->long_description }}
                                     </textarea>
 
@@ -371,11 +378,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('itineries.delete',$itineries->id)}}" class="btn btn-warning mt-1"
-                                style="width:5rem;" id="delete" title="trash"><i
-                                    class="fa fa-trash"></i></a>
+                            <a href="{{ route('itineries.delete', $itineries->id) }}" class="btn btn-warning mt-1"
+                                style="width:5rem;" id="delete" title="trash"><i class="fa fa-trash"></i></a>
                         @endforeach
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLongitineries">
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLongitineries">
                             Add More Itineries
                         </a>
                         <hr>
@@ -405,11 +412,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('faq.delete',$fqas->id)}}" class="btn btn-warning mt-1"
-                                style="width:5rem;" id="delete" title="trash"><i
-                                    class="fa fa-trash"></i></a>
+                            <a href="{{ route('faq.delete', $fqas->id) }}" class="btn btn-warning mt-1"
+                                style="width:5rem;" id="delete" title="trash"><i class="fa fa-trash"></i></a>
                         @endforeach
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLongfaq">
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLongfaq">
                             Add More FAQ
                         </a>
                         <hr>
@@ -437,16 +444,16 @@
                                             <div class="form-group">
                                                 <label for="firstName5">Start Date :</label>
                                                 <input class="form-control" id="firstName5" "
-                                                                    name=" start_date[]" type="date">
+                                                                        name=" start_date[]" type="date">
 
 
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="firstName5"> End Date :</label>
-                                                <input class="form-control" id="firstName5" "
-                                                                    name=" end_date[]" type="date">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="firstName5"> End Date :</label>
+                                                    <input class="form-control" id="firstName5" " name=" end_date[]"
+                                                    type="date">
 
                                             </div>
                                         </div>
@@ -462,7 +469,8 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="firstName5"> Price :</label>
-                                                <input type="text" class="form-control" id="firstName5" name="price[]">
+                                                <input type="text" class="form-control" id="firstName5"
+                                                    name="price[]">
 
 
                                             </div>
@@ -594,55 +602,58 @@
                 </div>
 
                 <div class="modal fade" id="exampleModalLongfaq" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content bg-white">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add FAQ</h5>
-                            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </a>
-                        </div>
-                        <form action="{{ route('tour.faq', $edittour->id) }}" method="post">
-                            @csrf
-                            <input type="hidden" name="tour_id" value="{{ $edittour->id }}">
-                            <div class="modal-body">
-                                <div class="row" id="faqAdd">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="question">Question :</label>
-                                            <input type="text" class="form-control" id="question" name="question[]"
-                                               >
-    
+                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content bg-white">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add FAQ</h5>
+                                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </a>
+                            </div>
+                            <form action="{{ route('tour.faq', $edittour->id) }}" method="post">
+                                @csrf
+                                <input type="hidden" name="tour_id" value="{{ $edittour->id }}">
+                                <div class="modal-body">
+                                    <div class="row" id="faqAdd">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="question">Question :</label>
+                                                <input type="text" class="form-control" id="question"
+                                                    name="question[]">
+
+                                            </div>
                                         </div>
-                                    </div>
-    
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="answer"> Answer :</label>
-                                            <textarea name="answer[]" rows="10" cols="80" >
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="answer"> Answer :</label>
+                                                <textarea name="answer[]" rows="10" cols="80">
                                            
                                         </textarea>
-    
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="">
-                                <a href="javascript:void(0)" id="faq-add"
-                                    class="btn btn-success pull-right mr-3 addMore"></span>
-                                    Add More</a>
-                            </div>
-                            <hr>
-                            <div class="modal-footer" style="float:right;width:100%">
+                                <div class="">
+                                    <a href="javascript:void(0)" id="faq-add"
+                                        class="btn btn-success pull-right mr-3 addMore"></span>
+                                        Add More</a>
+                                </div>
+                                <hr>
+                                <div class="modal-footer" style="float:right;width:100%">
 
-                                <input type="submit" class="btn btn-primary" value="Add FAQ"
-                                    style="float: right">
-                            </div>
-                        </form>
+                                    <input type="submit" class="btn btn-primary" value="Add FAQ" style="float: right">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+                @include('admin.costdetails.costinclude')
+                @include('admin.costdetails.costexclude')
+                @include('admin.costdetails.costincludeedit')
+                @include('admin.costdetails.costexcludeedit')
             </div>
             <!-- /.box-body -->
         </div>
@@ -654,9 +665,7 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
     <script src="{{ asset('assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
-    <script type='text/javascript'>
-      
-    </script>
+    <script type='text/javascript'></script>
     <script>
         var route_prefix = "/mountainguide-filemanager";
         $('#elfm').filemanager('images', {
@@ -665,9 +674,9 @@
     </script>
 
     <script>
-          CKEDITOR.replaceAll();
-       
-          //  filemanager 
+        CKEDITOR.replaceAll();
+
+        //  filemanager 
         var route_prefix = "/mountainguide-filemanager";
         $('#elfms').filemanager('images', {
             prefix: route_prefix
@@ -678,8 +687,8 @@
             filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
             filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
         };
-        
+
         CKEDITOR.replace('my-editor', options);
     </script>
-   
+
 @endsection

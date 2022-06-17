@@ -146,3 +146,35 @@ $("#faq-add").click(function(e) {
 $(document).on('click', '.remove_field', function() {
     $(this).parents('.efaqcopy').remove();
 });
+
+// costincludes
+$("#addMoreCostinclude").click(function(e) {
+
+
+    x++;
+    $("#costincludeAdd").append(
+        '<div class="ecostncludecopy"> <div class="col-md-12 mt-4"> <div class="form-group"> <input type="text" class="form-control" id ="costinclude" name="cost_include[]" /> </div > </div > <div class= "" >  <a href="#"class="removecostinclude_field btn btn-rounded btn-danger pull-right" style="float:left;margin-bottom:10px"> Remove </a> </div> </div> '
+    ); //add input box
+
+});
+
+
+$(document).on('click', '.removecostinclude_field', function() {
+    $(this).parents('.ecostncludecopy').remove();
+});
+
+// costexlude
+$("#addMoreCostexclude").click(function(e) {
+
+
+    x++;
+    $("#costexcludeAdd").append(
+        '<div class="ecostexcludecopy"> <div class="col-md-12 mt-4"> <div class="form-group"> <input type="text" class="form-control" id ="costinclude" name="cost_exclude[]" /> </div > </div > <div class= "" >  <a href="#"class="removecostexclude_field btn btn-rounded btn-danger pull-right" style="float:left;margin-bottom:10px"> Remove </a> </div> </div> '
+    ); //add input box
+
+});
+
+
+$(document).on('click', '.removecostexclude_field', function() {
+    $(this).parents('.ecostexcludecopy').remove();
+});
