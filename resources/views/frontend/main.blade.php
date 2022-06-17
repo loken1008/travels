@@ -204,7 +204,15 @@ document.getElementsByTagName("head")[0].appendChild(script);
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-5EJF8NFWL9');
+</script>
     <!--End of Tawk.to Script-->
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

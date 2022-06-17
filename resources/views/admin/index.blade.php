@@ -17,6 +17,7 @@ $gallery=App\Models\Gallery::count();
         <section class="content">
             <div class="row">
                 <div class="col-xl-2 col-6">
+                   <a href="{{route('tour.view')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-primary-light rounded w-60 h-60">
@@ -29,8 +30,10 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                </a>
                 </div>
                 <div class="col-xl-2 col-6">
+                    <a href="{{route('all.category')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-warning-light rounded w-60 h-60">
@@ -43,8 +46,10 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-xl-2 col-6">
+                    <a href="{{route('country.view')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-info-light rounded w-60 h-60">
@@ -57,22 +62,11 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
+                
                 <div class="col-xl-2 col-6">
-                    <div class="box overflow-hidden pull-up">
-                        <div class="box-body">
-                            <div class="icon bg-info-light rounded w-60 h-60">
-                                <i class="fa fa-address-book"></i>
-                            </div>
-                            <div>
-                                <p class="text-dark mt-20 mb-0 font-size-16">Total Place</p>
-                                <h3 class="text-black mb-0 font-weight-500">{{$places}}
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-6">
+                    <a href="{{route('showbooking.view')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-danger-light rounded w-60 h-60">
@@ -85,8 +79,10 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-xl-2 col-6">
+                    <a href="{{route('blog.view')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-success-light rounded w-60 h-60">
@@ -99,8 +95,10 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-xl-2 col-6">
+                    <a href="{{route('all.gallery')}}">
                     <div class="box overflow-hidden pull-up">
                         <div class="box-body">
                             <div class="icon bg-light rounded w-60 h-60">
@@ -113,6 +111,7 @@ $gallery=App\Models\Gallery::count();
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
              
             </div>

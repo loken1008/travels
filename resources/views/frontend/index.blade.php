@@ -234,7 +234,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="#">{{ $choose->title }}</a></h3>
-                                <p>{!! Str::limit($choose->description, 200, '.') !!}</p>
+                                <p>{!! Str::limit($choose->description, 100, '.') !!}</p>
                             </div>
                         </div>
                     </div>
