@@ -101,9 +101,10 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     color: #333;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 0;
     letter-spacing: 0.4px;
     text-transform: capitalize;
@@ -378,7 +379,8 @@ input:-moz-placeholder {
 }
 
 .ffly-title {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
 }
 
 .ffly-p {
@@ -418,7 +420,8 @@ input:-moz-placeholder {
 
 .section-title h2 {
     color: #363d48;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 36px;
     font-weight: 600;
     letter-spacing: 0.8px;
@@ -432,7 +435,8 @@ input:-moz-placeholder {
 }
 
 .section-title h6 {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #989898;
@@ -474,7 +478,7 @@ input:-moz-placeholder {
 }
 
 .inner-title h2 {
-    color: #255669;
+    color: #0E4D94;
     font-size: 36px;
     font-weight: 600;
     letter-spacing: 0.9px;
@@ -511,7 +515,7 @@ input:-moz-placeholder {
 }
 
 .sec-line:before {
-    background-color: #255669;
+    background-color: #0E4D94;
     content: "";
     height: 2px;
     position: absolute;
@@ -519,7 +523,7 @@ input:-moz-placeholder {
 }
 
 .line-center.sec-line {
-    background-color: #255669;
+    background-color: #0E4D94;
     margin: 0 auto 30px;
 }
 
@@ -895,8 +899,8 @@ a.scrollup:focus i {
 }
 
 .header .main-navigation.animated .navbar-nav li a {
-    font-family: 'Lora', serif;
-    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     letter-spacing: 1px;
     padding: 22px 28px 18px 14px;
     text-transform: uppercase;
@@ -986,7 +990,7 @@ a.dropdown-item.active {
 /*Fixed Header*/
 
 .header .fixed-header {
-    background-color: #255669;
+    background-color: #0E4D94;
     box-shadow: 0 0 18px 1px rgba(0, 0, 0, 0.5);
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -1014,7 +1018,8 @@ a.dropdown-item.active {
 .header-btn a {
     background-color: #F5A13A;
     color: #fff;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.8px;
@@ -1096,7 +1101,8 @@ a.dropdown-item.active {
 .dropdown-buttons .menu-search-box form .form-group,
 .dropdown-buttons .menu-search-box form .form-group .form-control {
     border-radius: 0;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -1146,7 +1152,8 @@ a.dropdown-item.active {
 
 .header .btn-group .product-item {
     border-bottom: 1px solid #eee;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     margin-bottom: 12px;
     padding-bottom: 24px;
 }
@@ -1176,7 +1183,7 @@ a.dropdown-item.active {
 }
 
 .header .btn-group .product-item span {
-    color: #255669;
+    color: #0E4D94;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.6px;
@@ -1184,7 +1191,7 @@ a.dropdown-item.active {
 }
 
 .header .btn-group .product-item .btn-theme {
-    background-color: #255669;
+    background-color: #0E4D94;
     border-radius: 50px;
     color: #fff;
     float: right;
@@ -1193,7 +1200,7 @@ a.dropdown-item.active {
 }
 
 .header .btn-group .product-item .btn-theme:hover {
-    background-color: #255669;
+    background-color: #0E4D94;
     color: #fff;
 }
 
@@ -1432,7 +1439,8 @@ a.dropdown-item.active {
     color: #091426;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     letter-spacing: 3.8px;
     padding: 12px 30px;
     text-transform: uppercase;
@@ -1527,7 +1535,7 @@ a.dropdown-item.active {
     color: #fff;
     letter-spacing: 0.4px;
     font-size: 60px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     max-width: 590px !important;
     line-height: 82px;
@@ -1612,7 +1620,8 @@ a.dropdown-item.active {
 
 .package-box h1 {
     color: #fff;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 60px;
     font-weight: 700;
     letter-spacing: 0.4px;
@@ -1635,7 +1644,7 @@ a.dropdown-item.active {
 }
 
 .package-box a {
-    background-color: #255669;
+    background-color: #0E4D94;
     color: #fff;
     display: inline-block;
     font-size: 16px;
@@ -2255,7 +2264,7 @@ canvas {
 
 .icon-wrp .icon-box:nth-child(2) i,
 .icon-wrp .icon-box:nth-child(2) a {
-    color: #255669;
+    color: #0E4D94;
 }
 
 .icon-wrp .icon-box:nth-child(3) i,
@@ -2348,7 +2357,7 @@ canvas {
 }
 
 .special-places .content .title-box h4 {
-    color: #255669;
+    color: #0E4D94;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -2382,7 +2391,7 @@ canvas {
 }
 
 .special-places .content .info li:nth-child(3) a {
-    color: #255669;
+    color: #0E4D94;
 }
 
 .special-places .content .info li a {
@@ -2433,10 +2442,10 @@ canvas {
 /*.special-places:hover .content .btn-theme {*/
 
 
-/*background-color: #255669;*/
+/*background-color: #0E4D94;*/
 
 
-/*border-color: #255669;*/
+/*border-color: #0E4D94;*/
 
 
 /*color: #fff;*/
@@ -2498,7 +2507,7 @@ canvas {
 }
 
 .tab-style .nav.nav-tabs .nav-item {
-    background-color: #255669;
+    background-color: #0E4D94;
     border: medium none;
     border-radius: 0;
     color: #fff;
@@ -2516,7 +2525,7 @@ canvas {
 .tab-style .nav.nav-tabs .nav-item:hover,
 .tab-style .nav.nav-tabs .nav-item:focus,
 .tab-style .nav.nav-tabs .nav-item.active {
-    background-color: #df2b18;
+    background-color: #F5A13A;
 }
 
 .owl-navst.st-two.owl-theme .owl-nav {
@@ -2526,7 +2535,7 @@ canvas {
 
 .owl-navst.st-two.owl-theme .owl-nav .owl-prev,
 .owl-navst.st-two.owl-theme .owl-nav .owl-next {
-    background-color: #255669;
+    background-color: #0E4D94;
     border-radius: 0;
     height: 47px;
     line-height: 45px;
@@ -2670,7 +2679,7 @@ canvas {
 }
 
 .special-packages .content .info li:nth-child(3) a {
-    color: #255669;
+    color: #0E4D94;
 }
 
 .special-packages .content .info li a {
@@ -2715,7 +2724,7 @@ canvas {
 }
 
 .special-packages .content .small-hotel .text h5 {
-    color: #255669;
+    color: #0E4D94;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 0;
@@ -2750,7 +2759,7 @@ canvas {
 }
 
 .special-packages .content .small-hotel .text .map-viw i {
-    color: #255669;
+    color: #0E4D94;
     margin-right: 6px;
 }
 
@@ -2808,10 +2817,10 @@ canvas {
 /*.special-packages:hover .content .btn-theme {*/
 
 
-/*background-color: #255669;*/
+/*background-color: #0E4D94;*/
 
 
-/*border-color: #255669;*/
+/*border-color: #0E4D94;*/
 
 
 /*color: #fff;*/
@@ -2873,7 +2882,8 @@ canvas {
 }
 
 .special-packages.dtl-st .content p {
-    font-size: 14px;
+    font-size: 16px;
+    word-spacing: 2px;
     margin-bottom: 0px;
     margin-top: 0px;
     color: #605c5c;
@@ -2947,7 +2957,7 @@ canvas {
 .latest-hotel .thumb:before {
     position: absolute;
     content: "";
-    /* background-color: #255669; */
+    /* background-color: #0E4D94; */
     width: 100%;
     height: 100%;
     bottom: -14px;
@@ -2965,7 +2975,7 @@ canvas {
 }
 
 .latest-hotel .content h4 {
-    color: #255669;
+    color: #0E4D94;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -3002,7 +3012,7 @@ canvas {
 }
 
 .latest-hotel .content ul li:nth-child(6) a:hover {
-    color: #255669;
+    color: #0E4D94;
 }
 
 .latest-hotel .content p {
@@ -3012,9 +3022,10 @@ canvas {
 }
 
 .latest-hotel .content .map-viw {
-    color: #255669;
+    color: #0E4D94;
     display: inline-block;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 11px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -3028,7 +3039,7 @@ canvas {
 }
 
 .latest-hotel .content h3 {
-    color: #255669;
+    color: #0E4D94;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-style: italic;
@@ -3042,7 +3053,7 @@ canvas {
 }
 
 .latest-hotel .content .btn-theme {
-    background-color: #255669;
+    background-color: #0E4D94;
     border-radius: 40px;
     display: inline-block;
     font-size: 12px;
@@ -3353,8 +3364,8 @@ Testimonials Css Style
 
 .owl-navst.st-three.owl-theme .owl-nav .owl-prev:hover,
 .owl-navst.st-three.owl-theme .owl-nav .owl-next:hover {
-    background-color: #255669;
-    border: 1px solid #255669;
+    background-color: #0E4D94;
+    border: 1px solid #0E4D94;
     color: #fff;
 }
 
@@ -3383,7 +3394,7 @@ Testimonials Css Style
 }
 
 .testimonial-video .sec-line:before {
-    background-color: #255669;
+    background-color: #0E4D94;
 }
 
 .testimonial-video h3 {
@@ -3401,7 +3412,7 @@ Testimonials Css Style
 }
 
 .testimonial-video .btn-theme {
-    background-color: #255669;
+    background-color: #0E4D94;
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
@@ -3480,7 +3491,7 @@ App Css Style
 }
 
 .app-section .btn-theme {
-    background-color: #255669;
+    background-color: #0E4D94;
     border-radius: 25px;
     color: #fff;
     display: inline-block;
@@ -3637,7 +3648,7 @@ Blog Css Style
 }
 
 .blog-post .read-btn {
-    background-color: #255669;
+    background-color: #0E4D94;
     border-top: 1px solid #eee;
     bottom: 0;
     color: #fff;
@@ -3788,7 +3799,8 @@ Blog Css Style
 .blog-details .details-content .btn-box a {
     background-color: #F5A13A;
     color: #fff;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     padding: 8px 18px;
     text-transform: uppercase;
 }
@@ -3877,7 +3889,8 @@ Blog Css Style
 .blog-details .form-control {
     border: 1px solid #eee;
     font-weight: 500;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     height: 54px;
     letter-spacing: 0.6px;
     text-transform: capitalize;
@@ -3889,7 +3902,8 @@ Blog Css Style
 
 .blog-details .btn.btn-theme {
     border-radius: 50px;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
 }
 
 
@@ -3899,13 +3913,13 @@ Contact Css Style
 
 .contact-section .contact-bg {
     background-color: #fff;
-    border: 5px solid #255669;
+    border: 5px solid #0E4D94;
     padding: 0;
     position: relative;
 }
 
 .contact-text {
-    background-color: #255669;
+    background-color: #0E4D94;
     height: 100%;
     padding: 40px 34px 64px;
 }
@@ -3995,15 +4009,15 @@ Form Control Css Style
 .booking-form nav {}
 
 .booking-form .nav.nav-tabs {
-    background-color: #255669;
-    border-bottom: 1px solid #255669;
+    background-color: #0E4D94;
+    border-bottom: 1px solid #0E4D94;
     border-radius: 0;
     margin-right: -1px;
     padding: 0;
 }
 
 .booking-form .nav.nav-tabs .nav-item {
-    background-color: #255669;
+    background-color: #0E4D94;
     border: none;
     border-right: 1px solid #fff;
     border-radius: 0;
@@ -4014,11 +4028,12 @@ Form Control Css Style
     text-align: center;
     text-transform: uppercase;
     width: 33.334%;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
 }
 
 .booking-form .nav.nav-tabs .nav-item:last-child {
-    border-right: 1px solid #255669;
+    border-right: 1px solid #0E4D94;
 }
 
 .booking-form .nav.nav-tabs .nav-item.active {
@@ -4046,7 +4061,7 @@ Form Control Css Style
 }
 
 .booking-form .form-row .info-text p {
-    color: #255669;
+    color: #0E4D94;
     font-size: 14px;
     letter-spacing: 1px;
 }
@@ -4063,7 +4078,8 @@ Form Control Css Style
     border-color: -moz-use-text-color -moz-use-text-color #ddd;
     border-style: none none solid;
     border-width: medium medium 1px;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     height: 52px;
     margin-bottom: 40px;
     text-transform: capitalize;
@@ -4117,7 +4133,8 @@ Form Control Css Style
 .style-2 .btn-transparent,
 .style-2 .btn-bordered {
     border-radius: 50px;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     padding: 12px 24px;
 }
 
@@ -4343,7 +4360,8 @@ Funfact Css Style
 
 .video-sec h2 {
     color: #fff;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 40px;
     font-weight: 600;
     letter-spacing: 0.8px;
@@ -4418,7 +4436,7 @@ Global Css Style
 }
 
 .global-area h4 {
-    color: #255669;
+    color: #0E4D94;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -4430,7 +4448,8 @@ Global Css Style
     color: #656161;
     cursor: pointer;
     float: left;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -4460,7 +4479,7 @@ Global Css Style
 }
 
 .global-area ul li:nth-child(2):before {
-    border: 5px solid #255669;
+    border: 5px solid #0E4D94;
 }
 
 .global-area ul li:nth-child(3):before {
@@ -4472,7 +4491,7 @@ Global Css Style
 }
 
 .map-area {
-    background-color: #255669;
+    background-color: #0E4D94;
     margin-bottom: 15px;
     margin-top: 20px;
     padding-bottom: 5px;
@@ -4482,7 +4501,8 @@ Global Css Style
 
 .map-content {
     color: #1a1411;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 15px;
     letter-spacing: 0.4px;
     text-align: center;
@@ -4566,8 +4586,8 @@ Gallery Css Style
 }
 
 .gallery-item .thumb .overlay .icon {
-    background-color: #255669;
-    border: 1px solid #255669;
+    background-color: #0E4D94;
+    border: 1px solid #0E4D94;
     border-radius: 50%;
     display: inline-block;
     height: 40px;
@@ -4682,8 +4702,8 @@ Inner Css Style
 
 .inner-area h4 {
     color: #fff;
-    font-size: 58px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 400;
     letter-spacing: 0.9px;
     text-transform: uppercase;
     margin-top: 100px;
@@ -4691,7 +4711,8 @@ Inner Css Style
 
 .inner-area p {
     color: #e9e9e9;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 18px;
     letter-spacing: 0.8px;
     margin-top: 8px;
@@ -4879,7 +4900,8 @@ Shop Css Style
 /***Shop Search***/
 
 .theme-sidebar .search-sidebar .search-box {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
 }
 
 .theme-sidebar .search-sidebar .search-box .form-group {
@@ -5124,7 +5146,8 @@ Page Link Css Style
     border: 1px solid #eee;
     border-radius: 50%;
     display: inline-block;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 16px;
     height: 40px;
     line-height: 40px;
@@ -5189,7 +5212,8 @@ Page Link Css Style
     border: 1px solid #eee;
     border-radius: 0;
     color: #989898;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 16px;
     height: 36px;
     padding: 0 0 0 16px;
@@ -5354,7 +5378,8 @@ Contact Details Css Style
     background-color: #fbfbfb;
     border: 1px solid #5e5a5a;
     font-size: 16px;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-weight: 500;
     height: 56px;
     letter-spacing: 0.6px;
@@ -5364,8 +5389,14 @@ Contact Details Css Style
 
 .form-row textarea.form-control {
     background-color: #fbfbfb;
+<<<<<<< HEAD
     border: 1px solid #5e5a5a;
     font-family: 'Lora', serif;
+=======
+    border: 1px solid #eee;
+    font-family: "Roboto", sans-serif;
+    ;
+>>>>>>> 88d56b8e6210998c82ea295417d5fe502dc6146c
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.6px;
@@ -5378,7 +5409,8 @@ Contact Details Css Style
     border: 1px solid #F5A13A;
     border-radius: 0;
     color: #ffffff;
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-weight: 600;
     margin-top: 0;
     padding: 12px 24px;
@@ -5469,7 +5501,8 @@ Footer Css Style
 }
 
 .footer-item .subscribe-style-two .form-control.input-subscribe {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-size: 14px;
     font-weight: 600;
     height: 52px;
@@ -5495,7 +5528,8 @@ Footer Css Style
 }
 
 .footer-item .subscribe-style-two .btn-subscribe {
-    font-family: 'Lora', serif;
+    font-family: "Roboto", sans-serif;
+    ;
     font-weight: 700;
     height: 52px;
 }

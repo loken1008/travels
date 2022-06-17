@@ -395,7 +395,7 @@
                             <div class="d-flex mt-5">
                                 <h6 class="share-btn text-dark"> Share: </h6>
 
-                                <div class="addthis_inline_share_toolbox"></div>
+                                <div class="sharethis-inline-share-buttons"></div>
 
                             </div>
 

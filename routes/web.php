@@ -391,6 +391,18 @@ Route::middleware(['auth'])->group(function () {
         App\Http\Controllers\Admin\TourController::class,
         'changeStatus',
     ]);
+
+    Route::post('cost-include-store',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costincludeStore'])->name('costinclude.store');
+    Route::post('cost-include-update/{id}',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costincludeUpdate'])->name('costinclude.update');
+    Route::get('cost-include-delete/{id}',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costincludeDelete'])->name('costinclude.delete');
+
+
+    Route::post('cost-exclude-store',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costexcludeStore'])->name('costexclude.store');
+    Route::post('cost-exclude-update/{id}',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costexcludeUpdate'])->name('costexclude.update');
+    Route::get('cost-exclude-delete/{id}',[  App\Http\Controllers\Admin\CostIncludeExcludeController::class,'costexcludeDelete'])->name('costexclude.delete');
+
+
+
 });
     Route::get('/place/ajax/{category_id}', [
         App\Http\Controllers\Admin\TourController::class,

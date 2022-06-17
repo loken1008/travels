@@ -198,6 +198,8 @@
                                         <option value="{{ $costi->cost_include }}">{{$key+1}}.{{ $costi->cost_include }}</option>
                                         @endforeach
                                     </select>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cibd-example-modal-lg">Add Cost Include</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecibd-example-modal-lg">Update Cost Include</a>
 
                                 </div>
                             </div>
@@ -210,7 +212,8 @@
                                         <option value="{{ $coste->cost_exclude }}">{{$key+1}}.{{ $coste->cost_exclude  }}</option>
                                         @endforeach
                                     </select>
-
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cebd-example-modal-lg">Add Cost Exclude</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecebd-example-modal-lg">Update Cost Exclude</a>
                                 </div>
                             </div>
                         </div>
@@ -360,6 +363,12 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
+         @include('admin.costdetails.costinclude')
+         @include('admin.costdetails.costexclude')
+         @include('admin.costdetails.costincludeedit')
+         @include('admin.costdetails.costexcludeedit')
+
+
 
 
     </section>
