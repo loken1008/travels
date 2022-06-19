@@ -846,7 +846,7 @@ Route::get('/hotelviewdetails/{hotel_name}', [
     'hotelviewDetails',
 ])->name('hotelviewdetails');
 // subcategory related details
-Route::get('/tripdetails/{slug_name}', [
+Route::get('/tripdetails/{slug}', [
     App\Http\Controllers\User\CategoryController::class,
     'tripDetails',
 ])->name('tripdetails');
@@ -863,7 +863,7 @@ Route::get('/allblogs/', [
     App\Http\Controllers\User\BlogController::class,
     'allBlogs',
 ])->name('allblogs');
-Route::get('/blogsdetails/{blog_title}', [
+Route::get('/blogsdetails/{slug}', [
     App\Http\Controllers\User\BlogController::class,
     'blogsDetails',
 ])->name('blogsdetails');

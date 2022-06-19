@@ -32,6 +32,32 @@ $route = Route::current()->getName();
                             @endif
                         </ul>
                     </div>
+                          <!-- header dropdown buttons -->
+                          <div class="dropdown-buttons">
+                            <div class="btn-group menu-search-box">
+                                <button type="button" class="btn dropdown-toggle" id="header-drop-3"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                        class="fa fa-search"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation"
+                                    aria-labelledby="header-drop-3">
+                                    <li>
+                                        <form role="search" class="search-box" method="post"
+                                            action="{{ route('search') }}">
+                                            @csrf
+                                            <div class="form-group d-flex">
+                                                <input type="text" class="form-control" placeholder="Search"
+                                                    name="search">
+                                                <button type="submit"> <i
+                                                        class="fa fa-search form-control-feedback"></i></button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <!-- main-menu end -->
                 </div>
 
                 <div class="col-md-3">
@@ -206,34 +232,6 @@ $route = Route::current()->getName();
                                 </div>
                             </li>
                         </ul>
-
-                        <!-- header dropdown buttons -->
-                        <div class="dropdown-buttons">
-                            <div class="btn-group menu-search-box">
-                                <button type="button" class="btn dropdown-toggle" id="header-drop-3"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                        class="fa fa-search"></i></button>
-                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation"
-                                    aria-labelledby="header-drop-3">
-                                    <li>
-                                        <form role="search" class="search-box" method="post"
-                                            action="{{ route('search') }}">
-                                            @csrf
-                                            <div class="form-group d-flex">
-                                                <input type="text" class="form-control" placeholder="Search"
-                                                    name="search">
-                                                <button type="submit"> <i
-                                                        class="fa fa-search form-control-feedback"></i></button>
-                                            </div>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-
-
-                        </div>
-                        <!-- main-menu end -->
-
                     </div>
                 </div>
             </nav>
