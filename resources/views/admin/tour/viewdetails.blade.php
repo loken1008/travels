@@ -48,6 +48,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="firstName5">Tour Slug :</label>
+                                <span>{{ $detailstour->slug }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="firstName5">Altitude :</label>
                                 <span>{{ $detailstour->altitude }}</span>
                             </div>
@@ -85,6 +91,12 @@
                                 <a href="{{ $detailstour->mainImage }}" target="_blank"><img id="holder1" style="margin-top:15px;max-height:200px;width:200px"
                                     src={{ $detailstour->mainImage }}></a>
 
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName5">Image Alt text :</label>
+                                <span>{{ $detailstour->img_alt }}</span>
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -264,6 +276,24 @@
                          </div>
                      </div>
                  @endforeach
+                 <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="firstName5">Meta Title :</label>
+                        <span>{{ $detailstour->meta_title }}</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="firstName5">Meta Keywords :</label>
+                        <span>{{ $detailstour->meta_keywords }}</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="firstName5">Meta Description :</label>
+                        <span>{{ $detailstour->tour_name }}</span>
+                    </div>
+                </div>
             </div>
             <!-- /.box-body -->
         </div>

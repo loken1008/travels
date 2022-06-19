@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Tour;
+use Str;
 
 use Carbon\Carbon;
 
@@ -64,10 +65,15 @@ class BlogController extends Controller
         Blog::insert([
             'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
+            'slug'=>Str::slug($request->blog_title).'-'.'mountain-guide-info',
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,
             'blog_type'=>$request->blog_type,
             'blog_image'=>$request->blog_image,
+            'img_alt'=>$request->img_alt,
+            'meta_title'=>$request->meta_title,
+            'meta_keywords'=>$request->meta_keywords,
+            'meta_description'=>$request->meta_description,
             'created_at'=>Carbon::now(),
         ]);
      
@@ -100,10 +106,15 @@ class BlogController extends Controller
         Blog::where('id',$id)->update([
             'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
+            'slug'=>Str::slug($request->blog_title).'-'.'mountain-guide-info',
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,
             'blog_type'=>$request->blog_type,
             'blog_image'=>$request->blog_image?$request->blog_image:$ublog->blog_image,
+            'img_alt'=>$request->img_alt?$request->img_alt:$ublog->img_alt,
+            'meta_title'=>$request->meta_title?$request->meta_title:$ublog->meta_title,
+            'meta_keywords'=>$request->meta_keywords?$request->meta_keywords:$ublog->meta_keywords,
+            'meta_description'=>$request->meta_description?$request->meta_description:$ublog->meta_description,
             'updated_at'=>Carbon::now(),
         ]);
         $notification=array(

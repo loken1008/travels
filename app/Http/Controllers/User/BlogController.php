@@ -42,12 +42,10 @@ class BlogController extends Controller
            $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->paginate(6);
            return view('frontend.blogs.allblogs',compact('getblogs'));
        }
-       public function blogsDetails($blog_title)
+       public function blogsDetails($slug)
        {
-          
-            $title=str_replace('-',' ',$blog_title);
            $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(6)->get();
-           $getblogdetails=Blog::where('blog_title',$title)->first();
+           $getblogdetails=Blog::where('slug',$slug)->first();
            $getcomments=Comment::with('replies')->where('blog_id',$getblogdetails->id)->where('parent_id','=',NULL)->get();
            return view('frontend.blogs.blogsdetails',compact('getblogdetails','getblogs','getcomments'));
        }

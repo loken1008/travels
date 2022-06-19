@@ -73,7 +73,7 @@
                                 <div class="item">
                                     <div class="special-places">
                                         <div class="thumb">
-                                            <a href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}"><img src="{{ $tour->mainImage }}" alt="" style="width:350px;height:215px"></a>
+                                            <a href="{{ route('tourdetails',$tour->slug) }}"><img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}" style="width:350px;height:215px"></a>
                                         </div>
                                         <div class="content">
                                             <div class="price-box">
@@ -87,14 +87,14 @@
                                             <ul class="info">
                                                 <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                         Days</a></li>
-                                                <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
+                                                <li><a href="{{ route('tourmap',$tour->slug) }}"><i
                                                             class="fa fa-map-marker"></i>View on Map</a></li>
                                             </ul>
                                             <p>{!! Str::limit($tour->description, 150,'.') !!}</p>
                                             <a class="btn-theme" style="float:left !important"
-                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book Now</a>
+                                            href="{{ route('booking',$tour->slug) }}">Book Now</a>
                                             <a class="btn-theme"
-                                                href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View Details</a>
+                                                href="{{ route('tourdetails',$tour->slug) }}">View Details</a>
                                         </div>
                                     </div>
                                 </div>

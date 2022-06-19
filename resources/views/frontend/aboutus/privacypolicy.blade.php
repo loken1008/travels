@@ -54,7 +54,7 @@
                                 <ul>
                                     @foreach($categorys->tour->take(6) as $tours)
                                     @if($tours->status == '1')
-                                    <li><a href="{{ route('tourdetails', Str::slug($tours->tour_name)) }}">{{$tours->tour_name}}</a></li>
+                                    <li><a href="{{ route('tourdetails',$tours->slug) }}">{{$tours->tour_name}}</a></li>
                                     @endif
                                    @endforeach
                                 </ul>
@@ -70,10 +70,10 @@
         
                                 @foreach ($getblogs->take(3) as $getblog)
                                     <div class="blog-small-item ">
-                                        <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="">
+                                        <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="{{$getblog->img_alt}}">
                                         <div class="tex">
                                             <h5><a
-                                                    href="{{ route('blogsdetails', Str::slug($getblog->blog_title)) }}">{{ $getblog->blog_title }}</a>
+                                                    href="{{ route('blogsdetails', $getblog->slug) }}">{{ $getblog->blog_title }}</a>
                                             </h5>
                                         </div>
                                     </div>

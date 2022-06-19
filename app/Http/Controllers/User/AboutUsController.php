@@ -38,14 +38,6 @@ class AboutUsController extends Controller
          return view('frontend.aboutus.introduction.introduction',compact('introduction','intropagebanner'));
    }
 
-//    public function TeamDetails($name)
-//    {
-//          $name=str_replace('-',' ',$name);
-//          $getteamdetails=OurTeam::where('name',$name)->where('status',1)->first();
-//          $gettour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
-//          return view('frontend.aboutus.teamdetails',compact('getteamdetails','gettour'));
-//    }
-
    public function travelWithUs()
    {
        $getchooseus=ChooseUs::orderBy('id','asc')->get();

@@ -19,6 +19,7 @@ use App\Models\CostExclude;
 use Carbon\Carbon;
 use App\Http\Requests\TourStoreRequest;
 use Illuminate\Support\Facades\Storage;
+use Str;
 
 class TourController extends Controller
 {
@@ -27,21 +28,9 @@ class TourController extends Controller
         $gettour = Tour::with('images', 'category', 'subcategory')
             ->orderBy('id', 'desc')
             ->get();
-        // dd($gettour);
         return view('admin.tour.index', compact('gettour'));
     }
-    // public function viewPackage()
-    // {
-    //     $getpackage=Tour::with('images')->where('type','=','package')->orderBy('id','desc')->get();
-    //     // dd($gettour);
-    //     return view('admin.tour.package',compact('getpackage'));
-    // }
-    // public function viewActivities()
-    // {
-    //     $getactivities=Tour::with('images')->where('type','=','activities')->orderBy('id','desc')->get();
-    //     // dd($gettour);
-    //     return view('admin.tour.activities',compact('getactivities'));
-    // }
+    
     public function createTour()
     {
         $getplace = Place::orderBy('place_name', 'asc')->get();
@@ -77,7 +66,7 @@ class TourController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
-            // 'type'=>$request->type,
+            'slug'=>Str::slug($request->tour_name).'-'.'mountain-guide-info',
             'altitude' => $request->altitude,
             'tour_days' => $request->tour_days,
             'accomodation' => $request->accomodation,
@@ -88,7 +77,10 @@ class TourController extends Controller
             'description' => $request->description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage,
-            // 'status'=>0,
+            'img_alt' => $request->img_alt,
+            'meta_title' => $request->meta_title,
+            'meta_keywords' => $request->meta_keywords,
+            'meta_description' => $request->meta_description,
             'created_at' => Carbon::now(),
         ]);
 if($request->images){
@@ -206,14 +198,12 @@ if($request->images){
     public function updateTour(Request $request, $id)
     {
         $utour = Tour::findOrfail($id);
-        // dd($utour);
         Tour::where('id', $id)->update([
             'country_id' => $request->country_id,
-            // 'place_id' => $request->place_id,
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
-            // 'type'=>$request->type,
+            'slug'=>Str::slug($request->tour_name.'-'.'mountain-guide-info'),
             'altitude' => $request->altitude,
             'tour_days' => $request->tour_days,
             'accomodation' => $request->accomodation,
@@ -226,13 +216,16 @@ if($request->images){
             'mainImage' => $request->mainImage
                 ? $request->mainImage
                 : $utour->mainImage,
-            // 'status'=>0,
+            'img_alt' => $request->img_alt,
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
+            'meta_keywords' => $request->meta_keywords,
             'updated_at' => Carbon::now(),
         ]);
 
         $uimages = Images::where('tour_id', $id)->first();
         Images::where('tour_id', $id)->update([
-            'images' => $request->images ? $request->images : $uimages->images,
+            'images' => $request->images ? $request->images :$uimages->images??'',
             'updated_at' => Carbon::now(),
         ]);
 
@@ -433,16 +426,6 @@ if($request->images){
         $trashedTour = Tour::onlyTrashed()->get();
         return view('admin.tour.trash.trash', compact('trashedTour'));
     }
-    // public function getTrashedPackage()
-    // {
-    //     $trashedPackage=Tour::onlyTrashed()->where('type','=','package')->get();
-    //     return view('admin.tour.trash.packagetrash',compact('trashedPackage'));
-    // }
-    // public function getTrashedActivities()
-    // {
-    //     $trashedActivities=Tour::onlyTrashed()->where('type','=','activities')->get();
-    //     return view('admin.tour.trash.activitiestrash',compact('trashedActivities'));
-    // }
 
     public function restoreTour($id)
     {

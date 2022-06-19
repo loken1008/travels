@@ -28,7 +28,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="special-packages">
                                 <div class="thumb">
-                                    <img src="{{ $tourdetails->mainImage }}" alt="" style="width:350px;height:200px">
+                                    <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}" style="width:350px;height:200px">
 
                                     <div class="post-title-box">
                                         <div class="price-box">
@@ -54,7 +54,7 @@
                                         <li><a href="#"><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }} Days</a>
                                         </li>
                                         {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
-                                        <li><a href="{{ route('tourmap', Str::slug($tourdetails->tour_name)) }}"><i
+                                        <li><a href="{{ route('tourmap', $tourdetails->slug) }}"><i
                                                     class="fa fa-map-marker"></i>View on Map</a></li>
                                                     
                                     </ul>
@@ -80,9 +80,9 @@
                                 </div>
                             </div> --}}
                                     <a class="btn-theme" style="float:left !important"
-                                        href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Book Now</a>
+                                        href="{{ route('booking',$tourdetails->slug) }}">Book Now</a>
                                     <a class="btn-theme"
-                                        href="{{ route('tourdetails', Str::slug($tourdetails->tour_name)) }}">View Details</a>
+                                        href="{{ route('tourdetails',$tourdetails->slug) }}">View Details</a>
                                 </div>
                             </div>
                         </div>
