@@ -206,7 +206,7 @@
 
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="">
                             <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="firstName5"

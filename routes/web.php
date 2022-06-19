@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -833,11 +834,11 @@ Route::get('/placedetails/{place_name}', [
     'placeDetails',
 ])->name('placedetails');
 
-Route::get('/tourdetails/{tour_name}', [
+Route::get('/tourdetails/{slug}', [
     App\Http\Controllers\User\IndexController::class,
     'tourDetails',
 ])->name('tourdetails');
-Route::get('/tourmap/{tour_name}', [
+Route::get('/tourmap/{slug}', [
     App\Http\Controllers\User\IndexController::class,
     'tourMap',
 ])->name('tourmap');
@@ -850,7 +851,7 @@ Route::get('/tripdetails/{slug_name}', [
     App\Http\Controllers\User\CategoryController::class,
     'tripDetails',
 ])->name('tripdetails');
-Route::get('/booking/{tour_name}', [
+Route::get('/booking/{slug}', [
     App\Http\Controllers\User\BookingController::class,
     'onlineBooking',
 ])->name('booking');
@@ -935,3 +936,6 @@ Route::post('/tour-search', [
     App\Http\Controllers\User\SearchController::class,
     'tourSearch',
 ])->name('search');
+$path=public_path('sitemap.xml');
+SitemapGenerator::create('https://mountainguideinfo.com')->writeToFile($path);
+// SitemapGenerator::create('https://example.com')->writeToFile(public/sitemap.xml);

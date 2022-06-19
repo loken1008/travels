@@ -78,25 +78,27 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="col-md-12">
                             <div class="form-group">
                                 <label for="firstName5">Image Alt text :</label>
                                 <input type="text" class="form-control" id="imgalt" value="{{@old('img_alt')}}" name="img_alt">
                             </div>
-                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="metatitle"> Meta Title :</label>
                                     <input type="text" class="form-control" id="metatitle" value="{{ old('meta_title') }}"
                                         name="meta_title">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="metakeywords"> Meta Keywords :</label>
                                     <input type="text" class="form-control" id="metakeywords" value="{{ old('meta_keywords') }}"
                                         name="meta_keywords">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="metadescription"> Meta Description :</label>
                                     <textarea type="text" class="form-control" id="metadescription" value="{{ old('meta_description') }}"

@@ -19,10 +19,9 @@ use App\Models\PageBanner;
 
 class BookingController extends Controller
 {
-   public function onlineBooking($tour_name)
+   public function onlineBooking($slug)
    {
-   $title = str_replace('-',' ',$tour_name); 
-    $tour=Tour::with('country','place')->where('tour_name',$title)->first();
+    $tour=Tour::with('country','place')->where('slug',$slug)->first();
     $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
     $bookbanner=PageBanner::orderBy('id','desc')->where('page_name','booking')->first();
        return view('frontend.bookform.bookform',compact('getTour','tour','bookbanner'));

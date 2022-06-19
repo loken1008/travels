@@ -140,7 +140,7 @@ $route = Route::current()->getName();
                                             @if ($tours->subcategory_id === null)
                                                     <div class="dropdown">
                                                         <a class="dropdown-item"
-                                                            href="{{ url('tourdetails', $tours->tour_name) }}">{{ $tours->tour_name }}</a>
+                                                            href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
                                                     </div>
                                                 @endif
                                             @endif
@@ -164,7 +164,7 @@ $route = Route::current()->getName();
                                                         @foreach ($subcat->tour as $tour)
                                                             @if ($tour->status == 1)
                                                                 <a class="dropdown-item"
-                                                                    href="{{ url('tourdetails', $tour->tour_name) }}">{{ $tour->tour_name }}</a>
+                                                                    href="{{ url('tourdetails', $tour->slug) }}">{{ $tour->tour_name }}</a>
                                                             @endif
                                                         @endforeach
                                                     </div>

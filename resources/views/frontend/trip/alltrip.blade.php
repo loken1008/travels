@@ -28,7 +28,7 @@
                <div class="item" style="width:340px">
                 <div class="special-places">
                     <div class="thumb">
-                        <img src="{{ $tourdetails->mainImage }}" alt=""
+                        <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}"
                             style="width:340px !important;height:215px !important">
                     </div>
                     <div class="content">
@@ -54,7 +54,7 @@
                                     Days</a></li>
                             {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
                             <li><a
-                                    href="{{ route('tourmap', Str::slug($tourdetails->tour_name)) }}"><i
+                                    href="{{ route('tourmap', $tourdetails->slug) }}"><i
                                         class="fa fa-map-marker"></i>View on Map</a>
                             </li>
                            
@@ -62,10 +62,10 @@
                         </ul>
                         <p>{!! Str::limit($tourdetails->description, 200, '.') !!}</p>
                         <a class="btn-theme" style="float:left !important"
-                            href="{{ route('booking', Str::slug($tourdetails->tour_name)) }}">Book
+                            href="{{ route('booking', $tourdetails->slug) }}">Book
                             Now</a>
                         <a class="btn-theme"
-                            href="{{ route('tourdetails', Str::slug($tourdetails->tour_name)) }}">View
+                            href="{{ route('tourdetails', $tourdetails->slug) }}">View
                             Details</a>
                     </div>
                 </div>

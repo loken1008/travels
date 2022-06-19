@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
     <title>MountainGuideInfo|@yield('title')</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
+    <meta name="keywords" content="@yield('meta_keywords','some default keywords')">
+    <meta name="description" content="@yield('meta_description','default description')">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
     <!------------------------------------------
@@ -152,11 +153,49 @@
 
     <a href="#" class="scrollup"><i class="flaticon-long-arrow-pointing-up" aria-hidden="true"></i></a>
 
-
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Bootstrap 4 Open Modal on Page Load</h4>
+                <h5>Wait for it...</h5>
+                <p class="lead">Here is the page content.
+                Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch, mumblecore
+                    PBR try-hard kale chips. Brooklyn vinyl lumbersexual bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache. 3 wolf moon hashtag church-key Odd Future. Austin messenger bag normcore, Helvetica Williamsburg
+                    sartorial tote bag distillery Portland before they sold out gastropub taxidermy Vice.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">My Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Add content here.</h5>
+                    <p>This is a vertically centered modal. Modal body text goes here. This content can be whatever you'd like. Text, images, forms, etc.. can be added here in the modal body.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
-
+<script>
+    $(window).on('load',function(){
+    var delayMs = 1500; // delay in milliseconds
+    
+    setTimeout(function(){
+        $('#myModal').modal('show');
+    }, delayMs);
+});
+</script>
     <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
