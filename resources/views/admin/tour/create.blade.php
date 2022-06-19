@@ -340,7 +340,7 @@
                             </div>
 
                         </div>
-
+                        {{-- @seoForm($model) --}}
 
                         <div class="box-footer">
                             <input id="submit-templateeditor" type="submit" class="btn btn-rounded btn-info pull-right"

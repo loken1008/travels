@@ -69,7 +69,7 @@ class TourController extends Controller
     $t=$model->fill($request->except('start_date','end_date','seats_available','price','equipment_name','equipment_description','day_title','long_description','question','answer','images'));
     // dd($t);
      if ($t->save()) {
-        Seo::save($model, route('tour.viewdetails', $model->country_id), [
+        Seo::save($model, route('tour.viewdetails', $model->id), [
             'country_id' => $model->country_id,
         ]);
        }
