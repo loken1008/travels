@@ -41,7 +41,12 @@ class IndexController extends Controller
 
     public function  tourDetails($tour_name)
     {
-        $title = str_replace('-',' ',$tour_name); 
+        // dd($tour_name);
+        // $title = str_replace(' ',',',$tour_name); 
+        $title=str_replace( array( '\'', '"',
+      ',' , '-', '/',' /','<', '>' ), ' ', $tour_name);
+    //   $title=preg_replace('/[^a-zA-Z0-9_ -]/s',' ',$tour_name);
+    //     dd($title);
         $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('status','1')->where('tour_name',$title)->first();
          $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('tour_name','!=',$title)->where('category_id',$getTourdetails->category_id)->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->where('tour_id',$getTourdetails->id)->get();

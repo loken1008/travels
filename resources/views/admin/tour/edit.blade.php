@@ -172,6 +172,15 @@
                             </div>
                             <div class="col-md-6">
 
+                                <label for="firstName5"> Image Alt Text :</label>
+                                <div class="input-group">
+                                    
+                                    <input id="img_alt" class="form-control" type="text" name="img_alt" value="{{$edittour->img_alt}}">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
                                 <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
@@ -420,6 +429,30 @@
                             Add More FAQ
                         </a>
                         <hr>
+                        <div style="margin-top:80px">
+                            <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="metatitle"> Meta Title :</label>
+                                <input type="text" class="form-control" id="metatitle" value="{{ $edittour->meta_title }}"
+                                    name="meta_title">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="metakeywords"> Meta Keywords :</label>
+                                <input type="text" class="form-control" id="metakeywords" value="{{ $edittour->meta_keywords }}"
+                                    name="meta_keywords">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="metadescription"> Meta Description :</label>
+                                <textarea  class="form-control"  value="{{ $edittour->meta_description }}"
+                                    name="meta_description">{{$edittour->meta_description}}</textarea>
+                            </div>
+                        </div>
+                            </div>
                         <div class="box-footer">
                             <input type="submit" class="btn btn-rounded btn-info pull-right" value="Update Place">
                         </div>

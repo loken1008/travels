@@ -28,6 +28,12 @@
                                 <h5>{{ $detailsblog->blog_title }}</h5>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5" style="font-size:14px">Blog Slug :</label>
+                                <h5>{{ $detailsblog->slug }}</h5>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5 h2 " style="font-size:14px">Author Name :</label>
@@ -51,6 +57,12 @@
 
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5" style="font-size:14px">Image Alt text :</label>
+                                <h5>{{ $detailsblog->img_alt }}</h5>
+                            </div>
+                        </div>
 
                         <div class="col-md-12 mt-4">
                             <div class="form-group">
@@ -59,7 +71,24 @@
                             </div>
                         </div>
                        
-                       
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5">Meta Title :</label>
+                                <span>{{ $detailsblog->meta_title }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5">Meta Keywords :</label>
+                                <span>{{ $detailsblog->meta_keywords }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstName5">Meta Description :</label>
+                                <span>{{ $detailsblog->tour_name }}</span>
+                            </div>
+                        </div>
                        
                     </div>
                    

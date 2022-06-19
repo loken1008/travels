@@ -69,8 +69,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="tourname"> Tour Name :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="tourname" value="{{ old('tour_name') }}"
-                                        name="tour_name">
+                                    <input type="text" class="form-control" id="tourname"
+                                        value="{{ old('tour_name') }}" name="tour_name">
                                     @error('tour_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -93,8 +93,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="altitude">Altitude :</label>
-                                    <input type="text" class="form-control" id="altitude" value="{{ old('altitude') }}"
-                                        name="altitude">
+                                    <input type="text" class="form-control" id="altitude"
+                                        value="{{ old('altitude') }}" name="altitude">
 
                                 </div>
                             </div>
@@ -128,8 +128,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price"> Price :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="price" value="{{ old('main_price') }}"
-                                        name="main_price">
+                                    <input type="text" class="form-control" id="price"
+                                        value="{{ old('main_price') }}" name="main_price">
                                     @error('main_price')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -155,10 +155,20 @@
                             </div>
                             <div class="col-md-6">
 
+                                <label for="firstName5"> Image Alt Text :</label>
+                                <div class="input-group">
+
+                                    <input id="img_alt" class="form-control" type="text" name="img_alt">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
                                 <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder"
+                                            class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
@@ -168,16 +178,13 @@
 
                             </div>
                         </div>
-                       
-                            <div class="form-group">
-                                <label for="mapurl"> Map Url :</label>
-                                <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
-                                    name="map_url">
-                                {{-- @error('map_url')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror --}}
-                            </div>
-                       
+
+                        <div class="form-group">
+                            <label for="mapurl"> Map Url :</label>
+                            <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
+                                name="map_url">
+                        </div>
+
 
                         <div class="form-group ">
                             <label for="description">Place Description/Image :<span class="text-danger">*</span></label>
@@ -192,167 +199,203 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Include :</label>
-                                    <select name="cost_include[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                    <select name="cost_include[]" multiple id="" class="form-control"
+                                        style="overflow: auto;height:140px">
                                         <option value="">Select Cost Include Values</option>
-                                       @foreach($costinclude as $key=> $costi)
-                                        <option value="{{ $costi->cost_include }}">{{$key+1}}.{{ $costi->cost_include }}</option>
+                                        @foreach ($costinclude as $key => $costi)
+                                            <option value="{{ $costi->cost_include }}">
+                                                {{ $key + 1 }}.{{ $costi->cost_include }}</option>
                                         @endforeach
                                     </select>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cibd-example-modal-lg">Add Cost Include</a>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecibd-example-modal-lg">Update Cost Include</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                                        data-target=".cibd-example-modal-lg">Add Cost Include</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                                        data-target=".ecibd-example-modal-lg">Update Cost Include</a>
 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <select name="cost_exclude[]" multiple id=""  class="form-control" style="overflow: auto;height:140px">
+                                    <select name="cost_exclude[]" multiple id="" class="form-control"
+                                        style="overflow: auto;height:140px">
                                         <option value="">Select Cost Exclude Values </option>
-                                       @foreach($costexclude as $key=> $coste)
-                                        <option value="{{ $coste->cost_exclude }}">{{$key+1}}.{{ $coste->cost_exclude  }}</option>
+                                        @foreach ($costexclude as $key => $coste)
+                                            <option value="{{ $coste->cost_exclude }}">
+                                                {{ $key + 1 }}.{{ $coste->cost_exclude }}</option>
                                         @endforeach
                                     </select>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".cebd-example-modal-lg">Add Cost Exclude</a>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".ecebd-example-modal-lg">Update Cost Exclude</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                                        data-target=".cebd-example-modal-lg">Add Cost Exclude</a>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal"
+                                        data-target=".ecebd-example-modal-lg">Update Cost Exclude</a>
                                 </div>
                             </div>
                         </div>
                         <hr>
                         {{-- dateprice --}}
                         <div>
-                        <h6 class="font-weight-bold">Dates/Price</h6>
-                        <div class="row dateprice" id="dynamicAddRemove">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="startdate">Start Date :</label>
-                                    <input class="form-control" name="start_date[]" type="date"
-                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
+                            <h6 class="font-weight-bold">Dates/Price</h6>
+                            <div class="row dateprice" id="dynamicAddRemove">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="startdate">Start Date :</label>
+                                        <input class="form-control" name="start_date[]" type="date"
+                                            min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="enddate"> End Date :</label>
-                                    <input class="form-control" id="id_ed" name="end_date[]" type="date"
-                                        min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="enddate"> End Date :</label>
+                                        <input class="form-control" id="id_ed" name="end_date[]" type="date"
+                                            min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="seatsavailable">Seats Available :</label>
-                                    <input type="text" class="form-control" id="seatsavailable" name="seats_available[]">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="seatsavailable">Seats Available :</label>
+                                        <input type="text" class="form-control" id="seatsavailable"
+                                            name="seats_available[]">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="price"> Price :</label>
-                                    <input type="text" class="form-control" id="price" name="price[]">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="price"> Price :</label>
+                                        <input type="text" class="form-control" id="price" name="price[]">
 
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </div>
 
-
-                        <div class="" style="margin-left:-9px !important ">
-                            <a href="javascript:void(0)" id="dynamic-ar"
-                                class="btn btn-rounded btn-success pull-left addMore"></span>
-                                Add More</a>
-                            {{-- <a href="#" name="add" id="dynamic-ar" class="btn btn-rounded btn-success pull-right">Add
+                            <div class="" style="margin-left:-9px !important ">
+                                <a href="javascript:void(0)" id="dynamic-ar"
+                                    class="btn btn-rounded btn-success pull-left addMore"></span>
+                                    Add More</a>
+                                {{-- <a href="#" name="add" id="dynamic-ar" class="btn btn-rounded btn-success pull-right">Add
                             </a> --}}
+                            </div>
                         </div>
-                    </div>
                         <hr>
                         {{-- equipment --}}
-                        <div  style="margin-top:60px">
-                        <h6 class="font-weight-bold">Equipments Section</h6>
-                        <div class="row " id="equipment">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="equipmentname">Equipment Name :</label>
-                                    <input type="text" class="form-control" id="equipmentname" name="equipment_name[]">
+                        <div style="margin-top:60px">
+                            <h6 class="font-weight-bold">Equipments Section</h6>
+                            <div class="row " id="equipment">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="equipmentname">Equipment Name :</label>
+                                        <input type="text" class="form-control" id="equipmentname"
+                                            name="equipment_name[]">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="edescription"> Description :</label>
-                                    <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="edescription"> Description :</label>
+                                        <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
 
                                     </textarea>
 
+                                    </div>
                                 </div>
+
                             </div>
-                           
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" id="addequipment"
+                                    class="btn btn-rounded btn-success pull-left addMoreequipment"></span>
+                                    Add More</a>
+                            </div>
                         </div>
-                        <div class="" style="margin-left:-9px !important">
-                            <a href="javascript:void(0)" id="addequipment"
-                                class="btn btn-rounded btn-success pull-left addMoreequipment"></span>
-                                Add More</a>
-                        </div>
-                    </div>
                         <hr>
                         {{-- itineries --}}
                         <div style="margin-top:60px">
-                        <h6 class="font-weight-bold">Itinierary Section</h6>
-                        <div class="row" id="itinerary">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="daytitle">Day Title :</label>
-                                    <input type="text" class="form-control" id="daytitle" name="day_title[]">
+                            <h6 class="font-weight-bold">Itinierary Section</h6>
+                            <div class="row" id="itinerary">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="daytitle">Day Title :</label>
+                                        <input type="text" class="form-control" id="daytitle" name="day_title[]">
 
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="longdescription"> Long Description :<span
-                                            class="text-danger">*</span></label>
-                                    <textarea id="editor4" name="long_description[]" rows="10" cols="80">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="longdescription"> Long Description :<span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="editor4" name="long_description[]" rows="10" cols="80">
 
                                     </textarea>
 
+                                    </div>
                                 </div>
+
                             </div>
-                            
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
+                                    id="addMoreitinerary"></span>
+                                    Add More</a>
+                            </div>
                         </div>
-                        <div class="" style="margin-left:-9px !important">
-                            <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
-                                id="addMoreitinerary"></span>
-                                Add More</a>
-                        </div>
-                    </div>
                         {{-- itineries --}}
                         <div style="margin-top:60px">
-                        <h6 class="font-weight-bold mt-4">FAQ</h6>
-                        <div class="row " id="faq">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Question :</label>
+                            <h6 class="font-weight-bold mt-4">FAQ</h6>
+                            <div class="row " id="faq">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Question :</label>
 
-                                    <input type="text" name="question[]" class=" form-control" id="id_ct0">
+                                        <input type="text" name="question[]" class=" form-control" id="id_ct0">
 
 
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName5"> Answer :</label>
+                                        <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
+                                    id="add_field_button"></span>
+                                    Add More</a>
+                            </div>
+                        </div>
+                        <div style="margin-top:80px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metatitle"> Meta Title :</label>
+                                        <input type="text" class="form-control" id="metatitle" value="{{ old('meta_title') }}"
+                                            name="meta_title">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metakeywords"> Meta Keywords :</label>
+                                        <input type="text" class="form-control" id="metakeywords" value="{{ old('meta_keywords') }}"
+                                            name="meta_keywords">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metadescription"> Meta Description :</label>
+                                        <textarea type="text" class="form-control" id="metadescription" value="{{ old('meta_description') }}"
+                                            name="meta_description">{{old('meta_description')}}</textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstName5"> Answer :</label>
-                                    <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
-
-                                </div>
-                            </div>
-                           
                         </div>
 
-                        <div class="" style="margin-left:-9px !important">
-                            <a href="javascript:void(0)" 
-                                class="btn btn-rounded btn-success pull-left " id="add_field_button"></span>
-                                Add More</a>
-                        </div>
-                    </div>
                         <div class="box-footer" style="margin-top:60px">
                             <input id="submit-templateeditor" type="submit" class="btn btn-rounded btn-info pull-right"
                                 value="Add Tour">
@@ -363,10 +406,10 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-         @include('admin.costdetails.costinclude')
-         @include('admin.costdetails.costexclude')
-         @include('admin.costdetails.costincludeedit')
-         @include('admin.costdetails.costexcludeedit')
+        @include('admin.costdetails.costinclude')
+        @include('admin.costdetails.costexclude')
+        @include('admin.costdetails.costincludeedit')
+        @include('admin.costdetails.costexcludeedit')
 
 
 
@@ -394,7 +437,7 @@
         $('#lfm').filemanager('images', {
             prefix: route_prefix
         });
-         $('#lfms').filemanager('images', {
+        $('#lfms').filemanager('images', {
             prefix: route_prefix
         });
     </script>

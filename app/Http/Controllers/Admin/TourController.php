@@ -77,6 +77,7 @@ class TourController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
+            'slug'=>Str::slug($request->tour_name).'/'.'mountain-guide-info',
             // 'type'=>$request->type,
             'altitude' => $request->altitude,
             'tour_days' => $request->tour_days,
@@ -88,6 +89,10 @@ class TourController extends Controller
             'description' => $request->description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage,
+            'img_alt' => $request->img_alt,
+            'meta_title' => $request->meta_title,
+            'meta_keywords' => $request->meta_keywords,
+            'meta_description' => $request->meta_description,
             // 'status'=>0,
             'created_at' => Carbon::now(),
         ]);
@@ -227,12 +232,16 @@ if($request->images){
                 ? $request->mainImage
                 : $utour->mainImage,
             // 'status'=>0,
+            'img_alt' => $request->img_alt,
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
+            'meta_keywords' => $request->meta_keywords,
             'updated_at' => Carbon::now(),
         ]);
 
         $uimages = Images::where('tour_id', $id)->first();
         Images::where('tour_id', $id)->update([
-            'images' => $request->images ? $request->images : $uimages->images,
+            'images' => $request->images ? $request->images :$uimages->images??'',
             'updated_at' => Carbon::now(),
         ]);
 
