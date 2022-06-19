@@ -67,7 +67,6 @@ class ViewServiceProvider extends ServiceProvider
          View::share('category', $category);
         View::share('place', $place);
          View::share('tour', $tour);
-         View::share('tour1', $tour1);
          View::share('place', $place);
          View::share('sitesetting', $sitesetting);
          View::share('getcoupon', $getcoupon);
