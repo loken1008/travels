@@ -6,7 +6,6 @@ $gettestmonial=App\Models\Testmonial::where('status',1)->orderBy('id','desc')->g
 <div class="section-title mt-25">
     @if($gettestmonial->count()>0)
     <h2 class="text-center">Our Client's Say</h2>
-    <div class="sec-line mb-40"></div>
     @endif
 </div>
 <div class="testimonials-post testimonials_slide owl-carousel owl-theme owl-navst st-three">
