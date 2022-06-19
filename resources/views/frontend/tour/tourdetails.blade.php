@@ -64,43 +64,48 @@
                             </ul>
 
                             <p>{!! $getTourdetails->description !!}</p>
-                            {{-- {{dd($getTourdetails->itinerary->count())}} --}}
+                            {{-- {{dd($getTourdetails->cost_include)}} --}}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tab-style">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
+                                                
+                                                @if($getTourdetails->itinerary->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#plc-asia" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Itinaries</a>
-
-
+                                                @endif
+                                                @if($getTourdetails->cost_include=="null"||$getTourdetails->cost_exclude=="")
+                                                @else
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#costie" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Cost Details</a>
-
+                                                @endif
+                                                @if($getTourdetails->equipment->count() > 0) 
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#equipment" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Equipment</a>
-
+                                                @endif
+                                                @if($getTourdetails->dateprice->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#dateprice" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Date & Price</a>
-
+                                                @endif
+                                                @if($getTourdetails->images->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
-
+                                                @endif
+                                                @if($getTourdetails->map_url != null)
                                                 <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab" href="#tmap"
                                                     role="tab" aria-controls="plc-asia" aria-selected="true">Map</a>
-
+                                                @endif
+                                                @if($getTourdetails->fqa->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#fqa" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">FQA</a>
-
-
-
+                                                @endif
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -133,7 +138,8 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                                @if ($getTourdetails->cost_include == !null || $getTourdetails->cost_exclude == !null)
+                                                @if($getTourdetails->cost_include=="null"||$getTourdetails->cost_exclude=="")
+                                                @else
                                                     <div class="item" style="padding-right: 20px;" style="">
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExamplecost{{ $getTourdetails->id }}"

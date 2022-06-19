@@ -91,14 +91,16 @@ class TourController extends Controller
             // 'status'=>0,
             'created_at' => Carbon::now(),
         ]);
-
+if($request->images){
         Images::insert([
             'tour_id' => $tour_id,
             'images' => $request->images,
             'created_at' => Carbon::now(),
         ]);
+    }
 
         foreach ($request->start_date as $key => $value) {
+            if($request->start_date[$key]!=null){
             DatesPrices::create([
                 'tour_id' => $tour_id,
                 'start_date' => $request->start_date[$key],
@@ -108,8 +110,12 @@ class TourController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
+        }
 
+ 
+   
         foreach ($request->equipment_name as $key1 => $value1) {
+            if($request->equipment_name[$key1]!=null){
             Equipment::create([
                 'tour_id' => $tour_id,
                 'equipment_name' => $request->equipment_name[$key1],
@@ -118,8 +124,11 @@ class TourController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
-
+        }
+   
+   
         foreach ($request->day_title as $key2 => $value2) {
+            if($request->day_title[$key2]!=null){
             Itinerary::create([
                 'tour_id' => $tour_id,
                 'day_title' => $request->day_title[$key2],
@@ -127,7 +136,10 @@ class TourController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
+    }
+   
         foreach ($request->question as $key3 => $value3) {
+            if($request->question[$key3]!=null){
             $fqa = new FQA();
             $fqa->tour_id = $tour_id;
             $fqa->question = $request->question[$key3];
@@ -135,6 +147,7 @@ class TourController extends Controller
             $fqa->created_at = Carbon::now();
             $fqa->save();
         }
+    }
         $notification = [
             'message' => 'tour Insert Successfully',
             'alert-type' => 'success',
