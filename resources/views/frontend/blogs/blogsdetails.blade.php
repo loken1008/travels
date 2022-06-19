@@ -1,5 +1,8 @@
 @extends('frontend.main')
-@section('title', 'Blogs Details')
+@section('title', "$getblogdetails->blog_title ")
+@section('meta_title', $getblogdetails->meta_title)
+@section('meta_keywords', $getblogdetails->meta_keywords)
+@section('meta_description', $getblogdetails->meta_description)
 @section('content')
 
 
@@ -24,7 +27,7 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="blog-details">
                         <div class="details-thumb">
-                            <img src="{{ $getblogdetails->blog_image }}" alt="" style="width:825px;height:390px">
+                            <img src="{{ $getblogdetails->blog_image }}" alt="{{$getblogdetails->img_alt}}" style="width:825px;height:390px">
                         </div>
                         <div class="details-content mb-40">
                             <ul class="details-tag mb-40">
@@ -56,7 +59,7 @@
                         @foreach ($getcomments as $getcomment)
                             <div class="row blog-comments mb-4">
                                 <div class="col-sm-2">
-                                    {{-- <img src="fa fa-user" alt=""> --}}
+                                    {{-- <img src="fa fa-user" alt="{{$tour->img_alt}}"> --}}
                                     <i class="fa fa-user-circle-o" style="font-size:32px"></i>
                                 </div>
                                 <div class="col-sm-10">
@@ -125,7 +128,7 @@
                             @foreach ($getcomment->replies as $getreply)
                                 <div class="row blog-comments blog-comments-reply mb-4">
                                     <div class="col-sm-2">
-                                        {{-- <img src="images/blog/a1.jpg" alt=""> --}}
+                                        {{-- <img src="images/blog/a1.jpg" alt="{{$tour->img_alt}}"> --}}
                                         <i class="fa fa-reply" style="font-size:32px"></i>
                                     </div>
                                     <div class="col-sm-10">
@@ -220,10 +223,10 @@
 
                         @foreach ($getblogs as $getblog)
                             <div class="blog-small-item">
-                                <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="">
+                                <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="{{$getblog->img_alt}}">
                                 <div class="tex">
                                     <h5><a
-                                            href="{{ route('blogsdetails', Str::slug($getblog->blog_title)) }}">{{ $getblog->blog_title }}</a>
+                                            href="{{ route('blogsdetails',$getblog->slug) }}">{{ $getblog->blog_title }}</a>
                                     </h5>
                                 </div>
                             </div>

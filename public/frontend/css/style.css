@@ -1584,7 +1584,7 @@ a.dropdown-item.active {
     left: 61%;
     padding-top: 80px;
     position: absolute;
-    text-align: center;
+    /* text-align: center; */
     top: 26.3%;
     z-index: 1;
     -moz-animation: fadeInRight 1.5s 0.2s forwards;
@@ -6688,7 +6688,7 @@ footer ul.social-icon {
     left: 2px;
     margin: auto;
     position: absolute;
-    width: 50px;
+    width: 14%;
     background: #F5A13A;
 }
 

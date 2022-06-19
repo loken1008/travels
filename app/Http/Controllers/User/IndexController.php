@@ -39,18 +39,17 @@ class IndexController extends Controller
         return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree'));
     }
 
-    public function  tourDetails($tour_name)
+    public function  tourDetails($slug)
     {
-        $title = str_replace('-',' ',$tour_name); 
-        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('status','1')->where('tour_name',$title)->first();
-         $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('tour_name','!=',$title)->where('category_id',$getTourdetails->category_id)->get();
+        
+        $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('status','1')->where('slug',$slug)->first();
+         $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('slug','!=',$slug)->where('category_id',$getTourdetails->category_id)->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->where('tour_id',$getTourdetails->id)->get();
         return view('frontend.tour.tourdetails',compact('getTourdetails','gethotel','getTour'));
     }
-    public function tourMap($tour_name)
-    {
-        $title = str_replace('-',' ',$tour_name); 
-        $gettourmap=Tour::where('tour_name',$title)->first();
+    public function tourMap($slug)
+    { 
+        $gettourmap=Tour::where('slug',$slug)->first();
         return view('frontend.tour.map',compact('gettourmap'));
     }
 

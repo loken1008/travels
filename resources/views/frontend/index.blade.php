@@ -147,7 +147,7 @@
                                                 <div class="item">
                                                     <div class="special-places">
                                                         <div class="thumb">
-                                                            <img src="{{ $tour->mainImage }}" alt=""
+                                                            <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
                                                                 style="width:350px !important;height:215px !important">
                                                         </div>
                                                         <div class="content">
@@ -173,7 +173,7 @@
                                                                         Days</a></li>
                                                                 {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
                                                                 <li><a
-                                                                        href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
+                                                                        href="{{ route('tourmap',$tour->slug) }}"><i
                                                                             class="fa fa-map-marker"></i>View on Map</a>
                                                                 </li>
 
@@ -186,10 +186,10 @@
                                                             </ul>
                                                             <p>{!! substr($tour->description,0, 300).'.' !!}</p>
                                                             <a class="btn-theme" style="float:left !important"
-                                                                href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book
+                                                                href="{{ route('booking', $tour->slug) }}">Book
                                                                 Now</a>
                                                             <a class="btn-theme"
-                                                                href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
+                                                                href="{{ route('tourdetails', $tour->slug) }}">View
                                                                 Details</a>
                                                         </div>
                                                     </div>
@@ -266,6 +266,9 @@
                                                 <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img
                                                         src="{{ $tour->mainImage }}" alt=""
                                                         style="height:253px !important"></a>
+                                                <a href="{{ route('tourdetails', $tour->slug) }}"> 
+                                                    <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
+                                                        style="width:100% !important;height:253px !important"></a>
 
                                                 <div class="post-title-box">
                                                     <div class="price-box">
@@ -290,17 +293,17 @@
                                                 <ul class="info">
                                                     <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                             Days</a></li>
-                                                    <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
+                                                    <li><a href="{{ route('tourmap', $tour->slug) }}"><i
                                                                 class="fa fa-map-marker"></i>View on Map</a></li>
 							    
 
                                                 </ul>
                                                 <p>{!! substr($tour->description,0, 300).'.' !!}</p>
                                                 <a class="btn-theme" style="float:left !important"
-                                                    href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book
+                                                    href="{{ route('booking', $tour->slug) }}">Book
                                                     Now</a>
                                                 <a class="btn-theme"
-                                                    href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
+                                                    href="{{ route('tourdetails', $tour->slug) }}">View
                                                     Details</a>
                                             </div>
                                         </div>
@@ -440,7 +443,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb" >
-                                <img alt="" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
+                                <img  src="{{ $blog->blog_image }}" style="width:348px;height:442px" alt="{{$blog->img_alt}}">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">
@@ -460,7 +463,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('blogsdetails', Str::slug($blog->blog_title)) }}"
+                            <a href="{{ route('blogsdetails', $blog->slug) }}"
                                 class="read-btn">Continue
                                 Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>

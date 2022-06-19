@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
     <title>MountainGuideInfo|@yield('title')</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
+    <meta name="keywords" content="@yield('meta_keywords','some default keywords')">
+    <meta name="description" content="@yield('meta_description','default description')">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
     <!------------------------------------------
@@ -154,7 +155,7 @@ padding-left:20px;
 
     <a href="#" class="scrollup"><i class="flaticon-long-arrow-pointing-up" aria-hidden="true"></i></a>
 
-
+   
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
@@ -181,6 +182,7 @@ Main JavaScript
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
+   
    
 <!-- Begin widget code -->
 {{-- tripadvisor --}}

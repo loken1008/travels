@@ -833,11 +833,11 @@ Route::get('/placedetails/{place_name}', [
     'placeDetails',
 ])->name('placedetails');
 
-Route::get('/tourdetails/{tour_name}', [
+Route::get('/tourdetails/{slug}', [
     App\Http\Controllers\User\IndexController::class,
     'tourDetails',
 ])->name('tourdetails');
-Route::get('/tourmap/{tour_name}', [
+Route::get('/tourmap/{slug}', [
     App\Http\Controllers\User\IndexController::class,
     'tourMap',
 ])->name('tourmap');
@@ -850,7 +850,7 @@ Route::get('/tripdetails/{slug_name}', [
     App\Http\Controllers\User\CategoryController::class,
     'tripDetails',
 ])->name('tripdetails');
-Route::get('/booking/{tour_name}', [
+Route::get('/booking/{slug}', [
     App\Http\Controllers\User\BookingController::class,
     'onlineBooking',
 ])->name('booking');

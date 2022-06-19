@@ -1,5 +1,8 @@
 @extends('frontend.main')
 @section('title', "$getTourdetails->tour_name ")
+@section('meta_title', $getTourdetails->meta_title)
+@section('meta_keywords', $getTourdetails->meta_keywords)
+@section('meta_description', $getTourdetails->meta_description)
 @section('content')
 
     <!-- Inner Section Start -->
@@ -24,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
-                            <img src="{{ $getTourdetails->mainImage }}" alt="" style="width:1110px;height:420px">
+                            <img src="{{ $getTourdetails->mainImage }}" alt="{{$getTourdetails->img_alt}}" style="width:1110px;height:420px">
 
                             <div class="post-title-box">
                                 <div class="price-box">
@@ -64,43 +67,48 @@
                             </ul>
 
                             <p>{!! $getTourdetails->description !!}</p>
-                            {{-- {{dd($getTourdetails->itinerary->count())}} --}}
+                            {{-- {{dd($getTourdetails->cost_include)}} --}}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tab-style">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
+                                                
+                                                @if($getTourdetails->itinerary->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#plc-asia" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Itinaries</a>
-
-
+                                                @endif
+                                                @if($getTourdetails->cost_include=="null"||$getTourdetails->cost_exclude=="")
+                                                @else
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#costie" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Cost Details</a>
-
+                                                @endif
+                                                @if($getTourdetails->equipment->count() > 0) 
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#equipment" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Equipment</a>
-
+                                                @endif
+                                                @if($getTourdetails->dateprice->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#dateprice" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Date & Price</a>
-
+                                                @endif
+                                                @if($getTourdetails->images->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#relatedimages" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">Photos</a>
-
+                                                @endif
+                                                @if($getTourdetails->map_url != null)
                                                 <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab" href="#tmap"
                                                     role="tab" aria-controls="plc-asia" aria-selected="true">Map</a>
-
+                                                @endif
+                                                @if($getTourdetails->fqa->count() > 0)
                                                 <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                     href="#fqa" role="tab" aria-controls="plc-asia"
                                                     aria-selected="true">FQA</a>
-
-
-
+                                                @endif
                                             </div>
                                         </nav>
                                         <div class="tab-content" id="nav-tabContent">
@@ -133,7 +141,8 @@
                                             <!-- item start -->
                                             <div class="tab-pane fade show " id="costie" role="tabpanel"
                                                 aria-labelledby="costie-tab">
-                                                @if ($getTourdetails->cost_include == !null || $getTourdetails->cost_exclude == !null)
+                                                @if($getTourdetails->cost_include=="null"||$getTourdetails->cost_exclude=="")
+                                                @else
                                                     <div class="item" style="padding-right: 20px;" style="">
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExamplecost{{ $getTourdetails->id }}"
@@ -250,7 +259,7 @@
                                                                                                 font-weight: 600;
                                                                                                 padding: 7px 18px;
                                                                                                 vertical-align: top;"
-                                                                                href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Book
+                                                                                href="{{ route('booking',$getTourdetails->slug) }}">Book
                                                                                 Now</a>
                                                                         </td>
                                                                     </tr>
@@ -278,7 +287,7 @@
                                                                     <div class="col-sm-4 col-grid">
                                                                         <div class="gallery-item">
                                                                             <div class="thumb">
-                                                                                <img src="{{ $images }}" alt="image"
+                                                                                <img src="{{ $images }}" alt="{{$getTourdetails->img_alt}}"
                                                                                     style="    height: 200px; width: 365px;">
                                                                                 <div class="overlay">
                                                                                     <div class="inner">
@@ -400,7 +409,7 @@
                             </div>
 
                             <a class="btn-theme"
-                                href="{{ route('booking', Str::slug($getTourdetails->tour_name)) }}">Book
+                                href="{{ route('booking',$getTourdetails->slug) }}">Book
                                 Now</a>
                         </div>
                     </div>
@@ -426,7 +435,7 @@
                             <div class="item" style="padding-right: 20px;">
                                 <div class="special-packages">
                                     <div class="thumb">
-                                        <img src="{{ $tour->mainImage }}" alt=""
+                                        <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
                                             style="width:100% !important;height:253px !important">
                                         {{-- <div class="offer-price"> Off 40%</div> --}}
                                         <div class="post-title-box">
@@ -452,16 +461,16 @@
                                             <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                     Days</a>
                                             </li>
-                                            <li><a href="{{ route('tourmap', Str::slug($tour->tour_name)) }}"><i
+                                            <li><a href="{{ route('tourmap',$tour->slug) }}"><i
                                                         class="fa fa-map-marker"></i>View on Map</a></li>
 
 
                                         </ul>
                                         <p>{!! substr($tour->description, 0, 300) . '.' !!}</p>
                                         <a class="btn-theme" style="float:left !important"
-                                            href="{{ route('booking', Str::slug($tour->tour_name)) }}">Book Now</a>
+                                            href="{{ route('booking',$tour->slug) }}">Book Now</a>
                                         <a class="btn-theme"
-                                            href="{{ route('tourdetails', Str::slug($tour->tour_name)) }}">View
+                                            href="{{ route('tourdetails',$tour->slug) }}">View
                                             Details</a>
                                     </div>
                                 </div>
@@ -489,7 +498,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img alt="" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
+                                <img alt="{{$blog->img_alt}}" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">
@@ -509,7 +518,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('blogsdetails', Str::slug($blog->blog_title)) }}"
+                            <a href="{{ route('blogsdetails',$blog->slug) }}"
                                 class="read-btn">Continue
                                 Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>

@@ -25,7 +25,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img alt="" src="{{ $getblog->blog_image }}" style="width:348px;height:442px">
+                                <img alt="{{$getblog->img_alt}}" src="{{ $getblog->blog_image }}" style="width:348px;height:442px">
                                 <div class="content">
                                     <h3>{{ $getblog->blog_title }}</h3>
                                     <div class="meta-box">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('blogsdetails', Str::slug($getblog->blog_title)) }}"
+                            <a href="{{ route('blogsdetails', $getblog->slug) }}"
                                 class="read-btn">Continue Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
