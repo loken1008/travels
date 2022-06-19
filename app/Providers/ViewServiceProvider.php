@@ -13,7 +13,7 @@ use App\Models\Contact;
 use App\Models\User;
 use App\Models\Tour;
 use App\Models\PageBanner;
-
+use Spatie\Sitemap\SitemapGenerator;
 use Carbon\Carbon;
 use DB;
 
@@ -64,5 +64,10 @@ class ViewServiceProvider extends ServiceProvider
          View::share('getcoupon', $getcoupon);
          View::share('getcontact', $getcontact);
          Paginator::useBootstrap();
-    }
+
+$path=public_path('sitemap.xml');
+if(!file_exists($path)){
+    SitemapGenerator::create('https://mountainguideinfo.com')->writeToFile($path);
+}
+}
 }
