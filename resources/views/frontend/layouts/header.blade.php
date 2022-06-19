@@ -160,7 +160,7 @@ $route = Route::current()->getName();
                                         class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">{{ $cat->category_name }}</a>
 
-                                    <div class="dropdown-menu left-1">
+                                    <div class="dropdown-menu left-1 ">
                                         @foreach ($cat->tour as $tours)
                                         @if ($tours->status =='1')
                                             @if ($tours->subcategory_id === null)

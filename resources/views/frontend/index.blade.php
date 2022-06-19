@@ -148,7 +148,7 @@
                                                     <div class="special-places">
                                                         <div class="thumb">
                                                             <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                                                style="width:350px !important;height:215px !important">
+                                                                style="height:215px !important">
                                                         </div>
                                                         <div class="content">
                                                             <div class="price-box">
@@ -268,7 +268,7 @@
                                                         style="height:253px !important"></a>
                                                 <a href="{{ route('tourdetails', $tour->slug) }}"> 
                                                     <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                                        style="width:100% !important;height:253px !important"></a>
+                                                        style="height:253px !important"></a>
 
                                                 <div class="post-title-box">
                                                     <div class="price-box">
@@ -417,7 +417,7 @@
     <!-- Gallery Section End -->
 
     <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-15 pb-15">
+    <section class="testimonials-section pt-0 pb-85">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -443,7 +443,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb" >
-                                <img  src="{{ $blog->blog_image }}" style="width:348px;height:442px" alt="{{$blog->img_alt}}">
+                                <img  src="{{ $blog->blog_image }}" style="height:442px" alt="{{$blog->img_alt}}">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">
