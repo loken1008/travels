@@ -912,7 +912,7 @@ a.scrollup:focus i {
 .header .navbar-nav {
     border-right: 1px solid rgba(255, 255, 255, 0.19);
     margin-right: 24px;
-    padding-right: 34px;
+    /* padding-right: 34px; */
     position: relative;
 }
 
@@ -951,7 +951,7 @@ a.dropdown-item.active {
 }
 
 .header .dropdown-buttons {
-    margin-top: -8px;
+    margin-top: 9px;
 }
 
 .header .bg-transparent .dropdown-buttons .btn-group .btn {
