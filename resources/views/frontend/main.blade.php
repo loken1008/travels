@@ -126,6 +126,9 @@
             text-align: justify;
             line-height: 2rem;
         }
+        #st-1 {
+            z-index:1 !important;
+        }
 
     </style>
      <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" async="async"></script>
@@ -175,7 +178,6 @@ Main JavaScript
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
-   
    
 <!-- Begin widget code -->
 {{-- tripadvisor --}}

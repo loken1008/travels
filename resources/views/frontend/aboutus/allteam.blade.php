@@ -45,7 +45,7 @@
 
                                 <div class="sec-line mb-20"></div>
                                 <img class="mt-1" src="{{ $teamdetails->image }}"
-                                    alt="{{ $teamdetails->name }}" style="width:100%;height:300px;padding-top:11px">
+                                    alt="{{ $teamdetails->name }}" style="height:300px;padding-top:11px">
 
                             </div>
                         </div>
@@ -100,7 +100,7 @@
 
                                 <div class="sec-line mb-20"></div>
                                 <img class="mt-1" src="{{ $teamdetails->image }}"
-                                    alt="{{ $teamdetails->name }}" style="width:100%;height:300px;padding-top:11px">
+                                    alt="{{ $teamdetails->name }}" style="height:300px;padding-top:11px">
 
                             </div>
                         </div>

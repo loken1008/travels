@@ -25,7 +25,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img alt="{{$getblog->img_alt}}" src="{{ $getblog->blog_image }}" style="width:348px;height:442px">
+                                <img alt="{{$getblog->img_alt}}" src="{{ $getblog->blog_image }}" style="height:442px">
                                 <div class="content">
                                     <h3>{{ $getblog->blog_title }}</h3>
                                     <div class="meta-box">

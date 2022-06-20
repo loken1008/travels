@@ -27,7 +27,7 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="blog-details">
                         <div class="details-thumb">
-                            <img src="{{ $getblogdetails->blog_image }}" alt="{{$getblogdetails->img_alt}}" style="width:825px;height:390px">
+                            <img src="{{ $getblogdetails->blog_image }}" alt="{{$getblogdetails->img_alt}}" style="height:390px">
                         </div>
                         <div class="details-content mb-40">
                             <ul class="details-tag mb-40">
@@ -223,7 +223,7 @@
 
                         @foreach ($getblogs as $getblog)
                             <div class="blog-small-item">
-                                <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="{{$getblog->img_alt}}">
+                                <img src="{{ $getblog->blog_image }}" style="height:68px" alt="{{$getblog->img_alt}}">
                                 <div class="tex">
                                     <h5><a
                                             href="{{ route('blogsdetails',$getblog->slug) }}">{{ $getblog->blog_title }}</a>

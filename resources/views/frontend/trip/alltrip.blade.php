@@ -29,7 +29,7 @@
                 <div class="special-places">
                     <div class="thumb">
                         <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}"
-                            style="width:340px !important;height:215px !important">
+                            style="height:215px !important">
                     </div>
                     <div class="content">
                         <div class="price-box">

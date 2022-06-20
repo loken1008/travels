@@ -32,7 +32,7 @@
             <div class="col-sm-4 col-grid">
                 <div class="gallery-item">
                     <div class="thumb" style="height:270px">
-                        <img src="{{$gal->cover_image}}" alt="image" style="width:634px;height:270px">
+                        <img src="{{$gal->cover_image}}" alt="image" style="height:270px">
                         <div class="overlay">
                             <div class="inner">
                                 <a href="{{$gal->cover_image}}" class="icon lightbox-image">
