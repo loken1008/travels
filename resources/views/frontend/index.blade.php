@@ -229,7 +229,7 @@
                     <div class="col-md-4">
                         <div class="feature-item">
                             <div class="icon-box">
-                                <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:20px"
+                                <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:50%"
                                     alt="">
                             </div>
                             <div class="content">

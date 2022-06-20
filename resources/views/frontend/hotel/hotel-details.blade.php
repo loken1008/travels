@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
-                            <img src="{{ $gethotelview->image }}" style="width:1110px; height:420px" alt="">
+                            <img src="{{ $gethotelview->image }}" style="height:420px" alt="">
                           
                             <div class="post-title-box">
                                

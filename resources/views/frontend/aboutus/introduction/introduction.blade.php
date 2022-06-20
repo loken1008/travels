@@ -54,7 +54,7 @@
                             <div class="blog-small-item mt-4 mb-0" style="display:flex;flex-direction:column">
                              
                                 <a 
-                                href="{{ route('blogsdetails', $getblog->blog_title) }}">  <img src="{{ $getblog->blog_image }}" style="width:500px;height:200px" alt="{{ $getblog->blog_title }}"></a>
+                                href="{{ route('blogsdetails', $getblog->blog_title) }}">  <img src="{{ $getblog->blog_image }}" style="height:200px" alt="{{ $getblog->blog_title }}"></a>
                               
                                 <div class="tex pl-0">
                                     <h5 style="line-height: inherit;"><a 

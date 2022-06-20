@@ -28,7 +28,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="special-packages">
                                 <div class="thumb">
-                                    <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}" style="width:350px;height:200px">
+                                    <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}" style="height:200px">
 
                                     <div class="post-title-box">
                                         <div class="price-box">

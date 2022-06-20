@@ -73,7 +73,7 @@
                                 <div class="item">
                                     <div class="special-places">
                                         <div class="thumb">
-                                            <a href="{{ route('tourdetails',$tour->slug) }}"><img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}" style="width:350px;height:215px"></a>
+                                            <a href="{{ route('tourdetails',$tour->slug) }}"><img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}" style="height:215px"></a>
                                         </div>
                                         <div class="content">
                                             <div class="price-box">

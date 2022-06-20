@@ -21,7 +21,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                             <div class="special-packages">
                                 <div class="thumb">
                                     <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                        style="width:100% !important;height:253px !important">
+                                        style="height:253px !important">
                                     {{-- <div class="offer-price"> Off 40%</div> --}}
                                     <div class="post-title-box">
                                         <div class="price-box">

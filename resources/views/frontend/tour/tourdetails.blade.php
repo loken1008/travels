@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
-                            <img src="{{ $getTourdetails->mainImage }}" alt="{{$getTourdetails->img_alt}}" style="width:1110px;height:420px">
+                            <img src="{{ $getTourdetails->mainImage }}" alt="{{$getTourdetails->img_alt}}" style="height:420px">
 
                             <div class="post-title-box">
                                 <div class="price-box">
@@ -276,7 +276,7 @@
                                                 aria-labelledby="relatedimages-tab">
 
                                                 <div class="item gallery-section mb-4">
-                                                    <div class="row gallery-items">
+                                                    <div class="row gallery-items" style="padding: 0px 16px;">
                                                         @forelse($getTourdetails->images as $image)
                                                             @php
                                                                 $imagess = explode(',', $image->images);
@@ -288,7 +288,7 @@
                                                                         <div class="gallery-item">
                                                                             <div class="thumb">
                                                                                 <img src="{{ $images }}" alt="{{$getTourdetails->img_alt}}"
-                                                                                    style="    height: 200px; width: 365px;">
+                                                                                    style="height: 200px;">
                                                                                 <div class="overlay">
                                                                                     <div class="inner">
                                                                                         <a href="{{ $images }}"
@@ -361,46 +361,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            <!-- Latest Hotel Section Start -->
-                            {{-- <section class="latest-hotel-sec pt-85 pb-80">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="section-title">
-                                            <h2>Latest <span>Hotel</span> Collection</h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="latesthotel_carousel owl-carousel owl-theme owl-navst">
-                                                @forelse ($gethotel as $hotel)
-                                                    <div class="item" style="padding-right: 20px;">
-                                                        <div class="latest-hotel">
-                                                            <div class="thumb">
-                                                                <img src="{{ $hotel->image }}" alt=""
-                                                                    style="height:358px !important">
-                                                            </div>
-                                                            <div class="content">
-                                                                <h4>{{ $hotel->hotel_name }}</h4>
-                                                                <h5>{{ $hotel->hotel_address }}</h5>
-
-                                                                <p>{!! Str::limit($hotel->hotel_description, 200) !!}</p>
-                                                                <a class="map-viw"
-                                                                    href="{{ route('hotelviewdetails', $hotel->hotel_name) }}"><i
-                                                                        class="fa fa-eye"></i>View Details</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @empty
-                                                    <p class="text-center">No Hotel Found</p>
-                                                @endforelse
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section> --}}
-                            <!-- Latest Hotel Section End -->
                             <div class="d-flex mt-5">
                                 <h6 class="share-btn text-dark"> Share: </h6>
 
@@ -436,7 +396,7 @@
                                 <div class="special-packages">
                                     <div class="thumb">
                                         <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                            style="width:100% !important;height:253px !important">
+                                            style="height:253px !important">
                                         {{-- <div class="offer-price"> Off 40%</div> --}}
                                         <div class="post-title-box">
                                             <div class="price-box">
@@ -498,7 +458,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img alt="{{$blog->img_alt}}" src="{{ $blog->blog_image }}" style="width:348px;height:442px">
+                                <img alt="{{$blog->img_alt}}" src="{{ $blog->blog_image }}" style="height:442px">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">

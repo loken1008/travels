@@ -75,7 +75,7 @@
         
                                 @foreach ($getblogs->take(3) as $getblog)
                                     <div class="blog-small-item ">
-                                        <img src="{{ $getblog->blog_image }}" style="width:68px;height:68px" alt="{{$getblog->img_alt}}">
+                                        <img src="{{ $getblog->blog_image }}" style="height:68px" alt="{{$getblog->img_alt}}">
                                         <div class="tex">
                                             <h5><a
                                                     href="{{ route('blogsdetails', $getblog->slug) }}">{{ $getblog->blog_title }}</a>

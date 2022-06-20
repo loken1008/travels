@@ -27,7 +27,7 @@
                         <div class="row " >
                             <div class="col-lg-12" style="margin-top:40px">
                                 <div class="thumb" style="float:left;margin-right:20px">
-                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="float:left;width:540px;height:310px">
+                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="float:left;height:310px">
                                 </div>
                                 <div class="content large-content">
                                     <div class="inner-title">
@@ -52,7 +52,7 @@
                             <div class="col-lg-12" style="margin-top:40px">
                                
                                 <div class="thumb" style="float:right;margin-left:20px">
-                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="width:540px;height:310px">
+                                    <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}" style="height:310px">
                                 </div>
                                 <div class="content large-content">
                                     <div class="inner-title">
