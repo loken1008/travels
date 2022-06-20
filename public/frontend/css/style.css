@@ -906,7 +906,7 @@ a.scrollup:focus i {
 }
 
 .header .dropdown-menu.left-1 {
-    left: -1px;
+    left: -80px;
 }
 
 .header .navbar-nav {
