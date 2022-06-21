@@ -195,40 +195,26 @@
                             @enderror
                         </div>
                         <hr>
+                        <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="costexclude">Cost Include :</label>
-                                    <select name="cost_include[]" multiple id="" class="form-control"
-                                        style="overflow: auto;height:140px">
-                                        <option value="">Select Cost Include Values</option>
-                                        @foreach ($costinclude as $key => $costi)
-                                            <option value="{{ $costi->cost_include }}">
-                                                {{ $key + 1 }}.{{ $costi->cost_include }}</option>
-                                        @endforeach
-                                    </select>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal"
-                                        data-target=".cibd-example-modal-lg">Add Cost Include</a>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal"
-                                        data-target=".ecibd-example-modal-lg">Update Cost Include</a>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="costinclude">Cost Include :</label>
+                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
+                                        {{ old('cost_include') }}
+                                    </textarea>
+                                   
                                 </div>
                             </div>
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <select name="cost_exclude[]" multiple id="" class="form-control"
-                                        style="overflow: auto;height:140px">
-                                        <option value="">Select Cost Exclude Values </option>
-                                        @foreach ($costexclude as $key => $coste)
-                                            <option value="{{ $coste->cost_exclude }}">
-                                                {{ $key + 1 }}.{{ $coste->cost_exclude }}</option>
-                                        @endforeach
-                                    </select>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal"
-                                        data-target=".cebd-example-modal-lg">Add Cost Exclude</a>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal"
-                                        data-target=".ecebd-example-modal-lg">Update Cost Exclude</a>
+                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
+                                        {{ old('cost_exclude') }}
+                                  </textarea>
+                                   
                                 </div>
                             </div>
                         </div>
