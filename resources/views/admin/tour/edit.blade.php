@@ -227,19 +227,19 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costinclude">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ $edittour->cost_include }}>
-                                        {!!$edittour->cost_include!!}
+                                    <label for="firstName5">Cost Include :</label>
+                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
+                                        {{$edittour->cost_include}}
                                     </textarea>
-                                   
+                                  
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="costexclude">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{$edittour->cost_exclude }}>
-                                        {!!$edittour->cost_exclude!!}
+                                    <label for="firstName5">Cost Exclude :</label>
+                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
+                                        {{$edittour->cost_exclude}}
                                   </textarea>
                                    
                                 </div>
