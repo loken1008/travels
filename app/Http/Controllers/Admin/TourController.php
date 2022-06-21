@@ -233,10 +233,10 @@ if($request->images){
             foreach ($request->dateid as $key => $value) {
                 $date_id = $request->dateid;
                 $data = [
-                    'start_date' => $request->start_date[$key],
-                    'end_date' => $request->end_date[$key],
-                    'price' => $request->price[$key],
-                    'seats_available' => $request->seats_available[$key],
+                    'start_date' => $request->start_date[$key]?$request->start_date[$key]:'',
+                    'end_date' => $request->end_date[$key]?$request->end_date[$key]:'',
+                    'price' => $request->price[$key]?$request->price[$key]:'',
+                    'seats_available' => $request->seats_available[$key]? $request->seats_available[$key]:'',
                     'updated_at' => Carbon::now(),
                 ];
                 DatesPrices::where('id', $request->dateid[$key])->update($data);
