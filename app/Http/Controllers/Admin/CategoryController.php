@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Carbon\Carbon;
 
 class CategoryController extends Controller
 {
@@ -23,6 +24,7 @@ class CategoryController extends Controller
         Category::insert([
             'category_name'=>$request->category_name,
             'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
+            'created_at'=>Carbon::now()
         ]);
         $notification=array(
             'message'=>'category Insert Successfully',
