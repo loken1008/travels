@@ -39,7 +39,7 @@ class ViewServiceProvider extends ServiceProvider
         $country = Country::orderBy('country_name', 'asc')->where('status','=','1')->get();
 
         $country = Country::orderBy('id', 'asc')->where('status','=','1')->get();
-        $category= Category::with('tour','subcategory')->where('created_at','asc')->orderBy('category_name', 'asc')->get();
+        $category= Category::with('tour','subcategory')->orderBy('created_at', 'asc')->get();
          $tour = Tour::with('country','place','category','subcategory','dateprice','equipment','itinerary','images','fqa','blog')->where('status','=','1')->get();
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting=SiteSetting::orderBy('id','desc')->first();

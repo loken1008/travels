@@ -263,9 +263,6 @@
                                     <div class="item {{$key == 0 ? 'active' : '' }}">
                                         <div class="special-packages">
                                             <div class="thumb">
-                                                <a href="{{ route('tourdetails', $tour->tour_name) }}"> <img
-                                                        src="{{ $tour->mainImage }}" alt=""
-                                                        style="height:253px !important"></a>
                                                 <a href="{{ route('tourdetails', $tour->slug) }}"> 
                                                     <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
                                                         style="height:253px !important"></a>
