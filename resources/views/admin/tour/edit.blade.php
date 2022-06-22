@@ -658,10 +658,7 @@
                         </div>
                     </div>
                 </div>
-                @include('admin.costdetails.costinclude')
-                @include('admin.costdetails.costexclude')
-                @include('admin.costdetails.costincludeedit')
-                @include('admin.costdetails.costexcludeedit')
+              
             </div>
             <!-- /.box-body -->
         </div>
@@ -672,31 +669,115 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
-    <script src="{{ asset('assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
-    <script type='text/javascript'></script>
-    <script>
-        var route_prefix = "/mountainguide-filemanager";
-        $('#elfm').filemanager('images', {
-            prefix: route_prefix
-        });
-    </script>
+    <script src="{{asset('assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
+ 
+   
+<script>
+  var i = 0;
+$("#dynamic-ar").click(function() {
+    i++;
+    $("#dynamicAddRemove2").append(
+        '<div class="box-body wizard-content"><section><div class="row dateprices" ><div class="col-md-6"><div class="form-group"><label for="firstName5">Start Date :</label><input class="form-control" id="id_ct' +
+        i +
+        '" name="start_date[]" type="date" ></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> End Date :</label><input class="form-control" id="id_ed' +
+        i +
+        '" name="end_date[]" type="date" ></div> </div><div class="col-md-6"><div class="form-group"><label for="firstName5">Seats Available :</label><input type="text" class="form-control" id="firstName5"name="seats_available[]"></div></div> <div class="col-md-6"><div class="form-group"> <label for="firstName5"> Price :</label><input type="text" class="form-control" id="firstName5"name="price[]"></div></div> <div class="">  <a href="#" class="btn btn-rounded btn-danger pull-right remove-input-field">Remove</a></div></div></section></div>'
 
-    <script>
-        CKEDITOR.replaceAll();
+    );
+});
+$(document).on('click', '.remove-input-field', function() {
+    $(this).parents('.dateprices').remove();
+});
+</script>
+<script>
+      var i = 1;
+$("#equipment-add").click(function(e) {
 
-        //  filemanager 
-        var route_prefix = "/mountainguide-filemanager";
-        $('#elfms').filemanager('images', {
-            prefix: route_prefix
-        });
-        var options = {
-            filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
-            filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
-        };
+i++;
+var editorId = "editor5" + i;
+$("#equipmentAdd").append(
+    '<div class="box-body wizard-content"> <section><div class="row editequipmentCopy"> <div class="col-md-12">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-12"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="' +
+    editorId +
+    '"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
+);
+CKEDITOR.replace(editorId);
+});
 
-        CKEDITOR.replace('my-editor', options);
-    </script>
+$(document).on('click', '.remove-equipment-field', function() {
+$(this).parents('.editequipmentCopy').remove();
+});
 
+</script>
+
+
+<script>
+      var i = 1;
+$("#add-itineries").click(function(e) {
+
+i++;
+var editorId2 = "editor6" + i;
+$("#itineraryAdd").append(
+
+    '<div class="box-body wizard-content"><section><div class="row eitineraryCopy"><div class="col-md-12"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-12"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="' +
+    editorId2 +
+    '" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
+);
+CKEDITOR.replace(editorId2);
+
+});
+
+$(document).on('click', '.removeitinerary', function() {
+$(this).parents('.eitineraryCopy').remove();
+});
+</script>
+
+
+<script>
+      var x = 1;
+$("#faq-add").click(function(e) {
+    x++;
+    $("#faqAdd").append(
+        '<div class="box-body wizard-content"><section><div class="row efaqcopy"> <div class="col-md-12"> <div class="form-group"> <label for="question">Question</label><input type="text" name="question[]"  id="id_ct' +
+        x +
+        '" class="form-control"> </div></div> <div class="col-md-12"> <div class="form-group"> <label for="answer"> Answer :</label> <textarea id="id_ct' +
+        x +
+        '" class="form-control" name="answer[]" rows="10" cols="10"></textarea></div> </div><div class=""><a href="#" class="remove_field btn btn-rounded btn-danger pull-right">Remove</a> </div></div>  </section> </div>'
+    ); //add input box
+
+});
+
+
+$(document).on('click', '.remove_field', function() {
+    $(this).parents('.efaqcopy').remove();
+});
+</script>
+<script type='text/javascript'>
+    CKEDITOR.replaceAll();
+</script>
+
+<script>
+    var route_prefix = "/mountainguide-filemanager";
+    $('#elfm').filemanager('images', {
+        prefix: route_prefix
+    });
+</script>
+
+<script>
+    //  filemanager 
+    var route_prefix = "/mountainguide-filemanager";
+    $('#elfms').filemanager('images', {
+        prefix: route_prefix
+    });
+    var options = {
+        filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
+        filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
+    };
+
+  
+</script>
+<script>
+CKEDITOR.replace('my-editor',options);
+</script>
 @endsection
