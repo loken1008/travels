@@ -49,7 +49,7 @@ Route::post('mountainguide/reset-password', [
 
 
 /*************************************** admin route *********************************/
-Route::middleware(['auth','XSS'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [
         App\Http\Controllers\Admin\DashboardController::class,
         'index',

@@ -56,7 +56,7 @@ $route = Route::current()->getName();
                                                 <a class="btn btn-primary" data-toggle="modal"
                                                     data-target="#exampleModal{{ $country->id }}" href="#"
                                                     style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
-                                                <a class="btn btn-info mt-2 {{ $route == 'country.edit' ? 'active' : '' }}"
+                                                <a class="btn btn-info {{ $route == 'country.edit' ? 'active' : '' }}"
                                                     href="{{ route('country.edit', $country->id) }}" style="width:5rem"
                                                     title="edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('country.delete', $country->id) }}" class="btn btn-danger mt-2 "
