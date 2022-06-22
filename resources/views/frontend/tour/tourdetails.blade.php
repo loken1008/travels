@@ -159,7 +159,7 @@
 
                                                           
                                                         <ul>
-                                                                    <li>{{ $getTourdetails->cost_include }}</li>
+                                                                    <li>{!! $getTourdetails->cost_include !!}</li>
                                                         </ul>
                                                         </div>
                                                         <a href="#" data-toggle="collapse"
@@ -177,7 +177,7 @@
 
                                                         <ul>
                                                            
-                                                                    <li>{{ $getTourdetails->cost_exclude }}</li>
+                                                                    <li>{!! $getTourdetails->cost_exclude !!}</li>
                                                         </ul>
                                                         </div>
 
