@@ -158,9 +158,9 @@
                                                             style="padding-left:24px;padding-top:10px !important">
 
                                                           
-                                                        <ul>
-                                                                    <li>{!! $getTourdetails->cost_include !!}</li>
-                                                        </ul>
+                                                        
+                                                                    {!! $getTourdetails->cost_include !!}
+                                                        
                                                         </div>
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExampleexcludecost{{ $getTourdetails->id }}"
@@ -175,10 +175,10 @@
                                                             id="collapseExampleexcludecost{{ $getTourdetails->id }}"
                                                             style="padding-left:24px;padding-top:10px !important">
 
-                                                        <ul>
+                                                        
                                                            
-                                                                    <li>{!! $getTourdetails->cost_exclude !!}</li>
-                                                        </ul>
+                                                                    {!! $getTourdetails->cost_exclude !!}
+                                                        
                                                         </div>
 
 
