@@ -42,7 +42,7 @@ class ViewServiceProvider extends ServiceProvider
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting=SiteSetting::orderBy('id','desc')->first();
         $getdate=Carbon::now()->format('Y-m-d');
-        $getcoupon=Coupon::orderBy('id','desc')->where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
+        $getcoupon=Coupon::where('status','=','1')->where('coupon_validity','>=',$getdate)->first();
         $getcontact=Contact::orderBy('id','desc')->first();
         $user = User::first();
         $notifications = $user->unreadNotifications;

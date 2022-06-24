@@ -5,22 +5,22 @@ $route = Route::current()->getName();
 
 <header class="header header-style-1 clearfix">
 
-    <div class="top-bar" style="background-color:#091426">
+    <div class="top-bar" style="background-color:#e6ecf5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3 d-flex">
+                    
+                   
                     <div class="contact-info">
-                        <ul>
-                            <li>
-                                <i class="flaticon-flash"></i>
-                                @if (isset($getcontact->address))
-                                    {{ $getcontact->address }}
-                                @endif
-                            </li>
-                        </ul>
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            @if (!empty($sitesetting->logo))
+                                <img id="logo_img" src="{{ $sitesetting->logo }}" alt="" style="height:100px">
+                            @endif
+                        </a>
                     </div>
+                   
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5" style="padding-top:27px">
                     <div class="social-icons">
                         <ul>
                             @if (!empty($sitesetting))
@@ -60,10 +60,10 @@ $route = Route::current()->getName();
                         <!-- main-menu end -->
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4" style="padding-top:27px">
                     <div class="social-icons">
                         <ul>
-                            <a href="{{ route('contactus') }}" class="text-white">Contact Us |</a>
+                            <a href="{{ route('contactus') }}" class="text-dark">Contact Us |</a>
 
                             @if (!empty(
                                 Auth()->guard('customer')->user()
@@ -71,16 +71,6 @@ $route = Route::current()->getName();
                                 <li class="nav-item dropdown">
                                     <div class="d-flex">
 
-
-                                        {{-- @if (empty(
-        Auth()->guard('customer')->user()->provider_id
-    ))
-                                            <img class="" src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
-                                                style="height:30px;width:30px;border-radius:50%">
-                                        @else
-                                            <img class="" src="{{ Auth()->guard('customer')->user()->image }}"
-                                            style="height:30px;width:30px;border-radius:50%">
-                                        @endif --}}
                                         <a href="#" class="nav-link dropdown-toggle mb-2" data-toggle="dropdown"
                                             aria-haspopup="true"
                                             aria-expanded="false">{{ Auth()->guard('customer')->user()->first_name }}</a>
@@ -97,9 +87,9 @@ $route = Route::current()->getName();
                                 </li>
                             @else
                                 <li>
-                                    <a href="{{ route('customer.login') }}">Login |</a>
+                                    <a href="{{ route('customer.login') }}" class="text-dark">Login |</a>
 
-                                    <a href="{{ route('customer.register') }}">Register</a>
+                                    <a href="{{ route('customer.register') }}" class="text-dark">Register</a>
                             @endif
                             </li>
                         </ul>
@@ -112,15 +102,11 @@ $route = Route::current()->getName();
 
     <div class="menu-style menu-style-1 bg-transparent clearfix">
         <!-- main-navigation start -->
-        <div class="main-navigation main-mega-menu animated" style="background-color:#091426">
+        <div class="main-navigation main-mega-menu animated" style="background-color:#5595ff;height:43px">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <!-- header dropdown buttons end-->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        @if (!empty($sitesetting->logo))
-                            <img id="logo_img" src="{{ $sitesetting->logo }}" alt="">
-                        @endif
-                    </a>
+                   
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
                         aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

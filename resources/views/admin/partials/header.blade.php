@@ -71,7 +71,7 @@
                                 @if( $value->read_at == null)
                                 <li>
                                     <a id="see-all" class="dropdown-item"   href="{{route('showbookingdetails',$value->data->id)}}">{{$value->data->user}} Trip <br>
-                                    <span id="see-all" class="dropdown-item">{{ \Carbon\Carbon::parse($value->created_at)->diffForHumans() }}</span></a>
+                                    <span id="see-all" class="">{{ \Carbon\Carbon::parse($value->created_at)->diffForHumans() }}</span></a>
                                   
                                   
                                 </li>

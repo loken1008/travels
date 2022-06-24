@@ -116,7 +116,9 @@ h6 {
     -ms-transition: all 0.3s;
     transition: all 0.3s;
 }
-
+.read-btn:hover{
+    background-color: #F5A13A !important;
+}
 p {
     color: #575757;
     font-family: 'Roboto', sans-serif;
@@ -316,7 +318,7 @@ input:-moz-placeholder {
 }
 
 .over-layer-white:before {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.93);
     content: "";
     position: absolute;
     top: 0;
@@ -400,7 +402,7 @@ input:-moz-placeholder {
 =====*****=====*****=====*****=====*****/
 
 .section-title {
-    margin: 0 auto 44px;
+    margin: 0 auto 0px;
     padding: 0;
     position: relative;
     text-align: center;
@@ -426,7 +428,7 @@ input:-moz-placeholder {
     letter-spacing: 0.8px;
     line-height: 0.9;
     margin-bottom: 22px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .section-title h2 span {
@@ -538,7 +540,7 @@ input:-moz-placeholder {
 }
 
 .over-layer-black .section-title h2 {
-    color: #fff;
+    color: #363d48;
 }
 
 .over-layer-black .section-title h2 span {
@@ -746,7 +748,7 @@ a.scrollup:focus i {
 
 .top-bar {
     position: relative;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .top-bar .contact-info {
@@ -759,9 +761,9 @@ a.scrollup:focus i {
 }
 
 .top-bar .contact-info li {
-    color: #eee;
+    color: black;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.6px;
 }
 
@@ -786,8 +788,8 @@ a.scrollup:focus i {
 }
 
 .top-bar .social-icons ul li a {
-    color: #eee;
-    font-size: 16px;
+    color: black;
+    font-size: 14px;
 }
 
 
@@ -901,7 +903,7 @@ a.scrollup:focus i {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    padding: 22px 28px 18px 14px;
+    padding: 12px 28px 18px 14px;
     text-transform: uppercase;
 }
 
@@ -911,7 +913,7 @@ a.scrollup:focus i {
 
 .header .navbar-nav {
     /* border-right: 1px solid rgba(255, 255, 255, 0.19); */
-    margin-right: 24px;
+    margin-right: 115px;
     /* padding-right: 34px; */
     position: relative;
 }
@@ -951,7 +953,7 @@ a.dropdown-item.active {
 }
 
 .header .dropdown-buttons {
-    margin-top: 9px;
+    margin-top:6px;
 }
 
 .header .bg-transparent .dropdown-buttons .btn-group .btn {
@@ -965,12 +967,12 @@ a.dropdown-item.active {
 
 .header .dropdown-buttons .btn-group .btn {
     background-color: transparent;
-    color: #fff;
+    color:black;
     font-size: 18px;
 }
 
 .header .navbar-nav .dropdown-toggle:after {
-    margin: -8px 5px 0;
+    margin: -15px 5px 0;
 }
 
 .header .navbar-nav .dropdown .dropdown-item.dropdown-toggle::after {
@@ -1057,7 +1059,7 @@ a.dropdown-item.active {
 .dropdown-buttons .menu-search-box ul {
     background-color: transparent;
     border-radius: 0;
-    border-top: 2px solid #F5A13A;
+    border-top: 2px solid;
     min-width: 230px;
     padding: 0;
     top: 15px;
@@ -1235,7 +1237,7 @@ a.dropdown-item.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.54);
+    background-color: rgb(0 0 0 / 27%);
 }
 
 .bs-slider>.carousel-inner>.item>img,
@@ -1535,7 +1537,7 @@ a.dropdown-item.active {
     letter-spacing: 0.4px;
     font-size: 60px;
     font-weight: 500;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     max-width: 590px !important;
     line-height: 82px;
     -moz-animation: fadeInLeft 1.5s 0.2s forwards;
@@ -2311,7 +2313,7 @@ canvas {
     float: left;
     position: relative;
     top: -1px;
-    width: 30%;
+    width: 50%;
 }
 
 .special-places .content .price-box h5 {
@@ -2342,11 +2344,11 @@ canvas {
     padding-left: 14px;
     padding-top: 0;
     position: relative;
-    width: 70%;
+    width: 50%;
 }
 
 .special-places .content .title-box:before {
-    background-color: rgba(221, 221, 221, 0.7);
+    /* background-color: rgba(221, 221, 221, 0.7); */
     content: "";
     height: calc(100% - 8px);
     left: 2px;
@@ -2367,14 +2369,19 @@ canvas {
 .special-places .content .title-box h3 {
     color: #525252;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.6px;
+    text-transform: uppercase;
+    font-weight: 700;
+
     /* font-style: italic; */
 }
 
 .special-places .content .info {
     border-bottom: 1px solid rgba(240, 240, 240, 0.7);
-    display: inherit;
+    /* display: inherit; */
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 14px;
     margin-top: 20px;
     padding-bottom: 14px;
@@ -2595,7 +2602,7 @@ canvas {
 
 .special-packages .post-title-box .price-box {
     float: left;
-    width: 27%;
+    width: 50%;
 }
 
 .special-packages .post-title-box .price-box h5 {
@@ -2622,11 +2629,11 @@ canvas {
     padding-left: 14px;
     padding-top: 2px;
     position: relative;
-    width: 73%;
+    width:50%;
 }
 
 .special-packages .post-title-box .title-box:before {
-    background-color: rgba(221, 221, 221, 0.7);
+    /* background-color: rgba(221, 221, 221, 0.7); */
     content: "";
     height: calc(100% - 8px);
     left: 0;
@@ -2646,7 +2653,7 @@ canvas {
 
 .special-packages .post-title-box .title-box h3 {
     color: #F5A13A;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.6px;
     text-transform: uppercase;
@@ -2664,7 +2671,9 @@ canvas {
 }
 
 .special-packages .content .info {
-    display: inherit;
+    /* display: inherit; */
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 16px;
     width: 100%;
 }
@@ -4007,7 +4016,7 @@ Form Control Css Style
 .booking-form nav {}
 
 .booking-form .nav.nav-tabs {
-    background-color: #0E4D94;
+    /* background-color: #0E4D94; */
     border-bottom: 1px solid #0E4D94;
     border-radius: 0;
     margin-right: -1px;
@@ -4025,7 +4034,7 @@ Form Control Css Style
     padding: 13px 20px;
     text-align: center;
     text-transform: uppercase;
-    width: 33.334%;
+    width:99.78%;
     font-family: "Roboto", sans-serif;
     ;
 }
@@ -4101,7 +4110,7 @@ Form Control Css Style
     -moz-appearance: none;
     -webkit-appearance: none;
     background: #fbfbfb url("../images/photos/select-input.png") no-repeat scroll 100% center;
-    border: 1px solid #eee;
+    border: 1px solid black;
     cursor: pointer;
     position: relative;
 }
@@ -4225,11 +4234,12 @@ Features Css Style
 }
 
 .feature-section.over-layer-black:before {
-    background-color: rgba(0, 0, 0, 0.77);
+    background-color: rgba(255, 255, 255, 0.93);
 }
 
 .feature-item {
-    background-color: rgba(15, 129, 197, 0.8);
+    /* background-color: rgba(15, 129, 197, 0.8); */
+    background-color:blue;
     color: #fff;
     padding: 55px 30px;
     text-align: center;
@@ -4238,6 +4248,8 @@ Features Css Style
     -o-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 24px black;
+    height:253px;
 }
 
 .feature-item:hover {
@@ -4260,7 +4272,8 @@ Features Css Style
     font-weight: 600;
     line-height: 32px;
     margin-bottom: 10px;
-    text-transform: uppercase;
+    height:40px;
+    /* text-transform: uppercase; */
 }
 
 .feature-item .content h3 a {
@@ -4277,7 +4290,7 @@ Features Css Style
 
 .feature-item .content p {
     color: #f8f8f8;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 24px;
 }
 
@@ -5374,10 +5387,9 @@ Contact Details Css Style
 
 .form-row .form-group input.form-control {
     background-color: #fbfbfb;
-    border: 1px solid #eee;
+    border: 1px solid black;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
-    ;
     font-weight: 500;
     height: 56px;
     letter-spacing: 0.6px;
@@ -5387,9 +5399,8 @@ Contact Details Css Style
 
 .form-row textarea.form-control {
     background-color: #fbfbfb;
-    border: 1px solid #eee;
+    border: 1px solid black;
     font-family: "Roboto", sans-serif;
-    ;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.6px;
@@ -5537,7 +5548,7 @@ Footer Copy Right  Css Style
 }
 
 .footer-copy-right p {
-    color: #a2a2a2;
+    color: black;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.9px;

@@ -104,7 +104,7 @@
         </div>
     </div>
 </footer>
-<section class="footer-copy-right bg-theme-color-2 text-white p-0">
+<section class="footer-copy-right bg-theme-color-2 text-white p-0" style="background:#e6ecf5 !important">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">

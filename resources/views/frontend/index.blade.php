@@ -43,6 +43,8 @@
                                 <div class="slide-text slide-style-left st-two">
                                     <h2>{{ $banner->title }}</h2>
                                 </div>
+                               
+                                       
                                 <!-- Package Box -->
                                 @if ($getcoupon)
                                     <div class="package-box">
@@ -53,6 +55,16 @@
                                 @endif
                             </div>
                         </div>
+                      
+                            <a href="{{ route('online.book') }}">
+                                <button class="pushable">
+                                    <span class="shadow"></span>
+                                    <span class="edge"></span>
+                                    <span class="front">
+                                        Make Your Own Trip Now
+                                    </span>
+                                </button>
+                            </a>
                     </div>
                 @endforeach
                 <!-- End of Slide -->
@@ -108,20 +120,13 @@
             </div>
         </div>
     </section>
+   
     <!-- Welcome Section End -->
 
     <!-- Special Places Section Start -->
-    <section class="special-places-sec pt-90 pb-80">
+    <section class="special-places-sec pt-90 pb-40">
         <div class="container">
-            <div class="row">
-                @if($getTour->count() > 0)
-                <div class="section-title">
-                    
-                    <h4>Welcome to Mountain Guide Tour</h4>
-                    <h2>Special <span>Tour</span> Places</h2>
-                </div>
-                @endif
-            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tab-style">
@@ -142,57 +147,61 @@
                                     aria-labelledby="plc-asia-tab">
                                     <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
                                         @foreach ($countrys->tours as $key2 => $tour)
-                                        @if($tour->status =='1')
-                                            @if ($tour->country_id == $countrys->id)
-                                                <div class="item">
-                                                    <div class="special-places">
-                                                        <div class="thumb">
-                                                            <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                                                style="height:215px !important">
-                                                        </div>
-                                                        <div class="content">
-                                                            <div class="price-box">
-                                                                {{-- <h5><span>$</span>{{ $tour->main_price }}</h5> --}}
-                                                                @if ($getcoupon)
-                                                                    <h5 class="text-danger">
-                                                                        <strike><span>$</span>{{ $tour->main_price }}</strike>
-                                                                    </h5>
-                                                                    <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                                    </h5>
-                                                                @else
-                                                                    <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                                @endif
+                                            @if ($tour->status == '1')
+                                                @if ($tour->country_id == $countrys->id)
+                                                    <div class="item">
+                                                        <div class="special-places">
+                                                            <div class="thumb">
+                                                                <img src="{{ $tour->mainImage }}"
+                                                                    alt="{{ $tour->img_alt }}"
+                                                                    style="height:215px !important">
                                                             </div>
-                                                            <div class="title-box">
-                                                                <h4>{{ $tour->tour_name }}</h4>
-                                                                <h3>{{ $tour->country->country_name }}</h3>
-                                                            </div>
-                                                            <ul class="info">
-                                                                <li><a href="#"><i
-                                                                            class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                                        Days</a></li>
-                                                                {{-- <li><a href="#"><i class="fa fa-user"></i>{{$tour->}} Person</a></li> --}}
-                                                                <li><a
-                                                                        href="{{ route('tourmap',$tour->slug) }}"><i
-                                                                            class="fa fa-map-marker"></i>View on Map</a>
-                                                                </li>
-                                                               
+                                                            <div class="content">
+                                                                <div class="price-box">
+                                                                    
+                                                                    @if ($getcoupon)
+                                                                        <h5 class="text-danger">
+                                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                                        </h5>
+                                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                                        </h5>
+                                                                    @else
+                                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="title-box">
+                                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
+                                                                    <h3>{{ $tour->country->country_name }}</h3>
+                                                                </div>
+                                                                <ul class="info">
+                                                                    <li><a href="#"><i
+                                                                                class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                                            Days</a></li>
+                                                                    <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                                                class="fa fa-map-marker"></i>View on
+                                                                            Map</a>
+                                                                    </li>
 
-                                                            </ul>
-                                                            <p>{!! substr($tour->description,0, 300).'.' !!}</p>
-                                                            <a class="btn-theme" style="float:left !important"
-                                                                href="{{ route('booking', $tour->slug) }}">Book
-                                                                Now</a>
-                                                            <a class="btn-theme"
-                                                                href="{{ route('tourdetails', $tour->slug) }}">View
-                                                                Details</a>
+
+                                                                </ul>
+                                                                {{-- <p>{!! Str::words($tour->description, 30) !!}</p> --}}
+                                                                <h6 class="text-center"
+                                                                    style="color:#F5A13A;font-size:18px">
+                                                                    {{ $tour->tour_name }}</h6>
+                                                                <a class="btn-theme"
+                                                                    style="float:left !important;margin-top:42px"
+                                                                    href="{{ route('booking', $tour->slug) }}">Book
+                                                                    Now</a>
+                                                                <a class="btn-theme" style="margin-top:42px"
+                                                                    href="{{ route('tourdetails', $tour->slug) }}">View
+                                                                    Details</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @else
-                                                Not Available
+                                                @else
+                                                    Not Available
+                                                @endif
                                             @endif
-                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
@@ -208,15 +217,250 @@
         </div>
     </section>
     <!-- Special Places Section End -->
-
-    <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-45 pb-90" style="@if(!empty($homepagebannerone->page_banner))background-image:url({{asset($homepagebannerone->page_banner)}}) @endif">
+    <section class="special-packages-sec pt-30 pb-20">
         <div class="container">
             <div class="row">
-                @if($chooseus->count() > 0)
-                <div class="section-title">
-                    <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
+                <div class="col-md-12">
+                    @if ($getTour->count() > 0)
+                        <div class="section-title ">
+                            <h2 class="text-center">Best <span>Trekking</span> Places</h2>
+                        </div>
+                    @endif
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
+
+                        {{-- {{dd($icategory)}} --}}
+
+                        @foreach ($cattrekking->tour->shuffle() as $key => $tour)
+                            <div class="item">
+                                <div class="special-packages">
+                                    <div class="thumb">
+                                        <a href="{{ route('tourdetails', $tour->slug) }}">
+                                            <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
+                                                style="height:253px !important"></a>
+
+                                        <div class="post-title-box">
+                                            <div class="price-box">
+                                                @if ($getcoupon)
+                                                    <h5 class="text-danger">
+                                                        <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                    </h5>
+                                                    <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </h5>
+                                                @else
+                                                    <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                @endif
+                                            </div>
+                                            <div class="title-box">
+                                                {{-- <h4>{{ $tour->tour_name }}</h4> --}}
+                                                <h3>{{ $tour->country->country_name }}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content" style="height:200px">
+                                        <ul class="info">
+                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                    Days</a></li>
+                                            <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                        class="fa fa-map-marker"></i>View on Map</a></li>
+
+
+                                        </ul>
+                                        {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
+                                        <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                            {{ $tour->tour_name }}</h6>
+                                        <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                            href="{{ route('booking', $tour->slug) }}">Book
+                                            Now</a>
+                                        <a class="btn-theme" style="margin-top:42px"
+                                            href="{{ route('tourdetails', $tour->slug) }}">View
+                                            Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Packages Section Start -->
+
+    <section class="special-packages-sec pt-30 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if ($getTour->count() > 0)
+                        <div class="section-title ">
+                            <h2 class="text-center">Special <span>Tour</span> Packages</h2>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
+
+                        {{-- {{dd($icategory)}} --}}
+
+                        @foreach ($cattour->tour->shuffle() as $key => $tour)
+                            <div class="item">
+                                <div class="special-packages">
+                                    <div class="thumb">
+                                        <a href="{{ route('tourdetails', $tour->slug) }}">
+                                            <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
+                                                style="height:253px !important"></a>
+
+                                        <div class="post-title-box">
+                                            <div class="price-box">
+                                                @if ($getcoupon)
+                                                    <h5 class="text-danger">
+                                                        <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                    </h5>
+                                                    <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </h5>
+                                                @else
+                                                    <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                @endif
+                                            </div>
+                                            <div class="title-box">
+                                                {{-- <h4>{{ $tour->tour_name }}</h4> --}}
+                                                <h3>{{ $tour->country->country_name }}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content" style="height:200px">
+                                        <ul class="info">
+                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                    Days</a></li>
+                                            <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                        class="fa fa-map-marker"></i>View on Map</a></li>
+
+
+                                        </ul>
+                                        {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
+                                        <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                            {{ $tour->tour_name }}</h6>
+                                        <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                            href="{{ route('booking', $tour->slug) }}">Book
+                                            Now</a>
+                                        <a class="btn-theme" style="margin-top:42px"
+                                            href="{{ route('tourdetails', $tour->slug) }}">View
+                                            Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="special-packages-sec pt-30 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if ($getTour->count() > 0)
+                        <div class="section-title ">
+                            <h2 class="text-center">Best <span>Adventurous</span> Place</h2>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
+
+                        {{-- {{dd($icategory)}} --}}
+                        @foreach ($catother as $cother)
+                            @foreach ($cother->tour->shuffle() as $key => $tour)
+                                <div class="item">
+                                    <div class="special-packages">
+                                        <div class="thumb">
+                                            <a href="{{ route('tourdetails', $tour->slug) }}">
+                                                <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
+                                                    style="height:253px !important"></a>
+
+                                            <div class="post-title-box">
+                                                <div class="price-box">
+                                                    @if ($getcoupon)
+                                                        <h5 class="text-danger">
+                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                        </h5>
+                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h5>
+                                                    @else
+                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                    @endif
+                                                </div>
+                                                <div class="title-box">
+                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
+                                                    <h3>{{ $tour->country->country_name }}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content" style="height:200px">
+                                            <ul class="info">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                        Days</a></li>
+                                                <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                            class="fa fa-map-marker"></i>View on Map</a></li>
+
+
+                                            </ul>
+                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
+                                            <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                                {{ $tour->tour_name }}</h6>
+                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                                href="{{ route('booking', $tour->slug) }}">Book
+                                                Now</a>
+                                            <a class="btn-theme" style="margin-top:42px"
+                                                href="{{ route('tourdetails', $tour->slug) }}">View
+                                                Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Global Section Start -->
+    <section class="global-section over-layer-white pt-45 pb-15"
+        style="@if (!empty($homepagebannertwo->page_banner)) background-image:url({{ asset($homepagebannertwo->page_banner) }}) @endif">
+        <div class="row">
+            <div class="section-title">
+                <h2>Review <span>On</span>TrivAdvisor</h2>
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12">
+
+            <div data-rw-slider="30564"></div>
+
+        </div>
+
+    </section>
+    <!-- Global Section End -->
+
+    <!-- Features Section Start -->
+    <section class="feature-section over-layer-black pt-45 pb-25"
+        style="@if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif">
+        <div class="container-fluid">
+            <div class="row">
+                @if ($chooseus->count() > 0)
+                    <div class="section-title">
+                        <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
+                    </div>
                 @endif
             </div>
             <div class="row">
@@ -229,7 +473,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="#">{{ $choose->title }}</a></h3>
-                                <p>{!! Str::limit($choose->description, 100, '.') !!}</p>
+                                {{-- <p>{!! Str::limit($choose->description, 100, '.') !!}</p> --}}
                             </div>
                         </div>
                     </div>
@@ -238,140 +482,72 @@
         </div>
     </section>
     <!-- Feature Section End -->
-
-    <!-- Special Packages Section Start -->
-    <section class="special-packages-sec pt-55 pb-20">
+    <!-- Testimonials Section Start -->
+    <section class="testimonials-section pt-0 pb-85">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    @if($getTour->count() > 0)
-                    <div class="section-title ">
-                        <h2 class="text-center">Special <span>Packages</span> Offer</h2>
-                    </div>
-                    @endif
+                <div class="col-lg-12">
+                    @include('frontend.common.testmonial')
                 </div>
             </div>
+        </div>
+    </section>
+    <!-- Testimonials Section End -->
+    <!-- Blog Section Start -->
+    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25"
+        style="@if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }}) @endif">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                            <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
-                                @foreach ($getTour as $key => $tour)
-                                    <div class="item">
-                                        <div class="special-packages">
-                                            <div class="thumb">
-                                                <a href="{{ route('tourdetails', $tour->slug) }}"> 
-                                                    <img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}"
-                                                        style="height:253px !important"></a>
-
-                                                <div class="post-title-box">
-                                                    <div class="price-box">
-                                                        @if ($getcoupon)
-                                                            <h5 class="text-danger">
-                                                                <strike><span>$</span>{{ $tour->main_price }}</strike>
-                                                            </h5>
-                                                            <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                            </h5>
-                                                        @else
-                                                            <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                        @endif
-                                                    </div>
-                                                    <div class="title-box">
-                                                        <h4>{{ $tour->tour_name }}</h4>
-                                                        <h3>{{ $tour->country->country_name }}
-                                                        </h3>
-                                                    </div>
-                                                </div>
+                @if ($getblogs->count() > 0)
+                    <div class="section-title" style="margin: 0 auto 10px !important;">
+                        <h2>Our <span>Latest</span> Blogs</h2>
+                    </div>
+                @endif
+            </div>
+            <div class="row">
+                @forelse($getblogs as $blog)
+                    <div class="col-md-4 col-lg-4">
+                        <div class="blog-post">
+                            <div class="thumb">
+                                <img src="{{ $blog->blog_image }}" style="height:442px" alt="{{ $blog->img_alt }}">
+                                <div class="content">
+                                    <h3>{{ $blog->blog_title }}</h3>
+                                    <div class="meta-box">
+                                        <div class="admin-post"> {{ $blog->author_name }} </div>
+                                        <div class="inner">
+                                            <div class="date">
+                                                <i class="fa fa-calendar-plus-o"></i>
+                                                {{ $blog->created_at->format('M d') }}
                                             </div>
-                                            <div class="content">
-                                                <ul class="info">
-                                                    <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                            Days</a></li>
-                                                    <li><a href="{{ route('tourmap', $tour->slug) }}"><i
-                                                                class="fa fa-map-marker"></i>View on Map</a></li>
-                                                               
-
-                                                </ul>
-                                                <p>{!! substr($tour->description,0, 300).'.' !!}</p>
-                                                <a class="btn-theme" style="float:left !important"
-                                                    href="{{ route('booking', $tour->slug) }}">Book
-                                                    Now</a>
-                                                <a class="btn-theme"
-                                                    href="{{ route('tourdetails', $tour->slug) }}">View
-                                                    Details</a>
+                                            @php
+                                                $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
+                                            @endphp
+                                            <div class="comment">
+                                                <i class="fa fa-commenting-o"></i> {{ $getcomment }}
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Special Packages Section End -->
-
-    <!-- Latest Hotel Section Start -->
-    {{-- <section class="latest-hotel-sec pt-15 pb-15">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h4>Mountain Guide Trek Hotel Collection</h4>
-                    <h2>Latest <span>Hotel</span> Collection</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="latesthotel_carousel owl-carousel owl-theme owl-navst">
-                        @foreach ($gethotel as $hotel)
-                            <div class="item">
-                                <div class="latest-hotel">
-                                    <div class="thumb">
-                                        <img src="{{ $hotel->image }}" alt="" style="height:253px">
-                                    </div>
-                                    <div class="content">
-                                        <h4>{{ $hotel->hotel_name }}</h4>
-                                        <h5>{{ $hotel->hotel_address }}</h5>
-
-                                        <p>{!! Str::limit($hotel->hotel_description, 200,'.') !!}</p>
-                                        <a class="map-viw"
-                                            href="{{ route('hotelviewdetails', $hotel->hotel_name) }}"><i
-                                                class="fa fa-eye"></i>View Details</a>
-                                    </div>
                                 </div>
                             </div>
-                        @endforeach
+                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">Continue
+                                Reading
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                @empty
+                @endforelse
             </div>
         </div>
-    </section> --}}
-    <!-- Latest Hotel Section End -->
-
-    <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-45 pb-25" style="@if(!empty($homepagebannertwo->page_banner))background-image:url({{asset($homepagebannertwo->page_banner)}}) @endif">
-        <div class="row">
-            <div class="section-title">
-                <h2>Message <span>From</span> Customer's</h2>
-            </div>
-        </div>
-                <div class="col-xl-12 col-lg-12">
-
-                    <div data-rw-slider="30323"></div>
-
-                </div>
-
     </section>
-    <!-- Global Section End -->
+    <!-- Blog Section End -->
+
+
+
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-25 pb-0">
+    <section class="gallery-section pt-85 pb-20">
         <div class="container-fluid">
-            <div class="row">
-                <div class="section-title">
-                    @if($gallery->count()>0)
-                    <h2>Mountain Guide <span>Tour</span> Gallery</h2>
-                    @endif
-                </div>
-            </div>
-
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
                     <div class="col-sm-4 col-grid">
@@ -396,77 +572,16 @@
 
 
         </div>
-        @if($gallery->count()>0)
-        <div class="text-center mt-4">
-            <a href="{{ route('allgallery') }}" class="read-btn" style="">
-                <h5>View Gallery</h5>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
-        </div>
-@endif
+        @if ($gallery->count() > 0)
+            <div class="text-center mt-4" style="display: flex !important;justify-content: space-around;">
+                <a href="{{ route('allgallery') }}" class="read-btn" style="background:#0E4D94;padding: 10px;">
+                    <h5 class="text-white">View Gallery <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
+
+                </a>
+            </div>
+        @endif
     </section>
 
     <!-- Gallery Section End -->
-
-    <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-0 pb-85">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    @include('frontend.common.testmonial')
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonials Section End -->
-
-    <!-- Blog Section Start -->
-    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25" style="@if(!empty($homepagebannerthree->page_banner))background-image:url({{asset($homepagebannerthree->page_banner)}}) @endif">
-        <div class="container">
-            <div class="row">
-                @if($getblogs->count()>0)
-                <div class="section-title">
-                    <h2>Our latest blog</h2>
-                </div>
-                @endif
-            </div>
-            <div class="row">
-                @forelse($getblogs as $blog)
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-post">
-                            <div class="thumb" >
-                                <img  src="{{ $blog->blog_image }}" style="height:442px" alt="{{$blog->img_alt}}">
-                                <div class="content">
-                                    <h3>{{ $blog->blog_title }}</h3>
-                                    <div class="meta-box">
-                                        <div class="admin-post"> {{ $blog->author_name }} </div>
-                                        <div class="inner">
-                                            <div class="date">
-                                                <i class="fa fa-calendar-plus-o"></i>
-                                                {{ $blog->created_at->format('M d') }}
-                                            </div>
-                                            @php
-                                                $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
-                                            @endphp
-                                            <div class="comment">
-                                                <i class="fa fa-commenting-o"></i> {{ $getcomment }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="{{ route('blogsdetails', $blog->slug) }}"
-                                class="read-btn">Continue
-                                Reading
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                @empty
-                @endforelse
-            </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
 
 @endsection

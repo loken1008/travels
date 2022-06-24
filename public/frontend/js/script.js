@@ -253,7 +253,7 @@
     //owl-Carousel-TwoColumn
     $(".specialplaces_carousel").owlCarousel({
         loop: true,
-        autoplay: false,
+        autoplay: true,
         autoplayHoverPause: false,
         smartSpeed: 700,
         items: 3,
@@ -289,7 +289,7 @@
     //owl-Carousel-TwoColumn
     $(".specialpackages_carousel").owlCarousel({
         loop: true,
-        autoplay: false,
+        autoplay: true,
         autoplayHoverPause: false,
         smartSpeed: 700,
         items: 3,
