@@ -7,8 +7,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
-    <meta name="keywords" content="@yield('meta_keywords','some default keywords')">
-    <meta name="description" content="@yield('meta_description','default description')">
+    <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
+    <meta name="description" content="@yield('meta_description', 'default description')">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
@@ -105,6 +105,7 @@ padding-left:20px;
             margin: 1px;
             font-size: 30px;
         }
+
         /* #social-links{
             display: none;
         } */
@@ -123,17 +124,80 @@ padding-left:20px;
             font-size: 15px;
             background: #e3e3ea;
         }
-        .costincludeexclude ul li,.equipmentlist ul li,.equipment-collaspe ul li{   
+
+        .costincludeexclude ul li,
+        .equipmentlist ul li,
+        .equipment-collaspe ul li {
             list-style: disc;
             text-align: justify;
             line-height: 2rem;
         }
+
         #st-1 {
-            z-index:1 !important;
+            z-index: 1 !important;
         }
 
+        .pushable {
+            position: fixed;
+            top: 335px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: hsl(0deg 0% 0% / 0.25);
+            transform: translateY(2px);
+        }
+
+        .edge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0E4D94;
+        }
+
+        .front {
+            display: block;
+            position: relative;
+            padding: 12px 42px;
+            font-size: 1.25rem;
+            color: white;
+            background: #0E4D94;
+            transform: translateY(-4px);
+        }
+
+        .pushable:hover .front {
+            transform: translateY(-6px);
+        }
+
+        .pushable:hover .shadow {
+            transform: translateY(4px);
+        }
+
+        .pushable:active .front {
+            transform: translateY(-2px);
+        }
+
+        .pushable:active .shadow {
+            transform: translateY(1px);
+        }
+
+        .pushable:focus:not(:focus-visible) {
+            outline: none;
+        }
     </style>
-     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" async="async"></script>
+    <script type="text/javascript"
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
+        async="async"></script>
 
 </head>
 
@@ -158,7 +222,7 @@ padding-left:20px;
 
     <a href="#" class="scrollup"><i class="flaticon-long-arrow-pointing-up" aria-hidden="true"></i></a>
 
-   
+
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
@@ -185,16 +249,14 @@ Main JavaScript
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
-   
+
+    <!-- Begin widget code -->
+    {{-- tripadvisor --}}
 <!-- Begin widget code -->
-{{-- tripadvisor --}}
-<script>
-var script = document.createElement("script");
-script.type = "module";
-script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";
-document.getElementsByTagName("head")[0].appendChild(script);
-</script>
+
+<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
 <!-- End widget code -->
+    <!-- End widget code -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
@@ -210,15 +272,18 @@ document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
     <!--End of Tawk.to Script-->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-5EJF8NFWL9');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5EJF8NFWL9');
+    </script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>

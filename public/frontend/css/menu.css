@@ -28,7 +28,7 @@ header.header .container {
 
 .header .navbar-nav li .nav-link {
     color: #333333;
-    font-size: 16px;
+    font-size: 14px;
     padding: 28px 15px 27px 15px;
     z-index: 102;
     border: none;
@@ -408,7 +408,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     position: absolute;
     text-align: center;
     margin-top: 0px;
-    background: #F5A13A;
+    background: black;
     color: #fff;
     cursor: pointer;
     -webkit-transition: all 0.2s ease-in-out;

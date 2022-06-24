@@ -5,7 +5,9 @@
 
 
     <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" @if(!empty($tourbanner->page_banner))data-background="{{asset($tourbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
+    <section class="inner-area parallax-bg"
+        @if (!empty($tourbanner->page_banner)) data-background="{{ asset($tourbanner->page_banner) }}" @endif data-type="parallax"
+        data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -25,64 +27,50 @@
             <div class="row grid-mb">
                 @if (count($searchtour) > 0)
                     @forelse($searchtour as $tourdetails)
-                        <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="item" style="width:340px; margin-left:10px">
                             <div class="special-packages">
                                 <div class="thumb">
-                                    <img src="{{ $tourdetails->mainImage }}" alt="{{$tourdetails->img_alt}}" style="height:200px">
+                                    <a href="{{ route('tourdetails', $tourdetails->slug) }}">
+                                        <img src="{{ $tourdetails->mainImage }}" alt="{{ $tourdetails->img_alt }}"
+                                            style="height:253px !important"></a>
 
                                     <div class="post-title-box">
                                         <div class="price-box">
                                             @if ($getcoupon)
                                                 <h5 class="text-danger">
-                                                    <strike><span>$</span>{{ $tourdetails->main_price }}</strike></h5>
+                                                    <strike><span>$</span>{{ $tourdetails->main_price }}</strike>
+                                                </h5>
                                                 <h5><span>$</span>{{ $tourdetails->main_price - ($getcoupon->discount_amount / 100) * $tourdetails->main_price }}
                                                 </h5>
                                             @else
                                                 <h5><span>$</span>{{ $tourdetails->main_price }}</h5>
                                             @endif
-                                            {{-- <h6>Starts From</h6> --}}
                                         </div>
                                         <div class="title-box">
-                                            <h4>{{ $tourdetails->tour_name }}</h4>
-                                            <h3>
-                                                {{ $tourdetails->country->country_name }}</h3>
+                                            {{-- <h4>{{ $tourdetails->tourdetails_name }}</h4> --}}
+                                            <h3>{{ $tourdetails->country->country_name }}
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content">
+                                <div class="content" style="height:200px">
                                     <ul class="info">
-                                        <li><a href="#"><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }} Days</a>
-                                        </li>
-                                        {{-- <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li> --}}
+                                        <li><a href="#"><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }}
+                                                Days</a></li>
                                         <li><a href="{{ route('tourmap', $tourdetails->slug) }}"><i
                                                     class="fa fa-map-marker"></i>View on Map</a></li>
-                                                    
+
+
                                     </ul>
-                                    <p>{!! Str::limit($tourdetails->description, 150, '.') !!}</p>
-                                    {{-- <div class="small-hotel">
-                                <div class="text">
-                                    <h6>Hotels to Stay</h6>
-                                    <h5>Saladi Hasan</h5>
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                        <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                        <li><a href="#">(3 Ratings)</a></li>
-                                    </ul>
-                                    <a class="map-viw" href="#"><i class="fa fa-map-marker"></i>View on
-                                        Map</a>
-                                </div>
-                                <div class="thumb">
-                                    <img src="images/features/sm1.jpg" alt="">
-                                    <img src="images/features/sm2.jpg" alt="">
-                                </div>
-                            </div> --}}
-                                    <a class="btn-theme" style="float:left !important"
-                                        href="{{ route('booking',$tourdetails->slug) }}">Book Now</a>
-                                    <a class="btn-theme"
-                                        href="{{ route('tourdetails',$tourdetails->slug) }}">View Details</a>
+                                    {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
+                                    <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                        {{ $tourdetails->tour_name }}</h6>
+                                    <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                        href="{{ route('booking', $tourdetails->slug) }}">Book
+                                        Now</a>
+                                    <a class="btn-theme" style="margin-top:42px"
+                                        href="{{ route('tourdetails', $tourdetails->slug) }}">View
+                                        Details</a>
                                 </div>
                             </div>
                         </div>
