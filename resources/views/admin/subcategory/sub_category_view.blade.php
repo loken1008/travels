@@ -1,7 +1,6 @@
 @extends('admin.body.master')
 @section('title', 'Sub Category')
-@section('content')
-    <div class="container-full">        <!-- Main content -->
+@section('content')     <!-- Main content -->
         <section class="content">
             <div class="row">
 
@@ -28,7 +27,7 @@
                                         @forelse($subcategories as $key=> $subcategory)
                                             <tr>
                                                 <td>{{$key+1}}</td>
-                                                <td>{{ $subcategory['category']['category_name'] }}</td>
+                                                <td>@if(!empty($subcategory->category->category_name)){{ $subcategory->category->category_name }}@endif</td>
                                                 <td>{{ $subcategory->sub_category_name }}</td>
                                                 <td>
                                                     <a href="{{route('edit.subcategory',$subcategory->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>

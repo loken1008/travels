@@ -854,6 +854,9 @@ Route::get('/booking/{slug}', [
     App\Http\Controllers\User\BookingController::class,
     'onlineBooking',
 ])->name('booking');
+Route::get('/custom-booking',function(){
+return view('frontend.bookform.bookform');
+})->name('online.book');
 Route::post('/booking/store', [
     App\Http\Controllers\User\BookingController::class,
     'storeBooking',
