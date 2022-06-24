@@ -165,7 +165,9 @@
 
         .front {
             display: block;
-            position: relative;
+            position: fixed;
+            top: 504px;
+            left: 125px;
             padding: 12px 42px;
             font-size: 1.25rem;
             color: white;
