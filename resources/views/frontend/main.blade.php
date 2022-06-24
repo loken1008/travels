@@ -61,7 +61,9 @@
             color: #dc3545;
             font-size: 14px;
         }
-
+        #costie ul{
+padding-left:20px;	
+}
 
         .kgKuDl {
             font-family: 'Lora', serif;
@@ -227,8 +229,13 @@
 Main JavaScript
 <------------------------------------------>
 
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+
     <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
+    
+<script src="{{ asset('frontend/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
     <!-- Optional JavaScript -->
     <script src="{{ asset('frontend/js/bootstrap-dropdownhover.min.js') }}"></script>
