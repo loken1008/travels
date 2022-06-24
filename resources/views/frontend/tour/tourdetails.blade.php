@@ -489,6 +489,12 @@
         </div>
     </section>
     <!-- Testimonials Section End -->
+
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
     $('[data-toggle="tab"]').click('shown.bs.collapse', function() {  
@@ -497,3 +503,4 @@
 });
     </script>
 @endsection
+

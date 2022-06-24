@@ -38,7 +38,7 @@ return [
     'allow_shared_folder'      => true,
 
     'shared_folder_name'       => 'shares',
-    'upload_max_filesize=M',
+    'upload_max_filesize=5000000M',
     
 
     /*
@@ -79,7 +79,8 @@ return [
             'valid_mime'   => [
                 'image/jpeg',
                 'image/pjpeg',
-                'image/png',
+		'image/png',
+		'image/webp',
                 'image/gif',
                 'video/mp4',
                 'video/mpeg',
@@ -140,7 +141,8 @@ return [
     'raster_mimetypes'         => [
         'image/jpeg',
         'image/pjpeg',
-        'image/png',
+	'image/png',
+	'image/webp',
         'video/mp4',
         'video/mpeg',
     ],
@@ -165,7 +167,8 @@ return [
         'gif'  => 'GIF Image',
         'jpg'  => 'JPEG Image',
         'jpeg' => 'JPEG Image',
-        'png'  => 'PNG Image',
+	'png'  => 'PNG Image',
+	'webp' => 'WEBP Image',
         'ppt'  => 'Microsoft PowerPoint',
         'pptx' => 'Microsoft PowerPoint',
         'mp3'  => 'MP3 Audio File',
@@ -185,6 +188,6 @@ return [
     | directives are not supported.
      */
     'php_ini_overrides'        => [
-        'memory_limit' => '500M',
+        'memory_limit' => '500000M',
     ],
 ];
