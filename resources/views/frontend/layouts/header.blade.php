@@ -166,16 +166,16 @@ $route = Route::current()->getName();
                                                         @foreach($subcat->tour->take(1) as $t)
                                                         @if($subcat->id == $t->subcategory_id)
                                                         @if($t->status == '1')
-                                                        <i class="fa fas fa-angle-double-right mt-1" style="float:right"></i> 
+                                                        <i class="fa fas fa-angle-right mt-1" style="float:right"></i> 
                                                         @endif
                                                         @endif
                                                         @endforeach
                                                     </a>
 
-                                                    <div class="dropdown-menu">
+                                                    <div class="dropdown-menu ">
                                                         @foreach ($subcat->tour as $tour)
                                                             @if ($tour->status == 1)
-                                                                <a class="dropdown-item"
+                                                                <a class="dropdown-item di-menu"
                                                                     href="{{ url('tourdetails', $tour->slug) }}">{{ $tour->tour_name }}</a>
                                                             @endif
                                                         @endforeach

@@ -55,16 +55,6 @@
                                 @endif
                             </div>
                         </div>
-                      
-                            <a href="{{ route('online.book') }}">
-                                <button class="pushable">
-                                    <span class="shadow"></span>
-                                    <span class="edge"></span>
-                                    <span class="front">
-                                        Make Your Own Trip Now
-                                    </span>
-                                </button>
-                            </a>
                     </div>
                 @endforeach
                 <!-- End of Slide -->
@@ -94,26 +84,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="icon-wrp">
-                        <div class="icon-box">
-                            <i class="fa fa-wifi"></i>
-                            <h5>Travel</h5>
+                    <div class="icon-wrp text-center" style="display:flex;flex-wrap: wrap;">
+                        @foreach ($country as $key => $cutry)
+                        <div class="icon-box" id="icon-menu">
+                            <nav>
+                                <div class="nav nav-tabs " id="nav-tab" role="tablist"> 
+                                        <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }}" id="plc-asia-tab"
+                                            data-toggle="tab" href="#plc-asia{{ $cutry->country_name }}" role="tab"
+                                            aria-controls="plc-asia" aria-selected="true">{{ $cutry->country_name }}</a> 
+                                </div>
+                            </nav>
                         </div>
-                        <div class="icon-box">
-                            <i class="fa fa-crosshairs"></i>
-                            <h5>Packages</h5>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa fa-plane"></i>
-                            <h5>Vehicle</h5>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa fa-umbrella"></i>
-                            <h5>Hotel</h5>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa fa-map-marker"></i>
-                            <h5>Location</h5>
+                        
+                        @endforeach
+                        <div class="icon-box" id="booknow">
+                            <a href="{{ route('online.book') }}" class="animated-button1">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              Make Your Own Trip Now
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -124,13 +115,13 @@
     <!-- Welcome Section End -->
 
     <!-- Special Places Section Start -->
-    <section class="special-places-sec pt-90 pb-40">
+    <section class="special-places-sec pt-20 pb-15">
         <div class="container">
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tab-style">
-                        <nav>
+                        {{-- <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 @foreach ($country as $key => $cutry)
                                     <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }}" id="plc-asia-tab"
@@ -138,7 +129,7 @@
                                         aria-controls="plc-asia" aria-selected="true">{{ $cutry->country_name }}</a>
                                 @endforeach
                             </div>
-                        </nav>
+                        </nav> --}}
                         <div class="tab-content" id="nav-tabContent">
                             <!-- item start -->
                             @forelse($getcountry as $key1=> $countrys)
@@ -146,7 +137,7 @@
                                     id="plc-asia{{ $countrys->country_name }}" role="tabpanel"
                                     aria-labelledby="plc-asia-tab">
                                     <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
-                                        @foreach ($countrys->tours as $key2 => $tour)
+                                        @forelse ($countrys->tours as $key2 => $tour)
                                             @if ($tour->status == '1')
                                                 @if ($tour->country_id == $countrys->id)
                                                     <div class="item">
@@ -198,11 +189,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @else
-                                                    Not Available
                                                 @endif
                                             @endif
-                                        @endforeach
+                                            @empty 
+                                            <h5>Trip Not available</h5>
+                                        @endforelse
                                     </div>
                                 </div>
                             @empty
@@ -217,7 +208,7 @@
         </div>
     </section>
     <!-- Special Places Section End -->
-    <section class="special-packages-sec pt-30 pb-20">
+    <section class="special-packages-sec pt-15 pb-15">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -291,7 +282,7 @@
 
     <!-- Special Packages Section Start -->
 
-    <section class="special-packages-sec pt-30 pb-20">
+    <section class="special-packages-sec pt-15 pb-15">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -362,7 +353,7 @@
             </div>
         </div>
     </section>
-    <section class="special-packages-sec pt-30 pb-20">
+    <section class="special-packages-sec pt-15 pb-15">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -436,7 +427,7 @@
         </div>
     </section>
     <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-45 pb-15"
+    <section class="global-section over-layer-white pt-15 pb-15"
         style="@if (!empty($homepagebannertwo->page_banner)) background-image:url({{ asset($homepagebannertwo->page_banner) }}) @endif">
         <div class="row">
             <div class="section-title">
@@ -453,7 +444,7 @@
     <!-- Global Section End -->
 
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-45 pb-25"
+    <section class="feature-section over-layer-black pt-15 pb-15"
         style="@if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif">
         <div class="container-fluid">
             <div class="row">
@@ -494,7 +485,7 @@
     </section>
     <!-- Testimonials Section End -->
     <!-- Blog Section Start -->
-    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25"
+    <section class="blog-section over-layer-white bg-f8 pt-15 pb-15"
         style="@if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }}) @endif">
         <div class="container-fluid">
             <div class="row">
@@ -546,7 +537,7 @@
 
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-85 pb-20">
+    <section class="gallery-section pt-15 pb-20">
         <div class="container-fluid">
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
