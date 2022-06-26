@@ -214,7 +214,7 @@
                 <div class="col-md-12">
                     @if ($getTour->count() > 0)
                         <div class="section-title ">
-                            <h2 class="text-center">Best <span>Trekking</span> Places</h2>
+                            <h2 class="text-center">Popular <span>Trekking</span> Places</h2>
                         </div>
                     @endif
                 </div>
@@ -359,7 +359,7 @@
                 <div class="col-md-12">
                     @if ($getTour->count() > 0)
                         <div class="section-title ">
-                            <h2 class="text-center">Best <span>Adventurous</span> Place</h2>
+                            <h2 class="text-center">Popular <span>Adventurous</span> Place</h2>
                         </div>
                     @endif
                 </div>
