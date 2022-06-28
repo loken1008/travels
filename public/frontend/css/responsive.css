@@ -29,7 +29,7 @@ Creation Date: 15 January 2019*/
   }
   .package-box {
     left: 67%;
-    top: 26.3%;
+    top: 12.3%;
   }
   .slide-style-right.package-box {
     left: 19.5%;
@@ -251,6 +251,7 @@ Creation Date: 15 January 2019*/
 }
 
 @media only screen and (max-width: 991px) {
+
   .header.header-style-1 .menu-style .main-mega-menu .navbar .navbar-collapse {
     background-color: rgba(255, 255, 255, 1) !important;
   }
@@ -359,14 +360,12 @@ Creation Date: 15 January 2019*/
     position: relative;
     top:64px;
   }
-  .icon-wrp #booknow {
-    width: 50%;
-    position: relative;
-    top: -108px;
-    right: 13px;
+  .icon-wrp{
+    flex-direction: column-reverse;
   }
-  #icon-menu{
-    padding:20px 0px;
+  .animated-button1 {
+    left: 0px;
+    width:220px;
   }
   .service-details-sidebar .contact-box {
     margin-bottom: 40px;
@@ -414,14 +413,22 @@ Creation Date: 15 January 2019*/
     width: 188px;
   }
 }
-
+@media only screen and (min-width: 768px){
+  video{
+    width:100%;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .country-tab{
+    max-width:66% !important;
+}
   .carousel-item {
     min-height: 400px;
   }
   .carousel-item .slide-image {
     min-height: 400px;
   }
+ 
   /*Section Title Css Style*/
   .section-title h2 {
     font-size: 38px;
@@ -509,9 +516,23 @@ Creation Date: 15 January 2019*/
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
+ 
+  #country-booking{
+    flex-direction: column-reverse;
+  }
+  #custom-booking{
+    text-align: center;
+  }
+  .cbutton{
+    height: 25px;
+    padding: 2px 22px;
+  }
+  .icon-wrp{
+    padding: 11px 33px;
+  }
   .header .top-bar {
-    display: none;
+    /* display: none; */
   }
   .header .menu-style #logo_img {
     padding: 5px 0;
@@ -539,7 +560,7 @@ Creation Date: 15 January 2019*/
     font-size: 20px;
     line-height: 25px;
     max-width: 300px !important;
-    margin: 0 auto 20px;
+    margin:117px auto 20px;
     float: none;
   }
   .slide-style-center.slide-text.st-two div.btn-box {
@@ -716,11 +737,12 @@ Creation Date: 15 January 2019*/
     font-size: 22px;
   }
   .carousel-item {
-    height: 280px;
+    height: 550px;
   }
   .carousel-item .slide-image {
-    height: 280px;
+    height: 550px;
   }
+ 
   .icon-wrp {
     text-align: center;
   }
@@ -995,7 +1017,7 @@ Creation Date: 15 January 2019*/
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .top-bar {
-    display: none;
+    /* display: none; */
   }
   .about-features .thumb .about-video .about-video-btn {
     left: 0;

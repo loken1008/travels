@@ -14,16 +14,23 @@
 
                 <section>
                     <div class="row">
+                       
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Tour Name :</label>
-                                <span>@if(!empty($detailshotel->tour->tour_name)){{ $detailshotel->tour->tour_name }} @endif</span>
+                                <span>
+                                    @if(!empty((int)$detailshotel->tour_id))
+                                    {{ $detailshotel->tour->tour_name }}
+                                    @else 
+                                    {{ $detailshotel->tour_id }}
+                                    @endif
+                                </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Full Name :</label>
-                                <span>@if(!empty($detailshotel->first_name)){{ $detailshotel->first_name}} {{ $detailshotel->last_name}}@endif</span>
+                                <span>@if(!empty($detailshotel->full_name)){{ $detailshotel->full_name}}@endif</span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -36,18 +43,6 @@
                             <div class="form-group">
                                 <label for="firstName5">Address :</label>
                                 <span>@if(!empty($detailshotel->address)){{ $detailshotel->address }}@endif</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="firstName5">Post Code :</label>
-                                <span>@if(!empty($detailshotel->post_code)){{ $detailshotel->post_code }}@endif</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="firstName5">Telephone :</label>
-                                <span>@if(!empty($detailshotel->telephone)){{ $detailshotel->telephone }}@endif</span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -68,6 +63,7 @@
                                 <span>@if(!empty($detailshotel->number_people)){{ $detailshotel->number_people }}@endif</span>
                             </div>
                         </div>
+                        @if(!empty((int)$detailshotel->tour_id))
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="firstName5">Arrival date :</label>
@@ -80,9 +76,23 @@
                                 <span>@if(!empty($detailshotel->departure_date)){{ $detailshotel->departure_date }}@endif</span>
                             </div>
                         </div>
+                        @else 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName5">Start Date :</label>
+                                <span>@if(!empty($detailshotel->start_date)){{ $detailshotel->start_date }}@endif</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName5">Tour Days :</label>
+                                <span>@if(!empty($detailshotel->tour_days)){{ $detailshotel->tour_days }}@endif</span>
+                            </div>
+                        </div>
+                        @endif
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5">Departure Date :</label>
+                                <label for="firstName5">Message :</label>
                                 <p class="text-justify">@if(!empty($detailshotel->message)){{ $detailshotel->message }}@endif</p>
                             </div>
                         </div>

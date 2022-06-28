@@ -30,10 +30,9 @@ class BookingController extends Controller
    public function storeBooking(Request $request)
    {
          $request->validate([
-              'first_name'=>'required',
-              'last_name'=>'required',
+              'tour_id'=>'required',
+              'full_name'=>'required',
               'email'=>'required',
-              'address'=>'required',
               'mobile'=>'required',
               'country'=>'required',
               'number_people'=>'required',
@@ -45,41 +44,46 @@ class BookingController extends Controller
          }
          
          $booking->tour_id=$request->tour_id;
-         $booking->first_name=$request->first_name;
-         $booking->last_name=$request->last_name;
+         $booking->full_name=$request->full_name;
          $booking->email=$request->email;
          $booking->address=$request->address;
-         $booking->post_code=$request->post_code;
-         $booking->telephone=$request->telephone;
          $booking->mobile=$request->mobile;
          $booking->country=$request->country;
          $booking->number_people=$request->number_people;
          $booking->arrival_date=$request->arrival_date;
          $booking->departure_date=$request->departure_date;
+         $booking->start_date=$request->start_date;
+         $booking->tour_days=$request->tour_days;
          $booking->message=$request->message;
          $booking->save();
          $user = User::first();
          $getbooking=Booking::with('tour')->first();
          $user->notify(new BookingNotification($booking));
          $getbooking->notify(new BookingNotification($booking));
-         
-         event(new BookingMessage($booking['first_name'].'.'.$booking['last_name'].'.'.'has booked'.'.'.$booking['tour']['tour_name']));
-         
-        
-          $tourbooking=[
-          'tour_name'=>$getbooking->tour->tour_name,
-          'first_name'=>$getbooking->first_name,
-          'last_name'=>$getbooking->last_name,
-          'email'=>$getbooking->email,
-          'address'=>$getbooking->address,
-          'telephone'=>$getbooking->telephone,
-          'mobile'=>$getbooking->mobile,
-          'country'=>$getbooking->country,
-          'number_people'=>$getbooking->number_people,
-          'arrival_date'=>$getbooking->arrival_date,
-          'departure_date'=>$getbooking->departure_date,
-          'message'=>$getbooking->message,
-          ];
+         if((int)$booking->tour_id){
+         event(new BookingMessage($booking['full_name'].'.'.'has booked'.'.'.$booking['tour']['tour_name']));
+         }else{
+            event(new BookingMessage($booking['full_name'].'.'.'has booked'.'.'.$booking['tour_id']));
+         }
+         if((int)$getbooking->tour_id){
+            $tourbooking=[
+            'tour_name'=>$getbooking->tour->tour_name,
+            'full_name'=>$getbooking->full_name,
+            'email'=>$getbooking->email,
+            'mobile'=>$getbooking->mobile,
+            'country'=>$getbooking->country,
+            'number_people'=>$getbooking->number_people,
+            ];
+           }else{
+              $tourbooking=[
+                 'tour_name'=>$getbooking->tour_id,
+                 'full_name'=>$getbooking->full_name,
+                 'email'=>$getbooking->email,
+                 'mobile'=>$getbooking->mobile,
+                 'country'=>$getbooking->country,
+                 'number_people'=>$getbooking->number_people,
+                 ];
+           }
          
          Mail::to('lokenchand260@gmail.com')->send(new BookingMail($tourbooking));
          $notification=array(

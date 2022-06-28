@@ -26,19 +26,30 @@ $route=Route::current()->getName();
                                             <tr>
                                                 <th>Tour Name</th>
                                                 <th>Full Name</th>
-                                                <th>Address</th>
-                                                <th>Arrival Date</th>
+                                                <th>Mobile</th>
+                                                <th>Country</th>
+                                                <th>Email</th>
+                                                <th>Booking Type</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse($getbooking as $booking)
                                             <tr>
+                                                @if((int)$booking->tour_id)
                                                 <td>{{$booking->tour->tour_name}}</td>
-                                                <td>{{$booking->first_name}} {{$booking->last_name}}</td>
-                                                <td>{{$booking->address}}</td>
-                                                <td>{{$booking->arrival_date}}</td>
-                                              
+                                                @else
+                                                <td>{{$booking->tour_id}}</td>
+                                                @endif
+                                                <td>{{$booking->full_name}} </td>
+                                                <td>{{$booking->mobile}}</td>
+                                                <td>{{$booking->country}}</td>
+                                                <td>{{$booking->email}}</td>
+                                                @if((int)$booking->tour_id)
+                                                <td></td>
+                                                @else
+                                                <td>Custom Booking</td>
+                                                @endif
                                                 <td>
                                                     <a class="btn btn-info {{($route=='showbookingdetails')?'active':''}}" href="{{route('showbookingdetails',$booking->id)}}"  style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
                                                     <a href="{{route('delete.booking',$booking->id)}}" class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>

@@ -205,7 +205,7 @@ section {
     position: relative;
     overflow: hidden;
     padding-top: 30px;
-    padding-bottom: 45px;
+    padding-bottom:12px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -266,20 +266,18 @@ input:-moz-placeholder {
 
   .animated-button1 {
     background: linear-gradient(-30deg, #124162  50%, #124162 50%);
-    padding: 2px 4px;
-    /* margin: 12px; */
+    padding:16px 6px;
     display: inline-block;
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
     overflow: hidden;
     color: #f7d4d4;
-    font-size:14px !important;
-    /* letter-spacing: 2.5px; */
-    /* text-align: center; */
+    font-size:15px !important;
     text-transform: uppercase;
+    font-weight:500;
     text-decoration: none;
     position: relative;
-    top:0px;
+    border-radius: 6px
   }
   
   .animated-button1::before {
@@ -407,7 +405,7 @@ input:-moz-placeholder {
 }
 
 .bg-theme-color-2 {
-    background-color: #091426 !important;
+    background: linear-gradient(to bottom, #ffffff 0%, #369ff9 100%) !important;
 }
 
 .bg-theme-color {
@@ -553,9 +551,8 @@ input:-moz-placeholder {
 .section-title h2 {
     color: #363d48;
     font-family: "Roboto", sans-serif;
-    ;
-    font-size: 36px;
-    font-weight: 600;
+    font-size:28px;
+    font-weight:500;
     letter-spacing: 0.8px;
     line-height: 0.9;
     margin-bottom: 22px;
@@ -911,7 +908,7 @@ a.scrollup:focus i {
 .top-bar .social-icons ul li {
     display: inline-block;
     margin-right: 12px;
-    margin-top: 12px;
+    /* margin-top: 12px; */
 }
 
 .top-bar .social-icons ul li:last-child {
@@ -920,7 +917,7 @@ a.scrollup:focus i {
 
 .top-bar .social-icons ul li a {
     color: black;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
@@ -1050,7 +1047,7 @@ a.scrollup:focus i {
     content:"\f0d9";
     font-family:'FontAwesome';
     position: absolute;
-    top: -19.6px;
+    top: -9.6px;
     color:#F5A13A;
     font-size:36px;
     left:-13px;
@@ -1403,7 +1400,7 @@ a.dropdown-item.active {
     opacity: 0;
     width: 45px;
     height: 45px;
-    z-index: 100;
+    z-index:2;
     color: #ffffff;
     display: block;
     font-size: 45px;
@@ -2374,6 +2371,7 @@ canvas {
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.11);
     display: inline-block;
     width: 100%;
+    padding: 30px 20px;
 }
 
 .icon-wrp .icon-box {
@@ -2452,7 +2450,7 @@ canvas {
     border: 2px solid #f7f7f7;
     border-bottom: 3px solid #f7f7f7;
     border-top: none;
-    box-shadow: 0 0 5px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px -3px rgba(0, 0, 0, 0.982);
     display: inline-block;
     padding: 22px 19px 20px;
     position: relative;
@@ -2686,16 +2684,16 @@ canvas {
 
 .owl-navst.st-two.owl-theme .owl-nav {
     display: block;
-    top: 164px;
+    top: 186px;
 }
 
 .owl-navst.st-two.owl-theme .owl-nav .owl-prev,
 .owl-navst.st-two.owl-theme .owl-nav .owl-next {
     background-color: #0E4D94;
     border-radius: 0;
-    height: 47px;
-    line-height: 45px;
-    width: 54px;
+    height: 30px;
+    line-height: 25px;
+    width: 30px;
 }
 
 .owl-navst.st-two.owl-theme .owl-nav .owl-prev {
@@ -2813,7 +2811,7 @@ canvas {
     border: 2px solid #f7f7f7;
     border-bottom: 3px solid #f7f7f7;
     border-top: none;
-    box-shadow: 0 0 5px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px -3px rgb(5, 5, 5);
     display: inline-block;
     padding: 22px 19px 20px;
     position: relative;
@@ -3032,6 +3030,7 @@ canvas {
 
 .special-packages.dtl-st .content {
     padding: 22px 19px 35px;
+    box-shadow: none;
 }
 
 .special-packages.dtl-st .content .info li a {
@@ -3720,7 +3719,7 @@ Blog Css Style
     border-top: 3px solid rgba(255, 102, 0, 0.28);
     bottom: 0;
     left: 0;
-    padding: 30px 15px;
+    padding:4px 15px;
     position: absolute;
     right: 0;
     -webkit-transition: all 0.2s ease-in-out;
@@ -4250,10 +4249,11 @@ Form Control Css Style
     min-height: 134px;
 }
 
-.style-2 input[type="text"] {
+.style-2 input[type="text"],input[type="email"],input[type="date"],input[type="number"] {
     font-weight: 400;
     letter-spacing: 0.9px;
     text-transform: capitalize;
+    opacity:0.7;
 }
 
 .style-2 form select.form-control {
@@ -4263,6 +4263,7 @@ Form Control Css Style
     border: 1px solid black;
     cursor: pointer;
     position: relative;
+    opacity: 0.7;
 }
 
 .style-2 form select.form-control option {}
@@ -4388,8 +4389,7 @@ Features Css Style
 }
 
 .feature-item {
-    /* background-color: rgba(15, 129, 197, 0.8); */
-    background-color:blue;
+    background-color:#75bfff;
     color: #fff;
     padding: 55px 30px;
     text-align: center;
@@ -4403,7 +4403,7 @@ Features Css Style
 }
 
 .feature-item:hover {
-    background-color: rgba(15, 129, 197, 0.98);
+    background-color:#4CA9F9;
 }
 
 .feature-item .icon-box {
@@ -5406,6 +5406,12 @@ Page Link Css Style
     font-weight: 500;
     letter-spacing: 0.6px;
 }
+.icon-wrp .nav-tabs .nav-link{
+    width:130px;
+    text-transform: uppercase;
+    color:white;
+    font-size:16px;
+}
 
 .shop-product-row {}
 
@@ -5538,12 +5544,12 @@ Contact Details Css Style
 .form-row .form-group input.form-control {
     background-color: #fbfbfb;
     border: 1px solid black;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     height: 56px;
     letter-spacing: 0.6px;
-    text-transform: lowercase;
+    text-transform: capitalize;
     padding-bottom: 10px;
 }
 
@@ -5644,7 +5650,7 @@ Footer Css Style
 ----------------------------------------------------------------*/
 
 .footer-item h6 {
-    color: #fff;
+    color:black;
     letter-spacing: 2px;
     margin-bottom: 18px;
     text-transform: uppercase;
@@ -6768,7 +6774,7 @@ footer ul.social-icon {
 }
 
 .footer-list li a {
-    color: #989898;
+    color:black;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -6782,7 +6788,7 @@ footer ul.social-icon {
 }
 
 .footer-list li a:hover {
-    color: #fff;
+    color:#F5A13A;
 }
 
 .footer-list.border-deshed li {
@@ -6807,7 +6813,7 @@ footer ul.social-icon {
 }
 
 .footer-title h4 {
-    color: #fff;
+    color:black;
     font-size: 20px;
     letter-spacing: 0.8px;
     padding-bottom: 22px;

@@ -58,22 +58,41 @@ class BookingNotification extends Notification
     public function toDatabase($notifiable)
     {
         // dd($this->booking);
+        if((int)$this->booking->tour_id){
         return [
-            'user' => $this->booking->first_name . ' ' . $this->booking->last_name.' has booked'.' '.$this->booking->tour->tour_name,
+            'user' => $this->booking->full_name . ' ' .'has booked'.' '.$this->booking->tour->tour_name,
             'id'=>$this->booking->id,
            'tour_name'=> $this->booking->tour->tour_name,
             'created_at'=>$this->booking->created_at,
         ];
+          }
+          else{
+            return [
+                'user' => $this->booking->full_name . ' ' .'has booked'.' '.$this->booking->tour_id,
+                'id'=>$this->booking->id,
+               'tour_name'=> $this->booking->tour_id,
+                'created_at'=>$this->booking->created_at,
+            ]; 
+          }
     }
 
     public function toBroadcast($notifiable)
     {
+        if((int)$this->booking->tour_id){
         return new BroadcastMessage([
-            'user' => $this->booking->first_name.''.$this->booking->last_name.' has booked '.$this->booking->tour->tour_name,
+            'user' => $this->booking->full_name.''.' has booked '.$this->booking->tour->tour_name,
             'id'=>$this->booking->id,
             'tour_name' => $this->booking->tour->tour_name,
             'created_at' => $this->booking->created_at,
         ]);
+    }else{
+        return new BroadcastMessage([
+            'user' => $this->booking->full_name.''.' has booked '.$this->booking->tour_id,
+            'id'=>$this->booking->id,
+            'tour_name' => $this->booking->tour_id,
+            'created_at' => $this->booking->created_at,
+        ]);  
+    }
     }
 
     public function broadcastType()
