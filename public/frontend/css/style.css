@@ -1,48 +1,5 @@
 @charset "utf-8";
 
-/* CSS Document 
-
-Project Name:  Bootstrap 4 Fremwork HTML5 Template     
-Version:  1.0   
-Author Name: Set PVT.
-Support Email : shakil.shakil.ahsan@gmail.com
-Design By: Mahamudul Hasan
-Creation Date: 15 January 2019
-
-*****=====***** TABLE OF CONTENT *****=====*****
-
-01. IMPORTED STYLE CSS
-02. GENERAL CSS
-03. Special Places Css Style
-04. Service Css Style
-05. About Features Css Style
-06. Projects Css Style
-07. Content Divider Css Style
-08. Testimonials Css Style
-09. Blog Css Style
-10. Contact Css Style
-11. Form Control Css Style
-12. Process Css Style
-13. Client Css Style
-14. Inner Css Style
-15. Shop Css Style
-16. Team Css Style
-17. Page Link Css Style
-18. FAQ CSS Start
-19. Error CSS Start
-20. Contact Details Css Style
-21. Footer Css Style
-22. Footer Copy Right  Css Style
-
-*/
-
-
-/*****=====*****=====*****=====*****=====
-    01. IMPORTED STYLE CSS
-=====*****=====*****=====*****=====*****/
-
-
-/*-- font pairing Lora & Roboto --*/
 
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
 
@@ -182,6 +139,43 @@ a:hover {
 .btn-link:hover {
     text-decoration: none;
     outline: none;
+}
+
+/* tourdetailpage */
+.information,.query-button{
+    padding: 18px;
+    box-shadow: 0px 0px 4px;
+}
+.information h4,.qi h4{
+    font-size:18px;
+    font-weight: bold;
+    color:#F5A13A;
+}
+.information .info{
+   padding-top:10px;
+}
+.information .info li{
+    padding-top:10px;
+}
+.information .info li span{
+    color:#F5A13A;
+    margin-left:5px;
+}
+.query-button .btn-book{
+    
+        background: linear-gradient(-30deg, #124162  50%, #124162 50%);
+        padding:16px 46px;
+        display: inline-block;
+        -webkit-transform: translate(0%, 0%);
+                transform: translate(0%, 0%);
+        overflow: hidden;
+        color: #f7d4d4;
+        font-size:15px !important;
+        text-transform: uppercase;
+        font-weight:500;
+        text-decoration: none;
+        position: relative;
+        border-radius: 6px
 }
 
 ul {

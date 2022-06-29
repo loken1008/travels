@@ -26,7 +26,6 @@ class NewsletterController extends Controller
     {
         $request->validate([
             'f_name'=>'required',
-            'l_name'=>'required',
             'email'=>'required|email',
             'phone'=>'required',
             'country'=>'required',
