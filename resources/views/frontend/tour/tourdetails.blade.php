@@ -24,7 +24,7 @@
     <section class="special-packages-sec pt-85 pb-0">
         <div class="container">
             <div class="row grid-mb">
-                <div class="col-md-12">
+                <div class="col-md-9">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getTourdetails->mainImage }}" alt="{{$getTourdetails->img_alt}}" style="height:420px">
@@ -50,21 +50,7 @@
                             </div>
                         </div>
                         <div class="content">
-                            <ul class="info">
-                                <li><a href="#"><i class="fa fa-calendar"></i>{{ $getTourdetails->tour_days }} Days</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-arrows-v"></i>{{ $getTourdetails->altitude }}
-                                        Altituade</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-height"></i></a></li>
-                                <li><a href="#"><i class="fa fa-umbrella"></i>{{ $getTourdetails->accomodation }}
-                                        Accomodation</a></li>
-                                <li><a href="#"><i class="fa fa-plane"></i>{{ $getTourdetails->transport }}
-                                        Transport</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-height"></i></a></li>
-
-                            </ul>
+                           
 
                             <p>{!! $getTourdetails->description !!}</p>
                             {{-- {{dd($getTourdetails->cost_include)}} --}}
@@ -361,6 +347,49 @@
                                 Now</a>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="information">
+                        <h4>Basic Information</h4>
+                        <hr>
+                        <ul class="info">
+                            <li><i class="fa fa-calendar"></i><span>Days</span>:
+                                {{ $getTourdetails->tour_days }} 
+                            </li>
+                            <li><i class="fa fa-arrows-v"></i><span>Altituade</span>:
+                                {{ $getTourdetails->altitude }}
+                                  
+                            </li>
+                          
+                            <li><i class="fa fa-umbrella"></i><span>Accomodation</span>:
+                                {{ $getTourdetails->accomodation }}
+                                  </li>
+                            <li><i class="fa fa-plane"></i><span>Transport</span>:
+                                {{ $getTourdetails->transport }}
+                                    
+                            </li>
+                          
+    
+                        </ul>
+                    </div>
+                  <div class="query-button mt-4">
+                    <a class="btn-book cbutton"
+                    href="{{ route('booking',$getTourdetails->slug) }}">Book This
+                    Trip</a>
+                    <a href="{{ route('online.book') }}" class="animated-button1 ml-1 mt-2 cbutton">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Make Your Own Trip Now
+                    </a>
+                    
+                  </div>
+                   <div class="qi mt-4">
+                    <h4>Quick Inquery </h4>
+                    <hr>
+                   @include('frontend.common.commoncontact')
+                </div>
                 </div>
             </div>
         </div>

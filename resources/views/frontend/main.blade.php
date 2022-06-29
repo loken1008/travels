@@ -137,65 +137,38 @@ padding-left:20px;
             z-index: 1 !important;
         }
 
-        .pushable {
-            position: fixed;
-            top: 335px;
-            background: transparent;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
+.landscape {
 
-        .shadow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: hsl(0deg 0% 0% / 0.25);
-            transform: translateY(2px);
-        }
+	 height:auto;
+	 overflow: hidden;
+	 position: relative;
+}
+ .landscape__layer {
+	 height: 100%;
+	 left: 0;
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+}
+ .landscape__image {
+	 position: absolute;
+	 bottom: 0;
+	 left: 50%;
+	 transform: translateX(-50%);
+	 max-height: 100%;
+	 max-width: 300%;
+	 min-width: 100%;
+	 width: 2500px;
+	 display: flex;
+	 flex-direction: column;
+}
+ .landscape__image svg {
+	 display: block;
+	 height: auto;
+	 max-width: 100%;
+}
+/** * Styles for demo */
 
-        .edge {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0E4D94;
-        }
-
-        .front {
-            display: block;
-            position: fixed;
-            top: 504px;
-            left: 125px;
-            padding: 12px 42px;
-            font-size: 1.25rem;
-            color: white;
-            background: #0E4D94;
-            transform: translateY(-4px);
-        }
-
-        .pushable:hover .front {
-            transform: translateY(-6px);
-        }
-
-        .pushable:hover .shadow {
-            transform: translateY(4px);
-        }
-
-        .pushable:active .front {
-            transform: translateY(-2px);
-        }
-
-        .pushable:active .shadow {
-            transform: translateY(1px);
-        }
-
-        .pushable:focus:not(:focus-visible) {
-            outline: none;
-        }
     </style>
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"

@@ -28,7 +28,7 @@
 
                         <!-- Slide Background -->
                         @if ($file_extension == 'mp4')
-                            <video class="slide-video" autoplay loop muted style="width:100%">
+                            <video class="slide-video" autoplay loop muted >
                                 <source src="{{ asset($banner->banner_image) }}" type="video/mp4">
                             </video>
                         @else
@@ -43,8 +43,8 @@
                                 <div class="slide-text slide-style-left st-two">
                                     <h2>{{ $banner->title }}</h2>
                                 </div>
-                               
-                                       
+
+
                                 <!-- Package Box -->
                                 @if ($getcoupon)
                                     <div class="package-box">
@@ -82,31 +82,33 @@
     <!-- Welcome Section Start -->
     <section class="welcome-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row" id="country-booking">
+                <div class="col-md-9 country-tab">
                     <div class="icon-wrp text-center" style="display:flex;flex-wrap: wrap;">
-                        @foreach ($country as $key => $cutry)
-                        <div class="icon-box" id="icon-menu">
-                            <nav>
-                                <div class="nav nav-tabs " id="nav-tab" role="tablist"> 
-                                        <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }}" id="plc-asia-tab"
-                                            data-toggle="tab" href="#plc-asia{{ $cutry->country_name }}" role="tab"
-                                            aria-controls="plc-asia" aria-selected="true">{{ $cutry->country_name }}</a> 
-                                </div>
-                            </nav>
-                        </div>
-                        
-                        @endforeach
-                        <div class="icon-box" id="booknow">
-                            <a href="{{ route('online.book') }}" class="animated-button1">
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                              Make Your Own Trip Now
-                            </a>
-                        </div>
+
+                        <nav>
+                            <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                                @foreach ($country as $key => $cutry)
+                                    <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }} ml-1 mt-2"
+                                        id="plc-asia-tab" data-toggle="tab" href="#plc-asia{{ $cutry->country_name }}"
+                                        role="tab" aria-controls="plc-asia"
+                                        aria-selected="true">{{ $cutry->country_name }}</a>
+                                @endforeach
+                            </div>
+                        </nav>
+                       
                     </div>
+                </div>
+                <div class="col-md-3" id="custom-booking">
+                    <div class=" text-center animated-button1">
+                    <a href="{{ route('online.book') }}" class="animated-button1 ml-1 mt-2 cbutton">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Make Your Own Trip Now
+                    </a>
+                </div>
                 </div>
             </div>
         </div>
@@ -121,15 +123,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tab-style">
-                        {{-- <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                @foreach ($country as $key => $cutry)
-                                    <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }}" id="plc-asia-tab"
-                                        data-toggle="tab" href="#plc-asia{{ $cutry->country_name }}" role="tab"
-                                        aria-controls="plc-asia" aria-selected="true">{{ $cutry->country_name }}</a>
-                                @endforeach
-                            </div>
-                        </nav> --}}
                         <div class="tab-content" id="nav-tabContent">
                             <!-- item start -->
                             @forelse($getcountry as $key1=> $countrys)
@@ -149,7 +142,7 @@
                                                             </div>
                                                             <div class="content">
                                                                 <div class="price-box">
-                                                                    
+
                                                                     @if ($getcoupon)
                                                                         <h5 class="text-danger">
                                                                             <strike><span>$</span>{{ $tour->main_price }}</strike>
@@ -191,7 +184,7 @@
                                                     </div>
                                                 @endif
                                             @endif
-                                            @empty 
+                                        @empty
                                             <h5>Trip Not available</h5>
                                         @endforelse
                                     </div>
@@ -252,7 +245,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="content" style="height:200px">
+                                    <div class="content" >
                                         <ul class="info">
                                             <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                     Days</a></li>
@@ -326,7 +319,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="content" style="height:200px">
+                                    <div class="content" >
                                         <ul class="info">
                                             <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
                                                     Days</a></li>
@@ -397,7 +390,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="content" style="height:200px">
+                                        <div class="content" >
                                             <ul class="info">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar"></i>{{ $tour->tour_days }}
@@ -500,7 +493,7 @@
                     <div class="col-md-4 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img src="{{ $blog->blog_image }}" style="height:442px" alt="{{ $blog->img_alt }}">
+                                <img src="{{ $blog->blog_image }}" style="height:260px" alt="{{ $blog->img_alt }}">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">

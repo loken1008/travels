@@ -5,12 +5,12 @@ $route = Route::current()->getName();
 
 <header class="header header-style-1 clearfix">
 
-    <div class="top-bar" style="background-color:#e6ecf5">
+    <div class="top-bar" style="background-color:white">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 d-flex">
-                    
-                   
+                <div class="col-md-2 d-flex">
+
+
                     <div class="contact-info">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if (!empty($sitesetting->logo))
@@ -18,9 +18,10 @@ $route = Route::current()->getName();
                             @endif
                         </a>
                     </div>
-                   
+
                 </div>
-                <div class="col-md-5" style="padding-top:27px">
+                <div class="col-md-5" style="display: flex;
+                align-items: center;">
                     <div class="social-icons">
                         <ul>
                             @if (!empty($sitesetting))
@@ -31,39 +32,43 @@ $route = Route::current()->getName();
                                 <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest"></i></a></li>
                             @endif
                         </ul>
+
+
                     </div>
-                          <!-- header dropdown buttons -->
-                          <div class="dropdown-buttons">
-                            <div class="btn-group menu-search-box">
-                                <button type="button" class="btn dropdown-toggle" id="header-drop-3"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                        class="fa fa-search"></i></button>
-                                <ul class="dropdown-menu dropdown-menu-right dropdown-animation"
-                                    aria-labelledby="header-drop-3">
-                                    <li>
-                                        <form role="search" class="search-box" method="post"
-                                            action="{{ route('search') }}">
-                                            @csrf
-                                            <div class="form-group d-flex">
-                                                <input type="text" class="form-control" placeholder="Search"
-                                                    name="search">
-                                                <button type="submit"> <i
-                                                        class="fa fa-search form-control-feedback"></i></button>
-                                            </div>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-
-
+                    <!-- header dropdown buttons -->
+                    <div class="dropdown-buttons">
+                        <div class="btn-group menu-search-box">
+                            {{-- <button type="button" class="btn dropdown-toggle" id="header-drop-3" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></button> --}}
+                            {{-- <ul class="dropdown-menu-right dropdown-animation"
+                                aria-labelledby="header-drop-3">
+                                <button type="button" class="btn dropdown-toggle" id="header-drop-3" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></button><li> --}}
+                            <form role="search" class="search-box" method="post" action="{{ route('search') }}">
+                                @csrf
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control" placeholder="Search" name="search">
+                                    <button type="submit"> <i class="fa fa-search form-control-feedback"></i></button>
+                                </div>
+                            </form>
+                            {{-- </li>
+                            </ul> --}}
                         </div>
-                        <!-- main-menu end -->
+
+                    </div>
+                    <!-- main-menu end -->
                 </div>
 
-                <div class="col-md-4" style="padding-top:27px">
+                <div class="col-md-5"
+                    style="display: flex;
+                justify-content: space-between;
+                align-items: center;">
+                    <span
+                        class="font-weight-bold text-dark">{{ Carbon\Carbon::now('Asia/Kathmandu')->format('Y-M-d | h:i:s A') }}</span>
                     <div class="social-icons">
+
                         <ul>
-                            <a href="{{ route('contactus') }}" class="text-dark">Contact Us |</a>
+                            <a href="{{ route('contactus') }}" class="text-dark font-weight-bold">Contact Us |</a>
 
                             @if (!empty(
                                 Auth()->guard('customer')->user()
@@ -87,9 +92,11 @@ $route = Route::current()->getName();
                                 </li>
                             @else
                                 <li>
-                                    <a href="{{ route('customer.login') }}" class="text-dark">Login |</a>
+                                    <a href="{{ route('customer.login') }}" class="text-dark font-weight-bold">Login
+                                        |</a>
 
-                                    <a href="{{ route('customer.register') }}" class="text-dark">Register</a>
+                                    <a href="{{ route('customer.register') }}"
+                                        class="text-dark font-weight-bold">Register</a>
                             @endif
                             </li>
                         </ul>
@@ -102,13 +109,14 @@ $route = Route::current()->getName();
 
     <div class="menu-style menu-style-1 bg-transparent clearfix">
         <!-- main-navigation start -->
-        <div class="main-navigation main-mega-menu animated" style="background-color:#5595ff;height:43px">
+        <div class="main-navigation main-mega-menu animated" style="background:linear-gradient(to top, #54bcdd 38%, #2abef9 98%);">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <!-- header dropdown buttons end-->
-                   
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1"
-                        aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -119,27 +127,10 @@ $route = Route::current()->getName();
                         <ul class="navbar-nav ml-xl-auto">
 
                             <!-- mega-menu end -->
-                            <li class="nav-item dropdown {{ $route == 'home' ? 'active' : '' }}">
+                            <li class="nav-item dropdown">
                                 <a href="{{ url('/') }}" class="nav-link " aria-haspopup="true"
                                     aria-expanded="false">Home</a>
                             </li>
-
-                            <!-- mega-menu start -->
-                            <!-- mega-menu end -->
-                            {{-- <div class="dropdown-menu left-1">
-                                <div class="dropdown">
-                                    @foreach ($country as $c)
-                                        <a class="dropdown-item"
-                                            href="{{ route('countrydetails', strtolower($c->country_name)) }}">{{ $c->country_name }}</a>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">Places</a>
-
-                               
-                            </li> --}}
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
                                     <a href="{{ route('tripdetails', $cat->category_slug) }}"
@@ -148,8 +139,8 @@ $route = Route::current()->getName();
 
                                     <div class="dropdown-menu left-1 ">
                                         @foreach ($cat->tour as $tours)
-                                        @if ($tours->status =='1')
-                                            @if ($tours->subcategory_id == null)
+                                            @if ($tours->status == '1')
+                                                @if ($tours->subcategory_id == null)
                                                     <div class="dropdown">
                                                         <a class="dropdown-item"
                                                             href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
@@ -162,13 +153,14 @@ $route = Route::current()->getName();
                                                 <div class="dropdown">
 
                                                     <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
-                                                        class=" dropdown-item" >{{ $subcat->sub_category_name }} 
-                                                        @foreach($subcat->tour->take(1) as $t)
-                                                        @if($subcat->id == $t->subcategory_id)
-                                                        @if($t->status == '1')
-                                                        <i class="fa fas fa-angle-right mt-1" style="float:right"></i> 
-                                                        @endif
-                                                        @endif
+                                                        class=" dropdown-item">{{ $subcat->sub_category_name }}
+                                                        @foreach ($subcat->tour->take(1) as $t)
+                                                            @if ($subcat->id == $t->subcategory_id)
+                                                                @if ($t->status == '1')
+                                                                    <i class="fa fas fa-angle-right mt-1"
+                                                                        style="float:right"></i>
+                                                                @endif
+                                                            @endif
                                                         @endforeach
                                                     </a>
 
@@ -197,14 +189,16 @@ $route = Route::current()->getName();
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">About</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">About</a>
 
                                 <div class="dropdown-menu left-1">
                                     <div class="dropdown">
-                                        <a class="dropdown-item" href="{{ route('introduction') }}">Introduction</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('introduction') }}">Introduction</a>
                                         <a class="dropdown-item" href="{{ route('ourteam') }}">Our Team</a>
-                                        <a class="dropdown-item" href="{{ route('travelwithus') }}">Why Travels With
+                                        <a class="dropdown-item" href="{{ route('travelwithus') }}">Why Travels
+                                            With
                                             Us</a>
                                         <a class="dropdown-item" href="{{ route('paymentmethod') }}">Payment
                                             Method</a>

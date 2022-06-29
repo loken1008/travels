@@ -4,11 +4,7 @@ $(document).ready(function() {
             tour_id: {
                 required: true,
             },
-            first_name: {
-                required: true,
-                maxlength: 20,
-            },
-            last_name: {
+            full_name: {
                 required: true,
                 maxlength: 20,
             },
@@ -17,10 +13,7 @@ $(document).ready(function() {
                 email: true,
                 maxlength: 50
             },
-            address: {
-                required: true,
-            },
-
+           
             mobile: {
                 required: true,
                 minlength: 10,
@@ -42,21 +35,16 @@ $(document).ready(function() {
                 required: "Please select tour",
             },
             first_name: {
-                required: "Please enter first name",
-                maxlength: "First name must be less than 20 characters",
+                required: "Please enter full name",
+                maxlength: "Full name must be less than 20 characters",
             },
-            last_name: {
-                required: "Please enter last name",
-                maxlength: "Last name must be less than 20 characters",
-            },
+            
             email: {
                 required: "Please enter email",
                 email: "Please enter valid email",
                 maxlength: "Email must be less than 50 characters",
             },
-            address: {
-                required: "Please enter address",
-            },
+           
 
             mobile: {
                 required: "Please enter mobile",

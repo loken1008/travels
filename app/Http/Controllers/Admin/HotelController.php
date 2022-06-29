@@ -117,7 +117,7 @@ class HotelController extends Controller
 
     // booking
     public function BookingView(){
-        $getbooking=Booking::orderBy('id','DESC')->with('tour')->get();
+        $getbooking=Booking::orderBy('id','desc')->with('tour')->get();
         return view('admin.booking.booking',compact('getbooking'));
     }
     public function BookingViewDetails($id){

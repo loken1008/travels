@@ -36,7 +36,7 @@ $route = Route::current()->getName();
                                 <tbody>
                                     @forelse($usermessage as $customer)
                                         <tr>
-                                            <td>{{ $customer->f_name }} {{ $customer->l_name }}</td>
+                                            <td>{{ $customer->f_name }} </td>
                                             <td>{{ $customer->email }}</td>
                                             <td>{{ $customer->phone }}</td>
                                             <td>{{ $customer->country }}</td>
@@ -70,7 +70,7 @@ $route = Route::current()->getName();
                                                     <div class="modal-body">
                                                         <div class="form-group">
                                                             <label for="firstName5"> Name :</label>
-                                                            <span>{{ $customer->f_name }} {{ $customer->l_name }}</span>
+                                                            <span>{{ $customer->f_name }} </span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="firstName5">Email :</label>
