@@ -206,14 +206,28 @@
 
                             </div>
                         </div>
-                        <div class="">
+                        <div class="form-group">
+                            <label for="firstName5"> Trip Map :</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                        <a id="tlfms" data-input="tripthumbnail" data-preview="holder2"
+                                            class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                </span>
+                                <input  id="tripthumbnail" class="form-control" type="text" name="trip_map">
+
+                            </div>
+                            @if(!empty($editour->trip_map))
+                            <img id="holder2"  src={{ $edittour->trip_map }} style="margin-top:15px;max-height:100px;">
+                            @endif
+                        </div>
                             <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
 
                             </div>
-                        </div>
                         <div class="form-group">
                             <label for="firstName5">Place Description/Image :<span class="text-danger">*</span></label>
                             <textarea id="my-editor" class="form-control" name="description" value="{{ $edittour->description }}">{{ $edittour->description }}</textarea>
@@ -768,6 +782,9 @@ $(document).on('click', '.remove_field', function() {
     $('#elfms').filemanager('images', {
         prefix: route_prefix
     });
+    $('#tlfms').filemanager('images', {
+            prefix: route_prefix
+        });
     var options = {
         filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
         filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',

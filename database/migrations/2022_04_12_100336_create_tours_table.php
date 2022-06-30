@@ -28,6 +28,7 @@ class CreateToursTable extends Migration
             $table->longText('cost_include')->nullable();
             $table->longText('cost_exclude')->nullable();
             $table->longText('map_url')->nullable();
+            $table->string('trip_map')->nullable();
             $table->enum('status',[0,1])->default(0);
             $table->timestamps();
         });

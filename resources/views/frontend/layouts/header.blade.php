@@ -44,10 +44,10 @@ $route = Route::current()->getName();
                                 aria-labelledby="header-drop-3">
                                 <button type="button" class="btn dropdown-toggle" id="header-drop-3" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></button><li> --}}
-                            <form role="search" class="search-box" method="post" action="{{ route('search') }}">
+                            <form role="search" class="search-box " method="post" action="{{ route('search') }}">
                                 @csrf
                                 <div class="form-group d-flex">
-                                    <input type="text" class="form-control" placeholder="Search" name="search">
+                                    <input type="text" class="form-control search-input-box" placeholder="Search" name="search">
                                     <button type="submit"> <i class="fa fa-search form-control-feedback"></i></button>
                                 </div>
                             </form>
