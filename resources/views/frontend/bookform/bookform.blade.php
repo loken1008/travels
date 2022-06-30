@@ -30,6 +30,7 @@
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-packagesbk"
                                     aria-selected="false">Book Your Prefer Packages</a>
+                                   
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">

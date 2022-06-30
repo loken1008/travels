@@ -61,9 +61,10 @@
             color: #dc3545;
             font-size: 14px;
         }
-        #costie ul{
-padding-left:20px;	
-}
+
+        #costie ul {
+            padding-left: 0px;
+        }
 
         .kgKuDl {
             font-family: 'Lora', serif;
@@ -125,50 +126,70 @@ padding-left:20px;
             background: #e3e3ea;
         }
 
-        .costincludeexclude ul li,
         .equipmentlist ul li,
         .equipment-collaspe ul li {
             list-style: disc;
             text-align: justify;
             line-height: 2rem;
         }
+        .cii ul,.cee ul {
+            list-style: none;
+        }
+        .cii ul li::before{
+            content:'\f058';
+            font-family: 'FontAwesome';
+            padding-right:10px;
+            color: rgb(4, 83, 209)
+        }
+        .cee ul li::before{
+            content:'\f057';
+            font-family: 'FontAwesome';
+            padding-right:10px;
+            color:#f5400a;
+        }
 
         #st-1 {
             z-index: 1 !important;
         }
 
-.landscape {
+        .landscape {
 
-	 height:auto;
-	 overflow: hidden;
-	 position: relative;
-}
- .landscape__layer {
-	 height: 100%;
-	 left: 0;
-	 position: absolute;
-	 top: 0;
-	 width: 100%;
-}
- .landscape__image {
-	 position: absolute;
-	 bottom: 0;
-	 left: 50%;
-	 transform: translateX(-50%);
-	 max-height: 100%;
-	 max-width: 300%;
-	 min-width: 100%;
-	 width: 2500px;
-	 display: flex;
-	 flex-direction: column;
-}
- .landscape__image svg {
-	 display: block;
-	 height: auto;
-	 max-width: 100%;
-}
-/** * Styles for demo */
+            height: auto;
+            overflow: hidden;
+            position: relative;
+        }
 
+        .landscape__layer {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .landscape__image {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-height: 100%;
+            max-width: 300%;
+            min-width: 100%;
+            width: 2500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .landscape__image svg {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+        .search-input-box:focus{
+            outline: auto;
+        }
+
+        /** * Styles for demo */
     </style>
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
@@ -203,12 +224,12 @@ Main JavaScript
 <------------------------------------------>
 
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
 
     <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script>
-    
-<script src="{{ asset('frontend/js/popper.min.js') }}"></script>
+
+    <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
     <!-- Optional JavaScript -->
     <script src="{{ asset('frontend/js/bootstrap-dropdownhover.min.js') }}"></script>
@@ -227,10 +248,15 @@ Main JavaScript
 
     <!-- Begin widget code -->
     {{-- tripadvisor --}}
-<!-- Begin widget code -->
+    <!-- Begin widget code -->
 
-<script>var script = document.createElement("script");script.type = "module";script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";document.getElementsByTagName("head")[0].appendChild(script);</script>
-<!-- End widget code -->
+    <script>
+        var script = document.createElement("script");
+        script.type = "module";
+        script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+    <!-- End widget code -->
     <!-- End widget code -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},

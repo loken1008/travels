@@ -77,6 +77,7 @@ class TourController extends Controller
             'description' => $request->description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage,
+            'trip_map' => $request->trip_map,
             'img_alt' => $request->img_alt,
             'meta_title' => $request->meta_title,
             'meta_keywords' => $request->meta_keywords,
@@ -217,6 +218,7 @@ if($request->images){
                 ? $request->mainImage
                 : $utour->mainImage,
             'img_alt' => $request->img_alt,
+            'trip_map' => $request->trip_map?$request->trip_map:$utour->trip_map,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
             'meta_keywords' => $request->meta_keywords,

@@ -121,12 +121,24 @@
                                 <p>No Image</p>
                             @endforelse
                         </div>
+                        <div class="col-md-6">
+
+                            <label for="firstName5"> Trip Map :</label>
+                            <div class="input-group">
+
+                                <a href="{{ $detailstour->trip_map }}" target="_blank"><img id="holder1" style="margin-top:15px;max-height:200px;width:200px"
+                                    src={{ $detailstour->trip_map }}></a>
+
+                            </div>
+                        </div>
+                        @if($detailstour->map_url!=NULL)
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="firstName5">Cost Map :</label>
+                                <label for="firstName5">Map :</label>
                               <iframe src="{{$detailstour->map_url}}" height="400" width="100%" frameborder="0"></iframe>
                             </div>
                         </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="firstName5">Place Description/Image :</label>
