@@ -2,15 +2,15 @@
   'app' => 
   array (
     'name' => 'MountainTour',
-    'env' => 'production',
+    'env' => 'local',
     'debug' => true,
-    'url' => 'https://www.mountainguideinfo.com/',
+    'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:fw9CpxM3bwlzyHbMMIG6HlU21vOLqfccMwZermVFGmE=',
+    'key' => 'base64:rTzMT5XsKm6QWpm6CHfSWz7KSziT2EkiYroo8/tBfww=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -207,7 +207,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/travels/storage/framework/cache/data',
+        'path' => '/home/loks/projects/travels/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -255,8 +255,8 @@
   ),
   'captcha' => 
   array (
-    'secret' => '6LcrFZwfAAAAAAlRNHNxaBR7-6p1S6AqOM7Jz25X',
-    'sitekey' => '6LcrFZwfAAAAAARP2SKlyNC8Yu6LXCJkRydUWMJ9',
+    'secret' => '6Lc6kZsfAAAAANPBgi0Qhpuksejhleri-5NlLOqd',
+    'sitekey' => '6Lc6kZsfAAAAAMQYrRr00-dWBcH3KUYZlT9rGAvt',
     'options' => 
     array (
       'timeout' => 30,
@@ -310,8 +310,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'travel',
-        'username' => 'travel',
-        'password' => 'Travel@123',
+        'username' => 'loken',
+        'password' => 'Password@123',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -330,8 +330,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'travel',
-        'username' => 'travel',
-        'password' => 'Travel@123',
+        'username' => 'loken',
+        'password' => 'Password@123',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -345,8 +345,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'travel',
-        'username' => 'travel',
-        'password' => 'Travel@123',
+        'username' => 'loken',
+        'password' => 'Password@123',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -387,13 +387,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/travels/storage/app',
+        'root' => '/home/loks/projects/travels/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/travels/storage/app/public',
-        'url' => 'https://www.mountainguideinfo.com//storage',
+        'root' => '/home/loks/projects/travels/storage/app/public',
+        'url' => 'http://localhost:8000/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -410,7 +410,7 @@
     ),
     'links' => 
     array (
-      '/home/travels/public/storage' => '/home/travels/storage/app/public',
+      '/home/loks/projects/travels/public/storage' => '/home/loks/projects/travels/storage/app/public',
     ),
   ),
   'hashing' => 
@@ -603,13 +603,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/travels/storage/logs/laravel.log',
+        'path' => '/home/loks/projects/travels/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/travels/storage/logs/laravel.log',
+        'path' => '/home/loks/projects/travels/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -660,7 +660,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/home/travels/storage/logs/laravel.log',
+        'path' => '/home/loks/projects/travels/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -726,7 +726,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/travels/resources/views/vendor/mail',
+        0 => '/home/loks/projects/travels/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -862,7 +862,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'www.mountainguideinfo.com',
+      5 => 'localhost',
     ),
     'guard' => 
     array (
@@ -877,7 +877,7 @@
   ),
   'sentry' => 
   array (
-    'dsn' => NULL,
+    'dsn' => 'https://1ef0dc5fc02a4c728f74b511eff1e08e@o1285487.ingest.sentry.io/6497132',
     'environment' => NULL,
     'breadcrumbs' => 
     array (
@@ -897,7 +897,7 @@
       'default_integrations' => true,
     ),
     'send_default_pii' => false,
-    'traces_sample_rate' => 0.0,
+    'traces_sample_rate' => 1.0,
     'controllers_base_namespace' => 'App\\Http\\Controllers',
   ),
   'services' => 
@@ -920,9 +920,9 @@
     ),
     'google' => 
     array (
-      'client_id' => '422666623667-3ikf5kf6aiq17l8is733uagbc4s7o9a7.apps.googleusercontent.com',
-      'client_secret' => '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',
-      'redirect' => 'https://www.mountainguideinfo.com/auth/google/callback',
+      'client_id' => '422666623667-ccfdogbsc88iqkj8hj5rso30ltbkiuc8.apps.googleusercontent.com',
+      'client_secret' => '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',
+      'redirect' => 'http://localhost:8000/auth/google/callback',
     ),
   ),
   'session' => 
@@ -931,7 +931,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/travels/storage/framework/sessions',
+    'files' => '/home/loks/projects/travels/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -943,7 +943,7 @@
     'cookie' => 'mountaintour_session',
     'path' => '/',
     'domain' => NULL,
-    'secure' => NULL,
+    'secure' => true,
     'http_only' => true,
     'same_site' => 'lax',
   ),
@@ -964,9 +964,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/travels/resources/views',
+      0 => '/home/loks/projects/travels/resources/views',
     ),
-    'compiled' => '/home/travels/storage/framework/views',
+    'compiled' => '/home/loks/projects/travels/storage/framework/views',
   ),
   'websockets' => 
   array (
