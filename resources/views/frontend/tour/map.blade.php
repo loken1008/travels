@@ -32,16 +32,7 @@
     <!-- Special Packages Section End -->
 
     <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-80 pb-80">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12">
-                    @include('frontend.common.testmonial')
-                </div>
-            </div>
-        </div>
-    </section>
+     @include('frontend.common.testmonial')
     <!-- Testimonials Section End -->
     @include('frontend.common.tour')
 

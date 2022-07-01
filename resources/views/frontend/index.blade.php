@@ -467,15 +467,7 @@
     </section>
     <!-- Feature Section End -->
     <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-0 pb-85">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    @include('frontend.common.testmonial')
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontend.common.testmonial')
     <!-- Testimonials Section End -->
     <!-- Blog Section Start -->
     <section class="blog-section over-layer-white bg-f8 pt-15 pb-15"
@@ -492,6 +484,7 @@
                 @forelse($getblogs as $blog)
                     <div class="col-md-4 col-lg-4">
                         <div class="blog-post">
+                            <a href="{{ route('blogsdetails', $blog->slug) }}">
                             <div class="thumb">
                                 <img src="{{ $blog->blog_image }}" style="height:260px" alt="{{ $blog->img_alt }}">
                                 <div class="content">
@@ -513,6 +506,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">Continue
                                 Reading
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -534,10 +528,10 @@
         <div class="container-fluid">
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
-                    <div class="col-sm-4 col-grid">
+                    <div class="col-sm-3 col-grid">
                         <div class="gallery-item">
                             <div class="thumb" style="height:270px">
-                                <img src="{{ $gal->cover_image }}" alt="image" style="width:634px;height:270px">
+                                <img src="{{ $gal->cover_image }}" alt="image" style="width:337px;height:265px">
                                 <div class="overlay">
                                     <div class="inner">
                                         <a href="{{ $gal->cover_image }}" class="icon lightbox-image">

@@ -4,7 +4,8 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
 @endphp
  
  <!-- Special Places Section Start -->
-  <section class="special-places-sec pb-80">
+ @if($getTour->count()>0)
+  <section class="special-places-sec pb-30">
     <div class="container">
         <div class="row">
             @if($getTour->count()>0)
@@ -69,5 +70,6 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
             </div>
         </div>
     </div>
-</section>
+  </section>
+@endif
 <!-- Special Places Section End -->

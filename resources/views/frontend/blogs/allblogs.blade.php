@@ -18,14 +18,14 @@
     <!-- Inner Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section">
+    <section class="blog-section pb-10">
         <div class="container">
             <div class="row">
                 @foreach ($getblogs as $getblog)
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
                             <div class="thumb">
-                                <img alt="{{$getblog->img_alt}}" src="{{ $getblog->blog_image }}" style="height:442px">
+                                <img alt="{{$getblog->img_alt}}" src="{{ $getblog->blog_image }}" style="height:260px">
                                 <div class="content">
                                     <h3>{{ $getblog->blog_title }}</h3>
                                     <div class="meta-box">
