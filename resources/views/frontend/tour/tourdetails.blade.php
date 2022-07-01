@@ -404,6 +404,7 @@
     <!-- Special Packages Section End -->
 
     <!-- Special Places Section Start -->
+    @if($getTour->count()>0)
     <section class="special-places-sec pt-0 pb-10">
         <div class="container">
             <div class="row">
@@ -470,10 +471,11 @@
             </div>
         </div>
     </section>
+    @endif
     <!-- Special Places Section End -->
     <!-- Blog Section Start -->
 
-
+@if($getTourdetails->blog->count()>0)
     <section class="blog-section over-layer-white bg-f8 pt-10 pb-10">
         <div class="container">
             <div class="row">
@@ -517,18 +519,10 @@
             </div>
         </div>
     </section>
+    @endif
     <!-- Blog Section End -->
     <!-- Testimonials Section Start -->
-    <section class="testimonials-section pt-30 pb-30">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12">
-                    @include('frontend.common.testmonial')
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontend.common.testmonial')
     <!-- Testimonials Section End -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

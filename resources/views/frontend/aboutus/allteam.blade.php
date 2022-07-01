@@ -34,6 +34,7 @@
     <!-- Inner Section End -->
 
     <!-- Contact Section Start -->
+    @if($getteamdetails->count()>0)
     <section class="contact-section pt-90 pb-80">
         <div class="container">
             <h2 class="text-dark">Our Experienced and Skilled Team</span></h2>
@@ -116,6 +117,7 @@
             </div>
         </div>
     </section>
+    @endif
     <!-- Contact Section End -->
 
     <!-- Special Places Section Start -->
