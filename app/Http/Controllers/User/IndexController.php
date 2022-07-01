@@ -30,7 +30,8 @@ class IndexController extends Controller
         $getTour=Tour::with('country','place','category')->where('status','=','1')->orderByRaw('RAND()')->get();
         $cattrekking=Category::with('tour')->where('category_name','trekking')->first();
         $cattour=Category::with('tour')->where('category_name','tours')->first();
-        $catother=Category::with('tour')->where('category_name','!=','tours')->where('category_name','!=','trekking')->get();
+        $catnature=Category::with('tour')->where('category_name','natural realism')->first();
+        $catother=Category::with('tour')->where('category_name','!=','tours')->where('category_name','!=','trekking')->where('category_name','!=','natural realism')->get();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
@@ -40,7 +41,7 @@ class IndexController extends Controller
         $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
         $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
 
-        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattour','cattrekking','catother'));
+        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattour','cattrekking','catother','catnature'));
     }
 
     public function  tourDetails($slug)

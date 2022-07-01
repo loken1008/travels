@@ -281,7 +281,7 @@
                 <div class="col-md-12">
                     @if ($getTour->count() > 0)
                         <div class="section-title ">
-                            <h2 class="text-center">Special <span>Tour</span> Packages</h2>
+                            <h2 class="text-center">Recommended <span>Tour</span> Packages</h2>
                         </div>
                     @endif
                 </div>
@@ -352,7 +352,7 @@
                 <div class="col-md-12">
                     @if ($getTour->count() > 0)
                         <div class="section-title ">
-                            <h2 class="text-center">Popular <span>Adventurous</span> Place</h2>
+                            <h2 class="text-center">Get More <span>Adventurous</span> Place</h2>
                         </div>
                     @endif
                 </div>
@@ -419,6 +419,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Global Section Start -->
     <section class="global-section over-layer-white pt-15 pb-15"
         style="@if (!empty($homepagebannertwo->page_banner)) background-image:url({{ asset($homepagebannertwo->page_banner) }}) @endif">
