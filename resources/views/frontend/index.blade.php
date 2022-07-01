@@ -419,7 +419,79 @@
             </div>
         </div>
     </section>
-    
+    <section class="special-packages-sec pt-15 pb-15">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if ($getTour->count() > 0)
+                        <div class="section-title ">
+                            <h2 class="text-center">Experience <span>The Nature</span></h2>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
+
+                        {{-- {{dd($icategory)}} --}}
+                        @foreach ($catnature as $cnature)
+                            @foreach ($cnature->tour->shuffle() as $key => $tour)
+                                <div class="item">
+                                    <div class="special-packages">
+                                        <div class="thumb">
+                                            <a href="{{ route('tourdetails', $tour->slug) }}">
+                                                <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
+                                                    style="height:253px !important"></a>
+
+                                            <div class="post-title-box">
+                                                <div class="price-box">
+                                                    @if ($getcoupon)
+                                                        <h5 class="text-danger">
+                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                        </h5>
+                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h5>
+                                                    @else
+                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                    @endif
+                                                </div>
+                                                <div class="title-box">
+                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
+                                                    <h3>{{ $tour->country->country_name }}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content" >
+                                            <ul class="info">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                        Days</a></li>
+                                                <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                            class="fa fa-map-marker"></i>View on Map</a></li>
+
+
+                                            </ul>
+                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
+                                            <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                                {{ $tour->tour_name }}</h6>
+                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                                href="{{ route('booking', $tour->slug) }}">Book
+                                                Now</a>
+                                            <a class="btn-theme" style="margin-top:42px"
+                                                href="{{ route('tourdetails', $tour->slug) }}">View
+                                                Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Global Section Start -->
     <section class="global-section over-layer-white pt-15 pb-15"
         style="@if (!empty($homepagebannertwo->page_banner)) background-image:url({{ asset($homepagebannertwo->page_banner) }}) @endif">
