@@ -17,7 +17,8 @@
     <------------------------------------------>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/css/menu.css') }}">
@@ -191,9 +192,7 @@
 
         /** * Styles for demo */
     </style>
-    <script type="text/javascript"
-        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
-        async="async"></script>
+  
 
 </head>
 
@@ -222,15 +221,16 @@
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
+<script type="text/javascript"
+src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
+async="async"></script>
 
-
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6263cd5c209019ea"></script>
-
-    <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script>
-
+    {{-- <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+
     <!-- Optional JavaScript -->
     <script src="{{ asset('frontend/js/bootstrap-dropdownhover.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap-slider.js') }}"></script>

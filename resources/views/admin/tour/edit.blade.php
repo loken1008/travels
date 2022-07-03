@@ -91,6 +91,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
@@ -108,7 +109,7 @@
                             </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="firstName5">Altitude :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Altitude :</label>
                                     <input type="text" class="form-control" id="firstName5"
                                         value="{{ $edittour->altitude }}" name="altitude">
 

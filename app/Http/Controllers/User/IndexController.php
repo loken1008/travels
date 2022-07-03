@@ -27,11 +27,12 @@ class IndexController extends Controller
     public function homePage()
     {
         $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
-        $getTour=Tour::with('country','place','category')->where('status','=','1')->orderByRaw('RAND()')->get();
-        $cattrekking=Category::with('tour')->where('category_name','trekking')->first();
-        $cattour=Category::with('tour')->where('category_name','tours')->first();
-        $catnature=Category::with('tour')->where('category_name','natural realism')->first();
-        $catother=Category::with('tour')->where('category_name','!=','tours')->where('category_name','!=','trekking')->where('category_name','!=','natural realism')->get();
+        $getTour=Tour::with('country','place','category')->where(['status'=>'1','is_best_selling'=>'1'])->orderByRaw('RAND()')->get();
+        // dd($getTour);
+        $cattrekking=Category::with('tour')->where('category_type','trekking')->first();
+        $catnature=Category::with('tour')->where('category_type','natural')->first();
+        $catadventure=Category::with('tour')->where('category_type','adventure')->first();
+        $catpeak=Category::with('tour')->where('category_type','peakclimbing')->first();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $gethotel=Hotel::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
@@ -41,7 +42,7 @@ class IndexController extends Controller
         $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
         $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
 
-        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattour','cattrekking','catother','catnature'));
+        return view('frontend.index',compact('getTour','getcountry','getbanner','gethotel','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattrekking','catadventure','catnature','catpeak'));
     }
 
     public function  tourDetails($slug)

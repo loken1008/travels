@@ -109,7 +109,7 @@ $route = Route::current()->getName();
 
     <div class="menu-style menu-style-1 bg-transparent clearfix">
         <!-- main-navigation start -->
-        <div class="main-navigation main-mega-menu animated" style="background:linear-gradient(to top, #54bcdd 38%, #2abef9 98%);">
+        <div class="main-navigation main-mega-menu animated" style="background:linear-gradient(to top, #0E4D94 38%, #0E4D94 98%);">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <!-- header dropdown buttons end-->

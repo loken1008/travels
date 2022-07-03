@@ -75,6 +75,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">

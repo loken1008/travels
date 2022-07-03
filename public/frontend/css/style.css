@@ -1038,19 +1038,19 @@ a.scrollup:focus i {
     content:"\f0d8";
     font-family:'FontAwesome';
     position: absolute;
-    top:-37px;
-    color: #F5A13A;
+    top:-35px;
+    color:white;
     font-size: 36px;
-    left:-0.2px;
+    left:0.2px;
 }
 .di-menu::before{
     content:"\f0d9";
     font-family:'FontAwesome';
     position: absolute;
     top: -9.6px;
-    color:#F5A13A;
+    color:white;
     font-size:36px;
-    left:-13px;
+    left:-10px;
 }
 
 .header .dropdown-menu.left-1 {
@@ -2679,7 +2679,7 @@ canvas {
 .tab-style .nav.nav-tabs .nav-item:hover,
 .tab-style .nav.nav-tabs .nav-item:focus,
 .tab-style .nav.nav-tabs .nav-item.active {
-    background-color: #F5A13A;
+    background-color: #F5A13A !important;
 }
 
 .owl-navst.st-two.owl-theme .owl-nav {
@@ -5408,55 +5408,21 @@ Page Link Css Style
     font-size:16px;
     margin-left:45px !important;
 }
-
-.shop-product-row {}
-
-.shop-product-row h6 {
-    color: #F5A13A;
-    letter-spacing: 0.6px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color:#F6AB3B;
+    /* border-color: #dee2e6 #dee2e6 #fff; */
 }
-
-.shop-tab-content .shop-product-details-row .details {
-    border-top: 1px solid #ddd;
-    color: #444;
-    display: table-cell;
-    font-weight: bold;
-    padding: 10px 20px 10px 0;
-    text-transform: uppercase;
-    width: 25%;
+.nav-tabs {
+    border-bottom: none;
 }
-
-.shop-tab-content strong {
-    color: #F5A13A;
+.nav-tabs .nav-link {
+    border:none;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
 }
 
 
-/*--------------------------------
-FAQ CSS Start
-----------------------------------*/
-
-.faq-col {
-    margin-bottom: 30px;
-}
-
-.faq-col .panel-group {}
-
-.faq-col .panel-group .panel-title {
-    background-color: #F5A13A;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    padding: 12px 32px;
-}
-
-.faq-col .panel-group .content {
-    border: 1px solid #eee;
-    padding: 26px 30px;
-}
 
 
 /*--------------------------------
@@ -5507,7 +5473,7 @@ Error CSS Start
 Contact Details Css Style
 ----------------------------------------------------------------*/
 
-.contact-details {}
+
 
 .contact-details .title {
     display: inline-block;

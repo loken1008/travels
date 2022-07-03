@@ -20,6 +20,7 @@
                                     <tr>
                                         <th>SN</th>
                                         <th>Category Name</th>
+                                        <th>Category Type</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -28,6 +29,7 @@
                                         <tr>
                                             <td>{{$key+1}}</td>
                                             <td>{{ $category->category_name }}</td>
+                                            <td>{{$category->category_type}}</td>
                                             <td>
                                                 <a href="{{ route('edit.category', $category->id) }}" class="btn btn-info"
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
@@ -69,7 +71,20 @@
 
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <h5>Category Type:</h5>
+                                            <div class="controls">
+                                                <select  name="category_type" class="form-control">
+                                                    <option value=""> Select Category Type</option>
+                                                    <option value="trekking">Trekking</option>
+                                                    <option value="tour">Tour</option>
+                                                    <option value="adventure">Adventure</option>
+                                                    <option value="peakclimbing">Peak Climbing</option>
+                                                    <option value="natural">Natural Realism</option>
+                                                </select>
+                                              
+                                            </div>
+                                        </div>
 
                                     </div>
 
