@@ -28,29 +28,18 @@
 
                             <div class="post-title-box">
                                 <div class="price-box">
-                                    {{-- <h5><span>$</span>{{ $getcountrydetails->start_price }}</h5> --}}
-                                    {{-- <h6>Starts From</h6> --}}
+                                    
                                 </div>
                                 <div class="title-box">
                                     <h4>{{ $getcountrydetails->country_name }}</h4>
                                 </div>
                                
-                                {{-- <div class=" d-flex">
-                                    @foreach($getcountrydetails->place as $pl)
-                                    @if($pl->status=='1')
-                                    <a href="{{route('placedetails',$pl->place_name)}}"><h5 class="badge badge-pill ml-2" style="background:black;color:white;padding:10px">{{ $pl->place_name }}</h5></a>
-                                    @endif
-                                    @endforeach
-                                </div> --}}
+                              
                                 
                             </div>
                         </div>
                         <div class="content">
-                            {{-- <ul class="info">
-                                        <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                        <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                    </ul> --}}
+                           
                             <p>{!! $getcountrydetails->description !!}</p>
 
                         </div>

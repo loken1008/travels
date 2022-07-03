@@ -40,14 +40,14 @@
                         <div class="container">
                             <div class="row">
                                 <!-- Slide Text Layer -->
-                                <div class="slide-text slide-style-left st-two">
+                                <div class="slide-text slide-style-left st-two mt-4">
                                     <h2>{{ $banner->title }}</h2>
                                 </div>
 
 
                                 <!-- Package Box -->
                                 @if ($getcoupon)
-                                    <div class="package-box">
+                                    <div class="package-box mt-4">
                                         <h1><span>{{ $getcoupon->discount_amount }}%</span> off</h1>
                                         <h4>on all package</h4>
                                         <h4>{{ $getcoupon->coupon_name }}</h4>

@@ -11,7 +11,7 @@ Creation Date: 15 January 2019*/
 
 @media only screen and (max-width: 1739px) {
   .slide-text.st-two {
-    top: 30%;
+    top: 38%;
   }
   .slide-text.st-two h1 {
     font-size: 50px;
@@ -29,7 +29,7 @@ Creation Date: 15 January 2019*/
   }
   .package-box {
     left: 67%;
-    top: 12.3%;
+    top: 16.3%;
   }
   .slide-style-right.package-box {
     left: 19.5%;
@@ -85,15 +85,19 @@ Creation Date: 15 January 2019*/
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1479px) {
-  .carousel-item {
-    min-height: 550px;
-  }
+ .carousel-item{
+  min-height:550px;
+ }
+ video{
+  min-height:550px !important;
+  /* width: 100%; */
+ }
   .carousel-item .slide-image {
     min-height: 550px;
   }
   .package-box {
     left: 70%;
-    top: 25%;
+    top:38%;
   }
   .slide-style-right.package-box {
     left: 14.5%;
@@ -172,6 +176,10 @@ Creation Date: 15 January 2019*/
   .carousel-item {
     min-height: 530px;
   }
+  video{
+    min-height:530px;
+    /* width: 100% !important; */
+   }
   .carousel-item .slide-image {
     min-height: 530px;
   }
@@ -303,7 +311,7 @@ Creation Date: 15 January 2019*/
     width: 720px;
   }
   .slide-text.st-two {
-    top: 34%;
+    top: 36%;
   }
   .slide-text.st-two h1 {
     font-size: 30px;
@@ -350,7 +358,7 @@ Creation Date: 15 January 2019*/
   }
   .package-box {
     left: 62%;
-    top: 22.3%;
+    top: 34.3%;
   }
   .welcome-section {
     margin-top: -25px;
@@ -423,8 +431,12 @@ Creation Date: 15 January 2019*/
     max-width:66% !important;
 }
   .carousel-item {
-    min-height: 400px;
+    min-height: 550px;
   }
+  video{
+    min-height: 550px;
+    /* width: 100% !important; */
+   }
   .carousel-item .slide-image {
     min-height: 400px;
   }
@@ -739,6 +751,9 @@ Creation Date: 15 January 2019*/
   .carousel-item {
     height: 550px;
   }
+  video{
+    min-height:550px !important;
+   }
   .carousel-item .slide-image {
     height: 550px;
   }
@@ -919,10 +934,13 @@ Creation Date: 15 January 2019*/
 }
 @media only screen and (max-width: 391px) {
   .carousel-item {
-    height: 220px;
+    height: 360px;
+  }
+  video{
+    height:360px;
   }
   .carousel-item .slide-image {
-    height: 220px;
+    height: 3600px;
   }
   .app-section .btn-theme {
     font-size: 13px;
@@ -935,7 +953,7 @@ Creation Date: 15 January 2019*/
 
 @media only screen and (max-width: 375px) {
   .slide-text.st-two {
-    top: 25%;
+    top: 28%;
   }
   .special-packages .content .small-hotel .thumb img {
     width: 95px;

@@ -525,11 +525,5 @@
     @include('frontend.common.testmonial')
     <!-- Testimonials Section End -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
-            var googleIframe = $('#map_canvas iframe');
-            googleIframe.attr('src', googleIframe.attr('src') + '');
-        });
-    </script>
+  
 @endsection

@@ -23,20 +23,7 @@
             <div class="row grid-mb">
                 <div class="col-md-12">
                     <div class="special-packages dtl-st">
-                        {{-- <div class="thumb">
-                           
-                            <div class="post-title-box">
-                                
-                                <div class="title-box">
-                                    <h4>{{ $getplacedetails->place_name }}</h4>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <ul class="info">
-                                        <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                        <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                    </ul> --}}
+                       
                             <p>{!! $getplacedetails->description !!}</p>
 
                         
