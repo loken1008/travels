@@ -27,7 +27,20 @@
 
                                                 </div>
                                             </div>
-                                            
+                                            <div class="form-group">
+                                                <h5>Category Type:</h5>
+                                                <div class="controls">
+                                                    <select  name="category_type" class="form-control">
+                                                        <option value=""> Select Category Type</option>
+                                                        <option value="trekking" {{$editcategory->category_type=="trekking"?'selected':''}}>Trekking</option>
+                                                        <option value="tour" {{$editcategory->category_type=="tour"?'selected':''}}>Tour</option>
+                                                        <option value="adventure" {{$editcategory->category_type=="adventure"?'selected':''}}>Adventure</option>
+                                                        <option value="peakclimbing" {{$editcategory->category_type=="peakclimbing"?'selected':''}}>Peak Climbing</option>
+                                                        <option value="natural" {{$editcategory->category_type=="natural"?'selected':''}}>Natural Realism</option>
+                                                    </select>
+    
+                                                </div>
+                                            </div>
                                         </div>
 
                                     </div>

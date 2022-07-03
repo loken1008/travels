@@ -32,7 +32,8 @@ $route = Route::current()->getName();
                                         <th>Country</th>
                                         <th>Category</th>
                                         <th>Sub category</th>
-                                        <th>Tour Name</th>    
+                                        <th>Tour Name</th> 
+                                        <th>Is Best Selling</th>   
                                         <th>Status</th>
                                         <th>images</th>
                                         <th>Action</th>
@@ -46,6 +47,7 @@ $route = Route::current()->getName();
                                             <td >@if(!empty($tour->category->category_name)){{$tour->category->category_name}}@endif</td>
                                             <td >@if(!empty($tour->subcategory->sub_category_name)){{$tour->subcategory->sub_category_name}}@endif</td>
                                             <td>{{ $tour->tour_name }}</td>
+                                            <td>@if($tour->is_best_selling==1)Best Sell @else Normal @endif</td>
                                            
                                             <td>
 

@@ -24,6 +24,7 @@ class CategoryController extends Controller
         Category::insert([
             'category_name'=>$request->category_name,
             'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
+            'category_type'=>$request->category_type,
             'created_at'=>Carbon::now()
         ]);
         $notification=array(
@@ -44,12 +45,13 @@ class CategoryController extends Controller
             'category_name'=>'required',
         ]);
             $category_id=$request->id;
-            Category::findOrFail($category_id)->update([
-                'category_name'=>$request->category_name,
-                'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
-            ]);
+            $category=Category::findOrFail($category_id);
+            $category->category_name=$request->category_name;
+            $category->category_slug=strtolower(str_replace(' ','-',$request->category_name));
+            $category->category_type=$request->category_type;
+            $category->save();
             $notification=array(
-                'message'=>'category Update Successfully',
+                'message'=>'Category Update Successfully',
                 'alert-type'=>'success'
             );
             return redirect()->route('all.category')->with($notification);

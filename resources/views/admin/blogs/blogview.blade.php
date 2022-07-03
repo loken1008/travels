@@ -1,13 +1,10 @@
-@php
+  @php
 $prefix=Request::route()->getPrefix();
 $route=Route::current()->getName();
 @endphp
 @extends('admin.body.master')
 @section('title', 'Blog')
 @section('content')
-
-          
-
             <!-- Main content -->
             <section class="content">
                 <div class="row">
