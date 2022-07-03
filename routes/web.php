@@ -828,10 +828,6 @@ Route::get('/countrydetails/{country_name}', [
     App\Http\Controllers\User\CountryController::class,
     'countryDetails',
 ])->name('countrydetails');
-Route::get('/placedetails/{place_name}', [
-    App\Http\Controllers\User\CountryController::class,
-    'placeDetails',
-])->name('placedetails');
 
 Route::get('/tourdetails/{slug}', [
     App\Http\Controllers\User\IndexController::class,
@@ -841,10 +837,6 @@ Route::get('/tourmap/{slug}', [
     App\Http\Controllers\User\IndexController::class,
     'tourMap',
 ])->name('tourmap');
-Route::get('/hotelviewdetails/{hotel_name}', [
-    App\Http\Controllers\User\IndexController::class,
-    'hotelviewDetails',
-])->name('hotelviewdetails');
 // subcategory related details
 Route::get('/tripdetails/{slug}', [
     App\Http\Controllers\User\CategoryController::class,

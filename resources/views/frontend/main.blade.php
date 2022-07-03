@@ -18,7 +18,7 @@
 
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}"> --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/css/menu.css') }}">
@@ -133,20 +133,24 @@
             text-align: justify;
             line-height: 2rem;
         }
-        .cii ul,.cee ul {
+
+        .cii ul,
+        .cee ul {
             list-style: none;
         }
-        .cii ul li::before{
-            content:'\f058';
+
+        .cii ul li::before {
+            content: '\f058';
             font-family: 'FontAwesome';
-            padding-right:10px;
+            padding-right: 10px;
             color: rgb(4, 83, 209)
         }
-        .cee ul li::before{
-            content:'\f057';
+
+        .cee ul li::before {
+            content: '\f057';
             font-family: 'FontAwesome';
-            padding-right:10px;
-            color:#f5400a;
+            padding-right: 10px;
+            color: #f5400a;
         }
 
         #st-1 {
@@ -186,13 +190,14 @@
             height: auto;
             max-width: 100%;
         }
-        .search-input-box:focus{
+
+        .search-input-box:focus {
             outline: auto;
         }
 
         /** * Styles for demo */
     </style>
-  
+
 
 </head>
 
@@ -221,34 +226,29 @@
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
-<script type="text/javascript"
-src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
-async="async"></script>
-
-    {{-- <script src="{{ asset('frontend/js/jquery-3.2.1.min.js') }}"></script> --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-    <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
-    {{-- <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+    <script type="text/javascript"
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
+        async="async"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 
     <!-- Optional JavaScript -->
-    <script src="{{ asset('frontend/js/bootstrap-dropdownhover.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap-slider.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.flexslider-min.js') }}"></script>
-    <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
     <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/css3-animate-it.js') }}"></script>
-    <script src="{{ asset('frontend/js/magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.fancybox.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="{{ asset('frontend/js/player-min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('frontend/js/script.js') }}"></script>
 
-    <!-- Begin widget code -->
-    {{-- tripadvisor --}}
-    <!-- Begin widget code -->
+  
 
     <script>
         var script = document.createElement("script");
@@ -274,17 +274,7 @@ async="async"></script>
 
     <!--End of Tawk.to Script-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5EJF8NFWL9');
-    </script>
+   
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
@@ -307,7 +297,46 @@ async="async"></script>
             }
         @endif
     </script>
-
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+ 
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-5EJF8NFWL9');
+     </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".invisible-content").hide();
+            $(document).on('click', '.aboutbtn', function() {
+                var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
+                $(this).text(moreLessButton);
+                $(this).parent('.large-content').find(".invisible-content").toggle();
+                $(this).parent('.large-content').find(".visible-content").toggle();
+            });
+        });
+    </script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".teaminvisible-content").hide();
+        $(document).on('click', '.teambtn', function() {
+            var moreLessButton = $(".teaminvisible-content").is(':visible') ? 'Read More' : 'Read Less';
+            $(this).text(moreLessButton);
+            $(this).parent('.teamlarge-content').find(".teaminvisible-content").toggle();
+            $(this).parent('.teamlarge-content').find(".visible-content").toggle();
+        });
+    });
+</script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+<script>
+    $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
+        var googleIframe = $('#map_canvas iframe');
+        googleIframe.attr('src', googleIframe.attr('src') + '');
+    });
+</script>
 </body>
 
 </html>

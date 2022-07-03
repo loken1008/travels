@@ -60,15 +60,15 @@
                                 <h6 class="font-weight-bold pt-2" style="width:100%!important">Experiences:
                                     {{ $teamdetails->experiences }} </h6>
                             </div>
-                            <div class="tab-content large-content" id="nav-tabContent" style="    text-align: justify;
+                            <div class="tab-content teamlarge-content" id="nav-tabContent" style="    text-align: justify;
                                 padding: 0px 0px 20px 27px;">
                                 <div class="visible-content" style="text-align: justify">
                                     <p class="mb-25" style="text-align: justify"> {!! Str::limit($teamdetails->description, 400, '') !!}</p>
                                 </div>
-                                <div class="invisible-content">
+                                <div class="teaminvisible-content">
                                     <p>{!! $teamdetails->description !!}</p>
                                 </div>
-                                <button style="border-radius:0px" class="btn-theme more-less">Read More</button>
+                                <button style="border-radius:0px" class="teambtn btn-theme more-less">Read More</button>
                             </div>
                         </div>
                     </div>
@@ -84,15 +84,15 @@
                                 <h6 class="font-weight-bold pt-2" style="width:100%!important">Experiences:
                                     {{ $teamdetails->experiences }} </h6>
                             </div>
-                            <div class="tab-content large-content" id="nav-tabContent" style="text-align: justify;
+                            <div class="tab-content teamlarge-content" id="nav-tabContent" style="text-align: justify;
                                 padding: 0px 27px 20px 0px;">
                                 <div class="visible-content" style="text-align: justify">
                                     <p class="mb-25" style="text-align: justify"> {!! Str::limit($teamdetails->description, 400, '') !!}</p>
                                 </div>
-                                <div class="invisible-content">
+                                <div class="teaminvisible-content">
                                     <p>{!! $teamdetails->description !!}</p>
                                 </div>
-                                <button style="border-radius:0px" class="btn-theme more-less">Read More</button>
+                                <button style="border-radius:0px" class="teambtn btn-theme more-less">Read More</button>
                             </div>
 
                         </div>
@@ -123,19 +123,4 @@
     <!-- Special Places Section Start -->
     @include('frontend.common.tour')
     <!-- Special Places Section End -->
-
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".invisible-content").hide();
-            $(document).on('click', '.btn-theme', function() {
-                var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
-                $(this).text(moreLessButton);
-                $(this).parent('.large-content').find(".invisible-content").toggle();
-                $(this).parent('.large-content').find(".visible-content").toggle();
-            });
-        });
-    </script>
-
-
 @endsection

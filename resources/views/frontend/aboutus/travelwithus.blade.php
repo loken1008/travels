@@ -40,7 +40,7 @@
                                         <p class="mb-25"  style="text-align: justify"> {!! Str::limit($chooseus->description, 500, '') !!}</p>
                                     </div>
                                     <div class="invisible-content"><p>{!! $chooseus->description !!}</p></div>
-                                    <button class="btn-theme more-less">Read More</button>
+                                    <button class="aboutbtn btn-theme more-less">Read More</button>
                                     
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                         <p class="mb-25"  style="text-align: justify"> {!! Str::limit($chooseus->description, 500, '') !!}</p>
                                     </div>
                                     <div class="invisible-content"><p>{!! $chooseus->description !!}</p></div>
-                                    <button class="btn-theme more-less">Read More</button>
+                                    <button class="aboutbtn btn-theme more-less">Read More</button>
                                     
                                 </div>
                             </div>
@@ -77,17 +77,4 @@
         </div>
     </section>
     @include('frontend.common.tour')
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-$(".invisible-content").hide();
-$(document).on('click', '.btn-theme', function(){
-var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
-$(this).text(moreLessButton);
-$(this).parent('.large-content').find(".invisible-content").toggle();
-$(this).parent('.large-content').find(".visible-content").toggle();
-});
-});
-    </script>
-
 @endsection
