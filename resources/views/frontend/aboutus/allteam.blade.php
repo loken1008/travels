@@ -1,18 +1,6 @@
 @extends('frontend.main')
 <style>
-    .read-more-show {
-        cursor: pointer;
-        color: #ed8323;
-    }
-
-    .read-more-hide {
-        cursor: pointer;
-        color: #ed8323;
-    }
-
-    .hide_content {
-        display: none;
-    }
+  
 </style>
 @section('title', 'Team Details')
 @section('content')

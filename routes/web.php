@@ -49,7 +49,7 @@ Route::post('mountainguide/reset-password', [
 
 
 /*************************************** admin route *********************************/
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','get.expire'])->group(function () {
     Route::get('/dashboard', [
         App\Http\Controllers\Admin\DashboardController::class,
         'index',
@@ -761,7 +761,7 @@ Route::post('reset-password', [
 
 // frontend
 
-Route::group(['middleware' => ['XSS']], function () {
+Route::group(['middleware' => ['XSS','get.expire']], function () {
 // customer register/login
 Route::get('customer-register', [
     App\Http\Controllers\Auth\CustomerController::class,
