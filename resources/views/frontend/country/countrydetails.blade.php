@@ -74,8 +74,8 @@
                                                 <h3>{{ $tour->country->country_name }}</h3>
                                             </div>
                                             <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                        Days</a></li>
+                                                <li><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                        Days</li>
                                                 <li><a href="{{ route('tourmap',$tour->slug) }}"><i
                                                             class="fa fa-map-marker"></i>View on Map</a></li>
                                             </ul>

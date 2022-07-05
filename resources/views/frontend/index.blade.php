@@ -246,8 +246,8 @@
                                     </div>
                                     <div class="content" >
                                         <ul class="info">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $selltour->tour_days }}
-                                                    Days</a></li>
+                                            <li><i class="fa fa-calendar"></i>{{ $selltour->tour_days }}
+                                                    Days</li>
                                             <li><a href="{{ route('tourmap', $selltour->slug) }}"><i
                                                         class="fa fa-map-marker"></i>View on Map</a></li>
 
@@ -320,8 +320,8 @@
                                     </div>
                                     <div class="content" >
                                         <ul class="info">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                    Days</a></li>
+                                            <li><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                    Days</li>
                                             <li><a href="{{ route('tourmap', $tour->slug) }}"><i
                                                         class="fa fa-map-marker"></i>View on Map</a></li>
 
@@ -393,8 +393,8 @@
                                     </div>
                                     <div class="content" >
                                         <ul class="info">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                    Days</a></li>
+                                            <li><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                    Days</li>
                                             <li><a href="{{ route('tourmap', $tour->slug) }}"><i
                                                         class="fa fa-map-marker"></i>View on Map</a></li>
 

@@ -85,7 +85,7 @@ class BookingController extends Controller
                  ];
            }
          
-         Mail::to('lokenchand260@gmail.com')->send(new BookingMail($tourbooking));
+         Mail::to('info@mountainguidetrek.com')->send(new BookingMail($tourbooking));
          $notification=array(
             'message'=>'You Sucessfully Book Your Trip',
             'alert-type'=>'success'

@@ -11,7 +11,7 @@ Creation Date: 15 January 2019*/
 
 @media only screen and (max-width: 1739px) {
   .slide-text.st-two {
-    top: 38%;
+    top:50%;
   }
   .slide-text.st-two h1 {
     font-size: 50px;
@@ -311,7 +311,7 @@ Creation Date: 15 January 2019*/
     width: 720px;
   }
   .slide-text.st-two {
-    top: 36%;
+    top:50%;
   }
   .slide-text.st-two h1 {
     font-size: 30px;
@@ -953,7 +953,7 @@ Creation Date: 15 January 2019*/
 
 @media only screen and (max-width: 375px) {
   .slide-text.st-two {
-    top: 28%;
+    top:30%;
   }
   .special-packages .content .small-hotel .thumb img {
     width: 95px;

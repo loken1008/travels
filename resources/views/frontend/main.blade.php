@@ -17,7 +17,6 @@
     <------------------------------------------>
 
     <!-- Bootstrap CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}">
 
@@ -229,28 +228,28 @@ Main JavaScript
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
         async="async"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" defer></script>
 
     <!-- Optional JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
-    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"  defer></script>
+    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer ></script>
     <script src="{{ asset('frontend/js/player-min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" defer ></script>
+    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}" defer ></script>
     <!-- Custom JavaScript -->
-    <script src="{{ asset('frontend/js/script.js') }}"></script>
+    <script src="{{ asset('frontend/js/script.js') }}" defer ></script>
 
   
 
-    <script>
+    <script type="text/javascript" defer>
         var script = document.createElement("script");
         script.type = "module";
         script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";
@@ -258,7 +257,7 @@ Main JavaScript
     </script>
     <!-- End widget code -->
     <!-- End widget code -->
-    <script type="text/javascript">
+    <script type="text/javascript" defer>
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
         (function() {
@@ -275,8 +274,8 @@ Main JavaScript
     <!--End of Tawk.to Script-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
    
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
     <script>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
@@ -308,7 +307,7 @@ Main JavaScript
  
          gtag('config', 'G-5EJF8NFWL9');
      </script>
-    <script type="text/javascript">
+    <script type="text/javascript" defer>
         $(document).ready(function() {
             $(".invisible-content").hide();
             $(document).on('click', '.aboutbtn', function() {
@@ -319,7 +318,7 @@ Main JavaScript
             });
         });
     </script>
- <script type="text/javascript">
+ <script type="text/javascript" defer>
     $(document).ready(function() {
         $(".teaminvisible-content").hide();
         $(document).on('click', '.teambtn', function() {
@@ -331,7 +330,7 @@ Main JavaScript
     });
 </script>
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
-<script>
+<script type="text/javascript" defer>
     $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
         var googleIframe = $('#map_canvas iframe');
         googleIframe.attr('src', googleIframe.attr('src') + '');

@@ -132,7 +132,7 @@
                                                 aria-labelledby="costie-tab">
                                                 @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
                                                 @else
-                                                    <div class="item" style="padding-right: 20px;" style="">
+                                                    <div class="item" style="padding-right: 20px;" >
                                                         <a href="#" data-toggle="collapse"
                                                             data-target="#collapseExamplecost{{ $getTourdetails->id }}"
                                                             aria-expanded="false" aria-controls="collapseExamplecost"
@@ -223,16 +223,7 @@
                                                                         <td>{{ $dateprice->end_date }}</td>
                                                                         <td>{{ $dateprice->seats_available }}</td>
                                                                         <td>{{ $dateprice->price }}</td>
-                                                                        <td> <a style="background-color: #255669;
-                                                                                                border: 2px solid #255669;
-                                                                                                border-radius: 50px;
-                                                                                                color: #fff;
-                                                                                                display: inline-block;
-                                                                                                /* float: right; */
-                                                                                                font-weight: 600;
-                                                                                                padding: 7px 18px;
-                                                                                                vertical-align: top;"
-                                                                                href="{{ route('booking', $getTourdetails->slug) }}">Book
+                                                                        <td> <a href="{{ route('booking', $getTourdetails->slug) }}">Book
                                                                                 Now</a>
                                                                         </td>
                                                                     </tr>
@@ -445,8 +436,8 @@
                                     </div>
                                     <div class="content" style="height:200px">
                                         <ul class="info">
-                                            <li><a href="#"><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
-                                                    Days</a></li>
+                                            <li><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                    Days</li>
                                             <li><a href="{{ route('tourmap', $tour->slug) }}"><i
                                                         class="fa fa-map-marker"></i>View on Map</a></li>
 

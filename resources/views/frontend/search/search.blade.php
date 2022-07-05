@@ -55,8 +55,8 @@
                                 </div>
                                 <div class="content" style="height:200px">
                                     <ul class="info">
-                                        <li><a href="#"><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }}
-                                                Days</a></li>
+                                        <li><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }}
+                                                Days</li>
                                         <li><a href="{{ route('tourmap', $tourdetails->slug) }}"><i
                                                     class="fa fa-map-marker"></i>View on Map</a></li>
 
