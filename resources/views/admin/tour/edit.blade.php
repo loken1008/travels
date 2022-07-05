@@ -33,23 +33,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstName5">Place Name :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="placeid" value="{{$edittour->place_id}}"
-                                    name="place_id">
-                                    <select class="form-control" id="firstName5" name="place_id">
-                                        @foreach ($getplace as $place)
-                                            <option value="{{ $place->id }}"
-                                                {{ $edittour->place_id == $place->id ? 'selected' : '' }}>{{ $place->place_name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('place_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div> --}}
+                           
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5"> Category :<span class="text-danger">*</span></label>
@@ -91,22 +75,8 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
+                                <input type="checkbox" name="is_best_selling" value="1" {{$edittour->is_best_selling==1?'checked':''}}> Is Best Selling
                             </div>
-                            {{-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="firstName5">Tour Type :<span class="text-danger">*</span></label>
-                                    <select class="form-control" id="firstName5" name="type">
-                                        <option value="">Select Tours </option>
-                                        <option value="trip" {{ $edittour->type=="trip"?'selected':'' }}>Trip</option>
-                                        <option value="package" {{ $edittour->type=="package"?'selected':'' }}>Package</option>
-                                        <option value="activities" {{ $edittour->type=="activities"?'selected':'' }}>Activities</option>
-                                    </select>
-                                    @error('type')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Altitude :</label>
