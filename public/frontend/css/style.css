@@ -19,9 +19,6 @@
 @import url('flexslider.css');
 @import url('slick.css');
 @import url('player.css');
-/* @import url('custom-animation.css');
-@import url('menu.css');
-@import url('responsive.css'); */
 
 /*****=====*****=====*****=====*****=====
     02. General CSS 
@@ -1418,7 +1415,6 @@ a.dropdown-item.active {
 .dropdown-buttons .menu-search-box form .form-group .form-control {
     border-radius: 0;
     font-family: "Roboto", sans-serif;
-    ;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.4px;
