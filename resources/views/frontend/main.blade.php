@@ -29,7 +29,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
+<style>
+    .landscape {
 
+height: auto;
+overflow: hidden;
+position: relative;
+}
+
+.landscape__layer {
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+}
+
+.landscape__image {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+max-height: 100%;
+max-width: 300%;
+min-width: 100%;
+width: 2500px;
+display: flex;
+flex-direction: column;
+}
+
+.landscape__image svg {
+display: block;
+height: auto;
+max-width: 100%;
+}
+</style>
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
