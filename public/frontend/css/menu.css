@@ -388,11 +388,13 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
 .dropdown-buttons .menu-search-box form .form-group,
 .dropdown-buttons .menu-search-box form .form-group .form-control {
     margin-bottom: 0;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     position: relative;
 }
-
+.search-input-box:focus{
+    border:1px solid black;
+}
 .dropdown-buttons .menu-search-box ul {
     padding: 20px;
     border: 0;
@@ -406,7 +408,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     width: 55px;
     height: 55px;
     line-height: 55px;
-    top: 0;
+    top:-8px;
     right: 0;
     position: absolute;
     text-align: center;
