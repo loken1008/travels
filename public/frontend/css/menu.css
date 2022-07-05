@@ -24,6 +24,7 @@ header.header .container {
     border-radius: 0;
     padding: 0;
     /* border-top: 2px solid red; */
+    border: 0px solid #e5e5e5;
 }
 
 .header .navbar-nav li .nav-link {
@@ -524,7 +525,7 @@ ul.navbar-nav li.nav-item.mega-menu div.dropdown-menu .menu-item a.dropdown-item
 }
 
 .header .menu-style.bg-transparent .fixed-header .navbar-nav li a.nav-link {
-    color: #333;
+    color:white;
 }
 
 .header .menu-style.transparent-dark .navbar-nav li a.nav-link {
@@ -532,7 +533,7 @@ ul.navbar-nav li.nav-item.mega-menu div.dropdown-menu .menu-item a.dropdown-item
 }
 
 .header .menu-style.transparent-dark .fixed-header .navbar-nav li a.nav-link {
-    color: #333;
+    color:white;
 }
 
 .header .menu-style.bg-transparent .navbar-nav li.active a.nav-link,

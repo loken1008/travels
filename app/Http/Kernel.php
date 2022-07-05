@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
         'customers' => \App\Http\Middleware\CustomerMiddleware::class,
         'XSS' => \App\Http\Middleware\XSS::class,
+        'get.expire'=>\App\Http\Middleware\ExpireHeader::class,
     ];
 }

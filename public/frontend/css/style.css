@@ -19,6 +19,9 @@
 @import url('flexslider.css');
 @import url('slick.css');
 @import url('player.css');
+/* @import url('custom-animation.css');
+@import url('menu.css');
+@import url('responsive.css'); */
 
 /*****=====*****=====*****=====*****=====
     02. General CSS 
@@ -42,7 +45,174 @@ body {
     }
 }
 
+.view-gallery .read-btn {
+    background-color: #255669;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    bottom: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 16px 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
 
+label.error {
+    color: #dc3545;
+    font-size: 14px;
+}
+
+#costie ul {
+    padding-left: 0px;
+}
+
+.kgKuDl {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-height: 0.9;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.ReviewText__Container-sc-1nyg8v7-0 .SimpleShortener__Outer-sc-19xjxqz-0,
+.ReviewText__Title-sc-1nyg8v7-1 {
+    color: #9c9c9c;
+}
+
+.fa-facebook-square::before,
+.fa-whatsapp::before,
+.fa-twitter::before,
+.fa-linkedin::before,
+.fa-google-plus::before,
+.fa-pinterest::before,
+.fa-instagram::before {
+    font-family: 'FontAwesome';
+}
+
+.social-btn-sp #social-links {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.social-btn-sp #social-links ul li {
+    display: inline-block;
+}
+
+.social-btn-sp #social-links ul li a {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 1px;
+    font-size: 30px;
+}
+
+table #social-links {
+    display: inline-table;
+}
+
+table #social-links ul li {
+    display: inline;
+}
+
+table #social-links ul li a {
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 1px;
+    font-size: 15px;
+    background: #e3e3ea;
+}
+
+.equipmentlist ul li,
+.equipment-collaspe ul li {
+    list-style: disc;
+    text-align: justify;
+    line-height: 2rem;
+}
+
+.cii ul,
+.cee ul {
+    list-style: none;
+}
+
+.cii ul li::before {
+    content: '\f058';
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: rgb(4, 83, 209)
+}
+
+.cee ul li::before {
+    content: '\f057';
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #f5400a;
+}
+
+#st-1 {
+    z-index: 1 !important;
+}
+
+.landscape {
+
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.landscape__layer {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.landscape__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 100%;
+    max-width: 300%;
+    min-width: 100%;
+    width: 2500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.landscape__image svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.search-input-box:focus {
+    outline: auto;
+}
+
+.read-more-show {
+    cursor: pointer;
+    color: #ed8323;
+}
+
+.read-more-hide {
+    cursor: pointer;
+    color: #ed8323;
+}
+
+.hide_content {
+    display: none;
+}
 /* Common CSS */
 
 * {
@@ -1049,7 +1219,7 @@ a.scrollup:focus i {
     top: -9.6px;
     color:white;
     font-size:36px;
-    left:-10px;
+    left:-13.5px;
 }
 
 .header .dropdown-menu.left-1 {

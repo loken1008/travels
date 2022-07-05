@@ -238,4 +238,8 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
+
+    // expiry time
+    'get_url_expire' => env('GET_URL_EXPIRE_MINS', '5'),
+
 ];
