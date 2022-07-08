@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
@@ -104,15 +104,16 @@
             font-size: 123px;
 
         }
-        #underdiv{
+
+        #underdiv {
             background: #1a4491;
-    width: 227px;
-    height: 12px;
-    position: relative;
-    top: -11px;
-    left: 0px;
-    border-bottom-left-radius: 17px;
-    border-top-right-radius: 18px;
+            width: 227px;
+            height: 12px;
+            position: relative;
+            top: -11px;
+            left: 0px;
+            border-bottom-left-radius: 17px;
+            border-top-right-radius: 18px;
         }
     </style>
 
@@ -143,28 +144,28 @@ Main JavaScript
 <------------------------------------------>
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
-        defer></script>
+        ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js"
-        defer></script>
+        ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
-    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
+    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" >
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" defer></script>
-    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}" defer></script>
-    <script src="{{ asset('frontend/js/script.js') }}" defer></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" ></script>
+    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}" ></script>
+    <script src="{{ asset('frontend/js/script.js') }}" ></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9" defer></script>
-    <script type="text/javascript" defer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9" ></script>
+    <script type="text/javascript" >
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
@@ -192,12 +193,6 @@ Main JavaScript
         gtag('js', new Date());
 
         gtag('config', 'G-5EJF8NFWL9');
-
-
-        var script = document.createElement("script");
-        script.type = "module";
-        script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-slider.js";
-        document.getElementsByTagName("head")[0].appendChild(script);
 
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
