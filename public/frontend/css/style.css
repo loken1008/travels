@@ -29,7 +29,7 @@ body {
     /* color: #999999; */
     color: #5a5555;
     line-height: 1.65;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 14px;
     font-weight: 400;
     overflow-x: hidden;
@@ -190,7 +190,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     color: #333;
     font-weight: 400;
@@ -211,7 +211,7 @@ h6 {
 p {
     color: #605d5d;
     color: #575757;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     line-height: 28px;
     margin: 0;
     letter-spacing: 0.3px;
@@ -641,12 +641,12 @@ input:-moz-placeholder {
 }
 
 .ffly-title {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
 }
 
 .ffly-p {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
 }
 
 .lin-h-20 {
@@ -666,7 +666,7 @@ input:-moz-placeholder {
     margin: 0 auto 0px;
     padding: 0;
     position: relative;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .section-title h4 {
@@ -682,21 +682,22 @@ input:-moz-placeholder {
 
 .section-title h2 {
     color: #363d48;
-    font-family: "Roboto", sans-serif;
-    font-size:28px;
-    font-weight:500;
+    font-family:'Titillium Web', sans-serif;
+    font-size:22px;
+    font-weight:600;
     letter-spacing: 0.8px;
     line-height: 0.9;
     margin-bottom: 22px;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
 }
+
 
 .section-title h2 span {
     color: #F5A13A;
 }
 
 .section-title h6 {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -706,7 +707,7 @@ input:-moz-placeholder {
 
 .section-title p {
     color: #9c9c9c;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 16px;
     line-height: 26px;
     margin: 0 auto;
@@ -1004,7 +1005,6 @@ a.scrollup:focus i {
     z-index: 10;
 }
 
-.header-style-2 {}
 
 .top-bar {
     position: relative;
@@ -1160,7 +1160,7 @@ a.scrollup:focus i {
 }
 
 .header .main-navigation.animated .navbar-nav li a {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     padding: 12px 28px 18px 14px;
@@ -1202,9 +1202,7 @@ a.scrollup:focus i {
     background-color: #F5A13A;
 }
 
-.header .menu-style.menu-hover-2 .navbar-nav li.active a.nav-link:hover,
-.header .menu-style.menu-hover-2 .navbar-nav li:focus a.nav-link:hover,
-.header .menu-style.menu-hover-2 .navbar-nav li:hover a.nav-link:hover {}
+
 
 .header ul.navbar-nav li.nav-item div.dropdown-menu .dropdown a.dropdown-item,
 .header ul.navbar-nav li.nav-item a.dropdown-item,
@@ -1220,9 +1218,7 @@ a.dropdown-item.active {
     color: #fff !important;
 }
 
-.header .dropdown-menu {
-    /* border-top: 2px solid #F5A13A; */
-}
+
 
 .header ul.navbar-nav li.nav-item div.dropdown-menu .dropdown a.dropdown-item:hover,
 .header ul.navbar-nav li.nav-item a.dropdown-item:hover,
@@ -1288,7 +1284,7 @@ a.dropdown-item.active {
 
 .header-btn {
     display: inline-block;
-    float: right;
+    /* float: right; */
     margin-left: 18px;
     margin-right: 14px;
     margin-top: 7px;
@@ -1297,7 +1293,7 @@ a.dropdown-item.active {
 .header-btn a {
     background-color: #F5A13A;
     color: #fff;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 16px;
     font-weight: 600;
@@ -1319,7 +1315,6 @@ a.dropdown-item.active {
 
 /******/
 
-.dropdown-buttons {}
 
 .menu-search-box.btn-group,
 .menu-search-box.btn-group-vertical {
@@ -1380,7 +1375,7 @@ a.dropdown-item.active {
 .dropdown-buttons .menu-search-box form .form-group,
 .dropdown-buttons .menu-search-box form .form-group .form-control {
     border-radius: 0;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -1430,7 +1425,7 @@ a.dropdown-item.active {
 
 .header .btn-group .product-item {
     border-bottom: 1px solid #eee;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     margin-bottom: 12px;
     padding-bottom: 24px;
@@ -1717,7 +1712,7 @@ a.dropdown-item.active {
     color: #091426;
     font-size: 16px;
     font-weight: 600;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     letter-spacing: 3.8px;
     padding: 12px 30px;
@@ -1813,7 +1808,7 @@ a.dropdown-item.active {
     color: #fff;
     letter-spacing: 0.4px;
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 600;
     /* text-transform: uppercase; */
     max-width: 590px !important;
     line-height: 82px;
@@ -1898,7 +1893,7 @@ a.dropdown-item.active {
 
 .package-box h1 {
     color: #fff;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 60px;
     font-weight: 700;
@@ -1913,7 +1908,7 @@ a.dropdown-item.active {
 
 .package-box h4 {
     color: #F5A13A;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.4px;
@@ -2331,7 +2326,7 @@ a.dropdown-item.active {
     font-size: 60px;
     line-height: 1;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-weight: 700;
     padding-top: 50px;
 }
@@ -2447,7 +2442,6 @@ a.btn-primary {
 
 canvas {
     display: block;
-    vertical-align: bottom;
 }
 
 #particles-js {
@@ -2512,10 +2506,6 @@ canvas {
     width:14.73%;
 }
 
-.icon-wrp .icon-box:hover {
-    /* background-color: #f9f9f9; */
-}
-
 .icon-wrp .icon-box i {
     color: #df2b18;
     font-size: 30px;
@@ -2571,17 +2561,17 @@ canvas {
   Special Places Css Style
 =====*****=====*****=====*****=====*****/
 
-.special-places-sec {}
+
 
 .grid-mb .special-places {
     margin-bottom: 30px;
 }
 
 .special-places .content {
-    border: 2px solid #f7f7f7;
-    border-bottom: 3px solid #f7f7f7;
+    border: 2px solid #0E4D94;
+    border-bottom:2px solid #0E4D94;
     border-top: none;
-    box-shadow: 0 0 5px -3px rgba(0, 0, 0, 0.982);
+    /* box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.982); */
     display: inline-block;
     padding: 22px 19px 20px;
     position: relative;
@@ -2597,7 +2587,7 @@ canvas {
 
 .special-places .content .price-box h5 {
     color: #ff701a;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -2611,7 +2601,7 @@ canvas {
 
 .special-places .content .price-box h6 {
     color: black;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 14px;
     letter-spacing: 0.6px;
     font-style: italic;
@@ -2647,7 +2637,7 @@ canvas {
 
 .special-places .content .title-box h3 {
     color: #525252;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 18px;
     letter-spacing: 0.6px;
     text-transform: uppercase;
@@ -2680,9 +2670,10 @@ canvas {
 }
 
 .special-places .content .info li a {
-    color: #525252;
+    color: #0E4D94;
     margin-right: 12px;
     font-size: 13px;
+    font-weight:bold;
 }
 
 .special-places .content .info li a i {
@@ -2698,7 +2689,7 @@ canvas {
 }
 
 .special-places .content .share-btn {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     color: #a9a8a8;
     font-size: 16px;
     display: inline-block;
@@ -2715,28 +2706,13 @@ canvas {
     border: 2px solid #0E4D94;
     border-radius: 50px;
     color: #fff;
-    display: inline-block;
+    display: block;
     float: right;
     font-weight: 600;
     padding: 7px 18px;
-    vertical-align: top;
     line-height: 22px;
 }
 
-
-/*.special-places:hover .content .btn-theme {*/
-
-
-/*background-color: #0E4D94;*/
-
-
-/*border-color: #0E4D94;*/
-
-
-/*color: #fff;*/
-
-
-/*}*/
 
 .special-places .content .btn-theme:hover {
     background-color: #F6AB3B;
@@ -2776,7 +2752,6 @@ canvas {
     background-color: #F5A13A;
 }
 
-.owl-navst.owl-theme .owl-nav .owl-prev {}
 
 .owl-navst.owl-theme .owl-nav .owl-next {
     left: auto;
@@ -2886,7 +2861,7 @@ canvas {
 
 .special-packages .post-title-box .price-box h5 {
     color: #F5A13A;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 0.6px;
@@ -2939,10 +2914,10 @@ canvas {
 }
 
 .special-packages .content {
-    border: 2px solid #f7f7f7;
-    border-bottom: 3px solid #f7f7f7;
+    border: 2px solid #0E4D94;
+    border-bottom: 2px solid #0E4D94;
     border-top: none;
-    box-shadow: 0 0 5px -3px rgb(5, 5, 5);
+    /* box-shadow: 0 0 4px -1px rgb(5, 5, 5); */
     display: inline-block;
     padding: 22px 19px 20px;
     position: relative;
@@ -2955,10 +2930,16 @@ canvas {
     justify-content: space-between;
     margin-bottom: 16px;
     width: 100%;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .special-packages .content .info li {
     display: inline-block;
+    color: #0E4D94;
+}
+.special-packages .content .info li a{
+    color: #0E4D94 !important;
 }
 
 .special-packages .content .info li:nth-child(3) {
@@ -3003,7 +2984,7 @@ canvas {
 
 .special-packages .content .small-hotel .text h6 {
     color: #df2b18;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 11px;
     font-weight: 600;
     margin-bottom: 6px;
@@ -3076,7 +3057,7 @@ canvas {
 }
 
 .special-packages .content .share-btn {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     color: #9c9c9c;
     font-size: 16px;
     display: inline-block;
@@ -3093,11 +3074,11 @@ canvas {
     border: 2px solid #0E4D94;
     border-radius: 50px;
     color: #fff;
-    display: inline-block;
-    float: right;
+    display: block;
+    float: right !important;
     font-weight: 600;
     padding: 7px 18px;
-    vertical-align: top;
+    /* vertical-align: top; */
 }
 
 
@@ -3221,7 +3202,6 @@ canvas {
   Hotel Coll Css Style
 =====*****=====*****=====*****=====*****/
 
-.latest-hotel-sec {}
 
 .grid-mb .latest-hotel {
     margin-bottom: 40px;
@@ -3235,7 +3215,7 @@ canvas {
 
 .latest-hotel .thumb {
     display: inline-block;
-    float: left;
+    /* float: left; */
     position: relative;
     top: -3px;
     width: 46%;
@@ -3257,7 +3237,7 @@ canvas {
     border-bottom: 1px solid rgba(202, 202, 202, 0.22);
     border-left: 1px solid rgba(202, 202, 202, 0.22);
     display: inline-block;
-    float: right;
+    /* float: right; */
     padding: 15px 15px 18px 30px;
     width: 54%;
 }
@@ -3312,8 +3292,7 @@ canvas {
 .latest-hotel .content .map-viw {
     color: #0E4D94;
     display: inline-block;
-    font-family: "Roboto", sans-serif;
-    ;
+    font-family:'Titillium Web', sans-serif;
     font-size: 11px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -3328,7 +3307,7 @@ canvas {
 
 .latest-hotel .content h3 {
     color: #0E4D94;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 24px;
     font-style: italic;
     font-weight: 600;
@@ -3369,7 +3348,6 @@ canvas {
     background-color: #091426;
 }
 
-.contact-divider .contact-item {}
 
 .contact-divider .contact-item h3 {
     color: #fff;
@@ -3472,8 +3450,6 @@ Testimonials Css Style
     padding-left:20px;
 }
 
-.testimonials-post .testimonials-item .content ul {}
-
 .testimonials-post .testimonials-item .content ul li {
     display: inline-block;
     margin-bottom: 10px;
@@ -3485,7 +3461,7 @@ Testimonials Css Style
 }
 
 .testimonials-post .testimonials-item .content h5 {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-weight: 600;
     letter-spacing: 0;
     margin-bottom: 8px;
@@ -3566,8 +3542,6 @@ Testimonials Css Style
     width: 78px;
 }
 
-.testimonials-col .content {}
-
 .testimonials-col .content h4 {
     color: #0E4D94;
     font-size: 16px;
@@ -3585,13 +3559,11 @@ Testimonials Css Style
 
 .testimonials-col .content h6 {
     color: #F5A13A;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 4px;
 }
-
-.testimonials-col .content ul {}
 
 .testimonials-col .content ul li {
     display: inline-block;
@@ -3619,8 +3591,6 @@ Testimonials Css Style
     display: inline-block;
     margin-right: 8px;
 }
-
-#testimonials-carousel-4 .owl-dots .owl-dot.active {}
 
 #testimonials-carousel-4 .owl-dots .owl-dot span {
     background-color: #989898;
@@ -3727,13 +3697,13 @@ Testimonials Css Style
 
 .review-ratings {
     display: inline-block;
-    float: right;
+    /* float: right; */
     margin-top: 7px;
 }
 
 .ratings-star {
     display: inline-block;
-    float: left;
+    /* float: left; */
     margin-right: 4px;
 }
 
@@ -3745,7 +3715,7 @@ Testimonials Css Style
 .ratings-count {
     color: #F5A13A;
     display: inline-block;
-    float: left;
+    /* float: left; */
     font-weight: 500;
 }
 
@@ -3990,7 +3960,7 @@ Blog Css Style
 
 .blog-small-item .tex h5 {
     color: #989898;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -4001,13 +3971,13 @@ Blog Css Style
 
 /***Blog Details***/
 
-.blog-details {}
+
 
 .blog-details .details-thumb {
     margin-bottom: 30px;
 }
 
-.blog-details .details-content {}
+
 
 .blog-details .details-content h4 {
     color: #000;
@@ -4018,7 +3988,7 @@ Blog Css Style
     text-transform: uppercase;
 }
 
-.blog-details .details-content .details-tag {}
+
 
 .blog-details .details-content .details-tag li {
     display: inline-block;
@@ -4090,7 +4060,7 @@ Blog Css Style
 .blog-details .details-content .btn-box a {
     background-color: #F5A13A;
     color: #fff;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     padding: 8px 18px;
     text-transform: uppercase;
@@ -4180,7 +4150,7 @@ Blog Css Style
 .blog-details .form-control {
     border: 1px solid #eee;
     font-weight: 500;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     height: 54px;
     letter-spacing: 0.6px;
@@ -4193,7 +4163,7 @@ Blog Css Style
 
 .blog-details .btn.btn-theme {
     border-radius: 50px;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
 }
 
@@ -4262,7 +4232,7 @@ Contact Css Style
     border-radius: 50%;
     color: #fff;
     display: inline-block;
-    float: left;
+    /* float: left; */
     height: 34px;
     line-height: 32px;
     text-align: center;
@@ -4273,7 +4243,7 @@ Contact Css Style
 .contact-text .contact-info h6 {
     color: #fff;
     float: right;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     position: relative;
@@ -4295,9 +4265,7 @@ Form Control Css Style
     padding: 0;
 }
 
-.style-2 .booking-form {}
 
-.booking-form nav {}
 
 .booking-form .nav.nav-tabs {
     /* background-color: #0E4D94; */
@@ -4319,7 +4287,7 @@ Form Control Css Style
     text-align: center;
     text-transform: uppercase;
     width:99.78%;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     text-decoration: underline;
     text-decoration-style: double;
     text-decoration-color: #1621a3;
@@ -4336,11 +4304,7 @@ Form Control Css Style
     border-right: 1px solid #fff;
 }
 
-.booking-form .tab-content {}
 
-.booking-form .tab-content .tab-pane {}
-
-.booking-form .tab-content .tab-pane.active {}
 
 .booking-form .form-row {
     padding:5px 58px 72px;
@@ -4369,7 +4333,7 @@ Form Control Css Style
     border-color: -moz-use-text-color -moz-use-text-color #ddd;
     border-style: none none solid;
     border-width: medium medium 1px;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     height: 52px;
     margin-bottom: 40px;
@@ -4401,7 +4365,6 @@ Form Control Css Style
     opacity: 0.7;
 }
 
-.style-2 form select.form-control option {}
 
 .style-2 *::-moz-placeholder {
     color: #495057 !important;
@@ -4426,7 +4389,7 @@ Form Control Css Style
 .style-2 .btn-transparent,
 .style-2 .btn-bordered {
     border-radius: 50px;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     padding: 12px 24px;
 }
@@ -4511,7 +4474,6 @@ Features Css Style
 ----------------------------------------------------------------*/
 
 .feature-section {
-    background-image: url("../images/bg/everest.png");
     background-position: center center;
     background-size: cover;
     padding: 70px 0 77px;
@@ -4539,10 +4501,6 @@ Features Css Style
 .choosecontent p{
     text-align: left;
 }
-
-/* .feature-item:hover {
-    background-color:#4CA9F9;
-} */
 
 .feature-item .icon-box {
     display: inline-block;
@@ -4581,127 +4539,6 @@ Features Css Style
 }
 
 
-/*--------------------------------------------------------------
-Funfact Css Style
-----------------------------------------------------------------*/
-
-.funfact-section {
-    background-image: url("../images/bg/px-3.jpg");
-    background-position: center center;
-    background-size: cover;
-    padding: 70px 0 77px;
-    position: relative;
-    z-index: 1;
-}
-
-.funfact-section.over-layer-black:before {
-    background-color: rgba(3, 3, 3, 0.65);
-}
-
-.funfact-item {
-    background-color: rgba(15, 129, 197, 0.76);
-    color: #fff;
-    margin-bottom: 30px;
-    padding: 22px 20px;
-    text-align: center;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.funfact-item:hover {
-    background-color: rgba(15, 129, 197, 0.86);
-}
-
-.funfact-item .icon-box {
-    background-color: #df2b18;
-    border-radius: 50%;
-    display: inline-block;
-    height: 70px;
-    line-height: 70px;
-    margin-bottom: 10px;
-    width: 70px;
-}
-
-.funfact-item .icon-box i {
-    color: #fff;
-    font-size: 34px;
-    line-height: 70px;
-}
-
-.funfact-item .content h2 {
-    color: #fff;
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 48px;
-    margin-bottom: 7px;
-}
-
-.funfact-item .content h3 {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 32px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.funfact-item .content h3 a {
-    color: #fff;
-}
-
-.funfact-item .content h3 a span {
-    color: #F5A13A;
-}
-
-.video-sec h2 {
-    color: #fff;
-    font-family: "Roboto", sans-serif;
-    ;
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    line-height: 0.9;
-    margin-bottom: 22px;
-}
-
-.video-sec h2 span {
-    color: #F5A13A;
-}
-
-.video-sec p {
-    color: #fff;
-    font-size: 20px;
-}
-
-.video-sec p span {
-    color: #df2b18;
-}
-
-.video-content {
-    margin-right: 30px;
-    margin-top: 40px;
-    position: relative;
-}
-
-.video-content .overlay {
-    background-color: rgba(15, 129, 197, 0.16);
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.video-content .overlay a {
-    color: #fff;
-    font-size: 64px;
-    left: 50%;
-    position: absolute;
-    top: 49%;
-    transform: translate(-50%, -50%);
-}
 
 
 /*--------------------------------------------------------------
@@ -4709,7 +4546,6 @@ Global Css Style
 ----------------------------------------------------------------*/
 
 .global-section {
-    background-image: url("../images/bg/everest.png");
     background-position: center center;
     background-size: cover;
     padding: 70px 0 77px;
@@ -4745,7 +4581,7 @@ Global Css Style
     color: #656161;
     cursor: pointer;
     float: left;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 16px;
     font-weight: 500;
@@ -4798,7 +4634,7 @@ Global Css Style
 
 .map-content {
     color: #1a1411;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 15px;
     letter-spacing: 0.4px;
@@ -4818,15 +4654,13 @@ Global Css Style
 Gallery Css Style
 ----------------------------------------------------------------*/
 
-.gallery-section {}
 
-.gallery-items {}
 
 .gallery-items .col-grid {
     padding: 0 1px 1px 0;
 }
 
-.gallery-item {}
+
 
 .gallery-item .thumb {
     position: relative;
@@ -4935,8 +4769,6 @@ Client Css Style
 
 /***Client Css Style Two***/
 
-.client-section.style-2 {}
-
 .client-section.style-2 .client-img-item img {
     border: 1px solid #eee;
     padding: 18px 10px;
@@ -5008,7 +4840,7 @@ Inner Css Style
 
 .inner-area p {
     color: #e9e9e9;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 18px;
     letter-spacing: 0.8px;
@@ -5029,236 +4861,8 @@ Inner Css Style
 }
 
 
-/*--------------------------------------------------------------
-Shop Css Style
-----------------------------------------------------------------*/
-
-.shop-section {}
-
-.shop-section .shopping-col {
-    margin-bottom: 30px;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-.shop-section .shopping-col:hover {
-    box-shadow: 0 5px 7px 0 rgba(111, 111, 111, 0.05);
-}
-
-.shop-section .shopping-col .product-img {
-    position: relative;
-}
-
-.shop-section .shopping-col .product-info {
-    box-shadow: 0 5px 7px 0 rgba(111, 111, 111, 0.05);
-    padding: 18px 0 24px;
-}
-
-.shop-section .shopping-col .product-info h4 {
-    display: inline-block;
-    margin-bottom: 14px;
-    padding-bottom: 16px;
-    position: relative;
-}
-
-.shop-section .shopping-col .product-info h4:before {
-    background-color: #ddd;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    width: 62px;
-}
-
-.shop-section .shopping-col .product-info h4:after {
-    background-color: #F5A13A;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    width: 36px;
-}
-
-.shop-section .shopping-col .product-info h4 a {
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-}
-
-.shop-section .shopping-col .product-info h5 {
-    color: #F5A13A;
-    font-weight: 600;
-}
-
-.shop-section .shopping-col .product-over-box {
-    bottom: 12px;
-    left: calc(50% - 50px);
-    position: absolute;
-    overflow: hidden;
-}
-
-.shop-section .shopping-col .product-over-box a {
-    background-color: #091426;
-    border-radius: 50%;
-    color: #F5A13A;
-    display: inline-block;
-    font-size: 26px;
-    height: 48px;
-    line-height: 52px;
-    margin-right: 4px;
-    position: relative;
-    text-align: center;
-    bottom: -48px;
-    width: 48px;
-}
-
-.shop-section .shopping-col:hover .product-over-box a {
-    bottom: 0
-}
-
-.shop-section .shopping-col .product-over-box a:first-child {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.shop-section .shopping-col .product-over-box a:last-child {
-    -webkit-transition: all 0.7s;
-    -moz-transition: all 0.7s;
-    -o-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-    transition: all 0.7s;
-}
-
-
-/***Shop Sidebar****/
-
-.theme-sidebar {}
-
-.theme-sidebar .title-box {
-    display: inline-block;
-}
-
-.theme-sidebar .title-box h3 {
-    color: #091426;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 22px;
-    padding-bottom: 18px;
-    position: relative;
-    text-transform: uppercase;
-}
-
-.theme-sidebar .title-box h3:before {
-    background-color: #F5A13A;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 38px;
-    z-index: 1;
-}
-
-.theme-sidebar .title-box h3:after {
-    background-color: #ddd;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 70px;
-}
-
-.theme-sidebar .theme-sidebar .title-box h3 span {
-    color: #F5A13A;
-}
-
-.theme-sidebar .widget {
-    margin-left: 25px;
-    margin-bottom: 0px;
-}
-
-
-/***Shop Search***/
-
-.theme-sidebar .search-sidebar .search-box {
-    font-family: "Roboto", sans-serif;
-    ;
-}
-
-.theme-sidebar .search-sidebar .search-box .form-group {
-    margin-bottom: 0;
-    position: relative;
-}
-
-.theme-sidebar .search-sidebar .search-box .form-group .form-control {
-    background-color: #f7f7f7;
-    border: 1px solid #eee;
-    color: #989898;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 0;
-    letter-spacing: 0.6px;
-    text-transform: capitalize;
-    width: 200px;
-    height: 44px;
-}
-
-input::-webkit-input-placeholder {
-    color: #c9c9c9 !important;
-}
-
-input::-moz-placeholder {
-    color: #c9c9c9 !important;
-}
-
-input::-ms-input-placeholder {
-    color: #c9c9c9 !important;
-}
-
-input::-moz-placeholder {
-    color: #c9c9c9 !important;
-}
-
-.theme-sidebar .search-sidebar i {
-    background-color: #F5A13A;
-    color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-    height: 100%;
-    line-height: 44px;
-    margin-top: 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    width: 55px;
-}
-
-.theme-sidebar .search-sidebar i:hover {
-    background-color: #091426;
-    color: #F5A13A;
-}
-
-
 /***Cat Item***/
 
-.cat-item {}
 
 .cat-item ul li {
     margin-bottom: 9px;
@@ -5292,39 +4896,7 @@ input::-moz-placeholder {
 }
 
 
-/**Products Item**/
-
-.products-item {
-    margin-bottom: 28px;
-}
-
-.products-item img {
-    float: left;
-    position: relative;
-    width: 68px;
-}
-
-.products-item .tex {
-    padding-left: 84px;
-    padding-top: 0;
-}
-
-.products-item .tex h5 {
-    color: #989898;
-    font-size: 16px;
-    letter-spacing: 0.6px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-}
-
-.products-item .tex h6 {
-    color: #F5A13A;
-}
-
-
 /***Tags Item***/
-
-.tags-item {}
 
 .tags-item a {
     border: 1px solid #eee;
@@ -5357,7 +4929,6 @@ input::-moz-placeholder {
 Team Css Style
 ----------------------------------------------------------------*/
 
-.team-section {}
 
 .team-section .team-col {
     margin-bottom: 30px;
@@ -5432,7 +5003,7 @@ Team Css Style
 Page Link Css Style
 ----------------------------------------------------------------*/
 
-.page-link-item {}
+
 
 .page-link-item ul li {
     display: inline-block;
@@ -5443,7 +5014,7 @@ Page Link Css Style
     border: 1px solid #eee;
     border-radius: 50%;
     display: inline-block;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 16px;
     height: 40px;
@@ -5458,80 +5029,6 @@ Page Link Css Style
 
 /****Shop Single***/
 
-.shop-single {}
-
-.shop-single .thumb {}
-
-.shop-single .content {}
-
-.shop-single .content h3 {
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-}
-
-.shop-single .content h4 {
-    color: #F5A13A;
-    font-size: 28px;
-    margin-bottom: 18px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-}
-
-.shop-single .content h4 span {
-    color: #989898;
-    display: inline-block;
-    font-size: 22px;
-    font-weight: 400;
-    margin-left: 8px;
-    position: relative;
-}
-
-.shop-single .content h4 span:after {
-    background-color: #999;
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 54%;
-    width: 100%;
-}
-
-.product-number-item {
-    display: inline-block;
-    margin-right: 16px;
-}
-
-.product-number-item input {
-    border: 1px solid #eee;
-    border-radius: 0;
-    color: #989898;
-    font-family: "Roboto", sans-serif;
-    ;
-    font-size: 16px;
-    height: 36px;
-    padding: 0 0 0 16px;
-    width: 100px;
-}
-
-.shop-single .add-cart-btn {
-    border: 1px solid #eee;
-    background: #fbfbfb;
-    border-radius: 50px;
-    color: #F5A13A;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 18px;
-    text-transform: uppercase;
-}
-
-.shop-single .add-cart-btn:hover {
-    background-color: #fff;
-}
 
 .nav-tabs .nav-link {
     background-color: #0E4D94;
@@ -5548,6 +5045,7 @@ Page Link Css Style
     color:white;
     font-size:16px;
     margin-left:45px !important;
+    font-weight: bold;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #495057;
@@ -5640,15 +5138,12 @@ Contact Details Css Style
     width: 50px;
 }
 
-.form-row {}
-
-.form-row .form-group {}
 
 .form-row .form-group input.form-control {
     background-color: #fbfbfb;
     border: 1px solid black;
     font-size: 14px;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-weight: 500;
     height: 56px;
     letter-spacing: 0.6px;
@@ -5659,7 +5154,7 @@ Contact Details Css Style
 .form-row textarea.form-control {
     background-color: #fbfbfb;
     border: 1px solid black;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.6px;
@@ -5672,7 +5167,7 @@ Contact Details Css Style
     border: 1px solid #F5A13A;
     border-radius: 0;
     color: #ffffff;
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-weight: 600;
     margin-top: 0;
@@ -5764,7 +5259,7 @@ Footer Css Style
 }
 
 .footer-item .subscribe-style-two .form-control.input-subscribe {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-size: 14px;
     font-weight: 600;
@@ -5791,7 +5286,7 @@ Footer Css Style
 }
 
 .footer-item .subscribe-style-two .btn-subscribe {
-    font-family: "Roboto", sans-serif;
+    font-family:'Titillium Web', sans-serif;
     ;
     font-weight: 700;
     height: 52px;
@@ -6633,7 +6128,7 @@ footer ul.social-icon {
 
 .flicker-feed>a {
     display: inline-block;
-    float: left;
+    /* float: left; */
     position: relative;
     width: 33.3333%;
     z-index: 1;
@@ -6641,7 +6136,7 @@ footer ul.social-icon {
 
 .flicker-feed.gutter>a {
     display: inline-block;
-    float: left;
+    /* float: left; */
     position: relative;
     width: 32%;
     z-index: 1;

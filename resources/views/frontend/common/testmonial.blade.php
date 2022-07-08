@@ -23,7 +23,7 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                 <div class="col-lg-9">
                     <div class="section-title mt-25">
 
-                        <h2 class="text-left" style="margin-left:115px">Our Customer <span> Review</span></h2>
+                        <h2 class="text-left" >Our Customer <span> Review</span></h2><div id="underdiv"></div>
 
                     </div>
                     <div class="testimonials-post testimonials_slide owl-carousel owl-theme owl-navst st-three">
