@@ -131,6 +131,13 @@
       'Sentry' => 'Sentry\\Laravel\\Facade',
     ),
   ),
+  'spatie/laravel-cookie-consent' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\CookieConsent\\CookieConsentServiceProvider',
+    ),
+  ),
   'spatie/laravel-newsletter' => 
   array (
     'providers' => 

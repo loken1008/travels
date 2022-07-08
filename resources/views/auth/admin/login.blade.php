@@ -72,7 +72,7 @@
 								  <div class="row">
 									<div class="col-6">
 									  <div class="checkbox text-white">
-										<input type="checkbox" id="basic_checkbox_1" name="remember_token">
+										<input type="checkbox" id="basic_checkbox_1" name="remember_token" style="visibility: hidden">
 										<label for="basic_checkbox_1">Remember Me</label>
 									  </div>
 									</div>

@@ -393,7 +393,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     position: relative;
 }
 .search-input-box:focus{
-    border:1px solid black;
+    border:1px solid black !important;
 }
 .dropdown-buttons .menu-search-box ul {
     padding: 20px;
@@ -408,7 +408,7 @@ header.header div.main-navigation.animated li.dropdown div.dropdown div.dropdown
     width: 55px;
     height: 55px;
     line-height: 55px;
-    top:-8px;
+    top:0px;
     right: 0;
     position: absolute;
     text-align: center;

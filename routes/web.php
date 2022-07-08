@@ -49,7 +49,7 @@ Route::post('mountainguide/reset-password', [
 
 
 /*************************************** admin route *********************************/
-Route::middleware(['auth','get.expire'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [
         App\Http\Controllers\Admin\DashboardController::class,
         'index',
@@ -871,6 +871,11 @@ Route::post('/storecomment', [
     'storeComment',
 ])->name('blog.comment');
 
+// testimonials
+Route::get('/reviews', [
+    App\Http\Controllers\User\BlogController::class,
+    'viewTestimonials',
+])->name('all.reviews');
 // newsletter
 
 Route::post(
@@ -892,10 +897,7 @@ Route::get('/introduction', [
     App\Http\Controllers\User\AboutUsController::class,
     'Introduction',
 ])->name('introduction');
-// Route::get('/ourteam/details/{name}', [
-//     App\Http\Controllers\User\AboutUsController::class,
-//     'TeamDetails',
-// ])->name('ourteam.details');
+
 Route::get('/travel-with-us', [
     App\Http\Controllers\User\AboutUsController::class,
     'travelWithUs',

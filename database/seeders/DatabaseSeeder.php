@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\CostExclude;
-use App\Models\CostInclude;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,8 +15,5 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         // $this->call(AdminSeeder::class);
-        $this->call(CostExcludeSeeder::class);
-        $this->call(CostIncludeSeeder::class);
-
     }
 }

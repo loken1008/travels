@@ -28,50 +28,81 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/imageupload.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-
-<style>
-    .landscape {
-
-height: auto;
-overflow: hidden;
-position: relative;
-}
-
-.landscape__layer {
-height: 100%;
-left: 0;
-position: absolute;
-top: 0;
-width: 100%;
-}
-
-.landscape__image {
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-max-height: 100%;
-max-width: 300%;
-min-width: 100%;
-width: 2500px;
-display: flex;
-flex-direction: column;
-}
-
-.landscape__image svg {
-display: block;
-height: auto;
-max-width: 100%;
-}
-</style>
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
     @endif
     <style>
-      
-    </style>
+        .landscape {
 
+            height: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .landscape__layer {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .landscape__image {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-height: 100%;
+            max-width: 300%;
+            min-width: 100%;
+            width: 2500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .landscape__image svg {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .scroll {
+            overflow-y: scroll;
+            height: 150px;
+        }
+
+        .scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scroll::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .scroll::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 10px #0E4D94;
+        }
+
+        .crating li .fa-star {
+            color: #0E4D94;
+            font-size: 20px;
+            padding: 7px 0 0 7px;
+        }
+
+        .crt::before {
+            content: "\7d";
+            position: absolute;
+            top: 5px;
+            left: 213px;
+            color: #0E4D94;
+            opacity: 0.7;
+            font-size: 123px;
+
+        }
+    </style>
 
 </head>
 
@@ -86,11 +117,11 @@ max-width: 100%;
         @include('frontend.layouts.header')
         <!-- Header Section End -->
         @yield('content')
-
         <!-- Footer Style Seven Start -->
         @include('frontend.layouts.footer')
         <!-- Footer Style Seven End -->
 
+        @include('cookieConsent::index')
     </div>
     <!-- End Page Wrapper  -->
 
@@ -98,26 +129,30 @@ max-width: 100%;
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
-        async="async"></script>
+    <script type="text/javascript"
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
+        defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" async="async"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" async="async"></script>
-    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" async="async"></script>
-    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}" async="async"></script>
-    <script src="{{ asset('frontend/js/script.js') }}" async="async"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" async="async"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9" async="async"></script>
-    <script type="text/javascript" async="async">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" defer></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" defer></script>
+    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}" defer></script>
+    <script src="{{ asset('frontend/js/script.js') }}" defer></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9" defer></script>
+    <script type="text/javascript" defer>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
@@ -188,6 +223,10 @@ Main JavaScript
                 $(this).parent('.teamlarge-content').find(".teaminvisible-content").toggle();
                 $(this).parent('.teamlarge-content').find(".visible-content").toggle();
             });
+        });
+
+        $(".closebtn").click(function() {
+            $(this).closest("div").hide();
         });
     </script>
 </body>

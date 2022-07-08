@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Testmonial;
+use Carbon\Carbon;
 
 class TestmonialController extends Controller
 {
@@ -19,14 +20,21 @@ class TestmonialController extends Controller
             'name' => 'required',
             'message_title' => 'required',
             'message_description' => 'required',
+            'rating' => 'required',
+            'type' => 'required',
+            'country' => 'required',
             'image'=>'required',
         ]);
         Testmonial::insert([
             'name' => $request->name,
             'message_title' => $request->message_title,
             'message_description' => $request->message_description,
+            'rating' => $request->rating,
+            'type' => $request->type,
+            'country' => $request->country,
             'image' => $request->image,
             'status'=>1,
+            'created_at'=>Carbon::now('M d, Y'),
         ]);
         $notification=array(
             'message'=>'Testmonial Insert Successfully',
@@ -45,6 +53,9 @@ class TestmonialController extends Controller
             'name' => 'required',
             'message_title' => 'required',
             'message_description' => 'required',
+            'rating' => 'required',
+            'type' => 'required',
+            'country' => 'required',
         ]);
         $testmonial_id=$request->id;
         if($request->image){
@@ -53,6 +64,9 @@ class TestmonialController extends Controller
             'name' => $request->name,
             'message_title' => $request->message_title,
             'message_description' => $request->message_description,
+            'rating' => $request->rating,
+            'type' => $request->type,
+            'country' => $request->country,
             'image' => $request->image,
         ]);
         $notification=array(
@@ -68,13 +82,16 @@ class TestmonialController extends Controller
             'name' => $request->name,
             'message_title' => $request->message_title,
             'message_description' => $request->message_description,
+            'rating' => $request->rating,
+            'type' => $request->type,
+            'country' => $request->country,
         ]);
     }
         $notification=array(
             'message'=>'Testmonial Update Successfully',
             'alert-type'=>'success'
         );
-        return back()->with($notification);
+        return redirect()->route('all.testmonial')->with($notification);
       
     }
     public function TestmonialDelete($id)

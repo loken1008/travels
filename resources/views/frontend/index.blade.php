@@ -562,26 +562,13 @@
         </div>
     </section>
     <!-- Global Section Start -->
-    <section class="global-section over-layer-white pt-15 pb-15"
-        style="@if (!empty($homepagebannertwo->page_banner)) background-image:url({{ asset($homepagebannertwo->page_banner) }}) @endif">
-        <div class="row">
-            <div class="section-title">
-                <h2>Review <span>On</span>TrivAdvisor</h2>
-            </div>
-        </div>
-        <div class="col-xl-12 col-lg-12">
+    @include('frontend.common.testmonial')
 
-            <div data-rw-slider="30564"></div>
-
-        </div>
-
-    </section>
-    <!-- Global Section End -->
 
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-15 pb-15"
+    <section class="feature-section over-layer-black pt-35 pb-35"
         style="@if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 @if ($chooseus->count() > 0)
                     <div class="section-title">
@@ -593,13 +580,14 @@
                 @foreach ($chooseus as $choose)
                     <div class="col-md-4">
                         <div class="feature-item">
-                            <div class="icon-box">
+                            <div class="icon-box d-flex" style="align-items: center">
                                 <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:50%"
                                     alt="">
+                                    <h3 class="ml-1"><a href="{{ route('travelwithus') }}">{{ $choose->title }}</a></h3>
                             </div>
-                            <div class="content">
-                                <h3><a href="#">{{ $choose->title }}</a></h3>
-                                {{-- <p>{!! Str::limit($choose->description, 100, '.') !!}</p> --}}
+                            <div class="content choosecontent" style="padding-left:60px">
+                               
+                                <p >{!! Str::limit($choose->description, 100, '.') !!}</p>
                             </div>
                         </div>
                     </div>
@@ -607,14 +595,10 @@
             </div>
         </div>
     </section>
-    <!-- Feature Section End -->
-    <!-- Testimonials Section Start -->
-    @include('frontend.common.testmonial')
-    <!-- Testimonials Section End -->
-    <!-- Blog Section Start -->
+      
     <section class="blog-section over-layer-white bg-f8 pt-15 pb-15"
         style="@if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }}) @endif">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 @if ($getblogs->count() > 0)
                     <div class="section-title" style="margin: 0 auto 10px !important;">
@@ -628,7 +612,7 @@
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $blog->slug) }}">
                             <div class="thumb">
-                                <img src="{{ $blog->blog_image }}" style="height:260px" alt="{{ $blog->img_alt }}">
+                                <img src="{{ $blog->blog_image }}" style="height:180px" alt="{{ $blog->img_alt }}">
                                 <div class="content">
                                     <h3>{{ $blog->blog_title }}</h3>
                                     <div class="meta-box">
@@ -667,12 +651,12 @@
 
     <!-- Gallery Section Start -->
     <section class="gallery-section pt-15 pb-20">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
                     <div class="col-sm-3 col-grid">
                         <div class="gallery-item">
-                            <div class="thumb" style="height:270px">
+                            <div class="thumb" style="height:200px">
                                 <img src="{{ $gal->cover_image }}" alt="image" style="width:337px;height:265px">
                                 <div class="overlay">
                                     <div class="inner">

@@ -1,5 +1,5 @@
 @extends('admin.body.master')
-@section('title', 'Testmonial')
+@section('title', 'Review')
 @section('content') 
 
 
@@ -12,7 +12,7 @@
 
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Testmonial List</h3>
+                            <h3 class="box-title">Review List</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -20,10 +20,12 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Testmonial Title</th>
-                                            <th>Testmonial</th>
-                                            <th> Image</th>
+                                            <th>Reviewer Name</th>
+                                            <th>Review Title</th>
+                                            <th>Review</th>
+                                            <th>Review rating</th>
+                                            <th>Type</th>
+                                            <th>Image</th>
                                             <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
@@ -31,9 +33,29 @@
                                     <tbody>
                                         @forelse($testmonials as $testmonial)
                                             <tr>
-                                                <td>{{ $testmonial->name }}</td>
+                                                <td>{{ $testmonial->name }} , {{$testmonial->country}}</td>
                                                 <td>{{ $testmonial->message_title }}</td>
-                                                <td>{{ Str::limit($testmonial->message_description,100)}}</td>
+                                                <td>{{ Str::limit($testmonial->message_description,30)}}</td>
+                                                <td>{{$testmonial->rating}}
+                                                    @for($i=1; $i<=$testmonial->rating; $i++) 
+                                                    <span><i class="fa fa-star text-warning"></i></span>
+                                                    @endfor
+                                                </td>
+                                                <td>
+                                                    @if($testmonial->type=="tripadvisor")
+                                                    <img src="{{asset('tripadvisor.svg')}}" 
+                                                    style="height:50px;width:50px" alt="">
+                                                    @elseif($testmonial->type=="google")
+                                                    <img src="{{asset('google.png')}}" 
+                                                    style="height:50px;width:50px" alt="">
+                                                    @elseif($testmonial->type=="facebook")
+                                                    <img src="{{asset('facebook.svg')}}"
+                                                    style="height:50px;width:50px" alt="">
+                                                    @else 
+                                                    <img src="{{asset('mg.png')}}"
+                                                    style="height:50px;width:50px" alt="">
+                                                    @endif
+                                                </td>
                                                 <td><img src="{{asset($testmonial->image)}}"
                                                         style="height:100px;width:100px" alt="">
                                                     </td>
@@ -71,7 +93,7 @@
     
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <p><span class="font-weight-bold"> Name:</span> {{ $testmonial->name }}</p>
+                                                                    <p><span class="font-weight-bold"> Reviewer Name:</span> {{ $testmonial->name }} , {{$testmonial->country}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -82,12 +104,12 @@
                                                             </div>
                                                             <div class="row mt-4">
                                                                 <div class="col-md-12">
-                                                                    <p><span class="font-weight-bold"> Title:</span> {{ $testmonial->message_title }}</p>
+                                                                    <p><span class="font-weight-bold">Review  Title:</span> {{ $testmonial->message_title }}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row mt-2">
                                                                 <div class="col-md-12">
-                                                                    <p class="text-justify"><span class="font-weight-bold">Description:</span> {!! $testmonial->message_description !!}</p>
+                                                                    <p class="text-justify"><span class="font-weight-bold">Review Description:</span> {!! $testmonial->message_description !!}</p>
                                                                 </div>
                                                             </div>
     
@@ -109,7 +131,7 @@
                 <div class="col-4">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Testmonial</h3>
+                            <h3 class="box-title">Add Review</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -119,7 +141,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5> Name :<span class="text-danger">*</span></h5>
+                                                <h5>Reviewer Name :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="name" class="form-control" id="name">
                                                     @error('name')
@@ -128,10 +150,60 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <h5> Message title :<span class="text-danger">*</span></h5>
+                                                <h5>Country :<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <input type="text" name="country" class="form-control" id="country">
+                                                    @error('country')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5> Review title :<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="message_title" class="form-control">
                                                     @error('message_title')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <h5> Review Description :<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <textarea  name="message_description" class="form-control" rows="10" cols="20"></textarea>
+                                                    @error('message_description')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5> Rating :<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <select  name="rating" class="form-control">
+                                                        <option value="">Select Rating Value</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                    @error('rating')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5> Review Type :<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <select name="type" class="form-control">
+                                                        <option value="">Select Review Type</option>
+                                                        <option value="tripadvisor">TripAdvisor</option>
+                                                        <option value="google">Google</option>
+                                                        <option value="facebook">Facebook</option>
+                                                        <option value="normal">Normal</option>
+                                                    </select>
+                                                    @error('type')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                                 </div>
@@ -153,15 +225,6 @@
                                                 @error('image')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
-                                            </div>
-                                            <div class="form-group">
-                                                <h5> Message Description :<span class="text-danger">*</span></h5>
-                                                <div class="controls">
-                                                    <textarea  name="message_description" class="form-control" rows="10" cols="20"></textarea>
-                                                    @error('message_description')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                                </div>
                                             </div>
                                         </div>
                                         

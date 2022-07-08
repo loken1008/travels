@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\PageBanner;
-
+use App\Models\Testmonial;
 
 class BlogController extends Controller
 {
@@ -57,5 +57,11 @@ class BlogController extends Controller
                ->orWhere('blog_type', 'LIKE', "%{$search}%")
                ->paginate(6);
            return view('frontend.blogs.blogssearch', compact('searchblog'));
+       }
+
+       public function viewTestimonials(){
+            $gettestimonials=Testmonial::orderBy('id','desc')->where('status','=','1')->get();
+            return view('frontend.testimonial.testimonial',compact('gettestimonials'));
+
        }
 }
