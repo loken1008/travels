@@ -348,7 +348,7 @@
                             <li><i class="fa fa-calendar"></i><span>Days</span>:
                                 {{ $getTourdetails->tour_days }}
                             </li>
-                            <li><i class="fa fa-arrows-v"></i><span>Altituade</span>:
+                            <li><i class="fa fa-arrows-v"></i><span>Altitude</span>:
                                 {{ $getTourdetails->altitude }}
 
                             </li>

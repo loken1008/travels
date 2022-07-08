@@ -132,13 +132,13 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/testmonial')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-comment-o"></i>
-                    <span>Testmonial</span>
+                    <span>Review</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{($route=='all.testmonial')?'active':''}}"><a class="{{($route=='all.testmonial')?'active':''}}" href="{{route('all.testmonial')}}"><i class="ti-more"></i>View Testmonial</a></li>
+                    <li class="{{($route=='all.testmonial')?'active':''}}"><a class="{{($route=='all.testmonial')?'active':''}}" href="{{route('all.testmonial')}}"><i class="ti-more"></i>View Review</a></li>
                     </li>
                 </ul>
             </li>

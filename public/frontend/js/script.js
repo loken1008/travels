@@ -360,13 +360,13 @@
 
     //owl-Carousel-TwoColumn
     $("#testimonials-carousel-4").owlCarousel({
-        loop: true,
+        loop: false,
         autoplay: 2000,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         smartSpeed: 700,
-        items: 4,
+        items:1,
         margin: 30,
-        dots: true,
+        dots: false,
         nav: false,
         navText: [
             '<i class="flaticon-left-arrow"></i>',
@@ -380,16 +380,16 @@
                 items: 1
             },
             600: {
-                items: 2
+                items: 1
             },
             800: {
-                items: 3
+                items: 1
             },
             1024: {
-                items: 4
+                items: 1
             },
             1200: {
-                items: 4
+                items: 1
             }
         }
     });
@@ -400,14 +400,34 @@
         autoplay: 2000,
         autoplayHoverPause: true,
         smartSpeed: 700,
-        items: 1,
-        margin: 30,
+        items: 3,
+        margin: 10,
         dots: false,
         nav: true,
         navText: [
             '<i class="fa fa-chevron-left"></i>',
             '<i class="fa fa-chevron-right"></i>'
-        ]
+        ],
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 2
+            },
+            600: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 3
+            },
+            1200: {
+                items: 3
+            }
+        }
     });
 
     //owl-Carousel-TwoColumn

@@ -427,6 +427,14 @@ Creation Date: 15 January 2019*/
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .crt{
+    margin-left:200px;
+  }
+  .crt::before{
+    transform: rotate(90deg) !important;
+    top: 90px !important;
+    left: 71px !important;
+  }
   .country-tab{
     max-width:66% !important;
 }
@@ -529,7 +537,14 @@ Creation Date: 15 January 2019*/
 }
 
 @media only screen and (max-width:767px) {
- 
+  .crt{
+    margin-left:200px;
+  }
+  .crt::before{
+    transform: rotate(90deg) !important;
+    top:85px !important;
+    left:61px !important;
+  }
   #country-booking{
     flex-direction: column-reverse;
   }
@@ -872,6 +887,17 @@ Creation Date: 15 January 2019*/
 }
 
 @media only screen and (max-width: 435px) {
+  .crt{
+    margin-left:100px;
+  }
+  .crt::before{
+    transform: rotate(90deg) !important;
+    top: 80px !important;
+    left:61px !important;
+  } 
+  .owl-navst.st-three.owl-theme .owl-nav{
+    top:-25px;
+  } 
     .icon-wrp .icon-box {
         width: 19.57%;
         position: relative;
@@ -920,7 +946,8 @@ Creation Date: 15 January 2019*/
   }
 }
 @media only screen and (max-width:410px) {
-    .icon-wrp #icon-menu {
+ 
+  .icon-wrp #icon-menu {
         position: relative;
         top:46px;
         height:10px;

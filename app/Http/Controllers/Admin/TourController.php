@@ -14,8 +14,6 @@ use App\Models\Equipment;
 use App\Models\Itinerary;
 use App\Models\DatesPrices;
 use App\Models\FQA;
-use App\Models\CostInclude;
-use App\Models\CostExclude;
 use Carbon\Carbon;
 use App\Http\Requests\TourStoreRequest;
 use Illuminate\Support\Facades\Storage;
@@ -39,15 +37,11 @@ class TourController extends Controller
             ->get();
         $getcategory = Category::orderBy('category_name', 'asc')->get();
         $getsubcategory = Subcategory::orderBy('sub_category_name','asc')->get();
-        $costinclude = CostInclude::orderBy('id', 'asc')->get();
-        $costexclude = CostExclude::orderBy('id', 'asc')->get();
         return view('admin.tour.create',compact(
                 'getcountry',
                 'getplace',
                 'getcategory',
                 'getsubcategory',
-                'costinclude',
-                'costexclude'
             )
         );
     }
@@ -176,8 +170,6 @@ if($request->images){
             'sub_category_name',
             'asc'
         )->get();
-        $costinclude = CostInclude::orderBy('id', 'asc')->get();
-        $costexclude = CostExclude::orderBy('id', 'asc')->get();
         $edittour = Tour::with(
             'dateprice',
             'equipment',
@@ -192,8 +184,6 @@ if($request->images){
                 'getplace',
                 'getcategory',
                 'getsubcategory',
-                'costinclude',
-                'costexclude'
             )
         );
     }

@@ -85,6 +85,7 @@
                                 <li><a href="{{ route('ourteam') }}">Team</a></li>
                                 <li><a href="{{ route('allgallery') }}">Gallery</a></li>
                                 <li><a href="{{ route('allblogs') }}">Blogs</a></li>
+                                <li><a href="{{ route('all.reviews') }}">Read Reviews</a></li>
                                 <li><a href="{{route('contactus')}}">Contact</a></li>
                             </ul>
     

@@ -6,8 +6,8 @@
 
     <!-- Inner Section Start -->
     <section class="inner-area parallax-bg"
-        @if (!empty($tourbanner->page_banner)) data-background="{{ asset($tourbanner->page_banner) }}" @endif data-type="parallax"
-        data-speed="3">
+        @if (!empty($tourbanner->page_banner)) data-background="{{ asset($tourbanner->page_banner) }}" @endif
+        data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -56,7 +56,7 @@
                                 <div class="content" style="height:200px">
                                     <ul class="info">
                                         <li><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }}
-                                                Days</li>
+                                            Days</li>
                                         <li><a href="{{ route('tourmap', $tourdetails->slug) }}"><i
                                                     class="fa fa-map-marker"></i>View on Map</a></li>
 
@@ -75,10 +75,10 @@
                             </div>
                         </div>
                     @empty
-                        <p>Your Search Tour Not found! Try Another.</p>
+                        <p class="text-center ">Your Search Tour Not found! Try Another.</p>
                     @endforelse
                 @else
-                    <h4 style="text-align:center!important">Your Search Tour Not found! Try Another.
+                    <h4 style="text-align:center!important;">OOPS! Your Search Tour Not found! Try Another.
                     </h4>
                 @endif
             </div>
