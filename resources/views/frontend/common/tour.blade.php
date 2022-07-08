@@ -10,7 +10,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
         <div class="row">
             @if($getTour->count()>0)
             <div class="section-title">
-                <h2>Special <span>Tour</span> Places</h2>
+                <h2>Popular <span>Tour</span> Places</h2><div id="underdiv"></div>
             </div>
             @endif
         </div>
@@ -46,15 +46,14 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                             </div>
                             <div class="content" style="height:200px">
                                 <ul class="info">
-                                    <li><i class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                    <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
                                             Days</li>
                                     <li><a href="{{ route('tourmap', $tour->slug) }}"><i
                                                 class="fa fa-map-marker"></i>View on Map</a></li>
 
 
                                 </ul>
-                                {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
-                                <h6 class="text-center" style="color:#F5A13A;font-size:18px">{{ $tour->tour_name }}</h6>
+                                <h6 style="color:black;font-size:16px;font-weight:bold">{{ $tour->tour_name }}</h6>
                                 <a class="btn-theme" style="float:left !important;margin-top:42px"
                                     href="{{ route('booking', $tour->slug) }}">Book
                                     Now</a>

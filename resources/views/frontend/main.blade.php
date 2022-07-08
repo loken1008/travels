@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/imageupload.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
@@ -101,6 +103,16 @@
             opacity: 0.7;
             font-size: 123px;
 
+        }
+        #underdiv{
+            background: #1a4491;
+    width: 227px;
+    height: 12px;
+    position: relative;
+    top: -11px;
+    left: 0px;
+    border-bottom-left-radius: 17px;
+    border-top-right-radius: 18px;
         }
     </style>
 

@@ -60,7 +60,7 @@ class BlogController extends Controller
        }
 
        public function viewTestimonials(){
-            $gettestimonials=Testmonial::orderBy('id','desc')->where('status','=','1')->get();
+            $gettestimonials=Testmonial::orderBy('id','desc')->where('status','=','1')->paginate(10);
             return view('frontend.testimonial.testimonial',compact('gettestimonials'));
 
        }
