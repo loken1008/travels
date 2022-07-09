@@ -420,6 +420,7 @@ Creation Date: 15 January 2019*/
   .special-packages.dtl-st .content .small-hotel .thumb img {
     width: 188px;
   }
+ 
 }
 @media only screen and (min-width: 768px){
   video{
@@ -427,13 +428,17 @@ Creation Date: 15 January 2019*/
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .feature-item{
+    height:315px;
+  }
   .crt{
     margin-left:200px;
   }
   .crt::before{
-    transform: rotate(90deg) !important;
-    top: 90px !important;
-    left: 71px !important;
+    transform: rotate(90deg) !important;  
+    top: 101px !important;
+    left: 304px !important;
+
   }
   .country-tab{
     max-width:66% !important;
@@ -542,8 +547,8 @@ Creation Date: 15 January 2019*/
   }
   .crt::before{
     transform: rotate(90deg) !important;
-    top:85px !important;
-    left:61px !important;
+    top: 95px !important;
+    left: 346px!important;
   }
   #country-booking{
     flex-direction: column-reverse;
@@ -888,8 +893,8 @@ Creation Date: 15 January 2019*/
   }
   .crt::before{
     transform: rotate(90deg) !important;
-    top: 80px !important;
-    left:61px !important;
+    top: 93px !important;
+    left: 147px !important;
   } 
   .owl-navst.st-three.owl-theme .owl-nav{
     top:-25px;
@@ -1023,7 +1028,7 @@ Creation Date: 15 January 2019*/
     font-size: 11px;
   }
   .footer-item.footer-widget-one {
-    display: inline-block;
+    /* display: inline-block; */
     margin-bottom: 40px;
   }
 }
