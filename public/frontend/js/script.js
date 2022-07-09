@@ -173,44 +173,6 @@
     });
 
 
-    // Shop Discription // Not Delete JS // 
-    $('#shop-3col-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        dots: true,
-        nav: false,
-        autoplayHoverPause: false,
-        autoplay: true,
-        smartSpeed: 1500,
-        navText: [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-            0: {
-                items: 1,
-                center: false
-            },
-            480: {
-                items: 1,
-                center: false
-            },
-            600: {
-                items: 1,
-                center: false
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                items: 3
-            }
-        }
-    });
-
 
     $('#baner-slider').owlCarousel({
         loop: true,
@@ -322,41 +284,7 @@
         }
     });
 
-    //owl-Carousel-TwoColumn
-    $(".latesthotel_carousel").owlCarousel({
-        loop: true,
-        autoplay: false,
-        autoplayHoverPause: false,
-        smartSpeed: 700,
-        items: 2,
-        margin: 30,
-        dots: false,
-        nav: true,
-        navText: [
-            '<i class="fa fa-chevron-left"></i>',
-            '<i class="fa fa-chevron-right"></i>'
-        ],
-        responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            800: {
-                items: 1
-            },
-            992: {
-                items: 2
-            },
-            1200: {
-                items: 2
-            }
-        }
-    });
+  
 
     //owl-Carousel-TwoColumn
     $("#testimonials-carousel-4").owlCarousel({
@@ -430,57 +358,7 @@
         }
     });
 
-    //owl-Carousel-TwoColumn
-    $(".testimonials_slide_col_two").owlCarousel({
-        loop: true,
-        autoplay: 2000,
-        autoplayHoverPause: true,
-        smartSpeed: 700,
-        items: 2,
-        margin: 30,
-        dots: false,
-        nav: true,
-        navText: [
-            '<i class="fa fa-chevron-left"></i>',
-            '<i class="fa fa-chevron-right"></i>'
-        ],
-        responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 2
-            },
-            1200: {
-                items: 2
-            }
-        }
-    });
-
-    //owl-Carousel-TwoColumn
-    $("#testimonials_carousel").owlCarousel({
-        loop: true,
-        autoplay: 2000,
-        autoplayHoverPause: true,
-        smartSpeed: 700,
-        items: 1,
-        margin: 30,
-        dots: true,
-        nav: true,
-        navText: [
-            '<i class="flaticon-left-arrow"></i>',
-            '<i class="flaticon-right-arrow"></i>'
-        ]
-    });
+  
 
 
     //owl-Carousel-TwoColumn
@@ -560,23 +438,10 @@
     });
     //slick JS Start
 
-    //Video Player JS Strat
-    $('.player').mb_YTPlayer();
-    //Video Player JS End
-
 
     //LightBox / MagnificPopup start
 
-    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: true,
-
-        fixedContentPos: false
-    });
-
+  
     $('.lightbox-image').magnificPopup({
         type: 'image',
         removalDelay: 500,
@@ -726,57 +591,7 @@
         }
     });
 
-    // ----------- Ajax Contact script -----------//
-    $(function() {
-        // Get the form.
-        var form = $('#ajax-contact');
-
-        // Get the messages div.
-        var formMessages = $('#form-messages');
-
-        // Set up an event listener for the contact form.
-        $(form).submit(function(event) {
-            // Stop the browser from submitting the form.
-            event.preventDefault();
-
-            // Serialize the form data.
-            var formData = $(form).serialize();
-            // Submit the form using AJAX.
-            $.ajax({
-                    type: 'POST',
-                    url: $(form).attr('action'),
-                    data: formData
-                })
-                .done(function(response) {
-                    $(formMessages).removeClass('error');
-                    $(formMessages).addClass('success');
-
-                    // Set the message text.
-                    $(formMessages).text(response);
-
-                    // Clear the form.
-                    $('#f_name').val('');
-                    $('#l_name').val('');
-                    $('#email').val('');
-                    $('#subject').val('');
-                    $('#message').val('');
-                })
-
-            .fail(function(data) {
-                // Make sure that the formMessages div has the 'error' class.
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
-
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
-                } else {
-                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
-                }
-            });
-        });
-    });
-
+   
 
     /*==========================================================================
         WHEN DOCUMENT LOADING
