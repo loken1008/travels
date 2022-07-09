@@ -3,8 +3,8 @@
 @section('content')
     <!-- Inner Section Start -->
     <section class="inner-area parallax-bg"
-        @if (!empty($bookbanner->page_banner)) data-background="{{ asset($bookbanner->page_banner) }}" @endif data-type="parallax"
-        data-speed="3">
+        @if (!empty($bookbanner->page_banner)) data-background="{{ asset($bookbanner->page_banner) }}" @endif
+        data-type="parallax" data-speed="3">
         <div class="container">
             <div class="section-content">
                 <div class="row">
@@ -30,7 +30,7 @@
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-packagesbk"
                                     aria-selected="false">Book Your Prefer Packages</a>
-                                   
+
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -190,11 +190,11 @@
 
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
-                                        {{-- @error('g-recaptcha-response')
-                                        <span class="text-danger" >
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror --}}
+                                        @error('g-recaptcha-response')
+                                            <span class="text-danger">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="contact-textarea text-center">
@@ -243,8 +243,8 @@
                         </div>
 
                         <h4>Quick Inquery </h4>
-                   @include('frontend.common.commoncontact')
-                       
+                        @include('frontend.common.commoncontact')
+
                     </div>
 
                 </div>
