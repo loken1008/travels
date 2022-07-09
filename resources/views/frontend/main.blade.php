@@ -10,7 +10,10 @@
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Favicon -->
+    @if (!empty($sitesetting->logo))
+        <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
+    @endif
 
     <!------------------------------------------
       Main CSS File
@@ -18,7 +21,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="{{ asset('frontend/css/menu.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom-animation.css') }}">
     <!-- Style CSS -->
@@ -27,13 +29,10 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/imageupload.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Favicon -->
-    @if (!empty($sitesetting->logo))
-        <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
-    @endif
+
     <style>
         .landscape {
 
