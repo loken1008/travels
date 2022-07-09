@@ -761,7 +761,7 @@ Route::post('reset-password', [
 
 // frontend
 
-Route::group(['middleware' => ['XSS','get.expire']], function () {
+Route::group(['middleware' => ['XSS']], function () {
 // customer register/login
 Route::get('customer-register', [
     App\Http\Controllers\Auth\CustomerController::class,
