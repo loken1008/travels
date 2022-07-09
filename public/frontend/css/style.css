@@ -1380,6 +1380,7 @@ a.dropdown-item.active {
     font-weight: 500;
     letter-spacing: 0.4px;
     text-transform: capitalize;
+    height:38px;
 }
 
 .dropdown-buttons .menu-search-box .search-box i {

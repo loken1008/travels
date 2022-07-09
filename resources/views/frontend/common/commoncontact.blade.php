@@ -70,11 +70,11 @@
 
                     {!! NoCaptcha::renderJs() !!}
                     {!! NoCaptcha::display() !!}
-                    {{-- @error('g-recaptcha-response')
+                    @error('g-recaptcha-response')
                         <span class="text-danger">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror --}}
+                    @enderror
                 </div>
                 <button class="btn btn-theme mt-4" type="submit" value="Submit Form">Send
                     Message</button>
