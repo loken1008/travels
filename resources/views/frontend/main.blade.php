@@ -96,8 +96,8 @@
         .crt::before {
             content: "\7d";
             position: absolute;
-            top: 5px;
-            left: 213px;
+            top: 21px;
+            left: 300px;
             color: #0E4D94;
             opacity: 0.7;
             font-size: 123px;
@@ -141,12 +141,13 @@
     <!------------------------------------------
 Main JavaScript
 <------------------------------------------>
-    <script type="text/javascript"
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    
+<script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"
         defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" defer></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js"
         defer></script>
