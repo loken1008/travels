@@ -383,7 +383,7 @@
     text-align: center;
   }
   .cbutton {
-    height: 25px;
+    height:50px;
     padding: 2px 22px;
   }
   .icon-wrp {
@@ -513,6 +513,7 @@
     height: 550px;
   }
   .icon-wrp {
+    padding-left: 0px;
     text-align: center;
   }
   .icon-wrp #icon-menu {
