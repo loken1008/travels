@@ -65,7 +65,7 @@
                                             <input type="hidden" name="customer_id" value="">
                                         @endif
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Full Name <span class="text-danger">*</span> </label>
                                         @if (Auth()->guard('customer')->check() &&
                                             Auth()->guard('customer')->user()->first_name &&
@@ -84,7 +84,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Email <span class="text-danger">*</span> </label>
                                         @if (Auth()->guard('customer')->check() &&
                                             Auth()->guard('customer')->user()->email)
@@ -100,7 +100,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Current Address</label>
                                         @if (Auth()->guard('customer')->check() &&
                                             Auth()->guard('customer')->user()->address)
@@ -111,7 +111,7 @@
                                                 value="" placeholder="Current Address">
                                         @endif
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Mobile <span class="text-danger">*</span> </label>
                                         @if (Auth()->guard('customer')->check() &&
                                             Auth()->guard('customer')->user()->mobile)
@@ -128,7 +128,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Country <span class="text-danger">*</span> </label>
                                         @if (Auth()->guard('customer')->check() &&
                                             Auth()->guard('customer')->user()->country)
@@ -144,7 +144,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="tourName">Number Of Person <span class="text-danger">*</span> </label>
                                         <input type="text" name="number_people" id="number_people"
                                             class="form-control" value="" placeholder="Number Of people">
@@ -155,26 +155,26 @@
                                         @enderror
                                     </div>
                                     @if (!empty($tour->tour_name))
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-12">
                                             <label for="tourName">Arrival Date </label>
                                             <input type="date" name="arrival_date" id="arrival_date"
                                                 class="form-control" value="" placeholder="Arrival date">
 
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-12">
                                             <label for="tourName">Departure Date </label>
                                             <input type="date" name="departure_date" id="departure_date"
                                                 class="form-control" value="" placeholder="Departure date">
 
                                         </div>
                                     @else
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-12">
                                             <label for="tourName">Start Date </label>
                                             <input type="date" name="start_date" id="start_date" class="form-control"
                                                 value="" placeholder="Start date">
 
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-12">
                                             <label for="tourName">Tour Days</label>
                                             <input type="number" name="tour_days" id="tour_days" class="form-control"
                                                 value="" placeholder="Tour Days">
@@ -196,7 +196,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <div class="contact-textarea text-center">
                                             <button class="btn btn-theme" type="submit" value="Submit Form">Book
                                                 Now</button>

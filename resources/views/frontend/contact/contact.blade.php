@@ -18,7 +18,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
     </section>
     <!-- Inner Section End -->
 
-    <section class="contact-details pb-70">
+    <section class="contact-details pb-70 pt-140">
         <div class="container">
             <div class="section-content">
                 <div class="row">

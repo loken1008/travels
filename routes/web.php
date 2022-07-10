@@ -707,6 +707,10 @@ Route::middleware(['auth'])->group(function () {
             App\Http\Controllers\Admin\SiteSettingController::class,
             'pageBannerStore',
         ])->name('store.pagebanner');
+        Route::get('/edit/pagebanner/{id}', [
+            App\Http\Controllers\Admin\SiteSettingController::class,
+            'pageBannerEdit',
+        ])->name('edit.pagebanner');
     
         Route::post('/update/pagebanner/{id}', [
             App\Http\Controllers\Admin\SiteSettingController::class,

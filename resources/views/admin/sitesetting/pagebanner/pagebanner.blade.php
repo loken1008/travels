@@ -37,8 +37,7 @@
                                             </td>
 
                                             <td>
-                                                <a href="#" class="btn btn-info" data-toggle="modal"
-                                                    data-target="#exampleModal{{ $pbanner->id }}" style="width:5rem"
+                                                <a href="{{route('edit.pagebanner',$pbanner->id)}}" class="btn btn-info" style="width:5rem"
                                                     title="edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('delete.pagebanner', $pbanner->id) }}"
                                                     class="btn btn-danger " style="width:5rem" id="delete" title="delete"><i
@@ -46,136 +45,7 @@
 
                                             </td>
                                         </tr>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal{{ $pbanner->id }}" tabindex="-1"
-                                            role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content bg-white">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLongTitle">Update Page
-                                                            Banner
-                                                        </h5>
-                                                        <input type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close" style="height:10px;margin-top:-5px">
-                                                        <span aria-hidden="true">&times;</span>
-                                                        </input>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <!-- /.box-header -->
-                                                        <div class="box-body">
-                                                            <div class="table">
-                                                                <form
-                                                                    action="{{ route('update.pagebanner', $pbanner->id) }}"
-                                                                    method="post" enctype="multipart/form-data"
-                                                                    id="updatepagebannerForm">
-                                                                    @csrf
-                                                                    <div class="row">
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <h5>Page Title :</h5>
-                                                                                <div class="controls">
-                                                                                    <select name="page_name"
-                                                                                        class="form-control">
-                                                                                        <option value="">Select Page Title
-                                                                                        </option>
-                                                                                        <option value="homepageone"
-                                                                                            {{ $pbanner->page_name == 'homepageone' ? 'selected' : '' }}>
-                                                                                            Homepage one</option>
-                                                                                        <option value="homepagetwo"
-                                                                                            {{ $pbanner->page_name == 'homepagetwo' ? 'selected' : '' }}>
-                                                                                            Homepage two</option>
-                                                                                        <option value="homepagethree"
-                                                                                            {{ $pbanner->page_name == 'homepagethree' ? 'selected' : '' }}>
-                                                                                            Homepage three</option>
-                                                                                            <option value="tour"
-                                                                                                {{ $pbanner->page_name == 'tour' ? 'selected' : '' }}>
-                                                                                                Tour </option>
-                                                                                                <option value="gallery"
-                                                                                                    {{ $pbanner->page_name == 'gallery' ? 'selected' : '' }}>
-                                                                                                Gallery</option>
-                                                                                        <option value="introduction"
-                                                                                            {{ $pbanner->page_name == 'introduction' ? 'selected' : '' }}>
-                                                                                            Introduction</option>
-                                                                                        <option value="chooseus"
-                                                                                            {{ $pbanner->page_name == 'chooseus' ? 'selected' : '' }}>
-                                                                                            Why Choose Us</option>
-                                                                                        <option value="team"
-                                                                                            {{ $pbanner->page_name == 'team' ? 'selected' : '' }}>
-                                                                                            Our Team</option>
-                                                                                        <option value="payment"
-                                                                                            {{ $pbanner->page_name == 'payment' ? 'selected' : '' }}>
-                                                                                            Payment Method</option>
-                                                                                        <option value="privacy"
-                                                                                            {{ $pbanner->page_name == 'privacy' ? 'selected' : '' }}>
-                                                                                            Privacy Policy</option>
-                                                                                        <option value="terms"
-                                                                                            {{ $pbanner->page_name == 'terms' ? 'selected' : '' }}>
-                                                                                            Terms & Conditions</option>
-                                                                                        <option value="blogs"
-                                                                                            {{ $pbanner->page_name == 'blogs' ? 'selected' : '' }}>
-                                                                                            Blogs</option>
-                                                                                        <option value="booking"
-                                                                                            {{ $pbanner->page_name == 'booking' ? 'selected' : '' }}>
-                                                                                            Booking Form</option>
-                                                                                        <option value="contactus"
-                                                                                            {{ $pbanner->page_name == 'contactus' ? 'selected' : '' }}>
-                                                                                            Contact Us</option>
-                                                                                            <option value="login"
-                                                                                            {{ $pbanner->page_name == 'login' ? 'selected' : '' }}>
-                                                                                            Login</option>
-                                                                                    </select>
-                                                                                    @error('page_name')
-                                                                                        <span
-                                                                                            class="text-danger">{{ $message }}</span>
-                                                                                    @enderror
-                                                                                </div>
-                                                                            </div>
-                                                                            <div>
-                                                                                <label for="firstName5"> Page Banner Image
-                                                                                    :<span class="text-danger">*</span>
-                                                                                    :</label>
-                                                                                <div class="input-group">
-                                                                                    <span class="input-group-btn">
-                                                                                        <a id="pulfm"
-                                                                                            data-input="umainthumbnail"
-                                                                                            data-preview="holder"
-                                                                                            class="btn btn-primary">
-                                                                                            <i class="fa fa-picture-o"></i>
-                                                                                            Choose
-                                                                                        </a>
-                                                                                    </span>
-                                                                                    <input id="umainthumbnail"
-                                                                                        class="form-control" type="text"
-                                                                                        name="page_banner">
-
-                                                                                </div>
-                                                                                <img id="holder"
-                                                                                    src="{{ $pbanner->page_banner }}"
-                                                                                    alt="{{ $pbanner->page_name }}"
-                                                                                    style="margin-top:15px;max-height:100px;">
-                                                                                @error('page_banner')
-                                                                                    <span
-                                                                                        class="text-danger">{{ $message }}</span>
-                                                                                @enderror
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <div class="text-xs-right mt-4">
-                                                                        <input type="submit"
-                                                                            class="btn btn-rounded btn-info"
-                                                                            value="Update Page Banner" />
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                       
                                     @empty
                                     @endforelse
                                 </tbody>
