@@ -144,6 +144,13 @@ class SiteSettingController extends Controller
         );
         return redirect()->route('all.pagebanner')->with($notification);
     }
+     
+    public function pageBannerEdit($id)
+    {
+        $editpagebanner=PageBanner::findOrFail($id);
+        return view('admin.sitesetting.pagebanner.edit',compact('editpagebanner'));
+    }
+
     public function pageBannerUpdate(Request $request,$id)
     {
         $request->validate([

@@ -88,7 +88,7 @@
 
                         <nav>
                             <div class="nav nav-tabs " id="nav-tab" role="tablist">
-                                @foreach ($country as $key => $cutry)
+                                @foreach ($getcountry as $key => $cutry)
                                     <a class="nav-item nav-link {{ $loop->first ? 'active' : '' }} ml-1 mt-2"
                                         id="plc-asia-tab" data-toggle="tab" href="#plc-asia{{ $cutry->country_name }}"
                                         role="tab" aria-controls="plc-asia"
@@ -154,7 +154,6 @@
                                                                     @endif
                                                                 </div>
                                                                 <div class="title-box">
-                                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
                                                                     <h3>{{ $tour->country->country_name }}</h3>
                                                                 </div>
                                                                 <ul class="info">
@@ -168,7 +167,6 @@
 
 
                                                                 </ul>
-                                                                {{-- <p>{!! Str::words($tour->description, 30) !!}</p> --}}
                                                                 <h6  style="color:black;font-size:16px;font-weight:bold">
                                                                     {{ $tour->tour_name }}</h6>
                                                                 <a class="btn-theme"

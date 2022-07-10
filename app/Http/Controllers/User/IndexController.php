@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Tour;
 use App\Models\Country;
 use App\Models\Banner;
-use App\Models\Hotel;
 use App\Models\Coupon;
 use App\Models\Blog;
 use App\Models\ChooseUs;

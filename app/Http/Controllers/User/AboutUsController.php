@@ -5,7 +5,6 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\OurTeam;
-use App\Models\Tour;
 use App\Models\ChooseUs;
 use App\Models\TermsandCondition;
 use App\Models\AboutUs;

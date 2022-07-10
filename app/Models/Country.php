@@ -12,7 +12,7 @@ class Country extends Model
 
     public function tours()
     {
-        return $this->hasMany(Tour::class);
+        return $this->hasMany(Tour::class, 'country_id', 'id');
     }
     public function place()
     {

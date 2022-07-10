@@ -1,17 +1,6 @@
-/*CSS Document 
-
-Project Name:  Bootstrap 4 Fremwork HTML5 Template     
-Version:  1.0   
-Author Name: Set PVT.
-Support Email : shakil.shakil.ahsan@gmail.com
-Design By: Mahamudul Hasan
-Creation Date: 15 January 2019*/
-
-/*=================================================*/
-
 @media only screen and (max-width: 1739px) {
   .slide-text.st-two {
-    top:50%;
+    top: 50%;
   }
   .slide-text.st-two h1 {
     font-size: 50px;
@@ -61,7 +50,6 @@ Creation Date: 15 January 2019*/
     margin-left: 10px;
   }
 }
-
 @media only screen and (max-width: 1479px) {
   .slide-text {
     top: 34%;
@@ -71,10 +59,6 @@ Creation Date: 15 January 2019*/
     line-height: 48px;
     max-width: 450px;
   }
-  .slide-text .sub-title h4 {
-    padding: 14px 16px;
-    font-size: 14px;
-  }
   .slide-text .btn-box .btn-theme {
     padding: 8px 20px;
     font-size: 14px;
@@ -83,27 +67,24 @@ Creation Date: 15 January 2019*/
     margin-top: -45px;
   }
 }
-
 @media only screen and (min-width: 1200px) and (max-width: 1479px) {
- .carousel-item{
-  min-height:550px;
- }
- video{
-  min-height:550px !important;
-  /* width: 100%; */
- }
+  .carousel-item {
+    min-height: 550px;
+  }
+  video {
+    min-height: 550px !important;
+  }
   .carousel-item .slide-image {
     min-height: 550px;
   }
   .package-box {
     left: 70%;
-    top:38%;
+    top: 38%;
   }
   .slide-style-right.package-box {
     left: 14.5%;
   }
 }
-
 @media only screen and (max-width: 1199px) {
   .header .navbar-nav {
     margin-right: 0;
@@ -118,14 +99,8 @@ Creation Date: 15 January 2019*/
   .header .dropdown-buttons .btn-group .btn {
     width: 30px;
   }
-  /*Home Style Css*/
   .slide-text {
     top: 39%;
-  }
-  .slide-text .sub-title h4 {
-    font-size: 14px;
-    letter-spacing: 10px;
-    padding: 11px 18px;
   }
   .slide-text .title-box h2 {
     font-size: 24px;
@@ -140,9 +115,6 @@ Creation Date: 15 January 2019*/
   .slide-text {
     width: 960px;
   }
-  /*.package-box{*/
-  /*display: none;*/
-  /*}*/
   .slide-text.st-two h1 {
     font-size: 40px;
   }
@@ -160,78 +132,32 @@ Creation Date: 15 January 2019*/
   .feature-item .content h3 {
     font-size: 18px;
   }
-  .testimonial-video {
-    display: inline-block;
-  }
-  .special-packages.dtl-st .content .small-hotel .thumb img {
-    width: 259px;
-  }
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  /*Home Css Style*/
   .top-bar .social-icons ul li {
     margin-right: 11px;
   }
   .carousel-item {
     min-height: 530px;
   }
-  video{
-    min-height:530px;
-    /* width: 100% !important; */
-   }
+  video {
+    min-height: 530px;
+  }
   .carousel-item .slide-image {
     min-height: 530px;
   }
-  /*Welcome Feature Css Style*/
   .welcome-feature .content h2 {
     font-size: 17px;
   }
   .welcome-feature .icon-box {
     line-height: 42px;
   }
-  /*Service Css Style*/
-  .service-item.style-4 .content h3 {
-    font-size: 19px;
-  }
-  /*Service Css Style Two*/
-  .service-item.style-2 .content h5 {
-    font-size: 19px;
-    margin-bottom: 14px;
-    padding-bottom: 16px;
-  }
-  .service-item.style-2 .content h5 .icon {
-    font-size: 32px;
-    margin-right: 12px;
-  }
-  /*Service Css Style Details*/
-  .service-details-sidebar .service-list ul li a {
-    font-size: 12px;
-  }
-  .service-details-sidebar .download-box .download-item a {
-    font-size: 12px;
-  }
-  /*Projects Css Style*/
-  .projects-item.style-2 .text-bottom h4 {
-    font-size: 17px;
-    line-height: 28px;
-  }
-  /*About Features Css Style*/
-  .about-features .thumb .about-video h4 {
-    font-size: 18px;
-  }
-  /*About Features Css Style Two*/
-  .about-features.style-2 .company-list.mr-50 {
-    margin-right: 42px !important;
-  }
-  /*Contact Css Style*/
   .contact-text .contact-info .icon-box {
     border: none;
   }
   .contact-text .contact-info h6 {
     font-size: 11px;
   }
-  /*Special Places Css Style*/
   .special-places .content .price-box {
     width: 25%;
   }
@@ -250,16 +176,11 @@ Creation Date: 15 January 2019*/
   .special-places .content .info li a {
     font-size: 11px;
   }
-  .special-packages-sec .add-box.thumb {
-    margin-top: -20px;
-  }
   .latest-hotel .content h4 {
     font-size: 16px;
   }
 }
-
 @media only screen and (max-width: 991px) {
-
   .header.header-style-1 .menu-style .main-mega-menu .navbar .navbar-collapse {
     background-color: rgba(255, 255, 255, 1) !important;
   }
@@ -290,16 +211,10 @@ Creation Date: 15 January 2019*/
   }
   .header .menu-style .navbar-toggler:active,
   .header .menu-style .navbar-toggler:focus {
-    outline: none;
+    outline: 0;
   }
   .slide-text.home-3 {
     top: 48.5%;
-  }
-  .slide-text .sub-title h4 {
-    font-size: 13px;
-    letter-spacing: 7px;
-    margin-bottom: 5px;
-    padding: 10px 15px;
   }
   .slide-text .title-box h2 {
     font-size: 22px;
@@ -311,7 +226,7 @@ Creation Date: 15 January 2019*/
     width: 720px;
   }
   .slide-text.st-two {
-    top:50%;
+    top: 50%;
   }
   .slide-text.st-two h1 {
     font-size: 30px;
@@ -351,10 +266,10 @@ Creation Date: 15 January 2019*/
   .package-box h4 {
     font-size: 22px;
     margin-bottom: 20px;
-    margin-left: 0px;
+    margin-left: 0;
   }
   .package-box a {
-    margin-left: 0px;
+    margin-left: 0;
   }
   .package-box {
     left: 62%;
@@ -366,26 +281,20 @@ Creation Date: 15 January 2019*/
   .icon-wrp .icon-box {
     width: 19.57%;
     position: relative;
-    top:64px;
+    top: 64px;
   }
-  .icon-wrp{
+  .icon-wrp {
     flex-direction: column-reverse;
   }
   .animated-button1 {
-    left: 0px;
-    width:220px;
-  }
-  .service-details-sidebar .contact-box {
-    margin-bottom: 40px;
+    left: 0;
+    width: 220px;
   }
   .special-places {
     margin-bottom: 30px;
   }
   .special-places .content .title-box h4 {
     font-size: 15px;
-  }
-  .special-packages-sec .add-box.thumb {
-    display: none;
   }
   .video-content {
     margin-bottom: 30px;
@@ -405,63 +314,45 @@ Creation Date: 15 January 2019*/
     margin-bottom: 25px;
     margin-top: 22px;
   }
-  .testimonial-video {
-    margin: 30px 0;
-  }
   .contact-section .style-2 {
     border-top: 1px solid #ffcd22;
   }
-  .special-packages.dtl-st .content .small-hotel .text h5 {
-    font-size: 14px;
-  }
-  .special-packages.dtl-st .content .small-hotel .text p {
-    font-size: 12px;
-  }
-  .special-packages.dtl-st .content .small-hotel .thumb img {
-    width: 188px;
-  }
- 
 }
-@media only screen and (min-width: 768px){
-  video{
-    width:100%;
+@media only screen and (min-width: 768px) {
+  video {
+    width: 100%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .feature-item{
-    height:315px;
+  .feature-item {
+    height: 315px;
   }
-  .crt{
-    margin-left:200px;
+  .crt {
+    margin-left: 200px;
   }
-  .crt::before{
-    transform: rotate(90deg) !important;  
+  .crt::before {
+    transform: rotate(90deg) !important;
     top: 101px !important;
     left: 304px !important;
-
   }
-  .country-tab{
-    max-width:66% !important;
-}
+  .country-tab {
+    max-width: 66% !important;
+  }
   .carousel-item {
     min-height: 550px;
   }
-  video{
+  video {
     min-height: 550px;
-    /* width: 100% !important; */
-   }
+  }
   .carousel-item .slide-image {
     min-height: 400px;
   }
- 
-  /*Section Title Css Style*/
   .section-title h2 {
-    font-size:22px;
+    font-size: 22px;
   }
   .section-title h4 {
     font-size: 15px;
   }
-  /*Welcome Feature Css Style*/
   .welcome-feature-section .col-md-4 {
     padding: 0;
   }
@@ -475,107 +366,38 @@ Creation Date: 15 January 2019*/
   .welcome-feature .icon-box {
     display: none;
   }
-  /*Service Css Style*/
-  .service-section4 .col-md-4 {
-    padding: 0;
-  }
-  .service-item.style-4 {
-    border-right: 1px solid #fff;
-  }
-  .service-item.style-4 .content h3 {
-    font-size: 15px;
-  }
-  .service-item.style-4 .thumb .service-link-box a {
-    font-size: 14px;
-    padding: 6px 8px;
-  }
-  /*Content Divider Css Style*/
-  .contact-divider .contact-item h3 {
-    font-size: 28px;
-  }
-  .contact-divider .contact-btn-item h3 {
-    font-size: 28px;
-  }
-  /*Company Section Css Start*/
-  .about-features .content h1 {
-    font-size: 34px;
-    margin-bottom: 12px;
-  }
-  .about-features .content .company-list {
-    margin-bottom: 20px;
-  }
-  .about-features .content .company-list.mr-50 {
-    margin-right: 20px !important;
-  }
-  .about-features .content .company-list li {
-    font-size: 14px;
-  }
-  .about-features .content .company-list li i {
-    display: none;
-  }
-  .about-features .content .p-text {
-    font-size: 13px;
-    font-weight: 400;
-    margin-bottom: 18px;
-  }
-  .about-features .content .company-funfact h2 {
-    font-size: 36px;
-  }
-  .about-features .content .company-funfact h4 {
-    font-size: 18px;
-  }
-  .about-features .thumb .about-video h4 {
-    display: none;
-  }
-  .about-features .thumb .about-video .about-video-btn {
-    font-size: 38px;
-    left: 16px;
-    line-height: 24px;
-    transform: translateX(-50%);
-  }
-  .about-features .thumb .about-video .about-video-btn:before {
-    display: none;
-  }
-  .about-features .thumb {
-    margin-top: 86px;
-  }
 }
-
-@media only screen and (max-width:767px) {
-  .crt{
-    margin-left:200px;
+@media only screen and (max-width: 767px) {
+  .crt {
+    margin-left: 200px;
   }
-  .crt::before{
+  .crt::before {
     transform: rotate(90deg) !important;
     top: 95px !important;
-    left: 346px!important;
+    left: 346px !important;
   }
-  #country-booking{
+  #country-booking {
     flex-direction: column-reverse;
   }
-  #custom-booking{
+  #custom-booking {
     text-align: center;
   }
-  .cbutton{
+  .cbutton {
     height: 25px;
     padding: 2px 22px;
   }
-  .icon-wrp{
+  .icon-wrp {
     padding: 11px 33px;
   }
-
   .header .menu-style #logo_img {
     padding: 5px 0;
     width: 120px;
   }
-  /*.slide-text {*/
-  /*display: none;*/
-  /*}*/
   .package-box {
     display: none;
   }
-  .slide-text.st-two h1::before,
-  .slide-style-right.slide-text.st-two h1:before {
+  .slide-style-right.slide-text.st-two h1:before,
+  .slide-text.st-two h1::before {
     width: 152px;
     left: 0;
     right: 0;
@@ -585,12 +407,12 @@ Creation Date: 15 January 2019*/
     font-size: 25px;
     margin-bottom: 10px;
   }
-  .slide-text.st-two h2,
-  .slide-style-right.slide-text.st-two h2 {
+  .slide-style-right.slide-text.st-two h2,
+  .slide-text.st-two h2 {
     font-size: 20px;
     line-height: 25px;
     max-width: 300px !important;
-    margin:117px auto 20px;
+    margin: 117px auto 20px;
     float: none;
   }
   .slide-style-center.slide-text.st-two div.btn-box {
@@ -600,15 +422,6 @@ Creation Date: 15 January 2019*/
   .slide-style-right {
     text-align: center !important;
   }
-  /* about section */
-  .about-features.style-2 .thumb-2 img {
-    width: 100%;
-    padding-bottom: 70px;
-  }
-  .about-features.style-2 .thumb-2:after {
-    bottom: 70px;
-  }
-  /* welcome section */
   .welcome-feature-section.style-2 .section-title h2:after {
     display: none;
   }
@@ -620,62 +433,25 @@ Creation Date: 15 January 2019*/
     font-size: 35px;
     line-height: 45px;
   }
-  /* testimonial section */
   .testimonials-post {
     padding: 30px 34px 0;
-  }
-  /*Content Divider Css Style*/
-  .contact-divider .contact-item {
-    text-align: center;
-  }
-  .contact-divider .contact-item h3 {
-    font-size: 26px;
-  }
-  .contact-divider .contact-item p {
-    margin-bottom: 10px;
-  }
-  .contact-divider .contact-btn-item {
-    text-align: center;
   }
   .border-style-3:after {
     left: 0 !important;
     margin: 0 auto;
     right: 0;
   }
-
   .blog-small-item {
     margin-bottom: 56px;
   }
-  .theme-sidebar .search-sidebar .search-box .form-group .form-control {
-    width: 100%;
-  }
-  /*Home Css Style Details*/
   .header .col-lg-10 {
     width: 100%;
   }
   .header .col-lg-2 {
     width: 100%;
   }
-  /*About Features*/
-  .about-features .content .company-funfact .funfact-item {
-    text-align: center;
-    width: 32%;
-  }
-  .about-features .content .company-funfact h4 {
-    font-size: 18px;
-  }
-  .about-features .thumb .about-video {
-    text-align: center;
-  }
   .company-list {
     margin-left: 26px;
-  }
-  .about-features .content h5 {
-    margin-left: 33%;
-    text-align: center;
-  }
-  .about-features .content h1 {
-    text-align: center;
   }
   .icon-wrp .icon-box {
     width: 19.2%;
@@ -702,10 +478,6 @@ Creation Date: 15 January 2019*/
   .latest-hotel .content {
     width: auto;
   }
-  .global-area ul li {
-    font-size: 12px;
-    width: 50%;
-  }
   .gallery-item .thumb .overlay .icon {
     height: 25px;
     line-height: 24px;
@@ -717,48 +489,15 @@ Creation Date: 15 January 2019*/
   .gallery-item .thumb .overlay h4 {
     font-size: 14px;
   }
-  .special-packages.dtl-st .post-title-box .price-box h5 {
-    font-size: 26px;
-  }
-  .special-packages.dtl-st .post-title-box .price-box h6 {
-    font-size: 12px;
-  }
-  .special-packages.dtl-st .post-title-box .title-box h4 {
-    font-size: 20px;
-  }
-  .special-packages.dtl-st .post-title-box .title-box h3 {
-    font-size: 14px;
-  }
-  .special-packages.dtl-st .content p {
-    font-size: 13px;
-  }
-  .special-packages.dtl-st .content .small-hotel .text {
-    width: auto;
-  }
-  .special-packages.dtl-st .content .small-hotel .thumb {
-    float: left;
-    margin-top: 25px;
-    width: auto;
-  }
   .footer-item.footer-widget-one {
     padding-bottom: 40px;
   }
 }
-
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /*Welcome Feature Css Style*/
   .welcome-feature .content h2 {
     padding-left: 88px;
   }
 }
-
-@media only screen and (max-width: 576px) {
-  .error-page h1 {
-    font-size: 142px;
-    line-height: 168px;
-  }
-}
-
 @media only screen and (max-width: 575px) {
   .section-title h2 {
     margin-bottom: 10px;
@@ -767,28 +506,20 @@ Creation Date: 15 January 2019*/
   .carousel-item {
     height: 550px;
   }
-  video{
-    min-height:550px !important;
-   }
+  video {
+    min-height: 550px !important;
+  }
   .carousel-item .slide-image {
     height: 550px;
   }
- 
   .icon-wrp {
     text-align: center;
   }
   .icon-wrp #icon-menu {
     width: 23%;
     position: relative;
-    top:17px;
+    top: 17px;
   }
-  .icon-wrp #booknow {
-    width: 50%;
-    position: relative;
-    top: -127px;
-    right:58px;
-  }
-
   .icon-wrp .icon-box h5 {
     font-size: 13px;
   }
@@ -797,9 +528,6 @@ Creation Date: 15 January 2019*/
   }
   .latest-hotel .content h4 {
     font-size: 18px;
-  }
-  .global-area ul li {
-    width: 100%;
   }
   .testimonials-post .testimonials-item .thumb {
     position: relative;
@@ -814,9 +542,6 @@ Creation Date: 15 January 2019*/
   .owl-navst.st-three.owl-theme .owl-nav {
     top: -60px;
   }
-  .app-section .btn-theme {
-    font-size: 12px;
-  }
   .tab-style .nav.nav-tabs .nav-item {
     font-size: 12px;
     min-width: 113px;
@@ -826,8 +551,8 @@ Creation Date: 15 January 2019*/
   .owl-navst.st-two.owl-theme .owl-nav {
     top: 177px;
   }
-  .owl-navst.st-two.owl-theme .owl-nav .owl-prev,
-  .owl-navst.st-two.owl-theme .owl-nav .owl-next {
+  .owl-navst.st-two.owl-theme .owl-nav .owl-next,
+  .owl-navst.st-two.owl-theme .owl-nav .owl-prev {
     background-color: #255669;
     border-radius: 0;
     height: 39px;
@@ -845,71 +570,34 @@ Creation Date: 15 January 2019*/
     font-size: 14px;
   }
   .booking-form .form-row {
-    padding: 68px 20px 72px;
-  }
-  .special-packages.dtl-st .post-title-box {
-    padding: 5px 0 7px 10px;
-  }
-  .special-packages.dtl-st .post-title-box .price-box {
-    width: 20%;
-  }
-  .special-packages.dtl-st .post-title-box .price-box h5 {
-    font-size: 16px;
-  }
-  .special-packages.dtl-st .post-title-box .price-box h6 {
-    font-size: 8px;
-  }
-  .special-packages.dtl-st .post-title-box .title-box h4 {
-    font-size: 14px;
-  }
-  .special-packages.dtl-st .post-title-box .title-box h3 {
-    font-size: 11px;
-  }
-  .special-packages.dtl-st .offer-price {
-    font-size: 11px;
-    padding: 2px 9px;
-  }
-  .special-packages.dtl-st .content .info li a {
-    font-size: 12px;
+    padding: 14px 20px 72px;
   }
   .special-places {
     margin-bottom: 0;
   }
-  .feature-item.last {
-    margin-bottom: 0;
-  }
 }
-
 @media only screen and (min-width: 481px) and (max-width: 575px) {
-  /*Welcome Feature Css Style*/
   .welcome-feature .content h2 {
     padding-left: 88px;
   }
 }
-
 @media only screen and (max-width: 435px) {
-  .crt{
-    margin-left:100px;
+  .crt {
+    margin-left: 100px;
   }
-  .crt::before{
+  .crt::before {
     transform: rotate(90deg) !important;
     top: 93px !important;
     left: 147px !important;
-  } 
-  .owl-navst.st-three.owl-theme .owl-nav{
-    top:-25px;
-  } 
-    .icon-wrp .icon-box {
-        width: 19.57%;
-        position: relative;
-        top:64px;
-      }
-      .icon-wrp #booknow {
-        width: 50%;
-        position: relative;
-        top: -129px;
-        right:50px;
-      }
+  }
+  .owl-navst.st-three.owl-theme .owl-nav {
+    top: -25px;
+  }
+  .icon-wrp .icon-box {
+    width: 19.57%;
+    position: relative;
+    top: 64px;
+  }
   .special-packages .content {
     padding: 22px 12px 20px;
   }
@@ -928,7 +616,7 @@ Creation Date: 15 January 2019*/
     width: 60%;
   }
   .contact-section.pt-90 {
-    padding-top: 0 !important;
+    padding-top: 120px !important;
   }
   .contact-section.pt-90.pb-90 {
     padding-bottom: 0 !important;
@@ -946,54 +634,36 @@ Creation Date: 15 January 2019*/
     margin-bottom: 0;
   }
 }
-@media only screen and (max-width:410px) {
- 
+@media only screen and (max-width: 410px) {
   .icon-wrp #icon-menu {
-        position: relative;
-        top:46px;
-        height:10px;
-      }
-      .icon-wrp #booknow {
-        width: 50%;
-        position: relative;
-        top: -104px !important;
-        right:10px;
-      }
+    position: relative;
+    top: 46px;
+    height: 10px;
+  }
 }
 @media only screen and (max-width: 391px) {
   .carousel-item {
     height: 360px;
   }
-  video{
-    height:360px;
+  video {
+    height: 360px;
   }
   .carousel-item .slide-image {
     height: 3600px;
   }
-  .app-section .btn-theme {
-    font-size: 13px;
-  }
-  .app-section .btn-theme.btn-two {
-    margin-top: 12px;
-    margin-left: 0;
-  }
 }
-
 @media only screen and (max-width: 375px) {
   .slide-text.st-two {
-    top:30%;
+    top: 30%;
   }
   .special-packages .content .small-hotel .thumb img {
     width: 95px;
   }
 }
-
 @media only screen and (max-width: 371px) {
-  /*Section Title Css Style*/
   .section-title h2 {
     font-size: 20px;
   }
-  /*Welcome Feature Css Style*/
   .welcome-feature .content h2 {
     font-size: 17px;
   }
@@ -1028,64 +698,16 @@ Creation Date: 15 January 2019*/
     font-size: 11px;
   }
   .footer-item.footer-widget-one {
-    /* display: inline-block; */
     margin-bottom: 40px;
   }
 }
-
-@media only screen and (max-width: 351px) {
-  /*Service Css Style*/
-  .service-item.style-4 .content h3 {
-    font-size: 19px;
-  }
-}
-
-@media only screen and (max-width: 349px) {
-  .about-features .thumb .about-video h4 {
-    display: none;
-  }
-  .about-features .thumb .about-video .about-video-btn:before {
-    display: none;
-  }
-  .about-features .thumb .about-video .about-video-btn {
-    position: relative;
-    right: -82px;
-    top: 8px;
-  }
-}
-
-@media only screen and (max-width: 344px) {
-  /*Service Css Style*/
-  .service-item.style-4 .content h3 {
-    font-size: 19px;
-  }
-}
-
 @media only screen and (min-width: 320px) and (max-width: 480px) {
- 
-  .about-features .thumb .about-video .about-video-btn {
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
   .dropdown-buttons {
     display: none;
   }
 }
-
 @media only screen and (max-width: 320px) {
   .company-list {
     margin-left: 0;
-  }
-  .about-features .content h5 {
-    margin-left: 0;
-    text-align: left;
-  }
-  .about-features .content h1 {
-    text-align: left;
-    font-size: 38px;
-  }
-  .about-features .content .company-funfact .funfact-item {
-    text-align: left;
   }
 }

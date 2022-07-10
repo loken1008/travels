@@ -41,7 +41,6 @@
                             @if (!empty($sitesetting->logo))
                                 <img class="footer-logo mb-25" src="{{ $sitesetting->logo }}" alt="">
                             @endif
-                            <hr>
                             <h6>Follow<span> Us</span></h6>
                             <ul class="social-icon bg-transparent bordered-theme">
                                 @if($sitesetting)

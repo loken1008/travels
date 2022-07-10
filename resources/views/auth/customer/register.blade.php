@@ -36,9 +36,9 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
 
                             <!-- item start -->
                             <div class=" " id="" role="" aria-labelledby="nav-packagesbk-tab">
-                                <div class="form-row">
+                                <div class="form-row d-flex" style="flex-wrap: wrap;justify-content:space-between">
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="name">First Name  <span class="text-danger">*</span> </label>
                                         <input type="text" name="first_name" id="first_name" class="form-control"
                                             placeholder="Input First Name">
@@ -48,7 +48,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="name">Last Name  <span class="text-danger">*</span> </label>
                                         <input type="text" name="last_name" id="last_name" class="form-control"
                                             placeholder="Input Last Name">
@@ -58,7 +58,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Email  <span class="text-danger">*</span> </label>
                                         <input type="email" name="email" id="email" class="form-control"
                                             placeholder="Input Email">
@@ -68,7 +68,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Password  <span class="text-danger">*</span> </label>
                                         <input type="password" name="password" id="password" class="form-control"
                                             placeholder="Input password">
@@ -78,7 +78,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Confirm Password  <span class="text-danger">*</span> </label>
                                         <input type="password" name="confirm_password" id="confirm_password"
                                             class="form-control" placeholder="Input Confirm password">
@@ -88,7 +88,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Address  <span class="text-danger">*</span> </label>
                                         <input type="text" name="address" id="address" class="form-control"
                                             placeholder="Input Address">
@@ -99,7 +99,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Mobile  <span class="text-danger">*</span> </label>
                                         <input type="text" name="mobile" id="mobile" class="form-control"
                                             placeholder="Input Mobile">
@@ -110,7 +110,7 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-5">
                                         <label for="tourName">Your Country  <span class="text-danger">*</span> </label>
                                         <input type="text" name="country" id="country" class="form-control"
                                             placeholder="Input Country">

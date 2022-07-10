@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\Tour;
-use App\Models\Place;
 
 
 class CountryController extends Controller
