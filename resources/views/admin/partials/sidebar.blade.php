@@ -32,7 +32,7 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/banner')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-fw fa-file-photo-o"></i>
-                    <span>Banner</span>
+                    <span>Homepage</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
@@ -40,6 +40,9 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.banner')?'active':''}}"><a class="{{($route=='all.banner')?'active':''}}" href="{{route('all.banner')}}"><i class="ti-more"></i>View Banner</a></li>
                     </li>
+                    <li class="{{($route=='homepage.view')?'active':''}}"><a class="{{($route=='homepage.view')?'active':''}}" href="{{route('homepage.view')}}"><i class="ti-more"></i>View Homepage</a></li>
+                    </li>
+
                 </ul>
             </li>
 
@@ -63,10 +66,6 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{($route=='country.view')?'active':''}}"><a class="{{($route=='country.view')?'active':''}}" href="{{route('country.view')}}"><i class="ti-more"></i>View Country</a></li>
                     <li class="{{($route=='country.create')?'active':''}}"><a class="{{($route=='country.create')?'active':''}}" href="{{route('country.create')}}"><i class="ti-more"></i>Add Country</a></li>
-                  
-                    {{-- <li class="{{($route=='place.view')?'active':''}}"><a class="{{($route=='place.view')?'active':''}}" href="{{route('place.view')}}"><i class="ti-more"></i>View Place</a></li>
-                    <li class="{{($route=='place.create')?'active':''}}"><a class="{{($route=='place.create')?'active':''}}" href="{{route('place.create')}}"><i class="ti-more"></i>Add Place</a></li>
-                    </li> --}}
                 </ul>
                 
             </li>
@@ -170,19 +169,6 @@ $route=Route::current()->getName();
                 </li>
                 </ul>
             </li>
-            {{-- <li class="treeview {{($prefix=='/hotel')?'active':''}}">
-                <a href="#">
-                    <i class="fa fa-building"></i>
-                    <span>Hotel</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-right pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="{{($route=='hotel.view')?'active':''}}"><a class="{{($route=='hotel.view')?'active':''}}" href="{{route('hotel.view')}}"><i class="ti-more"></i>View Hotel</a></li>
-                    </li>
-                </ul>
-            </li> --}}
             <li class="treeview {{($prefix=='/gallery')?'active':''}}">
                 <a href="#">
                     <i class="fa fa-cloud-upload"></i>
@@ -194,6 +180,19 @@ $route=Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{($route=='all.gallery')?'active':''}}"><a class="{{($route=='all.gallery')?'active':''}}" href="{{route('all.gallery')}}"><i class="ti-more"></i>View Gallery</a></li>
                     </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-fw fa-file-photo-o"></i>
+                    <span>SEO</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{($route=='site-map')?'active':''}}"><a class="{{($route=='site-map')?'active':''}}" href="{{route('site-map')}}"><i class="ti-more"></i>Generate SiteMap</a></li>
+                </li>
                 </ul>
             </li>
             <li class="treeview {{($prefix=='/customers')?'active':''}}">

@@ -23,7 +23,7 @@ class TourController extends Controller
 {
     public function viewTour()
     {
-        $gettour = Tour::with('images', 'category', 'subcategory')
+        $gettour = Tour::with('images', 'category', 'subcategory','country')
             ->orderBy('id', 'desc')
             ->get();
         return view('admin.tour.index', compact('gettour'));

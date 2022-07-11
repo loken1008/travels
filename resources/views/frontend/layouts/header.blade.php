@@ -38,12 +38,6 @@ $route = Route::current()->getName();
                     <!-- header dropdown buttons -->
                     <div class="dropdown-buttons">
                         <div class="btn-group menu-search-box">
-                            {{-- <button type="button" class="btn dropdown-toggle" id="header-drop-3" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></button> --}}
-                            {{-- <ul class="dropdown-menu-right dropdown-animation"
-                                aria-labelledby="header-drop-3">
-                                <button type="button" class="btn dropdown-toggle" id="header-drop-3" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></button><li> --}}
                             <form role="search" class="search-box " method="post" action="{{ route('search') }}">
                                 @csrf
                                 <div class="form-group d-flex">
@@ -150,7 +144,7 @@ $route = Route::current()->getName();
                                                 @endif
                                             @endif
                                         @endforeach
-                                        @foreach ($cat->subcategory as $subcat)
+                                        @foreach ($subcategory as $subcat)
                                             @if ($subcat->category_id == $cat->id)
                                                 <div class="dropdown">
 
