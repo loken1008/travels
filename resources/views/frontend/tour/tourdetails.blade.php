@@ -43,7 +43,6 @@
                                     @else
                                         <h5><span>$</span>{{ $getTourdetails->main_price }}</h5>
                                     @endif
-                                    {{-- <h6><span>Starts From</span>{{$getTourDetails->dateprice->start_date}}</h6> --}}
                                 </div>
                                 <div class="title-box">
                                     <h4>{{ $getTourdetails->tour_name }}</h4>
@@ -66,7 +65,7 @@
                                                 @if ($getTourdetails->itinerary->count() > 0)
                                                     <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
                                                         href="#plc-asia" role="tab" aria-controls="plc-asia"
-                                                        aria-selected="true">Itinaries</a>
+                                                        aria-selected="true">Itinerary</a>
                                                 @endif
                                                 @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
                                                 @else
@@ -427,11 +426,7 @@
                                                     <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                 @endif
                                             </div>
-                                            <div class="title-box">
-                                                {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                                <h3>{{ $tour->country->country_name }}
-                                                </h3>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div class="content" style="height:200px">

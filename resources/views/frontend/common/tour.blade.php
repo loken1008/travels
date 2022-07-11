@@ -37,11 +37,6 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                             <h5><span>$</span>{{ $tour->main_price }}</h5>
                                         @endif
                                     </div>
-                                    <div class="title-box">
-                                        {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                        <h3>{{ $tour->country->country_name }}
-                                        </h3>
-                                    </div>
                                 </div>
                             </div>
                             <div class="content" style="height:200px">

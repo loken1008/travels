@@ -13,6 +13,7 @@ use App\Models\ChooseUs;
 use App\Models\Gallery;
 use App\Models\PageBanner;
 use App\Models\Category;
+use App\Models\HomePage;
 use Carbon\Carbon;
 
 class IndexController extends Controller
@@ -27,7 +28,6 @@ class IndexController extends Controller
     {
         $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
         $getTour=Tour::with('country','place','category')->where(['status'=>'1','is_best_selling'=>'1'])->orderByRaw('RAND()')->get();
-        // dd($getTour);
         $cattrekking=Category::with('tour')->where('category_type','trekking')->first();
         $catnature=Category::with('tour')->where('category_type','natural')->first();
         $catadventure=Category::with('tour')->where('category_type','adventure')->first();
@@ -39,8 +39,8 @@ class IndexController extends Controller
         $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
         $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
         $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
-
-        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattrekking','catadventure','catnature','catpeak'));
+        $homepage=HomePage::orderBy('id','desc')->first();
+        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattrekking','catadventure','catnature','catpeak','homepage'));
     }
 
     public function  tourDetails($slug)

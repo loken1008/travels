@@ -116,6 +116,76 @@
             border-bottom-left-radius: 17px;
             border-top-right-radius: 18px;
         }
+
+        .homepagetitle::after {
+            content: "\f178";
+            font-family: 'FontAwesome';
+            font-size: 33px;
+            color: #0E4D94;
+            position: relative;
+            left: 10px;
+            top: 5px;
+        }
+
+        .homepagetitle::before {
+            content: "\f177";
+            font-family: 'FontAwesome';
+            font-size: 33px;
+            color: #0E4D94;
+            position: relative;
+            right: 10px;
+            top: 5px;
+        }
+
+        /* CSS */
+        .button-51 {
+            background-color: transparent;
+            border: 1px solid #266DB6;
+            box-sizing: border-box;
+            color:white;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            padding: 16px 23px !important;
+            position: relative;
+            top:36px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-51:hover,
+        .button-51:active {
+            outline: 0;
+        }
+
+        .button-51:hover {
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .button-51:before {
+            background-color: #0E4D94;
+            content: "";
+            height: calc(100% + 3px);
+            position: absolute;
+            right: -7px;
+            top: -7px;
+            transition: background-color 300ms ease-in;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .button-51:hover:before {
+            background-color:#F6AB3B;
+        }
+
+        @media (min-width: 768px) {
+            .button-51 {
+                padding: 16px 32px;
+            }
+        }
     </style>
 
 </head>
@@ -144,52 +214,60 @@
 Main JavaScript
 <------------------------------------------>
 
-<script src="{{asset('frontend/js/jquery-3.2.1.min.js ')}}"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js ')}}"></script>
-    <script type="text/javascript"
+    <script src="{{ asset('frontend/js/jquery-3.2.1.min.js ') }}"></script>
+    <script type="text/javascript" defer src="{{ asset('frontend/js/bootstrap.min.js ') }}"></script>
+    <script type="text/javascript" defer
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
-    <script
-        type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js">
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script type="text/javascript" src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('frontend/js/css3-animate-it.js')}}"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('frontend/js/script.js') }}"></script>
-    <script type="text/javascript" src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
+    </script>
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+    </script>
+    <script type="text/javascript" defer src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" defer src="{{ asset('frontend/js/css3-animate-it.js') }}"></script>
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js">
+    </script>
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script type="text/javascript" defer src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
+    <script type="text/javascript" defer src="{{ asset('frontend/js/script.js') }}"></script>
+    <script type="text/javascript" defer src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js">
+    </script>
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
-    <script type="text/javascript">
-     window.dataLayer = window.dataLayer || [];
+    <script type="text/javascript" defer>
+        window.dataLayer = window.dataLayer || [];
 
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-gtag('config', 'G-5EJF8NFWL9');
+        gtag('config', 'G-5EJF8NFWL9');
 
-var Tawk_API = Tawk_API || {},
-    Tawk_LoadStart = new Date();
-(function() {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6268f5507b967b11798cbaa5/1g1kvsgta';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6268f5507b967b11798cbaa5/1g1kvsgta';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript" defer>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
@@ -209,7 +287,7 @@ var Tawk_API = Tawk_API || {},
             }
         @endif
 
-       
+
 
         $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
             var googleIframe = $('#map_canvas iframe');

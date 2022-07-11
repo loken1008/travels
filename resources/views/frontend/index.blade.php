@@ -130,14 +130,14 @@
                                     id="plc-asia{{ $countrys->country_name }}" role="tabpanel"
                                     aria-labelledby="plc-asia-tab">
                                     <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
-                                        @forelse ($countrys->tours as $key2 => $tour)
-                                            @if ($tour->status == '1')
-                                                @if ($tour->country_id == $countrys->id)
+                                        @forelse ($tour as $key2 => $ctour)
+                                            @if ($ctour->status == '1')
+                                                @if ($ctour->country_id == $countrys->id)
                                                     <div class="item">
                                                         <div class="special-places">
                                                             <div class="thumb">
-                                                                <img src="{{ $tour->mainImage }}"
-                                                                    alt="{{ $tour->img_alt }}"
+                                                                <img src="{{ $ctour->mainImage }}"
+                                                                    alt="{{ $ctour->img_alt }}"
                                                                     style="height:215px !important">
                                                             </div>
                                                             <div class="content">
@@ -145,22 +145,19 @@
 
                                                                     @if ($getcoupon)
                                                                         <h5 class="text-danger">
-                                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
+                                                                            <strike><span>$</span>{{ $ctour->main_price }}</strike>
                                                                         </h5>
-                                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                                        <h5><span>$</span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                                         </h5>
                                                                     @else
-                                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
+                                                                        <h5><span>$</span>{{ $ctour->main_price }}</h5>
                                                                     @endif
-                                                                </div>
-                                                                <div class="title-box">
-                                                                    <h3>{{ $tour->country->country_name }}</h3>
                                                                 </div>
                                                                 <ul class="info">
                                                                     <li><a href="#"><i
-                                                                                class="fa fa-calendar"></i>{{ $tour->tour_days }}
+                                                                                class="fa fa-calendar"></i>{{ $ctour->tour_days }}
                                                                             Days</a></li>
-                                                                    <li><a href="{{ route('tourmap', $tour->slug) }}"><i
+                                                                    <li><a href="{{ route('tourmap', $ctour->slug) }}"><i
                                                                                 class="fa fa-map-marker"></i>View on
                                                                             Map</a>
                                                                     </li>
@@ -168,13 +165,13 @@
 
                                                                 </ul>
                                                                 <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                                    {{ $tour->tour_name }}</h6>
+                                                                    {{ $ctour->tour_name }}</h6>
                                                                 <a class="btn-theme"
                                                                     style="float:left !important;margin-top:42px"
-                                                                    href="{{ route('booking', $tour->slug) }}">Book
+                                                                    href="{{ route('booking', $ctour->slug) }}">Book
                                                                     Now</a>
                                                                 <a class="btn-theme" style="margin-top:42px"
-                                                                    href="{{ route('tourdetails', $tour->slug) }}">View
+                                                                    href="{{ route('tourdetails', $ctour->slug) }}">View
                                                                     Details</a>
                                                             </div>
                                                         </div>
@@ -197,6 +194,30 @@
             </div>
         </div>
     </section>
+    <section class="special-packages-sec pt-35 pb-25">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                  
+                        <div class="text-center">
+                           @if(!empty($homepage->subtitle)) <h6 class="homepagetitle text-uppercase font-weight-bold">{{$homepage->subtitle}}</h6>@endif
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title text-center mt-4">
+                        @if(!empty($homepage->title)) <h2 style="color:#0E4D94;text-transformation:capitalize">{{$homepage->title}}</h2>@endif
+                     </div>
+                        @if(!empty($homepage->description)) <p class="text-center" style="font-size:18px">{{$homepage->description}}</p>@endif
+                        <!-- HTML !-->
+<a href="{{route('introduction')}}"><button  class="button-51" role="button">Discover More</button></a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <section class="special-packages-sec pt-35 pb-25">
         <div class="container">
             <div class="row">
@@ -234,11 +255,7 @@
                                                         <h5><span>$</span>{{ $selltour->main_price }}</h5>
                                                     @endif
                                                 </div>
-                                                <div class="title-box">
-                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                                    <h3>{{ $selltour->country->country_name }}
-                                                    </h3>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <div class="content">
@@ -250,7 +267,6 @@
 
 
                                             </ul>
-                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
                                             <h6  style="color:black;font-size:16px;font-weight:bold">
                                                 {{ $selltour->tour_name }}</h6>
                                             <a class="btn-theme" style="float:left !important;margin-top:42px"
@@ -285,8 +301,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
-
-                        {{-- {{dd($icategory)}} --}}
                         @if ($cattrekking)
                             @foreach ($cattrekking->tour->shuffle() as $key => $tour)
                                 <div class="item">
@@ -308,11 +322,7 @@
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                     @endif
                                                 </div>
-                                                <div class="title-box">
-                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                                    <h3>{{ $tour->country->country_name }}
-                                                    </h3>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <div class="content">
@@ -324,7 +334,6 @@
 
 
                                             </ul>
-                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
                                             <h6  style="color:black;font-size:16px;font-weight:bold">
                                                 {{ $tour->tour_name }}</h6>
                                             <a class="btn-theme" style="float:left !important;margin-top:42px"
@@ -381,11 +390,7 @@
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                     @endif
                                                 </div>
-                                                <div class="title-box">
-                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                                    <h3>{{ $tour->country->country_name }}
-                                                    </h3>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <div class="content">
@@ -397,7 +402,6 @@
 
 
                                             </ul>
-                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
                                             <h6  style="color:black;font-size:16px;font-weight:bold">
                                                 {{ $tour->tour_name }}</h6>
                                             <a class="btn-theme" style="float:left !important;margin-top:42px"
@@ -452,11 +456,7 @@
                                                         <h5><span>$</span>{{ $adventuretour->main_price }}</h5>
                                                     @endif
                                                 </div>
-                                                <div class="title-box">
-                                                    {{-- <h4>{{ $adventuretour->adventuretour_name }}</h4> --}}
-                                                    <h3>{{ $adventuretour->country->country_name }}
-                                                    </h3>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <div class="content">
@@ -468,7 +468,6 @@
 
 
                                             </ul>
-                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
                                             <h6  style="color:black;font-size:16px;font-weight:bold">
                                                 {{ $adventuretour->tour_name }}</h6>
                                             <a class="btn-theme" style="float:left !important;margin-top:42px"
@@ -522,11 +521,6 @@
                                                         <h5><span>$</span>{{ $tour->main_price }}</h5>
                                                     @endif
                                                 </div>
-                                                <div class="title-box">
-                                                    {{-- <h4>{{ $tour->tour_name }}</h4> --}}
-                                                    <h3>{{ $tour->country->country_name }}
-                                                    </h3>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="content">
@@ -539,7 +533,6 @@
 
 
                                             </ul>
-                                            {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
                                             <h6  style="color:black;font-size:16px;font-weight:bold">
                                                 {{ $tour->tour_name }}</h6>
                                             <a class="btn-theme" style="float:left !important;margin-top:42px"
