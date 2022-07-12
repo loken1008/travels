@@ -127,7 +127,7 @@
     <!-- /.content -->
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
-        var route_prefix = "/mountainguide-filemanager";
+        var route_prefix = "/mgiadmin/mountainguide-filemanager";
         $('#pulfm').filemanager('images', {
             prefix: route_prefix
         });

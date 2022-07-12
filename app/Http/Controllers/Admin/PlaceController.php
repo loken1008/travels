@@ -49,7 +49,7 @@ class PlaceController extends Controller
             'alert-type'=>'error',
         );
     }
-    return redirect('/place/view')->with($notification);
+    return redirect('/mgiadmin/place/view')->with($notification);
 
     }
 
@@ -67,7 +67,7 @@ class PlaceController extends Controller
             'message'=>'Place Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/place/view')->with($notification);
+        return redirect('/mgiadmin/place/view')->with($notification);
     }
 
     public function deletePlace($id)

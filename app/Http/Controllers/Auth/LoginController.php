@@ -24,7 +24,7 @@ class LoginController extends Controller
       $remember_me = $request->has('remember_token') ? true : false;   
       $admin = Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember_me);
       if($admin) {
-           return redirect('/dashboard');
+           return redirect('/mgiadmin/dashboard');
       }
 
        return back()->with('error', 'Invalid Credentials!');

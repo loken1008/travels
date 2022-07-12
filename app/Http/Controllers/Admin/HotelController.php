@@ -57,7 +57,7 @@ class HotelController extends Controller
                 'alert-type'=>'success'
             );
    
-        return redirect('/hotel/view')->with($notification);
+        return redirect('/mgiadmin/hotel/view')->with($notification);
 
     }
 
@@ -94,7 +94,7 @@ class HotelController extends Controller
             'message'=>'Hotel Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/hotel/view')->with($notification);
+        return redirect('/mgiadmin/hotel/view')->with($notification);
     }
 
     public function deleteHotel($id)

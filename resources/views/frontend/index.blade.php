@@ -1,5 +1,8 @@
 @extends('frontend.main')
 @section('title', 'Home')
+@section('meta_title', $homepage->meta_title)
+@section('meta_keywords', $homepage->meta_keywords)
+@section('meta_description', $homepage->meta_description)
 @section('content')
 
     <!-- Slick Section Start -->
@@ -141,36 +144,32 @@
                                                                     style="height:215px !important">
                                                             </div>
                                                             <div class="content">
-                                                                <div class="price-box">
 
-                                                                    @if ($getcoupon)
-                                                                        <h5 class="text-danger">
-                                                                            <strike><span>$</span>{{ $ctour->main_price }}</strike>
-                                                                        </h5>
-                                                                        <h5><span>$</span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
-                                                                        </h5>
-                                                                    @else
-                                                                        <h5><span>$</span>{{ $ctour->main_price }}</h5>
-                                                                    @endif
-                                                                </div>
-                                                                <ul class="info">
-                                                                    <li><a href="#"><i
-                                                                                class="fa fa-calendar"></i>{{ $ctour->tour_days }}
-                                                                            Days</a></li>
-                                                                    <li><a href="{{ route('tourmap', $ctour->slug) }}"><i
-                                                                                class="fa fa-map-marker"></i>View on
-                                                                            Map</a>
-                                                                    </li>
-
-
-                                                                </ul>
-                                                                <h6  style="color:black;font-size:16px;font-weight:bold">
+                                                                <h6 style="color:black;font-size:16px;font-weight:bold">
                                                                     {{ $ctour->tour_name }}</h6>
+                                                                <ul class="info mt-6">
+                                                                    <li><a href="#"><i
+                                                                                class="fa fa-calendar mr-2"></i>{{ $ctour->tour_days }}
+                                                                            Days</a>
+                                                                        </li>
+                                                                    <li>  
+                                                                        @if ($getcoupon)
+                                                                        <p>
+                                                                            <strike  class="text-danger"><span>$ </span>{{ $ctour->main_price }}</strike> <span>$ </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                        </p>
+                                                                      
+                                                                    @else
+                                                                        <p><span>$ </span>{{ $ctour->main_price }}</p>
+                                                                    @endif
+                                                                </li>
+                                                                   
+                    
+                                                                </ul>
                                                                 <a class="btn-theme"
-                                                                    style="float:left !important;margin-top:42px"
+                                                                    style="float:left !important;margin-top:40px"
                                                                     href="{{ route('booking', $ctour->slug) }}">Book
                                                                     Now</a>
-                                                                <a class="btn-theme" style="margin-top:42px"
+                                                                <a class="btn-theme" style="margin-top:40px"
                                                                     href="{{ route('tourdetails', $ctour->slug) }}">View
                                                                     Details</a>
                                                             </div>
@@ -198,22 +197,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                  
-                        <div class="text-center">
-                           @if(!empty($homepage->subtitle)) <h6 class="homepagetitle text-uppercase font-weight-bold">{{$homepage->subtitle}}</h6>@endif
-                        </div>
+
+                    <div class="text-center">
+                        @if (!empty($homepage->subtitle))
+                            <h6 class="homepagetitle text-uppercase font-weight-bold">{{ $homepage->subtitle }}</h6>
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-title text-center mt-4">
-                        @if(!empty($homepage->title)) <h2 style="color:#0E4D94;text-transformation:capitalize">{{$homepage->title}}</h2>@endif
-                     </div>
-                        @if(!empty($homepage->description)) <p class="text-center" style="font-size:18px">{{$homepage->description}}</p>@endif
-                        <!-- HTML !-->
-<a href="{{route('introduction')}}"><button  class="button-51" role="button">Discover More</button></a>
+                        @if (!empty($homepage->title))
+                            <h2 style="color:#0E4D94;text-transformation:capitalize">{{ $homepage->title }}</h2>
+                        @endif
+                    </div>
+                    @if (!empty($homepage->description))
+                        <p class="text-center" style="font-size:18px">{{ $homepage->description }}</p>
+                    @endif
+                    <!-- HTML !-->
+                    <a href="{{ route('introduction') }}"><button class="button-51" role="button">Discover
+                            More</button></a>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -224,7 +230,8 @@
                 <div class="col-md-12">
                     @if ($getTour)
                         <div class="section-title ">
-                            <h2 class="">Our Best <span>Selling</span> Package</h2> <div id="underdiv"></div>
+                            <h2 class="">Our Best <span>Selling</span> Package</h2>
+                            <div id="underdiv"></div>
                         </div>
                     @endif
                 </div>
@@ -243,36 +250,32 @@
                                                 <img src="{{ $selltour->mainImage }}" alt="{{ $selltour->img_alt }}"
                                                     style="height:253px !important"></a>
 
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    @if ($getcoupon)
-                                                        <h5 class="text-danger">
-                                                            <strike><span>$</span>{{ $selltour->main_price }}</strike>
-                                                        </h5>
-                                                        <h5><span>$</span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
-                                                        </h5>
-                                                    @else
-                                                        <h5><span>$</span>{{ $selltour->main_price }}</h5>
-                                                    @endif
-                                                </div>
-                                               
-                                            </div>
                                         </div>
                                         <div class="content">
-                                            <ul class="info">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $selltour->tour_days }}
-                                                    Days</li>
-                                                <li><a href="{{ route('tourmap', $selltour->slug) }}"><i
-                                                            class="fa fa-map-marker"></i>View on Map</a></li>
-
+                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                                {{ $selltour->tour_name }}</h6>
+                                            <ul class="info mt-6">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $selltour->tour_days }}
+                                                        Days</a>
+                                                    </li>
+                                                <li>  
+                                                    @if ($getcoupon)
+                                                    <p>
+                                                        <strike  class="text-danger"><span>$ </span>{{ $selltour->main_price }}</strike> <span>$ </span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
+                                                    </p>
+                                                  
+                                                @else
+                                                    <p><span>$ </span>{{ $selltour->main_price }}</p>
+                                                @endif
+                                            </li>
+                                               
 
                                             </ul>
-                                            <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $selltour->tour_name }}</h6>
-                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
                                                 href="{{ route('booking', $selltour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:42px"
+                                            <a class="btn-theme" style="margin-top:40px"
                                                 href="{{ route('tourdetails', $selltour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -293,7 +296,8 @@
                 <div class="col-md-12">
                     @if ($cattrekking)
                         <div class="section-title ">
-                            <h2 class="">Popular <span>Trekking</span> Places</h2><div id="underdiv"></div>
+                            <h2 class="">Popular <span>Trekking</span> Places</h2>
+                            <div id="underdiv"></div>
                         </div>
                     @endif
                 </div>
@@ -310,36 +314,32 @@
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
                                                     style="height:253px !important"></a>
 
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    @if ($getcoupon)
-                                                        <h5 class="text-danger">
-                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
-                                                        </h5>
-                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                        </h5>
-                                                    @else
-                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                    @endif
-                                                </div>
-                                               
-                                            </div>
                                         </div>
                                         <div class="content">
-                                            <ul class="info">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                    Days</li>
-                                                <li><a href="{{ route('tourmap', $tour->slug) }}"><i
-                                                            class="fa fa-map-marker"></i>View on Map</a></li>
-
+                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h6>
+                                            <ul class="info mt-6">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                                        Days</a>
+                                                    </li>
+                                                <li>  
+                                                    @if ($getcoupon)
+                                                    <p>
+                                                        <strike  class="text-danger"><span>$ </span>{{ $tour->main_price }}</strike> <span>$ </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </p>
+                                                  
+                                                @else
+                                                    <p><span>$ </span>{{ $tour->main_price }}</p>
+                                                @endif
+                                            </li>
+                                               
 
                                             </ul>
-                                            <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
-                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:42px"
+                                            <a class="btn-theme" style="margin-top:40px"
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -361,7 +361,8 @@
                 <div class="col-md-12">
                     @if ($catpeak)
                         <div class="section-title ">
-                            <h2 class="">Challenge <span>The Peak </span></h2><div id="underdiv"></div>
+                            <h2 class="">Challenge <span>The Peak </span></h2>
+                            <div id="underdiv"></div>
                         </div>
                     @endif
                 </div>
@@ -377,37 +378,34 @@
                                             <a href="{{ route('tourdetails', $tour->slug) }}">
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
                                                     style="height:253px !important"></a>
-
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    @if ($getcoupon)
-                                                        <h5 class="text-danger">
-                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
-                                                        </h5>
-                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                        </h5>
-                                                    @else
-                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                    @endif
-                                                </div>
-                                               
-                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <ul class="info">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                    Days</li>
-                                                <li><a href="{{ route('tourmap', $tour->slug) }}"><i
-                                                            class="fa fa-map-marker"></i>View on Map</a></li>
 
+                                        <div class="content">
+                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h6>
+                                            <ul class="info mt-6">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                                        Days</a>
+                                                    </li>
+                                                <li>  
+                                                    @if ($getcoupon)
+                                                    <p>
+                                                        <strike  class="text-danger"><span>$ </span>{{ $tour->main_price }}</strike> <span>$ </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </p>
+                                                  
+                                                @else
+                                                    <p><span>$ </span>{{ $tour->main_price }}</p>
+                                                @endif
+                                            </li>
+                                               
 
                                             </ul>
-                                            <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
-                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+
+                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:42px"
+                                            <a class="btn-theme" style="margin-top:40px"
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -426,7 +424,8 @@
                 <div class="col-md-12">
                     @if ($catadventure)
                         <div class="section-title ">
-                            <h2 class="">Get More <span>Adventure</span></h2><div id="underdiv"></div>
+                            <h2 class="">Get More <span>Adventure</span></h2>
+                            <div id="underdiv"></div>
                         </div>
                     @endif
                 </div>
@@ -444,36 +443,34 @@
                                                     alt="{{ $adventuretour->img_alt }}"
                                                     style="height:253px !important"></a>
 
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    @if ($getcoupon)
-                                                        <h5 class="text-danger">
-                                                            <strike><span>$</span>{{ $adventuretour->main_price }}</strike>
-                                                        </h5>
-                                                        <h5><span>$</span>{{ $adventuretour->main_price - ($getcoupon->discount_amount / 100) * $adventuretour->main_price }}
-                                                        </h5>
-                                                    @else
-                                                        <h5><span>$</span>{{ $adventuretour->main_price }}</h5>
-                                                    @endif
-                                                </div>
-                                               
-                                            </div>
+
                                         </div>
                                         <div class="content">
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
-                                                        Days</a></li>
-                                                <li><a href="{{ route('tourmap', $adventuretour->slug) }}"><i
-                                                            class="fa fa-map-marker"></i>View on Map</a></li>
-
+                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                                {{ $adventuretour->tour_name }}</h6>
+                                            <ul class="info mt-6">
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
+                                                        Days</a>
+                                                    </li>
+                                                <li>  
+                                                    @if ($getcoupon)
+                                                    <p>
+                                                        <strike  class="text-danger"><span>$ </span>{{ $adventuretour->main_price }}</strike> <span>$ </span>{{ $adventuretour->main_price - ($getcoupon->discount_amount / 100) * $adventuretour->main_price }}
+                                                    </p>
+                                                  
+                                                @else
+                                                    <p><span>$ </span>{{ $adventuretour->main_price }}</p>
+                                                @endif
+                                            </li>
+                                               
 
                                             </ul>
-                                            <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $adventuretour->tour_name }}</h6>
-                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+
+                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
                                                 href="{{ route('booking', $adventuretour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:42px"
+                                            <a class="btn-theme" style="margin-top:40px"
                                                 href="{{ route('tourdetails', $adventuretour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -492,7 +489,8 @@
                 <div class="col-md-12">
                     @if ($catnature)
                         <div class="section-title ">
-                            <h2 class="">Experience <span>The Nature</span></h2><div id="underdiv"></div>
+                            <h2 class="">Experience <span>The Nature</span></h2>
+                            <div id="underdiv"></div>
                         </div>
                     @endif
                 </div>
@@ -509,36 +507,34 @@
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
                                                     style="height:253px !important"></a>
 
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    @if ($getcoupon)
-                                                        <h5 class="text-danger">
-                                                            <strike><span>$</span>{{ $tour->main_price }}</strike>
-                                                        </h5>
-                                                        <h5><span>$</span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                        </h5>
-                                                    @else
-                                                        <h5><span>$</span>{{ $tour->main_price }}</h5>
-                                                    @endif
-                                                </div>
-                                            </div>
+                                          
                                         </div>
                                         <div class="content">
-                                            <ul class="info">
+                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h6>
+                                            <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                        Days</a></li>
-                                                <li><a href="{{ route('tourmap', $tour->slug) }}"><i
-                                                            class="fa fa-map-marker"></i>View on Map</a></li>
-
+                                                        Days</a>
+                                                    </li>
+                                                <li>  
+                                                    @if ($getcoupon)
+                                                    <p>
+                                                        <strike  class="text-danger"><span>$ </span>{{ $tour->main_price }}</strike> <span>$ </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </p>
+                                                  
+                                                @else
+                                                    <p><span>$ </span>{{ $tour->main_price }}</p>
+                                                @endif
+                                            </li>
+                                               
 
                                             </ul>
-                                            <h6  style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
-                                            <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                           
+                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:42px"
+                                            <a class="btn-theme" style="margin-top:40px"
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -562,7 +558,8 @@
             <div class="row">
                 @if ($chooseus->count() > 0)
                     <div class="section-title">
-                        <h2>Why <span>Choose</span> Mountain Guide Trek</h2><div id="underdiv"></div>
+                        <h2>Why <span>Choose</span> Mountain Guide Trek</h2>
+                        <div id="underdiv"></div>
                     </div>
                 @endif
             </div>
@@ -593,7 +590,8 @@
             <div class="row">
                 @if ($getblogs->count() > 0)
                     <div class="section-title" style="margin: 0 auto 10px !important;">
-                        <h2>Our <span>Latest</span> Blogs</h2><div id="underdiv"></div>
+                        <h2>Our <span>Latest</span> Blogs</h2>
+                        <div id="underdiv"></div>
                     </div>
                 @endif
             </div>
@@ -606,27 +604,28 @@
                                     <img src="{{ $blog->blog_image }}" style="height:180px"
                                         alt="{{ $blog->img_alt }}">
                                     <div class="content">
-                                        <h3>{{ $blog->blog_title }}</h3>
-                                        <div class="meta-box">
-                                            <div class="admin-post"> {{ $blog->author_name }} </div>
-                                            <div class="inner">
-                                                <div class="date">
-                                                    <i class="fa fa-calendar-plus-o"></i>
-                                                    {{ $blog->created_at->format('M d') }}
-                                                </div>
-                                                @php
-                                                    $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
-                                                @endphp
-                                                <div class="comment">
-                                                    <i class="fa fa-commenting-o"></i> {{ $getcomment }}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                        
                                     </div>
                                 </div>
                             </a>
-                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">Continue
-                                Reading
+                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">
+                                <div class="d-flex" style="justify-content:space-evenly ">
+                                    <div class="admin-post"> {{ $blog->author_name }} </div>
+                                    <div class="inner d-flex">
+                                        <div class="date">
+                                            <i class="fa fa-calendar-plus-o"></i>
+                                            {{ $blog->created_at->format('M d') }}
+                                        </div>
+                                        @php
+                                            $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
+                                        @endphp
+                                        <div class="comment">
+                                            <i class="fa fa-commenting-o"></i> {{ $getcomment }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>{{ $blog->blog_title }}</h3>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>

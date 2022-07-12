@@ -140,7 +140,7 @@ if($request->images){
             'message' => 'tour Insert Successfully',
             'alert-type' => 'success',
         ];
-        return redirect('/tour/view')->with($notification);
+        return redirect('/mgiadmin/tour/view')->with($notification);
     }
 
     public function viewDetailsTour($id)
@@ -280,7 +280,7 @@ if($request->images){
             'message' => 'Tour Update Successfully',
             'alert-type' => 'success',
         ];
-        return redirect('/tour/view')->with($notification);
+        return redirect('/mgiadmin/tour/view')->with($notification);
     }
 
     public function addDatePrice(Request $request, $id)

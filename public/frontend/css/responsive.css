@@ -189,7 +189,7 @@
     background-color: #ffcd22;
   }
   .header .menu-style.bg-transparent .navbar-nav li a.nav-link {
-    color: #ffcd22;
+    color:black !important;
   }
   .header .menu-style.bg-transparent .navbar-nav li.active a.nav-link,
   .header .menu-style.bg-transparent .navbar-nav li:focus a.nav-link,
@@ -327,14 +327,7 @@
   .feature-item {
     height: 315px;
   }
-  .crt {
-    margin-left: 200px;
-  }
-  .crt::before {
-    transform: rotate(90deg) !important;
-    top: 101px !important;
-    left: 304px !important;
-  }
+
   .country-tab {
     max-width: 66% !important;
   }
@@ -368,14 +361,7 @@
   }
 }
 @media only screen and (max-width: 767px) {
-  .crt {
-    margin-left: 200px;
-  }
-  .crt::before {
-    transform: rotate(90deg) !important;
-    top: 95px !important;
-    left: 346px !important;
-  }
+ 
   #country-booking {
     flex-direction: column-reverse;
   }
@@ -557,8 +543,6 @@
     background-color: #255669;
     border-radius: 0;
     height: 39px;
-    line-height: 37px;
-    width: 44px;
   }
   .owl-navst.st-two.owl-theme .owl-nav .owl-prev {
     right: 39px;
@@ -588,8 +572,8 @@
   }
   .crt::before {
     transform: rotate(90deg) !important;
-    top: 93px !important;
-    left: 147px !important;
+    top: 78px !important;
+    left:61px !important;
   }
   .owl-navst.st-three.owl-theme .owl-nav {
     top: -25px;
@@ -652,6 +636,9 @@
   .carousel-item .slide-image {
     height: 3600px;
   }
+  .icon-wrp {
+    padding-left: 55px;
+}
 }
 @media only screen and (max-width: 375px) {
   .slide-text.st-two {
@@ -660,6 +647,9 @@
   .special-packages .content .small-hotel .thumb img {
     width: 95px;
   }
+  .icon-wrp {
+    padding-left: 55px;
+}
 }
 @media only screen and (max-width: 371px) {
   .section-title h2 {
@@ -701,6 +691,9 @@
   .footer-item.footer-widget-one {
     margin-bottom: 40px;
   }
+  .icon-wrp {
+    padding-left: 55px;
+}
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .dropdown-buttons {
