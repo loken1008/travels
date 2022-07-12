@@ -150,7 +150,7 @@
                         $.ajax({
                             type: "GET",
                             dataType: "json",
-                            url: '/aboutus/ourteam/changeStatus',
+                            url: '/mgiadmin/aboutus/ourteam/changeStatus',
                             data: {
                                 'status': status,
                                 'team_id': team_id
@@ -161,11 +161,11 @@
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/aboutus/all/ourteam'
+                                window.location.href = '/mgiadmin/aboutus/all/ourteam'
                             }
                         });
                     } else {
-                        window.location.href = '/aboutus/all/ourteam'
+                        window.location.href = '/mgiadmin/aboutus/all/ourteam'
                     }
                 })
 

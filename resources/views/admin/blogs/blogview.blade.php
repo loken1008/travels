@@ -94,7 +94,7 @@ $route=Route::current()->getName();
                                 $.ajax({
                                     type: "GET",
                                     dataType: "json",
-                                    url: '/blog/changeblogStatus',
+                                    url: '/mgiadmin/blog/changeblogStatus',
                                     data: {
                                         'status': status,
                                         'blog_id': blog_id
@@ -105,11 +105,11 @@ $route=Route::current()->getName();
                                             'Status has been changed.',
                                             'success',
                                         )
-                                        window.location.href = '/blog/view'
+                                        window.location.href = '/mgiadmin/blog/view'
                                     }
                                 });
                             } else {
-                                window.location.href = '/blog/view'
+                                window.location.href = '/mgiadmin/blog/view'
                             }
                         })
         

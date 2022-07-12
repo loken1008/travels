@@ -126,7 +126,7 @@ $route = Route::current()->getName();
                         $.ajax({
                             type: "GET",
                             dataType: "json",
-                            url: '/tour/changeStatus',
+                            url: '/mgiadmin/tour/changeStatus',
                             data: {
                                 'status': status,
                                 'tour_id': tour_id
@@ -137,11 +137,11 @@ $route = Route::current()->getName();
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/tour/view'
+                                window.location.href = '/mgiadmin/tour/view'
                             }
                         });
                     } else {
-                        window.location.href = '/tour/view'
+                        window.location.href = '/mgiadmin/tour/view'
                     }
                 })
     

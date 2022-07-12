@@ -56,7 +56,7 @@ class CouponController extends Controller
         'message'=>'Coupon Update Successfully',
         'alert-type'=>'success'
     );
-    return redirect('/coupon/view')->with($notification);
+    return redirect('/mgiadmin/coupon/view')->with($notification);
     }
     public function deleteCoupon($id)
     {

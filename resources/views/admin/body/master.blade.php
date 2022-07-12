@@ -204,7 +204,7 @@ $(function() {
                 $.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: '/country/changeStatus',
+                    url: '/mgiadmin/country/changeStatus',
                     data: {
                         'status': status,
                         'country_id': country_id
@@ -215,11 +215,11 @@ $(function() {
                             'Status has been changed.',
                             'success',
                         )
-                        window.location.href = '/country/view'
+                        window.location.href = '/mgiadmin/country/view'
                     }
                 });
             } else {
-                window.location.href = '/country/view'
+                window.location.href = '/mgiadmin/country/view'
             }
         })
 
@@ -235,7 +235,7 @@ $(function() {
         var category_id = $(this).val();
         if (category_id) {
             $.ajax({
-                url: "/subcategory/ajax/" + category_id,
+                url: "/mgiadmin/subcategory/ajax/" + category_id,
                 type: "GET",
                 dataType: "json",
                 success: function(data) {
@@ -262,7 +262,7 @@ $(document).ready(function() {
         var country_id = $(this).val();
         if (country_id) {
             $.ajax({
-                url: "/place/ajax/" + country_id,
+                url: "/mgiadmin/place/ajax/" + country_id,
                 type: "GET",
                 dataType: "json",
                 success: function(data) {

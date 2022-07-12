@@ -48,7 +48,7 @@ class CountryController extends Controller
             'alert-type'=>'error',
         );
     }
-    return redirect('/country/view')->with($notification);
+    return redirect('/mgiadmin/country/view')->with($notification);
 
     }
 
@@ -76,7 +76,7 @@ class CountryController extends Controller
             'message'=>'Country Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/country/view')->with($notification);
+        return redirect('/mgiadmin/country/view')->with($notification);
     }
 
     public function deleteCountry($id)

@@ -121,8 +121,6 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => 'auth'],function () {
     // tour place
     Route::prefix('tour')->group(function () {
         Route::get('/view', [App\Http\Controllers\Admin\TourController::class, 'viewTour'])->name('tour.view');
-        // Route::get('/package',[App\Http\Controllers\Admin\TourController::class,'viewPackage'])->name('package.view');
-        // Route::get('/activities',[App\Http\Controllers\Admin\TourController::class,'viewActivities'])->name('activities.view');
         Route::get('/viewdetails/{id}', [App\Http\Controllers\Admin\TourController::class, 'viewDetailsTour'])->name('tour.viewdetails');
         Route::get('/create', [App\Http\Controllers\Admin\TourController::class, 'createTour'])->name('tour.create');
         Route::post('/store', [App\Http\Controllers\Admin\TourController::class, 'storeTour'])->name('tour.store');

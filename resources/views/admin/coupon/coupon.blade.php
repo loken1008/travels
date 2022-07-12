@@ -152,7 +152,7 @@
                         $.ajax({
                             type: "GET",
                             dataType: "json",
-                            url: '/coupon/changeStatus',
+                            url: '/mgiadmin/coupon/changeStatus',
                             data: {
                                 'status': status,
                                 'coupon_id': coupon_id
@@ -163,11 +163,11 @@
                                     'Status has been changed.',
                                     'success',
                                 )
-                                window.location.href = '/coupon/view'
+                                window.location.href = '/mgiadmin/coupon/view'
                             }
                         });
                     } else {
-                        window.location.href = '/coupon/view'
+                        window.location.href = '/mgiadmin/coupon/view'
                     }
                 })
                 $('#example1 .coupon-input').bootstrapToggle();

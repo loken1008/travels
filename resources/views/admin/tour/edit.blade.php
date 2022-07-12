@@ -738,10 +738,13 @@ $(document).on('click', '.remove_field', function() {
 </script>
 <script type='text/javascript'>
     CKEDITOR.replaceAll();
+    if (CKEDITOR.instances['meta_description']) {
+   CKEDITOR.instances['meta_description'].destroy(true);
+}
 </script>
 
 <script>
-    var route_prefix = "/mountainguide-filemanager";
+    var route_prefix = "/mgiadmin/mountainguide-filemanager";
     $('#elfm').filemanager('images', {
         prefix: route_prefix
     });
@@ -749,7 +752,7 @@ $(document).on('click', '.remove_field', function() {
 
 <script>
     //  filemanager 
-    var route_prefix = "/mountainguide-filemanager";
+    var route_prefix = "/mgiadmin/mountainguide-filemanager";
     $('#elfms').filemanager('images', {
         prefix: route_prefix
     });
@@ -757,10 +760,10 @@ $(document).on('click', '.remove_field', function() {
             prefix: route_prefix
         });
     var options = {
-        filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
-        filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
-        filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
+        filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Files',
+        filebrowserUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Files&_token='
     };
 
   

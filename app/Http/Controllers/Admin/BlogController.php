@@ -15,7 +15,7 @@ class BlogController extends Controller
 {
     public function viewBlog()
     {
-        $getblog=Blog::orderBy('id','desc')->get();
+        $getblog=Blog::with('tour')->orderBy('id','desc')->get();
         return view('admin.blogs.blogview',compact('getblog'));
     }
     public function viewBlogDetails($id)
@@ -82,7 +82,7 @@ class BlogController extends Controller
                 'alert-type'=>'success'
             );
    
-        return redirect('/blog/view')->with($notification);
+        return redirect('/mgiadmin/blog/view')->with($notification);
 
     }
 
@@ -121,7 +121,7 @@ class BlogController extends Controller
             'message'=>'Blog Update Successfully',
             'alert-type'=>'success'
         );
-        return redirect('/blog/view')->with($notification);
+        return redirect('/mgiadmin/blog/view')->with($notification);
     }
 
     public function deleteBlog($id)

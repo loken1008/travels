@@ -62,10 +62,10 @@
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script>
         var options = {
-            filebrowserImageBrowseUrl: '/mountainguide-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/mountainguide-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/mountainguide-filemanager?type=Files',
-            filebrowserUploadUrl: '/mountainguide-filemanager/upload?type=Files&_token='
+            filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Files',
+            filebrowserUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Files&_token='
         };
     </script>
     <script>

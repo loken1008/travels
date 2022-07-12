@@ -20,16 +20,14 @@
     <------------------------------------------>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/custom-animation.css') }}">
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha512-GqP/pjlymwlPb6Vd7KmT5YbapvowpteRq9ffvufiXYZp0YpMTtR9tI6/v3U3hFi1N9MQmXum/yBfELxoY+S1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/imageupload.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,7 +97,7 @@
             content: "\7d";
             position: absolute;
             top: 21px;
-            left: 300px;
+            left: 200px;
             color: #0E4D94;
             opacity: 0.7;
             font-size: 123px;
@@ -214,8 +212,9 @@
 Main JavaScript
 <------------------------------------------>
 
-    <script src="{{ asset('frontend/js/jquery-3.2.1.min.js ') }}"></script>
-    <script type="text/javascript" defer src="{{ asset('frontend/js/bootstrap.min.js ') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <script type="text/javascript" defer
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
     </script>
@@ -230,8 +229,8 @@ Main JavaScript
         src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
     <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
     </script>
-    <script type="text/javascript" defer src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" defer src="{{ asset('frontend/js/css3-animate-it.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha512-lo4YgiwkxsVIJ5mex2b+VHUKlInSK2pFtkGFRzHsAL64/ZO5vaiCPmdGP3qZq1h9MzZzghrpDP336ScWugUMTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/0.1.0/js/css3-animate-it.min.js" integrity="sha512-m6pMIUdyE0LGOwaBrku9N/qMxThfAVPuKTPkVrijYN4wnOcmEYmqqJkQpgJXPIBMTjm5IxwyruUJqgnOy9Q1cg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" defer
         src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js">
