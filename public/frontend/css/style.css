@@ -521,7 +521,7 @@ input:-moz-placeholder {
 }
 /***Shop Sidebar****/
 
-.theme-sidebar {}
+
 
 .theme-sidebar .title-box {
     display: inline-block;
@@ -590,11 +590,6 @@ input:-moz-placeholder {
     text-transform: capitalize;
     width: 200px;
     height: 44px;
-}
-
-
-.bg-theme-color-2 {
-    /* background: linear-gradient(to bottom, #ffffff 0%, #007ce7 100%) !important; */
 }
 
 .bg-theme-color {

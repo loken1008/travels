@@ -398,7 +398,7 @@
     });
 
     //bootstrap Slider JS Start
-    $('#slider-style-one').bsTouchSlider();
+    // $('#slider-style-one').bsTouchSlider();
     //bootstrap Slider JS End
 
 
