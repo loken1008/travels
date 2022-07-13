@@ -36,7 +36,7 @@ class BookingController extends Controller
               'mobile'=>'required',
               'country'=>'required',
               'number_people'=>'required',
-            //   'g-recaptcha-response' => 'required|captcha',
+              'g-recaptcha-response' => 'required|captcha',
          ]);
          $booking=new Booking();
          if(Auth()->guard('customer')->check()){

@@ -190,11 +190,11 @@
 
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
-                                        {{-- @error('g-recaptcha-response')
+                                        @error('g-recaptcha-response')
                                             <span class="text-danger">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror --}}
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div class="contact-textarea text-center">
@@ -218,25 +218,19 @@
                         <h4>Get in Touch</h4>
                         <div class="sec-line mb-20"></div>
                         <div class="contact-info">
-                            <div class="icon-box">
-                                <i class="flaticon-pin-1"></i>
-                            </div>
+                            
                             @if (isset($getcontact->address))
                                 <h6>{{ $getcontact->address }}</h6>
                             @endif
                         </div>
                         <div class="contact-info">
-                            <div class="icon-box">
-                                <i class="flaticon-flash"></i>
-                            </div>
+                            
                             @if (isset($getcontact->phone))
                                 <h6>{{ $getcontact->phone }}</h6>
                             @endif
                         </div>
                         <div class="contact-info">
-                            <div class="icon-box">
-                                <i class="pe-7s-map"></i>
-                            </div>
+                            
                             @if (isset($getcontact->email))
                                 <h6>{{ $getcontact->email }}</h6>
                             @endif
