@@ -34,37 +34,29 @@
                                         <img src="{{ $tourdetails->mainImage }}" alt="{{ $tourdetails->img_alt }}"
                                             style="height:253px !important"></a>
 
-                                    <div class="post-title-box">
-                                        <div class="price-box">
-                                            @if ($getcoupon)
-                                                <h5 class="text-danger">
-                                                    <strike><span>$</span>{{ $tourdetails->main_price }}</strike>
-                                                </h5>
-                                                <h5><span>$</span>{{ $tourdetails->main_price - ($getcoupon->discount_amount / 100) * $tourdetails->main_price }}
-                                                </h5>
-                                            @else
-                                                <h5><span>$</span>{{ $tourdetails->main_price }}</h5>
-                                            @endif
-                                        </div>
-                                        <div class="title-box">
-                                            {{-- <h4>{{ $tourdetails->tourdetails_name }}</h4> --}}
-                                            <h3>{{ $tourdetails->country->country_name }}
-                                            </h3>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                                 <div class="content" style="height:200px">
-                                    <ul class="info">
-                                        <li><i class="fa fa-calendar"></i>{{ $tourdetails->tour_days }}
-                                            Days</li>
-                                        <li><a href="{{ route('tourmap', $tourdetails->slug) }}"><i
-                                                    class="fa fa-map-marker"></i>View on Map</a></li>
-
-
-                                    </ul>
-                                    {{-- <p>{!! Str::words($tour->description,30).'.' !!}</p> --}}
-                                    <h6 class="text-center" style="color:#F5A13A;font-size:18px">
+                                    <h6 style="color:black;font-size:16px;font-weight:bold">
                                         {{ $tourdetails->tour_name }}</h6>
+                                    <ul class="info mt-6">
+                                        <li><a href="#"><i
+                                                    class="fa fa-calendar mr-2"></i>{{ $tourdetails->tour_days }}
+                                                Days</a>
+                                            </li>
+                                        <li>  
+                                            @if ($getcoupon)
+                                            <p>
+                                                <strike  class="text-danger"><span>$ </span>{{ $tourdetails->main_price }}</strike> <span>$ </span>{{ $tourdetails->main_price - ($getcoupon->discount_amount / 100) * $tourdetails->main_price }}
+                                            </p>
+                                          
+                                        @else
+                                            <p><span>$ </span>{{ $tourdetails->main_price }}</p>
+                                        @endif
+                                    </li>
+                                       
+    
+                                    </ul>
                                     <a class="btn-theme" style="float:left !important;margin-top:42px"
                                         href="{{ route('booking', $tourdetails->slug) }}">Book
                                         Now</a>

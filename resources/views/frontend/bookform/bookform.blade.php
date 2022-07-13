@@ -190,11 +190,11 @@
 
                                         {!! NoCaptcha::renderJs() !!}
                                         {!! NoCaptcha::display() !!}
-                                        @error('g-recaptcha-response')
+                                        {{-- @error('g-recaptcha-response')
                                             <span class="text-danger">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div class="contact-textarea text-center">
