@@ -25,14 +25,15 @@
     @if($getteamdetails->count()>0)
     <section class="contact-section pt-90 pb-80">
         <div class="container">
-            <h2 class="text-dark">Our Experienced and Skilled Team</span></h2>
+            <div class="inner-title">
+                <h2>Our Experienced and Skilled Team</h2>
+                <div class="sec-line"></div>
+            </div>
             @foreach ($getteamdetails as $teamdetails)
                 @if ($loop->iteration % 2 !== 0)
                     <div class="row ">
                         <div class="col-md-12 col-lg-4 p-0">
                             <div class="">
-
-                                <div class="sec-line mb-20"></div>
                                 <img class="mt-1" src="{{ $teamdetails->image }}"
                                     alt="{{ $teamdetails->name }}" style="width:100%;height:300px;padding-top:11px">
 
@@ -86,8 +87,6 @@
                         </div>
                         <div class="col-md-12 col-lg-4 p-0">
                             <div class="">
-
-                                <div class="sec-line mb-20"></div>
                                 <img class="mt-1" src="{{ $teamdetails->image }}"
                                     alt="{{ $teamdetails->name }}" style="width:100%;height:300px;padding-top:11px">
 

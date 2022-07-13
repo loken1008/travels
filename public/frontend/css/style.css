@@ -2,10 +2,6 @@
 
 
 
-/* OTHER IMPORTED CSS */
-
-@import url('bootstrap-dropdownhover.css');
-@import url('font-awesome.min.css');
 
 
 /*****=====*****=====*****=====*****=====
@@ -533,7 +529,7 @@ input:-moz-placeholder {
 
 .theme-sidebar .title-box h3 {
     color: #091426;
-    font-size: 22px;
+    font-size:15px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 22px;
@@ -598,7 +594,7 @@ input:-moz-placeholder {
 
 
 .bg-theme-color-2 {
-    background: linear-gradient(to bottom, #ffffff 0%, #369ff9 100%) !important;
+    /* background: linear-gradient(to bottom, #ffffff 0%, #007ce7 100%) !important; */
 }
 
 .bg-theme-color {
@@ -610,8 +606,6 @@ input:-moz-placeholder {
 }
 
 .bg-f8 {
-    /* background: #f8f8f8 !important; */
-    background-image: url(../images/bg/ev.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -802,7 +796,7 @@ input:-moz-placeholder {
 
 .inner-title h2 {
     color: #0E4D94;
-    font-size: 36px;
+    font-size:20px;
     font-weight: 600;
     letter-spacing: 0.9px;
     margin-bottom: 15px;
@@ -3802,7 +3796,6 @@ App Css Style
 ----------------------------------------------------------------*/
 
 .app-section {
-    background-image: url("../images/bg/px-3.jpg");
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -3992,7 +3985,7 @@ Blog Css Style
     padding: 16px 0;
     position: absolute;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -4431,7 +4424,7 @@ Form Control Css Style
 .style-2 form select.form-control {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: #fbfbfb url("../images/photos/select-input.png") no-repeat scroll 100% center;
+    background: #fbfbfb ;
     border: 1px solid black;
     cursor: pointer;
     position: relative;
@@ -4890,7 +4883,7 @@ Inner Css Style
 
 .inner-area h4 {
     color: #fff;
-    font-size: 40px;
+    font-size:25px;
     font-weight: 400;
     letter-spacing: 0.9px;
     text-transform: uppercase;
@@ -5355,10 +5348,7 @@ Footer Css Style
 /*--------------------------------------------------------------
 Footer Copy Right  Css Style
 ----------------------------------------------------------------*/
-
-.footer-copy-right {
-    border-top: 1px solid #101c2f;
-}
+  
 
 .footer-copy-right p {
     color: black;
@@ -5455,7 +5445,8 @@ Footer Copy Right  Css Style
 }
 
 .blog-post h3 {
-    font-size: 22px;
+    font-size:16px;
+    font-weight:bold;
     color:white !important;
 }
 
@@ -7188,4 +7179,133 @@ M > P Css Style
 
 .text-center {
     text-align: center;
+}
+
+/* dropdown bootstrap */
+/*!
+ * Dropdownhover v1.0.0 (http://bs-dropdownhover.kybarg.com)
+ */
+ .dropdown .dropdown-menu .caret {
+	border: 4px solid transparent;
+	border-left-color: #000;
+	float: right;
+	margin-top: 6px;
+} 
+.dropdown-menu {
+  min-width: 250px;
+}
+.dropdown-menu > li.open > a {
+	background-color: #F5F5F5;
+	color: #262626;
+	text-decoration: none;
+}
+.dropdown-menu .dropdown-menu {
+	left: 100%;
+	margin: 0;
+	right: auto;
+	top: -1px;
+}
+.dropdown-menu-right .dropdown-menu,
+.navbar-right .dropdown-menu .dropdown-menu,
+.pull-right .dropdown-menu .dropdown-menu {
+	left: auto;
+	right: 100%;
+}
+.dropdown-menu.animated {
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+}
+.dropdown-menu.animated:before {
+  content: " ";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.dropdownhover-top {
+	margin-bottom: 2px;
+	margin-top: 0;
+}
+.navbar-fixed-bottom .dropdown-menu .dropdown-menu,
+.dropdownhover-top .dropdown-menu {
+	bottom: -1px;
+	top: auto;
+}
+
+.navbar-nav > li > .dropdown-menu {
+	margin-bottom: 0;
+}
+
+.dropdownhover-bottom {
+	-webkit-transform-origin: 50% 0;
+			transform-origin: 50% 0;
+}
+.dropdownhover-left {
+	-webkit-transform-origin: 100% 50%;
+			transform-origin: 100% 50%;
+}
+.dropdownhover-right {
+	-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+}
+.dropdownhover-top {
+	-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+}
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    content: 'Uploaded image result';
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+}
+
+.c-profile{
+
+    background: #255669;
+    height: 474px;
+    justify-content: space-evenly;
+}
+.display-5{
+    font-size: medium;
+    padding-left: 15px;
+    font-weight: 800;
+    color: #fff;
 }

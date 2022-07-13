@@ -65,7 +65,7 @@ class BlogController extends Controller
         Blog::insert([
             'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
-            'slug'=>Str::slug($request->blog_title).'-'.'mountain-guide-info',
+            'slug'=>Str::slug($request->blog_title),
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,
             'blog_type'=>$request->blog_type,
@@ -106,7 +106,7 @@ class BlogController extends Controller
         Blog::where('id',$id)->update([
             'tour_id'=>$request->tour_id,
             'blog_title'=>$request->blog_title,
-            'slug'=>Str::slug($request->blog_title).'-'.'mountain-guide-info',
+            'slug'=>Str::slug($request->blog_title),
             'blog_description'=>$request->blog_description,
             'author_name'=>$request->author_name,
             'blog_type'=>$request->blog_type,

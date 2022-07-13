@@ -27,7 +27,7 @@ Route::get('mountainguide/reset-password/{token}', [App\Http\Controllers\Auth\Fo
 Route::post('mountainguide/reset-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'submitAdminResetPasswordForm'])->name('admin.reset.password.post');
 
 /*************************************** admin route *********************************/
-Route::group(['prefix' => 'mgiadmin', 'middleware' => 'auth'],function () {
+Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth','get.expire']],function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('admin.logout');
 
@@ -289,7 +289,7 @@ Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordControlle
 
 // frontend
 
-Route::group(['middleware' => ['XSS']], function () {
+Route::group(['middleware' => ['XSS','get.expire']], function () {
     // customer register/login
     Route::get('customer-register', [App\Http\Controllers\Auth\CustomerController::class, 'customerRegister'])->name('customer.register');
     Route::post('customer-store', [App\Http\Controllers\Auth\CustomerController::class, 'customerStore'])->name('customer.store');

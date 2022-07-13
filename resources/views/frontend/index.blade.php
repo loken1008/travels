@@ -601,7 +601,7 @@
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $blog->slug) }}">
                                 <div class="thumb">
-                                    <img src="{{ $blog->blog_image }}" style="height:180px"
+                                    <img src="{{ $blog->blog_image }}" style="height:188px"
                                         alt="{{ $blog->img_alt }}">
                                     <div class="content">
                                         

@@ -36,7 +36,7 @@ class BookingController extends Controller
               'mobile'=>'required',
               'country'=>'required',
               'number_people'=>'required',
-              'g-recaptcha-response' => 'required|captcha',
+            //   'g-recaptcha-response' => 'required|captcha',
          ]);
          $booking=new Booking();
          if(Auth()->guard('customer')->check()){
@@ -85,7 +85,7 @@ class BookingController extends Controller
                  ];
            }
          
-         Mail::to('info@mountainguidetrek.com')->send(new BookingMail($tourbooking));
+         // Mail::to('info@mountainguidetrek.com')->send(new BookingMail($tourbooking));
          $notification=array(
             'message'=>'You Sucessfully Book Your Trip',
             'alert-type'=>'success'

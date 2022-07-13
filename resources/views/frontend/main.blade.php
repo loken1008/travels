@@ -20,52 +20,176 @@
     <------------------------------------------>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/custom-animation.css') }}">
-    <!-- Style CSS -->
+   
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha512-GqP/pjlymwlPb6Vd7KmT5YbapvowpteRq9ffvufiXYZp0YpMTtR9tI6/v3U3hFi1N9MQmXum/yBfELxoY+S1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  />
 
     <style>
-        .landscape {
-
-            height: auto;
-            overflow: hidden;
-            position: relative;
+        .svg {
+            position: absolute;
+            height: 40%;
+            width: 100vw;
+            background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 100%) !important;
         }
 
-        .landscape__layer {
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
+        .invisible {
+            display: none;
         }
 
-        .landscape__image {
+        .mountains {
             position: absolute;
+            z-index: 0;
+            right: 0;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-height: 100%;
-            max-width: 300%;
-            min-width: 100%;
-            width: 2500px;
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            height:500px;
         }
 
-        .landscape__image svg {
-            display: block;
-            height: auto;
-            max-width: 100%;
+
+        .forest {
+            position: absolute;
+            top: 200px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(1.1, 1.1);
+            }
+
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+
+
+        #ray {
+            transform: rotate(60deg);
+        }
+
+        .baloon {
+            position: absolute;
+            z-index: 3;
+            left: 20vw;
+            bottom: 35vh;
+            animation: float 10s linear infinite;
+            ;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .birds {
+            z-index: 4;
+            position: absolute;
+            bottom: 45vh;
+            animation: flying 30s linear infinite;
+        }
+
+        @keyframes flying {
+            0% {
+                transform: translate(100vw, 0);
+            }
+
+            50% {
+                transform: translate(50vw, 50px);
+            }
+
+            100% {
+                transform: translate(-2vw, 0);
+            }
+        }
+
+        .wing {
+            animation: swing 2s linear infinite;
+        }
+
+        @keyframes swing {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1, -.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #sendit:hover {
+            cursor: pointer;
+        }
+
+        #speech {
+            opacity: 0;
+            padding: 10px;
+            position: absolute;
+            z-index: 5;
+            right: 2.5vw;
+            bottom: 20vh;
+            transition: .5s ease-in-out;
+        }
+
+                
+
+        @media screen and (max-width: 1280px) {
+         
+            .mountains {
+                width: 150%;
+            }
+        }
+
+        @media screen and (max-width: 760px) {
+        
+
+            #baloon {
+                transform: scale(0.8, 0.8);
+            }
+
+            #birds {
+                transform: scale(0.8, 0.8);
+            }
+
+            .mountains {
+                width: 200%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+         
+
+            #baloon {
+                transform: scale(0.5, 0.5);
+            }
+
+            #birds {
+                transform: scale(0.5, 0.5);
+            }
         }
 
         .scroll {
@@ -140,13 +264,13 @@
             background-color: transparent;
             border: 1px solid #266DB6;
             box-sizing: border-box;
-            color:white;
+            color: white;
             font-size: 16px;
             font-weight: 700;
             line-height: 24px;
             padding: 16px 23px !important;
             position: relative;
-            top:36px;
+            top: 36px;
             text-decoration: none;
             user-select: none;
             -webkit-user-select: none;
@@ -176,7 +300,7 @@
         }
 
         .button-51:hover:before {
-            background-color:#F6AB3B;
+            background-color: #F6AB3B;
         }
 
         @media (min-width: 768px) {
@@ -212,8 +336,12 @@
 Main JavaScript
 <------------------------------------------>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
 
     <script type="text/javascript" defer
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
@@ -229,20 +357,20 @@ Main JavaScript
         src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
     <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
     </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha512-lo4YgiwkxsVIJ5mex2b+VHUKlInSK2pFtkGFRzHsAL64/ZO5vaiCPmdGP3qZq1h9MzZzghrpDP336ScWugUMTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/0.1.0/js/css3-animate-it.min.js" integrity="sha512-m6pMIUdyE0LGOwaBrku9N/qMxThfAVPuKTPkVrijYN4wnOcmEYmqqJkQpgJXPIBMTjm5IxwyruUJqgnOy9Q1cg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"
+        integrity="sha512-lo4YgiwkxsVIJ5mex2b+VHUKlInSK2pFtkGFRzHsAL64/ZO5vaiCPmdGP3qZq1h9MzZzghrpDP336ScWugUMTg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/0.1.0/js/css3-animate-it.min.js"
+        integrity="sha512-m6pMIUdyE0LGOwaBrku9N/qMxThfAVPuKTPkVrijYN4wnOcmEYmqqJkQpgJXPIBMTjm5IxwyruUJqgnOy9Q1cg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" defer
         src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js">
-    </script>
-    <script type="text/javascript" defer
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script type="text/javascript" defer src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <script type="text/javascript" defer src="{{ asset('frontend/js/script.js') }}"></script>
-    <script type="text/javascript" defer src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js">
-    </script>
-    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
-    </script>
+    <script type="text/javascript" defer src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
     <script type="text/javascript" defer>
         window.dataLayer = window.dataLayer || [];
@@ -254,20 +382,19 @@ Main JavaScript
 
         gtag('config', 'G-5EJF8NFWL9');
 
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6268f5507b967b11798cbaa5/1g1kvsgta';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5c5e75576cb1ff3c14cbbbe8/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
-    <script type="text/javascript" defer>
-        @if (Session::has('message'))
+
+    <script>
+         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
                 case 'info':
@@ -287,6 +414,9 @@ Main JavaScript
         @endif
 
 
+    </script>
+    <script type="text/javascript" >
+       
 
         $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
             var googleIframe = $('#map_canvas iframe');
@@ -316,6 +446,8 @@ Main JavaScript
         $(".closebtn").click(function() {
             $(this).closest("div").hide();
         });
+
+        
     </script>
 </body>
 

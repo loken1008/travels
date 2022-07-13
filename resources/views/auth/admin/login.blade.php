@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="{{asset('admin/css/skin_color.css')}}">	
 
 </head>
-<body class="hold-transition over-layer-dark"  style="background-image: url('../frontend/images/bg/ev.jpg');background-repeat: no-repeat;background-size:cover">
+<body class="hold-transition over-layer-dark"  style="background: #0e1e56">
 	
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">	
