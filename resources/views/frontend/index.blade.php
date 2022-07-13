@@ -641,7 +641,7 @@
 
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-15 pb-20">
+    <section class="gallery-section pt-15 pb-80">
         <div class="container">
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
