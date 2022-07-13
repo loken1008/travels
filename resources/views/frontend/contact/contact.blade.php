@@ -30,9 +30,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                         <h3 class="title">Get in <span>Touch</span></h3>
                         <div class="d-flex" style="justify-content:space-around;flex-wrap:wrap">
                             <div class="service-item style-1 border-1px" style="width:256px">
-                                <div class="service-icon">
-                                    <i class="pe-7s-map"></i>
-                                </div>
+                               
                                 <div class="content">
                                     <h5>Address</h5>
                                     @if (isset($getcontact->address))
@@ -42,9 +40,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                             </div>
 
                             <div class="service-item style-1 border-1px" style="width:256px">
-                                <div class="service-icon">
-                                    <i class="pe-7s-mail-open"></i>
-                                </div>
+                               
                                 <div class="content">
                                     <h5><a href="#">Email</a></h5>
                                     @if (isset($getcontact->email))
@@ -53,9 +49,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 </div>
                             </div>
                             <div class="service-item style-1 border-1px" style="width:256px">
-                                <div class="service-icon">
-                                    <i class="pe-7s-call"></i>
-                                </div>
+                              
                                 <div class="content">
                                     <h5><a href="#">Phone</a></h5>
                                     @if (isset($getcontact->phone))
@@ -64,9 +58,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 </div>
                             </div>
                             <div class="service-item style-1 border-1px" style="width:256px">
-                                <div class="service-icon">
-                                    <i class="pe-7s-print"></i>
-                                </div>
+                                
                                 <div class="content">
                                     <h5><a href="#">Fax</a></h5>
                                     @if (isset($getcontact->fax))
@@ -75,9 +67,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 </div>
                             </div>
                             <div class="service-item style-1 border-1px" style="width:256px">
-                                <div class="service-icon">
-                                    <i class="pe-7s-print"></i>
-                                </div>
+                               
                                 <div class="content">
                                     <h5><a href="#">GPO Box</a></h5>
                                     @if (isset($getcontact->gpo_box))

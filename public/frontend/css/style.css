@@ -4303,7 +4303,6 @@ Contact Css Style
 
 .contact-text .contact-info h6 {
     color: #fff;
-    float: right;
     font-family:'Titillium Web', sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
@@ -5163,7 +5162,7 @@ Contact Details Css Style
 
 .contact-details .title {
     display: inline-block;
-    font-size: 36px;
+    font-size:22px;
     font-weight: 600;
     margin-bottom: 30px;
     padding-bottom: 24px;
