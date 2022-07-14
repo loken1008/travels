@@ -5,7 +5,7 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
 
 @endphp
 @if ($gettestmonial->count() > 0)
-    <section class="testimonials-section pt-15 pb-35">
+    <section class="testimonials-section pt-55 pb-35">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 crt">

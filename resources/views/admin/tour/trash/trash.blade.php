@@ -26,19 +26,25 @@ $route = Route::current()->getName();
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>SN</th>
                                         <th>Country</th>
-                                        <th>Tour Name</th>
-                                        <th>Tour Type</th>
+                                        <th>Category</th>
+                                        <th>Sub category</th>
+                                        <th>Tour Name</th> 
+                                        <th>Is Best Selling</th>  
                                         <th>images</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($trashedTour as $tour)
+                                    @forelse($trashedTour as $key=> $tour)
                                         <tr>
+                                            <td>{{$key+1}}</td>
                                             <td>{{ $tour->country->country_name }}</td>
+                                            <td >@if(!empty($tour->category->category_name)){{$tour->category->category_name}}@endif</td>
+                                            <td >@if(!empty($tour->subcategory->sub_category_name)){{$tour->subcategory->sub_category_name}}@endif</td>
                                             <td>{{ $tour->tour_name }}</td>
-                                            <td >{{$tour->type=="trip"?'Trip':''}}</td>
+                                            <td>@if($tour->is_best_selling==1)Best Sell @else Normal @endif</td>
                                            
                                             <td>
                                                 <img src="{{ $tour->mainImage }}" alt="" width="100px" height="100px"

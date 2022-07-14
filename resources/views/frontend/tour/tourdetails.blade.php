@@ -469,29 +469,33 @@
                 @forelse($getTourdetails->blog as $blog)
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-post">
-                            <div class="thumb">
-                                <img alt="{{ $blog->img_alt }}" src="{{ $blog->blog_image }}" style="height:260px">
-                                <div class="content">
-                                    <h3>{{ $blog->blog_title }}</h3>
-                                    <div class="meta-box">
-                                        <div class="admin-post"> {{ $blog->author_name }} </div>
-                                        <div class="inner">
-                                            <div class="date">
-                                                <i class="fa fa-calendar-plus-o"></i>
-                                                {{ $blog->created_at->format('M d') }}
-                                            </div>
-                                            @php
-                                                $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
-                                            @endphp
-                                            <div class="comment">
-                                                <i class="fa fa-commenting-o"></i> {{ $getcomment }}
-                                            </div>
+                            <a href="{{ route('blogsdetails', $blog->slug) }}">
+                                <div class="thumb">
+                                    <img src="{{ $blog->blog_image }}" style="height:188px"
+                                        alt="{{ $blog->img_alt }}">
+                                    <div class="content">
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">
+                                <div class="d-flex" style="justify-content:space-evenly ">
+                                    <div class="admin-post"> {{ $blog->author_name }} </div>
+                                    <div class="inner d-flex">
+                                        <div class="date">
+                                            <i class="fa fa-calendar-plus-o"></i>
+                                            {{ $blog->created_at->format('M d') }}
+                                        </div>
+                                        @php
+                                            $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
+                                        @endphp
+                                        <div class="comment">
+                                            <i class="fa fa-commenting-o"></i> {{ $getcomment }}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">Continue
-                                Reading
+                                <h3>{{ $blog->blog_title }}</h3>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>

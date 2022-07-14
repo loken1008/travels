@@ -417,7 +417,7 @@ if($request->images){
 
     public function getTrashedTour()
     {
-        $trashedTour = Tour::onlyTrashed()->get();
+        $trashedTour = Tour::with('country','category','subcategory')->onlyTrashed()->get();
         return view('admin.tour.trash.trash', compact('trashedTour'));
     }
 
