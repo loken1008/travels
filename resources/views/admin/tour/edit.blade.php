@@ -414,7 +414,7 @@
                         </div>
                             </div>
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-rounded btn-info pull-right" value="Update Place">
+                            <input type="submit" class="btn btn-rounded btn-info pull-right" value="Update Tour">
                         </div>
 
                 </form>

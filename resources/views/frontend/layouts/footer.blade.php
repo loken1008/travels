@@ -3,15 +3,15 @@
         <defs>
             <style type="text/css">
                 .mount3 {
-                    fill: snow
+                    fill: #ff9007
                 }
 
                 .mount2 {
-                    fill: #feffff
+                    fill:white
                 }
 
                 .mount4 {
-                    fill: #7abcf5e0
+                    fill: white
                 }
 
                 .mount1 {
