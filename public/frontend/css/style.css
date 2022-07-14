@@ -7303,3 +7303,280 @@ M > P Css Style
     font-weight: 800;
     color: #fff;
 }
+
+/* custom css */
+.svg {
+    position: absolute;
+    height: 40%;
+    width: 100vw;
+    background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 36%) !important;
+}
+
+.invisible {
+    display: none;
+}
+
+.mountains {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height:500px;
+}
+
+
+.forest {
+    position: absolute;
+    top: 200px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+#ray {
+    transform: rotate(60deg);
+}
+
+.baloon {
+    position: absolute;
+    z-index: 3;
+    left: 20vw;
+    bottom: 35vh;
+    animation: float 10s linear infinite;
+    ;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.birds {
+    z-index: 4;
+    position: absolute;
+    bottom: 45vh;
+    animation: flying 30s linear infinite;
+}
+
+@keyframes flying {
+    0% {
+        transform: translate(100vw, 0);
+    }
+
+    50% {
+        transform: translate(50vw, 50px);
+    }
+
+    100% {
+        transform: translate(-2vw, 0);
+    }
+}
+
+.wing {
+    animation: swing 2s linear infinite;
+}
+
+@keyframes swing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1, -.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#sendit:hover {
+    cursor: pointer;
+}
+
+#speech {
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 5;
+    right: 2.5vw;
+    bottom: 20vh;
+    transition: .5s ease-in-out;
+}
+
+        
+
+@media screen and (max-width: 1280px) {
+ 
+    .mountains {
+        width: 150%;
+        height:400px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+
+    #baloon {
+        transform: scale(0.8, 0.8);
+    }
+
+    #birds {
+        transform: scale(0.8, 0.8);
+    }
+
+    .mountains {
+        width: 200%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+ 
+
+    #baloon {
+        transform: scale(0.5, 0.5);
+    }
+
+    #birds {
+        transform: scale(0.5, 0.5);
+    }
+}
+
+.scroll {
+    overflow-y: scroll;
+    height: 150px;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 10px #0E4D94;
+}
+
+.crating li .fa-star {
+    color: #0E4D94;
+    font-size: 20px;
+    padding: 7px 0 0 7px;
+}
+
+.crt::before {
+    content: "\7d";
+    position: absolute;
+    top: 21px;
+    left: 200px;
+    color: #0E4D94;
+    opacity: 0.7;
+    font-size: 123px;
+
+}
+
+#underdiv {
+    background: #1a4491;
+    width: 227px;
+    height: 12px;
+    position: relative;
+    top: -11px;
+    left: 0px;
+    border-bottom-left-radius: 17px;
+    border-top-right-radius: 18px;
+}
+
+.homepagetitle::after {
+    content: "\f178";
+    font-family: 'FontAwesome';
+    font-size: 33px;
+    color: #0E4D94;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+.homepagetitle::before {
+    content: "\f177";
+    font-family: 'FontAwesome';
+    font-size: 33px;
+    color: #0E4D94;
+    position: relative;
+    right: 10px;
+    top: 5px;
+}
+
+/* CSS */
+.button-51 {
+    background-color: transparent;
+    border: 1px solid #266DB6;
+    box-sizing: border-box;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px !important;
+    position: relative;
+    top: 36px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-51:hover,
+.button-51:active {
+    outline: 0;
+}
+
+.button-51:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button-51:before {
+    background-color: #0E4D94;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+}
+
+.button-51:hover:before {
+    background-color: #F6AB3B;
+}
+
+@media (min-width: 768px) {
+    .button-51 {
+        padding: 16px 32px;
+    }
+}
