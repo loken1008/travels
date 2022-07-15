@@ -3,6 +3,14 @@
 @section('meta_title', $getblogdetails->meta_title)
 @section('meta_keywords', $getblogdetails->meta_keywords)
 @section('meta_description', $getblogdetails->meta_description)
+@section('og_title',$getblogdetails->blog_title)
+@section('og_description', $getblogdetails->meta_description)
+@section('og_image', $getblogdetails->blog_image)
+@section('og_url', url()->current())
+@section('twitter_title', $getblogdetails->blog_title)
+@section('twitter_description', $getblogdetails->meta_description)
+@section('twitter_image', $getblogdetails->blog_image)
+@section('twitter_url', url()->current())
 @section('content')
 
 
@@ -32,11 +40,16 @@
                         <div class="details-content mb-40">
                             <ul class="details-tag mb-40">
 
-                                <li><a href="#"><i class="pe-7s-folder"></i>{{ $getblogdetails->blog_type }}</a></li>
-                                <li><a href="#"><i
-                                            class="pe-7s-stopwatch"></i>{{ $getblogdetails->created_at->format('M,d,Y') }}</a>
+                                <li><i class="fa fa-pencil mr-1"></i>{{ $getblogdetails->blog_type }}</li>
+                                <li class="ml-2"><i class="fa fa-calendar mr-1"></i>{{ $getblogdetails->created_at->format('M,d,Y') }}
                                 </li>
-                                <li><a href="#"><i class="pe-7s-user"></i>{{ $getblogdetails->author_name }}</a></li>
+                                <li class="ml-2"><i class="fa fa-user mr-1"></i>{{ $getblogdetails->author_name }}</li>
+                                @php
+                                $getcomment = App\Models\Comment::where('blog_id', $getblogdetails->id)->count();
+                            @endphp
+                            <li class="ml-2">
+                                <i class="fa fa-commenting-o"></i> {{ $getcomment }}
+                            </li>
                             </ul>
                             <h4>{{ $getblogdetails->blog_title }}</h4>
                             <p class="mb-20" style="text-align:justify!important">{!! $getblogdetails->blog_description !!}</p>
@@ -50,6 +63,11 @@
                                 {{ Session::get('success') }}
                             </div>
                         @endif
+                        <div class="d-flex mt-5">
+                            <div class="sharethis-inline-share-buttons"></div>
+
+                        </div>
+
                         <!-- End Blog Post Author -->
                         <div class="mb-5">
                             <h4>Comments</h4>

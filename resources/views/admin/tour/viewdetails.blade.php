@@ -141,7 +141,11 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="firstName5">Place Description/Image :</label>
+                        <label for="firstName5">Short Description :</label>
+                        <span>{!! $detailstour->short_description !!}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName5"> Description :</label>
                         <span>{!! $detailstour->description !!}</span>
                     </div>
                     <hr>

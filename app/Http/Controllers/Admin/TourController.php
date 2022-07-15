@@ -70,6 +70,7 @@ class TourController extends Controller
             'cost_include' => $request->cost_include,
             'cost_exclude' => $request->cost_exclude,
             'description' => $request->description,
+            'short_description' => $request->short_description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage,
             'trip_map' => $request->trip_map,
@@ -205,6 +206,7 @@ if($request->images){
             'cost_include' => $request->cost_include,
             'cost_exclude' =>$request->cost_exclude,
             'description' => $request->description,
+            'short_description' => $request->short_description,
             'map_url' => $request->map_url,
             'mainImage' => $request->mainImage
                 ? $request->mainImage

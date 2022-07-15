@@ -32,14 +32,15 @@
                                 <div class="thumb">
                                     <a href="{{ route('tourdetails', $tourdetails->slug) }}">
                                         <img src="{{ $tourdetails->mainImage }}" alt="{{ $tourdetails->img_alt }}"
-                                            style="height:253px !important"></a>
+                                            style="height:185px !important"></a>
 
                                    
                                 </div>
-                                <div class="content" style="height:200px">
-                                    <h6 style="color:black;font-size:16px;font-weight:bold">
-                                        {{ $tourdetails->tour_name }}</h6>
-                                    <ul class="info mt-6">
+                                <div class="content" >
+                                    <h1 style="color:black;font-size:16px;font-weight:bold">
+                                        {{ $tourdetails->tour_name }}</h1>
+                                        <p>{{Str::limit($tourdetails->short_description,80,'.')}}</p>
+                                    <ul class="info">
                                         <li><a href="#"><i
                                                     class="fa fa-calendar mr-2"></i>{{ $tourdetails->tour_days }}
                                                 Days</a>
@@ -57,10 +58,10 @@
                                        
     
                                     </ul>
-                                    <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                    <a class="btn-theme" style="float:left !important;"
                                         href="{{ route('booking', $tourdetails->slug) }}">Book
                                         Now</a>
-                                    <a class="btn-theme" style="margin-top:42px"
+                                    <a class="btn-theme" style=""
                                         href="{{ route('tourdetails', $tourdetails->slug) }}">View
                                         Details</a>
                                 </div>

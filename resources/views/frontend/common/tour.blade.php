@@ -23,12 +23,13 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                             <div class="thumb">
                                 <a href="{{ route('tourdetails', $tour->slug) }}">
                                     <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                        style="height:253px !important"></a>
+                                        style="height:185px !important"></a>
                             </div>
                             <div class="content" style="height:200px">
-                                <h6 style="color:black;font-size:16px;font-weight:bold">
-                                    {{ $tour->tour_name }}</h6>
-                                <ul class="info mt-6">
+                                <h1 style="color:black;font-size:15px;font-weight:bold">
+                                    {{ $tour->tour_name }}</h1>
+                                    <p>{{Str::limit($tour->short_description,80,'.')}}</p>
+                                <ul class="info">
                                     <li><a href="#"><i
                                                 class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
                                             Days</a>
@@ -46,10 +47,10 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                    
 
                                 </ul>
-                                <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                <a class="btn-theme" style="float:left !important;"
                                     href="{{ route('booking', $tour->slug) }}">Book
                                     Now</a>
-                                <a class="btn-theme" style="margin-top:42px"
+                                <a class="btn-theme" style=""
                                     href="{{ route('tourdetails', $tour->slug) }}">View
                                     Details</a>
                             </div>
