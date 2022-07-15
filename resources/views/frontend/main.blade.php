@@ -10,6 +10,20 @@
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('og_title')" />
+    <meta property="og:description" content="@yield('og_description')" />
+    <meta property="og:image" content="@yield('og_image')" />
+    <meta property="og:url" content="@yield('og_url')" />
+    <meta property="og:site_name" content="Mountainguideinfo" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@yield('twitter_title')">
+    <meta name="twitter:description" content="@yield('twitter_description')">
+    <meta name="twitter:image" content="@yield('twitter_image')">
+    <meta name="twitter:site" content="Mountainguideinfo">
+    <meta name="twitter:url" content="@yield('twitter_url')" />
     <!-- Favicon -->
     @if (!empty($sitesetting->logo))
         <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
@@ -18,27 +32,29 @@
     <!------------------------------------------
       Main CSS File
     <------------------------------------------>
-
+    <link rel="canonical" href="{{ url(Request::url()) }}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}">
-   
+
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+   
 
     <style>
         .svg {
             position: absolute;
             height: 40%;
             width: 100vw;
-            background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 36%) !important;
+            background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 34%) !important;
         }
 
         .invisible {
@@ -51,13 +67,30 @@
             right: 0;
             bottom: 0;
             width: 100%;
-            height:500px;
+            height: 500px;
         }
 
 
         .forest {
             position: absolute;
             top: 200px;
+            z-index: 1;
+        }
+
+        .elephant {
+            position: absolute;
+            width: 600px;
+            left: 272px;
+            top: 83px;
+            opacity: 0.2;
+        }
+
+        #tiger {
+            position: absolute;
+            height: 200px;
+            opacity: 0.2;
+            top: 230px;
+            left: 193px;
         }
 
         @keyframes pulse {
@@ -155,18 +188,18 @@
             transition: .5s ease-in-out;
         }
 
-                
+
 
         @media screen and (max-width: 1280px) {
-         
+
             .mountains {
                 width: 150%;
-                height:400px;
+                height: 400px;
             }
         }
 
         @media screen and (max-width: 760px) {
-        
+
 
             #baloon {
                 transform: scale(0.8, 0.8);
@@ -182,7 +215,7 @@
         }
 
         @media screen and (max-width: 480px) {
-         
+
 
             #baloon {
                 transform: scale(0.5, 0.5);
@@ -339,23 +372,27 @@ Main JavaScript
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"> </script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/0.1.0/js/css3-animate-it.min.js"></script>
-    <script   src="{{ asset('frontend/js/script.js') }}"></script>
-    <script   src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
-    <script   src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script   src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/0.1.0/js/css3-animate-it.min.js"></script>
+    <script src="{{ asset('frontend/js/script.js') }}"></script>
+    <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
-    <script   src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons"> </script>
-    <script  >
+    <script
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
+    </script>
+    <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -365,19 +402,21 @@ Main JavaScript
 
         gtag('config', 'G-5EJF8NFWL9');
 
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5c5e75576cb1ff3c14cbbbe8/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5c5e75576cb1ff3c14cbbbe8/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
 
     <script>
-         @if (Session::has('message'))
+        @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
                 case 'info':
@@ -395,12 +434,8 @@ Main JavaScript
                     break;
             }
         @endif
-
-
     </script>
-    <script type="text/javascript" >
-       
-
+    <script type="text/javascript">
         $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
             var googleIframe = $('#map_canvas iframe');
             googleIframe.attr('src', googleIframe.attr('src') + '');
@@ -429,8 +464,6 @@ Main JavaScript
         $(".closebtn").click(function() {
             $(this).closest("div").hide();
         });
-
-        
     </script>
 </body>
 

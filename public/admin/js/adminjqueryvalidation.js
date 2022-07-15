@@ -26,6 +26,9 @@ $(document).ready(function() {
             mainImage: {
                 required: true,
             },
+            short_description: {
+                required: true,
+            },
             description: {
                 ckrequired: true,
             },
@@ -52,6 +55,9 @@ $(document).ready(function() {
             },
             mainImage: {
                 required: "Please select main image",
+            },
+            short_description: {
+                required: "Please enter short description",
             },
             
         },

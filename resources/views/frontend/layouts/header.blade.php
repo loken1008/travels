@@ -1,7 +1,3 @@
-@php
-$prefix = Request::route()->getPrefix();
-$route = Route::current()->getName();
-@endphp
 
 <header class="header header-style-1 clearfix">
 
@@ -129,7 +125,7 @@ $route = Route::current()->getName();
                             </li>
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
-                                    <a href="{{ route('tripdetails', $cat->category_slug) }}"
+                                    <a href="#"
                                         class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">{{ $cat->category_name }}</a>
 
@@ -147,9 +143,8 @@ $route = Route::current()->getName();
                                         @foreach ($subcategory as $subcat)
                                             @if ($subcat->category_id == $cat->id)
                                                 <div class="dropdown">
-
                                                     <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
-                                                        class=" dropdown-item">{{ $subcat->sub_category_name }}
+                                                        class=" dropdown-item desktop-view">{{ $subcat->sub_category_name }}
                                                         @foreach ($subcat->tour->take(1) as $t)
                                                             @if ($subcat->id == $t->subcategory_id)
                                                                 @if ($t->status == '1')
@@ -159,6 +154,18 @@ $route = Route::current()->getName();
                                                             @endif
                                                         @endforeach
                                                     </a>
+                                                   <!-- for mobile!-->
+                                                   <a href="#"
+                                                    class=" dropdown-item mobile-view">{{ $subcat->sub_category_name }}
+                                                    @foreach ($subcat->tour->take(1) as $t)
+                                                        @if ($subcat->id == $t->subcategory_id)
+                                                            @if ($t->status == '1')
+                                                                <i class="fa fas fa-angle-right mt-1"
+                                                                    style="float:right"></i>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                </a>
 
                                                     <div class="dropdown-menu ">
                                                         @foreach ($subcat->tour as $tour)

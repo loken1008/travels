@@ -3,6 +3,14 @@
 @section('meta_title', $getTourdetails->meta_title)
 @section('meta_keywords', $getTourdetails->meta_keywords)
 @section('meta_description', $getTourdetails->meta_description)
+@section('og_title',$getTourdetails->tour_name)
+@section('og_description', $getTourdetails->meta_description)
+@section('og_image', $getTourdetails->mainImage)
+@section('og_url', url()->current())
+@section('twitter_title', $getTourdetails->tour_name)
+@section('twitter_description', $getTourdetails->meta_description)
+@section('twitter_image', $getTourdetails->mainImage)
+@section('twitter_url', url()->current())
 @section('content')
 
     <!-- Inner Section Start -->
@@ -26,7 +34,7 @@
     <section class="special-packages-sec pt-85 pb-0">
         <div class="container">
             <div class="row grid-mb">
-                <div class="col-md-9">
+                <div class="col-lg-9">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
                             <img src="{{ $getTourdetails->mainImage }}" alt="{{ $getTourdetails->img_alt }}"
@@ -45,7 +53,7 @@
                                     @endif
                                 </div>
                                 <div class="title-box">
-                                    <h4>{{ $getTourdetails->tour_name }}</h4>
+                                    <h1>{{ $getTourdetails->tour_name }}</h1>
                                     <h3>{{ $getTourdetails->country->country_name }}
                                     </h3>
                                 </div>
@@ -55,7 +63,6 @@
 
 
                             <p>{!! $getTourdetails->description !!}</p>
-                            {{-- {{dd($getTourdetails->cost_include)}} --}}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tab-style">
@@ -339,7 +346,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="information">
                         <h4>Basic Information</h4>
                         <hr>
@@ -412,14 +419,15 @@
                                     <div class="thumb">
                                         <a href="{{ route('tourdetails', $tour->slug) }}">
                                             <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                style="height:253px !important"></a>
+                                                style="height:185px !important"></a>
 
                                       
                                     </div>
-                                    <div class="content" style="height:200px">
-                                        <h6 style="color:black;font-size:16px;font-weight:bold">
-                                            {{ $tour->tour_name }}</h6>
-                                        <ul class="info mt-6">
+                                    <div class="content" >
+                                        <h1 style="color:black;font-size:15px;font-weight:bold">
+                                            {{ $tour->tour_name }}</h1>
+                                            <p>{{Str::limit($tour->short_description,80,'.')}}</p>
+                                        <ul class="info">
                                             <li><a href="#"><i
                                                         class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
                                                     Days</a>
@@ -437,10 +445,10 @@
                                            
 
                                         </ul>
-                                        <a class="btn-theme" style="float:left !important;margin-top:42px"
+                                        <a class="btn-theme" style="float:left !important;"
                                             href="{{ route('booking', $tour->slug) }}">Book
                                             Now</a>
-                                        <a class="btn-theme" style="margin-top:42px"
+                                        <a class="btn-theme" style=""
                                             href="{{ route('tourdetails', $tour->slug) }}">View
                                             Details</a>
                                     </div>
@@ -467,11 +475,11 @@
             </div>
             <div class="row">
                 @forelse($getTourdetails->blog as $blog)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-4 col-lg-4">
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $blog->slug) }}">
                                 <div class="thumb">
-                                    <img src="{{ $blog->blog_image }}" style="height:188px"
+                                    <img src="{{ $blog->blog_image }}" style="height:227px"
                                         alt="{{ $blog->img_alt }}">
                                     <div class="content">
                                         
@@ -480,22 +488,9 @@
                                 </div>
                             </a>
                             <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">
-                                <div class="d-flex" style="justify-content:space-evenly ">
-                                    <div class="admin-post"> {{ $blog->author_name }} </div>
-                                    <div class="inner d-flex">
-                                        <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i>
-                                            {{ $blog->created_at->format('M d') }}
-                                        </div>
-                                        @php
-                                            $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
-                                        @endphp
-                                        <div class="comment">
-                                            <i class="fa fa-commenting-o"></i> {{ $getcomment }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>{{ $blog->blog_title }}</h3>
+                               
+                                <h1>{{ $blog->blog_title }}</h1>
+                                <p>{!! Str::limit($blog->blog_description,100) !!}</p>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>

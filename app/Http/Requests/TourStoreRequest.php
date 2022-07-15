@@ -30,6 +30,7 @@ class TourStoreRequest extends FormRequest
             'tour_days'=>'required',
             'main_price'=>'required',
             'mainImage'=>'required',
+            'short_description'=>'required',
             'description'=>'required',
             
         ];

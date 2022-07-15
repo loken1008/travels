@@ -24,6 +24,9 @@ $(document).ready(function() {
             main_price: {
                 required: true,
             },
+            short_description: {
+                required: true,
+            },
             
             description: {
                 ckrequired: true,
@@ -49,6 +52,9 @@ $(document).ready(function() {
 
             main_price: {
                 required: "Please enter price",
+            },
+            short_description: {
+                required: "Please enter short description",
             },
             
 

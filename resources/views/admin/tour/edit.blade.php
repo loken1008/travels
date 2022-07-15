@@ -199,8 +199,15 @@
                                     value="{{ $edittour->map_url }}" name="map_url">
 
                             </div>
+                            <div class="form-group">
+                                <label for="firstName5">Short Description :<span class="text-danger">*</span></label>
+                                <textarea  class="form-control" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
+                                @error('short_description')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                         <div class="form-group">
-                            <label for="firstName5">Place Description/Image :<span class="text-danger">*</span></label>
+                            <label for="firstName5"> Description :<span class="text-danger">*</span></label>
                             <textarea id="my-editor" class="form-control" name="description" value="{{ $edittour->description }}">{{ $edittour->description }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
@@ -740,6 +747,9 @@ $(document).on('click', '.remove_field', function() {
     CKEDITOR.replaceAll();
     if (CKEDITOR.instances['meta_description']) {
    CKEDITOR.instances['meta_description'].destroy(true);
+}
+if (CKEDITOR.instances['short_description']) {
+   CKEDITOR.instances['short_description'].destroy(true);
 }
 </script>
 

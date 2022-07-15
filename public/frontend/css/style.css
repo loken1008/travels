@@ -189,9 +189,7 @@ h6 {
     -ms-transition: all 0.3s;
     transition: all 0.3s;
 }
-.read-btn:hover{
-    background-color: #F5A13A !important;
-}
+
 p {
     color: #605d5d;
     color: #575757;
@@ -2713,11 +2711,11 @@ canvas {
     display: flex;
     justify-content: space-between;
     margin-bottom:0px;
-    margin-top: 20px;
-    padding-bottom: 14px;
+    /* margin-top: 20px; */
+    /* padding-bottom: 14px; */
     width: 100%;
     position: relative;
-    top: 30px;
+    top:0px;
 }
 
 .special-places .content .info li {
@@ -2960,7 +2958,7 @@ canvas {
     width: 1px;
 }
 
-.special-packages .post-title-box .title-box h4 {
+.special-packages .post-title-box .title-box h1 {
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -2991,12 +2989,12 @@ canvas {
     /* display: inherit; */
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
+    /* margin-bottom:26px; */
     width: 100%;
     font-weight: 600;
     font-size: 12px;
     position: relative;
-    top:30px;
+    top:0px;
 }
 
 .special-packages .content .info li {
@@ -3189,11 +3187,7 @@ canvas {
     font-size: 16px;
 }
 
-.special-packages.dtl-st .post-title-box .title-box {
-    float: left;
-}
-
-.special-packages.dtl-st .post-title-box .title-box h4 {
+.special-packages.dtl-st .post-title-box .title-box h1 {
     font-size: 24px;
     margin-bottom: 3px;
 }
@@ -3850,11 +3844,10 @@ Blog Css Style
 
 .blog-post {
     background-color: #fff;
-    border: 1px solid #eee;
     margin-bottom: 30px;
     padding-bottom: 70px;
     position: relative;
-    height:300px;
+    height:370px;
 }
 
 .blog-post .thumb {
@@ -3863,7 +3856,6 @@ Blog Css Style
 }
 
 .blog-post .thumb:before {
-    /* background-color: rgba(0, 0, 0, 0.25); */
     bottom: 0;
     content: "";
     left: 0;
@@ -3881,9 +3873,7 @@ Blog Css Style
     transition: all 0.4s ease-in-out;
 }
 
-.blog-post:hover .thumb img {
-    transform: scale(1.1);
-}
+
 
 .blog-post .content {
     bottom: 0;
@@ -3898,7 +3888,9 @@ Blog Css Style
     transition: all 0.2s ease-in-out;
 }
 
-
+.blog-post h1:hover{
+    color: #F5A13A !important;
+}
 
 .blog-post .content h3 {
     color:black;
@@ -3970,15 +3962,13 @@ Blog Css Style
 }
 
 .blog-post .read-btn {
-    background-color: #0E4D94;
-    border-top: 1px solid #eee;
     bottom: 0;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
     letter-spacing: 1px;
-    padding: 16px 0;
+    padding:0px 15px;
     position: absolute;
+    border-top:0px solid white !important;
+    border: 2px solid #0E4D94;
     text-align: center;
     text-transform: capitalize;
     -webkit-transition: all 0.2s ease-in-out;
@@ -3990,8 +3980,7 @@ Blog Css Style
 }
 
 .blog-post:hover .read-btn {
-    background-color: #091426;
-    color: #fff;
+    color: #F5A13A;
 }
 
 .blog-post .read-btn i {
@@ -3999,6 +3988,7 @@ Blog Css Style
     margin-left: 14px;
     position: relative;
     top: 1px;
+    color:#0E4D94
 }
 
 
@@ -4562,18 +4552,18 @@ Features Css Style
     background-color:#0b197c;
 }
 
-.feature-item .icon-box h3 {
+.feature-item .icon-box h1 {
     font-size: 14px;
     font-weight: 600;
     text-transform: capitalize;
     color: #0E4D94;
 }
 
-.feature-item .icon-box h3 a {
+.feature-item .icon-box h1 a {
     color: #F5A13A;
 }
 
-.feature-item .content h3 a:hover {
+.feature-item .content h1 a:hover {
     color: #3abaf5;
 }
 
@@ -5425,11 +5415,11 @@ Footer Copy Right  Css Style
 }
 
 .blog-info li a,
-.blog-post h3 a {
+.blog-post h1 a {
     color: #333;
 }
 
-.blog-post h3,
+.blog-post h1,
 .blog-info {
     padding-top: 15px;
 }
@@ -5438,10 +5428,10 @@ Footer Copy Right  Css Style
     display: inline-block;
 }
 
-.blog-post h3 {
-    font-size:16px;
+.blog-post h1 {
+    font-size:14px;
     font-weight:bold;
-    color:white !important;
+    color:#0E4D94 !important;
 }
 
 .blog-post blockquote {

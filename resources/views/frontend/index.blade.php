@@ -1,8 +1,14 @@
 @extends('frontend.main')
-@section('title', 'Home')
+@section('title', 'Explore-With-Us|Home')
 @section('meta_title', $homepage->meta_title)
 @section('meta_keywords', $homepage->meta_keywords)
 @section('meta_description', $homepage->meta_description)
+@section('og_title', $homepage->title. $homepage->subtitle)
+@section('og_description', $homepage->description)
+@section('og_url', url()->current())
+@section('twitter_title', $homepage->title. $homepage->subtitle)
+@section('twitter_description', $homepage->meta_description)
+@section('twitter_url', url()->current())
 @section('content')
 
     <!-- Slick Section Start -->
@@ -141,13 +147,14 @@
                                                             <div class="thumb">
                                                                 <img src="{{ $ctour->mainImage }}"
                                                                     alt="{{ $ctour->img_alt }}"
-                                                                    style="height:215px !important">
+                                                                    style="height:185px !important">
                                                             </div>
                                                             <div class="content">
 
-                                                                <h6 style="color:black;font-size:16px;font-weight:bold">
-                                                                    {{ $ctour->tour_name }}</h6>
-                                                                <ul class="info mt-6">
+                                                                <h1 style="color:black;font-size:15px;font-weight:bold">
+                                                                    {{ $ctour->tour_name }}</h1>
+                                                                    <p>{{Str::limit($ctour->short_description,80,'.')}}</p>
+                                                                <ul class="info">
                                                                     <li><a href="#"><i
                                                                                 class="fa fa-calendar mr-2"></i>{{ $ctour->tour_days }}
                                                                             Days</a>
@@ -166,10 +173,10 @@
                     
                                                                 </ul>
                                                                 <a class="btn-theme"
-                                                                    style="float:left !important;margin-top:40px"
+                                                                    style="float:left !important;"
                                                                     href="{{ route('booking', $ctour->slug) }}">Book
                                                                     Now</a>
-                                                                <a class="btn-theme" style="margin-top:40px"
+                                                                <a class="btn-theme" style=""
                                                                     href="{{ route('tourdetails', $ctour->slug) }}">View
                                                                     Details</a>
                                                             </div>
@@ -248,12 +255,13 @@
                                         <div class="thumb">
                                             <a href="{{ route('tourdetails', $selltour->slug) }}">
                                                 <img src="{{ $selltour->mainImage }}" alt="{{ $selltour->img_alt }}"
-                                                    style="height:253px !important"></a>
+                                                    style="height:185px !important"></a>
 
                                         </div>
                                         <div class="content">
-                                            <h6 style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $selltour->tour_name }}</h6>
+                                            <h1 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $selltour->tour_name }}</h1>
+                                                <p>{{Str::limit($selltour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $selltour->tour_days }}
@@ -272,10 +280,10 @@
                                                
 
                                             </ul>
-                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
+                                            <a class="btn-theme" style="float:left !important;"
                                                 href="{{ route('booking', $selltour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:40px"
+                                            <a class="btn-theme" style=""
                                                 href="{{ route('tourdetails', $selltour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -312,12 +320,13 @@
                                         <div class="thumb">
                                             <a href="{{ route('tourdetails', $tour->slug) }}">
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                    style="height:253px !important"></a>
+                                                    style="height:185px !important"></a>
 
                                         </div>
                                         <div class="content">
-                                            <h6 style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
+                                            <h1 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h1>
+                                                <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
@@ -336,10 +345,10 @@
                                                
 
                                             </ul>
-                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
+                                            <a class="btn-theme" style="float:left !important;"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:40px"
+                                            <a class="btn-theme" style=""
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -377,12 +386,13 @@
                                         <div class="thumb">
                                             <a href="{{ route('tourdetails', $tour->slug) }}">
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                    style="height:253px !important"></a>
+                                                    style="height:185px !important"></a>
                                         </div>
 
                                         <div class="content">
-                                            <h6 style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
+                                            <h1 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h1>
+                                                <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
@@ -402,10 +412,10 @@
 
                                             </ul>
 
-                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
+                                            <a class="btn-theme" style="float:left !important;"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:40px"
+                                            <a class="btn-theme" style=""
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -441,13 +451,14 @@
                                             <a href="{{ route('tourdetails', $adventuretour->slug) }}">
                                                 <img src="{{ $adventuretour->mainImage }}"
                                                     alt="{{ $adventuretour->img_alt }}"
-                                                    style="height:253px !important"></a>
+                                                    style="height:185px !important"></a>
 
 
                                         </div>
                                         <div class="content">
-                                            <h6 style="color:black;font-size:16px;font-weight:bold">
+                                            <h1 style="color:black;font-size:15px;font-weight:bold">
                                                 {{ $adventuretour->tour_name }}</h6>
+                                                <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
@@ -467,10 +478,10 @@
 
                                             </ul>
 
-                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
+                                            <a class="btn-theme" style="float:left !important;"
                                                 href="{{ route('booking', $adventuretour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:40px"
+                                            <a class="btn-theme" style=""
                                                 href="{{ route('tourdetails', $adventuretour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -505,13 +516,14 @@
                                         <div class="thumb">
                                             <a href="{{ route('tourdetails', $tour->slug) }}">
                                                 <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                    style="height:253px !important"></a>
+                                                    style="height:185px !important"></a>
 
                                           
                                         </div>
                                         <div class="content">
-                                            <h6 style="color:black;font-size:16px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h6>
+                                            <h1 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h1>
+                                                <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
@@ -531,10 +543,10 @@
 
                                             </ul>
                                            
-                                            <a class="btn-theme" style="float:left !important;margin-top:40px"
+                                            <a class="btn-theme" style="float:left !important;"
                                                 href="{{ route('booking', $tour->slug) }}">Book
                                                 Now</a>
-                                            <a class="btn-theme" style="margin-top:40px"
+                                            <a class="btn-theme" style=""
                                                 href="{{ route('tourdetails', $tour->slug) }}">View
                                                 Details</a>
                                         </div>
@@ -570,8 +582,8 @@
                             <div class="icon-box d-flex" style="align-items: center">
                                 <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:50%"
                                     alt="">
-                                <h3 class="ml-1"><a href="{{ route('travelwithus') }}">{{ $choose->title }}</a>
-                                </h3>
+                                <h1 class="ml-1"><a href="{{ route('travelwithus') }}">{{ $choose->title }}</a>
+                                </h1>
                             </div>
                             <div class="content choosecontent" style="padding-left:60px">
 
@@ -601,31 +613,15 @@
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $blog->slug) }}">
                                 <div class="thumb">
-                                    <img src="{{ $blog->blog_image }}" style="height:188px"
+                                    <img src="{{ $blog->blog_image }}" style="height:227px"
                                         alt="{{ $blog->img_alt }}">
-                                    <div class="content">
-                                        
-                                        
-                                    </div>
+                                    
                                 </div>
                             </a>
                             <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">
-                                <div class="d-flex" style="justify-content:space-evenly ">
-                                    <div class="admin-post"> {{ $blog->author_name }} </div>
-                                    <div class="inner d-flex">
-                                        <div class="date">
-                                            <i class="fa fa-calendar-plus-o"></i>
-                                            {{ $blog->created_at->format('M d') }}
-                                        </div>
-                                        @php
-                                            $getcomment = App\Models\Comment::where('blog_id', $blog->id)->count();
-                                        @endphp
-                                        <div class="comment">
-                                            <i class="fa fa-commenting-o"></i> {{ $getcomment }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3>{{ $blog->blog_title }}</h3>
+                                
+                                <h1>{{ $blog->blog_title }}</h1>
+                                <p class="text-center">{!! Str::limit($blog->blog_description,100) !!}</p>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>

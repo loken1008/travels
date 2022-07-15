@@ -30,19 +30,6 @@
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="place">Place Name :</label>
-                                    <select class="form-control" id="firstName5" name="place_id">
-
-                                    </select>
-                                    @error('place_id')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                    <input type="text" class="form-control" id="place" value="{{ old('place_id') }}"
-                                    name="place_id">
-                                </div>
-                            </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5"> Category :<span class="text-danger">*</span></label>
@@ -198,9 +185,16 @@
                                 name="map_url">
                         </div>
 
-
                         <div class="form-group ">
-                            <label for="description">Place Description :<span class="text-danger">*</span></label>
+                            <label for="description">Short Description :<span class="text-danger">*</span></label>
+                            <textarea class="form-control " name="short_description" value={{ old('short_description') }}>{{ old('short_description') }}</textarea>
+
+                            @error('short_description')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group ">
+                            <label for="description"> Description :<span class="text-danger">*</span></label>
                             <textarea id="my-editor" class="form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
 
                             @error('description')
