@@ -330,7 +330,7 @@
                         @foreach ($edittour->itinerary as $key => $itineries)
                             <input type="hidden" name="itineraryid[]" value="{{ $itineries->id }}">
 
-                            <h6 class="font-weight-bold">Itinierary {{ $key + 1 }} Section</h6>
+                            <h6 class="font-weight-bold">Itinerary {{ $key + 1 }} Section</h6>
                             <div class="row" id="itinerary">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -359,7 +359,7 @@
                         @endforeach
                         <a href="#" class="btn btn-primary" data-toggle="modal"
                             data-target="#exampleModalLongitineries">
-                            Add More Itineries
+                            Add More Itinerary
                         </a>
                         <hr>
 
@@ -552,7 +552,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content bg-white">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Add Itineries</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add Itinerary</h5>
                                 <a href="#" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </a>

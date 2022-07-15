@@ -5,9 +5,15 @@
 @section('meta_description', $homepage->meta_description)
 @section('og_title', $homepage->title. $homepage->subtitle)
 @section('og_description', $homepage->description)
+@if (!empty($sitesetting->logo))
+@section('og_image',$sitesetting->logo)
+@endif
 @section('og_url', url()->current())
 @section('twitter_title', $homepage->title. $homepage->subtitle)
 @section('twitter_description', $homepage->meta_description)
+@if (!empty($sitesetting->logo))
+@section('twitter_image',$sitesetting->logo)
+@endif
 @section('twitter_url', url()->current())
 @section('content')
 
@@ -223,10 +229,11 @@
                         <p class="text-center" style="font-size:18px">{{ $homepage->description }}</p>
                     @endif
                     <!-- HTML !-->
-                    <a href="{{ route('introduction') }}"><button class="button-51" role="button">Discover
+                    <a href="{{ route('introduction') }}" class="mb-4"><button class="button-51" role="button">Discover
                             More</button></a>
+                            <div class="sharethis-inline-share-buttons" style="margin-top:50px"></div>
                 </div>
-
+              
             </div>
         </div>
     </section>

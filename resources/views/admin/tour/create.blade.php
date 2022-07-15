@@ -306,7 +306,7 @@
                         <hr>
                         {{-- itineries --}}
                         <div style="margin-top:60px">
-                            <h6 class="font-weight-bold">Itinierary Section</h6>
+                            <h6 class="font-weight-bold">Itinerary Section</h6>
                             <div class="row" id="itinerary">
                                 <div class="col-md-6">
                                     <div class="form-group">
