@@ -14,14 +14,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title')" />
     <meta property="og:description" content="@yield('og_description')" />
-    <meta property="og:image" content="@yield('og_image')" />
+    <meta property="og:image" content="@yield('og_image')" style="width:200px;height:200px" />
     <meta property="og:url" content="@yield('og_url')" />
     <meta property="og:site_name" content="Mountainguideinfo" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="@yield('twitter_title')">
     <meta name="twitter:description" content="@yield('twitter_description')">
-    <meta name="twitter:image" content="@yield('twitter_image')">
+    <meta name="twitter:image" content="@yield('twitter_image')" style="width:144px;height:144px">
     <meta name="twitter:site" content="Mountainguideinfo">
     <meta name="twitter:url" content="@yield('twitter_url')" />
     <!-- Favicon -->

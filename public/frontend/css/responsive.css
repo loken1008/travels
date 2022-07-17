@@ -78,7 +78,6 @@
     top: 65px !important;
     height: 323px !important;
   }
-
   #tiger {
     top: 219px !important;
     left: 689px !important;
@@ -111,7 +110,6 @@
     top: 78px !important;
     height: 323px !important;
   }
-
   #tiger {
     top: 233px !important;
     left: 689px !important;
@@ -176,24 +174,21 @@
     top: 145px !important;
     height: 290px !important;
   }
-
   #tiger {
     top: 271px !important;
     left: 623px !important;
     width: 302px !important;
   }
   .footer-copy-right p {
-    color: white !important;
+    color: #fff !important;
   }
   .forest {
     top: 270px !important;
   }
   .svg {
     height: 90% !important;
-
     margin-top: 170px !important;
   }
-
   .top-bar .social-icons ul li {
     margin-right: 11px;
   }
@@ -248,11 +243,10 @@
 @media only screen and (max-width: 991px) {
   .elephant {
     width: 308px !important;
-    left: 0px !important;
+    left: 0 !important;
     top: 334px !important;
     height: 200px !important;
   }
-
   #tiger {
     height: 155px !important;
     top: 376px !important;
@@ -271,19 +265,18 @@
   .di-menu::before {
     display: none;
   }
-
   .svg {
     margin-top: 10px !important;
   }
   .header.header-style-1 .menu-style .main-mega-menu .navbar .navbar-collapse {
-    background-color: rgba(255, 255, 255, 1) !important;
+    background-color: #fff !important;
   }
   .header .navbar-nav .active > .nav-link,
   .header .navbar-nav li .nav-link.active {
     background-color: #ffcd22;
   }
   .header .menu-style.bg-transparent .navbar-nav li a.nav-link {
-    color: black !important;
+    color: #000 !important;
   }
   .header .menu-style.bg-transparent .navbar-nav li.active a.nav-link,
   .header .menu-style.bg-transparent .navbar-nav li:focus a.nav-link,
@@ -423,7 +416,7 @@
     width: 100%;
   }
   .footer-copy-right p {
-    color: white !important;
+    color: #fff !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -432,11 +425,10 @@
   }
   .elephant {
     width: 308px !important;
-    left: 0px !important;
+    left: 0 !important;
     top: 334px !important;
     height: 200px !important;
   }
-
   #tiger {
     height: 155px !important;
     top: 376px !important;
@@ -614,7 +606,7 @@
     padding-left: 88px;
   }
   .footer-copy-right p {
-    color: white !important;
+    color: #fff !important;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -649,7 +641,7 @@
     height: 550px;
   }
   .icon-wrp {
-    padding-left: 0px;
+    padding-left: 0;
     text-align: center;
   }
   .icon-wrp #icon-menu {

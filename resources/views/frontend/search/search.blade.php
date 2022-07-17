@@ -37,8 +37,8 @@
                                    
                                 </div>
                                 <div class="content" >
-                                    <h1 style="color:black;font-size:16px;font-weight:bold">
-                                        {{ $tourdetails->tour_name }}</h1>
+                                    <h3 style="color:black;font-size:16px;font-weight:bold">
+                                        {{ $tourdetails->tour_name }}</h3>
                                         <p>{{Str::limit($tourdetails->short_description,80,'.')}}</p>
                                     <ul class="info">
                                         <li><a href="#"><i

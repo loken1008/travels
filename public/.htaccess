@@ -3,27 +3,32 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-    RewriteEngine On
+RewriteEngine On
 
     # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    RewriteCond %{HTTP_HOST} ^www\.mountainguideinfo\.com$ [NC,OR]
-    RewriteCond %{HTTP_HOST} ^(www\.)?mountainguideinfo\.ir$ [NC]
-    RewriteRule ^(.*)$ http://mountainguideinfo.com/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.mountainguideinfo\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^(www\.)?mountainguideinfo\.ir$ [NC]
+RewriteRule ^(.*)$ http://mountainguideinfo.com/$1 [R=301,L]
 
-    RewriteCond %{THE_REQUEST} /index\.php [NC]
-    RewriteRule ^(.*?)index\.php$ /$1 [L,R=302,NC,NE]
+RewriteCond %{THE_REQUEST} /index\.php [NC]
+RewriteRule ^(.*?)index\.php$ /$1 [L,R=302,NC,NE]
+    # ensure www.
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+# ensure https
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect Trailing Slashes for non-directories
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+?)/$ /$1 [L,R=301]
-
- 
-
-    # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+  # Send Requests To Front Controller...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
 </IfModule>
