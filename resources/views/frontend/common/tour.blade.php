@@ -26,8 +26,8 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                         style="height:185px !important"></a>
                             </div>
                             <div class="content" style="height:200px">
-                                <h1 style="color:black;font-size:15px;font-weight:bold">
-                                    {{ $tour->tour_name }}</h1>
+                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                    {{ $tour->tour_name }}</h3>
                                     <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                 <ul class="info">
                                     <li><a href="#"><i

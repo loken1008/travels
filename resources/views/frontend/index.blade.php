@@ -157,8 +157,8 @@
                                                             </div>
                                                             <div class="content">
 
-                                                                <h1 style="color:black;font-size:15px;font-weight:bold">
-                                                                    {{ $ctour->tour_name }}</h1>
+                                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                                    {{ $ctour->tour_name }}</h3>
                                                                     <p>{{Str::limit($ctour->short_description,80,'.')}}</p>
                                                                 <ul class="info">
                                                                     <li><a href="#"><i
@@ -252,11 +252,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
-
-                        {{-- {{dd($icategory)}} --}}
+                    <div class="specialpackages_carousel owl-carousel owl-theme owl-navst"> 
                         @if ($getTour)
                             @foreach ($getTour as $key => $selltour)
+                            @if($selltour->status == 1)
                                 <div class="item">
                                     <div class="special-packages">
                                         <div class="thumb">
@@ -266,8 +265,8 @@
 
                                         </div>
                                         <div class="content">
-                                            <h1 style="color:black;font-size:15px;font-weight:bold">
-                                                {{ $selltour->tour_name }}</h1>
+                                            <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $selltour->tour_name }}</h3>
                                                 <p>{{Str::limit($selltour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
@@ -296,6 +295,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endif
                             @endforeach
                         @endif
                     </div>
@@ -322,6 +322,7 @@
                     <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                         @if ($cattrekking)
                             @foreach ($cattrekking->tour->shuffle() as $key => $tour)
+                            @if($tour->status == 1)
                                 <div class="item">
                                     <div class="special-packages">
                                         <div class="thumb">
@@ -331,8 +332,8 @@
 
                                         </div>
                                         <div class="content">
-                                            <h1 style="color:black;font-size:15px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h1>
+                                            <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
@@ -361,6 +362,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endif
                             @endforeach
                         @endif
                     </div>
@@ -388,6 +390,7 @@
                     <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                         @if ($catpeak)
                             @foreach ($catpeak->tour->shuffle() as $key => $tour)
+                            @if($tour->status == 1)
                                 <div class="item">
                                     <div class="special-packages">
                                         <div class="thumb">
@@ -397,8 +400,8 @@
                                         </div>
 
                                         <div class="content">
-                                            <h1 style="color:black;font-size:15px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h1>
+                                            <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
@@ -428,6 +431,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endif
                             @endforeach
                         @endif
                     </div>
@@ -452,6 +456,7 @@
                     <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                         @if ($catadventure)
                             @foreach ($catadventure->tour as $key => $adventuretour)
+                            @if($adventuretour->status == 1)
                                 <div class="item">
                                     <div class="special-packages">
                                         <div class="thumb">
@@ -463,9 +468,9 @@
 
                                         </div>
                                         <div class="content">
-                                            <h1 style="color:black;font-size:15px;font-weight:bold">
+                                            <h3 style="color:black;font-size:15px;font-weight:bold">
                                                 {{ $adventuretour->tour_name }}</h6>
-                                                <p>{{Str::limit($tour->short_description,80,'.')}}</p>
+                                                <p>{{Str::limit($adventuretour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
                                                             class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
@@ -494,6 +499,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endif
                             @endforeach
                         @endif
                     </div>
@@ -518,6 +524,7 @@
                     <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
                         @if ($catnature)
                             @foreach ($catnature->tour->shuffle() as $key => $tour)
+                            @if($tour->status == 1)
                                 <div class="item">
                                     <div class="special-packages">
                                         <div class="thumb">
@@ -528,8 +535,8 @@
                                           
                                         </div>
                                         <div class="content">
-                                            <h1 style="color:black;font-size:15px;font-weight:bold">
-                                                {{ $tour->tour_name }}</h1>
+                                            <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
                                                 <li><a href="#"><i
@@ -559,6 +566,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endif
                             @endforeach
                         @endif
                     </div>
