@@ -44,6 +44,8 @@ class SiteSettingController extends Controller
         $updatelogo->logo=$request->logo?$request->logo:$updatelogo->logo;
         $updatelogo->facebook=$request->facebook;
         $updatelogo->twitter=$request->twitter;
+        $updatelogo->linkedin=$request->linkedin;
+        $updatelogo->google=$request->google;
         $updatelogo->instagram=$request->instagram;
         $updatelogo->youtube=$request->youtube;
         $updatelogo->pinterest=$request->pinterest;

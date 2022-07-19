@@ -23,6 +23,8 @@
                                             <th>Site Logo</th>
                                             <th>Facebook</th>
                                             <th>Twitter</th>
+                                            <th>Viber</th>
+                                            <th>Whatapps</th>
                                             <th>Instagram</th>
                                             <th>Youtube</th>
                                             <th>Pinterest</th>
@@ -37,6 +39,8 @@
                                                     </td>
                                                 <td>{{$logo->facebook}}</td>
                                                 <td>{{$logo->twitter}}</td>
+                                                <td>{{$logo->linkedin}}</td>
+                                                <td>{{$logo->google}}</td>
                                                 <td>{{$logo->instagram}}</td>
                                                 <td>{{$logo->youtube}}</td>
                                                 <td>{{$logo->pinterest}}</td>
@@ -105,6 +109,20 @@
                                                 <h5>Twitter :</h5>
                                                 <div class="controls">
                                                     <input type="url" name="twitter" class="form-control">
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5>Viber :</h5>
+                                                <div class="controls">
+                                                    <input type="url" name="linkedin" class="form-control" placeholder="viber://chat?number=98********">
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5>Whatapps :</h5>
+                                                <div class="controls">
+                                                    <input type="url" name="google" class="form-control" placeholder="https://wa.me/98********">
                                                    
                                                 </div>
                                             </div>
