@@ -20,12 +20,27 @@
                 align-items: center;">
                     <div class="social-icons">
                         <ul>
-                            @if (!empty($sitesetting))
-                                <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest"></i></a></li>
+                            @if (!empty($sitesetting->twitter))
+                                <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter" style="color:blue"></i></a></li>
+                            @endif
+                            @if (!empty($sitesetting->facebook))
+                                <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook" style="color:#34518C"></i></a></li>
+                            @endif
+                            @if (!empty($sitesetting->instagram))
+                                <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram" style="color:#DA61C7"></i></a></li>
+                            @endif
+                            @if (!empty($sitesetting->linkedin))
+                                <li><a href="{{ $sitesetting->linkedin }}"><img src="{{asset('/frontend/viber.webp')}}" alt="viber" style="width:25px;height:18px"></a></li>
+                            @endif
+                            @if(!empty($sitesetting->google))
+                                <li><a href="{{ $sitesetting->google }}"><i class="fa fa-whatsapp" style="color:#66C359"></i></a></li>
+                            @endif
+                            @if(!empty($sitesetting->youtube))
+                            <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube" style="color:#EB3E37"></i></a></li>
+                            @endif
+                            @if(!empty($sitesetting->pinterest))
+                                <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest" style="color:#C3322C"></i></a></li>
+
                             @endif
                         </ul>
 

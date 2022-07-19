@@ -82,13 +82,13 @@
             width: 600px;
             left: 272px;
             top: 83px;
-            opacity: 0.2;
+            opacity: 0.09;
         }
 
         #tiger {
             position: absolute;
             height: 200px;
-            opacity: 0.2;
+            opacity: 0.09;
             top: 230px;
             left: 193px;
         }
@@ -464,6 +464,7 @@ Main JavaScript
         $(".closebtn").click(function() {
             $(this).closest("div").hide();
         });
+        console.clear(); 
     </script>
 </body>
 

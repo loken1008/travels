@@ -60,6 +60,20 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <h5>Viber :</h5>
+                                            <div class="controls">
+                                                <input type="url" name="linkedin" class="form-control" value="{{$editlogo->linkedin}}">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Whatapps :</h5>
+                                            <div class="controls">
+                                                <input type="url" name="google" class="form-control" value="{{$editlogo->google}}">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <h5>Youtube :</h5>
                                             <div class="controls">
                                                 <input type="url" name="youtube" class="form-control"

@@ -3,7 +3,7 @@
         <defs>
             <style type="text/css">
                 .mount3 {
-                    fill: #dde3f7
+                    fill: #1b6180
                 }
 
                 .mount2 {
@@ -15,11 +15,12 @@
                 }
 
                 .mount1 {
-                    fill: #1b6180
+                    fill: #dde3f7
                 }
 
                 .snow {
-                    fill: white
+                    fill: whitesmoke;
+                    filter: drop-shadow(2px 5px 19px  #f19412);
                 }
             </style>
 

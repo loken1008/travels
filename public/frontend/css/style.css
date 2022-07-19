@@ -4319,7 +4319,7 @@ input[type='number'] {
   text-transform: uppercase;
 }
 .footer-item h6 span {
-  color: #f5a13a;
+  color: #ff8d00;
 }
 .footer-item .subscribe-style-two .form-control.input-subscribe {
   font-family: titillium web, sans-serif;
@@ -4785,7 +4785,7 @@ footer ul.social-icon {
   border: none;
 }
 .social-icon.bordered-theme li a {
-  color: #ff8f07;
+  color: #ff8d00;
 }
 .social-icon.bordered-theme li:hover {
   background: #f5a13a;
@@ -4912,7 +4912,7 @@ footer ul.social-icon {
   text-transform: uppercase;
 }
 .footer-title h4 span {
-  color: #f5a13a;
+  color: #ff8d00;
 }
 .border-style-1,
 .border-style-2,
