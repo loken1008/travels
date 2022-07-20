@@ -5,11 +5,11 @@
 @section('meta_description', $homepage->meta_description)
 @section('og_title', $homepage->title. $homepage->subtitle)
 @section('og_description', $homepage->description)
-@section('og_image',asset('frontend/fb.webpb'))
+@section('og_image',asset('frontend/fb.webp'))
 @section('og_url', url()->current())
 @section('twitter_title', $homepage->title. $homepage->subtitle)
 @section('twitter_description', $homepage->meta_description)
-@section('twitter_image',asset('frontend/twitter.webpb'))
+@section('twitter_image',asset('frontend/twitter.webp'))
 @section('twitter_url', url()->current())
 @section('content')
 
