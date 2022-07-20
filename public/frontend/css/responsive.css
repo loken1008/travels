@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1739px) {
   .forest{
-    top:100px !important;
+    top:127px !important;
   }
   .slide-text.st-two {
     top: 50%;
@@ -729,7 +729,6 @@
 @media only screen and (min-width: 435px) and (max-width: 481px)  {
   .forest {
     top: 1250px !important;
-    height:100px !important;
   }
   #tiger {
     top: 1232px !important;
@@ -747,7 +746,6 @@
 @media only screen and (min-width:391px) and (max-width: 435px){
   .forest {
     top: 1270px !important;
-    height:97px !important;
   }
   #tiger {
     top: 1250px !important;
@@ -835,7 +833,6 @@
 
   .forest{
     top: 1300px !important;
-    height: 94px !important;
   }
   #tiger {
     width: 113px !important;
@@ -935,15 +932,15 @@
   .footer-copy-right {
     margin-top: -20px;
   }
-  .forest{
-    height:100px !important;
-  }
+
   #tiger {
-    width: 137px !important;
-    height: 84px !important;
+    width: 100px !important;
+    height: 46px !important;
+    left: 145px !important;
   }
   .elephant {
-    width:200px !important;
+    width: 100px !important;
+    height: 70px !important;
   }
   .svg {
     height: 256% !important;
