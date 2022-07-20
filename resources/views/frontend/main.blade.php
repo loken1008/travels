@@ -103,7 +103,7 @@
         .baloon {
             position: absolute;
             z-index: 0;
-            left: 43vw;
+            left: 0vw;
             bottom:21vh;
             animation: float 10s linear infinite;
             ;
