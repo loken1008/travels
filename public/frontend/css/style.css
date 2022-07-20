@@ -621,7 +621,7 @@ input:-moz-placeholder {
   text-transform: uppercase;
   z-index: 1;
 }
-.section-title h2 {
+.section-title h2,.home-title h1 {
   color: #363d48;
   font-family: titillium web, sans-serif;
   font-size: 22px;
@@ -1676,7 +1676,7 @@ a.dropdown-item.active {
   width: 370px;
   z-index: -2;
 }
-.package-box h1 {
+.package-box h2 {
   color: #fff;
   font-family: titillium web, sans-serif;
   font-size: 60px;
@@ -1685,7 +1685,7 @@ a.dropdown-item.active {
   margin-bottom: 18px;
   text-transform: uppercase;
 }
-.package-box h1 span {
+.package-box h2 span {
   color: #df2b18;
 }
 .package-box h4 {
@@ -3226,7 +3226,7 @@ canvas {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.blog-post h1:hover {
+.blog-post h3:hover {
   color: #f5a13a !important;
 }
 .blog-post .content h3 {
@@ -3755,16 +3755,16 @@ input[type='number'] {
 .feature-item:hover {
   background-color: #0b197c;
 }
-.feature-item .icon-box h1 {
+.feature-item .icon-box h3 {
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   color: #0e4d94;
 }
-.feature-item .icon-box h1 a {
+.feature-item .icon-box h3 a {
   color: #f5a13a;
 }
-.feature-item .content h1 a:hover {
+.feature-item .content h3 a:hover {
   color: #3abaf5;
 }
 .feature-item .content p {
@@ -4351,6 +4351,7 @@ input[type='number'] {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.9px;
+  text-align:center;
 }
 .footer-copy-right a {
   color: #f5a13a;
@@ -4403,17 +4404,17 @@ input[type='number'] {
   margin-left: 70px;
 }
 .blog-info li a,
-.blog-post h1 a {
+.blog-post h3 a {
   color: #333;
 }
-.blog-post h1,
+.blog-post h3,
 .blog-info {
   padding-top: 15px;
 }
 .blog-info > li {
   display: inline-block;
 }
-.blog-post h1 {
+.blog-post h3 {
   font-size: 14px;
   font-weight: 700;
   color: #0e4d94 !important;
@@ -4982,7 +4983,7 @@ footer ul.social-icon {
   border-color: #f5a13a;
 }
 .subscribe-style-two .btn-subscribe:hover {
-  background: #333;
+  background: #0E4D94;
 }
 .footer-item .newsletter-text {
   position: relative;

@@ -1,46 +1,6 @@
 <div class="svg ">
-    <svg class="mountains" width="100%" viewBox="0 0 2000 400">
-        <defs>
-            <style type="text/css">
-                .mount3 {
-                    fill: #1b6180
-                }
-
-                .mount2 {
-                    fill: white
-                }
-
-                .mount4 {
-                    fill: white
-                }
-
-                .mount1 {
-                    fill: #dde3f7
-                }
-
-                .snow {
-                    fill: whitesmoke;
-                    filter: drop-shadow(2px 5px 19px  #f19412);
-                }
-            </style>
-
-        </defs>
-        <g id="mounts">
-            <path class="mount1" d="M0 275 150 250 550 100 800 250 1200 150 1500 25 2000 300 2000 400 0 400" />
-            <path class="snow" d="M 495 120 550 100 600 130 575 125 550 130 535 115" />
-            <path class="snow" d="M 1380 75 1500 25 1635 100 1550 75 1500 85 1450 75" />
-            <path class="mount3"
-                d="M0 350 350 225 500 300 800 200 1000 275 1250 200 1500 250 1850 175 2000 250 2000 400 0 400" />
-            <path class="mount2" d="M0 400 650 250 900 300 1550 250 2000 300 2000 400" />
-            <path class="mount4" d="M0 350 450 300 800 350 1200 300 1500 350 1750 275 2000 200 2000 400 0 400" />
-
-            <g id="sendit">
-                <use xlink:href="#bear" fill="#1B0D03" x="3880" y="350" transform="scale(0.5)" />
-            </g>
-        </g>
-    </svg>
-
-    <svg class="baloon">
+ 
+     <svg class="baloon">
         <g id="baloon">
             <circle cx="50" cy="50" r="20" fill="#29ABE2" />
             <polygon points="34 62 66 62 56 75 45 75" fill="#29ABE2" />
@@ -768,262 +728,132 @@ c-98 -545 -131 -696 -167 -772 -32 -68 -63 -187 -111 -426 -20 -100 -93 -379
 122 19 12 7 122 33 245 58 122 24 224 47 227 49 16 17 16 -7 -1 -97z" />
         </g>
     </svg>
-
-    <div class="invisible">
-
-
-        <svg id="bear">
-            <g>
-                <path
-                    d="
-                 M10 25
-                 18 22
-                 20 20
-                 30 20
-                 40 22
-                 55 30
-                 80 30
-                 90 40
-                 92 50
-                 90 60
-                 92 75
-                 85 80
-                 70 80
-                 70 75
-                 75 70
-                 70 60
-                 62 62
-                 50 62
-                 48 75
-                 45 80
-                 35 80
-                 30 75
-                 35 72
-                 32 60
-                 30 50
-                 25 38
-                 15 35
-                 10 30">
-                    <animate id="bearhead" dur="3s" begin="3s;bearhead.end+5s" attributeName="d" fill="freeze"
-                        values="
-                 M10 25
-                 18 22
-                 20 20
-                 30 20
-                 40 22
-                 55 30
-                 80 30
-                 90 40
-                 92 50
-                 90 60
-                 92 75
-                 85 80
-                 70 80
-                 70 75
-                 75 70
-                 70 60
-                 62 62
-                 50 62
-                 48 75
-                 45 80
-                 35 80
-                 30 75
-                 35 72
-                 32 60
-                 30 50
-                 25 38
-                 15 35
-                 10 30;
-                 
-                 M12 20
-                 20 18
-                 22 17
-                 30 18
-                 40 22
-                 55 30
-                 80 30
-                 90 40
-                 92 50
-                 90 60
-                 92 75
-                 85 80
-                 70 80
-                 70 75
-                 75 70
-                 70 60
-                 62 62
-                 50 62
-                 48 75
-                 45 80
-                 35 80
-                 30 75
-                 35 72
-                 32 60
-                 30 50
-                 25 38
-                 15 30
-                 12 25;
-                
-                M10 25
-                 18 22
-                 20 20
-                 30 20
-                 40 22
-                 55 30
-                 80 30
-                 90 40
-                 92 50
-                 90 60
-                 92 75
-                 85 80
-                 70 80
-                 70 75
-                 75 70
-                 70 60
-                 62 62
-                 50 62
-                 48 75
-                 45 80
-                 35 80
-                 30 75
-                 35 72
-                 32 60
-                 30 50
-                 25 38
-                 15 35
-                 10 30;" />
-                </path>
-            </g>
-        </svg>
-
-
-
-    </div>
-    <footer class="bg-faded pt-70 pb-70 bg-theme-color-2">
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="footer-item footer-widget-one">
-                            @if (!empty($sitesetting->logo))
-                                <img class="footer-logo mb-25" src="{{ $sitesetting->logo }}" alt="">
-                            @endif
-                            <h6>Follow<span> Us</span></h6>
-                            <ul class="social-icon bg-transparent bordered-theme">
-                                @if ($sitesetting)
-                                    <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube"
-                                                aria-hidden="true"></i></a></li>
-                                    <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest"
-                                                aria-hidden="true"></i></a></li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="footer-item">
-                            <div class="footer-title">
-                                <h4>Our <span>Services</span></h4>
-                                <div class="border-style-3"></div>
-                            </div>
-                            <ul class="footer-list">
-                                <li><a href="{{ route('travelwithus') }}">Why Travels With Us</a></li>
-                                <li><a href="{{ route('paymentmethod') }}">Payment Method</a></li>
-                                <li><a href="{{ route('termsconditions') }}"">Terms and Conditions</a></li>
-                                <li><a href="{{ route('privacypolicy') }}"">Privacy Policies</a></li>
-                                <li><a href="{{ route('customer.register') }}">Sign up </a></li>
-                                <li><a href="{{ route('customer.login') }}">Log in account</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="footer-item">
-                            <div class="footer-title">
-                                <h4>Usefull <span>Links</span></h4>
-                                <div class="border-style-3"></div>
-                            </div>
-                            <ul class="footer-list">
-                                <li><a href="{{ route('introduction') }}">About Us</a></li>
-                                <li><a href="{{ route('ourteam') }}">Team</a></li>
-                                <li><a href="{{ route('allgallery') }}">Gallery</a></li>
-                                <li><a href="{{ route('allblogs') }}">Blogs</a></li>
-                                <li><a href="{{ route('all.reviews') }}">Read Reviews</a></li>
-                                <li><a href="{{ route('contactus') }}">Contact</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="footer-item">
-                            <div class="footer-title">
-                                <h4>Quick <span>Contact</span></h4>
-                                <div class="border-style-3"></div>
-                            </div>
-                            <ul class="footer-list footer-contact mb-10" style="color:black;font-weight:bold">
-                                @if (isset($getcontact))
-                                    <li><i class="pe-7s-call"></i> <a
-                                            href="tel:{{ $getcontact->phone }}">{{ $getcontact->phone }}</a></li>
-                                    <li><i class="pe-7s-print"></i> <a
-                                            href="tel:{{ $getcontact->fax }}">{{ $getcontact->fax }}</a></li>
-                                    <li><i class="pe-7s-mail"></i> <a
-                                            href="mailto:{{ $getcontact->email }}">{{ $getcontact->email }}</a>
-                                    </li>
-                                @endif
-                            </ul>
-                            <div class="footer-item">
-                                <h6>News <span>letter</span></h6>
-                                @if (\Session::has('success'))
-                                    <div class="alert alert-success">
-                                        <p>{{ \Session::get('success') }}</p>
-                                    </div><br />
-                                @endif
-                                @if (\Session::has('failure'))
-                                    <div class="alert alert-danger">
-                                        <p>{{ \Session::get('failure') }}</p>
-                                    </div><br />
-                                @endif
-                                <form method="post" action="{{ url('newsletter') }}">
-                                    @csrf
-                                    <div class="input-group subscribe-style-two">
-                                        <input type="email" class="form-control input-subscribe"
-                                            placeholder="Email" name="email">
-
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-subscribe" type="submit">Subscribe</button>
-                                        </span>
-
-                                    </div>
-                                    @error('email')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <section class="footer-copy-right  text-white p-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p>© {{ Carbon\Carbon::now()->format('Y') }}, All Rights Reserved, Design & Developed By:<a
-                            href="https://www.dristicode.com/" target="__blank"> Dristicode Solutions Pvt. Ltd</a></p>
-
-                </div>
-            </div>
-        </div>
-    </section>
+  
 </div>
+<footer class="bg-faded pt-70 bg-theme-color-2">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-item footer-widget-one">
+                        @if (!empty($sitesetting->logo))
+                            <img class="footer-logo mb-25" src="{{ $sitesetting->logo }}" alt="">
+                        @endif
+                        <h6>Follow<span> Us</span></h6>
+                        <ul class="social-icon bg-transparent bordered-theme">
+                            @if ($sitesetting)
+                                <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter"
+                                            aria-hidden="true"></i></a></li>
+                                <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram"
+                                            aria-hidden="true"></i></a></li>
+                                <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook"
+                                            aria-hidden="true"></i></a></li>
+                                <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube"
+                                            aria-hidden="true"></i></a></li>
+                                <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest"
+                                            aria-hidden="true"></i></a></li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            <h4>Our <span>Services</span></h4>
+                            <div class="border-style-3"></div>
+                        </div>
+                        <ul class="footer-list">
+                            <li><a href="{{ route('travelwithus') }}">Why Travels With Us</a></li>
+                            <li><a href="{{ route('paymentmethod') }}">Payment Method</a></li>
+                            <li><a href="{{ route('termsconditions') }}"">Terms and Conditions</a></li>
+                            <li><a href="{{ route('privacypolicy') }}"">Privacy Policies</a></li>
+                            <li><a href="{{ route('customer.register') }}">Sign up </a></li>
+                            <li><a href="{{ route('customer.login') }}">Log in account</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            <h4>Usefull <span>Links</span></h4>
+                            <div class="border-style-3"></div>
+                        </div>
+                        <ul class="footer-list">
+                            <li><a href="{{ route('introduction') }}">About Us</a></li>
+                            <li><a href="{{ route('ourteam') }}">Team</a></li>
+                            <li><a href="{{ route('allgallery') }}">Gallery</a></li>
+                            <li><a href="{{ route('allblogs') }}">Blogs</a></li>
+                            <li><a href="{{ route('all.reviews') }}">Read Reviews</a></li>
+                            <li><a href="{{ route('contactus') }}">Contact</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            <h4>Quick <span>Contact</span></h4>
+                            <div class="border-style-3"></div>
+                        </div>
+                        <ul class="footer-list footer-contact mb-10" style="color:black;font-weight:bold">
+                            @if (isset($getcontact))
+                                <li><i class="pe-7s-call"></i> <a
+                                        href="tel:{{ $getcontact->phone }}">{{ $getcontact->phone }}</a></li>
+                                <li><i class="pe-7s-print"></i> <a
+                                        href="tel:{{ $getcontact->fax }}">{{ $getcontact->fax }}</a></li>
+                                <li><i class="pe-7s-mail"></i> <a
+                                        href="mailto:{{ $getcontact->email }}">{{ $getcontact->email }}</a>
+                                </li>
+                            @endif
+                        </ul>
+                        <div class="footer-item">
+                            <h6>News <span>letter</span></h6>
+                            @if (\Session::has('success'))
+                                <div class="alert alert-success">
+                                    <p>{{ \Session::get('success') }}</p>
+                                </div><br />
+                            @endif
+                            @if (\Session::has('failure'))
+                                <div class="alert alert-danger">
+                                    <p>{{ \Session::get('failure') }}</p>
+                                </div><br />
+                            @endif
+                            <form method="post" action="{{ url('newsletter') }}">
+                                @csrf
+                                <div class="input-group subscribe-style-two">
+                                    <input type="email" class="form-control input-subscribe"
+                                        placeholder="Email" name="email">
+
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-subscribe" type="submit">Subscribe</button>
+                                    </span>
+
+                                </div>
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<section class="footer-copy-right  text-white p-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>© {{ Carbon\Carbon::now()->format('Y') }}, All Rights Reserved, Design & Developed By:<a
+                        href="https://www.dristicode.com/" target="__blank"> Dristicode Solutions Pvt. Ltd</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
