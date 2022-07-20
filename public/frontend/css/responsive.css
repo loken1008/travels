@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1739px) {
+  .forest{
+    top:100px !important;
+  }
   .slide-text.st-two {
     top: 50%;
   }
@@ -51,6 +54,18 @@
   }
   .svg {
     margin-top: 170px !important;
+  }
+}
+@media only screen and (min-width: 1739px) {
+  .forest{
+    top:260px !important;
+  }
+  .elephant{
+    top:130px !important;
+  }
+  #tiger{
+    top: 434px !important;
+    left: 1210px !important;
   }
 }
 @media only screen and (max-width: 1479px) {
@@ -107,13 +122,13 @@
   .elephant {
     width: 511px !important;
     left: 107px !important;
-    top: 78px !important;
+    top:0px !important;
     height: 323px !important;
   }
   #tiger {
-    top: 233px !important;
-    left: 689px !important;
-    width: 380px !important;
+    top:170px !important;
+    left:715px !important;
+    width: 320px !important;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -171,17 +186,18 @@
   .elephant {
     width: 435px !important;
     left: 137px !important;
-    top: 145px !important;
-    height: 290px !important;
+    top:64px !important;
+    height: 260px !important;
   }
   #tiger {
-    top: 271px !important;
-    left: 623px !important;
-    width: 302px !important;
+    top:174px !important;
+    left: 683px !important;
+    width:300px !important;
+    height:160px !important;
   }
-
+ 
   .forest {
-    top: 270px !important;
+    top:150px !important;
   }
   .svg {
     height: 90% !important;
@@ -239,18 +255,13 @@
   }
 }
 @media only screen and (max-width: 991px) {
-  .elephant {
-    width: 308px !important;
-    left: 0 !important;
-    top: 334px !important;
-    height: 200px !important;
-  }
-  #tiger {
-    height: 155px !important;
-    top: 376px !important;
-    left: 668px !important;
-    width: 317px;
-  }
+  .baloon {
+    bottom:-50vh !important;
+}
+
+.birds {
+  bottom:10vh !important;
+}
   .desktop-view {
     display: none;
   }
@@ -402,9 +413,7 @@
   .contact-section .style-2 {
     border-top: 1px solid #ffcd22;
   }
-  .forest {
-    top: 700px !important;
-  }
+ 
   .svg {
     height: 83% !important;
   }
@@ -419,15 +428,19 @@
   .feature-item {
     height: 315px;
   }
+  .forest {
+    top: 650px !important;
+  }
+  
   .elephant {
     width: 380px !important;
     left: 100px !important;
-    top:600px !important;
+    top:550px !important;
     height: 240px !important;
   }
   #tiger {
     height: 155px !important;
-    top:727px !important;
+    top:648px !important;
     left:399px !important;
     width: 317px;
   }
@@ -594,14 +607,16 @@
     top: 1240px !important;
   }
   #tiger {
-    top: 1235px !important;
-    left: 365px !important;
-    width: 188.9px !important;
+    top: 1253px !important;
+    left:360px !important;
+    width: 184.9px !important;
+    height: 100px !important;
   }
   .elephant {
-    width: 531px !important;
-    left:-64px !important;
-    top: 1158px !important;
+    width: 363px !important;
+    left: -22px !important;
+    top: 1141px !important;
+    height: 200px !important;
   }
 
 }
@@ -699,24 +714,26 @@
     top: 1245px !important;
   }
   #tiger {
-    top: 1220px !important;
-    left: 274px !important;
+    top: 1251px !important;
+    left: 300px !important;
     width: 140px !important;
-    height: 130px !important;
+    height: 100px !important;
   }
   .elephant {
     width: 210px !important;
     left: 36px !important;
-    top: 1165px !important;
+    top: 1225px !important;
+    height: 100px !important;
   }
 }
 @media only screen and (min-width: 435px) and (max-width: 481px)  {
   .forest {
     top: 1250px !important;
+    height:100px !important;
   }
   #tiger {
-    top: 1256px !important;
-    left: 221px !important;
+    top: 1232px !important;
+    left: 223px !important;
     width: 120px !important;
     height: 100px !important;
   }
@@ -730,6 +747,7 @@
 @media only screen and (min-width:391px) and (max-width: 435px){
   .forest {
     top: 1270px !important;
+    height:97px !important;
   }
   #tiger {
     top: 1250px !important;
@@ -817,17 +835,19 @@
 
   .forest{
     top: 1300px !important;
+    height: 94px !important;
   }
   #tiger {
     width: 113px !important;
-    top: 1270px !important;
-    left: 176px !important;
-    height: 100px !important;
+    top: 1300px !important;
+    left: 227px !important;
+    height: 71px !important;
   }
   .elephant {
     width: 149px !important;
-    top: 1245px !important;
-    height:100px !important;
+    top: 1269px !important;
+    height: 100px !important;
+    left: 25px !important;
   }
   .carousel-item {
     height: 360px;
@@ -916,15 +936,14 @@
     margin-top: -20px;
   }
   .forest{
-    width:131% !important;
+    height:100px !important;
   }
   #tiger {
-    width:80px !important;
-    height:80px !important;
-    /* top:1590px !important; */
+    width: 137px !important;
+    height: 84px !important;
   }
   .elephant {
-    width: 180px !important;
+    width:200px !important;
   }
   .svg {
     height: 256% !important;

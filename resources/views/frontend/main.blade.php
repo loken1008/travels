@@ -14,14 +14,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title')" />
     <meta property="og:description" content="@yield('og_description')" />
-    <meta property="og:image" content="@yield('og_image')"/>
+    <meta property="og:image" content="@yield('og_image')" />
     <meta property="og:url" content="@yield('og_url')" />
     <meta property="og:site_name" content="Mountainguideinfo" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="@yield('twitter_title')">
     <meta name="twitter:description" content="@yield('twitter_description')">
-    <meta name="twitter:image" content="@yield('twitter_image')" >
+    <meta name="twitter:image" content="@yield('twitter_image')">
     <meta name="twitter:site" content="Mountainguideinfo">
     <meta name="twitter:url" content="@yield('twitter_url')" />
     <!-- Favicon -->
@@ -47,19 +47,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-   
+
 
     <style>
         .svg {
             position: absolute;
-            /* height: 40%; */
+            height: 40% !important;
             width: 100vw;
             /* background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 34%) !important; */
         }
-      
+
         .forest {
             position: absolute;
-            top: 200px;
+            top: 130px;
             z-index: 1;
         }
 
@@ -67,16 +67,18 @@
             position: absolute;
             width: 600px;
             left: 272px;
-            top: 83px;
+            top: 0px;
             opacity: 0.09;
+            height: 400px;
         }
 
         #tiger {
             position: absolute;
-            height: 200px;
+            height: 168px;
             opacity: 0.09;
-            top: 230px;
-            left: 193px;
+            top: 253px;
+            left: 984px;
+            width: 450px;
         }
 
         @keyframes pulse {
@@ -101,8 +103,8 @@
         .baloon {
             position: absolute;
             z-index: 0;
-            left:44vw;
-            bottom:0vh;
+            left: 43vw;
+            bottom:21vh;
             animation: float 10s linear infinite;
             ;
         }
@@ -124,7 +126,7 @@
         .birds {
             z-index: 4;
             position: absolute;
-            bottom: -25vh;
+            bottom: 25vh;
             animation: flying 30s linear infinite;
         }
 
@@ -437,7 +439,7 @@ Main JavaScript
         $(".closebtn").click(function() {
             $(this).closest("div").hide();
         });
-        console.clear(); 
+        console.clear();
     </script>
 </body>
 
