@@ -5,15 +5,11 @@
 @section('meta_description', $homepage->meta_description)
 @section('og_title', $homepage->title. $homepage->subtitle)
 @section('og_description', $homepage->description)
-@if (!empty($sitesetting->logo))
-@section('og_image',$sitesetting->logo)
-@endif
+@section('og_image',asset('frontend/fb.webpb'))
 @section('og_url', url()->current())
 @section('twitter_title', $homepage->title. $homepage->subtitle)
 @section('twitter_description', $homepage->meta_description)
-@if (!empty($sitesetting->logo))
-@section('twitter_image',$sitesetting->logo)
-@endif
+@section('twitter_image',asset('frontend/twitter.webpb'))
 @section('twitter_url', url()->current())
 @section('content')
 
@@ -63,7 +59,7 @@
                                 <!-- Package Box -->
                                 @if ($getcoupon)
                                     <div class="package-box mt-4">
-                                        <h1><span>{{ $getcoupon->discount_amount }}%</span> off</h1>
+                                        <h2><span>{{ $getcoupon->discount_amount }}%</span> off</h2>
                                         <h4>on all package</h4>
                                         <h4>{{ $getcoupon->coupon_name }}</h4>
                                     </div>
@@ -220,9 +216,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="section-title text-center mt-4">
+                    <div class="section-title home-title text-center mt-4">
                         @if (!empty($homepage->title))
-                            <h2 style="color:#0E4D94;text-transformation:capitalize">{{ $homepage->title }}</h2>
+                            <h1 style="color:#0E4D94;text-transformation:capitalize">{{ $homepage->title }}</h1>
                         @endif
                     </div>
                     @if (!empty($homepage->description))
@@ -597,8 +593,8 @@
                             <div class="icon-box d-flex" style="align-items: center">
                                 <img src="{{ $choose->image }}" style="height: 50px;width:50px;border-radius:50%"
                                     alt="">
-                                <h1 class="ml-1"><a href="{{ route('travelwithus') }}">{{ $choose->title }}</a>
-                                </h1>
+                                <h3 class="ml-1"><a href="{{ route('travelwithus') }}">{{ $choose->title }}</a>
+                                </h3>
                             </div>
                             <div class="content choosecontent" style="padding-left:60px">
 
@@ -635,7 +631,7 @@
                             </a>
                             <a href="{{ route('blogsdetails', $blog->slug) }}" class="read-btn">
                                 
-                                <h1>{{ $blog->blog_title }}</h1>
+                                <h3>{{ $blog->blog_title }}</h3>
                                 <p class="text-center">{!! Str::limit($blog->blog_description,100) !!}</p>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
@@ -652,7 +648,7 @@
 
 
     <!-- Gallery Section Start -->
-    <section class="gallery-section pt-15 pb-80">
+    <section class="gallery-section pt-15">
         <div class="container">
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)

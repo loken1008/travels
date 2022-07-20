@@ -14,14 +14,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title')" />
     <meta property="og:description" content="@yield('og_description')" />
-    <meta property="og:image" content="@yield('og_image')" style="width:200px;height:200px" />
+    <meta property="og:image" content="@yield('og_image')"/>
     <meta property="og:url" content="@yield('og_url')" />
     <meta property="og:site_name" content="Mountainguideinfo" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="@yield('twitter_title')">
     <meta name="twitter:description" content="@yield('twitter_description')">
-    <meta name="twitter:image" content="@yield('twitter_image')" style="width:144px;height:144px">
+    <meta name="twitter:image" content="@yield('twitter_image')" >
     <meta name="twitter:site" content="Mountainguideinfo">
     <meta name="twitter:url" content="@yield('twitter_url')" />
     <!-- Favicon -->
@@ -52,25 +52,11 @@
     <style>
         .svg {
             position: absolute;
-            height: 40%;
+            /* height: 40%; */
             width: 100vw;
-            background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 34%) !important;
+            /* background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 34%) !important; */
         }
-
-        .invisible {
-            display: none;
-        }
-
-        .mountains {
-            position: absolute;
-            z-index: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 500px;
-        }
-
-
+      
         .forest {
             position: absolute;
             top: 200px;
@@ -114,9 +100,9 @@
 
         .baloon {
             position: absolute;
-            z-index: 3;
-            left: 20vw;
-            bottom: 35vh;
+            z-index: 0;
+            left:44vw;
+            bottom:0vh;
             animation: float 10s linear infinite;
             ;
         }
@@ -138,7 +124,7 @@
         .birds {
             z-index: 4;
             position: absolute;
-            bottom: 45vh;
+            bottom: -25vh;
             animation: flying 30s linear infinite;
         }
 
@@ -188,16 +174,6 @@
             transition: .5s ease-in-out;
         }
 
-
-
-        @media screen and (max-width: 1280px) {
-
-            .mountains {
-                width: 150%;
-                height: 400px;
-            }
-        }
-
         @media screen and (max-width: 760px) {
 
 
@@ -209,9 +185,6 @@
                 transform: scale(0.8, 0.8);
             }
 
-            .mountains {
-                width: 200%;
-            }
         }
 
         @media screen and (max-width: 480px) {
