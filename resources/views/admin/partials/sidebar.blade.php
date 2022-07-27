@@ -86,17 +86,15 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/tour')?'active':''}}">
                 <a href="#">
                     <i class="fa  fa-institution"></i>
-                    <span>Tours</span>
+                    <span>Tour Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
 
-                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tours</a></li>
                     <li class="{{($route=='tour.create')?'active':''}}"><a class="{{($route=='tour.create')?'active':''}}" href="{{route('tour.create')}}"><i class="ti-more"></i>Add Tour</a></li>
-                    <li class="{{($route=='itinery.view')?'active':''}}"><a class="{{($route=='itinery.view')?'active':''}}" href="{{route('itinery.view')}}"><i class="ti-more"></i>View Itineries/Equipment</a></li>
-                    <li class="{{($route=='itinery.create')?'active':''}}"><a class="{{($route=='itinery.create')?'active':''}}" href="{{route('itinery.create')}}"><i class="ti-more"></i>Add Itinerary/Equipment</a></li>
+                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tour</a></li>
                 
                     </li>
                 </ul>

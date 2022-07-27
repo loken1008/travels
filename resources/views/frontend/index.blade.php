@@ -157,8 +157,9 @@
                                                                     {{ $ctour->tour_name }}</h3>
                                                                     <p>{{Str::limit($ctour->short_description,80,'.')}}</p>
                                                                 <ul class="info">
-                                                                    <li><i class="fa fa-calendar mr-2"></i>{{ $ctour->tour_days }}
-                                                                            Days
+                                                                    <li><a href="#"><i
+                                                                                class="fa fa-calendar mr-2"></i>{{ $ctour->tour_days }}
+                                                                            Days</a>
                                                                         </li>
                                                                     <li>  
                                                                         @if ($getcoupon)
@@ -264,8 +265,9 @@
                                                 {{ $selltour->tour_name }}</h3>
                                                 <p>{{Str::limit($selltour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $selltour->tour_days }}
-                                                        Days
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $selltour->tour_days }}
+                                                        Days</a>
                                                     </li>
                                                 <li>  
                                                     @if ($getcoupon)
@@ -330,8 +332,9 @@
                                                 {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                        Days
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                                        Days</a>
                                                     </li>
                                                 <li>  
                                                     @if ($getcoupon)
@@ -397,8 +400,9 @@
                                                 {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                        Days
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                                        Days</a>
                                                     </li>
                                                 <li>  
                                                     @if ($getcoupon)
@@ -464,8 +468,9 @@
                                                 {{ $adventuretour->tour_name }}</h6>
                                                 <p>{{Str::limit($adventuretour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
-                                                        Days
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $adventuretour->tour_days }}
+                                                        Days</a>
                                                     </li>
                                                 <li>  
                                                     @if ($getcoupon)
@@ -530,8 +535,9 @@
                                                 {{ $tour->tour_name }}</h3>
                                                 <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                             <ul class="info mt-6">
-                                                <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                                        Days
+                                                <li><a href="#"><i
+                                                            class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                                        Days</a>
                                                     </li>
                                                 <li>  
                                                     @if ($getcoupon)
