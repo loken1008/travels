@@ -3189,10 +3189,11 @@ canvas {
 }
 .blog-post {
   background-color: #fff;
+  box-shadow: 0px 0px 5px;
   margin-bottom: 30px;
   padding-bottom: 70px;
   position: relative;
-  height: 370px;
+  height: 320px;
 }
 .blog-post .thumb {
   position: relative;
@@ -3340,7 +3341,7 @@ canvas {
   margin-bottom: 30px;
 }
 .blog-details .details-content h4 {
-  color: #000;
+  color:#0E4D94;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.8px;
@@ -4414,7 +4415,7 @@ input[type='number'] {
   display: inline-block;
 }
 .blog-post h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: #0e4d94 !important;
 }

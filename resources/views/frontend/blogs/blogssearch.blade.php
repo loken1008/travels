@@ -38,7 +38,6 @@
                             <a href="{{ route('blogsdetails', $getblog->slug) }}" class="read-btn">
                                
                                 <h3>{{ $getblog->blog_title }}</h3>
-                                <p>{!! Str::limit($getblog->blog_description,100) !!}</p>
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>
