@@ -45,9 +45,8 @@
                                     {{ $tourdetails->tour_name }}</h1>
                                     <p>{{Str::limit($tourdetails->short_description,80,'.')}}</p>
                                 <ul class="info ">
-                                    <li><a href="#"><i
-                                                class="fa fa-calendar mr-2"></i>{{ $tourdetails->tour_days }}
-                                            Days</a>
+                                    <li><i class="fa fa-calendar mr-2"></i>{{ $tourdetails->tour_days }}
+                                            Days
                                         </li>
                                     <li>  
                                         @if ($getcoupon)

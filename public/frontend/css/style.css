@@ -182,7 +182,7 @@ div {
   transition: all 0.4s;
 }
 a {
-  color: #000;
+  color: #0E4D94;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -918,7 +918,6 @@ a.scrollup:focus i {
 }
 .top-bar .social-icons ul li a {
   color: #000;
-  font-size: 15px;
 }
 .header.header-style-2 .menu-style.bg-transparent {
   background-color: #fff !important;

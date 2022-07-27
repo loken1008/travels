@@ -5,8 +5,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 d-flex">
-
-
                     <div class="contact-info">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if (!empty($sitesetting->logo))
@@ -29,12 +27,6 @@
                             @if (!empty($sitesetting->instagram))
                                 <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram" style="color:#DA61C7"></i></a></li>
                             @endif
-                            @if (!empty($sitesetting->linkedin))
-                                <li><a href="{{ $sitesetting->linkedin }}"><img src="{{asset('/frontend/viber.webp')}}" alt="viber" style="width:25px;height:18px"></a></li>
-                            @endif
-                            @if(!empty($sitesetting->google))
-                                <li><a href="{{ $sitesetting->google }}"><i class="fa fa-whatsapp" style="color:#66C359"></i></a></li>
-                            @endif
                             @if(!empty($sitesetting->youtube))
                             <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube" style="color:#EB3E37"></i></a></li>
                             @endif
@@ -43,8 +35,9 @@
 
                             @endif
                         </ul>
-
-
+                        <div>
+                       
+                        </div>
                     </div>
                     <!-- header dropdown buttons -->
                     <div class="dropdown-buttons">
@@ -57,20 +50,22 @@
                                     <button type="submit"> <i class="fa fa-search form-control-feedback"></i></button>
                                 </div>
                             </form>
-                            {{-- </li>
-                            </ul> --}}
                         </div>
 
                     </div>
                     <!-- main-menu end -->
                 </div>
 
-                <div class="col-md-5"
-                    style="display: flex;
-                justify-content: space-between;
-                align-items: center;">
-                    <span
-                        class="font-weight-bold text-dark">{{ Carbon\Carbon::now('Asia/Kathmandu')->format('Y-M-d | h:i:s A') }}</span>
+                <div class="col-md-5"style="display: flex;justify-content:space-evenly; align-items: center;">
+                 @if (!empty($sitesetting->linkedin))
+                 <a href="{{ $sitesetting->linkedin }}"><img src="{{asset('/frontend/viber.webp')}}" alt="viber" style="width:50px;height:33px"></a>
+             @endif
+             @if(!empty($sitesetting->google))
+                 <a href="{{ $sitesetting->google }}"><i class="fa fa-whatsapp" style="color:#66C359;font-size:30px"></i></a>
+             @endif
+             @if(!empty($getcontact->phone))
+                    <span class="font-weight-bold text-dark">{{ $getcontact->mobile }}</span>
+                @endif
                     <div class="social-icons">
 
                         <ul>
