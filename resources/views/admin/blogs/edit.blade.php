@@ -54,7 +54,7 @@
                             <div class="col-md-12">
                             <div class="form-group">
                                 <label for="firstName5"> Description : <span class="text-danger">*</span></label>
-                              <textarea id="my-editor"  class="form-control" name="blog_description" value={{$editblog->blog_description}}>{{$editblog->blog_description}}</textarea>
+                              <textarea id="my-editor"  class="form-control" name="blog_description" value="{{$editblog->blog_description}}">{{$editblog->blog_description}}</textarea>
                               @error('blog_description')
                               <span class="text-danger">{{$message}}</span>
                               @enderror
