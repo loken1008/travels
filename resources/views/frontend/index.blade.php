@@ -665,6 +665,8 @@
                 @endforeach
 
             </div>
+
+
         </div>
         @if ($gallery->count() > 0)
             <div class="text-center mt-4" style="display: flex !important;justify-content: space-around;">
