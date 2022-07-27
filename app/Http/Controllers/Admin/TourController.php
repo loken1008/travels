@@ -10,8 +10,6 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Tour;
 use App\Models\Images;
-use App\Models\Equipment;
-use App\Models\Itinerary;
 use App\Models\DatesPrices;
 use App\Models\FQA;
 use Carbon\Carbon;
@@ -23,12 +21,12 @@ class TourController extends Controller
 {
     public function viewTour()
     {
-        $gettour = Tour::with('images', 'category', 'subcategory','country')
+        $gettour = Tour::with('images', 'category', 'subcategory', 'country')
             ->orderBy('id', 'desc')
             ->get();
         return view('admin.tour.index', compact('gettour'));
     }
-    
+
     public function createTour()
     {
         $getplace = Place::orderBy('place_name', 'asc')->get();
@@ -36,13 +34,13 @@ class TourController extends Controller
             ->where('status', '=', '1')
             ->get();
         $getcategory = Category::orderBy('category_name', 'asc')->get();
-        $getsubcategory = Subcategory::orderBy('sub_category_name','asc')->get();
-        return view('admin.tour.create',compact(
-                'getcountry',
-                'getplace',
-                'getcategory',
-                'getsubcategory',
-            )
+        $getsubcategory = Subcategory::orderBy(
+            'sub_category_name',
+            'asc'
+        )->get();
+        return view(
+            'admin.tour.create',
+            compact('getcountry', 'getplace', 'getcategory', 'getsubcategory')
         );
     }
 
@@ -60,7 +58,7 @@ class TourController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
-            'slug'=>Str::slug($request->tour_name),
+            'slug' => Str::slug($request->tour_name),
             'is_best_selling' => $request->is_best_selling,
             'altitude' => $request->altitude,
             'tour_days' => $request->tour_days,
@@ -80,63 +78,37 @@ class TourController extends Controller
             'meta_description' => $request->meta_description,
             'created_at' => Carbon::now(),
         ]);
-if($request->images){
-        Images::insert([
-            'tour_id' => $tour_id,
-            'images' => $request->images,
-            'created_at' => Carbon::now(),
-        ]);
-    }
+        if ($request->images) {
+            Images::insert([
+                'tour_id' => $tour_id,
+                'images' => $request->images,
+                'created_at' => Carbon::now(),
+            ]);
+        }
 
         foreach ($request->start_date as $key => $value) {
-            if($request->start_date[$key]!=null){
-            DatesPrices::create([
-                'tour_id' => $tour_id,
-                'start_date' => $request->start_date[$key],
-                'end_date' => $request->end_date[$key],
-                'price' => $request->price[$key],
-                'seats_available' => $request->seats_available[$key],
-                'created_at' => Carbon::now(),
-            ]);
-        }
+            if ($request->start_date[$key] != null) {
+                DatesPrices::create([
+                    'tour_id' => $tour_id,
+                    'start_date' => $request->start_date[$key],
+                    'end_date' => $request->end_date[$key],
+                    'price' => $request->price[$key],
+                    'seats_available' => $request->seats_available[$key],
+                    'created_at' => Carbon::now(),
+                ]);
+            }
         }
 
- 
-   
-        foreach ($request->equipment_name as $key1 => $value1) {
-            if($request->equipment_name[$key1]!=null){
-            Equipment::create([
-                'tour_id' => $tour_id,
-                'equipment_name' => $request->equipment_name[$key1],
-                'equipment_description' =>
-                    $request->equipment_description[$key1],
-                'created_at' => Carbon::now(),
-            ]);
-        }
-        }
-   
-   
-        foreach ($request->day_title as $key2 => $value2) {
-            if($request->day_title[$key2]!=null){
-            Itinerary::create([
-                'tour_id' => $tour_id,
-                'day_title' => $request->day_title[$key2],
-                'long_description' => $request->long_description[$key2],
-                'created_at' => Carbon::now(),
-            ]);
-        }
-    }
-   
         foreach ($request->question as $key3 => $value3) {
-            if($request->question[$key3]!=null){
-            $fqa = new FQA();
-            $fqa->tour_id = $tour_id;
-            $fqa->question = $request->question[$key3];
-            $fqa->answer = $request->answer[$key3];
-            $fqa->created_at = Carbon::now();
-            $fqa->save();
+            if ($request->question[$key3] != null) {
+                $fqa = new FQA();
+                $fqa->tour_id = $tour_id;
+                $fqa->question = $request->question[$key3];
+                $fqa->answer = $request->answer[$key3];
+                $fqa->created_at = Carbon::now();
+                $fqa->save();
+            }
         }
-    }
         $notification = [
             'message' => 'tour Insert Successfully',
             'alert-type' => 'success',
@@ -178,13 +150,14 @@ if($request->images){
             'images',
             'fqa'
         )->findOrfail($id);
-        return view( 'admin.tour.edit',
+        return view(
+            'admin.tour.edit',
             compact(
                 'edittour',
                 'getcountry',
                 'getplace',
                 'getcategory',
-                'getsubcategory',
+                'getsubcategory'
             )
         );
     }
@@ -196,7 +169,7 @@ if($request->images){
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'tour_name' => $request->tour_name,
-            'slug'=>Str::slug($request->tour_name),
+            'slug' => Str::slug($request->tour_name),
             'is_best_selling' => $request->is_best_selling,
             'altitude' => $request->altitude,
             'tour_days' => $request->tour_days,
@@ -204,7 +177,7 @@ if($request->images){
             'transport' => $request->transport,
             'main_price' => $request->main_price,
             'cost_include' => $request->cost_include,
-            'cost_exclude' =>$request->cost_exclude,
+            'cost_exclude' => $request->cost_exclude,
             'description' => $request->description,
             'short_description' => $request->short_description,
             'map_url' => $request->map_url,
@@ -212,7 +185,9 @@ if($request->images){
                 ? $request->mainImage
                 : $utour->mainImage,
             'img_alt' => $request->img_alt,
-            'trip_map' => $request->trip_map?$request->trip_map:$utour->trip_map,
+            'trip_map' => $request->trip_map
+                ? $request->trip_map
+                : $utour->trip_map,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
             'meta_keywords' => $request->meta_keywords,
@@ -221,7 +196,9 @@ if($request->images){
 
         $uimages = Images::where('tour_id', $id)->first();
         Images::where('tour_id', $id)->update([
-            'images' => $request->images ? $request->images :$uimages->images??'',
+            'images' => $request->images
+                ? $request->images
+                : $uimages->images ?? '',
             'updated_at' => Carbon::now(),
         ]);
 
@@ -253,19 +230,7 @@ if($request->images){
             }
         } else {
         }
-        if ($request->itineraryid) {
-            foreach ($request->itineraryid as $key2 => $value2) {
-                $data2 = [
-                    'day_title' => $request->day_title[$key2],
-                    'long_description' => $request->long_description[$key2],
-                    'updated_at' => Carbon::now(),
-                ];
-                Itinerary::where('id', $request->itineraryid[$key2])->update(
-                    $data2
-                );
-            }
-        } else {
-        }
+   
 
         if ($request->faqid) {
             foreach ($request->faqid as $key3 => $value3) {
@@ -419,7 +384,10 @@ if($request->images){
 
     public function getTrashedTour()
     {
-        $trashedTour = Tour::with('country','category','subcategory')->onlyTrashed()->orderBy('deleted_at','desc')->get();
+        $trashedTour = Tour::with('country', 'category', 'subcategory')
+            ->onlyTrashed()
+            ->orderBy('deleted_at', 'desc')
+            ->get();
         // dd($trashedTour);
         return view('admin.tour.trash.trash', compact('trashedTour'));
     }
