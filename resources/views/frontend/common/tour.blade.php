@@ -1,5 +1,5 @@
 @php
-$getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->get();
+$getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->limit(12)->get();
 
 @endphp
  
@@ -30,9 +30,8 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                     {{ $tour->tour_name }}</h3>
                                     <p>{{Str::limit($tour->short_description,80,'.')}}</p>
                                 <ul class="info">
-                                    <li><a href="#"><i
-                                                class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
-                                            Days</a>
+                                    <li><i class="fa fa-calendar mr-2"></i>{{ $tour->tour_days }}
+                                            Days
                                         </li>
                                     <li>  
                                         @if ($getcoupon)
