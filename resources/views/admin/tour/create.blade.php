@@ -56,13 +56,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="tourname"> Tour Name :<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="tourname" value="{{ old('tour_name') }}"
-                                        name="tour_name">
+                                    <input type="text" class="form-control" id="tourname"
+                                        value="{{ old('tour_name') }}" name="tour_name">
                                     @error('tour_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                               
+                                <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
                             </div>
                             {{-- <div class="col-md-6">
                                 <div class="form-group">
@@ -78,7 +78,41 @@
                                     @enderror
                                 </div>
                             </div> --}}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="altitude">Altitude :</label>
+                                    <input type="text" class="form-control" id="altitude"
+                                        value="{{ old('altitude') }}" name="altitude">
 
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tourdays">Tour Days :<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="tourdays"
+                                        value="{{ old('tour_days') }}" name="tour_days">
+                                    @error('tour_days')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="accomodation">Accomodation :</label>
+                                    <input type="text" class="form-control" id="accomodation"
+                                        value="{{ old('accomodation') }}" name="accomodation">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="transport">Transport :</label>
+                                    <input type="text" class="form-control" id="transport"
+                                        value="{{ old('transport') }}" name="transport">
+
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price"> Price :<span class="text-danger">*</span></label>
@@ -90,15 +124,66 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="price"> Best Selling:</label>
-<br>
-                                    <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
+                                <label for="firstName5"> Main Image :<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lfms" data-input="mainthumbnail" data-preview="holder"
+                                            class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="mainthumbnail" class="form-control" type="text" name="mainImage">
+
                                 </div>
-                             
+                                <img id="holder1" style="margin-top:15px;max-height:100px;">
+                                @error('mainImage')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="firstName5"> Image Alt Text :</label>
+                                <div class="input-group">
+
+                                    <input id="img_alt" class="form-control" type="text" name="img_alt">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <label for="firstName5"> Related Images :</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <a id="lfm" data-input="thumbnail" data-preview="holder"
+                                            class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                    </span>
+                                    <input id="thumbnail" class="form-control" type="text" name="images">
+                                </div>
+                                <img id="holder" style="margin-top:15px;max-height:100px;">
+
                             </div>
                         </div>
-                       
+                        <div class="form-group">
+                            <label for="firstName5"> Trip Map :</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                        <a id="tlfms" data-input="tripthumbnail" data-preview="holder2"
+                                            class="btn btn-primary">
+                                            <i class="fa fa-picture-o"></i> Choose
+                                        </a>
+                                </span>
+                                <input  id="tripthumbnail" class="form-control" type="text" name="trip_map">
+
+                            </div>
+                            <img id="holder2" style="margin-top:15px;max-height:100px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="mapurl"> Map Url :</label>
+                            <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
+                                name="map_url">
+                        </div>
 
                         <div class="form-group ">
                             <label for="description">Short Description :<span class="text-danger">*</span></label>
@@ -108,288 +193,203 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <ul class="nav nav-tabs nav-fill" role="tablist">
-                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#description"
-                                    role="tab"><span></span> <span class="hidden-xs-down ml-15">Description</span></a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#fact"
-                                    role="tab"><span></span> <span class="hidden-xs-down ml-15">Facts Info</span></a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#image"
-                                    role="tab"><span></span> <span class="hidden-xs-down ml-15">Image</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#costdetails"
-                                    role="tab"><span></span> <span class="hidden-xs-down ml-15">Cost Details</span></a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#dateprice"
-                                role="tab"><span></span> <span class="hidden-xs-down ml-15">Date/Price</span></a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#faq"
-                            role="tab"><span></span> <span class="hidden-xs-down ml-15">FAQ</span></a>
-                    </li>
+                        <div class="form-group ">
+                            <label for="description"> Description :<span class="text-danger">*</span></label>
+                            <textarea id="my-editor" class="form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
 
-                        </ul>
-                        <div class="tab-content tabcontent-border">
-                            <div class="tab-pane active" id="description" role="tabpanel">
-                                <div class="p-15 mb-50">
-                                    <div class="form-group ">
-                                        <label for="description"> Description :<span class="text-danger">*</span></label>
-                                        <textarea id="my-editor" class="form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
+                            @error('description')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <hr>
+                        <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
+                        <div class="row">
 
-                                        @error('description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="fact" role="tabpanel">
-                                <div class="p-15 mb-50 row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="altitude">Altitude :</label>
-                                            <input type="text" class="form-control" id="altitude"
-                                                value="{{ old('altitude') }}" name="altitude">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="tourdays">Tour Days :<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="tourdays"
-                                                value="{{ old('tour_days') }}" name="tour_days">
-                                            @error('tour_days')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="accomodation">Accomodation :</label>
-                                            <input type="text" class="form-control" id="accomodation"
-                                                value="{{ old('accomodation') }}" name="accomodation">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="transport">Transport :</label>
-                                            <input type="text" class="form-control" id="transport"
-                                                value="{{ old('transport') }}" name="transport">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="image" role="tabpanel">
-                                <div class="p-15 mb-50 row">
-                                    <div class="col-md-6">
-                                        <label for="firstName5"> Main Image :<span class="text-danger">*</span></label>
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="lfms" data-input="mainthumbnail" data-preview="holder"
-                                                    class="btn btn-primary">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                            </span>
-                                            <input id="mainthumbnail" class="form-control" type="text"
-                                                name="mainImage">
-
-                                        </div>
-                                        <img id="holder1" style="margin-top:15px;max-height:100px;">
-                                        @error('mainImage')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="firstName5"> Image Alt Text :</label>
-                                        <div class="input-group">
-
-                                            <input id="img_alt" class="form-control" type="text" name="img_alt">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-
-                                        <label for="firstName5"> Related Images :</label>
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="lfm" data-input="thumbnail" data-preview="holder"
-                                                    class="btn btn-primary">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                            </span>
-                                            <input id="thumbnail" class="form-control" type="text" name="images">
-                                        </div>
-                                        <img id="holder" style="margin-top:15px;max-height:100px;">
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="firstName5"> Trip Map :</label>
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="tlfms" data-input="tripthumbnail" data-preview="holder2"
-                                                    class="btn btn-primary">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                            </span>
-                                            <input id="tripthumbnail" class="form-control" type="text"
-                                                name="trip_map">
-
-                                        </div>
-                                        <img id="holder2" style="margin-top:15px;max-height:100px;">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="mapurl"> Map Url :</label>
-                                        <input type="text" class="form-control" id="mapurl"
-                                            value="{{ old('map_url') }}" name="map_url">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="costdetails" role="tabpanel">
-                                <div class="p-15 mb-50">
-                                    <h6 class="font-weight-bold">Cost Include/Exclude Section</h6>
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="costinclude">Cost Include :</label>
-                                                <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="costinclude">Cost Include :</label>
+                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
                                         {{ old('cost_include') }}
                                     </textarea>
 
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="costexclude">Cost Exclude :</label>
-                                                <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
-                                                        {{ old('cost_exclude') }}
-                                                </textarea>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="dateprice" role="tabpanel">
-                                <div class="p-15 mb-50">
-                                    <h6 class="font-weight-bold">Dates/Price</h6>
-                                    <div class="row dateprice" id="dynamicAddRemove">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="startdate">Start Date :</label>
-                                                <input class="form-control" name="start_date[]" type="date"
-                                                    min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="enddate"> End Date :</label>
-                                                <input class="form-control" id="id_ed" name="end_date[]"
-                                                    type="date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="seatsavailable">Seats Available :</label>
-                                                <input type="text" class="form-control" id="seatsavailable"
-                                                    name="seats_available[]">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="price"> Price :</label>
-                                                <input type="text" class="form-control" id="price"
-                                                    name="price[]">
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="" style="margin-left:-9px !important ">
-                                        <a href="javascript:void(0)" id="dynamic-ar"
-                                            class="btn btn-rounded btn-success pull-left addMore"></span>
-                                            Add More</a>
-                                        
-                                    </div>
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="costexclude">Cost Exclude :</label>
+                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
+                                        {{ old('cost_exclude') }}
+                                  </textarea>
 
-                            <div class="tab-pane " id="faq" role="tabpanel">
-                                <div class="p-15 mb-50">
-                            <div >
-                                <h6 class="font-weight-bold mt-4">FAQ</h6>
-                                <div class="row " id="faq">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Question :</label>
-
-                                            <input type="text" name="question[]" class=" form-control"
-                                                id="id_ct0">
-
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="firstName5"> Answer :</label>
-                                            <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="" style="margin-left:-9px !important">
-                                    <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
-                                        id="add_field_button"></span>
-                                        Add More</a>
-                                </div>
-                            </div>
-                                </div>
-                            </div>
-                            <div class="text-center bg-info text-white">
-                                <a  data-toggle="collapse" href="#collapseExample" class="text-white">Meta Details</a>
-                            </div>
-                           
-
-                            <div class="collapse" id="collapseExample">
-                                <div class="p-15 mb-50">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="metatitle"> Meta Title :</label>
-                                            <input type="text" class="form-control" id="metatitle"
-                                                value="{{ old('meta_title') }}" name="meta_title">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="metakeywords"> Meta Keywords :</label>
-                                            <input type="text" class="form-control" id="metakeywords"
-                                                value="{{ old('meta_keywords') }}" name="meta_keywords">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="metadescription"> Meta Description :</label>
-                                            <textarea type="text" class="form-control" id="metadescription" value="{{ old('meta_description') }}"
-                                                name="meta_description">{{ old('meta_description') }}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="" style="margin-top:20px">
+                        <hr>
+                        {{-- dateprice --}}
+                        <div>
+                            <h6 class="font-weight-bold">Dates/Price</h6>
+                            <div class="row dateprice" id="dynamicAddRemove">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="startdate">Start Date :</label>
+                                        <input class="form-control" name="start_date[]" type="date"
+                                            min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" id="id_ct">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="enddate"> End Date :</label>
+                                        <input class="form-control" id="id_ed" name="end_date[]" type="date"
+                                            min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="seatsavailable">Seats Available :</label>
+                                        <input type="text" class="form-control" id="seatsavailable"
+                                            name="seats_available[]">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="price"> Price :</label>
+                                        <input type="text" class="form-control" id="price" name="price[]">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="" style="margin-left:-9px !important ">
+                                <a href="javascript:void(0)" id="dynamic-ar"
+                                    class="btn btn-rounded btn-success pull-left addMore"></span>
+                                    Add More</a>
+                                {{-- <a href="#" name="add" id="dynamic-ar" class="btn btn-rounded btn-success pull-right">Add
+                            </a> --}}
+                            </div>
+                        </div>
+                        <hr>
+                        {{-- equipment --}}
+                        <div style="margin-top:60px">
+                            <h6 class="font-weight-bold">Equipments Section</h6>
+                            <div class="row " id="equipment">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="equipmentname">Equipment Name :</label>
+                                        <input type="text" class="form-control" id="equipmentname"
+                                            name="equipment_name[]">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="edescription"> Description :</label>
+                                        <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
+
+                                    </textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" id="addequipment"
+                                    class="btn btn-rounded btn-success pull-left addMoreequipment"></span>
+                                    Add More</a>
+                            </div>
+                        </div>
+                        <hr>
+                        {{-- itineries --}}
+                        <div style="margin-top:60px">
+                            <h6 class="font-weight-bold">Itinerary Section</h6>
+                            <div class="row" id="itinerary">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="daytitle">Day Title :</label>
+                                        <input type="text" class="form-control" id="daytitle" name="day_title[]">
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="longdescription"> Long Description :<span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="editor4" name="long_description[]" rows="10" cols="80">
+
+                                    </textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
+                                    id="addMoreitinerary"></span>
+                                    Add More</a>
+                            </div>
+                        </div>
+                        {{-- itineries --}}
+                        <div style="margin-top:60px">
+                            <h6 class="font-weight-bold mt-4">FAQ</h6>
+                            <div class="row " id="faq">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Question :</label>
+
+                                        <input type="text" name="question[]" class=" form-control" id="id_ct0">
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName5"> Answer :</label>
+                                        <textarea class="form-control" name="answer[]" rows="10" cols="10"></textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="" style="margin-left:-9px !important">
+                                <a href="javascript:void(0)" class="btn btn-rounded btn-success pull-left "
+                                    id="add_field_button"></span>
+                                    Add More</a>
+                            </div>
+                        </div>
+                        <div style="margin-top:80px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metatitle"> Meta Title :</label>
+                                        <input type="text" class="form-control" id="metatitle"
+                                            value="{{ old('meta_title') }}" name="meta_title">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metakeywords"> Meta Keywords :</label>
+                                        <input type="text" class="form-control" id="metakeywords"
+                                            value="{{ old('meta_keywords') }}" name="meta_keywords">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="metadescription"> Meta Description :</label>
+                                        <textarea type="text" class="form-control" id="metadescription" value="{{ old('meta_description') }}"
+                                            name="meta_description">{{ old('meta_description') }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box-footer" style="margin-top:60px">
                             <input id="submit-templateeditor" type="submit" class="btn btn-rounded btn-info pull-right"
                                 value="Add Tour">
                         </div>

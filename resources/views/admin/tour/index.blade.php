@@ -35,6 +35,7 @@ $route = Route::current()->getName();
                                         <th>Tour Name</th> 
                                         <th>Is Best Selling</th>   
                                         <th>Status</th>
+                                        <th>images</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -55,6 +56,22 @@ $route = Route::current()->getName();
                                                     data-on="Enabled" data-off="Disabled" data-onstyle="success"
                                                     data-offstyle="danger">
 
+                                            </td>
+                                            <td>
+                                                <img src="{{ $tour->mainImage }}" alt="" width="100px" height="100px"
+                                                style="padding-top:10px">
+                                                {{-- @forelse($tour->images as $image)
+                                                    @php
+                                                        $imagess = explode(',', $image->images);
+                                                        
+                                                    @endphp
+                                                    @foreach ($imagess as $images)
+                                                        <img src="{{ $images }}" alt="" width="100px" height="100px"
+                                                            style="padding-top:10px">
+                                                    @endforeach
+                                                @empty
+                                                    <p>No Image</p>
+                                                @endforelse --}}
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary {{ $route == 'tour.viewdetails' ? 'active' : '' }}"
