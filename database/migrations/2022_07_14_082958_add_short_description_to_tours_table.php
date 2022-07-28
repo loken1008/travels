@@ -14,7 +14,7 @@ class AddShortDescriptionToToursTable extends Migration
     public function up()
     {
         Schema::table('tours', function (Blueprint $table) {
-            $table->string('short_description')->nullable()->after('description');
+            $table->longText('short_description')->nullable()->after('description');
         });
     }
 
