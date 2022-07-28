@@ -36,11 +36,11 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                     <li>  
                                         @if ($getcoupon)
                                         <p>
-                                            <strike  class="text-danger"><span>$ </span>{{ $tour->main_price }}</strike> <span>$ </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                            <strike  class="text-danger">$ {{ $tour->main_price }}</strike> $ {{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                         </p>
                                       
                                     @else
-                                        <p><span>$ </span>{{ $tour->main_price }}</p>
+                                        <p>$ {{ $tour->main_price }}</p>
                                     @endif
                                 </li>
                                    

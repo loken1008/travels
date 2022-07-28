@@ -47,11 +47,11 @@
                                         <li>  
                                             @if ($getcoupon)
                                             <p>
-                                                <strike  class="text-danger"><span>$ </span>{{ $tourdetails->main_price }}</strike> <span>$ </span>{{ $tourdetails->main_price - ($getcoupon->discount_amount / 100) * $tourdetails->main_price }}
+                                                <strike  class="text-danger">$ {{ $tourdetails->main_price }}</strike> <span>$ </span>{{ $tourdetails->main_price - ($getcoupon->discount_amount / 100) * $tourdetails->main_price }}
                                             </p>
                                           
                                         @else
-                                            <p><span>$ </span>{{ $tourdetails->main_price }}</p>
+                                            <p>$ {{ $tourdetails->main_price }}</p>
                                         @endif
                                     </li>
                                        
