@@ -16,7 +16,7 @@ class AddSlugAndImgAltAndMetaTitleAndMetaKeywordsAndMetaDescriptionToTours exten
         Schema::table('tours', function (Blueprint $table) {
             $table->string('slug')->after('tour_name');
             $table->string('img_alt')->after('mainImage')->nullable();
-            $table->string('meta_title')->after('status')->nullable();
+            $table->longText('meta_title')->after('status')->nullable();
             $table->longText('meta_keywords')->after('meta_title')->nullable();
             $table->longText('meta_description')->after('meta_keywords')->nullable();
 
