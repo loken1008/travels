@@ -43,13 +43,13 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                         <img src="{{asset('tripadvisor.svg')}}" alt=""
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='google')
-                                        <img src="{{asset('google.png')}}" alt=""
+                                        <img src="{{asset('google.webp')}}" alt=""
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='facebook')
                                         <img src="{{asset('facebook.svg')}}" alt=""
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @else
-                                        <img src="{{asset('mg.png')}}" alt=""
+                                        <img src="{{asset('mg.webp')}}" alt=""
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @endif
                                     </div>
