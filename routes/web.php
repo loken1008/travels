@@ -259,6 +259,14 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
 
         Route::post('/update/pagebanner/{id}', [App\Http\Controllers\Admin\SiteSettingController::class, 'pageBannerUpdate'])->name('update.pagebanner');
         Route::get('/delete/pagebanner/{id}', [App\Http\Controllers\Admin\SiteSettingController::class, 'pageBannerDelete'])->name('delete.pagebanner');
+
+        Route::get('/affaliated', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedView'])->name('all.affaliated');
+        Route::post('/store/affaliated', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedStore'])->name('store.affaliated');
+        Route::get('/edit/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedEdit'])->name('edit.affaliated');
+        Route::post('/update/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedUpdate'])->name('update.affaliated');
+        Route::get('/delete/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedDelete'])->name('delete.affaliated');
+        Route::get('/affilated/active/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affilatedActive'])->name('active.affaliated');
+        Route::get('/affilated/inactive/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affilatedInactive'])->name('inactive.affaliated');
     });
 
     Route::group(['prefix' => '/mountainguide-filemanager'], function () {
