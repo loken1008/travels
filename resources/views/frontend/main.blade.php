@@ -317,6 +317,9 @@
                 padding: 16px 32px;
             }
         }
+        .affailated{
+            background:#081846;
+        }
     </style>
 
 </head>
