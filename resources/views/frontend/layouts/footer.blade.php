@@ -2,6 +2,7 @@
 use App\Models\Affilated;
 $affilated = Affilated::orderBy('id', 'desc')->get();
 @endphp
+@if($affilated->count()>0)
 <div class="special-packages-sec pt-30 pb-0 affailated">
     <div class="container">
         <div class="row">
@@ -32,6 +33,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
         </div>
     </div>
 </div>
+@endif
 <div class="svg ">
 
     <svg class="baloon">
