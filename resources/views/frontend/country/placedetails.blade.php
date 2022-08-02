@@ -50,7 +50,7 @@
                                 <div class="item">
                                     <div class="special-places">
                                         <div class="thumb">
-                                            <a href="{{ route('tourdetails', $tour->tour_name) }}"><img src="{{ $tour->mainImage }}" alt="" style="height:215px"></a>
+                                            <a href="{{ route('tourdetails', $tour->tour_name) }}"><img src="{{ $tour->mainImage }}" alt="{{$tour->img_alt}}" style="height:215px"></a>
                                         </div>
                                         <div class="content">
                                             <div class="price-box">

@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 body {
   background-color: #fff;
   color: #5a5555;
@@ -2368,8 +2369,9 @@ canvas {
   height: 34px;
   left: 0;
   position: absolute;
-  width: 10px;
+  width:22px;
   padding-top: 7px;
+  padding-left:5px;
 }
 .testimonials-post .owl-next{
   position: absolute;
@@ -2390,9 +2392,7 @@ canvas {
 .tab-style nav {
   margin-bottom: 0;
 }
-.tab-style .nav.nav-tabs {
-  border-bottom: 5px solid #f7f7f7;
-}
+
 .tab-style .nav.nav-tabs .nav-item {
   background-color: #0e4d94;
   border: medium;
@@ -2402,7 +2402,7 @@ canvas {
   font-weight: 700;
   letter-spacing: 0.8px;
   margin-bottom: 4px;
-  margin-right: 19px;
+  margin-right: 1px;
   min-width: 122px;
   padding: 10px 20px;
   text-align: center;
@@ -2423,7 +2423,7 @@ canvas {
   border-radius: 0;
   height: 30px;
   line-height: 18px;
-  width: 10px;
+  width:22px;
 }
 .owl-navst.st-two.owl-theme .owl-nav .owl-prev {
   right: 49px;
@@ -2691,7 +2691,7 @@ canvas {
   font-size: 15px;
 }
 .special-packages.dtl-st .content p {
-  font-size: 16px;
+  font-size: 17px;
   word-spacing: 2px;
   margin-bottom: 0;
   margin-top: 0;
@@ -3733,34 +3733,38 @@ input[type='number'] {
 .feature-section {
   background-position: center center;
   background-size: cover;
-  padding: 70px 0 77px;
+  padding: 70px 30px 77px;
   position: relative;
   z-index: 1;
+  height:auto;
 }
 .feature-section.over-layer-black:before {
   background-color: rgba(255, 255, 255, 0.93);
 }
 .feature-item {
-  background-color: #0e4d94;
-  color: #fff;
-  padding: 15px 30px;
+  color: black;
+  padding:20px 30px 40px 30px;
   text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 3px #000;
-  height: 200px;
+  height:auto;
 }
-.feature-item:hover {
-  background-color: #0b197c;
+.feature-item img{
+  height: 150px;
+  width: 50%;
+  margin-left:10px;
+  border-radius: 7px;
+  box-shadow: 10px 10px 15px #d5c9c9;
 }
+
 .feature-item .icon-box h3 {
-  font-size: 14px;
-  font-weight: 600;
+  font-size:22px;
+  font-weight:700;
   text-transform: capitalize;
-  color: #0e4d94;
+  color:#ef7900;
 }
 .feature-item .icon-box h3 a {
   color: #f5a13a;
@@ -3769,10 +3773,20 @@ input[type='number'] {
   color: #3abaf5;
 }
 .feature-item .content p {
-  color: #fff;
-  font-size: 14px;
+  color:black;
+  font-size: 16px;
   line-height: 24px;
-  text-align: left;
+  letter-spacing:-0.4px !important;
+  text-align:justify;
+}
+.frow{
+  justify-content: center;
+}
+.dheading{
+  color:#0E4D94;
+}
+.detailscontent{
+  border:none !important;
 }
 .global-section {
   background-position: center center;
@@ -5831,4 +5845,86 @@ footer ul.social-icon {
   padding-left: 15px;
   font-weight: 800;
   color: #fff;
+}
+.popular-trekking .item{
+box-shadow:0 0 10px;
+margin-bottom:10px;
+}
+.popular-trekking .item .content{
+ border:0px;
+}
+
+
+.tawk-button{
+  background-color:#0E4D94 !important;
+}
+.affailated img{
+  height:50px;
+  width:65px;
+  margin:5px 5px;
+  box-shadow: 0px 0px 5px;
+  border-radius:5px
+}
+.affailated .ap{
+  justify-content:center;flex-wrap: wrap;
+}
+
+
+.dropdown1 .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 10px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown1:hover .dropbtn {
+  color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  padding: 16px;
+  color: white;
+}
+
+.dropdown1:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 16px;
+  background-color:white;
+  height:auto;
+}
+
+.column a {
+  float: none;
+  padding:0px 28px 5px 0px !important;
+  text-decoration: none;
+  text-align: left;
+  text-transform: capitalize !important;
+  color:black;
+  font-size: 14px;
+  padding: 8px 16px 12px;
+  text-transform: capitalize;
+}
+
+.column a:hover {
+  color:#0E4D94;
 }

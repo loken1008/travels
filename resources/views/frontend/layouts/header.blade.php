@@ -8,7 +8,7 @@
                     <div class="contact-info">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if (!empty($sitesetting->logo))
-                                <img id="logo_img" src="{{ $sitesetting->logo }}" alt="" style="height:100px">
+                                <img id="logo_img" src="{{ $sitesetting->logo }}" alt="mountainguideinfo-logo" style="height:100px">
                             @endif
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                     <div class="social-icons">
 
                         <ul>
-                            <a href="{{ route('contactus') }}" class="text-dark font-weight-bold">Contact Us |</a>
+                           <li><a href="{{ route('contactus') }}" class="text-dark font-weight-bold">Contact Us</a></li> 
 
                             @if (!empty(
                                 Auth()->guard('customer')->user()
@@ -129,14 +129,34 @@
                         <ul class="navbar-nav ml-xl-auto">
 
                             <!-- mega-menu end -->
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a href="{{ url('/') }}" class="nav-link " aria-haspopup="true"
                                     aria-expanded="false">Home</a>
-                            </li>
+                            </li> --}}
+                            <li class="nav-item dropdown1 ">
+                                <a href="#" class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Packages <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                                <div class="dropdown-content">
+                                    @foreach ($category as $cat)
+                                    <div class="column col-lg-3">
+                                    <a data-toggle="collapse" href="#collapseExample{{$cat->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">  <h6 class="font-weight-bold">{{ $cat->category_name }}</h6></a>
+                                      @foreach ($cat->tour as $tours)
+                                      @if ($tours->status == '1')
+                                     <div class="collapse show" id="collapseExample{{$cat->id}}">
+                                        <a   class="d-flex" href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
+
+                                     </div>
+                                     
+                                        @endif
+                                        @endforeach
+                                    </div>
+                                    @endforeach
+                                </div>
+                              </li>
                             @foreach ($category as $cat)
                                 <li class="nav-item dropdown">
-                                    <a href="#"
-                                        class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    <a href="#"class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">{{ $cat->category_name }}</a>
 
                                     <div class="dropdown-menu left-1 ">

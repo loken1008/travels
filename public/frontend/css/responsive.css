@@ -180,6 +180,9 @@
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sticky{
+    top:80px !important;
+  }
   .svg {
     margin-top: 170px !important;
   }
@@ -255,6 +258,16 @@
   }
 }
 @media only screen and (max-width: 991px) {
+ .sticky{
+  top:38px !important;
+ }
+  .dropdown-content{
+  height:200px !important;
+  overflow-y:scroll !important;
+ }
+ .column {
+  width:100%;
+}
   .baloon {
     bottom:-50vh !important;
 }
@@ -425,8 +438,8 @@
 
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .feature-item {
-    height: 315px;
+  .feature-item {   
+     padding:147px 30px 0px 30px !important;
   }
   .forest {
     top: 650px !important;
@@ -480,6 +493,15 @@
 
   .svg {
     height: 184% !important;
+  }
+  #whymountain{
+    display: none !important;
+  }
+  .feature-item{
+    padding: 0px !important;
+  }
+  .feature-item .content p{
+    color:black;
   }
 
   #country-booking {
@@ -621,7 +643,9 @@
 
 }
 @media only screen and (max-width: 575px) {
- 
+ .feature-item img {
+height: 150px !important;
+ }
   .svg {
     height: 163% !important;
     width: 100% !important;
