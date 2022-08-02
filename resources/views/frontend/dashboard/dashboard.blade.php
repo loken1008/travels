@@ -27,9 +27,9 @@
                             Auth()->guard('customer')->user()->provider_id
                         ))
                             <img src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
-                                style="height:370px">
+                                style="height:370px" alt="mountainguideinfo-profile">
                         @else
-                            <img src="{{ Auth()->guard('customer')->user()->image }}" style="height:370px">
+                            <img src="{{ Auth()->guard('customer')->user()->image }}" style="height:370px" alt="mountainguideinfo-profile">
                         @endif
                         <!-- Upload image input-->
                         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">

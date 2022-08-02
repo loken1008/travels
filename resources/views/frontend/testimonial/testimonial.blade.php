@@ -13,6 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h4>All Reviews</h4>
+                        <h5 class="text-white"><a href="{{url('/')}}" class="text-primary">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>Reviews</h5>
                     </div>
                 </div>
             </div>
@@ -32,16 +33,16 @@
                             <div class="testimonials-col">
                                 <div style="float: right;position: relative;top: -22px;left: -44px;">
                                     @if($testimonials->type=='tripadvisor')
-                                    <img src="{{asset('tripadvisor.svg')}}" alt=""
+                                    <img src="{{asset('tripadvisor.svg')}}" alt="mountainguideinfo-tripadvisor"
                                     style="width:45px;height:45px;border-radius:50%" title="{{$testimonials->type}}">
                                     @elseif($testimonials->type=='google')
-                                    <img src="{{asset('google.png')}}" alt=""
+                                    <img src="{{asset('google.png')}}" alt="mountainguideinfo-google"
                                     style="width:45px;height:45px;border-radius:50%" title="{{$testimonials->type}}">
                                     @elseif($testimonials->type=='facebook')
-                                    <img src="{{asset('facebook.svg')}}" alt=""
+                                    <img src="{{asset('facebook.svg')}}" alt="mountainguideinfo-facebook"
                                     style="width:45px;height:45px;border-radius:50%" title="{{$testimonials->type}}">
                                     @else
-                                    <img src="{{asset('mg.png')}}" alt=""
+                                    <img src="{{asset('mg.png')}}" alt="mountainguideinfo-mg"
                                     style="width:45px;height:45px;border-radius:50%" title="{{$testimonials->type}}">
                                     @endif
                                 </div>

@@ -184,6 +184,28 @@
                 1200: { items: 3 },
             },
         }),
+        e(".popular-trekking").owlCarousel({
+            loop: !0,
+            autoplay: !0,
+            autoplayHoverPause: !1,
+            smartSpeed: 700,
+            items: 2,
+            margin: 30,
+            dots: !1,
+            nav: !0,
+            navText: [
+                '<i class="fa fa-chevron-left"></i>',
+                '<i class="fa fa-chevron-right"></i>',
+            ],
+            responsive: {
+                0: { items: 1 },
+                480: { items: 1 },
+                600: { items: 1 },
+                768: { items: 2 },
+                992: { items: 2 },
+                1200: { items: 2 },
+            },
+        }),
         e("#testimonials-carousel-4").owlCarousel({
             loop: !1,
             autoplay: 2e3,
@@ -370,3 +392,5 @@
         e(window).on("scroll", function () {}),
         e(window).on("resize", function () {});
 })(window.jQuery);
+
+    

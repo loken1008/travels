@@ -23,7 +23,7 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                 <div class="col-lg-9">
                     <div class="section-title mt-25">
 
-                        <h2 class="text-left" >Our Customer <span> Review</span></h2><div id="underdiv"></div>
+                        <h2 class="text-left" >Our Customer <span> Review</span></h2><div class="underdiv"></div>
 
                     </div>
                     <div class="testimonials-post testimonials_slide owl-carousel owl-theme owl-navst st-three">
@@ -40,16 +40,16 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                     <div class="d-flex" style="justify-content: space-between;">
                                         <h5> <small>- {{ $testmonial->message_title }}</small></h5>
                                         @if($testmonial->type=='tripadvisor')
-                                        <img src="{{asset('tripadvisor.svg')}}" alt=""
+                                        <img src="{{asset('tripadvisor.svg')}}" alt="mountainguideinfo-tripadvisor"
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='google')
-                                        <img src="{{asset('google.webp')}}" alt=""
+                                        <img src="{{asset('google.webp')}}" alt="mountainguideinfo-google"
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='facebook')
-                                        <img src="{{asset('facebook.svg')}}" alt=""
+                                        <img src="{{asset('facebook.svg')}}" alt="mountainguideinfo-facebook"
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @else
-                                        <img src="{{asset('mg.webp')}}" alt=""
+                                        <img src="{{asset('mg.webp')}}" alt="mountainguideinfo-mg"
                                         style="width:25px;height:25px;border-radius:50%" title="{{$testmonial->type}}">
                                         @endif
                                     </div>
@@ -61,7 +61,7 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
 
                                     <div class=" d-flex mt-2" style="align-items: center;justify-content: space-between;">
                                         <h5 class="font-weight-bold mr-2"> <small>{{ $testmonial->name }}, {{$testmonial->country}}</small></h5>
-                                        <img src="{{ $testmonial->image }}" alt=""
+                                        <img src="{{ $testmonial->image }}" alt="{{$testmonial->name}}"
                                             style="width:45px;height:45px;border-radius:50%">
                                     </div>
                                 </div>

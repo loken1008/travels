@@ -21,8 +21,11 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-12">
-                        <h4>{{ $getTourdetails->category->category_name }}</h4>
-                        <h5 style="color:white">{{ $getTourdetails->tour_name }}</h5>
+                        <h4>{{$getTourdetails->tour_name  }}</h4>
+                        <h5 class="text-white"><a href="{{url('/')}}" class="text-primary">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            {{$getTourdetails->category->category_name}} <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                           @if(!empty($getTourdetails->subcategory->sub_category_name)) {{$getTourdetails->subcategory->sub_category_name}} @endif<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            {{ $getTourdetails->tour_name }}</h5>
                     </div>
                 </div>
             </div>
@@ -59,58 +62,58 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content">
+                        <div class="content detailscontent">
 
 
                             <p>{!! $getTourdetails->description !!}</p>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tab-style">
-                                        <nav>
+                                        <nav id="tabnav">
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                                                 @if ($getTourdetails->itinerary->count() > 0)
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#plc-asia" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab1" data-toggle="tab"
+                                                        href="#itinery" role="tab" 
                                                         aria-selected="true">Itinerary</a>
                                                 @endif
                                                 @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
                                                 @else
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#costie" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab2" data-toggle="tab"
+                                                        href="#costie" role="tab" 
                                                         aria-selected="true">Cost Details</a>
                                                 @endif
                                                 @if ($getTourdetails->equipment->count() > 0)
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#equipment" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab3" data-toggle="tab"
+                                                        href="#equipment" role="tab" 
                                                         aria-selected="true">Equipment</a>
                                                 @endif
                                                 @if ($getTourdetails->dateprice->count() > 0)
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#dateprice" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab4" data-toggle="tab"
+                                                        href="#dateprice" role="tab" 
                                                         aria-selected="true">Date & Price</a>
                                                 @endif
                                                 @if ($getTourdetails->images->count() > 0)
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#relatedimages" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab5" data-toggle="tab"
+                                                        href="#relatedimages" role="tab" 
                                                         aria-selected="true">Photos</a>
                                                 @endif
                                                 @if ($getTourdetails->map_url != null)
-                                                    <a class="nav-item nav-link" id="plc-asia-tab" data-toggle="tab"
-                                                        href="#tmap" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link" id="plc-asia-tab6" data-toggle="tab"
+                                                        href="#tmap" role="tab" 
                                                         aria-selected="true">Map</a>
                                                 @endif
                                                 @if ($getTourdetails->fqa->count() > 0)
-                                                    <a class="nav-item nav-link " id="plc-asia-tab" data-toggle="tab"
-                                                        href="#fqa" role="tab" aria-controls="plc-asia"
+                                                    <a class="nav-item nav-link " id="plc-asia-tab7" data-toggle="tab"
+                                                        href="#fqa" role="tab" 
                                                         aria-selected="true">FQA</a>
                                                 @endif
                                             </div>
                                         </nav>
-                                        <div class="tab-content" id="nav-tabContent">
                                             <!-- item start -->
-                                            <div class="tab-pane fade show active" id="plc-asia" role="tabpanel"
-                                                aria-labelledby="plc-asia-tab">
+                                            @if($getTourdetails->itinerary->count()>0)
+                                            <div class="tab-pane fade show active" id="itinery" >
+                                                <h6 class="font-weight-bold dheading">Itineraries</h6>
                                                 <div class="item" style="padding-right: 20px;">
                                                     @foreach ($getTourdetails->itinerary as $itin)
                                                         @if ($itin->day_title == !null)
@@ -132,10 +135,13 @@
                                                     @endforeach
                                                 </div>
                                             </div>
+                                            @endif
                                             <!-- item end -->
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="costie" role="tabpanel"
+                                            @if($getTourdetails->cost_include != 'null' || $getTourdetails->cost_exclude != '')
+                                            <div class="tab-pane fade show " id="costie"
                                                 aria-labelledby="costie-tab">
+                                                <h6 class="font-weight-bold mt-2 dheading">Cost Details</h6>
                                                 @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
                                                 @else
                                                     <div class="item" style="padding-right: 20px;" >
@@ -170,17 +176,17 @@
 
                                                             {!! $getTourdetails->cost_exclude !!}
                                                         </div>
-
-
-
                                                     </div>
                                                 @endif
                                             </div>
+                                            @endif
                                             <!-- item end -->
 
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="equipment" role="tabpanel"
+                                            @if($getTourdetails->equipment->count()>0)
+                                            <div class="tab-pane fade show " id="equipment"
                                                 aria-labelledby="equipment-tab">
+                                                <h6 class="font-weight-bold mt-2 dheading">Equipments</h6>
                                                 @foreach ($getTourdetails->equipment as $equipment)
                                                     <div class="item" style="padding-right: 20px;">
                                                         @if ($equipment->equipment_name == !null)
@@ -204,11 +210,13 @@
                                                     </div>
                                                 @endforeach
                                             </div>
+                                            @endif
                                             <!-- item end -->
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="dateprice" role="tabpanel"
+                                            @if($getTourdetails->dateprice->count() > 0)
+                                            <div class="tab-pane fade show " id="dateprice"
                                                 aria-labelledby="dateprice-tab">
-
+                                                <h6 class="font-weight-bold mt-2 dheading">Dates/Prices</h6>
                                                 <div class="item" style="padding-right: 20px;">
 
                                                     <table class="table">
@@ -240,11 +248,13 @@
                                                 </div>
 
                                             </div>
+                                            @endif
                                             <!-- item end -->
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="relatedimages" role="tabpanel"
+                                              @if($getTourdetails->images->count()>0)
+                                            <div class="tab-pane fade show " id="relatedimages"
                                                 aria-labelledby="relatedimages-tab">
-
+                                                <h6 class="font-weight-bold mt-2 dheading">Images</h6>
                                                 <div class="item gallery-section mb-4">
                                                     <div class="row gallery-items" style="padding: 0px 16px;">
                                                         @forelse($getTourdetails->images as $image)
@@ -281,15 +291,17 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endif
                                             <!-- item end -->
 
                                             <!-- item start -->
-                                            <div class="tab-pane fade show showmap" id="tmap" role="tabpanel"
+                                            @if ($getTourdetails->map_url == !null)
+                                            <div class="tab-pane fade show showmap" id="tmap"
                                                 aria-labelledby="map-tab">
-
+                                                <h6 class="font-weight-bold mt-2 dheading">Map</h6>
                                                 <div class="item" style="padding-right: 20px;">
                                                     <div class="special-places">
-                                                        @if ($getTourdetails->map_url == !null)
+                                                     
                                                             <div id="map_canvas"
                                                                 style="height:400px; width:100%; display:inline-block; overflow:hidden;">
 
@@ -298,17 +310,18 @@
                                                                     style="position:relative; top:-70px; border:none;"></iframe>
 
                                                             </div>
-                                                        @endif
 
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endif
                                             <!-- item end -->
 
                                             <!-- item start -->
-                                            <div class="tab-pane fade show " id="fqa" role="tabpanel"
+                                            @if ($getTourdetails->fqa->count()>0)
+                                            <div class="tab-pane fade show " id="fqa"
                                                 aria-labelledby="fqa-tab">
-
+                                                <h6 class="font-weight-bold mt-2 dheading">FAQ</h6>
                                                 <div class="item" style="padding-right: 20px;">
                                                     @foreach ($getTourdetails->fqa as $fqas)
                                                         @if ($fqas->question == !null)
@@ -329,8 +342,8 @@
                                                     @endforeach
                                                 </div>
                                             </div>
+                                            @endif
                                             <!-- item end -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -406,7 +419,7 @@
         <div class="container">
             <div class="row">
                 <div class="section-title">
-                    <h2>Related <span>Tour</span> Places</h2><div id="underdiv"></div>
+                    <h2>Related <span>Tour</span> Places</h2><div class="underdiv"></div>
                 </div>
             </div>
             <div class="row">

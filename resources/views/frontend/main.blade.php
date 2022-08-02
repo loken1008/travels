@@ -34,27 +34,31 @@
     <------------------------------------------>
     <link rel="canonical" href="{{ url(Request::url()) }}" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css"
+        crossorigin="anonymous" />
     <!-- Responsive CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        crossorigin="anonymous" />
 
 
     <style>
+        
         .svg {
             position: absolute;
             height: 40% !important;
-            width: 100vw;
-            /* background: linear-gradient(to bottom, #33a3bd 0%, #ffffff 34%) !important; */
+            width: 100%;
         }
 
         .forest {
@@ -95,7 +99,6 @@
             }
         }
 
-
         #ray {
             transform: rotate(60deg);
         }
@@ -104,7 +107,7 @@
             position: absolute;
             z-index: 0;
             left: 0vw;
-            bottom:21vh;
+            bottom: 21vh;
             animation: float 10s linear infinite;
             ;
         }
@@ -237,7 +240,7 @@
 
         }
 
-        #underdiv {
+        .underdiv {
             background: #1a4491;
             width: 227px;
             height: 12px;
@@ -278,6 +281,7 @@
             font-weight: 700;
             line-height: 24px;
             padding: 16px 23px !important;
+            margin-bottom: 20px;
             position: relative;
             top: 36px;
             text-decoration: none;
@@ -294,6 +298,7 @@
         .button-51:hover {
             background-color: transparent;
             cursor: pointer;
+            color: white;
         }
 
         .button-51:before {
@@ -317,8 +322,16 @@
                 padding: 16px 32px;
             }
         }
-        .affailated{
-            background:#081846;
+
+        .sticky {
+            position: fixed;
+            top: 55px;
+            width: auto;
+            z-index: 2;
+        }
+
+        .sticky+.tab-content {
+            padding-top: 60px;
         }
     </style>
 
@@ -370,6 +383,9 @@ Main JavaScript
     <script
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"
+        integrity="sha512-PsJ1f4lw0Jrga4wbDOvdWs9DFl88C1vlcH2VQYqgljHBmzmqtGivUkzRHWx2ZxFlnysKUcROqLeuOpYh9q4YNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -413,7 +429,7 @@ Main JavaScript
             }
         @endif
     </script>
-    <script type="text/javascript">
+    <script>
         $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
             var googleIframe = $('#map_canvas iframe');
             googleIframe.attr('src', googleIframe.attr('src') + '');
@@ -443,6 +459,39 @@ Main JavaScript
             $(this).closest("div").hide();
         });
         console.clear();
+    </script>
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("tabnav");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        $(function() {
+            $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+                var target = $(this.hash);
+                
+                target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 400,'swing');
+                    return false;
+                }
+                
+
+            });
+
+        });
     </script>
 </body>
 

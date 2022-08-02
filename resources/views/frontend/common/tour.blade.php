@@ -10,7 +10,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
         <div class="row">
             @if($getTour->count()>0)
             <div class="section-title">
-                <h2>Popular <span>Tour</span> Places</h2><div id="underdiv"></div>
+                <h2>Popular <span>Tour</span> Places</h2><div class="underdiv"></div>
             </div>
             @endif
         </div>
