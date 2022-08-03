@@ -1,3 +1,15 @@
+@php
+ function getThumbs($url=""){
+            $base = basename($url);
+            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+                return str_replace($base, "thumbs/".$base, $url);
+            }else{
+                $preUrl = "storage/";
+                $beforeBase = str_replace($base, "",$url);
+                return $preUrl.$beforeBase.'thumbs/'.$base;
+            }
+        }
+@endphp
 @extends('frontend.main')
 @section('title', 'Search Blogs')
 @section('content')
@@ -27,7 +39,7 @@
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $getblog->slug) }}">
                                 <div class="thumb">
-                                    <img src="{{ $getblog->blog_image }}" style="height:227px"
+                                    <img src="{{ getThumbs($getblog->blog_image) }}" style="height:227px"
                                         alt="{{ $getblog->img_alt }}">
                                     <div class="content">
                                         

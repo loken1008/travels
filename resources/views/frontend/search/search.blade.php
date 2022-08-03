@@ -1,3 +1,15 @@
+@php
+ function getThumbs($url=""){
+            $base = basename($url);
+            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+                return str_replace($base, "thumbs/".$base, $url);
+            }else{
+                $preUrl = "storage/";
+                $beforeBase = str_replace($base, "",$url);
+                return $preUrl.$beforeBase.'thumbs/'.$base;
+            }
+        }
+@endphp
 @extends('frontend.main')
 @section('title', 'Search Tour')
 @section('content')
@@ -31,7 +43,7 @@
                             <div class="special-packages">
                                 <div class="thumb">
                                     <a href="{{ route('tourdetails', $tourdetails->slug) }}">
-                                        <img src="{{ $tourdetails->mainImage }}" alt="{{ $tourdetails->img_alt }}"
+                                        <img src="{{ getThumbs($tourdetails->mainImage) }}" alt="{{ $tourdetails->img_alt }}"
                                             style="height:185px !important"></a>
 
                                    

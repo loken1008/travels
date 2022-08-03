@@ -53,8 +53,8 @@ return [
             'startup_view' => 'list',
             'max_size'     => 10000000000, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 500,
+            'thumb_height' => 260,
             'valid_mime'   => [
                 'video/mp4',
                 'video/mpeg',
@@ -65,8 +65,8 @@ return [
             'startup_view' => 'list',
             'max_size'     => 5000000, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 500,
+            'thumb_height' => 260,
            
         ],
         'image' => [
@@ -74,8 +74,8 @@ return [
             'startup_view' => 'grid',
             'max_size'     => 5000000, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 500,
+            'thumb_height' => 260,
             'valid_mime'   => [
                 'image/jpeg',
                 'image/pjpeg',
@@ -147,9 +147,9 @@ return [
         'video/mpeg',
     ],
 
-    'thumb_img_width'          => 200, // px
+    'thumb_img_width'          => 500, // px
 
-    'thumb_img_height'         => 200, // px
+    'thumb_img_height'         => 260, // px
 
     /*
     |--------------------------------------------------------------------------

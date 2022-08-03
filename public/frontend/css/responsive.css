@@ -256,6 +256,26 @@
   .mobile-view {
     display: none !important;
   }
+  .information{
+    position: sticky;
+    top: 55px;
+    z-index: 1;
+  }
+  .query-button{
+    position: sticky;
+    top: 335px;
+    z-index: 1;
+  }
+  .sticky {
+    position: fixed;
+    top: 55px;
+    width: auto;
+    z-index: 2;
+}
+
+.sticky+.tab-content {
+    padding-top: 60px;
+}
 }
 @media only screen and (max-width: 991px) {
  .sticky{
@@ -621,6 +641,11 @@
     padding-bottom: 40px;
   }
 }
+@media only screen and (min-width: 576px){
+  .table-responsive {
+    display:inline-table;
+  }
+}
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .welcome-feature .content h2 {
     padding-left: 88px;
@@ -643,8 +668,8 @@
 
 }
 @media only screen and (max-width: 575px) {
- .feature-item img {
-height: 150px !important;
+  .feature-item img {
+height: 110px !important;
  }
   .svg {
     height: 163% !important;
@@ -791,7 +816,8 @@ height: 150px !important;
     width: 100% !important;
   }
   .crt {
-    margin-left: 100px;
+    margin-left:66px;
+    margin-top:-60px;
   }
   .crt::before {
     transform: rotate(90deg) !important;
