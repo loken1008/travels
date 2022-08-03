@@ -256,7 +256,7 @@
   .mobile-view {
     display: none !important;
   }
-  .information{
+  /* .information{
     position: sticky;
     top: 55px;
     z-index: 1;
@@ -265,7 +265,7 @@
     position: sticky;
     top: 335px;
     z-index: 1;
-  }
+  } */
   .sticky {
     position: fixed;
     top: 55px;
