@@ -666,11 +666,11 @@
                                 <img src="{{ getThumbs($gal->cover_image) }}" alt="{{ $gal->gallery_title }}">
                                 <div class="overlay">
                                     <div class="inner">
-                                        <a href="{{ $gal->cover_image }}" class="icon lightbox-image">
-                                            <i class="fa fa-plus"></i>
+                                        <a href="{{ getThumbs($gal->cover_image) }}" target="_blank" >
+                                            <h4>{{ $gal->gallery_title }}</h4>
+                                            <p>Tour, Travel</p>
                                         </a>
-                                        <h4>{{ $gal->gallery_title }}</h4>
-                                        <p>Tour, Travel</p>
+                                       
                                     </div>
                                 </div>
                             </div>

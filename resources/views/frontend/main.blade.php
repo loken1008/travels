@@ -326,10 +326,16 @@
 
       
         .home-blog-section{
-            @if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }})@endif;
+            @if(!empty($homepagebannerthree->page_banner)) background: url('{{ asset($homepagebannerthree->page_banner) }}') ;
+           @else
+            background-color:#000000;
+            @endif
         }
         .chooseus-section{
-            @if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif;
+            @if(!empty($homepagebannerone->page_banner)) background: url('{{ asset($homepagebannerone->page_banner)}}') ;
+           @else
+            background-color:#000000;
+            @endif
         }
     </style>
 
