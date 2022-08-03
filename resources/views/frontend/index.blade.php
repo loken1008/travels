@@ -1,3 +1,15 @@
+@php
+ function getThumbs($url=""){
+            $base = basename($url);
+            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+                return str_replace($base, "thumbs/".$base, $url);
+            }else{
+                $preUrl = "storage/";
+                $beforeBase = str_replace($base, "",$url);
+                return $preUrl.$beforeBase.'thumbs/'.$base;
+            }
+        }
+@endphp
 @extends('frontend.main')
 @section('title', 'Explore-With-Us|Home')
 @section('meta_title', $homepage->meta_title)
@@ -43,8 +55,7 @@
                                 <source src="{{ asset($banner->banner_image) }}" type="video/mp4">
                             </video>
                         @else
-                            <img src="{{ $banner->banner_image }}" alt="{{ $banner->title }}" class="slide-image"
-                                style="width:1905px;height:750px" />
+                            <img src="{{ $banner->banner_image }}" alt="{{ $banner->title }}" class="banner-image slide-image"/>
                         @endif
                         <div class="bs-slider-overlay"></div>
 
@@ -95,7 +106,7 @@
         <div class="container">
             <div class="row" id="country-booking">
                 <div class="col-md-9 country-tab">
-                    <div class="icon-wrp text-center" style="display:flex;flex-wrap: wrap;">
+                    <div class="icon-wrp text-center" >
 
                         <nav>
                             <div class="nav nav-tabs " id="nav-tab" role="tablist">
@@ -147,13 +158,13 @@
                                                     <div class="item">
                                                         <div class="special-places">
                                                             <div class="thumb">
-                                                                <img src="{{ $ctour->mainImage }}"
+                                                                <img src="{{ getThumbs($ctour->mainImage) }}"
                                                                     alt="{{ $ctour->img_alt }}"
-                                                                    style="height:185px !important">
+                                                                    class="package-img">
                                                             </div>
                                                             <div class="content">
 
-                                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                                <h3 class="text-dark font-weight-bold h6">
                                                                     {{ $ctour->tour_name }}</h3>
                                                                 <p>{{ Str::limit($ctour->short_description, 80, '.') }}</p>
                                                                 <ul class="info">
@@ -176,10 +187,10 @@
 
 
                                                                 </ul>
-                                                                <a class="btn-theme" style="float:left !important;"
+                                                                <a class="btn-theme bookbtn" 
                                                                     href="{{ route('booking', $ctour->slug) }}">Book
                                                                     Now</a>
-                                                                <a class="btn-theme" style=""
+                                                                <a class="btn-theme detailsbtn"
                                                                     href="{{ route('tourdetails', $ctour->slug) }}">View
                                                                     Details</a>
                                                             </div>
@@ -216,19 +227,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center home-section">
                     <div class="section-title home-title text-center mt-4">
                         @if (!empty($homepage->title))
-                            <h1 style="color:#0E4D94">{{ $homepage->title }}</h1>
+                            <h1>{{ $homepage->title }}</h1>
                         @endif
                     </div>
                     @if (!empty($homepage->description))
-                        <p class="text-center" style="font-size:18px">{{ $homepage->description }}</p>
+                        <p class="text-center">{{ $homepage->description }}</p>
                     @endif
                     <!-- HTML !-->
                     <a href="{{ route('introduction') }}" class="mb-2 button-51">Discover
                             More</a>
-                    <div class="sharethis-inline-share-buttons" style="margin-top:60px"></div>
+                    <div class="sharethis-inline-share-buttons"></div>
                 </div>
 
             </div>
@@ -257,12 +268,12 @@
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $selltour->slug) }}">
-                                                    <img src="{{ $selltour->mainImage }}" alt="{{ $selltour->img_alt }}"
-                                                        style="height:185px !important"></a>
+                                                    <img src="{{ getThumbs($selltour->mainImage) }}" alt="{{ $selltour->img_alt }}"
+                                                        class="package-img"></a>
 
                                             </div>
                                             <div class="content">
-                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                <h3 class="text-dark font-weight-bold h6">
                                                     {{ $selltour->tour_name }}</h3>
                                                 <p>{{ Str::limit($selltour->short_description, 80, '.') }}</p>
                                                 <ul class="info mt-6">
@@ -283,10 +294,10 @@
 
 
                                                 </ul>
-                                                <a class="btn-theme" style="float:left !important;"
+                                                <a class="btn-theme bookbtn" 
                                                     href="{{ route('booking', $selltour->slug) }}">Book
                                                     Now</a>
-                                                <a class="btn-theme" style=""
+                                                <a class="btn-theme detailsbtn"
                                                     href="{{ route('tourdetails', $selltour->slug) }}">View
                                                     Details</a>
                                             </div>
@@ -301,8 +312,7 @@
         </div>
     </section>
     <!-- Features Section Start -->
-    <section class="feature-section over-layer-black pt-35 pb-35 mt-2"
-        style="@if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif">
+    <section class="feature-section chooseus-section over-layer-black pt-35 pb-35 mt-2">
         <div class="container-fluid pl-0 pr-0">
             <div class="row">
                 @if ($chooseus->count() > 0)
@@ -314,15 +324,15 @@
             </div>
                 <div class="row frow">
                     @foreach ($chooseus as $choose)
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="feature-item">
                                 <a href="{{ route('travelwithus') }}">
                                 <div class="icon-box">
                                     <h3 class="ml-1 mb-4">{{ $choose->title }}
                                     </h3>
-                                    <div class="content choosecontent">
-                                        <img src="{{ $choose->image }}" alt="{{ $choose->title }}" style="float:right"> 
-                                        <p>{!! Str::limit($choose->description, 500, '.') !!}</p>
+                                    <div class="content choosecontent d-flex">
+                                        <img src="{{ getThumbs($choose->image) }}" alt="{{ $choose->title }}"> 
+                                        <p>{!! Str::limit($choose->description, 300, '.') !!}</p>
                                     </div>
                                     
                                 </div>
@@ -357,12 +367,11 @@
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $tour->slug) }}">
-                                                    <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                        style="height:260px !important"></a>
+                                                    <img src="{{ getThumbs($tour->mainImage) }}" alt="{{ $tour->img_alt }}"></a>
 
                                             </div>
                                             <div class="content">
-                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                <h3 class="text-dark font-weight-bold h6">
                                                     {{ $tour->tour_name }}</h3>
                                                 <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
                                                 <ul class="info mt-6">
@@ -383,10 +392,10 @@
 
 
                                                 </ul>
-                                                <a class="btn-theme" style="float:left !important;"
+                                                <a class="btn-theme bookbtn" 
                                                     href="{{ route('booking', $tour->slug) }}">Book
                                                     Now</a>
-                                                <a class="btn-theme" style=""
+                                                <a class="btn-theme detailsbtn"
                                                     href="{{ route('tourdetails', $tour->slug) }}">View
                                                     Details</a>
                                             </div>
@@ -425,12 +434,12 @@
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $tour->slug) }}">
-                                                    <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                        style="height:185px !important"></a>
+                                                    <img src="{{ getThumbs($tour->mainImage) }}" alt="{{ $tour->img_alt }}"
+                                                        class="package-img"></a>
                                             </div>
 
                                             <div class="content">
-                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                <h3 class="text-dark font-weight-bold h6">
                                                     {{ $tour->tour_name }}</h3>
                                                 <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
                                                 <ul class="info mt-6">
@@ -452,10 +461,10 @@
 
                                                 </ul>
 
-                                                <a class="btn-theme" style="float:left !important;"
+                                                <a class="btn-theme bookbtn" 
                                                     href="{{ route('booking', $tour->slug) }}">Book
                                                     Now</a>
-                                                <a class="btn-theme" style=""
+                                                <a class="btn-theme detailsbtn"
                                                     href="{{ route('tourdetails', $tour->slug) }}">View
                                                     Details</a>
                                             </div>
@@ -491,14 +500,14 @@
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $adventuretour->slug) }}">
-                                                    <img src="{{ $adventuretour->mainImage }}"
+                                                    <img src="{{ getThumbs($adventuretour->mainImage) }}"
                                                         alt="{{ $adventuretour->img_alt }}"
-                                                        style="height:185px !important"></a>
+                                                        class="package-img"></a>
 
 
                                             </div>
                                             <div class="content">
-                                                <h6 style="color:black;font-size:15px;font-weight:bold">
+                                                <h6 class="text-dark font-weight-bold h6">
                                                     {{ $adventuretour->tour_name }}</h6>
                                                     <p>{{ Str::limit($adventuretour->short_description, 80, '.') }}</p>
                                                     <ul class="info mt-6">
@@ -521,10 +530,10 @@
 
                                                     </ul>
 
-                                                    <a class="btn-theme" style="float:left !important;"
+                                                    <a class="btn-theme bookbtn" 
                                                         href="{{ route('booking', $adventuretour->slug) }}">Book
                                                         Now</a>
-                                                    <a class="btn-theme" style=""
+                                                    <a class="btn-theme detailsbtn"
                                                         href="{{ route('tourdetails', $adventuretour->slug) }}">View
                                                         Details</a>
                                             </div>
@@ -560,11 +569,10 @@
                                         <div class="special-packages">
                                             <div class="thumb">
                                                 <a href="{{ route('tourdetails', $tour->slug) }}">
-                                                    <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
-                                                        style="height:260px !important"></a>
+                                                    <img src="{{ getThumbs($tour->mainImage) }}" alt="{{ $tour->img_alt }}" ></a>
                                             </div>
                                             <div class="content">
-                                                <h3 style="color:black;font-size:15px;font-weight:bold">
+                                                <h3 class="text-dark font-weight-bold h6">
                                                     {{ $tour->tour_name }}</h3>
                                                 <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
                                                 <ul class="info mt-6">
@@ -586,10 +594,10 @@
 
                                                 </ul>
 
-                                                <a class="btn-theme" style="float:left !important;"
+                                                <a class="btn-theme bookbtn" 
                                                     href="{{ route('booking', $tour->slug) }}">Book
                                                     Now</a>
-                                                <a class="btn-theme" style=""
+                                                <a class="btn-theme detailsbtn"
                                                     href="{{ route('tourdetails', $tour->slug) }}">View
                                                     Details</a>
                                             </div>
@@ -609,12 +617,11 @@
 
 
 
-    <section class="blog-section over-layer-white bg-f8 pt-35 pb-25"
-        style="@if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }}) @endif">
+    <section class="blog-section home-blog-section over-layer-white bg-f8 pt-35 pb-25">
         <div class="container">
             <div class="row">
                 @if ($getblogs->count() > 0)
-                    <div class="section-title" style="margin: 0 auto 10px !important;">
+                    <div class="section-title blog-title">
                         <h2>Our <span>Latest</span> Blogs</h2>
                         <div class="underdiv"></div>
                     </div>
@@ -626,7 +633,7 @@
                         <div class="blog-post">
                             <a href="{{ route('blogsdetails', $blog->slug) }}">
                                 <div class="thumb">
-                                    <img src="{{ $blog->blog_image }}" style="height:227px" alt="{{ $blog->img_alt }}">
+                                    <img  class="blog-img" src="{{ getThumbs($blog->blog_image) }}" alt="{{ $blog->img_alt }}">
 
                                 </div>
                             </a>
@@ -654,10 +661,9 @@
             <div class="row gallery-items">
                 @foreach ($gallery as $gal)
                     <div class="col-sm-3 col-grid">
-                        <div class="gallery-item">
-                            <div class="thumb" style="height:200px">
-                                <img src="{{ $gal->cover_image }}" alt="{{ $gal->gallery_title }}"
-                                    style="width:337px;height:265px">
+                        <div class="gallery-item home-gallery">
+                            <div class="thumb">
+                                <img src="{{ getThumbs($gal->cover_image) }}" alt="{{ $gal->gallery_title }}">
                                 <div class="overlay">
                                     <div class="inner">
                                         <a href="{{ $gal->cover_image }}" class="icon lightbox-image">
@@ -677,8 +683,8 @@
 
         </div>
         @if ($gallery->count() > 0)
-            <div class="text-center mt-4" style="display: flex !important;justify-content: space-around;">
-                <a href="{{ route('allgallery') }}" class="read-btn" style="background:#0E4D94;padding: 10px;">
+            <div class="text-center gallery-btn mt-4">
+                <a href="{{ route('allgallery') }}" class="read-btn">
                     <h5 class="text-white">View Gallery <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
 
                 </a>

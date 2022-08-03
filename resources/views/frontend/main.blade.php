@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -323,15 +324,12 @@
             }
         }
 
-        .sticky {
-            position: fixed;
-            top: 55px;
-            width: auto;
-            z-index: 2;
+      
+        .home-blog-section{
+            @if (!empty($homepagebannerthree->page_banner)) background-image:url({{ asset($homepagebannerthree->page_banner) }})@endif;
         }
-
-        .sticky+.tab-content {
-            padding-top: 60px;
+        .chooseus-section{
+            @if (!empty($homepagebannerone->page_banner)) background-image:url({{ asset($homepagebannerone->page_banner) }}) @endif;
         }
     </style>
 
@@ -476,22 +474,22 @@ Main JavaScript
             }
         }
 
-        $(function() {
-            $('a[href*=\\#]:not([href=\\#])').on('click', function() {
-                var target = $(this.hash);
+        // $(function() {
+        //     $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+        //         var target = $(this.hash);
                 
-                target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 400,'swing');
-                    return false;
-                }
+        //         target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
+        //         if (target.length) {
+        //             $('html,body').animate({
+        //                 scrollTop: target.offset().top
+        //             }, 400,'swing');
+        //             return false;
+        //         }
                 
 
-            });
+        //     });
 
-        });
+        // });
     </script>
 </body>
 

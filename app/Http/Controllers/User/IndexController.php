@@ -34,13 +34,10 @@ class IndexController extends Controller
         $catpeak=Category::with('tour')->where('category_type','peakclimbing')->first();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
-        $chooseus=ChooseUs::orderBy('id','asc')->limit(4)->get();
+        $chooseus=ChooseUs::orderBy('id','asc')->limit(3)->get();
         $gallery=Gallery::orderBy('id','desc')->limit(8)->get();
-        $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
-        $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
-        $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
         $homepage=HomePage::orderBy('id','desc')->first();
-        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','homepagebannerone','homepagebannertwo','homepagebannerthree','cattrekking','catadventure','catnature','catpeak','homepage'));
+        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','cattrekking','catadventure','catnature','catpeak','homepage'));
     }
 
     public function  tourDetails($slug)
