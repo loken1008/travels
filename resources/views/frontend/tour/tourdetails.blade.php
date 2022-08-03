@@ -417,11 +417,11 @@ function getThumbs($url = '')
                         </a>
 
                     </div>
-                    {{-- <div class="qi mt-4">
+                    <div class="qi mt-4">
                         <h4>Quick Inquery </h4>
                         <hr>
                         @include('frontend.common.commoncontact')
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

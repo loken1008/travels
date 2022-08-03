@@ -1,4 +1,3 @@
-
 <header class="header header-style-1 clearfix">
 
     <div class="top-bar" style="background-color:white">
@@ -8,7 +7,8 @@
                     <div class="contact-info">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if (!empty($sitesetting->logo))
-                                <img id="logo_img" src="{{ $sitesetting->logo }}" alt="mountainguideinfo-logo" style="height:100px">
+                                <img id="logo_img" src="{{ $sitesetting->logo }}" alt="mountainguideinfo-logo"
+                                    style="height:100px">
                             @endif
                         </a>
                     </div>
@@ -19,24 +19,29 @@
                     <div class="social-icons">
                         <ul>
                             @if (!empty($sitesetting->twitter))
-                                <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter" style="color:blue"></i></a></li>
+                                <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter"
+                                            style="color:blue"></i></a></li>
                             @endif
                             @if (!empty($sitesetting->facebook))
-                                <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook" style="color:#34518C"></i></a></li>
+                                <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook"
+                                            style="color:#34518C"></i></a></li>
                             @endif
                             @if (!empty($sitesetting->instagram))
-                                <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram" style="color:#DA61C7"></i></a></li>
+                                <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram"
+                                            style="color:#DA61C7"></i></a></li>
                             @endif
-                            @if(!empty($sitesetting->youtube))
-                            <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube" style="color:#EB3E37"></i></a></li>
+                            @if (!empty($sitesetting->youtube))
+                                <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube"
+                                            style="color:#EB3E37"></i></a></li>
                             @endif
-                            @if(!empty($sitesetting->pinterest))
-                                <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest" style="color:#C3322C"></i></a></li>
+                            @if (!empty($sitesetting->pinterest))
+                                <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest"
+                                            style="color:#C3322C"></i></a></li>
 
                             @endif
                         </ul>
                         <div>
-                       
+
                         </div>
                     </div>
                     <!-- header dropdown buttons -->
@@ -57,22 +62,24 @@
                 </div>
 
                 <div class="col-md-5"style="display: flex;justify-content:space-evenly; align-items: center;">
-                 @if (!empty($sitesetting->linkedin))
-                 <a href="{{ $sitesetting->linkedin }}"><img src="{{asset('/frontend/viber.webp')}}" alt="viber" style="width:50px;height:33px"></a>
-             @endif
-             @if(!empty($sitesetting->google))
-                 <a href="{{ $sitesetting->google }}"><i class="fa fa-whatsapp" style="color:#66C359;font-size:30px"></i></a>
-             @endif
-             @if(!empty($getcontact->phone))
-                    <span class="font-weight-bold text-dark">{{ $getcontact->mobile }}</span>
-                @endif
+                    @if (!empty($sitesetting->linkedin))
+                        <a href="{{ $sitesetting->linkedin }}"><img src="{{ asset('/frontend/viber.webp') }}"
+                                alt="viber" style="width:50px;height:33px"></a>
+                    @endif
+                    @if (!empty($sitesetting->google))
+                        <a href="{{ $sitesetting->google }}"><i class="fa fa-whatsapp"
+                                style="color:#66C359;font-size:30px"></i></a>
+                    @endif
+                    @if (!empty($getcontact->phone))
+                        <span class="font-weight-bold text-dark">{{ $getcontact->mobile }}</span>
+                    @endif
                     <div class="social-icons">
 
                         <ul>
-                           <li><a href="{{ route('contactus') }}" class="text-dark font-weight-bold">Contact Us</a></li> 
+                            <li><a href="{{ route('contactus') }}" class="text-dark font-weight-bold">Contact Us</a>
+                            </li>
 
-                            @if (!empty(
-                                Auth()->guard('customer')->user()
+                            @if (!empty(Auth()->guard('customer')->user()
                             ))
                                 <li class="nav-item dropdown">
                                     <div class="d-flex">
@@ -129,35 +136,50 @@
                         <ul class="navbar-nav ml-xl-auto">
 
                             <!-- mega-menu end -->
-                            {{-- <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                 <a href="{{ url('/') }}" class="nav-link " aria-haspopup="true"
                                     aria-expanded="false">Home</a>
-                            </li> --}}
+                            </li>
                             <li class="nav-item dropdown1 ">
-                                <a href="#" class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Packages <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            </a>
+                                <a href="#" class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Trekking <i class="fa fa-angle-down"
+                                        aria-hidden="true"></i>
+                                </a>
                                 <div class="dropdown-content">
                                     @foreach ($category as $cat)
-                                    <div class="column col-lg-3">
-                                    <a data-toggle="collapse" href="#collapseExample{{$cat->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">  <h6 class="font-weight-bold">{{ $cat->category_name }}</h6></a>
-                                      @foreach ($cat->tour as $tours)
-                                      @if ($tours->status == '1')
-                                     <div class="collapse show" id="collapseExample{{$cat->id}}">
-                                        <a   class="d-flex" href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
+                                        @if ($cat->category_type == 'trekking')
+                                        @foreach ($cat->subcategory as $subcat)
+                                            <div class="column col-lg-3">
+                                              
+                                                    <a data-toggle="collapse"
+                                                        href="#collapseExample{{ $subcat->id }}" role="button"
+                                                        aria-expanded="false" aria-controls="collapseExample">
+                                                        <h6 class="font-weight-bold">{{ $subcat->sub_category_name }}</h6>
+                                                    </a>
+                                                    @foreach ($subcat->tour as $tours)
+                                                        @if ($tours->status == '1')
+                                                            <div class="collapse show"
+                                                                id="collapseExample{{ $subcat->id }}">
+                                                                <a class="d-flex"
+                                                                    href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
 
-                                     </div>
-                                     
+                                                            </div>
+
+                                                        @endif
+
+                                                    @endforeach
+                                            </div>
+
+                                            @endforeach
                                         @endif
                                         @endforeach
-                                    </div>
-                                    @endforeach
                                 </div>
-                              </li>
+                            </li>
                             @foreach ($category as $cat)
+                            @if($cat->category_type != 'trekking')
                                 <li class="nav-item dropdown">
-                                    <a href="#"class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">{{ $cat->category_name }}</a>
+                                    <a href="#"class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">{{ $cat->category_name }}</a>
 
                                     <div class="dropdown-menu left-1 ">
                                         @foreach ($cat->tour as $tours)
@@ -184,18 +206,18 @@
                                                             @endif
                                                         @endforeach
                                                     </a>
-                                                   <!-- for mobile!-->
-                                                   <a href="#"
-                                                    class=" dropdown-item mobile-view">{{ $subcat->sub_category_name }}
-                                                    @foreach ($subcat->tour->take(1) as $t)
-                                                        @if ($subcat->id == $t->subcategory_id)
-                                                            @if ($t->status == '1')
-                                                                <i class="fa fas fa-angle-right mt-1"
-                                                                    style="float:right"></i>
+                                                    <!-- for mobile!-->
+                                                    <a href="#"
+                                                        class=" dropdown-item mobile-view">{{ $subcat->sub_category_name }}
+                                                        @foreach ($subcat->tour->take(1) as $t)
+                                                            @if ($subcat->id == $t->subcategory_id)
+                                                                @if ($t->status == '1')
+                                                                    <i class="fa fas fa-angle-right mt-1"
+                                                                        style="float:right"></i>
+                                                                @endif
                                                             @endif
-                                                        @endif
-                                                    @endforeach
-                                                </a>
+                                                        @endforeach
+                                                    </a>
 
                                                     <div class="dropdown-menu ">
                                                         @foreach ($subcat->tour as $tour)
@@ -211,14 +233,14 @@
 
                                     </div>
                                 </li>
+                            @endif
                             @endforeach
                             <!-- mega-menu start -->
 
 
 
                             <li class="nav-item dropdown">
-                                <a href="{{ route('allblogs') }}" class="nav-link "
-                                    aria-expanded="false">Blogs</a>
+                                <a href="{{ route('allblogs') }}" class="nav-link " aria-expanded="false">Blogs</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -227,8 +249,7 @@
 
                                 <div class="dropdown-menu left-1">
                                     <div class="dropdown">
-                                        <a class="dropdown-item"
-                                            href="{{ route('introduction') }}">Introduction</a>
+                                        <a class="dropdown-item" href="{{ route('introduction') }}">Introduction</a>
                                         <a class="dropdown-item" href="{{ route('ourteam') }}">Our Team</a>
                                         <a class="dropdown-item" href="{{ route('travelwithus') }}">Why Travels
                                             With
