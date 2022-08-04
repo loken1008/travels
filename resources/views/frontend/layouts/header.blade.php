@@ -148,14 +148,14 @@
                                 <div class="dropdown-content">
                                     @foreach ($category as $cat)
                                         @if ($cat->category_type == 'trekking')
-                                        @foreach ($cat->subcategory as $subcat)
+                                        @foreach ($subcategory as $subcat)
+                                        @if($subcat->category_id == $cat->id)
                                             <div class="column col-lg-3">
                                               
-                                                    <a data-toggle="collapse"
-                                                        href="#collapseExample{{ $subcat->id }}" role="button"
-                                                        aria-expanded="false" aria-controls="collapseExample">
-                                                        <h6 class="font-weight-bold">{{ $subcat->sub_category_name }}</h6>
-                                                    </a>
+                                                    
+                                                        <a href={{ route('tripdetails', $subcat->sub_category_slug) }} class="font-weight-bold">{{ $subcat->sub_category_name }}</a> <span data-toggle="collapse"
+                                                        href="#collapseExample{{ $subcat->id }}" class="cursor-pointer"><i class="fa fa-plus text-primary "></i></span>
+                                                   
                                                     @foreach ($subcat->tour as $tours)
                                                         @if ($tours->status == '1')
                                                             <div class="collapse show"
@@ -169,7 +169,7 @@
 
                                                     @endforeach
                                             </div>
-
+                                            @endif
                                             @endforeach
                                         @endif
                                         @endforeach
