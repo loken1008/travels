@@ -496,8 +496,8 @@
         'startup_view' => 'list',
         'max_size' => 10000000000,
         'thumb' => true,
-        'thumb_width' => 500,
-        'thumb_height' => 260,
+        'thumb_width' => 350,
+        'thumb_height' => 200,
         'valid_mime' => 
         array (
           0 => 'video/mp4',
@@ -510,8 +510,8 @@
         'startup_view' => 'list',
         'max_size' => 5000000,
         'thumb' => true,
-        'thumb_width' => 500,
-        'thumb_height' => 260,
+        'thumb_width' => 350,
+        'thumb_height' => 200,
       ),
       'image' => 
       array (
@@ -519,8 +519,8 @@
         'startup_view' => 'grid',
         'max_size' => 5000000,
         'thumb' => true,
-        'thumb_width' => 500,
-        'thumb_height' => 260,
+        'thumb_width' => 350,
+        'thumb_height' => 200,
         'valid_mime' => 
         array (
           0 => 'image/jpeg',
@@ -566,8 +566,8 @@
       4 => 'video/mp4',
       5 => 'video/mpeg',
     ),
-    'thumb_img_width' => 500,
-    'thumb_img_height' => 260,
+    'thumb_img_width' => 350,
+    'thumb_img_height' => 200,
     'file_type_array' => 
     array (
       'pdf' => 'Adobe Acrobat',

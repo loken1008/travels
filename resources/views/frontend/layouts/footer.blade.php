@@ -766,7 +766,7 @@ c-98 -545 -131 -696 -167 -772 -32 -68 -63 -187 -111 -426 -20 -100 -93 -379
     </svg>
 
 </div>
-<footer class="bg-faded pt-70 bg-theme-color-2">
+<footer class="bg-faded pt-30 bg-theme-color-2">
     <div class="container">
 
         <div class="section-content">

@@ -332,7 +332,7 @@
             @endif
         }
         .chooseus-section{
-            @if(!empty($homepagebannerone->page_banner)) background: url('{{ asset($homepagebannerone->page_banner)}}') ;
+            @if(!empty($homepagebannerone->page_banner)) background: url('{{ asset($homepagebannerone->page_banner)}}') cover;
            @else
             background-color:#000000;
             @endif

@@ -416,8 +416,9 @@
     flex-direction: column-reverse;
   }
   .animated-button1 {
-    left: 0;
-    width: 220px;
+    left: -11.27px;
+    width: 260px;
+    font-size: 15px !important;
   }
   .special-places {
     margin-bottom: 30px;
@@ -531,8 +532,17 @@
     text-align: center;
   }
   .cbutton {
-    height: 50px;
-    padding: 2px 22px;
+    height: 18px;
+    padding: 0px 22px;
+    border:none !important;
+    font-size:12px !important;
+  }
+  .animated-button1 {
+    width:180px !important;
+    font-size:12px !important;
+left: 0px !important;
+height: 40px !important;
+    padding: 1px 6px 0px 0px !important;
   }
   .icon-wrp {
     padding: 11px 33px;
@@ -985,15 +995,23 @@ height: 110px !important;
 
   #tiger {
     width: 100px !important;
-    height: 46px !important;
+    height:65px !important;
     left: 145px !important;
   }
   .elephant {
     width: 100px !important;
-    height: 70px !important;
+    height: 100px !important;
   }
   .svg {
     height: 256% !important;
     width: 90vw !important;
+  }
+  .special-places .content .btn-theme,.special-packages .content .btn-theme {
+    float:none !important;
+    padding: 3px 66px !important;
+    margin-top:2px !important;
+  }
+  .forest{
+    width:130vw !important;
   }
 }
