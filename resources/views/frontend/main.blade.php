@@ -38,10 +38,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}" media="" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/menu.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css"
         crossorigin="anonymous" />
     <!-- Responsive CSS -->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}" /> --}}
+    
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
