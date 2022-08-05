@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-md-3" id="custom-booking">
-                    <div class=" text-center animated-button1">
+                    <div class=" text-center">
                         <a href="{{ route('online.book') }}" class="animated-button1 ml-1 mt-2 cbutton">
                           
                             Make Your Own Trip Now
@@ -329,7 +329,7 @@
                                     </h3>
                                     <div class="content choosecontent d-flex">
                                         <img src="{{ getThumbs($choose->image) }}" alt="{{ $choose->title }}"> 
-                                        <p id="choosepara">{!! Str::limit($choose->description, 300, '.') !!}</p>
+                                        <p id="choosepara">{!! Str::limit($choose->description, 200, '.') !!}</p>
                                     </div>
                                     
                                 </div>
