@@ -706,6 +706,7 @@ input:-moz-placeholder {
   border: 1px solid #F6AB3B;
   color: #fff;
 }
+
 .preloader {
   background-color: #fff;
   background-image: url(../images/preloader.gif);
@@ -5814,7 +5815,7 @@ margin-bottom:10px;
   color:#0E4D94;
 }
 .banner-image{
-width:1905px;height:550px;
+width:1905px;
 }
 .special-packages .content .bookbtn,.special-places .content .bookbtn{
   float:left !important;
