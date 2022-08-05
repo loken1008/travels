@@ -6304,7 +6304,7 @@ ul.navbar-nav
     min-height: 550px;
   }
   video {
-    height: 550px !important;
+    min-height: 550px !important;
   }
   .carousel-item .slide-image {
     min-height: 550px;
