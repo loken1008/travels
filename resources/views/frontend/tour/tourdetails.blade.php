@@ -34,8 +34,12 @@ function getThumbs($url = '')
             <div class="section-content">
                 <div class="row">
                     <div class="col-12">
-                        <h4>{{ $getTourdetails->category->category_name }}</h4>
-                        <h5 style="color:white">{{ $getTourdetails->tour_name }}</h5>
+                        <h4>{{ $getTourdetails->tour_name }}</h4>
+                        <h5 class="text-white"><a href="{{url('/')}}" class="text-primary">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{$getTourdetails->category->category_name}}
+                           @if(!empty($getTourdetails->subcategory->sub_category_name))
+                           <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{$getTourdetails->subcategory->sub_category_name}}
+                            @endif
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{$getTourdetails->tour_name}}</h5>
                     </div>
                 </div>
             </div>
@@ -305,14 +309,16 @@ function getThumbs($url = '')
 
                                                 <div class="item" style="padding-right: 20px;">
                                                     <div class="special-places">
-                                                        @if ($getTourdetails->map_url == !null)
+                                                        @if (!empty($getTourdetails->map_url))
                                                             <div id="map_canvas"
                                                                 style="height:400px; width:100%; display:inline-block; overflow:hidden;">
-
+                                                                @if (!empty($getTourdetails->map_url))
                                                                 <iframe src="{{ $getTourdetails->map_url }}"
                                                                     width="100%" height="600" frameborder="0"
                                                                     style="position:relative; top:-70px; border:none;"></iframe>
-
+                                                                    @else 
+                                                                    <p class="text-center">Not Found</p>
+                                                                    @endif
                                                             </div>
                                                         @endif
 
@@ -408,11 +414,7 @@ function getThumbs($url = '')
                         @endif
                         <a class="btn-book cbutton" href="{{ route('booking', $getTourdetails->slug) }}">Book This
                             Trip</a>
-                        <a href="{{ route('online.book') }}" class="animated-button1 ml-1 mt-2 cbutton">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <a href="{{ route('online.book') }}" class="animated-button1 ml-1 mt-2 cbutton" style="top:0px!important">
                             Make Your Own Trip Now
                         </a>
 

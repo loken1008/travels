@@ -142,8 +142,7 @@
                             </li>
                             <li class="nav-item dropdown1 ">
                                 <a href="#" class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Trekking <i class="fa fa-angle-down"
-                                        aria-hidden="true"></i>
+                                    aria-haspopup="true" aria-expanded="false">Trekking 
                                 </a>
                                 <div class="dropdown-content">
                                     @foreach ($category as $cat)
@@ -151,11 +150,9 @@
                                         @foreach ($subcategory as $subcat)
                                         @if($subcat->category_id == $cat->id)
                                             <div class="column col-lg-3">
-                                              
-                                                    
-                                                        <a href={{ route('tripdetails', $subcat->sub_category_slug) }} class="font-weight-bold">{{ $subcat->sub_category_name }}</a> <span data-toggle="collapse"
+                                            <a href={{ route('tripdetails', $subcat->sub_category_slug) }} class="font-weight-bold">{{ $subcat->sub_category_name }}</a> <span data-toggle="collapse"
                                                         href="#collapseExample{{ $subcat->id }}" class="cursor-pointer"><i class="fa fa-plus text-primary "></i></span>
-                                                   
+     
                                                     @foreach ($subcat->tour as $tours)
                                                         @if ($tours->status == '1')
                                                             <div class="collapse show"
