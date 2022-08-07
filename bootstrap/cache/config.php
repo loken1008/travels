@@ -884,7 +884,7 @@
   ),
   'sentry' => 
   array (
-    'dsn' => 'https://1ef0dc5fc02a4c728f74b511eff1e08e@o1285487.ingest.sentry.io/6497132',
+    'dsn' => 'https://87e13a0d294d40918398ba02e506ce73@o1079963.ingest.sentry.io/6629833',
     'environment' => NULL,
     'breadcrumbs' => 
     array (
