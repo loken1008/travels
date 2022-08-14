@@ -380,23 +380,22 @@ Main JavaScript
     <script src="{{ asset('frontend/js/jqueryvalidation.js') }}"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" async></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9" async></script>
     <script src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" async>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js" 
         integrity="sha512-PsJ1f4lw0Jrga4wbDOvdWs9DFl88C1vlcH2VQYqgljHBmzmqtGivUkzRHWx2ZxFlnysKUcROqLeuOpYh9q4YNg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
       
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G0X8HC7346"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5EJF8NFWL9');
-
+  gtag('config', 'G-G0X8HC7346');
+</script>
+  <script>
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
         (function() {
