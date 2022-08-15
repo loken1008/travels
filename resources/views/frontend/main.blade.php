@@ -335,7 +335,7 @@
             @endif
         }
         #trekking-dropdown{
-            height:600px;
+            height:500px;
             overflow-y:scroll;
         }
         /* width */
