@@ -144,7 +144,7 @@
                                 <a href="#" class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">Trekking 
                                 </a>
-                                <div class="dropdown-content">
+                                <div class="dropdown-content" id="trekking-dropdown">
                                     @foreach ($category as $cat)
                                         @if ($cat->category_type == 'trekking')
                                         @foreach ($subcategory as $subcat)

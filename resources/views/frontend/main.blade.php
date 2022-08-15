@@ -334,6 +334,15 @@
             background-color:#000000;
             @endif
         }
+        #trekking-dropdown{
+            height:600px;
+            overflow-y:scroll;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+        width:0px;
+}
+ 
     </style>
 
 </head>
