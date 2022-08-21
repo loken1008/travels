@@ -46,6 +46,51 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        <div class="">
+
+                                            <label for="firstName5"> First Image :</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <a id="hblfm" data-input="mainthumbnail" data-preview="holder"
+                                                        class="btn btn-primary">
+                                                        <i class="fa fa-picture-o"></i> Choose
+                                                    </a>
+                                                </span>
+                                                <input id="mainthumbnail" class="form-control" type="text" name="main_image">
+            
+                                            </div>
+                                            <img id="holder1" style="margin-top:15px;max-height:100px;" src="{{$edithomepage->main_image}}">
+                                            @error('main_image')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="">
+
+                                            <label for="firstName5"> Second Image :</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <a id="hmblfm" data-input="mainthumbnail" data-preview="holder"
+                                                        class="btn btn-primary">
+                                                        <i class="fa fa-picture-o"></i> Choose
+                                                    </a>
+                                                </span>
+                                                <input id="mainthumbnail" class="form-control" type="text" name="image">
+            
+                                            </div>
+                                            <img id="holder1" style="margin-top:15px;max-height:100px;" src="{{$edithomepage->image}}">
+                                            @error('image')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Image Alt<span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <input type="text" name="img_alt" class="form-control" value="{{$edithomepage->img_alt}}">
+                                                @error('img_alt')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <h5>Meta Title</h5>
                                             <div class="controls">
@@ -83,7 +128,17 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var route_prefix = "/mgiadmin/mountainguide-filemanager";
+        $('#hblfm').filemanager('images', {
+            prefix: route_prefix
+        });
+        $('#hmblfm').filemanager('images', {
+            prefix: route_prefix
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $("#edithomepageForm").validate({

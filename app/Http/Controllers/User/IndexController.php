@@ -32,7 +32,7 @@ class IndexController extends Controller
         $catnature=Category::with('tour')->where('category_type','natural')->first();
         $catadventure=Category::with('tour')->where('category_type','adventure')->first();
         $catpeak=Category::with('tour')->where('category_type','peakclimbing')->first();
-        $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->get();
+        $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->first();
         $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
         $chooseus=ChooseUs::orderBy('id','asc')->limit(3)->get();
         $gallery=Gallery::orderBy('id','desc')->limit(6)->get();

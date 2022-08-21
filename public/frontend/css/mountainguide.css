@@ -1,0 +1,3227 @@
+body {
+  overflow-x: hidden;
+}
+.body {
+  position: relative;
+  width: 1442px;
+  height: 7246px;
+  background: #ffffff;
+}
+.nav-link {
+  width: auto !important;
+  height: 21px !important;
+  font-family: 'Poppins' !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 9px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  background: #0e4e93 !important;
+  flex: none !important;
+  order: 0 !important;
+  flex-grow: 0 !important;
+  padding: 8px 21px !important;
+}
+.trekking-subcategory {
+  position: absolute !important;
+  width: 1351px !important;
+  left: -250px !important;
+  height: 323px;
+  top: 28px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  background: #ffffff;
+}
+.tdrop:hover .trekking-subcategory {
+  display: flex !important;
+}
+.trek-flex {
+  flex-wrap: wrap !important;
+  padding: 10px 160px !important;
+}
+.treksubcategory {
+  height: 24px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  text-decoration: none !important;
+}
+.treksubsubcategory {
+  height: 25px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #828282;
+  text-decoration: none !important;
+}
+.other-subcategory {
+  position: absolute !important;
+  width: 281px;
+  border: none !important;
+  border-radius: 0px !important;
+  background: #ffffff;
+  top: 28px !important;
+  left: 22px !important;
+}
+.other-subsubcategory {
+  position: absolute !important;
+  width: 281px;
+  border: none !important;
+  border-radius: 0px !important;
+  background: #ffffff;
+  top: -8px !important;
+  left: 280px !important;
+}
+.dropdown.sdt:hover .other-subsubcategory {
+  display: block !important;
+}
+.about-subcategory {
+  position: absolute !important;
+  width: 218px;
+  border: none !important;
+  border-radius: 0px !important;
+  background: #ffffff;
+  top: 28px !important;
+  left: 22px !important;
+}
+.dropdown-item {
+  height: 25px !important;
+  font-family: 'Poppins' !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  color: #828282 !important;
+}
+.dropdown-item:hover {
+  background-color: #0f4e93 !important;
+  color: white !important;
+  padding-top: 0px !important;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #0f4e93 !important;
+  color: white !important;
+  padding-top: 0px !important;
+}
+.logindropdown {
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+.mountainguide-block1 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block1.layout {
+  position: relative;
+}
+.mountainguide-block2 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block2.layout {
+  position: relative;
+  height: 125px;
+}
+.mountainguide-block3 {
+  display: flex;
+  flex-direction: column;
+  background-color: #0e4e93;
+}
+
+.mountainguide-block3.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 155px;
+  gap: 10px;
+  position: absolute;
+  top: 84px;
+  height: 41px;
+  left: 0px;
+  width: 100%;
+  min-width: 100%;
+}
+.mountainguide-block4 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block4.layout {
+  position: relative;
+  height: 21px;
+  width: 1132px;
+  min-width: 1132px;
+  margin: 10px 0px 0px 155px;
+}
+.mountainguide-block5 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block5.layout {
+  position: absolute;
+  top: 0px;
+  height: 17px;
+  left: 0px;
+  width: 45px;
+}
+.mountainguide-text-body {
+  font: 500 14px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: white;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  min-width: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.mountainguide-block6 {
+  display: flex;
+}
+.mountainguide-block6.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  left: 101px;
+  width: 88px;
+}
+.mountainguide-text-body.layout1 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block6-spacer {
+  flex: 0 1 10px;
+}
+.mountainguide-block6-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-block7 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block7.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 4px 0px 8px;
+}
+.mountainguide-image {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image.layout {
+  position: relative;
+  height: 4px;
+  width: 9px;
+  min-width: 9px;
+  margin: 5px 2px 5px 3px;
+}
+.mountainguide-block8 {
+  display: flex;
+}
+.mountainguide-block8.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  left: 250px;
+  width: 144px;
+}
+.mountainguide-text-body.layout2 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block8-spacer {
+  flex: 0 1 12px;
+}
+.mountainguide-block8-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-block9 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block9.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 4px 0px 8px;
+}
+.mountainguide-image1 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image1.layout {
+  position: relative;
+  height: 4px;
+  width: 10px;
+  min-width: 10px;
+  margin: 5px 2px;
+}
+.mountainguide-block10 {
+  display: flex;
+}
+.mountainguide-block10.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  left: 454px;
+  width: 67px;
+}
+.mountainguide-text-body.layout3 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block10-spacer {
+  flex: 0 1 10px;
+}
+.mountainguide-block10-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-block11 {
+  display: flex;
+}
+.mountainguide-block11.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  width: 102px;
+  right: 448px;
+}
+.mountainguide-text-body.layout4 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block11-spacer {
+  flex: 0 1 11px;
+}
+.mountainguide-block11-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-image.layout1 {
+  position: relative;
+  height: 4px;
+  width: 9px;
+  min-width: 9px;
+  margin: 5px 3px 5px 2px;
+}
+.mountainguide-block12 {
+  display: flex;
+}
+.mountainguide-block12.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  width: 152px;
+  right: 236px;
+}
+.mountainguide-text-body.layout5 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block12-spacer {
+  flex: 0 1 19px;
+}
+.mountainguide-block12-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-block13 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block13.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  left: 957px;
+  width: 46px;
+}
+.mountainguide-block14 {
+  display: flex;
+}
+.mountainguide-block14.layout {
+  position: absolute;
+  top: 0px;
+  height: 26px;
+  width: 69px;
+  right: 0px;
+}
+.mountainguide-text-body.layout6 {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 9px;
+}
+.mountainguide-block14-spacer {
+  flex: 0 1 9px;
+}
+.mountainguide-block14-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 14px;
+}
+.mountainguide-block15 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.mountainguide-block15.layout {
+  position: absolute;
+  top: 0px;
+  height: 84px;
+  left: 0px;
+  width: 100%;
+  min-width: 100%;
+}
+.mountainguide-block16 {
+  display: flex;
+}
+.mountainguide-block16.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 78.5%;
+  margin: 10px auto 13px;
+}
+.mountainguide-block16-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 111px;
+}
+.mountainguide-image2 img {
+  width: 111px;
+  height: 61px;
+}
+.mountainguide-image2.layout {
+  position: relative;
+  height: 61px;
+  width: 111px;
+  min-width: 111px;
+}
+.mountainguide-block16-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 1021px;
+}
+.mountainguide-block17 {
+  display: flex;
+}
+.mountainguide-block17.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 8px 0px;
+}
+.mountainguide-block17-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 949px;
+}
+.mountainguide-block18 {
+  display: flex;
+  flex-direction: column;
+  width: 148px;
+}
+.mountainguide-block18.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 2px 794px;
+}
+.mountainguide-text-body1 {
+  display: flex;
+  justify-content: flex-end;
+  font: 14px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  text-align: right;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body1.layout {
+  position: relative;
+  margin: 0px 12px;
+}
+.mountainguide-block19 {
+  display: flex;
+}
+.mountainguide-block19.layout {
+  position: relative;
+  margin: 4px 0px 0px;
+}
+.mountainguide-block19-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 48px;
+}
+.mountainguide-block20 {
+  display: flex;
+}
+.mountainguide-block20.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 2px 0px 0px;
+}
+.mountainguide-block20-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 23px;
+}
+.mountainguide-block21 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block21.layout {
+  position: relative;
+  overflow: hidden;
+  height: 19px;
+  margin: 1px 0px 0px -10px;
+}
+.whatsapp {
+  position: absolute;
+  left: 54.25%;
+  top: -1px;
+  bottom: 2.13%;
+  color: #4fce5d;
+  font-size: 21px;
+}
+.mountainguide-image3.layout {
+  position: absolute;
+  top: 5px;
+  height: 8px;
+  left: 6px;
+  width: 9px;
+  min-width: 9px;
+}
+.mountainguide-image4 .viber {
+  /* background: var(--src) center center/cover no-repeat; */
+  position: absolute;
+  left: 2.54%;
+  right: 2.55%;
+  top: 0%;
+  bottom: 0.01%;
+  color: #59267c;
+}
+.mountainguide-image4.layout {
+  position: absolute;
+  top: 0px;
+  height: 18px;
+  left: 1px;
+  width: 19px;
+  min-width: 19px;
+}
+.mountainguide-block20-spacer {
+  flex: 0 1 5px;
+}
+.mountainguide-block20-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 20px;
+}
+.mountainguide-block22 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block22.layout {
+  position: relative;
+  overflow: hidden;
+  height: 18px;
+  margin: 1px 2px 1px 0px;
+}
+.mountainguide-block19-spacer {
+  flex: 0 1 10px;
+}
+.mountainguide-highlights {
+  font: 600 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights.layout {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0px 0px 2px;
+}
+.mountainguide-block17-spacer {
+  flex: 0 1 26px;
+}
+.mountainguide-block17-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 46px;
+}
+.mountainguide-block23 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px 22px 22px 22px;
+}
+.mountainguide-block23.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 1px 0px 0px;
+}
+.mountainguide-icon1 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 19px 19px 19px 19px;
+}
+.mountainguide-icon1.layout {
+  position: relative;
+  height: 38px;
+  width: 38px;
+  min-width: 38px;
+  margin: 3px 4px;
+}
+.mountainguide-block24 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+}
+.mountainguide-block24.layout {
+  position: relative;
+}
+.mountainguide-block25 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block25.layout {
+  position: relative;
+}
+.mountainguide-block26 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block26.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 35.23%;
+  margin: 188px auto 187px;
+}
+.mountainguide-block27 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block27.layout {
+  position: relative;
+}
+.mountainguide-hero-title {
+  display: flex;
+  justify-content: center;
+  font: 700 54px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: white;
+  text-align: center;
+  letter-spacing: 0px;
+}
+.mountainguide-hero-title.layout {
+  position: relative;
+  margin: 0px 33.5px;
+}
+.mountainguide-highlights1 {
+  display: flex;
+  justify-content: center;
+  font: 300 16px/1.78 'Poppins', Helvetica, Arial, serif;
+  color: #fafcff;
+  text-align: center;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights1.layout {
+  position: relative;
+  margin: 11px 0px 0px;
+}
+.mountainguide-block28 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 28px 28px 28px 28px;
+}
+.mountainguide-block28.layout {
+  position: relative;
+  width: 39.37%;
+  margin: 25px auto 0px;
+}
+.mountainguide-highlights2 {
+  font: 500 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights2.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 60%;
+  margin: 16px 22% 20px 24.5%;
+  text-decoration: none;
+}
+.mountainguide-block29 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.0980392157);
+}
+.mountainguide-block29.layout {
+  position: absolute;
+  height: 106px;
+  bottom: -72px;
+  width: 786px;
+  right: 370px;
+}
+
+.search {
+  position: relative;
+  border-radius: 300px;
+}
+
+.search input {
+  position: relative;
+  flex-grow: 1;
+  margin: 25px 22px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 6px 10px 25px;
+  gap: 10px;
+  width: 742px;
+  height: 56px;
+  background: #ffffff;
+  border: 1px solid #c9daed;
+  border-radius: 300px;
+}
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid #0f4e93;
+}
+.search .fa-search {
+  position: absolute;
+  left: 12.5%;
+  right: 8.33%;
+  top: 30%;
+  bottom: 12.5%;
+  color: #ffffff;
+}
+
+.search button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 10px;
+  width: 45px;
+  height: 45px;
+  background: #527bab;
+  border-radius: 75px;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+.mountainguide-highlights3 {
+  font: 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights3.layout {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 16px 0px 20px 25px;
+}
+.mountainguide-block30-spacer {
+  flex: 0 1 595px;
+}
+.mountainguide-block30-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 51px;
+}
+.mountainguide-block31 {
+  display: flex;
+  flex-direction: column;
+  background-color: #527bab;
+  border-radius: 22.5px 22.5px 22.5px 22.5px;
+}
+.mountainguide-block31.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 6px 6px 5px 0px;
+}
+.mountainguide-block32 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block32.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 11px 11px 12px 12px;
+}
+.mountainguide-image6 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image6.layout {
+  position: relative;
+  height: 17px;
+  width: 18px;
+  min-width: 18px;
+  margin: 2px 0px 0px 2px;
+}
+.countrytab {
+  display: flex;
+  flex-direction: column;
+}
+.countrytab.layout {
+  position: relative;
+  margin: 79px 1px 0px;
+}
+.countrytabsecond {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+}
+.countrytabsecond.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 572px;
+}
+.countrytabheading {
+  display: flex;
+  flex-direction: column;
+}
+.countrytabheading.layout {
+  position: relative;
+  margin: 50px 0px 0px;
+}
+.countrytabmainheading {
+  display: flex;
+  flex-direction: column;
+}
+.countrytabmainheading.layout {
+  position: relative;
+  flex-grow: 1;
+  /* width: 26.18%; */
+  margin: 0px auto;
+}
+.countrytab-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.countrytab-title.layout {
+  position: relative;
+  margin: 0px 10px 0px 0px;
+}
+.countrytab-box {
+  background-color: #f6b40b;
+  border-radius: 3.5px 3.5px 3.5px 3.5px;
+}
+.countrytab-box.layout {
+  position: relative;
+  height: 7px;
+  width: 37px;
+  min-width: 37px;
+  margin: 0px 0px 0px;
+}
+.country-list {
+  display: flex;
+  flex-direction: column;
+}
+.country-list.layout {
+  position: relative;
+  margin: 55px 0px 0px;
+}
+.country-main {
+  display: flex;
+  justify-content: space-around;
+}
+.country-main.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 78.51%;
+  margin: 0px auto;
+}
+.country-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 65px;
+}
+.country-name {
+  display: flex;
+  flex-direction: column;
+}
+.country-name.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.country-subtitle {
+  display: flex;
+  justify-content: center;
+  font: 500 20px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  text-align: center;
+  letter-spacing: 0px;
+  text-decoration: none;
+  height: 30px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.25);
+}
+.country-subtitle.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 16px;
+}
+.country-spacer {
+  flex: 0 1 161.5px;
+}
+
+.own-trip {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 220px;
+}
+.make-own-trip {
+  display: flex;
+  flex-direction: column;
+}
+.make-own-trip.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.make-own-trip-subtitle1.layout3 {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 21px 16px 2px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.25);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  text-decoration: none !important;
+}
+.mountainguide-block44 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block44.layout {
+  position: absolute;
+  top: 241px;
+  height: 525px;
+  width: 108%;
+  right: 0px;
+}
+.mountainguide-block45 {
+  display: flex;
+}
+.mountainguide-block45.layout {
+  position: relative;
+  width: 85.42%;
+  margin: 10px auto 0px;
+}
+.mountainguide-block45-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 20px;
+}
+.mountainguide-block46 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block46.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 213px 0px;
+}
+.mountainguide-image7 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image7.layout {
+  position: relative;
+  height: 30px;
+  width: 15px;
+  min-width: 15px;
+  margin: 2px 3px 2px 2px;
+}
+.mountainguide-block45-spacer {
+  flex: 0 1 30px;
+}
+.mountainguide-block45-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 1130px;
+}
+.country-details {
+  display: flex;
+}
+.country-details.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.country-details-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 351px;
+}
+.owl-item {
+  margin-right: 10px !important;
+  margin-bottom: 12px !important;
+}
+.owl-nav {
+  position: relative;
+}
+.owl-prev {
+  position: absolute;
+  left: -45px;
+  top: -310px !important;
+  font-size:70px !important;
+  font-weight: 100 !important;
+  color: #4F4F4F !important;
+}
+.owl-next {
+  position: absolute;
+  right: -45px;
+  top: -310px !important;
+  font-size:70px !important;
+  font-weight: 100 !important;
+  color: #4F4F4F !important;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background-color: #fafcff !important;
+  color: #0e4e93 !important;
+}
+.owl-dot {
+  border: 2px solid #f2f2f2 !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 30px !important;
+  margin-left: 2px !important;
+}
+.owl-dot span {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 3px 3px !important;
+  background: white !important;
+}
+.owl-dot.active {
+  border: 2px solid #0e4e93 !important;
+}
+.owl-dot.active span{
+  background: #0e4e93 !important;
+}
+
+.owl-theme .owl-nav {
+  margin-top: 0px !important;
+}
+.mountainguide-block48 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.0470588235); */
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-block48.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block49 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block49.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 15px 15px 20px;
+}
+.country-image {
+  border-radius: 3px 3px 3px 3px;
+}
+.country-image.layout {
+  position: relative;
+  height: 230px;
+}
+.country-image img {
+  width: 321.33px;
+  height: 230px;
+}
+.mountainguide-block50 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block50.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block51 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block51.layout {
+  position: relative;
+}
+.mountainguide-text-body2-box.layout {
+  position: relative;
+}
+.mountainguide-text-body2 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: black;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body2-span0 {
+  font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #999999ff;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body2-span1 {
+  font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484dff;
+  letter-spacing: 0px;
+}
+.mountainguide-subtitle2 {
+  font: 600 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+}
+.mountainguide-subtitle2.layout {
+  position: relative;
+  margin: 7px 0px 0px;
+}
+.mountainguide-paragraph-body {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body.layout {
+  position: relative;
+  margin: 13px 0px 0px;
+}
+.mountainguide-block52 {
+  display: flex;
+}
+.mountainguide-block52.layout {
+  position: relative;
+  margin: 24px 0px 0px;
+}
+.mountainguide-block52-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 180px;
+}
+.mountainguide-block53 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block53.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-text-body11 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body11.layout {
+  position: relative;
+}
+.mountainguide-highlights4 {
+  font: 600 18px/1.22 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights4.layout {
+  position: relative;
+  margin: 2px 0px 0px;
+}
+.mountainguide-block52-spacer {
+  flex: 0 1 13px;
+}
+.mountainguide-block52-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-block54 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block54.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block55 {
+  display: flex;
+  flex-direction: column;
+  background-color: #0e4e93;
+  border-radius: 20px 20px 20px 20px;
+}
+.mountainguide-block55.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 3px 0px;
+}
+.mountainguide-highlights5 {
+  font: 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: white;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights5.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  min-width: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 8px 0px 0px 25px;
+}
+.mountainguide-block47-spacer {
+  flex: 0 1 38px;
+}
+.mountainguide-block47-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 352px;
+}
+.mountainguide-block56 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.0470588235);
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-block56.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block57 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block57.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 15px 15px 20px;
+}
+.mountainguide-image9 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-image9.layout {
+  position: relative;
+  height: 230px;
+}
+.mountainguide-block58 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block58.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block59 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block59.layout {
+  position: relative;
+}
+.mountainguide-text-body21-span0 {
+  font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #999999ff;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body21-span1 {
+  font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484dff;
+  letter-spacing: 0px;
+}
+.mountainguide-block60 {
+  display: flex;
+}
+.mountainguide-block60.layout {
+  position: relative;
+  margin: 24px 0px 0px;
+}
+.mountainguide-block60-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 181px;
+}
+.mountainguide-block61 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block61.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-text-body12 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body12.layout {
+  position: relative;
+}
+.mountainguide-block60-spacer {
+  flex: 0 1 13px;
+}
+.mountainguide-block60-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-text-body13 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body13.layout {
+  position: relative;
+}
+.mountainguide-block52-item2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-image7.layout1 {
+  position: relative;
+  height: 30px;
+  width: 15px;
+  min-width: 15px;
+  margin: 2px 2px 2px 3px;
+}
+.mountainguide-block62 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block62.layout {
+  position: relative;
+  width: 84.03%;
+  margin: 25px auto 10px;
+}
+.mountainguide-block63 {
+  display: flex;
+}
+.mountainguide-block63.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 140px;
+  min-width: 140px;
+  margin: 0px auto;
+}
+.mountainguide-block63-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 20px;
+}
+.mountainguide-icon2 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-icon2.layout {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+}
+.mountainguide-block63-spacer {
+  flex: 0 1 10px;
+}
+.explore-us {
+  display: flex;
+  align-items: center;
+  padding: 30px 100px;
+  gap: 10px;
+  background: #fafcff !important;
+  margin-top: 60px !important;
+}
+.explore-main-image {
+  height: 419px;
+  width: 290.62139892578125px;
+  left: 0px;
+  top: -0.000030517578125px;
+  border-radius: 558px;
+}
+.explore-image {
+  width: 203.43px;
+  height: 285px;
+  /* border: 6px solid #FAFCFF; */
+  border-radius: 500px;
+}
+
+.mountainguide-block65 {
+  display: flex;
+}
+.mountainguide-block65.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 78.5%;
+  margin: 63px auto;
+}
+.mountainguide-block65-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 394px;
+}
+.mountainguide-block66 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block66.layout {
+  position: relative;
+  height: 494px;
+}
+.mountainguide-image10 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 145.31px 145.31px 145.31px 145.31px;
+}
+.mountainguide-image10.layout {
+  position: absolute;
+  top: 0px;
+  height: 419px;
+  left: 0px;
+  width: 291px;
+  min-width: 291px;
+}
+.mountainguide-image11 {
+  background: var(--src) center center/cover no-repeat;
+  border: 6px solid #fafcff;
+  border-radius: 101.72px 101.72px 101.72px 101.72px;
+}
+.mountainguide-image11.layout {
+  position: absolute;
+  top: 209px;
+  height: 285px;
+  left: 191px;
+  width: 203px;
+  min-width: 203px;
+}
+.mountainguide-block65-spacer {
+  flex: 0 1 135px;
+}
+.mountainguide-block65-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 603px;
+}
+.mountainguide-block67 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block67.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 7px 0px 6px;
+}
+.mountainguide-block68 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block68.layout {
+  position: relative;
+}
+.mountainguide-subtitle3 {
+  font: 500 22px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  letter-spacing: 0px;
+}
+.mountainguide-subtitle3.layout {
+  position: relative;
+}
+.mountainguide-hero-title1 {
+  font: 700 46px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+}
+.mountainguide-hero-title1.layout {
+  position: relative;
+  margin: 3px 0px 13px;
+}
+.mountainguide-highlights6 {
+  font: 300 16px/1.78 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights6.layout {
+  position: relative;
+  margin: 20px 0px 0px;
+}
+.mountainguide-block69 {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #0e4e93;
+  border-radius: 28px 28px 28px 28px;
+}
+.mountainguide-block69.layout {
+  position: relative;
+  width: 29.85%;
+  margin: 20px 70.15% 0px 0%;
+}
+.mountainguide-highlights7 {
+  font: 500 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights7.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 16px 26px 20px 33px;
+}
+.mountainguide-block70 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+}
+.mountainguide-block70.layout {
+  position: relative;
+  margin: 90px 0px 0px;
+  padding: 0px 69px !important;
+}
+.mountainguide-block71 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block71.layout {
+  position: relative;
+  overflow: hidden;
+  height: 578px;
+  width: 89.25%;
+  margin: 0px 0% 0px 5.75%;
+}
+.mountainguide-block72 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block72.layout {
+  position: absolute;
+  top: 0px;
+  height: 578px;
+  left: 0px;
+  width: 503px;
+  min-width: 503px;
+}
+.mountainguide-block73 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block73.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 72.76%;
+  margin: 180px 27.24% 170px 0%;
+}
+.mountainguide-block74 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block74.layout {
+  position: relative;
+}
+.mountainguide-hero-title11 {
+  font: 700 46px/1.23 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+}
+.mountainguide-hero-title11.layout {
+  position: relative;
+  margin: 6px 0px 0px;
+}
+.mountainguide-block75 {
+  display: flex;
+}
+.mountainguide-block75.layout {
+  position: relative;
+  width: 137px;
+  min-width: 137px;
+  margin: 25px 0px 0px;
+}
+.mountainguide-block75-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 56px;
+}
+.mountainguide-block76 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(14, 78, 147, 0.047);
+  border-radius: 28px 28px 28px 28px;
+}
+.mountainguide-block76.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-image12 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image12.layout {
+  position: relative;
+  height: 20px;
+  width: 10px;
+  min-width: 10px;
+  margin: 18px 23px;
+}
+.mountainguide-block75-spacer {
+  flex: 0 1 25px;
+}
+
+.best-sell-layout {
+  position: absolute;
+  top: 0px;
+  height: 578px;
+  left: 503px;
+  width: 784px;
+  min-width: 784px;
+  background: #0e4e93;
+}
+.best-sell-image {
+  width: 321.33px;
+  height: 171px;
+  border-radius: 3px;
+}
+#best-sell-slider .owl-item {
+  margin-right: 100px !important;
+  width: 500px !important;
+}
+#best-sell-slider .owl-item.active:first-child {
+  transform: scale(1.9) !important;
+}
+.chooseimage {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  left: 7px;
+  top: 7px;
+  border-radius: 50%;
+}
+.mountainguide-block77 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block77.layout {
+  position: absolute;
+  overflow: hidden;
+  top: 90px;
+  height: 460px;
+  left: 388px;
+  width: 899px;
+  min-width: 899px;
+}
+.mountainguide-block48.layout1 {
+  width: 351.33px;
+  height: 401px;
+}
+.mountainguide-text-body14 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body14.layout {
+  position: relative;
+}
+.mountainguide-block52-item3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+
+.mountainguide-image14 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-image14.layout {
+  position: relative;
+  height: 171px;
+}
+.mountainguide-text-body15 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body15.layout {
+  position: relative;
+}
+.mountainguide-block60-item2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+
+.mountainguide-block81 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block81.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 15px 15px 20px;
+}
+.mountainguide-image15 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-image15.layout {
+  position: relative;
+  height: 174px;
+}
+.mountainguide-block82 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block82.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block83 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block83.layout {
+  position: relative;
+}
+.mountainguide-text-body2-box.layout1 {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 87px;
+}
+.mountainguide-subtitle2.layout1 {
+  position: absolute;
+  top: 29px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  left: 0px;
+  width: 163px;
+}
+.mountainguide-paragraph-body.layout1 {
+  position: absolute;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  bottom: -1px;
+  width: 321px;
+  right: 0px;
+}
+.mountainguide-block52.layout1 {
+  position: relative;
+  margin: 25px 0px 0px;
+}
+.mountainguide-text-body16 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body16.layout {
+  position: relative;
+}
+.mountainguide-block52-spacer1 {
+  flex: 0 1 128px;
+}
+.mountainguide-block84 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+}
+.mountainguide-block84.layout {
+  position: relative;
+  margin: 90px 1px 0px;
+}
+.mountainguide-block85 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block85.layout {
+  position: relative;
+  margin: 50px 10px 0px;
+}
+.mountainguide-block86 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block86.layout {
+  position: relative;
+  flex-grow: 1;
+  width: auto;
+  margin: 0px auto;
+}
+.mountainguide-medium-title.layout1 {
+  position: relative;
+  margin: 0px 2px 0px 0px;
+  height: 39px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+
+  /* text */
+
+  color: #061526;
+}
+.mountainguide-block87 {
+  display: flex;
+}
+.mountainguide-block87.layout {
+  position: relative;
+  width: 100%;
+  margin: 50px 110px 0px;
+}
+.chooseus-box {
+  width: 37px;
+  height: 7px;
+  background: #f6b40b;
+  border-radius: 3.5px;
+}
+.mountainguide-block87-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 353px;
+}
+.mountainguide-block88 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.mountainguide-block88.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-icon3 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-icon3.layout {
+  position: relative;
+  height: 54px;
+  width: 54px;
+  min-width: 54px;
+}
+.mountainguide-block89 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block89.layout {
+  position: relative;
+  margin: 30px 10px 30px;
+}
+.chooseus-title {
+  padding-right:25px !important;
+}
+.mountainguide-paragraph-body1 {
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body1.layout {
+  position: relative;
+}
+.chooseus-title a {
+  width: 285px;
+  height: 60px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #000000;
+}
+.chooseus-title a:hover {
+  color: #000000;
+}
+.chooseus-para {
+  width: 285px !important;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #999999 !important;
+}
+.mountainguide-subtitle4.layout {
+  position: relative;
+  width: 80.74%;
+  margin: 15px 19.26% 0px 0%;
+}
+.mountainguide-paragraph-body2-box.layout {
+  position: relative;
+  width: 80.74%;
+  margin: 27px 19.26% 1px 0%;
+}
+.mountainguide-paragraph-body2 {
+  overflow: visible;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin: 0px;
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+  white-space: pre-wrap;
+}
+.mountainguide-block87-spacer {
+  flex: 0 1 1px;
+  background: #9999991a;
+  margin:25px !important;
+}
+.mountainguide-block90 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f2f2f2;
+}
+.mountainguide-block90.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block91 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block91.layout {
+  position: relative;
+  height: 54px;
+  width: 54px;
+  min-width: 54px;
+}
+.mountainguide-icon4 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-icon4.layout {
+  position: absolute;
+  top: 7px;
+  height: 47px;
+  left: 7px;
+  width: 47px;
+  min-width: 47px;
+}
+.mountainguide-block92 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f6b40b;
+  border-radius: 25.16px 25.16px 25.16px 25.16px;
+}
+.mountainguide-block92.layout {
+  position: absolute;
+  top: 0px;
+  height: 50px;
+  left: 0px;
+  width: 50px;
+  min-width: 50px;
+}
+.mountainguide-block93 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block93.layout {
+  position: relative;
+  overflow: hidden;
+  height: 23px;
+  width: 23px;
+  min-width: 23px;
+  margin: 14px 0px 0px 14px;
+}
+.mountainguide-image16 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image16.layout {
+  position: absolute;
+  top: 7px;
+  height: 14px;
+  left: 5px;
+  width: 16px;
+  min-width: 16px;
+}
+.mountainguide-image17 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image17.layout {
+  position: absolute;
+  top: 1px;
+  height: 20px;
+  left: 1px;
+  width: 17px;
+  min-width: 17px;
+}
+.mountainguide-block94 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block94.layout {
+  position: relative;
+  width: 80.74%;
+  margin: 30px 19.26% 71px 0%;
+}
+.mountainguide-paragraph-body3 {
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body3.layout {
+  position: relative;
+}
+.mountainguide-subtitle4.layout1 {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-paragraph-body4 {
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body4.layout {
+  position: relative;
+  margin: 27px 0px 0px;
+}
+.mountainguide-block87-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 286px;
+}
+.mountainguide-block95 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block95.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block96 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block96.layout {
+  position: relative;
+  height: 54px;
+  width: 54px;
+  min-width: 54px;
+}
+.mountainguide-block97 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #061526;
+  border-radius: 25.16px 25.16px 25.16px 25.16px;
+}
+.mountainguide-block97.layout {
+  position: absolute;
+  top: 0px;
+  height: 50px;
+  left: 0px;
+  width: 50px;
+  min-width: 50px;
+}
+.mountainguide-block98 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block98.layout {
+  position: relative;
+  overflow: hidden;
+  height: 27px;
+  width: 27px;
+  min-width: 27px;
+  margin: 12px 0px 0px 12px;
+}
+.mountainguide-image18 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image18.layout {
+  position: relative;
+  height: 20px;
+  width: 22px;
+  min-width: 22px;
+  margin: 3px 0px 0px 2px;
+}
+.mountainguide-block99 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block99.layout {
+  position: relative;
+  margin: 30px 1px 49px 0px;
+}
+.mountainguide-paragraph-body5 {
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body5.layout {
+  position: relative;
+}
+.mountainguide-subtitle4.layout2 {
+  position: relative;
+  margin: 15px 8px 0px 0px;
+}
+.mountainguide-paragraph-body6 {
+  font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
+  color: #999999;
+  letter-spacing: 0px;
+}
+.mountainguide-paragraph-body6.layout {
+  position: relative;
+  margin: 27px 0px 0px;
+}
+/* .mountainguide-block100 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block100.layout {
+  position: relative;
+  margin: 90px 0px 0px;
+} */
+.populartrek_section{
+  margin-top:50px !important;
+}
+.popular-container{
+  margin-left:95px !important;
+}
+.populartrekheading {
+  position: relative;
+  flex-grow: 1;
+  width: 31%;
+  margin: 0px auto;
+}
+.populartrektitle.layout2 {
+  position: relative;
+  height: 39px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 60px;
+  text-transform: capitalize;
+  color: #061526;
+  margin-top: 3 0px !important;
+}
+.mountainguide-block103 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block103.layout {
+  position: relative;
+  margin: 25px 2px 0px 0px;
+}
+.mountainguide-block104 {
+  display: flex;
+}
+
+.populartrek_item {
+  padding: 15px 15px 20px;
+  gap: 10px;
+  width: 510px;
+  height: 460px;
+  background: #ffffff;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  margin-left:15px;
+}
+
+.populartrek_image .img-fluid {
+  width:480px !important;
+  height: 230px !important;
+  border-radius: 3px;
+}
+.populartrek_details p {
+  height: 43px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.populartrek_details .duration {
+  height: 22px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.populartrek_details .days {
+  height: 22px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: black;
+}
+.populartrek_title {
+  height: 30px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.populartrekprice {
+  height: 22px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0e4e93;
+}
+.populartrekbtn {
+  padding: 10px 25px;
+  gap: 10px;
+  width: 128px;
+  height: 40px;
+  background: #0e4e93;
+  border-radius: 300px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #ffffff !important;
+  margin-top: 10px;
+}
+.pbtn {
+  display: flex;
+  justify-content: space-between;
+}
+#popular-trek-slider .owl-dots {
+  margin-top: 40px !important;
+}
+#testimonial-slider .owl-dots{
+  margin-top:50px !important;
+}
+#testimonial-slider .owl-item{
+  margin-bottom: 0px !important;
+}
+
+.testimonials-section {
+  height:550px;
+  background: #fafcff;
+  margin-top: 60px;
+}
+.testimonials-section .container{
+  margin-left:100px !important;
+}
+.testmonial-head-section {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+}
+.testimonial-desc {
+  display: flex;
+}
+.testimonials-item {
+  padding: 30px 50px;
+  gap: 20px;
+  width: 523.5px;
+  height: 339px;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0px 10px 25px rgb(0 0 0 / 5%);
+  border-radius: 5px;
+  margin-left: 15px;
+}
+.testimonial-title {
+  height: 30px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #061526;
+}
+.testimonial-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+.testimonial-desc .testimonial-image {
+  width: 101px !important;
+  height: 117px !important;
+  border-radius: 3px;
+}
+.testimonial-desc .testimonial-message {
+  /* text 16 */
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 29px;
+  text-transform: capitalize;
+  color: #4d5765;
+  margin-left: 30px !important;
+}
+.tname {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #0f2239;
+}
+.tdate {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 29px;
+  text-transform: capitalize;
+  color: #0e4e93;
+}
+.fa-star {
+  color: #f6b40b;
+}
+
+.mountainguide-image19 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-image19.layout {
+  position: relative;
+  height: 230px;
+}
+.mountainguide-block108 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block108.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block109 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block109.layout {
+  position: relative;
+}
+.mountainguide-block110 {
+  display: flex;
+}
+.mountainguide-block110.layout {
+  position: relative;
+  margin: 24px 0px 0px;
+}
+.mountainguide-block110-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 375px;
+}
+.mountainguide-block111 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block111.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-text-body17 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body17.layout {
+  position: relative;
+}
+.mountainguide-block110-spacer {
+  flex: 0 1 13px;
+}
+.mountainguide-block110-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-block105-spacer {
+  flex: 0 1 38px;
+}
+.mountainguide-text-body18 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body18.layout {
+  position: relative;
+}
+.mountainguide-block110-item2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-image7.layout2 {
+  position: relative;
+  height: 30px;
+  width: 15px;
+  min-width: 15px;
+  margin: 2px 2px 2px 3px;
+}
+.mountainguide-block112 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block112.layout {
+  position: relative;
+  margin: 25px 0px 0px;
+}
+.mountainguide-hero-title12-box.layout {
+  position: relative;
+  margin: 6px 0px 0px;
+}
+.mountainguide-hero-title12 {
+  overflow: visible;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin: 0px;
+  font: 700 46px/1.23 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+  white-space: pre-wrap;
+}
+.mountainguide-block48.layout2 {
+  position: absolute;
+  top: 0px;
+  height: 460px;
+  left: 0px;
+  width: 351px;
+  min-width: 351px;
+}
+.mountainguide-text-body19 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body19.layout {
+  position: relative;
+}
+.mountainguide-block52-item4 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-text-body110 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body110.layout {
+  position: relative;
+}
+.mountainguide-block60-item3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 128px;
+}
+.mountainguide-text-body2-box.layout2 {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 87px;
+}
+.mountainguide-subtitle2.layout2 {
+  position: absolute;
+  top: 29px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  left: 0px;
+  width: 163px;
+}
+.mountainguide-paragraph-body.layout2 {
+  position: absolute;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  bottom: -1px;
+  width: 321px;
+  right: 0px;
+}
+.mountainguide-block52.layout2 {
+  position: relative;
+  margin: 25px 0px 0px;
+}
+.mountainguide-text-body111 {
+  font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
+  color: #45484d;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body111.layout {
+  position: relative;
+}
+.mountainguide-block52-spacer2 {
+  flex: 0 1 128px;
+}
+.mountainguide-block113 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafcff;
+}
+.mountainguide-block113.layout {
+  position: relative;
+  margin: 90px 0px 0px;
+}
+.mountainguide-block114 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block114.layout {
+  position: relative;
+  width: 78.5%;
+  margin: 50px auto 0px;
+}
+.mountainguide-block115 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block115.layout {
+  position: relative;
+  flex-grow: 1;
+  width: 26.5%;
+  margin: 0px auto;
+}
+.mountainguide-medium-title.layout3 {
+  position: relative;
+  margin: 0px 4px 0px 0px;
+}
+.mountainguide-block116 {
+  display: flex;
+}
+.mountainguide-block116.layout {
+  position: relative;
+  overflow: hidden;
+  width: 78.5%;
+  margin: 50px auto 0px;
+}
+.mountainguide-block116-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 554px;
+}
+.mountainguide-block117 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.0470588235);
+  border: 1px solid #f2f2f2;
+  border-radius: 5px 5px 5px 5px;
+}
+.mountainguide-block117.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block118 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block118.layout {
+  position: relative;
+  height: 279px;
+  width: 82.49%;
+  margin: 30px auto;
+}
+.mountainguide-block119 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block119.layout {
+  position: absolute;
+  top: 0px;
+  height: 227px;
+  left: 0px;
+  width: 454px;
+  min-width: 454px;
+}
+.mountainguide-block119-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.mountainguide-block120 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f2f2f2;
+}
+.mountainguide-block120.layout {
+  position: relative;
+  height: 40px;
+}
+.mountainguide-highlights8 {
+  font: 600 16px/1.78 'Poppins', Helvetica, Arial, serif;
+  color: #051426;
+  letter-spacing: 0px;
+  width: 100%;
+  height: 100%;
+}
+.mountainguide-block121 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block121.layout {
+  position: absolute;
+  top: 0px;
+  height: 30px;
+  left: 303px;
+  width: 151px;
+  min-width: 151px;
+}
+.mountainguide-block122 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block122.layout {
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  margin: 0px 0px 0px 121px;
+}
+.mountainguide-image20 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image20.layout {
+  position: relative;
+  height: 14px;
+  width: 23px;
+  min-width: 23px;
+  margin: 8px 0px 0px 3px;
+}
+.mountainguide-block123 {
+  display: flex;
+}
+.mountainguide-block123.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block123-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 101px;
+}
+.mountainguide-image21 {
+  background: var(--src) center center/cover no-repeat;
+  border-radius: 3px 3px 3px 3px;
+}
+.mountainguide-image21.layout {
+  position: relative;
+  height: 117px;
+  width: 101px;
+  min-width: 101px;
+  margin: 0px 0px 55px;
+}
+.mountainguide-block123-spacer {
+  flex: 0 1 30px;
+}
+.mountainguide-block123-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 323px;
+}
+.mountainguide-highlights9 {
+  font: 300 16px/1.78 'Poppins', Helvetica, Arial, serif;
+  color: #4d5765;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights9.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-line {
+  background-color: #f2f2f2;
+}
+.mountainguide-line.layout {
+  position: absolute;
+  top: 197px;
+  height: 1px;
+  left: 0px;
+  width: 454px;
+  min-width: 454px;
+}
+.mountainguide-block124 {
+  display: flex;
+}
+.mountainguide-block124.layout {
+  position: absolute;
+  top: 223px;
+  height: 56px;
+  left: 0px;
+  width: 457px;
+  min-width: 457px;
+}
+.mountainguide-block124-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 227px;
+}
+.mountainguide-block125 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block125.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-highlights10 {
+  font: 500 18px/1.2 'Poppins', Helvetica, Arial, serif;
+  color: #0f2139;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights10.layout {
+  position: relative;
+}
+.mountainguide-highlights11 {
+  font: 300 16px/1.78 'Poppins', Helvetica, Arial, serif;
+  color: #0e4e93;
+  letter-spacing: 0px;
+}
+.mountainguide-highlights11.layout {
+  position: relative;
+  margin: 5px 0px 0px;
+}
+.mountainguide-block124-spacer {
+  flex: 0 1 88px;
+}
+.mountainguide-block124-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 142px;
+}
+.mountainguide-block126 {
+  display: flex;
+}
+.mountainguide-block126.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 16px 0px 15px;
+}
+.mountainguide-block126-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 96px;
+}
+.mountainguide-block127 {
+  display: flex;
+}
+.mountainguide-block127.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 4px 0px 5px;
+}
+.mountainguide-block127-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 16px;
+}
+.mountainguide-icon6 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-icon6.layout {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  min-width: 16px;
+}
+.mountainguide-block127-spacer {
+  flex: 0 1 4px;
+}
+.mountainguide-block128 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block128.layout {
+  position: relative;
+  overflow: hidden;
+  height: 16px;
+}
+.mountainguide-block126-spacer {
+  flex: 0 1 10px;
+}
+.mountainguide-text-body3 {
+  display: flex;
+  align-items: center;
+  font: 14px/1.74 'Poppins', Helvetica, Arial, serif;
+  color: #4d5765;
+  letter-spacing: 0px;
+}
+.mountainguide-text-body3.layout {
+  position: relative;
+  flex: 0 0 auto;
+}
+.mountainguide-block116-spacer {
+  flex: 0 1 25px;
+}
+.mountainguide-block116-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 553px;
+}
+.mountainguide-block129 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.0470588235);
+  border: 1px solid #f2f2f2;
+  border-radius: 5px 5px 5px 5px;
+}
+.mountainguide-block129.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block130 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block130.layout {
+  position: relative;
+  height: 279px;
+  width: 82.46%;
+  margin: 30px auto;
+}
+.mountainguide-block131 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block131.layout {
+  position: absolute;
+  top: 0px;
+  height: 227px;
+  left: 0px;
+  width: 453px;
+  min-width: 453px;
+}
+.mountainguide-block131-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.mountainguide-block132 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f2f2f2;
+}
+.mountainguide-block132.layout {
+  position: relative;
+  height: 40px;
+}
+.mountainguide-block133 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block133.layout {
+  position: absolute;
+  top: 0px;
+  height: 30px;
+  left: 303px;
+  width: 150px;
+  min-width: 150px;
+}
+.mountainguide-block134 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block134.layout {
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  margin: 0px 0px 0px 120px;
+}
+.mountainguide-image22 {
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-image22.layout {
+  position: relative;
+  height: 14px;
+  width: 22px;
+  min-width: 22px;
+  margin: 8px 0px 0px 4px;
+}
+.mountainguide-block135 {
+  display: flex;
+}
+.mountainguide-block135.layout {
+  position: relative;
+  margin: 15px 0px 0px;
+}
+.mountainguide-block135-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 101px;
+}
+.mountainguide-block135-spacer {
+  flex: 0 1 30px;
+}
+.mountainguide-block135-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 322px;
+}
+.mountainguide-line1 {
+  background-color: #f2f2f2;
+}
+.mountainguide-line1.layout {
+  position: absolute;
+  top: 197px;
+  height: 1px;
+  left: 0px;
+  width: 453px;
+  min-width: 453px;
+}
+.mountainguide-block136 {
+  display: flex;
+}
+.mountainguide-block136.layout {
+  position: absolute;
+  top: 223px;
+  height: 56px;
+  left: 0px;
+  width: 456px;
+  min-width: 456px;
+}
+.mountainguide-block136-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 226px;
+}
+.mountainguide-block137 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block137.layout {
+  position: relative;
+  flex-grow: 1;
+}
+.mountainguide-block136-spacer {
+  flex: 0 1 88px;
+}
+.mountainguide-block136-item1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 142px;
+}
+.mountainguide-block138 {
+  display: flex;
+}
+.mountainguide-block138.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 16px 0px 15px;
+}
+.mountainguide-block138-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 96px;
+}
+.mountainguide-block139 {
+  display: flex;
+}
+.mountainguide-block139.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 4px 0px 5px;
+}
+.mountainguide-block139-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 0 1 16px;
+}
+.mountainguide-block139-spacer {
+  flex: 0 1 4px;
+}
+.mountainguide-block140 {
+  display: flex;
+  flex-direction: column;
+  background: var(--src) center center/cover no-repeat;
+}
+.mountainguide-block140.layout {
+  position: relative;
+  overflow: hidden;
+  height: 16px;
+}
+.mountainguide-block138-spacer {
+  flex: 0 1 10px;
+}
+.mountainguide-block141 {
+  display: flex;
+  flex-direction: column;
+}
+.mountainguide-block141.layout {
+  position: relative;
+  width: 78.5%;
+  margin: 50px auto;
+}
+/* our vlogs */
+#blog-slider .owl-nav{
+  display: block !important;
+}
+.blog-container{
+  margin-right: 195px !important;
+}
+.blogs_item{
+  width: 351.33px !important;
+height: 400px;
+background: #FFFFFF;
+box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+border-radius: 3px;
+padding: 15px 15px 20px;
+}
+.blogs_image img{
+  width: 321.33px !important;
+height: 176px;
+border-radius: 3px;
+}
+.blogs_date{
+  width: 321.33px !important;
+height: 22px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+text-transform: capitalize;
+color: #999999;
+}
+.blogs_title{
+  width: 321.33px;
+height: 30px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+text-transform: capitalize;
+color: #061526;
+}
+.blogs_details p{
+width: 321.33px;
+height: 43px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+text-transform: capitalize;
+color: #999999;
+}
+.bbtn{
+  width: 128px;
+height: 40px;
+border:1px solid #0E4E93;
+border-radius: 300px;
+padding: 6px 18px;
+}
+.blogsbtn{
+  width: 86px;
+height: 24px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+text-transform: capitalize;
+color: #0E4E93;
+}
+ .footer-newsletter{
+  padding: 110px 10px 165px 10px;
+  gap: 10px;
+  height: 223px;
+  background: #FAFCFF;
+ }
+ .newsletter-title{
+  width: 603px;
+height: 33px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 33px;
+text-align: center;
+text-transform: uppercase;
+color: #0E4E93;
+ }
+ .newsletter-para{
+  width: 710px;
+height: 29px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 29px;
+text-align: center;
+color: #061526;
+ }
+ .newsletter-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px !important;
+
+ }
+ .newsletter-input{
+  padding: 10px 6px 10px 25px;
+width: 703px;
+height: 56px;
+background: #FFFFFF;
+border: 1px solid #C9DAED;
+border-radius: 300px;
+ }
+ .nlicon{
+  padding: 14px 15px;
+width: 45px;
+height: 45px;
+background: #527BAB;
+border-radius: 75px;
+color: #FFFFFF !important;
+ }
+ .news-btn{
+  position: relative;
+    left: 650px;
+    bottom: 50px;
+ }
+ .footer-top{
+  position: absolute;
+left: 0%;
+right: 0%;
+height:577px;
+  background: #0E4E93;
+  clear: both;
+ }
+ .footer-first-section{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:50px;
+    border-bottom: 1px solid #ffffff26;
+ }
+ .fa-icon{
+  border-radius:50%;
+  padding:14px;
+  background: #FAFCFF;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 14px;
+width:40px;
+height: 40px;
+margin:5px;
+color: #061526 !important;
+ }
+ .footer-logo img{
+  width: 144px;
+height: 79px;
+ }
+ .footer-contact h4,.footer-links h4{
+  width: 126px;
+height: 27px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height:40px;
+text-transform: uppercase;
+color: #FFFFFF;
+ }
+ .footer-contact .line,.footer-links .line{
+  width: 60px;
+height: 2px;
+background: #FFFFFF;
+margin-bottom:20px;
+ }
+ .footer-contact li a,.footer-links li a{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 32px;
+text-transform: capitalize;
+color: #FAFCFF;
+text-decoration: none;
+ }
+ .footer-second{
+  border-bottom: 1px solid #ffffff26;
+  padding-bottom: 30px !important;
+ }
