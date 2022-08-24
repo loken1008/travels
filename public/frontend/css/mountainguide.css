@@ -1,15 +1,31 @@
-body {
-  overflow-x: hidden;
-}
+
 .body {
   position: relative;
-  width: 1442px;
-  height: 7246px;
+  width: 100%;
+  margin: 0;
+  height: 100%;
   background: #ffffff;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+ 
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.desktop-view :hover .dropdown-menu{
+  display: block !important;
+}
+.dropdown-menu[data-bs-popper] {
+  border-radius: 0px !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 .nav-link {
   width: auto !important;
-  height: 21px !important;
+  height: 21px ;
   font-family: 'Poppins' !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -21,27 +37,16 @@ body {
   flex: none !important;
   order: 0 !important;
   flex-grow: 0 !important;
-  padding: 8px 21px !important;
+  padding: 8px 21px;
 }
-.trekking-subcategory {
-  position: absolute !important;
-  width: 1351px !important;
-  left: -250px !important;
-  height: 323px;
-  top: 28px !important;
-  border: none !important;
-  border-radius: 0px !important;
-  background: #ffffff;
-}
+
 .tdrop:hover .trekking-subcategory {
   display: flex !important;
 }
-.trek-flex {
-  flex-wrap: wrap !important;
-  padding: 10px 160px !important;
-}
+
 .treksubcategory {
-  height: 24px;
+  width: 270px;
+  height: 25px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -51,33 +56,17 @@ body {
   text-decoration: none !important;
 }
 .treksubsubcategory {
-  height: 25px;
+  width: 270px;
+  height: 35px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 34px;
   color: #828282;
   text-decoration: none !important;
 }
-.other-subcategory {
-  position: absolute !important;
-  width: 281px;
-  border: none !important;
-  border-radius: 0px !important;
-  background: #ffffff;
-  top: 28px !important;
-  left: 22px !important;
-}
-.other-subsubcategory {
-  position: absolute !important;
-  width: 281px;
-  border: none !important;
-  border-radius: 0px !important;
-  background: #ffffff;
-  top: -8px !important;
-  left: 280px !important;
-}
+
 .dropdown.sdt:hover .other-subsubcategory {
   display: block !important;
 }
@@ -91,7 +80,7 @@ body {
   left: 22px !important;
 }
 .dropdown-item {
-  height: 25px !important;
+  height:35px !important;
   font-family: 'Poppins' !important;
   font-style: normal !important;
   font-weight: 400 !important;
@@ -102,7 +91,7 @@ body {
 .dropdown-item:hover {
   background-color: #0f4e93 !important;
   color: white !important;
-  padding-top: 0px !important;
+  padding-top:5px !important;
 }
 .dropdown-item.active,
 .dropdown-item:active {
@@ -140,14 +129,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 155px;
+  padding: 10px 120px;
   gap: 10px;
   position: absolute;
   top: 84px;
   height: 41px;
   left: 0px;
-  width: 100%;
-  min-width: 100%;
+  width:100%;
 }
 .mountainguide-block4 {
   display: flex;
@@ -403,6 +391,7 @@ body {
 }
 .mountainguide-block16 {
   display: flex;
+  justify-content: space-between;
 }
 .mountainguide-block16.layout {
   position: relative;
@@ -430,7 +419,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  flex: 0 1 1021px;
+  /* flex: 0 1 1021px; */
 }
 .mountainguide-block17 {
   display: flex;
@@ -449,12 +438,12 @@ body {
 .mountainguide-block18 {
   display: flex;
   flex-direction: column;
-  width: 148px;
+  width: 200px;
 }
 .mountainguide-block18.layout {
   position: relative;
   flex-grow: 1;
-  margin: 0px 0px 2px 794px;
+  /* margin: 0px 0px 2px 794px; */
 }
 .mountainguide-text-body1 {
   display: flex;
@@ -614,6 +603,15 @@ body {
   flex-direction: column;
   background: var(--src) center center/cover no-repeat;
 }
+.mountainguide-block25::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgb(2 2 2 / 52%);;
+}
 .mountainguide-block25.layout {
   position: relative;
 }
@@ -692,7 +690,7 @@ body {
   height: 106px;
   bottom: -72px;
   width: 786px;
-  right: 370px;
+  right:290px;
 }
 
 .search {
@@ -703,18 +701,18 @@ body {
 .search input {
   position: relative;
   flex-grow: 1;
-  margin: 25px 22px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px 6px 10px 25px;
   gap: 10px;
-  width: 742px;
-  height: 56px;
+  width:100%;
+  height:40px;
   background: #ffffff;
   border: 1px solid #c9daed;
   border-radius: 300px;
+  margin-top:14px;
 }
 .search input:focus {
   box-shadow: none;
@@ -724,7 +722,7 @@ body {
   position: absolute;
   left: 12.5%;
   right: 8.33%;
-  top: 30%;
+  top:29%;
   bottom: 12.5%;
   color: #ffffff;
 }
@@ -737,13 +735,14 @@ body {
   align-items: center;
   padding: 10px 15px;
   gap: 10px;
-  width: 45px;
-  height: 45px;
+  width:36px;
+  height: 36px;
   background: #527bab;
   border-radius: 75px;
   position: absolute;
-  top: 30px;
-  right: 15px;
+  top:16px;
+  right:5px;
+  border:none;
 }
 .mountainguide-highlights3 {
   font: 16px/1.2 'Poppins', Helvetica, Arial, serif;
@@ -794,6 +793,29 @@ body {
   width: 18px;
   min-width: 18px;
   margin: 2px 0px 0px 2px;
+}
+#country-slide.owl-carousel{
+  display: block !important;
+}
+.country-subtitle.layout.active{
+  color:#0e4e93;
+  text-decoration: underline;
+  text-decoration-color: #0e4e93;
+  text-underline-offset:10px;
+
+}
+.country-subtitle.layout:hover{
+  color:#0e4e93;
+}
+.country-nav{
+  display:flex;
+  justify-content: space-around;
+  margin:60px 0 60px 0;
+}
+.country-card{
+  background: #FAFCFF !important;
+  border:none !important;
+  margin-top:70px !important;
 }
 .countrytab {
   display: flex;
@@ -946,7 +968,7 @@ body {
   position: absolute;
   top: 241px;
   height: 525px;
-  width: 108%;
+  width: 100%;
   right: 0px;
 }
 .mountainguide-block45 {
@@ -1000,15 +1022,17 @@ body {
   flex-grow: 1;
 }
 .country-details-item {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   position: relative;
-  flex: 0 1 351px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+border-radius: 3px;
+margin:0 10px 0 10px;
 }
-.owl-item {
+/* .owl-item {
   margin-right: 10px !important;
   margin-bottom: 12px !important;
-}
+} */
 .owl-nav {
   position: relative;
 }
@@ -1016,17 +1040,17 @@ body {
   position: absolute;
   left: -45px;
   top: -310px !important;
-  font-size:70px !important;
+  font-size: 70px !important;
   font-weight: 100 !important;
-  color: #4F4F4F !important;
+  color: #4f4f4f !important;
 }
 .owl-next {
   position: absolute;
   right: -45px;
   top: -310px !important;
-  font-size:70px !important;
+  font-size: 70px !important;
   font-weight: 100 !important;
-  color: #4F4F4F !important;
+  color: #4f4f4f !important;
 }
 .owl-theme .owl-nav [class*='owl-']:hover {
   background-color: #fafcff !important;
@@ -1048,7 +1072,7 @@ body {
 .owl-dot.active {
   border: 2px solid #0e4e93 !important;
 }
-.owl-dot.active span{
+.owl-dot.active span {
   background: #0e4e93 !important;
 }
 
@@ -1120,7 +1144,7 @@ body {
   letter-spacing: 0px;
 }
 .mountainguide-subtitle2 {
-  font: 600 16px/1.2 'Poppins', Helvetica, Arial, serif;
+  font: 600 18px/1.2 'Poppins', Helvetica, Arial, serif;
   color: #051426;
   letter-spacing: 0px;
 }
@@ -1380,10 +1404,9 @@ body {
 .explore-us {
   display: flex;
   align-items: center;
-  padding: 30px 100px;
-  gap: 10px;
+  padding: 30px 142px;
   background: #fafcff !important;
-  margin-top: 60px !important;
+  margin-top:85px;
 }
 .explore-main-image {
   height: 419px;
@@ -1498,27 +1521,18 @@ body {
   position: relative;
   margin: 20px 0px 0px;
 }
-.mountainguide-block69 {
-  display: flex;
-  flex-direction: column;
-  border: 1.5px solid #0e4e93;
-  border-radius: 28px 28px 28px 28px;
-}
-.mountainguide-block69.layout {
-  position: relative;
-  width: 29.85%;
-  margin: 20px 70.15% 0px 0%;
-}
+
 .mountainguide-highlights7 {
   font: 500 16px/1.2 'Poppins', Helvetica, Arial, serif;
   color: #0e4e93;
   letter-spacing: 0px;
+  padding:16px 14px 20px 30px;
+  margin: 20px 70.15% 0px 0%;
+  border: 1.5px solid #0e4e93;
+  border-radius: 28px 28px 28px 28px;
+  width:35%;
 }
-.mountainguide-highlights7.layout {
-  position: relative;
-  flex-grow: 1;
-  margin: 16px 26px 20px 33px;
-}
+
 .mountainguide-block70 {
   display: flex;
   flex-direction: column;
@@ -1527,7 +1541,7 @@ body {
 .mountainguide-block70.layout {
   position: relative;
   margin: 90px 0px 0px;
-  padding: 0px 69px !important;
+  padding: 0px 69px ;
 }
 .mountainguide-block71 {
   display: flex;
@@ -1537,7 +1551,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 578px;
-  width: 89.25%;
+  width:100%;
   margin: 0px 0% 0px 5.75%;
 }
 .mountainguide-block72 {
@@ -1578,43 +1592,16 @@ body {
   position: relative;
   margin: 6px 0px 0px;
 }
-.mountainguide-block75 {
-  display: flex;
-}
-.mountainguide-block75.layout {
-  position: relative;
-  width: 137px;
-  min-width: 137px;
-  margin: 25px 0px 0px;
-}
-.mountainguide-block75-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex: 0 1 56px;
-}
-.mountainguide-block76 {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(14, 78, 147, 0.047);
-  border-radius: 28px 28px 28px 28px;
-}
-.mountainguide-block76.layout {
-  position: relative;
-  flex-grow: 1;
-}
-.mountainguide-image12 {
-  background: var(--src) center center/cover no-repeat;
-}
-.mountainguide-image12.layout {
-  position: relative;
-  height: 20px;
-  width: 10px;
-  min-width: 10px;
-  margin: 18px 23px;
-}
-.mountainguide-block75-spacer {
-  flex: 0 1 25px;
+
+.challenge-peak-layout{
+  position: absolute;
+  top: 0px;
+  height: 578px;
+  left: 503px;
+  width: 784px;
+  min-width: 784px;
+background: #F6B40B;
+border-radius: 0px;
 }
 
 .best-sell-layout {
@@ -1631,13 +1618,44 @@ body {
   height: 171px;
   border-radius: 3px;
 }
-#best-sell-slider .owl-item {
-  margin-right: 100px !important;
-  width: 500px !important;
+
+
+#customNav .owl-prev, #customNav .owl-next {
+  position:relative !important;
+  left:0px !important;
+  top:0px !important;
+  font-size:30px !important;
+  font-weight: 100 !important;
+  color: #4f4f4f !important;
+  padding: 0px 0px;
+width: 56px;
+height: 56px;
+background: rgba(14, 78, 147, 0.05);
+border-radius: 100px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+
 }
-#best-sell-slider .owl-item.active:first-child {
-  transform: scale(1.9) !important;
+#customNavs .owl-prev, #customNavs .owl-next {
+  position:relative !important;
+  left:0px !important;
+  top:0px !important;
+  font-size:30px !important;
+  font-weight: 100 !important;
+  color: #4f4f4f !important;
+  padding: 0px 0px;
+width: 56px;
+height: 56px;
+background: rgba(14, 78, 147, 0.05);
+border-radius: 100px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+
 }
+
+
+#best-sell-slider .owl-item.center:nth-last-of-type(1){
+ transform: scale(1.5);
+}
+
 .chooseimage {
   position: absolute;
   width: 47px;
@@ -1660,8 +1678,12 @@ body {
   min-width: 899px;
 }
 .mountainguide-block48.layout1 {
-  width: 351.33px;
+  width: 315px;
   height: 401px;
+}
+.zoom-in-seller{
+  width: 315px !important;
+  height:460px !important;
 }
 .mountainguide-text-body14 {
   font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
@@ -1701,38 +1723,6 @@ body {
   flex: 0 1 128px;
 }
 
-.mountainguide-block81 {
-  display: flex;
-  flex-direction: column;
-}
-.mountainguide-block81.layout {
-  position: relative;
-  flex-grow: 1;
-  margin: 15px 15px 20px;
-}
-.mountainguide-image15 {
-  background: var(--src) center center/cover no-repeat;
-  border-radius: 3px 3px 3px 3px;
-}
-.mountainguide-image15.layout {
-  position: relative;
-  height: 174px;
-}
-.mountainguide-block82 {
-  display: flex;
-  flex-direction: column;
-}
-.mountainguide-block82.layout {
-  position: relative;
-  margin: 15px 0px 0px;
-}
-.mountainguide-block83 {
-  display: flex;
-  flex-direction: column;
-}
-.mountainguide-block83.layout {
-  position: relative;
-}
 .mountainguide-text-body2-box.layout1 {
   position: relative;
   flex-grow: 1;
@@ -1860,7 +1850,7 @@ body {
   margin: 30px 10px 30px;
 }
 .chooseus-title {
-  padding-right:25px !important;
+  padding-right: 25px !important;
 }
 .mountainguide-paragraph-body1 {
   font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
@@ -1885,7 +1875,7 @@ body {
   color: #000000;
 }
 .chooseus-para {
-  width: 285px !important;
+  width: 285px ;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -1916,7 +1906,7 @@ body {
 .mountainguide-block87-spacer {
   flex: 0 1 1px;
   background: #9999991a;
-  margin:25px !important;
+  margin: 25px !important;
 }
 .mountainguide-block90 {
   display: flex;
@@ -2115,19 +2105,19 @@ body {
   position: relative;
   margin: 27px 0px 0px;
 }
-/* .mountainguide-block100 {
+.mountainguide-block100 {
   display: flex;
   flex-direction: column;
 }
 .mountainguide-block100.layout {
   position: relative;
   margin: 90px 0px 0px;
-} */
-.populartrek_section{
-  margin-top:50px !important;
 }
-.popular-container{
-  margin-left:95px !important;
+.populartrek_section {
+  margin-top: 50px !important;
+}
+.popular-container {
+  margin-left: 95px ;
 }
 .populartrekheading {
   position: relative;
@@ -2167,11 +2157,11 @@ body {
   background: #ffffff;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
-  margin-left:15px;
+  margin-left: 15px;
 }
 
 .populartrek_image .img-fluid {
-  width:480px !important;
+  width: 480px !important;
   height: 230px !important;
   border-radius: 3px;
 }
@@ -2247,22 +2237,22 @@ body {
   justify-content: space-between;
 }
 #popular-trek-slider .owl-dots {
-  margin-top: 40px !important;
+  margin-top: 40px;
 }
-#testimonial-slider .owl-dots{
-  margin-top:50px !important;
+#testimonial-slider .owl-dots {
+  margin-top: 50px;
 }
-#testimonial-slider .owl-item{
+#testimonial-slider .owl-item {
   margin-bottom: 0px !important;
 }
 
 .testimonials-section {
-  height:550px;
+  height: 550px;
   background: #fafcff;
   margin-top: 60px;
 }
-.testimonials-section .container{
-  margin-left:100px !important;
+.testimonials-section .container {
+  margin-left: 100px;
 }
 .testmonial-head-section {
   display: flex;
@@ -2312,7 +2302,14 @@ body {
   line-height: 29px;
   text-transform: capitalize;
   color: #4d5765;
-  margin-left: 30px !important;
+  margin-left: 30px;
+}
+.star-review{
+  display: flex;
+  justify-content: space-between;
+}
+.show-star{
+  display: flex;
 }
 .tname {
   font-family: 'Poppins';
@@ -3034,194 +3031,254 @@ body {
   margin: 50px auto;
 }
 /* our vlogs */
-#blog-slider .owl-nav{
+#blog-slider .owl-nav {
   display: block !important;
 }
-.blog-container{
+#blog-slider{
+  padding: 53px 116px 70px 116px;;
+}
+
+
+.blog-container {
   margin-right: 195px !important;
 }
-.blogs_item{
-  width: 351.33px !important;
-height: 400px;
-background: #FFFFFF;
-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
-border-radius: 3px;
-padding: 15px 15px 20px;
-}
-.blogs_image img{
-  width: 321.33px !important;
-height: 176px;
-border-radius: 3px;
-}
-.blogs_date{
-  width: 321.33px !important;
-height: 22px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-text-transform: capitalize;
-color: #999999;
-}
-.blogs_title{
+.blogs_item {
   width: 321.33px;
-height: 30px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 30px;
-text-transform: capitalize;
-color: #061526;
+  height: 400px;
+  background: #ffffff;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding:0px 15px 20px;
+  margin-left:6px;
 }
-.blogs_details p{
-width: 321.33px;
-height: 43px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-text-transform: capitalize;
-color: #999999;
+.blogs_image img {
+  width: 321.33px;
+  height: 176px;
+  border-radius: 3px;
 }
-.bbtn{
+.blogs_date {
+  width: 321.33px ;
+  height: 22px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.blogs_title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.blogs_details p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.bbtn {
   width: 128px;
-height: 40px;
-border:1px solid #0E4E93;
-border-radius: 300px;
-padding: 6px 18px;
+  height: 40px;
+  border: 1px solid #0e4e93;
+  border-radius: 300px;
+  padding: 6px 18px;
 }
-.blogsbtn{
+.blogsbtn {
   width: 86px;
-height: 24px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-text-transform: capitalize;
-color: #0E4E93;
+  height: 24px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #0e4e93;
 }
- .footer-newsletter{
+.footer-newsletter {
   padding: 110px 10px 165px 10px;
   gap: 10px;
   height: 223px;
-  background: #FAFCFF;
- }
- .newsletter-title{
+  background: #fafcff;
+}
+.newsletter-title {
   width: 603px;
-height: 33px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 33px;
-text-align: center;
-text-transform: uppercase;
-color: #0E4E93;
- }
- .newsletter-para{
+  height: 33px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0e4e93;
+}
+.newsletter-para {
   width: 710px;
-height: 29px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 29px;
-text-align: center;
-color: #061526;
- }
- .newsletter-flex{
+  height: 29px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 29px;
+  text-align: center;
+  color: #061526;
+}
+.newsletter-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: -50px !important;
-
- }
- .newsletter-input{
+  margin-left: -50px;
+}
+.newsletter-input {
   padding: 10px 6px 10px 25px;
-width: 703px;
-height: 56px;
-background: #FFFFFF;
-border: 1px solid #C9DAED;
-border-radius: 300px;
- }
- .nlicon{
+  width: 703px;
+  height: 56px;
+  background: #ffffff;
+  border: 1px solid #c9daed;
+  border-radius: 300px;
+}
+.nlicon {
   padding: 14px 15px;
-width: 45px;
-height: 45px;
-background: #527BAB;
-border-radius: 75px;
-color: #FFFFFF !important;
- }
- .news-btn{
+  width: 45px;
+  height: 45px;
+  background: #527bab;
+  border-radius: 75px;
+  color: #ffffff !important;
+}
+.news-btn {
   position: relative;
-    left: 650px;
-    bottom: 50px;
- }
- .footer-top{
+  left: 650px;
+  bottom: 50px;
+}
+
+/* footer */
+#footer {
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  width: 100%;
+  /* clear: both; */
+}
+.footer-top {
   position: absolute;
-left: 0%;
-right: 0%;
-height:577px;
-  background: #0E4E93;
-  clear: both;
- }
- .footer-first-section{
+  left: 0%;
+  right: 0%;
+  background: #0e4e93;
+  padding:0px 130px 0px 165px;
+}
+.footer-first-section {
   display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top:50px;
-    border-bottom: 1px solid #ffffff26;
- }
- .fa-icon{
-  border-radius:50%;
-  padding:14px;
-  background: #FAFCFF;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 14px;
-width:40px;
-height: 40px;
-margin:5px;
-color: #061526 !important;
- }
- .footer-logo img{
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  border-bottom: 1px solid #ffffff26;
+}
+.fa-icon {
+  border-radius: 50%;
+  padding: 14px;
+  background: #fafcff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  color: #061526 !important;
+}
+.footer-logo img {
   width: 144px;
-height: 79px;
- }
- .footer-contact h4,.footer-links h4{
+  height: 79px;
+}
+.footer-contact h4,
+.footer-links h4 {
   width: 126px;
-height: 27px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height:40px;
-text-transform: uppercase;
-color: #FFFFFF;
- }
- .footer-contact .line,.footer-links .line{
+  height: 27px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.footer-contact .line,
+.footer-links .line {
   width: 60px;
-height: 2px;
-background: #FFFFFF;
-margin-bottom:20px;
- }
- .footer-contact li a,.footer-links li a{
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 32px;
-text-transform: capitalize;
-color: #FAFCFF;
-text-decoration: none;
- }
- .footer-second{
+  height: 2px;
+  background: #ffffff;
+  margin-bottom: 20px;
+}
+.footer-links{
+  padding: 0px !important;
+}
+.footer-contact li a,
+.footer-links li a {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 32px;
+  text-transform: capitalize;
+  color: #fafcff;
+  text-decoration: none;
+}
+.footer-second {
   border-bottom: 1px solid #ffffff26;
   padding-bottom: 30px !important;
- }
+  margin: 0px !important;
+}
+.footer-copyright {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #fafcff;
+}
+.footer-copyright p{
+  margin-left:-15px;
+}
+.paytitle,
+.associatedtitle {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #fafcff;
+}
+.pay-image,
+.associated-image {
+  justify-content: space-between;
+}
+.pay-image img {
+  width:44.96px;
+  height:22.62px;
+  padding-left:3px;
+}
+.associated-image img {
+  width: 28px;
+  height: 23px;
+}
+.footer-associated {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-top-container {
+  margin-right: 185px !important;
+}
+
+

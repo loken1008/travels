@@ -1,3 +1,15 @@
+@php
+ function getblogThumbs($url=""){
+            $base = basename($url);
+            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+                return str_replace($base, "thumbs/".$base, $url);
+            }else{
+                $preUrl = "storage/";
+                $beforeBase = str_replace($base, "",$url);
+                return $preUrl.$beforeBase.'thumbs/'.$base;
+            }
+        }
+@endphp
 @extends('frontend.main')
 @section('title', 'All Blogs')
 @section('content')
@@ -26,7 +38,7 @@
                     <div class="blog-post">
                         <a href="{{ route('blogsdetails', $getblog->slug) }}">
                             <div class="thumb">
-                                <img src="{{ $getblog->blog_image }}" style="height:227px"
+                                <img src="{{ getblogThumbs($getblog->blog_image) }}" style="height:227px"
                                     alt="{{ $getblog->img_alt }}">
                                 <div class="content">
                                     
@@ -37,7 +49,6 @@
                         <a href="{{ route('blogsdetails', $getblog->slug) }}" class="read-btn">
                            
                             <h3>{{ $getblog->blog_title }}</h3>
-                            <p>{!! Str::limit($getblog->blog_description,100) !!}</p>
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>

@@ -20,7 +20,9 @@
             <div class="section-content">
                 <div class="row">
                     <div class="col-12">
-                        <h4>Blog details</h4>
+                        <h4>{{$getblogdetails->blog_title}}</h4>
+                        <h5 class="text-white"><a href="{{url('/')}}" class="text-primary">Home</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ $getblogdetails->blog_title }}
+                           </h5>
                     </div>
                 </div>
             </div>

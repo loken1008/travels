@@ -1,15 +1,9 @@
 <div class=" mountainguide-block2 layout">
     <nav class=" navbar navbar-expand-lg mountainguide-block3 layout">
         <div class="container ">
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler collapsed collapsebtn" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-content">
-                <div class="hamburger-toggle">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+                <i class="fa fa-bars text-white"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
@@ -20,12 +14,12 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside">Trekking</a>
                         <ul class="container-fluid dropdown-menu trekking-subcategory ">
-                            <div class="d-flex trek-flex">
+                            <div class="row d-flex trek-flex">
                             @foreach ($category as $cat)
                             @if ($cat->category_type == 'trekking')
                             @foreach ($subcategory as $subcat)
                             @if($subcat->category_id == $cat->id)
-                            <div class="column col-lg-3">
+                            <div class=" col-lg-3 col-sm-6">
                                 <a href={{ route('tripdetails', $subcat->sub_category_slug) }} class="treksubcategory">{{ $subcat->sub_category_name }}</a> <span data-toggle="collapse"
                                             href="#collapseExample{{ $subcat->id }}" class="cursor-pointer"></span>
 
@@ -68,7 +62,7 @@
                                         @if ($subcat->category_id == $cat->id)
                                             <div class="dropdown sdt">
                                                 <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
-                                                    class="dropdown-item desktop-view ">{{ $subcat->sub_category_name }}
+                                                    class="dropdown-item desktop-view " data-bs-toggle="dropdown1" aria-expanded="false" id="dropdownMenuButton2" >{{ $subcat->sub_category_name }}
                                                     @foreach ($subcat->tour->take(1) as $t)
                                                         @if ($subcat->id == $t->subcategory_id)
                                                             @if ($t->status == '1')
@@ -78,9 +72,16 @@
                                                         @endif
                                                     @endforeach
                                                 </a>
-                                                {{-- <!-- for mobile!-->
+                                                <ul class="dropdown-menu  other-subsubcategory sdesktop-view" aria-labelledby="dropdownMenuButton2">
+                                                    @foreach ($subcat->tour as $tour)
+                                                    @if ($tour->status == 1)
+                                                    <li><a class="dropdown-item " href="{{ url('tourdetails', $tour->slug) }}">{{ $tour->tour_name }}</a></li>
+                                                    @endif
+                                                    @endforeach
+                                                  </ul>
+                                                <!-- for mobile!-->
                                                 <a href="#"
-                                                    class=" dropdown-item mobile-view">{{ $subcat->sub_category_name }}
+                                                    class=" dropdown-item mobile-view" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1">{{ $subcat->sub_category_name }}
                                                     @foreach ($subcat->tour->take(1) as $t)
                                                         @if ($subcat->id == $t->subcategory_id)
                                                             @if ($t->status == '1')
@@ -89,16 +90,14 @@
                                                             @endif
                                                         @endif
                                                     @endforeach
-                                                </a> --}}
-                                                
-                                                <div class="dropdown-menu other-subsubcategory">
+                                                </a>
+                                                {{-- <ul class="dropdown-menu mobile-view" aria-labelledby="dropdownMenuButton1">
                                                     @foreach ($subcat->tour as $tour)
-                                                        @if ($tour->status == 1)
-                                                            <a class="dropdown-item "
-                                                                href="{{ url('tourdetails', $tour->slug) }}">{{ $tour->tour_name }}</a>
-                                                        @endif
+                                                    @if ($tour->status == 1)
+                                                    <li><a class="dropdown-item " href="{{ url('tourdetails', $tour->slug) }}">{{ $tour->tour_name }}</a></li>
+                                                    @endif
                                                     @endforeach
-                                                </div>
+                                                  </ul> --}}
                                             </div>
                                         @endif
                                     @endforeach
@@ -127,6 +126,45 @@
             </div>
         </div>
     </nav>
+    {{-- <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" area-controls="menu" area-expanded="false" area-label="Toggle navigation">
+                <i class="fa fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav max-auto mb-lg-0">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Multilevel</a>
+                        <ul class="dropdown-menu shadow">
+                            <li>
+                                <a href="" class="dropdown-item">Gallery</a>
+                            </li>
+                            <li class="dropstart">
+                                <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Submenu</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    <li class="dropend">
+                                        <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Lets Go inner</a>
+                                    <ul class="dropdown-menu dropdown-submenu shadow">
+                                        <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    <li><a href="" class="dropdown-item">Level 1</a></li>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> --}}
+
     <div class="container-fluid mountainguide-block15 layout">
         <div class=" mountainguide-block16 layout">
             <div class="mountainguide-block16-item">
@@ -142,7 +180,7 @@
                 <div class="mountainguide-block17 layout">
                     <div class="mountainguide-block17-item">
                         <div class="mountainguide-block18 layout">
-                            <div class="mountainguide-text-body1 layout">Contact us</div>
+                            <div class="mountainguide-text-body1 layout">Contact us (Ram)</div>
                             <div class="mountainguide-block19 layout">
                                 <div class="mountainguide-block19-item">
                                     <div class="mountainguide-block20 layout">

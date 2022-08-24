@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="special-packages dtl-st">
                         <div class="thumb">
-                            <img src="{{ $getcountrydetails->country_image }}" style="width:1110px; height:420px" alt="">
+                            <img src="{{ $getcountrydetails->country_image }}" style="width:1110px; height:420px" alt="{{$getcountrydetails->country_name}}">
 
                             <div class="post-title-box">
                                 <div class="price-box">

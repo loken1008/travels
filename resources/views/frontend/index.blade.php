@@ -39,57 +39,33 @@ function getThumbs($url = '')
                             <a href="{{ $getbanner->url }}" class="mountainguide-highlights2 layout">Explore More</a>
                         </div>
                     </div>
-                    <div class="mountainguide-block29 layout d-flex">
-                        <div class="container">
-
-                            <div class="row height d-flex justify-content-center align-items-center">
-
-                                <div class="search">
-                                    <form role="search" class="search-box " method="post" action="{{ route('search') }}">
-                                        @csrf
-                                        <input type="text" class="form-control" name="search" placeholder="Search...">
-                                        <button class="search-icon"> <i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             @endif
-            <div class="countrytab layout">
-                <div class="countrytabsecond layout">
-                    <div class="row countrytabheading layout">
-                        <div class="col-lg-4 countrytabmainheading layout">
+
+            <div class="container network_wrapper col-sm  ">
+                <div class=" country-card">
+                    <div class="country-header">
+                        <div class="col-lg-6 countrytabmainheading layout">
                             <h2 class="countrytab-title layout">Where do you want to trek?</h2>
                             <div class="countrytab-box layout"></div>
                         </div>
-                    </div>
-                    <div class="row country-list layout">
-                        <div class="country-main layout">
+                        <ul class="nav country-nav" data-bs-tabs="tabs">
                             @foreach ($getcountry as $key => $cutry)
-                                <div class="country-item">
-                                    <div class="country-name layout">
-                                        <a href="#countrytab-{{ $cutry->country_name }}"
-                                            class="nav-item country-subtitle layout {{ $loop->first ? 'active' : '' }} "
-                                            data-toggle="tab">{{ $cutry->country_name }}</a>
-                                    </div>
-                                </div>
+                                <li class="nav-item {{ $loop->first ? 'active' : '' }}">
+                                    <a class="{{ $loop->first ? 'active' : '' }} country-subtitle layout"
+                                        aria-current="true" data-bs-toggle="tab"
+                                        href="#country{{ $cutry->country_name }}">{{ $cutry->country_name }}</a>
+                                </li>
                             @endforeach
-                            <div class="make-trip">
-                                <div class="make-own-trip layout">
-                                    <a href="{{ route('online.book') }}" class="make-own-trip-subtitle1 layout3">Make your
-                                        own trip</a>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="{{ route('online.book') }}" class="make-own-trip-subtitle1 layout3">Make your
+                                own trip</a>
+                        </ul>
                     </div>
-                </div>
-                <div class="mountainguide-block44 layout">
-                    <div class="mountainguide-block45 layout tab-content">
+                    <div class=" tab-content mt-4">
                         @forelse($getcountry as $key1=> $countrys)
-                            <div class="container mountainguide-block45-item1 tab-pane show {{ $loop->first ? 'active' : '' }}"
-                                role="tabpanel" id="countrytab-{{ $countrys->country_name }}">
-                                <div id="country-slide" class="country-details layout owl-carousel owl-theme">
+                            <div class="mountainguide-block45-item1 tab-pane {{ $loop->first ? 'active' : '' }}"
+                                id="country{{ $countrys->country_name }}">
+                                <div id="country-slide" class="country-details owl-carousel owl-theme">
                                     @forelse ($tour as $key2 => $ctour)
                                         @if ($ctour->status == '1')
                                             @if ($ctour->country_id == $countrys->id)
@@ -197,10 +173,8 @@ function getThumbs($url = '')
                         </p>
                     @endif
                     @if ($homepage->count() > 0)
-                        <div class="mountainguide-block69 layout">
-                            <a href="{{ route('introduction') }}"
-                                class="mountainguide-highlights7 layout text-decoration-none">Discover more</a>
-                        </div>
+                        <a href="{{ route('introduction') }}"
+                            class="mountainguide-highlights7 layout text-decoration-none">Discover more</a>
                     @endif
                 </div>
             </div>
@@ -215,17 +189,9 @@ function getThumbs($url = '')
                         <h1 class="mountainguide-hero-title11 layout">Selling package</h1>
                     </div>
                     <div class="mountainguide-block75 layout">
-                        <div class="mountainguide-block75-item">
-                            <div class="mountainguide-block76 layout">
-                                <div style="--src:url(/assetss/e20aa57d388451b65d4d09e8afada9cd.png)"
-                                    class="mountainguide-image12 layout"></div>
-                            </div>
-                        </div>
-                        <div class="mountainguide-block75-spacer"></div>
-                        <div class="mountainguide-block75-item">
-                            <div class="mountainguide-block76 layout">
-                                <div style="--src:url(/assetss/93792f44a8e36a3d441fc41f653a0862.png)"
-                                    class="mountainguide-image12 layout"></div>
+                        <div class="owl-theme">
+                            <div class="owl-controls">
+                                <div id="customNav" class="owl-nav d-flex"></div>
                             </div>
                         </div>
                     </div>
@@ -255,7 +221,7 @@ function getThumbs($url = '')
                                             </div>
                                             <h3 class="mountainguide-subtitle2 layout"> {{ $selltour->tour_name }}</h3>
                                             <div class="mountainguide-paragraph-body layout">
-                                                {{ Str::limit($selltour->short_description, 80, '.') }}
+                                                {{ Str::limit($selltour->short_description, 60, '.') }}
                                             </div>
                                         </div>
                                         <div class="mountainguide-block52 layout">
@@ -327,7 +293,7 @@ function getThumbs($url = '')
 
     <section class="populartrek_section ">
         @if ($cattrekking)
-            <div class="populartrekheading mt-6 mb-4">
+            <div class="populartrekheading">
                 <h2 class="populartrektitle layout2">Popular trekking places</h2>
                 <div class="chooseus-box layout"></div>
             </div>
@@ -346,9 +312,9 @@ function getThumbs($url = '')
                                     <div class="populartrek_details">
                                         <div class="mt-3 mb-3">
                                             <span class="duration">Duration:</span> <span
-                                            class="days">{{ $tour->tour_days }} Days</span>
+                                                class="days">{{ $tour->tour_days }} Days</span>
                                         </div>
-                                        
+
                                         <div class="populartrek_title">
                                             <h5>{{ $tour->tour_name }}</h5>
                                         </div>
@@ -384,182 +350,120 @@ function getThumbs($url = '')
             </div>
         </div>
     </section>
-    <div class="mountainguide-block70 layout">
-        <div class="mountainguide-block71 layout">
+    <div class="container-fluid mountainguide-block70 layout">
+        <div class=" mountainguide-block71 layout">
             <div class="mountainguide-block72 layout">
                 <div class="mountainguide-block73 layout">
                     <div class="mountainguide-block74 layout">
                         <h3 class="mountainguide-subtitle3 layout">Challenge</h3>
-                        <h1 class="mountainguide-hero-title12-box layout">
-                            <pre class="mountainguide-hero-title12">
-        The
-        Peak</pre>
-                        </h1>
+                        <h1 class="mountainguide-hero-title11 layout">The</h1>
+                        <h1 class="mountainguide-hero-title11 layout"> Peak</h1>
+
                     </div>
                     <div class="mountainguide-block75 layout">
-                        <div class="mountainguide-block75-item">
-                            <div class="mountainguide-block76 layout">
-                                <div style="--src:url(/assetss/e20aa57d388451b65d4d09e8afada9cd.png)"
-                                    class="mountainguide-image12 layout"></div>
-                            </div>
-                        </div>
-                        <div class="mountainguide-block75-spacer"></div>
-                        <div class="mountainguide-block75-item">
-                            <div class="mountainguide-block76 layout">
-                                <div style="--src:url(/assetss/93792f44a8e36a3d441fc41f653a0862.png)"
-                                    class="mountainguide-image12 layout"></div>
+                        <div class="owl-theme">
+                            <div class="owl-controls">
+                                <div id="customNavs" class="owl-nav d-flex"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="--src:url(/assetss/c5b95a426f6dc835c545b9c398fa24fe.png)" class="mountainguide-image13 layout">
+            <div class="challenge-peak-layout">
             </div>
-            <div class="mountainguide-block77 layout">
-                <div class="mountainguide-block48 layout2">
-                    <div class="mountainguide-block49 layout">
-                        <div style="--src:url(/assetss/6499244b2be51cebb69cd3ac778ec556.png)"
-                            class="mountainguide-image8 layout"></div>
-                        <div class="mountainguide-block50 layout">
-                            <div class="mountainguide-block51 layout">
-                                <div class="mountainguide-text-body2-box layout">
-                                    <div class="mountainguide-text-body2">
-                                        <span class="mountainguide-text-body21-span0">Duration: </span><span
-                                            class="mountainguide-text-body21-span1">15 days</span>
+            <div id="challenge-peak-slider" class="mountainguide-block77 layout owl-carousel owl-theme">
+                @if ($catpeak)
+                    @foreach ($catpeak->tour->shuffle()->sortDesc() as $key => $tour)
+                        @if ($tour->status == 1)
+                            <div class="mountainguide-block48 layout1">
+
+                                <div class="mountainguide-block49 layout">
+                                    <div class="mountainguide-image8 layout">
+                                        <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
+                                            alt="{{ $tour->img_alt }}">
                                     </div>
-                                </div>
-                                <h3 class="mountainguide-subtitle2 layout">Gokyo lake trek</h3>
-                                <div class="mountainguide-paragraph-body layout">
-                                    Gokyo Lake Everest Base Camp Trek is one of the famous and adventurous
-                                    destinations.
-                                </div>
-                            </div>
-                            <div class="mountainguide-block52 layout">
-                                <div class="mountainguide-block52-item">
-                                    <div class="mountainguide-block53 layout">
-                                        <div class="mountainguide-text-body19 layout">Price</div>
-                                        <h4 class="mountainguide-highlights4 layout">$1450</h4>
-                                    </div>
-                                </div>
-                                <div class="mountainguide-block52-spacer"></div>
-                                <div class="mountainguide-block52-item4">
-                                    <div class="mountainguide-block54 layout">
-                                        <div class="mountainguide-block55 layout">
-                                            <h5 class="mountainguide-highlights5 layout">Book Now</h5>
+                                    <div class="mountainguide-block50 layout">
+                                        <div class="mountainguide-block51 layout">
+                                            <div class="mountainguide-text-body2-box layout">
+                                                <div class="mountainguide-text-body2">
+                                                    <span class="mountainguide-text-body21-span0">Duration: </span><span
+                                                        class="mountainguide-text-body21-span1">{{ $tour->tour_days }}
+                                                        days</span>
+                                                </div>
+                                            </div>
+                                            <h3 class="mountainguide-subtitle2 layout"> {{ $tour->tour_name }}</h3>
+                                            <div class="mountainguide-paragraph-body layout">
+                                                {{ Str::limit($tour->short_description, 80, '.') }}
+                                            </div>
+                                        </div>
+                                        <div class="mountainguide-block52 layout">
+                                            <div class="mountainguide-block52-item">
+                                                <div class="mountainguide-block53 layout">
+                                                    <div class="mountainguide-text-body14 layout">Price</div>
+                                                    @if ($getcoupon)
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            <strike class="text-danger"><span>$
+                                                                </span>{{ $tour->main_price }}</strike> <span>$
+                                                            </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h4>
+                                                    @else
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            $ {{ $tour->main_price }}</h4>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="mountainguide-block52-spacer"></div>
+                                            <div class="mountainguide-block52-item3">
+                                                <div class="mountainguide-block54 layout">
+                                                    <div class="mountainguide-block55 layout">
+                                                        <a href="{{ route('booking', $tour->slug) }}"
+                                                            class="mountainguide-highlights5 layout text-decoration-none">Book
+                                                            Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mountainguide-block78 layout">
-                    <div class="mountainguide-block79 layout">
-                        <div style="--src:url(/assetss/ebef3cd7f8a46166fac95f1a24615c22.png)"
-                            class="mountainguide-image14 layout"></div>
-                        <div class="mountainguide-block58 layout">
-                            <div class="mountainguide-block59 layout">
-                                <div class="mountainguide-text-body2-box layout">
-                                    <div class="mountainguide-text-body2">
-                                        <span class="mountainguide-text-body21-span0">Duration: </span><span
-                                            class="mountainguide-text-body21-span1">15 days</span>
-                                    </div>
-                                </div>
-                                <h3 class="mountainguide-subtitle2 layout">Everest base camp</h3>
-                                <div class="mountainguide-paragraph-body layout">
-                                    Gokyo Lake Everest Base Camp Trek is one of the famous and adventurous
-                                    destinations.
-                                </div>
-                            </div>
-                            <div class="mountainguide-block60 layout">
-                                <div class="mountainguide-block60-item">
-                                    <div class="mountainguide-block61 layout">
-                                        <div class="mountainguide-text-body110 layout">Price</div>
-                                        <h4 class="mountainguide-highlights4 layout">$1450</h4>
-                                    </div>
-                                </div>
-                                <div class="mountainguide-block60-spacer"></div>
-                                <div class="mountainguide-block60-item3">
-                                    <div class="mountainguide-block54 layout">
-                                        <div class="mountainguide-block55 layout">
-                                            <h5 class="mountainguide-highlights5 layout">Book Now</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mountainguide-block80 layout">
-                    <div class="mountainguide-block81 layout">
-                        <div style="--src:url(/assetss/22513429308328ff350c783fc0e741f8.png)"
-                            class="mountainguide-image15 layout"></div>
-                        <div class="mountainguide-block82 layout">
-                            <div class="mountainguide-block83 layout">
-                                <div class="mountainguide-text-body2-box layout2">
-                                    <div class="mountainguide-text-body2">
-                                        <span class="mountainguide-text-body21-span0">Duration: </span><span
-                                            class="mountainguide-text-body21-span1">15 days</span>
-                                    </div>
-                                </div>
-                                <h3 class="mountainguide-subtitle2 layout2">Gokyo lake trek</h3>
-                                <div class="mountainguide-paragraph-body layout2">
-                                    Gokyo Lake Everest Base Camp Trek is one of the famous and adventurous
-                                    destinations.
-                                </div>
-                            </div>
-                            <div class="mountainguide-block52 layout2">
-                                <div class="mountainguide-block52-item">
-                                    <div class="mountainguide-block53 layout">
-                                        <div class="mountainguide-text-body111 layout">Price</div>
-                                        <h4 class="mountainguide-highlights4 layout">$1450</h4>
-                                    </div>
-                                </div>
-                                <div class="mountainguide-block52-spacer"></div>
-                                <div class="mountainguide-block52-spacer2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
-   @include('frontend.common.testmonial')
-   <section class="blogs_section ">
-    @if ($getblogs->count() > 0)
-        <div class="populartrekheading mt-6 mb-4">
-            <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
-            <div class="chooseus-box layout"></div>
-        </div>
-    @endif
-    <div class="container blog-container">
-        <div class="blogs_content">
-            <div id="blog-slider" class="owl-carousel owl-theme">
-                @forelse($getblogs as $blog)
-                            <div class="blogs_item">
-                                <div class="blogs_image">
-                                    <img class="img-fluid" src="{{getThumbs($blog->blog_image) }}" alt="{{ $blog->img_alt }}">
-                                </div>
-                                <div class="blogs_details">
-                                    <div class="mt-3 mb-3">
-                                        <span class="blogs_date">{{$blog->created_at->format('Y-M-d')}}</span> 
-                                    </div>
-                                    <h5 class="blogs_title">{{ Str::limit($blog->blog_title,25) }}</h5>
-
-                                    <div class="blogs_details">{!! Str::limit($blog->blog_description,90) !!}</div>
-                                    <div class="bbtn">
-                                        
-                                        <a href="{{ route('blogsdetails', $blog->slug) }}"
-                                            class="blogsbtn text-decoration-none">Read
-                                            More</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                @empty
-                @endforelse
+    @include('frontend.common.testmonial')
+    <section class="container-fluid blogs_section ">
+        @if ($getblogs->count() > 0)
+            <div class="populartrekheading mt-6 mb-4">
+                <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
+                <div class="chooseus-box layout"></div>
             </div>
+        @endif
+
+        <div id="blog-slider" class="owl-carousel owl-theme">
+            @forelse($getblogs as $blog)
+                <div class="blogs_item">
+                    <div class="blogs_image">
+                        <img class="img-fluid" src="{{ getThumbs($blog->blog_image) }}" alt="{{ $blog->img_alt }}">
+                    </div>
+                    <div class="blogs_details">
+                        <div class="mt-3 mb-3">
+                            <span class="blogs_date">{{ $blog->created_at->format('Y-M-d') }}</span>
+                        </div>
+                        <h5 class="blogs_title">{{ Str::limit($blog->blog_title, 25) }}</h5>
+
+                        <div class="blogs_details">{!! Str::limit($blog->blog_description, 90) !!}</div>
+                        <div class="bbtn">
+
+                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="blogsbtn text-decoration-none">Read
+                                More</a>
+                        </div>
+
+                    </div>
+                </div>
+            @empty
+            @endforelse
         </div>
-    </div>
-</section>
+    </section>
 @endsection

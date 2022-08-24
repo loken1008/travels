@@ -1,6 +1,16 @@
 @php
 $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->limit(12)->get();
 
+ function getThumbs($url=""){
+            $base = basename($url);
+            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+                return str_replace($base, "thumbs/".$base, $url);
+            }else{
+                $preUrl = "storage/";
+                $beforeBase = str_replace($base, "",$url);
+                return $preUrl.$beforeBase.'thumbs/'.$base;
+            }
+        }
 @endphp
  
  <!-- Special Places Section Start -->
@@ -10,7 +20,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
         <div class="row">
             @if($getTour->count()>0)
             <div class="section-title">
-                <h2>Popular <span>Tour</span> Places</h2><div id="underdiv"></div>
+                <h2>Popular <span>Tour</span> Places</h2><div class="underdiv"></div>
             </div>
             @endif
         </div>
@@ -22,7 +32,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                         <div class="special-packages">
                             <div class="thumb">
                                 <a href="{{ route('tourdetails', $tour->slug) }}">
-                                    <img src="{{ $tour->mainImage }}" alt="{{ $tour->img_alt }}"
+                                    <img src="{{getThumbs($tour->mainImage) }}" alt="{{ $tour->img_alt }}"
                                         style="height:185px !important"></a>
                             </div>
                             <div class="content" style="height:200px">
@@ -36,11 +46,11 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                     <li>  
                                         @if ($getcoupon)
                                         <p>
-                                            <strike  class="text-danger"><span>$ </span>{{ $tour->main_price }}</strike> <span>$ </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                            <strike  class="text-danger">$ {{ $tour->main_price }}</strike> $ {{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                         </p>
                                       
                                     @else
-                                        <p><span>$ </span>{{ $tour->main_price }}</p>
+                                        <p>$ {{ $tour->main_price }}</p>
                                     @endif
                                 </li>
                                    

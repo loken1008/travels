@@ -126,28 +126,13 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
         Route::post('/store', [App\Http\Controllers\Admin\TourController::class, 'storeTour'])->name('tour.store');
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\TourController::class, 'editTour'])->name('tour.edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\TourController::class, 'updateTour'])->name('tour.update');
-// itinery
-        Route::get('/itinery-view', [App\Http\Controllers\Admin\ItineryController::class, 'viewItinery'])->name('itinery.view');
-        Route::get('/itinery-viewdetails/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'viewDetailsItinery'])->name('itinery.viewdetails');
-        Route::get('/itinery-create', [App\Http\Controllers\Admin\ItineryController::class, 'createItinery'])->name('itinery.create');
-        Route::post('/itinery-store', [App\Http\Controllers\Admin\ItineryController::class, 'storeItinery'])->name('itinery.store');
-        Route::get('/itinery-edit/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'editItinery'])->name('itinery.edit');
-        Route::post('/itinery-update/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'updateItinery'])->name('itinery.update');
-        Route::get('/itinery-delete/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'deleteItinery'])->name('itinery.delete');
-
-        // equipment
-        Route::get('/equipment-viewdetails/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'viewDetailsItinery'])->name('itinery.viewdetails');
-        Route::post('/equipment-store', [App\Http\Controllers\Admin\ItineryController::class, 'storeEquipment'])->name('equipment.store');
-        Route::get('/equipment-edit/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'editEquipment'])->name('equipment.edit');
-        Route::post('/equipment-update/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'updateEquipment'])->name('equipment.update');
-        Route::get('/equipment-delete/{id}', [App\Http\Controllers\Admin\ItineryController::class, 'deleteEquipment'])->name('equipment.delete');
 
         Route::post('/add-date-price/{id}', [App\Http\Controllers\Admin\TourController::class, 'addDatePrice'])->name('tour.dateprice');
         Route::get('/delete-dateprice/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteDatePrice'])->name('dateprice.delete');
-        // Route::post('/add-equipment/{id}', [App\Http\Controllers\Admin\TourController::class, 'addEquipment'])->name('tour.equipment');
-        // Route::get('/delete-equipment/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteEquipment'])->name('equipment.delete');
-        // Route::post('/add-itinery/{id}', [App\Http\Controllers\Admin\TourController::class, 'addItinery'])->name('tour.itineries');
-        // Route::get('/delete-itineries/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteItineries'])->name('itineries.delete');
+        Route::post('/add-equipment/{id}', [App\Http\Controllers\Admin\TourController::class, 'addEquipment'])->name('tour.equipment');
+        Route::get('/delete-equipment/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteEquipment'])->name('equipment.delete');
+        Route::post('/add-itinery/{id}', [App\Http\Controllers\Admin\TourController::class, 'addItinery'])->name('tour.itineries');
+        Route::get('/delete-itineries/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteItineries'])->name('itineries.delete');
         Route::post('/add-faq/{id}', [App\Http\Controllers\Admin\TourController::class, 'addFaq'])->name('tour.faq');
         Route::get('/delete-faq/{id}', [App\Http\Controllers\Admin\TourController::class, 'deleteFaq'])->name('faq.delete');
 
@@ -274,6 +259,14 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
 
         Route::post('/update/pagebanner/{id}', [App\Http\Controllers\Admin\SiteSettingController::class, 'pageBannerUpdate'])->name('update.pagebanner');
         Route::get('/delete/pagebanner/{id}', [App\Http\Controllers\Admin\SiteSettingController::class, 'pageBannerDelete'])->name('delete.pagebanner');
+
+        Route::get('/affaliated', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedView'])->name('all.affaliated');
+        Route::post('/store/affaliated', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedStore'])->name('store.affaliated');
+        Route::get('/edit/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedEdit'])->name('edit.affaliated');
+        Route::post('/update/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedUpdate'])->name('update.affaliated');
+        Route::get('/delete/affaliated/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affaliatedDelete'])->name('delete.affaliated');
+        Route::get('/affilated/active/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affilatedActive'])->name('active.affaliated');
+        Route::get('/affilated/inactive/{id}', [App\Http\Controllers\Admin\AffaliatedController::class, 'affilatedInactive'])->name('inactive.affaliated');
     });
 
     Route::group(['prefix' => '/mountainguide-filemanager'], function () {

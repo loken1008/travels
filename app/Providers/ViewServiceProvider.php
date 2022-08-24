@@ -74,7 +74,9 @@ class ViewServiceProvider extends ServiceProvider
                 $item->data = json_decode($item->data);
                 return $item;
             });
-
+            $homepagebannerone=PageBanner::orderBy('id','desc')->where('page_name','homepageone')->first();
+            $homepagebannertwo=PageBanner::orderBy('id','desc')->where('page_name','homepagetwo')->first();
+            $homepagebannerthree=PageBanner::orderBy('id','desc')->where('page_name','homepagethree')->first();
         View::share('notifications', $notifications);
         View::share('notif', $notif);
         View::share('country', $country);
@@ -86,6 +88,9 @@ class ViewServiceProvider extends ServiceProvider
         View::share('sitesetting', $sitesetting);
         View::share('getcoupon', $getcoupon);
         View::share('getcontact', $getcontact);
+        View::share('homepagebannerone', $homepagebannerone);
+        View::share('homepagebannertwo', $homepagebannertwo);
+        View::share('homepagebannerthree', $homepagebannerthree);
         Paginator::useBootstrap();
     }
 }

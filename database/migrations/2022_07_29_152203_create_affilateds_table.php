@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddShortDescriptionToToursTable extends Migration
+class CreateAffilatedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddShortDescriptionToToursTable extends Migration
      */
     public function up()
     {
-        Schema::table('tours', function (Blueprint $table) {
-            $table->longText('short_description')->nullable()->after('description');
+        Schema::create('affilateds', function (Blueprint $table) {
+            $table->id();
+            $table->string('image');
+            $table->string('type');
+            $table->integer('status')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddShortDescriptionToToursTable extends Migration
      */
     public function down()
     {
-        Schema::table('tours', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('affilateds');
     }
 }

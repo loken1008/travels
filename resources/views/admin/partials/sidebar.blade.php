@@ -86,17 +86,15 @@ $route=Route::current()->getName();
             <li class="treeview {{($prefix=='/tour')?'active':''}}">
                 <a href="#">
                     <i class="fa  fa-institution"></i>
-                    <span>Tours</span>
+                    <span>Tour Place</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
 
-                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tours</a></li>
                     <li class="{{($route=='tour.create')?'active':''}}"><a class="{{($route=='tour.create')?'active':''}}" href="{{route('tour.create')}}"><i class="ti-more"></i>Add Tour</a></li>
-                    <li class="{{($route=='itinery.view')?'active':''}}"><a class="{{($route=='itinery.view')?'active':''}}" href="{{route('itinery.view')}}"><i class="ti-more"></i>View Itineries/Equipment</a></li>
-                    <li class="{{($route=='itinery.create')?'active':''}}"><a class="{{($route=='itinery.create')?'active':''}}" href="{{route('itinery.create')}}"><i class="ti-more"></i>Add Itinerary/Equipment</a></li>
+                    <li class="{{($route=='tour.view')?'active':''}}"><a class="{{($route=='tour.view')?'active':''}}" href="{{route('tour.view')}}"><i class="ti-more"></i>View Tour</a></li>
                 
                     </li>
                 </ul>
@@ -223,8 +221,7 @@ $route=Route::current()->getName();
                     <li class="{{($route=='all.logo')?'active':''}}"><a class="{{($route=='all.logo')?'active':''}}" href="{{route('all.logo')}}"><i class="ti-more"></i>Site Logo/Social Link</a></li>
                     <li class="{{($route=='all.pagebanner')?'active':''}}"><a class="{{($route=='all.pagebanner')?'active':''}}" href="{{route('all.pagebanner')}}"><i class="ti-more"></i>Page Banner</a></li>
                     <li class="{{($route=='all.contact')?'active':''}}"><a class="{{($route=='all.contact')?'active':''}}" href="{{route('all.contact')}}"><i class="ti-more"></i>Contact </a></li>
-
-                    </li>
+                    <li class="{{($route=='all.affaliated')?'active':''}}"><a class="{{($route=='all.affaliated')?'active':''}}" href="{{route('all.affaliated')}}"><i class="ti-more"></i>Affilated Member/Pay Accept </a></li>
                 </ul>
             </li>
         </ul>

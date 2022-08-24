@@ -22,13 +22,13 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                     <div class="testmonial-head-section">
                                         <h5 class="testimonial-title"> <small>"{{ $testmonial->message_title }}</small></h5>
                                         @if($testmonial->type=='tripadvisor')
-                                        <img src="{{asset('tripadvisor.svg')}}" class="testimonial-icon"  alt="testimonialicon" title="{{$testmonial->type}}">
+                                        <img src="{{asset('tripadvisor.svg')}}" class="testimonial-icon"  alt="testicon" title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='google')
-                                        <img src="{{asset('google.png')}}" class="testimonial-icon" alt="testimonialicon"  title="{{$testmonial->type}}">
+                                        <img src="{{asset('google.webp')}}" class="testimonial-icon" alt="testicon"  title="{{$testmonial->type}}">
                                         @elseif($testmonial->type=='facebook')
-                                        <img src="{{asset('facebook.svg')}}" class="testimonial-icon" alt="testimonialicon"  title="{{$testmonial->type}}">
+                                        <img src="{{asset('facebook.svg')}}" class="testimonial-icon" alt="testicon"  title="{{$testmonial->type}}">
                                         @else
-                                        <img src="{{asset('mg.png')}}" class="testimonial-icon" alt="testimonialicon" title="{{$testmonial->type}}">
+                                        <img src="{{asset('mg.webp')}}" class="testimonial-icon" alt="testicon" title="{{$testmonial->type}}">
                                         @endif
                                     </div>
                                     
@@ -38,14 +38,14 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                     </div>
 
 
-                                    <div class=" d-flex mt-2 justify-content-between" >
+                                    <div class="star-review  mt-2 " >
                                         <h5 class="font-weight-bold mr-2"> 
                                             <span class="tname">{{ $testmonial->name }}, {{$testmonial->country}}<span/><br>
                                         <span class="tdate">{{ $testmonial->created_at->format('M d, Y') }}</span>
                                         </h5>
-                                        <ul class="d-flex">
+                                        <ul class="show-star ">
                                             @for ($i = 1; $i <= $testmonial->rating; $i++)
-                                                <li class="d-flex"><a href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
                                             @endfor
                                         </ul>
                                        
