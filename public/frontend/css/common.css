@@ -24,6 +24,9 @@ figure {
 div,strong{
   font-family: 'Poppins';
 }
+strong{
+  font-weight:bold !important;
+}
 ul {
   display: block;
   margin: 0;
@@ -34,13 +37,6 @@ ul {
 li {
   display: block;
   font-family: 'Poppins';
-}
-li::before{
-  content: '\f00c';
-  font-family: 'FontAwesome';
-  color: #0e4e93;
-  margin-right: 10px;
-  font-size: 18px;
 }
 
 button {

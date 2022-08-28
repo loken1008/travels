@@ -3875,6 +3875,14 @@ line-height: 29px;
 text-transform: capitalize;
 color: #4F4F4F;
 }
+.details-content ul li::before{
+  content: '\f0a4';
+  font-family: 'FontAwesome';
+  color: #0e4e93;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
 .leave-comment,.comments{
   font-family: 'Poppins';
 font-style: normal;
