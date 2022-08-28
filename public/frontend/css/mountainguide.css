@@ -3884,7 +3884,7 @@ line-height: 29px;
 text-transform: capitalize;
 color: #4F4F4F;
 }
-.details-content .details-tag ul li::before{
+ .details-tag  li::before{
   content: '' !important;
 }
 .details-content ul li::before{

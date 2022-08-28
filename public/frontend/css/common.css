@@ -447,7 +447,11 @@ button {
   .bestsell-content{
     padding:0px !important;
   }
-
+  .datebtn{
+    background-color: white !important;
+    color: black !important;
+    padding: 0px !important;
+  }
 }
 @media screen and (min-width: 992px) {
     .mobile-view1{
@@ -863,6 +867,7 @@ button {
   .countrytabsecond.layout {
     margin: 0px 0px 400px !important;
   }
+ 
 }
 @media screen and (max-width: 462px) {
   .country-main {

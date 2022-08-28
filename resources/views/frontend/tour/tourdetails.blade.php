@@ -477,7 +477,7 @@ function getThumbs($url = '')
                         <section class="mt-4" id="tdateprice">
                             <h4 class="key-heading5"> <i class="fa-solid fa-chart-bar"></i>Dates & Price</h4>
                             <div class="table-responsive-lg">
-                                <table class="table align-middle" style="width:200% !important">
+                                <table class="table align-middle" style="width:100% !important">
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">Start Date</th>
@@ -495,7 +495,7 @@ function getThumbs($url = '')
                                                     <td>{{ $dateprice->end_date }}</td>
                                                     <td>{{ $dateprice->seats_available }}</td>
                                                     <td>{{ $dateprice->price }}</td>
-                                                    <td style="width:100%"> <a class="datebtn"
+                                                    <td> <a class="datebtn"
                                                             href="{{ route('booking', $getTourdetails->slug) }}">Book
                                                             Now</a>
                                                     </td>
@@ -640,12 +640,10 @@ function getThumbs($url = '')
 
     @if ($getTourdetails->blog->count() > 0)
         <section class="container-fluid blogs_section ">
-            @if ($getblogs->count() > 0)
                 <div class="populartrekheading mt-6 mb-4">
                     <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
                     <div class="chooseus-box layout"></div>
                 </div>
-            @endif
 
             <div id="blog-slider" class="owl-carousel owl-theme">
                 @forelse($getTourdetails->blog as $blog)
