@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
-
 <head>
     <!-- Required meta tags -->
     <title>MountainGuideInfo|@yield('title')</title>

@@ -3858,6 +3858,15 @@ line-height: 22px;
 text-transform: capitalize;
 color: #999999;
 }
+.details-content ul li{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
 .details-tag li i{
   color:#0E4E93;
   margin-right:8px;
@@ -3875,12 +3884,15 @@ line-height: 29px;
 text-transform: capitalize;
 color: #4F4F4F;
 }
+.details-content .details-tag ul li::before{
+  content: '' !important;
+}
 .details-content ul li::before{
   content: '\f0a4';
   font-family: 'FontAwesome';
   color: #0e4e93;
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .leave-comment,.comments{

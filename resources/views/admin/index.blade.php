@@ -3,7 +3,6 @@
 @section('content')
 <?php 
 $tours=App\Models\Tour::count();
-// dd($tours);
 $category=App\Models\Category::count();
 $country=App\Models\Country::count();
 $places=App\Models\Place::count();
