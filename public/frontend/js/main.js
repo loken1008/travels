@@ -211,4 +211,44 @@ $(document).ready(function(){
       
 });
 
+$(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('.make-own-trip-subtitle1:hidden').stop(true, true).fadeIn();
+    } else {
+        $('.make-own-trip-subtitle1').stop(true, true).fadeOut();
+    }
+});
+
+$(".make-own-trip-subtitle1").click(function() {
+    $('html, body').animate({
+        scrollTop: $('html').offset().top
+    }, 1000);
+});
+
+$(window).scroll(function() {
+    var sticky = $('.container-fluid.details-first-nav'),
+        scroll = $(window).scrollTop();
+
+    if (scroll >= 100) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+});
+
+$(window).scroll(function() {
+    var sticky = $('.navbar.navbar-expand-lg.mountainguide-block3.layout'),
+        scroll = $(window).scrollTop();
+
+    if (scroll >= 100) sticky.addClass('main-nav-fixed');
+    else sticky.removeClass('main-nav-fixed');
+});
+
+$(window).scroll(function() {
+    var sticky = $('#bookprice'),
+        height = $('.scrollheight').height();
+    scroll = $(window).scrollTop();
+
+    if (scroll >= 10 && scroll <= height) sticky.addClass('bookprice');
+    else sticky.removeClass('bookprice');
+});
+
+
 

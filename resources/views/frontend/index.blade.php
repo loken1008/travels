@@ -70,71 +70,71 @@ function getThumbs($url = '')
                                     @forelse ($tour as $key2 => $ctour)
                                         @if ($ctour->status == '1')
                                             @if ($ctour->country_id == $countrys->id)
-                                           
                                                 <div class="country-details-item">
                                                     <div class="mountainguide-block48 layout ">
-                                                        <a class="text-decoration-none" href="{{ route('tourdetails', $ctour->slug) }}">
-                                                        <div class="mountainguide-block49 layout">
-                                                            <div class="country-image layout">
-                                                                <img src="{{ getThumbs($ctour->mainImage) }}"
-                                                                    alt="{{ $ctour->img_alt }}">
-                                                            </div>
-                                                            <div class="mountainguide-block50 layout">
-                                                                <div class="mountainguide-block51 layout">
-                                                                    <div class="mountainguide-text-body2-box layout">
-                                                                        <div class="mountainguide-text-body2">
-                                                                            <span
-                                                                                class="mountainguide-text-body2-span0">Duration:
-                                                                            </span><span
-                                                                                class="mountainguide-text-body2-span1">{{ $ctour->tour_days }}
-                                                                                days</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3 class="mountainguide-subtitle2 layout">
-                                                                        {{ Str::limit($ctour->tour_name,22) }}</h3>
-                                                                    <div class="mountainguide-paragraph-body layout">
-                                                                        {{ Str::limit($ctour->short_description, 60, '.') }}
-                                                                    </div>
+                                                        <a class="text-decoration-none"
+                                                            href="{{ route('tourdetails', $ctour->slug) }}">
+                                                            <div class="mountainguide-block49 layout">
+                                                                <div class="country-image layout">
+                                                                    <img src="{{ getThumbs($ctour->mainImage) }}"
+                                                                        alt="{{ $ctour->img_alt }}">
                                                                 </div>
-                                                                <div class="mountainguide-block52 layout">
-                                                                    <div class="mountainguide-block52-item">
-                                                                        <div class="mountainguide-block53 layout">
-                                                                            <div class="mountainguide-text-body11 layout">
-                                                                                Price
-                                                                            </div>
-                                                                            @if ($getcoupon)
-                                                                                <h4
-                                                                                    class="mountainguide-highlights4 layout">
-                                                                                    <strike class="text-danger"><span>$
-                                                                                        </span>{{ $ctour->main_price }}</strike>
-                                                                                    <span>$
-                                                                                    </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
-                                                                                </h4>
-                                                                            @else
-                                                                                <h4
-                                                                                    class="mountainguide-highlights4 layout">
-                                                                                    ${{ $ctour->main_price }}</h4>
-                                                                            @endif
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="mountainguide-block52-spacer"></div>
-                                                                    <div class="mountainguide-block52-item1">
-                                                                        <div class="mountainguide-block54 layout">
-                                                                            <div class="mountainguide-block55 layout">
-                                                                                <a href="{{ route('booking', $ctour->slug) }}"
-                                                                                    class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                                                    Now</a>
+                                                                <div class="mountainguide-block50 layout">
+                                                                    <div class="mountainguide-block51 layout">
+                                                                        <div class="mountainguide-text-body2-box layout">
+                                                                            <div class="mountainguide-text-body2">
+                                                                                <span
+                                                                                    class="mountainguide-text-body2-span0">Duration:
+                                                                                </span><span
+                                                                                    class="mountainguide-text-body2-span1">{{ $ctour->tour_days }}
+                                                                                    days</span>
                                                                             </div>
                                                                         </div>
+                                                                        <h3 class="mountainguide-subtitle2 layout">
+                                                                            {{ Str::limit($ctour->tour_name, 22) }}</h3>
+                                                                        <div class="mountainguide-paragraph-body layout">
+                                                                            {{ Str::limit($ctour->short_description, 60, '.') }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="mountainguide-block52 layout">
+                                                                        <div class="mountainguide-block52-item">
+                                                                            <div class="mountainguide-block53 layout">
+                                                                                <div
+                                                                                    class="mountainguide-text-body11 layout">
+                                                                                    Price
+                                                                                </div>
+                                                                                @if ($getcoupon)
+                                                                                    <h4
+                                                                                        class="mountainguide-highlights4 layout">
+                                                                                        <strike class="text-danger"><span>$
+                                                                                            </span>{{ $ctour->main_price }}</strike>
+                                                                                        <span>$
+                                                                                        </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                                    </h4>
+                                                                                @else
+                                                                                    <h4
+                                                                                        class="mountainguide-highlights4 layout">
+                                                                                        ${{ $ctour->main_price }}</h4>
+                                                                                @endif
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mountainguide-block52-spacer"></div>
+                                                                        <div class="mountainguide-block52-item1">
+                                                                            <div class="mountainguide-block54 layout">
+                                                                                <div class="mountainguide-block55 layout">
+                                                                                    <a href="{{ route('booking', $ctour->slug) }}"
+                                                                                        class="mountainguide-highlights5 layout text-decoration-none">Book
+                                                                                        Now</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </a>
+                                                        </a>
                                                     </div>
-                                                
+
                                                 </div>
-                                           
                                             @endif
                                         @endif
                                     @empty
@@ -200,54 +200,56 @@ function getThumbs($url = '')
                         @if ($selltour->status == 1)
                             <div class="mountainguide-block48 layout1">
                                 <a class="text-decoration-none" href="{{ route('tourdetails', $selltour->slug) }}">
-                                <div class="mountainguide-block49 layout">
-                                    <div class="mountainguide-image8 layout">
-                                        <img class="best-sell-image" src="{{ getThumbs($selltour->mainImage) }}"
-                                            alt="{{ $selltour->img_alt }}">
-                                    </div>
-                                    <div class="mountainguide-block50 layout">
-                                        <div class="mountainguide-block51 layout">
-                                            <div class="mountainguide-text-body2-box layout">
-                                                <div class="mountainguide-text-body2">
-                                                    <span class="mountainguide-text-body21-span0">Duration: </span><span
-                                                        class="mountainguide-text-body21-span1">{{ $selltour->tour_days }}
-                                                        days</span>
-                                                </div>
-                                            </div>
-                                            <h3 class="mountainguide-subtitle2 layout"> {{ $selltour->tour_name }}</h3>
-                                            <div class="mountainguide-paragraph-body layout">
-                                                {{ Str::limit($selltour->short_description, 60, '.') }}
-                                            </div>
+                                    <div class="mountainguide-block49 layout">
+                                        <div class="mountainguide-image8 layout">
+                                            <img class="best-sell-image" src="{{ getThumbs($selltour->mainImage) }}"
+                                                alt="{{ $selltour->img_alt }}">
                                         </div>
-                                        <div class="mountainguide-block52 layout">
-                                            <div class="mountainguide-block52-item">
-                                                <div class="mountainguide-block53 layout">
-                                                    <div class="mountainguide-text-body14 layout">Price</div>
-                                                    @if ($getcoupon)
-                                                        <h4 class="mountainguide-highlights4 layout">
-                                                            <strike class="text-danger"><span>$
-                                                                </span>{{ $selltour->main_price }}</strike> <span>$
-                                                            </span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
-                                                        </h4>
-                                                    @else
-                                                        <h4 class="mountainguide-highlights4 layout">
-                                                            $ {{ $selltour->main_price }}</h4>
-                                                    @endif
+                                        <div class="mountainguide-block50 layout">
+                                            <div class="mountainguide-block51 layout">
+                                                <div class="mountainguide-text-body2-box layout">
+                                                    <div class="mountainguide-text-body2">
+                                                        <span class="mountainguide-text-body21-span0">Duration:
+                                                        </span><span
+                                                            class="mountainguide-text-body21-span1">{{ $selltour->tour_days }}
+                                                            days</span>
+                                                    </div>
+                                                </div>
+                                                <h3 class="mountainguide-subtitle2 layout"> {{ $selltour->tour_name }}
+                                                </h3>
+                                                <div class="mountainguide-paragraph-body layout">
+                                                    {{ Str::limit($selltour->short_description, 60, '.') }}
                                                 </div>
                                             </div>
-                                            <div class="mountainguide-block52-spacer"></div>
-                                            <div class="mountainguide-block52-item3">
-                                                <div class="mountainguide-block54 layout">
-                                                    <div class="mountainguide-block55 layout">
-                                                        <a href="{{ route('booking', $selltour->slug) }}"
-                                                            class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                            Now</a>
+                                            <div class="mountainguide-block52 layout">
+                                                <div class="mountainguide-block52-item">
+                                                    <div class="mountainguide-block53 layout">
+                                                        <div class="mountainguide-text-body14 layout">Price</div>
+                                                        @if ($getcoupon)
+                                                            <h4 class="mountainguide-highlights4 layout">
+                                                                <strike class="text-danger"><span>$
+                                                                    </span>{{ $selltour->main_price }}</strike> <span>$
+                                                                </span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
+                                                            </h4>
+                                                        @else
+                                                            <h4 class="mountainguide-highlights4 layout">
+                                                                $ {{ $selltour->main_price }}</h4>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="mountainguide-block52-spacer"></div>
+                                                <div class="mountainguide-block52-item3">
+                                                    <div class="mountainguide-block54 layout">
+                                                        <div class="mountainguide-block55 layout">
+                                                            <a href="{{ route('booking', $selltour->slug) }}"
+                                                                class="mountainguide-highlights5 layout text-decoration-none">Book
+                                                                Now</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 </a>
                             </div>
                         @endif
@@ -257,61 +259,62 @@ function getThumbs($url = '')
 
         </div>
     </div>
-    @if($bestsell)
-    <section class="best-sell-month">
-        <img src="{{asset($bestsell->mainImage)}}" alt="{{$bestsell->img_alt}}">
-        <div class="bestsell-content">
-            <h3 class="trip-title" id="demo1">Trip Of The Month</h3>
-            <h4 class="bestselldetailsheading"><a href="{{ route('tourdetails', $bestsell->slug) }}">{{$bestsell->tour_name}}</a></h4>
-            
-            <div class="bestselldetails">
-                @if(!empty($bestsell->activity))
-                <div class="bestduration">
-                    <div class="bestsellicon">
-                        <i class="fa-solid fa-person-hiking"></i>
-                    </div>
-                    <div class="text">
-                        <h4 class="bestselltext-duration">Activity</h4>
-                        <h4 class="bestselltext-value"> {{ $bestsell->activity }}</h4>
-                    </div>
-                </div>
-                @endif
-                @if(!empty($bestsell->tour_days))
-                <div class="bestduration">
-                    <div class="bestsellicon">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="text">
-                        <h4 class="bestselltext-duration">Duration</h4>
-                        <h4 class="bestselltext-value"> {{ $bestsell->tour_days }}</h4>
-                    </div>
-                </div>
-                @endif
-                @if(!empty($bestsell->altitude))
-                <div class="altitude">
-                    <div class="bestsellicon">
-                        <i class="fa fa-arrow-trend-up"></i>
+    @if ($bestsell)
+        <section class="best-sell-month">
+            <img src="{{ asset($bestsell->mainImage) }}" alt="{{ $bestsell->img_alt }}">
+            <div class="bestsell-content">
+                <h3 class="trip-title" id="demo1">Trip Of The Month</h3>
+                <h4 class="bestselldetailsheading"><a
+                        href="{{ route('tourdetails', $bestsell->slug) }}">{{ $bestsell->tour_name }}</a></h4>
 
-                    </div>
-                    <div class="text">
-                        <h4 class="bestselltext-duration">Altitude</h4>
-                        <h4 class="bestselltext-value"> {{ $bestsell->altitude }}</h4>
-                    </div>
-                </div>
-                <div class="altitude">
-                    <div class="bestsellicon">
-                        <i class="fa fa-arrow-trend-up"></i>
+                <div class="bestselldetails">
+                    @if (!empty($bestsell->activity))
+                        <div class="bestduration">
+                            <div class="bestsellicon">
+                                <i class="fa-solid fa-person-hiking"></i>
+                            </div>
+                            <div class="text">
+                                <h4 class="bestselltext-duration">Activity</h4>
+                                <h4 class="bestselltext-value"> {{ $bestsell->activity }}</h4>
+                            </div>
+                        </div>
+                    @endif
+                    @if (!empty($bestsell->tour_days))
+                        <div class="bestduration">
+                            <div class="bestsellicon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="text">
+                                <h4 class="bestselltext-duration">Duration</h4>
+                                <h4 class="bestselltext-value"> {{ $bestsell->tour_days }}</h4>
+                            </div>
+                        </div>
+                    @endif
+                    @if (!empty($bestsell->altitude))
+                        <div class="altitude">
+                            <div class="bestsellicon">
+                                <i class="fa fa-arrow-trend-up"></i>
 
-                    </div>
-                    <div class="text">
-                        <h4 class="bestselltext-duration">Price</h4>
-                        <h4 class="bestselltext-value"> $ {{ $bestsell->main_price }}</h4>
-                    </div>
+                            </div>
+                            <div class="text">
+                                <h4 class="bestselltext-duration">Altitude</h4>
+                                <h4 class="bestselltext-value"> {{ $bestsell->altitude }}</h4>
+                            </div>
+                        </div>
+                        <div class="altitude">
+                            <div class="bestsellicon">
+                                <i class="fa fa-arrow-trend-up"></i>
+
+                            </div>
+                            <div class="text">
+                                <h4 class="bestselltext-duration">Price</h4>
+                                <h4 class="bestselltext-value"> $ {{ $bestsell->main_price }}</h4>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-                @endif
             </div>
-        </div>
-    </section>
+        </section>
     @endif
     <div class="container-fluid mountainguide-block84 layout">
         <div class="mountainguide-block85 layout">
@@ -357,49 +360,47 @@ function getThumbs($url = '')
                     @if ($cattrekking)
                         @foreach ($cattrekking->tour->shuffle() as $key => $tour)
                             @if ($tour->status == 1)
-                            
                                 <div class="populartrek_item">
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
-                                    <div class="populartrek_image">
-                                        <img class="img-fluid" src="{{ getThumbs($tour->mainImage) }}"
-                                            alt="{{ $tour->img_alt }}">
-                                    </div>
-                                    <div class="populartrek_details">
-                                        <div class="mt-3 mb-3">
-                                            <span class="bestduration">Duration:</span> <span
-                                                class="days">{{ $tour->tour_days }} Days</span>
+                                        <div class="populartrek_image">
+                                            <img class="img-fluid" src="{{ getThumbs($tour->mainImage) }}"
+                                                alt="{{ $tour->img_alt }}">
                                         </div>
-
-                                        <div class="populartrek_title">
-                                            <h5>{{ $tour->tour_name }}</h5>
-                                        </div>
-
-                                        <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
-                                        <div class="pbtn">
-                                            <div class="mb-2">
-                                                <h4 class="mountainguide-text-body14 layout">Price</h4>
-                                                @if ($getcoupon)
-                                                    <h4 class="populartrekprice">
-                                                        <strike class="text-danger"><span>$
-                                                            </span>{{ $tour->main_price }}</strike> <span>$
-                                                        </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                    </h4>
-                                                @else
-                                                    <h4 class="populartrekprice">
-                                                        ${{ $tour->main_price }}</h4>
-                                                @endif
+                                        <div class="populartrek_details">
+                                            <div class="mt-3 mb-3">
+                                                <span class="bestduration">Duration:</span> <span
+                                                    class="days">{{ $tour->tour_days }} Days</span>
                                             </div>
 
+                                            <div class="populartrek_title">
+                                                <h5>{{ $tour->tour_name }}</h5>
+                                            </div>
 
-                                            <a href="{{ route('booking', $tour->slug) }}"
-                                                class="populartrekbtn text-decoration-none">Book
-                                                Now</a>
+                                            <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
+                                            <div class="pbtn">
+                                                <div class="mb-2">
+                                                    <h4 class="mountainguide-text-body14 layout">Price</h4>
+                                                    @if ($getcoupon)
+                                                        <h4 class="populartrekprice">
+                                                            <strike class="text-danger"><span>$
+                                                                </span>{{ $tour->main_price }}</strike> <span>$
+                                                            </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h4>
+                                                    @else
+                                                        <h4 class="populartrekprice">
+                                                            ${{ $tour->main_price }}</h4>
+                                                    @endif
+                                                </div>
+
+
+                                                <a href="{{ route('booking', $tour->slug) }}"
+                                                    class="populartrekbtn text-decoration-none">Book
+                                                    Now</a>
+                                            </div>
+
                                         </div>
-
-                                    </div>
-                                </a>
+                                    </a>
                                 </div>
-                          
                             @endif
                         @endforeach
                     @endif
@@ -421,54 +422,54 @@ function getThumbs($url = '')
                     @if ($tour->status == 1)
                         <div class="mountainguide-block48 layout1">
                             <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
-                            <div class="mountainguide-block49 layout">
-                                <div class="mountainguide-image8 layout">
-                                    <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
-                                        alt="{{ $tour->img_alt }}">
-                                </div>
-                                <div class="mountainguide-block50 layout">
-                                    <div class="mountainguide-block51 layout">
-                                        <div class="mountainguide-text-body2-box layout">
-                                            <div class="mountainguide-text-body2">
-                                                <span class="mountainguide-text-body21-span0">Duration: </span><span
-                                                    class="mountainguide-text-body21-span1">{{ $tour->tour_days }}
-                                                    days</span>
-                                            </div>
-                                        </div>
-                                        <h3 class="mountainguide-subtitle2 layout"> {{ $tour->tour_name }}</h3>
-                                        <div class="mountainguide-paragraph-body layout">
-                                            {{ Str::limit($tour->short_description, 80, '.') }}
-                                        </div>
+                                <div class="mountainguide-block49 layout">
+                                    <div class="mountainguide-image8 layout">
+                                        <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
+                                            alt="{{ $tour->img_alt }}">
                                     </div>
-                                    <div class="mountainguide-block52 layout">
-                                        <div class="mountainguide-block52-item">
-                                            <div class="mountainguide-block53 layout">
-                                                <div class="mountainguide-text-body14 layout">Price</div>
-                                                @if ($getcoupon)
-                                                    <h4 class="mountainguide-highlights4 layout">
-                                                        <strike class="text-danger"><span>$
-                                                            </span>{{ $tour->main_price }}</strike> <span>$
-                                                        </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                    </h4>
-                                                @else
-                                                    <h4 class="mountainguide-highlights4 layout">
-                                                        $ {{ $tour->main_price }}</h4>
-                                                @endif
+                                    <div class="mountainguide-block50 layout">
+                                        <div class="mountainguide-block51 layout">
+                                            <div class="mountainguide-text-body2-box layout">
+                                                <div class="mountainguide-text-body2">
+                                                    <span class="mountainguide-text-body21-span0">Duration: </span><span
+                                                        class="mountainguide-text-body21-span1">{{ $tour->tour_days }}
+                                                        days</span>
+                                                </div>
+                                            </div>
+                                            <h3 class="mountainguide-subtitle2 layout"> {{ $tour->tour_name }}</h3>
+                                            <div class="mountainguide-paragraph-body layout">
+                                                {{ Str::limit($tour->short_description, 80, '.') }}
                                             </div>
                                         </div>
-                                        <div class="mountainguide-block52-spacer"></div>
-                                        <div class="mountainguide-block52-item3">
-                                            <div class="mountainguide-block54 layout">
-                                                <div class="mountainguide-block55 layout">
-                                                    <a href="{{ route('booking', $tour->slug) }}"
-                                                        class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                        Now</a>
+                                        <div class="mountainguide-block52 layout">
+                                            <div class="mountainguide-block52-item">
+                                                <div class="mountainguide-block53 layout">
+                                                    <div class="mountainguide-text-body14 layout">Price</div>
+                                                    @if ($getcoupon)
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            <strike class="text-danger"><span>$
+                                                                </span>{{ $tour->main_price }}</strike> <span>$
+                                                            </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h4>
+                                                    @else
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            $ {{ $tour->main_price }}</h4>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="mountainguide-block52-spacer"></div>
+                                            <div class="mountainguide-block52-item3">
+                                                <div class="mountainguide-block54 layout">
+                                                    <div class="mountainguide-block55 layout">
+                                                        <a href="{{ route('booking', $tour->slug) }}"
+                                                            class="mountainguide-highlights5 layout text-decoration-none">Book
+                                                            Now</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </a>
                         </div>
                     @endif
@@ -487,29 +488,29 @@ function getThumbs($url = '')
 
         <div id="blog-slider" class="owl-carousel owl-theme">
             @forelse($getblogs as $blog)
-          
                 <div class="blogs_item">
                     <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">
-                    <div class="blogs_image">
-                        <img class="img-fluid" src="{{ getThumbs($blog->blog_image) }}" alt="{{ $blog->img_alt }}">
-                    </div>
-                    <div class="blogs_details">
-                        <div class="mt-3 mb-3">
-                            <span class="blogs_date">{{ $blog->created_at->format('Y-M-d') }}</span>
+                        <div class="blogs_image">
+                            <img class="img-fluid" src="{{ getThumbs($blog->blog_image) }}" alt="{{ $blog->img_alt }}">
                         </div>
-                        <h5 class="blogs_title">{{ Str::limit($blog->blog_title, 25) }}</h5>
+                        <div class="blogs_details">
+                            <div class="mt-3 mb-3">
+                                <span class="blogs_date">{{ $blog->created_at->format('Y-M-d') }}</span>
+                            </div>
+                            <h5 class="blogs_title">{{ Str::limit($blog->blog_title, 25) }}</h5>
 
-                        <div class="blogs_details">{!! Str::limit($blog->blog_description, 70) !!}</div>
-                        <div class="bbtn">
+                            <div class="blogs_details">{!! Str::limit($blog->blog_description, 70) !!}</div>
+                            <div class="bbtn">
 
-                            <a href="{{ route('blogsdetails', $blog->slug) }}" class="blogsbtn text-decoration-none">Read
-                                More</a>
+                                <a href="{{ route('blogsdetails', $blog->slug) }}"
+                                    class="blogsbtn text-decoration-none">Read
+                                    More</a>
+                            </div>
+
                         </div>
-
-                    </div>
-                </a>
+                    </a>
                 </div>
-           
+
             @empty
             @endforelse
         </div>

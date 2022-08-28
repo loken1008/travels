@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Required meta tags -->
     <title>MountainGuideInfo|@yield('title')</title>
@@ -33,27 +34,27 @@
     <------------------------------------------>
     <link rel="canonical" href="{{ url(Request::url()) }}" />
     <style>
-     
         .fixed {
             position: fixed;
             top: -20px;
         }
-        .main-nav-fixed{
+
+        .main-nav-fixed {
             position: fixed !important;
-            top:0px !important;
+            top: 0px !important;
             z-index: 2;
         }
+
         .bookprice {
             position: fixed;
-            top:110px;
-            width:23%;
+            top: 110px;
+            width: 23%;
         }
-       
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">   
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
 
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/common.css') }}" />
@@ -63,7 +64,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -74,7 +75,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
 </head>
 
@@ -87,11 +88,7 @@
         <!--endfooter-->
     </div>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $("#countrytab").tabs();
-        });
-    </script>
+   
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
@@ -101,21 +98,18 @@
     <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.00.6.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"
-        integrity="sha512-PsJ1f4lw0Jrga4wbDOvdWs9DFl88C1vlcH2VQYqgljHBmzmqtGivUkzRHWx2ZxFlnysKUcROqLeuOpYh9q4YNg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js" integrity="sha512-PsJ1f4lw0Jrga4wbDOvdWs9DFl88C1vlcH2VQYqgljHBmzmqtGivUkzRHWx2ZxFlnysKUcROqLeuOpYh9q4YNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
     </script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
-    <script
-        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
+    <script src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
-   <script>
+    <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -158,48 +152,11 @@
             }
         @endif
     </script>
- 
-    <script>
-          $(window).scroll(function() {
-            if ($(this).scrollTop()) {
-                $('.make-own-trip-subtitle1:hidden').stop(true, true).fadeIn();
-            } else {
-                $('.make-own-trip-subtitle1').stop(true, true).fadeOut();
-            }
-        });
+<script>
+    new CircleType(document.getElementById('demo1'))
+    .radius(340);
+</script>
 
-        $(".make-own-trip-subtitle1").click(function() {
-            $('html, body').animate({
-                scrollTop: $('html').offset().top
-            }, 1000);
-        });
-         $(window).scroll(function() {
-            var sticky = $('.container-fluid.details-first-nav'),
-                scroll = $(window).scrollTop();
-
-            if (scroll >= 100) sticky.addClass('fixed');
-            else sticky.removeClass('fixed');
-        });
-        $(window).scroll(function() {
-            var sticky = $('.navbar.navbar-expand-lg.mountainguide-block3.layout'),
-                scroll = $(window).scrollTop();
-
-            if (scroll >=100) sticky.addClass('main-nav-fixed');
-            else sticky.removeClass('main-nav-fixed');
-        });
-
-        $(window).scroll(function() {
-            var sticky = $('#bookprice'),
-             height = $('.scrollheight').height();
-            scroll = $(window).scrollTop();
-
-            if (scroll >= 10 && scroll<=height) sticky.addClass('bookprice');
-            else sticky.removeClass('bookprice');
-        });
-        new CircleType(document.getElementById('demo1'))
-  .radius(340);
-    </script>
-  
 </body>
 
 </html>
