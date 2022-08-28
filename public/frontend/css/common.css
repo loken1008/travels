@@ -15,20 +15,32 @@ p,
 figure {
   display: block;
   font-size: 1em;
+  font-family: 'Poppins';
   font-weight: normal;
   margin: 0;
   border-width: 0;
   opacity: 1;
 }
-
+div,strong{
+  font-family: 'Poppins';
+}
 ul {
   display: block;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins';
 }
 
 li {
   display: block;
+  font-family: 'Poppins';
+}
+li::before{
+  content: '\f00c';
+  font-family: 'FontAwesome';
+  color: #0e4e93;
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 button {
