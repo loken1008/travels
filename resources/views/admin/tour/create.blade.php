@@ -64,21 +64,76 @@
                                 </div>
                                 <input type="checkbox" name="is_best_selling" value="1"> Is Best Selling
                             </div>
-                            {{-- <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="firstName5">Tour Type :<span class="text-danger">*</span></label>
+                                    <label for="firstName5">Type :</label>
                                     <select class="form-control" id="firstName5" name="type">
-                                        <option value="">Select Tours </option>
-                                        <option value="trip">Trip</option>
-                                        <option value="package">Package</option>
-                                        <option value="activities">Activities</option>
+                                        <option value="">Select Type </option>
+                                        <option value="tripofthemonth" >Trip Of The Month</option>
+                                        <option value="group" >Group</option>
+                                        <option value="bestsell" >Best Seller</option>
+                                        <option value="private" >Private</option>
+                                        <option value="family" >Family</option>
                                     </select>
-                                    @error('type')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
-                            </div> --}}
-                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="grade">Activity :</label>
+                                    <input type="text" class="form-control" id="activity"
+                                        value="{{ old('activity') }}" name="activity">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="grade">Grade :</label>
+                                    <input type="text" class="form-control" id="grade"
+                                        value="{{ old('grade') }}" name="grade">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="region">Region :</label>
+                                    <input type="text" class="form-control" id="region"
+                                        value="{{ old('region') }}" name="region">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="meal">Meal :</label>
+                                    <input type="text" class="form-control" id="meal"
+                                        value="{{ old('meal') }}" name="meal">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="bestmonth">Best Month :</label>
+                                    <input type="text" class="form-control" id="best_month"
+                                        value="{{ old('best_month') }}" name="best_month">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="startend">Start End Day :</label>
+                                    <input type="text" class="form-control" id="start_end"
+                                        value="{{ old('start_end') }}" name="start_end">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="groupsize">Group Size :</label>
+                                    <input type="text" class="form-control" id="group_size"
+                                        value="{{ old('group_size') }}" name="group_size">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="altitude">Altitude :</label>
                                     <input type="text" class="form-control" id="altitude"
@@ -113,6 +168,7 @@
 
                                 </div>
                             </div>
+                           
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price"> Price :<span class="text-danger">*</span></label>
@@ -164,21 +220,22 @@
                                 <img id="holder" style="margin-top:15px;max-height:100px;">
 
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="firstName5"> Trip Map :</label>
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                        <a id="tlfms" data-input="tripthumbnail" data-preview="holder2"
-                                            class="btn btn-primary">
-                                            <i class="fa fa-picture-o"></i> Choose
-                                        </a>
-                                </span>
-                                <input  id="tripthumbnail" class="form-control" type="text" name="trip_map">
-
+                            <div class="col-md-6">
+                                <label for="firstName5"> Trip Map :</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                            <a id="tlfms" data-input="tripthumbnail" data-preview="holder2"
+                                                class="btn btn-primary">
+                                                <i class="fa fa-picture-o"></i> Choose
+                                            </a>
+                                    </span>
+                                    <input  id="tripthumbnail" class="form-control" type="text" name="trip_map">
+    
+                                </div>
+                                <img id="holder2" style="margin-top:15px;max-height:100px;">
                             </div>
-                            <img id="holder2" style="margin-top:15px;max-height:100px;">
                         </div>
+                       
                         <div class="form-group">
                             <label for="mapurl"> Map Url :</label>
                             <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"

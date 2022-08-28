@@ -4,29 +4,79 @@
 
 <head>
     <!-- Required meta tags -->
+    <title>MountainGuideInfo|@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/common.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/fonts.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/mountainguide.css') }}" />
-<!-- CSS only -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
+    <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
+    <meta name="description" content="@yield('meta_description', 'default description')">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('og_title')" />
+    <meta property="og:description" content="@yield('og_description')" />
+    <meta property="og:image" content="@yield('og_image')" />
+    <meta property="og:url" content="@yield('og_url')" />
+    <meta property="og:site_name" content="Mountainguideinfo" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@yield('twitter_title')">
+    <meta name="twitter:description" content="@yield('twitter_description')">
+    <meta name="twitter:image" content="@yield('twitter_image')">
+    <meta name="twitter:site" content="Mountainguideinfo">
+    <meta name="twitter:url" content="@yield('twitter_url')" />
+    <!-- Favicon -->
+    @if (!empty($sitesetting->logo))
+        <link href="{{ $sitesetting->logo }}" rel="shortcut icon" type="image/png">
+    @endif
+
+    <!------------------------------------------
+      Main CSS File
+    <------------------------------------------>
+    <link rel="canonical" href="{{ url(Request::url()) }}" />
+    <style>
+     
+        .fixed {
+            position: fixed;
+            top: -20px;
+        }
+        .main-nav-fixed{
+            position: fixed !important;
+            top:0px !important;
+            z-index: 2;
+        }
+        .bookprice {
+            position: fixed;
+            top:110px;
+            width:23%;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">   
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/mountainguide.css') }}" />
+    <!-- CSS only -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-    crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
 </head>
 
@@ -40,9 +90,9 @@
     </div>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
-    $( function() {
-      $( "#countrytab" ).tabs();
-    } );
+        $(function() {
+            $("#countrytab").tabs();
+        });
     </script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -51,215 +101,107 @@
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.00.6.js"></script>
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-
-    <!-- custom JS code after importing jquery and owl -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            function initSliders() {
-                var sliderConfig = {
-                    loop: true,
-                    autoplay: true,
-                    dots: true,
-                    nav: true,
-                    margin: 10,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        500: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        800: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 3
-                        }
-                    },
-                }
-                var firstOwlCarousel = $('.mountainguide-block45-item1 #country-slide').owlCarousel(sliderConfig);
-
-                function initFirstSlider() {
-                    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function(e) {
-                        firstOwlCarousel.trigger('refresh.owl.carousel');
-                    })
-                }
-                initFirstSlider()
-
-            }
-            $(window).ready(initSliders)
-            $(window).resize(initSliders);
-        })
-
-
-
-        $(document).ready(function() {
-            $('#best-sell-slider').owlCarousel({
-                loop: true,
-                margin: 100,
-                nav: true,
-                dots: false,
-                autoplay: true,
-                navContainer: '#customNav',
-                navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'],
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    500: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    800: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                },
-                onDragged: onChangedCallback
-
-
-            });
-
-        });
-
-        function onChangedCallback(event) {
-            if ($("#best-sell-slider .owl-item").first().hasClass("active")) {
-                $("body").removeClass("mountainguide-block48.layout1");
-                $("body").addClass("zoom-in-seller");
-            }
-
-        }
-        $(document).ready(function() {
-            $('#challenge-peak-slider').owlCarousel({
-                loop: true,
-                margin: 100,
-                nav: true,
-                dots: false,
-                // autoplay: true,
-                navContainer: '#customNavs',
-                navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'],
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    800: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                },
-                onDragged: onChangedCallback
-
-
-            });
-
-        });
-
-        function onChangedCallback(event) {
-            if ($("#best-sell-slider .owl-item").first().hasClass("active")) {
-                $("body").removeClass("mountainguide-block48.layout1");
-                $("body").addClass("zoom-in-seller");
-            }
-
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"
+        integrity="sha512-PsJ1f4lw0Jrga4wbDOvdWs9DFl88C1vlcH2VQYqgljHBmzmqtGivUkzRHWx2ZxFlnysKUcROqLeuOpYh9q4YNg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js">
     </script>
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EJF8NFWL9"></script>
+    <script
+        src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5EJF8NFWL9');
+
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5c5e75576cb1ff3c14cbbbe8/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
     <script>
-        $(document).ready(function() {
-            $('#popular-trek-slider').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                // autoplay:true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    500: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    800: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 2
-                    }
-                },
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
 
-
-            });
-        });
-        $(document).ready(function() {
-            $('#testimonial-slider').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: false,
-                autoplay: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 1
-                    },
-                    1000: {
-                        items: 2
-                    }
-                },
-
-
-            });
-        });
-        $(document).ready(function() {
-            $('#blog-slider').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                autoplay: true,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    500: {
-                        items: 1
-                    },
-                    768: {
-                        items: 1
-                    },
-                    900: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                },
-
-
-            });
-        });
+                case 'success':
+                    toastr.success("{{ Session::get('message') }}");
+                    break;
+                case 'warning':
+                    toastr.warning("{{ Session::get('message') }}");
+                    break;
+                case 'error':
+                    toastr.error("{{ Session::get('message') }}");
+                    break;
+            }
+        @endif
     </script>
+ 
+    <script>
+          $(window).scroll(function() {
+            if ($(this).scrollTop()) {
+                $('.make-own-trip-subtitle1:hidden').stop(true, true).fadeIn();
+            } else {
+                $('.make-own-trip-subtitle1').stop(true, true).fadeOut();
+            }
+        });
+
+        $(".make-own-trip-subtitle1").click(function() {
+            $('html, body').animate({
+                scrollTop: $('html').offset().top
+            }, 1000);
+        });
+         $(window).scroll(function() {
+            var sticky = $('.container-fluid.details-first-nav'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= 100) sticky.addClass('fixed');
+            else sticky.removeClass('fixed');
+        });
+        $(window).scroll(function() {
+            var sticky = $('.navbar.navbar-expand-lg.mountainguide-block3.layout'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >=100) sticky.addClass('main-nav-fixed');
+            else sticky.removeClass('main-nav-fixed');
+        });
+
+        $(window).scroll(function() {
+            var sticky = $('#bookprice'),
+             height = $('.scrollheight').height();
+            scroll = $(window).scrollTop();
+
+            if (scroll >= 10 && scroll<=height) sticky.addClass('bookprice');
+            else sticky.removeClass('bookprice');
+        });
+        new CircleType(document.getElementById('demo1'))
+  .radius(340);
+    </script>
+  
 </body>
 
 </html>

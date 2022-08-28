@@ -27,7 +27,8 @@ class IndexController extends Controller
     public function homePage()
     {
         $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
-        $getTour=Tour::with('country','place','category','subcategory')->where(['status'=>'1','is_best_selling'=>'1'])->orderByRaw('RAND()')->get();
+        $getTour=Tour::with('country','place','category','subcategory')->where(['status'=>'1','is_best_selling'=>'1'])->orderBy('id','desc')->limit(9)->get();
+        $bestsell=Tour::with('country','place','category','subcategory')->where(['status'=>'1','type'=>'tripofthemonth'])->first();
         $cattrekking=Category::with('tour','subcategory')->where('category_type','trekking')->first();
         $catnature=Category::with('tour','subcategory')->where('category_type','natural')->first();
         $catadventure=Category::with('tour','subcategory')->where('category_type','adventure')->first();
@@ -37,13 +38,14 @@ class IndexController extends Controller
         $chooseus=ChooseUs::orderBy('id','asc')->limit(3)->get();
         $gallery=Gallery::orderBy('id','desc')->limit(8)->get();
         $homepage=HomePage::orderBy('id','desc')->first();
-        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','cattrekking','catadventure','catnature','catpeak','homepage'));
+        return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','gallery','cattrekking','catadventure','catnature','catpeak','homepage','bestsell'));
     }
 
     public function  tourDetails($slug)
     {
         
         $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('status','1')->where('slug',$slug)->first();
+        // dd($getTourdetails);
          $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('slug','!=',$slug)->where('category_id',$getTourdetails->category_id)->limit(9)->get();
         return view('frontend.tour.tourdetails',compact('getTourdetails','getTour'));
     }

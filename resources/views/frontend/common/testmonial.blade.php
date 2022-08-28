@@ -18,37 +18,45 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                             <div class="testimonials-item">
 
                                 <div class="content">
-                                    
+
                                     <div class="testmonial-head-section">
-                                        <h5 class="testimonial-title"> <small>"{{ $testmonial->message_title }}</small></h5>
-                                        @if($testmonial->type=='tripadvisor')
-                                        <img src="{{asset('tripadvisor.svg')}}" class="testimonial-icon"  alt="testicon" title="{{$testmonial->type}}">
-                                        @elseif($testmonial->type=='google')
-                                        <img src="{{asset('google.webp')}}" class="testimonial-icon" alt="testicon"  title="{{$testmonial->type}}">
-                                        @elseif($testmonial->type=='facebook')
-                                        <img src="{{asset('facebook.svg')}}" class="testimonial-icon" alt="testicon"  title="{{$testmonial->type}}">
+                                        <h5 class="testimonial-title"> <small>"{{ $testmonial->message_title }}</small>
+                                        </h5>
+                                        @if ($testmonial->type == 'tripadvisor')
+                                            <img src="{{ asset('tripadvisor.svg') }}" class="testimonial-icon"
+                                                alt="testicon" title="{{ $testmonial->type }}">
+                                        @elseif($testmonial->type == 'google')
+                                            <img src="{{ asset('google.webp') }}" class="testimonial-icon"
+                                                alt="testicon" title="{{ $testmonial->type }}">
+                                        @elseif($testmonial->type == 'facebook')
+                                            <img src="{{ asset('facebook.svg') }}" class="testimonial-icon"
+                                                alt="testicon" title="{{ $testmonial->type }}">
                                         @else
-                                        <img src="{{asset('mg.webp')}}" class="testimonial-icon" alt="testicon" title="{{$testmonial->type}}">
+                                            <img src="{{ asset('mg.webp') }}" class="testimonial-icon" alt="testicon"
+                                                title="{{ $testmonial->type }}">
                                         @endif
                                     </div>
-                                    
+
                                     <div class="testimonial-desc mt-4">
-                                        <img  class="testimonial-image " src="{{ $testmonial->image }}" alt="image">
-                                        <p class="testimonial-message ">{{ Str::limit($testmonial->message_description,150) }}</p>
+                                        <img class="testimonial-image " src="{{ $testmonial->image }}" alt="image">
+                                        <p class="testimonial-message ">
+                                            {{ Str::limit($testmonial->message_description, 150) }}</p>
                                     </div>
 
 
-                                    <div class="star-review  mt-2 " >
-                                        <h5 class="font-weight-bold mr-2"> 
-                                            <span class="tname">{{ $testmonial->name }}, {{$testmonial->country}}<span/><br>
-                                        <span class="tdate">{{ $testmonial->created_at->format('M d, Y') }}</span>
+                                    <div class="star-review  mt-2 ">
+                                        <h5 class="font-weight-bold mr-2">
+                                            <span class="tname">{{ $testmonial->name }},
+                                                {{ $testmonial->country }}<span /><br>
+                                                <span
+                                                    class="tdate">{{ $testmonial->created_at->format('M d, Y') }}</span>
                                         </h5>
                                         <ul class="show-star ">
                                             @for ($i = 1; $i <= $testmonial->rating; $i++)
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                             @endfor
                                         </ul>
-                                       
+
                                     </div>
                                 </div>
                             </div>

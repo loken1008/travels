@@ -6,10 +6,11 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-
-
+                @if($sitelogo->count() > 0)
+                <div class="col-12">
+                    @else 
                 <div class="col-8">
-
+                    @endif
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">Site List</h3>
@@ -22,12 +23,8 @@
                                         <tr>
                                             <th>Site Logo</th>
                                             <th>Facebook</th>
-                                            <th>Twitter</th>
                                             <th>Viber</th>
                                             <th>Whatapps</th>
-                                            <th>Instagram</th>
-                                            <th>Youtube</th>
-                                            <th>Pinterest</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -38,16 +35,12 @@
                                                         style="height:100px;width:100px" alt="">
                                                     </td>
                                                 <td>{{$logo->facebook}}</td>
-                                                <td>{{$logo->twitter}}</td>
                                                 <td>{{$logo->linkedin}}</td>
                                                 <td>{{$logo->google}}</td>
-                                                <td>{{$logo->instagram}}</td>
-                                                <td>{{$logo->youtube}}</td>
-                                                <td>{{$logo->pinterest}}</td>
                                                    
                                                 <td>
                                                     <a href="{{route('edit.logo',$logo->id)}}" class="btn btn-info" style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                    <a href="{{route('delete.logo',$logo->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a>
+                                                    {{-- <a href="{{route('delete.logo',$logo->id)}}" class="btn btn-danger mt-2" style="width:5rem" id="delete" title="delete"><i class="fa fa-trash"></i></a> --}}
                                                 </td>
                                             </tr>
                                         @empty
@@ -61,6 +54,7 @@
                     <!-- /.box -->
 
                 </div>
+                @if($sitelogo->count() < 1)
                 <div class="col-4">
                     <div class="box">
                         <div class="box-header with-border">
@@ -144,16 +138,15 @@
                                         </div>
 
                                     </div>
-                                    @if($sitelogo->count() < 1)
                                     <div class="text-xs-right">
                                         <input type="submit" class="btn btn-rounded btn-info" value="Add Setting"/>
                                     </div>
-                                    @endif
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endif
                 <!-- /.col -->
             </div>
             <!-- /.row -->

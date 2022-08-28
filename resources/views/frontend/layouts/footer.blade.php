@@ -10,10 +10,12 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                     <h4 class="newsletter-title text-center">Suscribe To Our Newsletter</h4>
                     <p class="newsletter-para text-center">Subscribe to our news letter and we’ll keep you up to date on
                         our products and services.</p>
-                    <form action="" method="post">
-                        <input class="newsletter-input" type="email" name="email">
-                        <button class="news-btn"><i class="fa fa-arrow-right nlicon"></i></button>
+                   <div class="newsletter-suscribe">
+                        <form action="" method="post">
+                        <input class="newsletter-input" type="email" name="email" placeholder="Suscribe Newsletter">
+                        <button class="news-btn"><i class="fa fa-arrow-right"></i></button>
                     </form>
+                   </div>
                 </div>
             </div>
         </div>
@@ -22,28 +24,28 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
         <div class="container footer-top-container">
             <div class="footer-first-section">
                 <div class="footer-logo">
-                    @if (!empty($sitesetting->footerlogo))
-                        <img src="{{ $sitesetting->footerlogo }}" alt="mountainguidelogo">
+                    @if (!empty($sitesetting->footer_logo))
+                        <img src="{{ $sitesetting->footer_logo }}" alt="mountainguidelogo">
                     @else
                         <img src="{{ asset('frontend/logo.png') }}" alt="mountainguidelogo">
                     @endif
 
                 </div>
-                <ul class="d-flex mt-5">
+                <ul class="d-flex mt-5 social-link">
                     @if (!empty($sitesetting->facebook))
-                        <li><a href="{{ $sitesetting->facebook }}"><i class="fa fa-facebook fa-icon"></i></a></li>
+                        <li><a href="{{ $sitesetting->facebook }}"><i class="fa-brands fa-facebook fa-icon"></i></a></li>
                     @endif
                     @if (!empty($sitesetting->twitter))
-                        <li><a href="{{ $sitesetting->twitter }}"><i class="fa fa-twitter fa-icon"></i></a></li>
+                        <li><a href="{{ $sitesetting->twitter }}"><i class="fa-brands fa-twitter fa-icon"></i></a></li>
                     @endif
                     @if (!empty($sitesetting->instagram))
-                        <li><a href="{{ $sitesetting->instagram }}"><i class="fa fa-instagram fa-icon"></i></a></li>
+                        <li><a href="{{ $sitesetting->instagram }}"><i class="fa-brands fa-instagram fa-icon"></i></a></li>
                     @endif
                     @if (!empty($sitesetting->pinterest))
-                        <li><a href="{{ $sitesetting->pinterest }}"><i class="fa fa-pinterest fa-icon"></i></a></li>
+                        <li><a href="{{ $sitesetting->pinterest }}"><i class="fa-brands fa-pinterest fa-icon"></i></a></li>
                     @endif
                     @if (!empty($sitesetting->youtube))
-                        <li><a href="{{ $sitesetting->youtube }}"><i class="fa fa-youtube fa-icon"></i></a></li>
+                        <li><a href="{{ $sitesetting->youtube }}"><i class="fa-brands fa-youtube fa-icon"></i></a></li>
                     @endif
                 </ul>
             </div>

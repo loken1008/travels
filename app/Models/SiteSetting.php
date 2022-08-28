@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SiteSetting extends Model
 {
     use HasFactory;
-    protected $fillable = ['logo', 'facebook', 'twitter', 'instagram', 'linkedin', 'youtube', 'google', 'pinterest'];
+    protected $fillable = ['logo','footer_logo','copy_right', 'facebook', 'twitter', 'instagram', 'linkedin', 'youtube', 'google', 'pinterest'];
 }
