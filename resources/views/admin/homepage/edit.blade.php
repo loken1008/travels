@@ -69,12 +69,12 @@
                                             <label for="firstName5"> Second Image :</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
-                                                    <a id="hmblfm" data-input="mainthumbnail" data-preview="holder"
+                                                    <a id="hmblfm" data-input="mainthumbnail1" data-preview="holder"
                                                         class="btn btn-primary">
                                                         <i class="fa fa-picture-o"></i> Choose
                                                     </a>
                                                 </span>
-                                                <input id="mainthumbnail" class="form-control" type="text" name="image">
+                                                <input id="mainthumbnail1" class="form-control" type="text" name="image">
             
                                             </div>
                                             <img id="holder1" style="margin-top:15px;max-height:100px;" src="{{$edithomepage->image}}">

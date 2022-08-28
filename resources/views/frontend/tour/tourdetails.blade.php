@@ -241,7 +241,7 @@ function getThumbs($url = '')
                             </div>
                         </div>
                         @if (!empty($getTourdetails->trip_map))
-                            <div class="tripmap mt-4">
+                            <div class="tripmap">
                                 <h5 class="inquiry-title">Trip Map</h5>
                                 <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
                                         src="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}"></a>

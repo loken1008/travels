@@ -13,6 +13,7 @@ function getThumbs($url = '')
 @endphp
 @extends('frontend.main')
 @section('title', 'Explore-With-Us|Home')
+@if(!empty($homepage->meta_title))
 @section('meta_title', $homepage->meta_title)
 @section('meta_keywords', $homepage->meta_keywords)
 @section('meta_description', $homepage->meta_description)
@@ -24,6 +25,7 @@ function getThumbs($url = '')
 @section('twitter_description', $homepage->meta_description)
 @section('twitter_image', asset('frontend/twitter.webp'))
 @section('twitter_url', url()->current())
+@endif
 @section('content')
     <div class="mountainguide-block1 layout">
         <div class="mountainguide-block24 layout">
@@ -257,7 +259,7 @@ function getThumbs($url = '')
 
         </div>
     </div>
-    @if(!empty($bestsell->type=='tripofthemonth'))
+    @if($bestsell)
     <section class="best-sell-month">
         <img src="{{asset($bestsell->mainImage)}}" alt="{{$bestsell->img_alt}}">
         <div class="bestsell-content">
