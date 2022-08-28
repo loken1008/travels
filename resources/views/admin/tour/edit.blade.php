@@ -77,7 +77,62 @@
                                 </div>
                                 <input type="checkbox" name="is_best_selling" value="1" {{$edittour->is_best_selling==1?'checked':''}}> Is Best Selling
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firstName5">Type :</label>
+                                    <select class="form-control" id="firstName5" name="type">
+                                        <option value="">Select Type </option>
+                                        <option value="tripofthemonth" {{$edittour->type=='tripofthemonth'?'selected':''}}>Trip Of The Month</option>
+                                        <option value="group" {{$edittour->type=='group'?'selected':''}}>Group</option>
+                                        <option value="bestsell" {{$edittour->type=='bestsell'?'selected':''}}>Best Seller</option>
+                                        <option value="private" {{$edittour->type=='private'?'selected':''}}>Private</option>
+                                        <option value="family" {{$edittour->type=='family'?'selected':''}}>Family</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="grade">Activity :</label>
+                                    <input type="text" class="form-control" id="activity"
+                                        value="{{  $edittour->activity }}" name="activity">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="grade">Grade :</label>
+                                    <input type="text" class="form-control" id="grade"
+                                        value="{{  $edittour->grade }}" name="grade">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="region">Region :</label>
+                                    <input type="text" class="form-control" id="region"
+                                        value="{{  $edittour->region}}" name="region">
+
+                                </div>
+                            </div>
+                           
+                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="startend">Start End Day :</label>
+                                    <input type="text" class="form-control" id="start_end"
+                                        value="{{  $edittour->start_end }}" name="start_end">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="groupsize">Group Size :</label>
+                                    <input type="text" class="form-control" id="group_size"
+                                        value="{{ $edittour->group_size }}" name="group_size">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="firstName5">Altitude :</label>
                                     <input type="text" class="form-control" id="firstName5"
@@ -86,7 +141,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="firstName5">Tour Days :<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName5"
@@ -94,6 +149,22 @@
                                     @error('tour_days')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="meal">Meal :</label>
+                                    <input type="text" class="form-control" id="meal"
+                                        value="{{  $edittour->meal }}" name="meal">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="bestmonth">Best Month :</label>
+                                    <input type="text" class="form-control" id="best_month"
+                                        value="{{  $edittour->best_month }}" name="best_month">
+
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -189,7 +260,7 @@
                                 <input  id="tripthumbnail" class="form-control" type="text" name="trip_map">
 
                             </div>
-                            @if(!empty($editour->trip_map))
+                            @if(!empty($edittour->trip_map))
                             <img id="holder2"  src={{ $edittour->trip_map }} style="margin-top:15px;max-height:100px;">
                             @endif
                         </div>

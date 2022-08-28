@@ -7,9 +7,11 @@
     <section class="content">
         <div class="row">
 
-
+            @if($contacts->count()>0)
+            <div class="col-12">
+            @else 
             <div class="col-8">
-
+                @endif
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">Site List</h3>
@@ -20,36 +22,30 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>Profile</th>
+                                        <th>Owner Name</th>
                                         <th>Address</th>
-                                        <th>Map Link</th>
-                                        <th>Phone</th>
                                         <th>Mobile</th>
                                         <th>Email</th>
-                                        <th>Fax</th>
-                                        <th>GPO Box</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($contacts as $contact)
                                         <tr>
-                                            {{-- <td><img src="{{asset($logo->logo)}}"
+                                            <td><img src="{{asset($contact->profile_image)}}"
                                                         style="height:100px;width:100px" alt="">
-                                                    </td> --}}
+                                                    </td>
+                                                    <td>{{$contact->name}}</td>
                                             <td>{{ $contact->address }}</td>
-                                            <td>{{ $contact->map_url }}</td>
-                                            <td>{{ $contact->phone }}</td>
                                             <td>{{ $contact->mobile }}</td>
                                             <td>{{ $contact->email }}</td>
-                                            <td>{{ $contact->fax }}</td>
-                                            <td>{{ $contact->gpo_box }}</td>
-
                                             <td>
                                                 <a href="{{ route('edit.contact', $contact->id) }}" class="btn btn-info"
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
-                                                <a href="{{ route('delete.contact', $contact->id) }}"
+                                                {{-- <a href="{{ route('delete.contact', $contact->id) }}"
                                                     class="btn btn-danger mt-2" style="width:5rem" id="delete"
-                                                    title="delete"><i class="fa fa-trash"></i></a>
+                                                    title="delete"><i class="fa fa-trash"></i></a> --}}
                                             </td>
                                         </tr>
                                     @empty
@@ -63,6 +59,7 @@
                 <!-- /.box -->
 
             </div>
+            @if($contacts->count()<1)
             <div class="col-4">
                 <div class="box">
                     <div class="box-header with-border">
@@ -165,6 +162,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             <!-- /.col -->
         </div>
         <!-- /.row -->

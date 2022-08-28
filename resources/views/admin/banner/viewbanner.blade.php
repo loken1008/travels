@@ -84,10 +84,28 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Banner Name<span class="text-danger">*</span></h5>
+                                                <h5>Banner Title<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <input type="text" name="title" class="form-control">
                                                     @error('title')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5>Banner Short Description<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <input type="text" name="sub_title" class="form-control">
+                                                    @error('sub_title')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <h5>Banner Url<span class="text-danger">*</span></h5>
+                                                <div class="controls">
+                                                    <input type="text" name="url" class="form-control">
+                                                    @error('url')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                                 </div>

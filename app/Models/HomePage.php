@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class HomePage extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'subtitle', 'description', 'meta_title', 'meta_description', 'meta_keywords'];
+    protected $fillable = [
+        'title',
+        'subtitle',
+        'description',
+        'main_image',
+        'image',
+        'img_alt',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+    ];
 }

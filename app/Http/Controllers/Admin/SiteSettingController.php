@@ -21,6 +21,7 @@ class SiteSettingController extends Controller
     {
         $request->validate([
             'logo'=>'required',
+            'footer_logo'=>'required'
         ]);
         $data=$request->all();
         SiteSetting::create($data);
@@ -42,6 +43,7 @@ class SiteSettingController extends Controller
 
         $updatelogo=SiteSetting::findOrFail($id);
         $updatelogo->logo=$request->logo?$request->logo:$updatelogo->logo;
+        $updatelogo->footer_logo=$request->footer_logo?$request->footer_logo:$updatelogo->footer_logo;
         $updatelogo->facebook=$request->facebook;
         $updatelogo->twitter=$request->twitter;
         $updatelogo->linkedin=$request->linkedin;
@@ -82,7 +84,10 @@ class SiteSettingController extends Controller
             'email'=>'required|email',
             'fax'=>'required',
             'mobile'=>'required',
-
+            'serve_since'=>'required',
+            'regd_no'=>'required',
+            'profile_image'=>'required',
+            'name'=>'required',
         ]);
         $data=$request->all();
         Contact::create($data);
@@ -105,10 +110,25 @@ class SiteSettingController extends Controller
             'email'=>'required|email',
             'fax'=>'required',
             'mobile'=>'required',
+            'serve_since'=>'required',
+            'regd_no'=>'required',
+            'profile_image'=>'required',
+            'name'=>'required'
         ]);
         $updatecontact=Contact::findOrFail($id);
-        $data=$request->all();
-        $updatecontact->update($data);
+        $updatecontact->profile_image=$request->profile_image?$request->profile_image:$updatecontact->profile_image;
+        $updatecontact->name=$request->name;
+        $updatecontact->serve_since=$request->serve_since;
+        $updatecontact->regd_no=$request->regd_no;
+        $updatecontact->phone=$request->phone;
+        $updatecontact->address=$request->address;
+        $updatecontact->email=$request->email;
+        $updatecontact->fax=$request->fax;
+        $updatecontact->gpo_box=$request->gpo_box;
+        $updatecontact->map_url=$request->map_url;
+        $updatecontact->mobile=$request->mobile;
+        $updatecontact->save();
+
         $notification=array(
             'message'=>'Contact Updated Successfully',
             'alert-type'=>'success'

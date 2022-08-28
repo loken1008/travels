@@ -19,10 +19,14 @@ class BannerController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'sub_title' => 'required',
+            'url' => 'required',
             'banner_image'=>'required',
         ]);
         Banner::insert([
             'title'=>$request->title,
+            'sub_title'=>$request->sub_title,
+            'url'=>$request->url,
             'banner_image'=>$request->banner_image,
             'status'=>1,
         ]);
@@ -41,6 +45,8 @@ class BannerController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'sub_title' => 'required',
+            'url' => 'required',
         ]);
         $banner_id=$request->id;
         $old_img=$request->old_image;
@@ -48,6 +54,8 @@ class BannerController extends Controller
             
         Banner::findOrfail($banner_id)->update([
             'title'=>$request->title,
+            'sub_title'=>$request->sub_title,
+            'url'=>$request->url,
             'banner_image'=>$request->banner_image,
         ]);
         $notification=array(

@@ -28,6 +28,22 @@
 
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <h5>Banner Short Description<span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <input type="text" name="sub_title" value="{{ $editbanner->sub_title }}"
+                                                    class="form-control">
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Banner Url<span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <input type="text" name="url" value="{{ $editbanner->url }}"
+                                                    class="form-control">
+
+                                            </div>
+                                        </div>
                                         <div class="">
 
                                             <label for="firstName5"> Banner Image :</label>
@@ -51,7 +67,7 @@
                                                     frameborder="0"></iframe>
                                             @else
                                                 <img src="{{ asset($editbanner->banner_image) }}"
-                                                    style="height:100px;width:100px" alt="">
+                                                    style="height:100px;width:100px;margin-top:10px" alt="">
                                             @endif
                                         </div>
                                     </div>

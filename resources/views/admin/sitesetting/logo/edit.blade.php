@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div>
-                                            <label for="firstName5"> Logo Image 
+                                            <label for="firstName5"> Header Logo  
                                                 :</label>
                                             <div class="input-group">
                                                 <span class="input-group-btn">
@@ -32,6 +32,25 @@
                                             <img id="holder1" style="margin-top:15px;max-height:100px;"
                                                 src="{{ $editlogo->logo }}">
                                             @error('logo')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div>
+                                            <label for="firstName5"> Footer Logo  
+                                                :</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <a id="blfm1" data-input="mainthumbnail1" data-preview="holder"
+                                                        class="btn btn-primary">
+                                                        <i class="fa fa-picture-o"></i> Choose
+                                                    </a>
+                                                </span>
+                                                <input id="mainthumbnail1" class="form-control" type="text" name="footer_logo">
+
+                                            </div>
+                                            <img id="holder1" style="margin-top:15px;max-height:100px;"
+                                                src="{{ $editlogo->footer_logo }}">
+                                            @error('footer_logo')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -111,6 +130,9 @@
     <script>
         var route_prefix = "/mgiadmin/mountainguide-filemanager";
         $('#blfm').filemanager('images', {
+            prefix: route_prefix
+        });
+        $('#blfm1').filemanager('images', {
             prefix: route_prefix
         });
     </script>
