@@ -381,17 +381,17 @@ function getThumbs($url = '')
                                                 @if ($getcoupon)
                                                     <h4 class="populartrekprice">
                                                         <strike class="text-danger"><span>$
-                                                            </span>{{ $selltour->main_price }}</strike> <span>$
-                                                        </span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
+                                                            </span>{{ $tour->main_price }}</strike> <span>$
+                                                        </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                                     </h4>
                                                 @else
                                                     <h4 class="populartrekprice">
-                                                        ${{ $selltour->main_price }}</h4>
+                                                        ${{ $tour->main_price }}</h4>
                                                 @endif
                                             </div>
 
 
-                                            <a href="{{ route('booking', $selltour->slug) }}"
+                                            <a href="{{ route('booking', $tour->slug) }}"
                                                 class="populartrekbtn text-decoration-none">Book
                                                 Now</a>
                                         </div>
