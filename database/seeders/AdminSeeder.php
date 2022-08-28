@@ -32,3 +32,4 @@ class AdminSeeder extends Seeder
         $user->assignRole([$role->id]);
     }
 }
+

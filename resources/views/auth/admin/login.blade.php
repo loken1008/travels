@@ -44,7 +44,7 @@
                         @endif
 						<div class="p-30 rounded30 box-shadowed b-2 b-dashed" style="background: #37373d96;">
 							<form action="{{route('admin.login')}}" method="POST">
-                                @csrf
+                               @csrf
 								<div class="form-group">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
