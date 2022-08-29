@@ -634,10 +634,7 @@ button {
     height: 230px !important;
   }
   .countrytab-title {
-    font-size: 18px !important;
-  }
-  .country-header {
-    padding-left: 22px !important;
+    font-size:20px !important;
   }
 
   .mountainguide-block68.layout {
@@ -661,7 +658,7 @@ button {
     font-size: 20px !important;
   }
   .mountainguide-medium-title.layout1 {
-    font-size: 18px !important;
+    font-size:20px !important;
     line-height: 25px !important;
   }
   .chooseus-title a {
@@ -672,7 +669,7 @@ button {
   }
   .populartrektitle.layout2,
   .blogs_title {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
   .populartrek_title h5 {
     font-size: 18px !important;
@@ -838,9 +835,10 @@ button {
   .bestsell-content{
     padding:0px !important;
   }
-  .mountainguide-block16.layout {
-    margin-top:45px !important;
+  .mountainguide-block15.layout {
+    top:40px !important;
   }
+  
 }
 @media screen and (max-width: 576px) {
   .owl-prev {
@@ -895,6 +893,13 @@ button {
   .mountainguide-block65-item1 {
     display: block !important;
   }
+  .top-header{
+    flex-direction: column  !important;
+    align-items: center !important;
+  }
+  .top-header p{
+    text-align: center !important;
+  }
 }
 /* topheader */
 @media screen and (max-width: 392px) {
@@ -903,6 +908,7 @@ button {
   }
     .mountainguide-block16.layout {
     flex-direction: column !important;
+    width:100% !important;
   }
   .mountainguide-block15.layout {
     height: auto !important;

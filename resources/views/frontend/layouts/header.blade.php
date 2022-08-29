@@ -1,3 +1,11 @@
+<div class="top-header">
+    @if(!empty($getcontact->serve_since))
+    <p>{{$getcontact->serve_since}}</p>
+    @endif
+    @if(!empty($getcontact->regd_no))
+    <p>{{$getcontact->regd_no}}</p>
+    @endif
+</div>
 <div class=" mountainguide-block2 layout">
     <nav class="navbar navbar-expand-lg mountainguide-block3 layout">
         <div class="container">

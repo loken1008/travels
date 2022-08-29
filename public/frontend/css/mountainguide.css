@@ -98,6 +98,15 @@ margin-right:10px;
   border-left: none !important;
   border-right: none !important;
 }
+.top-header{
+  display: flex;
+  justify-content: space-around;
+  background: #FAFCFF;
+  padding-top: 12px;
+}
+.top-header p{
+  font-size:14px;
+}
 .navbar {
   padding-left: 16px;
 }
@@ -1630,7 +1639,7 @@ margin-right:10px;
   flex-direction: column;
 }
 .mountainguide-block71.layout {
-margin-bottom:30px;
+margin-bottom:10px;
 }
 .mountainguide-block72 {
   display: flex;
@@ -2326,7 +2335,7 @@ margin-bottom:30px;
 }
 
 .testimonials-section {
-  height: 550px;
+  height: 510px;
   background: #fafcff;
   margin-top: 12px;
 }
@@ -3250,7 +3259,7 @@ height: 45px;
 background: #527BAB;
 border-radius: 75px;
 position: absolute;
-left: 81.83%;
+left: 77.83%;
     right: 20.83%;
     top: 11%;
 bottom: 50%;
