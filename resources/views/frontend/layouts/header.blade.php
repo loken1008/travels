@@ -8,7 +8,7 @@
 </div>
 <div class=" mountainguide-block2 layout">
     <nav class="navbar navbar-expand-lg mountainguide-block3 layout">
-        <div class="container">
+        <div class="container nav-container-large">
             <button class="navbar-toggler collapsed " type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-content">
                 <i class="fa fa-bars text-white"></i>
@@ -149,7 +149,7 @@
     </nav>
 
 
-    <div class="container-fluid mountainguide-block15 layout">
+    <div class="container mountainguide-block15 layout">
         <div class=" mountainguide-block16 layout">
             <div class="mountainguide-block16-item">
                 @if (!empty($sitesetting->logo))

@@ -94,7 +94,7 @@ function getThumbs($url = '')
                     </div>
                     <div class="key-facts">
                         @if(!empty($getTourdetails->country->country_name))
-                        <div class="col-md-6 duration">
+                        <div class="col-md-6 col-sm-12 duration">
                             <div class="icon">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>

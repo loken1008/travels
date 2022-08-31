@@ -19,8 +19,8 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
  <div class="container network_wrapper col-sm  ">
     <div class=" country-card">
         <div class="country-header">
-            <div class="col-lg-6 countrytabmainheading layout">
-                <h2 class="countrytab-title layout">Related Tour</h2>
+            <div class="countrytabmainheading layout">
+                <h2 class="countrytab-title layout">Popular Trekking Places</h2>
                 <div class="countrytab-box layout"></div>
             </div>
 
