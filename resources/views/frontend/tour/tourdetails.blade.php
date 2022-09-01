@@ -86,7 +86,7 @@ function getThumbs($url = '')
     <div class="container mt-4">
         <div class="row scrollheight">
             <div class="reverse-col d-flex">
-                <div class="col-md-8">
+                <div class="col-md-8 reverse-first">
                     <div class="share">
 
                         <div class="sharethis-inline-share-buttons"></div>
@@ -94,7 +94,7 @@ function getThumbs($url = '')
                     </div>
                     <div class="key-facts">
                         @if(!empty($getTourdetails->country->country_name))
-                        <div class="col-md-6 duration">
+                        <div class="col-md-6 col-sm-12 duration">
                             <div class="icon">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
@@ -182,6 +182,17 @@ function getThumbs($url = '')
                             </div>
                         </div>
                         @endif
+                        @if(!empty($getTourdetails->start_end))
+                        <div class="col-md-6 transportation">
+                            <div class="icon">
+                                <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                            </div>
+                            <div class="text">
+                                <h4 class="text-duration">Start From-End To </h4>
+                                <h4 class="text-value"> {{ $getTourdetails->start_end }}</h4>
+                            </div>
+                        </div>
+                        @endif
                         @if(!empty($getTourdetails->best_month))
                         <div class="col-md-6 transportation">
                             <div class="icon">
@@ -217,7 +228,7 @@ function getThumbs($url = '')
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 reverse-second">
                     <div class="book-card" id="bookprice">
                         <div class="card-body">
                             <h5 class="book-price-title">price per person</h5>
@@ -361,7 +372,7 @@ function getThumbs($url = '')
 
             </div>
 
-            <div class="col-md-8 ">
+            <div class="col-lg-8">
                 <div class="short-desc">
                     <p>{!! $getTourdetails->short_description !!}</p>
                 </div>
@@ -396,7 +407,7 @@ function getThumbs($url = '')
 
                                     <div class="col-md-7">
                                         @foreach ($imagess as $key => $rimages)
-                                            @if ($key > 0)
+                                            @if ($key > 0 && $key <5)
                                                 @if ($rimages == !null)
                                                     <a href="{{ $rimages }}" data-lightbox="photos">
                                                         <img class="other-image" src="{{ $rimages }}"
@@ -576,6 +587,22 @@ function getThumbs($url = '')
                                             <div class="country-image layout">
                                                 <img src="{{ getThumbs($ctour->mainImage) }}"
                                                     alt="{{ $ctour->img_alt }}">
+                                                    @if(!empty($ctour->type))
+                                                    <p class="otherhead-tag">
+                                                       @if($ctour->type=="group")
+                                                       <i class="fa-solid fa-people-group"></i>
+                                                       @elseif($ctour->type=='family')
+                                                       <i class="fa-solid fa-people-roof"></i>
+                                                       @elseif($ctour->type=='bestsell')
+                                                       <i class="fa-solid fa-award"></i>
+                                                       @elseif($ctour->type=='private')
+                                                       <i class="fa-solid fa-lock"></i>
+                                                       @else
+                                                       <i class="fa-solid fa-award"></i>
+                                                       @endif
+                                                       {{$ctour->type}}
+                                                   </p>
+                                                    @endif
                                             </div>
                                             <div class="mountainguide-block50 layout">
                                                 <div class="mountainguide-block51 layout">

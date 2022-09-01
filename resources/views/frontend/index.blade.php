@@ -78,6 +78,22 @@ function getThumbs($url = '')
                                                                 <div class="country-image layout">
                                                                     <img src="{{ getThumbs($ctour->mainImage) }}"
                                                                         alt="{{ $ctour->img_alt }}">
+                                                                        @if(!empty($ctour->type))
+                                                                 <p class="otherhead-tag">
+                                                                    @if($ctour->type=="group")
+                                                                    <i class="fa-solid fa-people-group"></i>
+                                                                    @elseif($ctour->type=='family')
+                                                                    <i class="fa-solid fa-people-roof"></i>
+                                                                    @elseif($ctour->type=='bestsell')
+                                                                    <i class="fa-solid fa-award"></i>
+                                                                    @elseif($ctour->type=='private')
+                                                                    <i class="fa-solid fa-lock"></i>
+                                                                    @else
+                                                                    <i class="fa-solid fa-award"></i>
+                                                                    @endif
+                                                                    {{$ctour->type}}
+                                                                </p>
+                                                                 @endif
                                                                 </div>
                                                                 <div class="mountainguide-block50 layout">
                                                                     <div class="mountainguide-block51 layout">
@@ -93,7 +109,7 @@ function getThumbs($url = '')
                                                                         <h3 class="mountainguide-subtitle2 layout">
                                                                             {{ Str::limit($ctour->tour_name, 22) }}</h3>
                                                                         <div class="mountainguide-paragraph-body layout">
-                                                                            {{ Str::limit($ctour->short_description, 60, '.') }}
+                                                                            {{ Str::limit($ctour->short_description, 40, '.') }}
                                                                         </div>
                                                                     </div>
                                                                     <div class="mountainguide-block52 layout">
@@ -204,6 +220,7 @@ function getThumbs($url = '')
                                         <div class="mountainguide-image8 layout">
                                             <img class="best-sell-image" src="{{ getThumbs($selltour->mainImage) }}"
                                                 alt="{{ $selltour->img_alt }}">
+                                                <p class="head-tag"><i class="fa-solid fa-award"></i> Best Seller</p>
                                         </div>
                                         <div class="mountainguide-block50 layout">
                                             <div class="mountainguide-block51 layout">
@@ -215,10 +232,11 @@ function getThumbs($url = '')
                                                             days</span>
                                                     </div>
                                                 </div>
-                                                <h3 class="mountainguide-subtitle2 layout"> {{ $selltour->tour_name }}
+                                                <h3 class="mountainguide-subtitle2 layout">
+                                                    {{ Str::limit($selltour->tour_name, 22) }}
                                                 </h3>
                                                 <div class="mountainguide-paragraph-body layout">
-                                                    {{ Str::limit($selltour->short_description, 60, '.') }}
+                                                    {{ Str::limit($selltour->short_description, 40, '.') }}
                                                 </div>
                                             </div>
                                             <div class="mountainguide-block52 layout">
@@ -238,7 +256,7 @@ function getThumbs($url = '')
                                                     </div>
                                                 </div>
                                                 <div class="mountainguide-block52-spacer"></div>
-                                                <div class="mountainguide-block52-item3">
+                                                <div class="mountainguide-block52-item1">
                                                     <div class="mountainguide-block54 layout">
                                                         <div class="mountainguide-block55 layout">
                                                             <a href="{{ route('booking', $selltour->slug) }}"
@@ -261,7 +279,11 @@ function getThumbs($url = '')
     </div>
     @if ($bestsell)
         <section class="best-sell-month">
-            <img src="{{ asset($bestsell->mainImage) }}" alt="{{ $bestsell->img_alt }}">
+            <div class="best-tag">
+                <img src="{{ asset($bestsell->mainImage) }}" alt="{{ $bestsell->img_alt }}">
+                <p class="month-head-tag"><i class="fa-solid fa-award"></i> Best Seller</p>
+            </div>
+           
             <div class="bestsell-content">
                 <h3 class="trip-title" id="demo1">Trip Of The Month</h3>
                 <h4 class="bestselldetailsheading"><a
@@ -303,8 +325,7 @@ function getThumbs($url = '')
                         </div>
                         <div class="altitude">
                             <div class="bestsellicon">
-                                <i class="fa fa-arrow-trend-up"></i>
-
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
                             </div>
                             <div class="text">
                                 <h4 class="bestselltext-duration">Price</h4>
@@ -333,7 +354,6 @@ function getThumbs($url = '')
                             <img class="chooseimage" src="{{ getThumbs($choose->image) }}" alt="{{ $choose->title }}">
                         </div>
                         <div class="mountainguide-block89 layout">
-                            <div class="mountainguide-paragraph-body1 layout">0{{ $key + 1 }}</div>
                             <h3 class="chooseus-title"><a href="{{ route('travelwithus') }}"
                                     class="text-decoration-none">{{ $choose->title }}</a></h3>
                             <div class="mountainguide-paragraph-body2-box layout chooseus-para">
@@ -342,7 +362,6 @@ function getThumbs($url = '')
                         </div>
                     </div>
                 </div>
-                <div class="mountainguide-block87-spacer"></div>
             @endforeach
         </div>
     </div>
@@ -365,6 +384,22 @@ function getThumbs($url = '')
                                         <div class="populartrek_image">
                                             <img class="img-fluid" src="{{ getThumbs($tour->mainImage) }}"
                                                 alt="{{ $tour->img_alt }}">
+                                                @if(!empty($tour->type))
+                                                <p class="popularhead-tag">
+                                                   @if($tour->type=="group")
+                                                   <i class="fa-solid fa-people-group"></i>
+                                                   @elseif($tour->type=='family')
+                                                   <i class="fa-solid fa-people-roof"></i>
+                                                   @elseif($tour->type=='bestsell')
+                                                   <i class="fa-solid fa-award"></i>
+                                                   @elseif($tour->type=='private')
+                                                   <i class="fa-solid fa-lock"></i>
+                                                   @else
+                                                   <i class="fa-solid fa-award"></i>
+                                                   @endif
+                                                   {{$tour->type}}
+                                               </p>
+                                                @endif
                                         </div>
                                         <div class="populartrek_details">
                                             <div class="mt-3 mb-3">
@@ -373,10 +408,10 @@ function getThumbs($url = '')
                                             </div>
 
                                             <div class="populartrek_title">
-                                                <h5>{{ $tour->tour_name }}</h5>
+                                                <h5>{{ Str::limit($tour->tour_name, 22) }}</h5>
                                             </div>
 
-                                            <p>{{ Str::limit($tour->short_description, 80, '.') }}</p>
+                                            <p>{{ Str::limit($tour->short_description, 40, '.') }}</p>
                                             <div class="pbtn">
                                                 <div class="mb-2">
                                                     <h4 class="mountainguide-text-body14 layout">Price</h4>
@@ -426,6 +461,22 @@ function getThumbs($url = '')
                                     <div class="mountainguide-image8 layout">
                                         <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
                                             alt="{{ $tour->img_alt }}">
+                                            @if(!empty($tour->type))
+                                            <p class="otherhead-tag">
+                                               @if($tour->type=="group")
+                                               <i class="fa-solid fa-people-group"></i>
+                                               @elseif($tour->type=='family')
+                                               <i class="fa-solid fa-people-roof"></i>
+                                               @elseif($tour->type=='bestsell')
+                                               <i class="fa-solid fa-award"></i>
+                                               @elseif($tour->type=='private')
+                                               <i class="fa-solid fa-lock"></i>
+                                               @else
+                                               <i class="fa-solid fa-award"></i>
+                                               @endif
+                                               {{$tour->type}}
+                                           </p>
+                                            @endif
                                     </div>
                                     <div class="mountainguide-block50 layout">
                                         <div class="mountainguide-block51 layout">
@@ -436,9 +487,10 @@ function getThumbs($url = '')
                                                         days</span>
                                                 </div>
                                             </div>
-                                            <h3 class="mountainguide-subtitle2 layout"> {{ $tour->tour_name }}</h3>
+                                            <h3 class="mountainguide-subtitle2 layout">
+                                                {{ Str::limit($tour->tour_name, 22) }}</h3>
                                             <div class="mountainguide-paragraph-body layout">
-                                                {{ Str::limit($tour->short_description, 80, '.') }}
+                                                {{ Str::limit($tour->short_description, 40, '.') }}
                                             </div>
                                         </div>
                                         <div class="mountainguide-block52 layout">
@@ -458,7 +510,7 @@ function getThumbs($url = '')
                                                 </div>
                                             </div>
                                             <div class="mountainguide-block52-spacer"></div>
-                                            <div class="mountainguide-block52-item3">
+                                            <div class="mountainguide-block52-item1">
                                                 <div class="mountainguide-block54 layout">
                                                     <div class="mountainguide-block55 layout">
                                                         <a href="{{ route('booking', $tour->slug) }}"

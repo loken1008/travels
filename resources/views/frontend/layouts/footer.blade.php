@@ -10,9 +10,9 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                     <h4 class="newsletter-title text-center">Suscribe To Our Newsletter</h4>
                     <p class="newsletter-para text-center">Subscribe to our news letter and we’ll keep you up to date on
                         our products and services.</p>
-                   <div class="newsletter-suscribe">
+                   <div class="col-md-6 col-sm-12 newsletter-suscribe">
                         <form action="" method="post">
-                        <input class="newsletter-input" type="email" name="email" placeholder="Suscribe Newsletter">
+                        <input class="newsletter-input" type="email" name="email" placeholder="Newsletter">
                         <button class="news-btn"><i class="fa fa-arrow-right"></i></button>
                     </form>
                    </div>

@@ -16,10 +16,10 @@ $(document).ready(function() {
                 768: {
                     items: 2
                 },
-                800: {
+                1100: {
                     items: 2
                 },
-                1000: {
+                1200: {
                     items: 3
                 }
             },
@@ -140,7 +140,7 @@ $(document).ready(function() {
             800: {
                 items: 2
             },
-            1000: {
+            1100: {
                 items: 2
             }
         },
@@ -183,14 +183,17 @@ $(document).ready(function() {
             500: {
                 items: 1
             },
-            768: {
+            700: {
                 items: 2
             },
             900: {
                 items: 2
             },
-            1000: {
-                items: 3
+            1100: {
+                items: 2
+            },
+            1200:{
+                items:3
             }
         },
 
@@ -235,9 +238,9 @@ $(window).scroll(function() {
 
 $(window).scroll(function() {
     var sticky = $('.navbar.navbar-expand-lg.mountainguide-block3.layout'),
-        scroll = $(window).scrollTop();
+        scroll1 = $(window).scrollTop();
 
-    if (scroll >= 100) sticky.addClass('main-nav-fixed');
+    if (scroll1 >= 10) sticky.addClass('main-nav-fixed');
     else sticky.removeClass('main-nav-fixed');
 });
 
@@ -249,6 +252,37 @@ $(window).scroll(function() {
     if (scroll >= 10 && scroll <= height) sticky.addClass('bookprice');
     else sticky.removeClass('bookprice');
 });
+
+// showhide
+$('[data-toggle="tab"]').click('shown.bs.collapse', function() {
+    var googleIframe = $('#map_canvas iframe');
+    googleIframe.attr('src', googleIframe.attr('src') + '');
+});
+
+$(document).ready(function() {
+    $(".invisible-content").hide();
+    $(document).on('click', '.aboutbtn', function() {
+        var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
+        $(this).text(moreLessButton);
+        $(this).parent('.large-content').find(".invisible-content").toggle();
+        $(this).parent('.large-content').find(".visible-content").toggle();
+    });
+});
+
+$(document).ready(function() {
+    $(".teaminvisible-content").hide();
+    $(document).on('click', '.teambtn', function() {
+        var moreLessButton = $(".teaminvisible-content").is(':visible') ? 'Read More' : 'Read Less';
+        $(this).text(moreLessButton);
+        $(this).parent('.teamlarge-content').find(".teaminvisible-content").toggle();
+        $(this).parent('.teamlarge-content').find(".visible-content").toggle();
+    });
+});
+
+$(".closebtn").click(function() {
+    $(this).closest("div").hide();
+});
+console.clear();
 
 
 
