@@ -172,9 +172,7 @@
                     <div class="mountainguide-block17-item">
                         <div class="mountainguide-block18 layout">
                             <div class="mountainguide-text-body1 layout">Contact us @if(!empty($getcontact->name))({{$getcontact->name}})@endif
-                                @if(!empty($getcontact->profile_image))
-                              <img class="profile-image" src="{{ asset($getcontact->profile_image) }}" alt="profile">
-                                @endif
+                               
                             </div>
                             <div class="mountainguide-block19 layout">
                                 <div class="mountainguide-block19-item">
@@ -201,6 +199,9 @@
                                 @endif
                             </div>
                         </div>
+                            @if(!empty($getcontact->profile_image))
+                            <img class="profile-image" src="{{ asset($getcontact->profile_image) }}" alt="profile">
+                              @endif
                     </div>
                     <div class="mountainguide-block17-spacer"></div>
                     <div class="mountainguide-block17-item1 dropdown">

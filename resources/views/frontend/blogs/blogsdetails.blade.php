@@ -208,9 +208,9 @@
                 </div>
                 <div class="col-md-4 col-lg-4">
                     <div class="blogsearch">
-                        <form role="search" class="search-box " method="get" action="{{ route('blogsearch') }}">
+                        <form role="search" class="search-box " method="post" action="{{ route('blogsearch') }}">
                             @csrf
-                            <input type="text" class="form-control" name="search" placeholder="Blog Search...">
+                            <input type="text" class="form-control" name="blog_search" placeholder="Blog Search...">
                             <button class="blogsearch-icon"> <i class="fa fa-search"></i></button>
                         </form>
                     </div>

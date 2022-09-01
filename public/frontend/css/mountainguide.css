@@ -81,12 +81,71 @@
   text-transform: capitalize;
   color: white;
 }
+.head-tag {
+  position: absolute;
+  top: -4px;
+  left: -16px;
+  background: #f5a53a;
+  padding: 2px;
+  color: white;
+  box-shadow: 0px 0px 4px #f5a53a;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+.otherhead-tag{
+  position: absolute;
+  top: -4px;
+  left: -16px;
+  background: #0e4e93;
+  padding: 2px;
+  color: white;
+  box-shadow: 0px 0px 4px #0e4e93;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+.popularhead-tag{
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  background: #0e4e93;
+  padding: 2px;
+  color: white;
+  box-shadow: 0px 0px 4px #0e4e93;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+.best-tag {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.best-tag img {
+  position: relative;
+}
+.month-head-tag {
+  background: #f5a53a;
+  padding: 2px;
+  color: white;
+  box-shadow: 0px 0px 4px #f5a53a;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-weight: 400;
+  position: absolute;
+  top: 0px;
+}
 .fa-angle-right {
   float: right !important;
 }
 .profile-image {
-  width: 34px;
-  height: 34px;
+  width: 58px;
+  height: 58px;
   border-radius: 100%;
 }
 .desktop-view :hover .dropdown-menu {
@@ -100,9 +159,9 @@
 }
 .top-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background: #fafcff;
-  padding-top: 12px;
+  padding: 10px 170px 0px 170px;
 }
 .top-header p {
   font-size: 14px;
@@ -519,14 +578,14 @@
 }
 .mountainguide-block17-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   flex: 0 1 949px;
 }
 .mountainguide-block18 {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  margin-right: 10px;
 }
 
 .mountainguide-text-body1 {
@@ -545,7 +604,7 @@
 }
 .mountainguide-block19.layout {
   position: relative;
-  margin: 4px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 .mountainguide-block19-item {
   display: flex;
@@ -821,7 +880,7 @@
   border-radius: 75px;
   position: absolute;
   top: 16px;
-  right: 5px;
+  right: 1px;
   border: none;
 }
 .mountainguide-highlights3 {
@@ -1299,41 +1358,24 @@
   position: relative;
   flex: 0 1 128px;
 }
-.mountainguide-block54 {
-  display: flex;
-  flex-direction: column;
-}
-.mountainguide-block54.layout {
-  position: relative;
-  flex-grow: 1;
-}
+
 .mountainguide-block55 {
-  display: flex;
-  flex-direction: column;
   background-color: #0e4e93;
   border-radius: 20px 20px 20px 20px;
+  padding: 7px 25px;
+  height: 40px;
 }
-.mountainguide-block55.layout {
-  position: relative;
-  flex-grow: 1;
-  margin: 3px 0px;
-}
+
 .mountainguide-highlights5 {
-  font: 16px/1.2 'Poppins', Helvetica, Arial, serif;
-  color: white;
-  letter-spacing: 0px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #ffffff;
 }
-.mountainguide-highlights5.layout {
-  position: relative;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  min-width: 100%;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 9px 0px 0px 25px;
-}
+
 .mountainguide-block47-spacer {
   flex: 0 1 38px;
 }
@@ -1781,12 +1823,6 @@
 .mountainguide-text-body14.layout {
   position: relative;
 }
-.mountainguide-block52-item3 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex: 0 1 128px;
-}
 
 .mountainguide-image14 {
   background: var(--src) center center/cover no-repeat;
@@ -1938,11 +1974,11 @@
 }
 .mountainguide-block89.layout {
   position: relative;
-  margin: 30px 10px 30px;
+  /* margin:0px 10px 30px; */
 }
-.chooseus-title {
+/* .chooseus-title {
   padding-right: 25px !important;
-}
+} */
 .mountainguide-paragraph-body1 {
   font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
   color: #999999;
@@ -1952,8 +1988,6 @@
   position: relative;
 }
 .chooseus-title a {
-  width: 285px;
-  height: 60px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -1966,11 +2000,10 @@
   color: #000000;
 }
 .chooseus-para {
-  width: 285px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   color: #999999 !important;
 }
@@ -1979,11 +2012,7 @@
   width: 80.74%;
   margin: 15px 19.26% 0px 0%;
 }
-.mountainguide-paragraph-body2-box.layout {
-  position: relative;
-  width: 100%;
-  margin: 27px 19.26% 1px 0%;
-}
+
 .mountainguide-paragraph-body2 {
   overflow: visible;
   margin-top: 0px;
@@ -2338,9 +2367,7 @@
   background: #fafcff;
   margin-top: 12px;
 }
-.testimonials-section .container {
-  /* margin-left: 100px; */
-}
+
 .testmonial-head-section {
   display: flex;
   justify-content: space-between;
@@ -2358,7 +2385,7 @@
   border: 1px solid #f2f2f2;
   box-shadow: 0px 10px 25px rgb(0 0 0 / 5%);
   border-radius: 5px;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .testimonial-title {
   height: 30px;
@@ -3204,7 +3231,7 @@
 .allblogs-heading {
   display: flex;
   flex-direction: column;
-  margin-left:15px;
+  margin-left: 15px;
 }
 .allblogs_item {
   width: 351.33px;
@@ -3220,16 +3247,16 @@
   width: 100%;
   border-radius: 3px;
 }
-.paginate{
-  margin-top:20px;
+.paginate {
+  margin-top: 20px;
 }
-.pagination{
+.pagination {
   flex-wrap: wrap !important;
 }
 .page-link {
   width: 35px;
   height: 35px;
-  padding:3px !important;
+  padding: 3px !important;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3244,7 +3271,7 @@
 .page-link.active {
   width: 35px;
   height: 35px;
-  padding:3px !important;
+  padding: 3px !important;
   background: #0e4e93 !important;
   border-radius: 500px !important;
 }
@@ -3290,7 +3317,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: -50px;
 }
 .newsletter-input {
   padding: 10px 6px 10px 25px;
@@ -3316,11 +3342,11 @@
   background: #527bab;
   border-radius: 75px;
   position: absolute;
-  left: 77.83%;
-  right: 20.83%;
+  right: 0%;
   top: 11%;
   bottom: 50%;
   border: 1.5px solid #ffffff;
+  margin-right: 10px;
 }
 
 /* footer */
@@ -3445,7 +3471,9 @@
 .footer-top-container {
   margin-right: 185px !important;
 }
-
+.search-tour {
+  margin-top: 40px;
+}
 /* detailspage */
 .details-image {
   width: 100%;
@@ -3527,6 +3555,7 @@
   background: #0e4e93;
   border-radius: 300px;
   z-index: 2;
+  padding: 2px 15px;
 }
 .details-book a {
   font-family: 'Poppins';
@@ -3537,7 +3566,6 @@
   text-transform: capitalize;
   color: #ffffff;
   text-decoration: none;
-  padding: 3px 15px;
 }
 #tourview,
 #tourview p,
@@ -3603,6 +3631,10 @@
 #toverview p img,
 #toverview img {
   width: 100%;
+}
+#itinerary-desc p span span {
+  font-family: 'Poppins' !important;
+  font-size: 16px !important;
 }
 
 .short-desc p,
@@ -3881,6 +3913,7 @@
 }
 .tripmap img {
   width: 100%;
+  height: 180px;
 }
 a:hover {
   color: #f5a53a !important;
@@ -4205,7 +4238,242 @@ a:hover {
   font-size: 16px;
   line-height: 24px;
   text-transform: capitalize;
+  color:white;
 }
 .book-btn:hover {
   color: #f5a53a;
+}
+/* our team */
+.team-section {
+  margin-top: 50px;
+}
+.team-image {
+  padding: 30px 10px;
+  width: 100%;
+  height: 460px;
+  border-radius: 3px;
+}
+.team-content {
+  padding: 40px 95px 0px 23px;
+}
+.allteam-first {
+  display: flex;
+}
+.team-name {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.team-post {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.team-lang,
+.team-exp {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: black;
+}
+.team-para,
+.visible-content p,
+.teaminvisible-content p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999 !important;
+}
+.teambtn {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #0e4e93;
+  border-radius: 30px;
+  color: #0e4e93;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: capitalize;
+}
+.travels-section {
+  margin-top: 40px;
+}
+.first-travel {
+  margin-top: 20px !important;
+  display: flex;
+}
+.travel-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.travel-thumb {
+  float: left;
+}
+.travelus-heading {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+
+  color: #061526;
+}
+.travels-single img {
+  border-radius: 3px;
+  height: 551px;
+  width: 100%;
+}
+.travels-single {
+  margin: 40px 0px 90px 0px;
+}
+.travel-title h2 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.travel-desc,
+.travels-single p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.travel-details {
+  padding-left: 60px;
+}
+.secondtravel-details {
+  padding-right: 60px;
+}
+.payment-section {
+  margin-top: 40px;
+}
+.inner-title .allblogs-heading {
+  margin-left: 0px;
+}
+.payment-desc,
+.payment-section p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #999999;
+}
+.payment-section strong {
+  color: black;
+}
+.payment-section .global-area ul li::before {
+  content: '\f0a4';
+  font-family: 'FontAwesome';
+  color: #f5a53a;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.aboutus-img {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+}
+/* login */
+.login-section .form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginbtn {
+  background-color: #0e4e93;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+.google-btn {
+  background-color: #f5a53a;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.login-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.registerbtn {
+  background-color: #0e4e93;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+.dashboard-profile {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 80px;
+  text-transform: capitalize;
+  color: #061526;
+}
+.contact-details{
+  margin-top:40px;
+}
+.contact-icon{
+  display: flex;
+  align-items: center;
+  margin-top:40px;
+}
+.contact-icon i{
+  font-size:24px;
+  margin-right:10px;
+}
+.contact-form .form-group{
+ margin-top:10px;
+}
+.gallery-item img{
+  width:100%;
+  height:300px;
+  margin-top:10px;
+}
+.gallery-section{
+  margin-top:40px;
+}
+.readall-review{
+  margin-top:40px;
+}
+.readall-review .populartrekheading {
+  width:100% !important;
+}
+.all-testimonials_slide .testimonials-item{
+  width:100%;
+  margin:10px 0px;
 }

@@ -51,11 +51,15 @@ class BlogController extends Controller
        }
    
        public function searchBlog(Request $request){
-           $search = $request->blog_search;
-           $searchblog = Blog::query()
-               ->where('blog_title', 'LIKE', "%{$search}%")
-               ->orWhere('blog_type', 'LIKE', "%{$search}%")
-               ->paginate(6);
+           $search = $request->input('blog_search');
+               $searchblog=Blog::where(function ($q) use ($search) {
+                $q->where('blog_title', 'like', $search . '%')
+                    ->orWhere('blog_title', 'like', '% ' . $search . '%');
+            })
+            ->orWhere(function ($q) use ($search) {
+                $q->where('blog_type', 'like', $search . '%')
+                    ->orWhere('blog_type', 'like', '% ' . $search . '%');
+            })->paginate(10);
            return view('frontend.blogs.blogssearch', compact('searchblog'));
        }
 

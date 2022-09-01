@@ -1,6 +1,6 @@
-<form method="post" action="{{ route('user.message') }}">
+<form class="mt-4" method="post" action="{{ route('user.message') }}">
     @csrf
-    <div class="form-row">
+    <div class="contact-form form-row">
         <div class="form-group col-md-12">
             @if (Auth()->guard('customer')->check() &&
                 Auth()->guard('customer')->user()->first_name && Auth()->guard('customer')->user()->last_name)
@@ -64,9 +64,11 @@
 
         </div>
         <div class="form-group col-md-12">
-            <div class="contact-textarea">
-                <textarea class="form-control" rows="6" placeholder="Write Message" id="message" name="message" required></textarea>
-                <div class="mt-4">
+            <textarea class="form-control" rows="6" placeholder="Write Message" id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group col-md-12">
+           
+                <div class="mt-4 recaptch">
 
                     {!! NoCaptcha::renderJs() !!}
                     {!! NoCaptcha::display() !!}
@@ -76,9 +78,8 @@
                         </span>
                     @enderror
                 </div>
-                <button class="btn btn-theme mt-4" type="submit" value="Submit Form">Send
+                <button class="loginbtn mt-4 mb-4" type="submit" value="Submit Form">Send
                     Message</button>
-            </div>
         </div>
 
         <div id="form-messages"></div>

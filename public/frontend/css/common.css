@@ -21,13 +21,21 @@ figure {
   border-width: 0;
   opacity: 1;
 }
-
-
-div,strong,pre,small{
-  font-family: 'Poppins'!important;
+.toast-error {
+  background-color: rgb(244, 50, 50) !important;
 }
-strong{
-  font-weight:bold !important;
+.toast-success {
+  background-color: rgb(9, 182, 87) !important;
+}
+
+div,
+strong,
+pre,
+small {
+  font-family: 'Poppins' !important;
+}
+strong {
+  font-weight: bold !important;
 }
 ul {
   display: block;
@@ -48,6 +56,7 @@ button {
   padding: 0;
   margin: 0;
 }
+
 
 @media (max-width: 99999px) {
   .max\:show {
@@ -182,31 +191,30 @@ button {
 *::after {
   box-sizing: border-box;
 }
-@media screen and (min-width:1394px){
+@media screen and (min-width: 1394px) {
   .mountainguide-block16.layout {
-    width:100% !important;
-    padding:0px 160px !important;
-
+    width: 100% !important;
+    padding: 0px 160px !important;
   }
-  .container.nav-container-large{
-    max-width:100% !important;
-    padding:0px 160px !important;
+  .container.nav-container-large {
+    max-width: 100% !important;
+    padding: 0px 160px !important;
   }
-  .explore-us{
+  .explore-us {
     justify-content: space-evenly !important;
   }
   .mountainguide-block70.layout {
     padding: 0px 108px !important;
   }
   .mountainguide-block48.layout1 {
-    width:410px !important;
+    width: 410px !important;
   }
-  .mountainguide-block74.layout{
+  .mountainguide-block74.layout {
     display: flex !important;
     align-items: center !important;
   }
-  .mountainguide-block74.layout .countrytab-box.layout{
-    width:25% !important;
+  .mountainguide-block74.layout .countrytab-box.layout {
+    width: 25% !important;
   }
 }
 /* button */
@@ -257,15 +265,11 @@ button {
   .mountainguide-block65-item {
     flex: 0 1 290px !important;
   }
-  .mountainguide-block87 {
-    flex-wrap: wrap !important;
-  }
+
   .testimonials-section {
     height: auto !important;
   }
-  .testimonials-section .container {
-    margin-left: 0px !important;
-  }
+
   .testimonials-item {
     width: 100% !important;
     height: auto !important;
@@ -274,7 +278,7 @@ button {
     height: auto !important;
   }
   .allblogs_item {
-    width:33% !important;
+    width: 33% !important;
   }
 }
 @media screen and (min-width: 1192px) {
@@ -290,7 +294,7 @@ button {
 
   .nav-link {
     height: 50px !important;
-    padding-left:16px !important;
+    padding-left: 16px !important;
   }
   .other-subcategory {
     position: absolute !important;
@@ -320,7 +324,7 @@ button {
     top: 32px;
     left: 0px !important;
     width: 100% !important;
-    height:600px !important;
+    height: 600px !important;
     overflow: scroll !important;
   }
   .navbar {
@@ -438,63 +442,88 @@ button {
     top: 6px !important;
     left: 16px !important;
   }
-  .navbar-nav .dropdown-menu{
+  .navbar-nav .dropdown-menu {
     position: absolute !important;
   }
-  .dropdown-item:focus, .dropdown-item:hover{
-    background-color:#0F4E93 !important;
-    color:white !important;
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    background-color: #0f4e93 !important;
+    color: white !important;
     padding-top: 7px !important ;
   }
-  .dropdown-item:focus .mobile-view, .dropdown-item:hover .mobile-view{
-    background-color:#0F4E93 !important;
-    color:white !important;
-
+  .dropdown-item:focus .mobile-view,
+  .dropdown-item:hover .mobile-view {
+    background-color: #0f4e93 !important;
+    color: white !important;
   }
   .detailssection-content {
     top: 480px !important;
     padding: 0px 50px !important;
   }
-  .key-facts{
+  .key-facts {
     justify-content: space-between !important;
     align-items: stretch !important;
   }
+  .reverse-col {
+    flex-direction: column !important;
+  }
+  .reverse-first {
+    width: 100% !important;
+  }
+  .reverse-second {
+    width: 100% !important;
+  }
+  .bookprice {
+    position: relative;
+    width: 100%;
+    top: 20px !important;
+    margin: 0px !important;
+  }
   /* blog */
-  .blog-section{
-    padding:0px !important;
+  .blog-section {
+    padding: 0px !important;
   }
   .blogs-details-image img {
-    height:230px !important;
+    height: 230px !important;
   }
   .blog-title {
-    font-size:22px !important;
-    line-height:35px !important;
-  }.details-tag{
+    font-size: 22px !important;
+    line-height: 35px !important;
+  }
+  .details-tag {
     flex-wrap: wrap !important;
     justify-content: space-between !important;
   }
-  .blog-item{
+  .blog-item {
     padding-left: 0px !important;
   }
-  .bestsell-content{
-    padding:0px !important;
+  .bestsell-content {
+    padding: 0px !important;
   }
-  .datebtn{
+  .datebtn {
     background-color: white !important;
     color: black !important;
     padding: 0px !important;
   }
   .countrytabmainheading.layout {
-    padding-left:25px !important;
+    padding-left: 25px !important;
   }
-  .mountainguide-block15.layout{
-    border-bottom: 1px solid #f5f5f5;
+
+  .country-nav .nav-item {
+    width: auto !important;
+  }
+  .owntrip-book {
+    margin-top: 10px !important;
+  }
+
+  .get-in-touch {
+    flex-direction: column !important;
   }
 }
 @media screen and (min-width: 992px) {
-    .mobile-view1{
-        display:none !important;
-    }
+  .mobile-view1 {
+    display: none !important;
+  }
   .dropdown-item:hover {
     background-color: #0f4e93 !important;
     color: white !important;
@@ -556,7 +585,6 @@ button {
     top: -8px !important;
     left: 280px !important;
   }
- 
 }
 @media screen and (min-width: 768px) {
   #challenge-peak-slider .owl-item {
@@ -576,13 +604,13 @@ button {
 }
 @media screen and (max-width: 768px) {
   .country-subtitle,
-  .country-subtitle{
+  .country-subtitle {
     font-size: 16px !important;
   }
   .populartrekheading {
     width: 100% !important;
   }
-  .mountainguide-block87{
+  .mountainguide-block87 {
     justify-content: flex-start !important;
   }
   .mountainguide-highlights2.layout {
@@ -662,7 +690,7 @@ button {
   }
   .explore-us {
     margin-bottom: 10px !important;
-    margin-top:0px !important;
+    margin-top: 0px !important;
   }
   .mountainguide-block66.layout {
     height: auto !important;
@@ -675,7 +703,7 @@ button {
     height: 230px !important;
   }
   .countrytab-title {
-    font-size:20px !important;
+    font-size: 20px !important;
   }
 
   .mountainguide-highlights7 {
@@ -696,7 +724,7 @@ button {
     font-size: 20px !important;
   }
   .mountainguide-medium-title.layout1 {
-    font-size:20px !important;
+    font-size: 20px !important;
     line-height: 25px !important;
   }
   .chooseus-title a {
@@ -743,7 +771,7 @@ button {
     height: 195px !important;
   }
   .mountainguide-block89.layout {
-    margin: 30px 10px 0px !important;
+    margin: 0px 0px 0px !important;
   }
   .chooseimage {
     top: 0px !important;
@@ -782,7 +810,7 @@ button {
     height: 230px !important;
   }
   .detailssection-content {
-    top: 272px !important;
+    top: 260px !important;
     padding: 0px 12px !important;
     flex-direction: column;
   }
@@ -801,32 +829,72 @@ button {
     font-size: 20px !important;
     line-height: 25px !important;
   }
-  .image-flex{
+  .image-flex {
     flex-direction: column !important;
   }
   .main-image {
-    height:160px !important;
+    height: 160px !important;
   }
-  .other-image{
-    width:100%  !important;
-    margin-left:0px !important;
+  .other-image {
+    width: 100% !important;
+    margin-left: 0px !important;
   }
-  .reverse-col{
+  .reverse-col {
     flex-direction: column !important;
   }
-  .mountainguide-block77{
-    margin-bottom:0px  !important;
+  .mountainguide-block77 {
+    margin-bottom: 0px !important;
   }
-  .testimonials-section{
-    margin-top:20px !important;
+  .testimonials-section {
+    margin-top: 20px !important;
   }
-  .blogs_section{
-    margin-top:20px !important;
+  .blogs_section {
+    margin-top: 20px !important;
   }
-  .country-card{
+  .country-card {
     margin-bottom: 0px !important;
   }
   .allblogs_item {
+    width: 100% !important;
+  }
+  .allteam-first {
+    flex-direction: column;
+  }
+  .team-content {
+    padding: 0px 10px 3px 10px;
+  }
+  .allteam-first-reverse {
+    flex-direction: column-reverse;
+  }
+  .team-name {
+    font-size: 18px;
+  }
+  .top-header {
+    justify-content: space-evenly !important;
+    padding: 10px 0 0 0 !important;
+  }
+  .aboutus-img {
+    height: 230px;
+  }
+  .login-section .form-row {
+    display: block;
+  }
+  .register-button {
+    width: 100%;
+  }
+  .register-form .form-group {
+    width: 100%;
+  }
+  .get-in-touch {
+    justify-content: flex-start !important;
+  }
+  .contact-row {
+    flex-direction: column-reverse;
+  }
+  .lb-outerContainer{
+    width:100% !important;
+  }
+  .lb-image{
     width:100% !important;
   }
 }
@@ -872,36 +940,46 @@ button {
     flex-direction: column !important;
     align-items: center !important;
   }
-  .search{
-    width:177% !important;
-    margin-top:-5px!important;
+  .search {
+    width: 177% !important;
+    margin-top: -5px !important;
   }
   .mountainguide-block3.layout {
     top: 0px !important;
   }
   .mountainguide-block2.layout {
     height: 165px !important;
+    border-bottom: 1px solid #e7e0e0;
   }
   /* bestsell */
   .trip-title {
     font-size: 25px !important;
   }
-  .bestsell-content{
-    padding:0px !important;
+  .bestsell-content {
+    padding: 0px !important;
   }
   .mountainguide-block15.layout {
-    top:40px !important;
+    top: 40px !important;
   }
-  .book-image{
+  .book-image {
     flex-direction: column !important;
   }
-  .onlinebook-section{
-    margin-top:25px !important;
+  .onlinebook-section {
+    margin-top: 25px !important;
   }
 }
 @media screen and (max-width: 576px) {
+  .mountainguide-block87 {
+    flex-wrap: wrap !important;
+  }
+  .mountainguide-block87-item {
+    flex: 0 1 653px;
+  }
+  .mountainguide-block89.layout {
+    margin: 0px !important;
+  }
   .owl-prev {
-    left:5px !important;
+    left: 5px !important;
   }
   .owl-next {
     right: -19px !important;
@@ -925,21 +1003,27 @@ button {
     margin: 0px 0px 400px !important;
   }
   .online-booksection {
-    margin:0px !important;
+    margin: 0px !important;
   }
-  .booktourdetails{
-    margin-left:0px !important;
+  .booktourdetails {
+    margin-left: 0px !important;
   }
-  .allblogs_section{
-    margin-top:60px !important;
+  .allblogs_section {
+    margin-top: 60px !important;
+  }
+  .gallery-item img {
+    height:150px !important;
   }
 }
 @media screen and (max-width: 462px) {
+  .detailssection-content {
+    top: 355px !important;
+  }
   .country-main {
     flex-wrap: wrap !important;
   }
   .explore-us {
-    padding:15px 44px !important;
+    padding: 15px 44px !important;
   }
   .mountainguide-block66.layout {
     right: 27px !important;
@@ -960,43 +1044,49 @@ button {
   .mountainguide-block65-item1 {
     display: block !important;
   }
-  .top-header{
-    flex-direction: column  !important;
+  .top-header {
+    flex-direction: column !important;
     align-items: center !important;
   }
-  .top-header p{
+  .top-header p {
     text-align: center !important;
   }
-  .onlineimage-section{
+  .onlineimage-section {
     flex-direction: column !important;
-    margin-left:0px !important;
+    margin-left: 0px !important;
   }
 }
 /* topheader */
 @media screen and (max-width: 392px) {
-  .search{
+  .detailssection-content {
+    top: 390px !important;
+  }
+  .bestsellicon {
+    margin-left: 20px !important;
+  }
+  .search {
     width: 100% !important;
   }
-    .mountainguide-block16.layout {
+  .mountainguide-block16.layout {
     flex-direction: column !important;
-    width:100% !important;
+    width: 100% !important;
   }
   .mountainguide-block15.layout {
     height: auto !important;
     position: relative !important;
     z-index: 1 !important;
-    padding-left: 30px !important;
+    border-bottom: 1px solid #e9e3e3;
   }
   .mountainguide-block16-item {
     flex: 0 !important;
   }
- 
+
   .mountainguide-block17-item {
     flex: 0 !important;
   }
   .mountainguide-block3.layout {
     z-index: 2 !important;
-    top:0px !important;
+    top: 0px !important;
   }
   .mountainguide-highlights2.layout {
     width: 100% !important;
@@ -1004,11 +1094,11 @@ button {
     font-size: 10px !important;
   }
   .mountainguide-highlights5.layout {
-    margin:0px 0px 0px 13px !important;
+    margin: 0px 0px 0px 13px !important;
   }
   .mountainguide-block55.layout {
-    flex-grow:0 !important;
-    padding:10px  !important;
+    flex-grow: 0 !important;
+    padding: 5px 10px !important;
   }
   .mountainguide-block2.layout {
     height: 216px !important;
@@ -1016,7 +1106,16 @@ button {
   .bestselldetailsheading a {
     font-size: 22px !important;
   }
-  .bestselldetails{
-    justify-content:flex-start !important;
+  .bestselldetails {
+    justify-content: flex-start !important;
+  }
+}
+@media screen and (max-width: 298px) {
+  .mountainguide-block55.layout {
+    flex-grow: 0 !important;
+    padding: 5px 0px !important;
+  }
+  .mountainguide-block55 {
+    padding: 5px 0px !important;
   }
 }

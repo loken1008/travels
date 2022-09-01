@@ -1,141 +1,119 @@
-@php 
-$loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','login')->first();
+@php
+$loginbanner = App\Models\PageBanner::orderBy('id', 'desc')
+    ->where('page_name', 'login')
+    ->first();
 @endphp
 @extends('frontend.main')
 @section('title', 'User Register')
 @section('content')
-    <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" @if(!empty($loginbanner->page_banner))data-background="{{asset($loginbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Register</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Inner Section End -->
+
 
     <!-- Contact Section Start -->
-    <section class="contact-section pt-90 pb-20">
+    <section class="contact-section ">
         <div class="container">
             <div class="row contact-bg">
-                <div class="col-md-12 col-lg-12 style-2">
+                <div class="col-md-12 col-lg-12 ">
 
                     <form class="booking-form" method="POST" action="{{ route('customer.store') }}" id="crform">
                         @csrf
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-packagesbk"
-                                    aria-selected="false">Register Form</a>
+                        <h4> Register Form</h4>
+                        <div class="form-row register-form d-flex" style="flex-wrap: wrap;justify-content:space-between">
+
+                            <div class="form-group col-md-5">
+                                <label for="name">First Name <span class="text-danger">*</span> </label>
+                                <input type="text" name="first_name" id="first_name" class="form-control"
+                                    placeholder="Input First Name">
+                                @error('first_name')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
+                            <div class="form-group col-md-5">
+                                <label for="name">Last Name <span class="text-danger">*</span> </label>
+                                <input type="text" name="last_name" id="last_name" class="form-control"
+                                    placeholder="Input Last Name">
+                                @error('last_name')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Email <span class="text-danger">*</span> </label>
+                                <input type="email" name="email" id="email" class="form-control"
+                                    placeholder="Input Email">
+                                @error('email')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Password <span class="text-danger">*</span> </label>
+                                <input type="password" name="password" id="password" class="form-control"
+                                    placeholder="Input password">
+                                @error('password')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Confirm Password <span class="text-danger">*</span> </label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+                                    placeholder="Input Confirm password">
+                                @error('confirm_password')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Address <span class="text-danger">*</span> </label>
+                                <input type="text" name="address" id="address" class="form-control"
+                                    placeholder="Input Address">
+                                @error('address')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
-                            <!-- item start -->
-                            <div class=" " id="" role="" aria-labelledby="nav-packagesbk-tab">
-                                <div class="form-row d-flex" style="flex-wrap: wrap;justify-content:space-between">
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Mobile <span class="text-danger">*</span> </label>
+                                <input type="text" name="mobile" id="mobile" class="form-control"
+                                    placeholder="Input Mobile">
+                                @error('mobile')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
-                                    <div class="form-group col-md-5">
-                                        <label for="name">First Name  <span class="text-danger">*</span> </label>
-                                        <input type="text" name="first_name" id="first_name" class="form-control"
-                                            placeholder="Input First Name">
-                                        @error('first_name')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="name">Last Name  <span class="text-danger">*</span> </label>
-                                        <input type="text" name="last_name" id="last_name" class="form-control"
-                                            placeholder="Input Last Name">
-                                        @error('last_name')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Email  <span class="text-danger">*</span> </label>
-                                        <input type="email" name="email" id="email" class="form-control"
-                                            placeholder="Input Email">
-                                        @error('email')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Password  <span class="text-danger">*</span> </label>
-                                        <input type="password" name="password" id="password" class="form-control"
-                                            placeholder="Input password">
-                                        @error('password')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Confirm Password  <span class="text-danger">*</span> </label>
-                                        <input type="password" name="confirm_password" id="confirm_password"
-                                            class="form-control" placeholder="Input Confirm password">
-                                        @error('confirm_password')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Address  <span class="text-danger">*</span> </label>
-                                        <input type="text" name="address" id="address" class="form-control"
-                                            placeholder="Input Address">
-                                        @error('address')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Mobile  <span class="text-danger">*</span> </label>
-                                        <input type="text" name="mobile" id="mobile" class="form-control"
-                                            placeholder="Input Mobile">
-                                        @error('mobile')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group col-md-5">
-                                        <label for="tourName">Your Country  <span class="text-danger">*</span> </label>
-                                        <input type="text" name="country" id="country" class="form-control"
-                                            placeholder="Input Country">
-                                        @error('country')
-                                            <span class="text-danger">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-
-
-                                    <div class="form-group col-md-12">
-                                        <div class="contact-textarea text-center">
-                                            <button class="btn btn-theme" type="submit" value="Submit Form">Register
-                                                Now</button>
-                                        </div>
-                                    </div>
-
-                                    <div id="form-messages2"></div>
+                            <div class="form-group col-md-5">
+                                <label for="tourName">Your Country <span class="text-danger">*</span> </label>
+                                <input type="text" name="country" id="country" class="form-control"
+                                    placeholder="Input Country">
+                                @error('country')
+                                    <span class="text-danger">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-5 mt-4 register-button">
+                                <div class="contact-textarea text-center">
+                                    <button class="registerbtn" type="submit" value="Submit Form">Register
+                                        Now</button>
                                 </div>
                             </div>
-                            <!-- item end -->
-
-
+                            <div class="form-group col-md-5 mt-4 register-button">
+                                <div class="contact-textarea text-center">
+                                    <a href="{{route('customer.login')}}">Already Have An Account. Signin Here</a>
+                                </div>
+                            </div>
                         </div>
+                       
                     </form>
 
                 </div>

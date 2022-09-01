@@ -335,7 +335,7 @@ Route::group(['middleware' => ['XSS','get.expire']], function () {
     // blogs
     Route::get('/allblogs/', [App\Http\Controllers\User\BlogController::class, 'allBlogs'])->name('allblogs');
     Route::get('/blogsdetails/{slug}', [App\Http\Controllers\User\BlogController::class, 'blogsDetails'])->name('blogsdetails');
-    Route::get('/searchblog', [App\Http\Controllers\User\BlogController::class, 'searchBlog'])->name('blogsearch');
+    Route::match(['get','post'],'/searchblog', [App\Http\Controllers\User\BlogController::class, 'searchBlog'])->name('blogsearch');
     Route::post('/storecomment', [App\Http\Controllers\User\BlogController::class, 'storeComment'])->name('blog.comment');
 
     // testimonials
@@ -363,5 +363,5 @@ Route::group(['middleware' => ['XSS','get.expire']], function () {
     Route::get('/gallery/details/{gallery_title}', [App\Http\Controllers\User\GalleryController::class, 'GalleryDetails'])->name('gallery.details');
 
     // search
-    Route::post('/tour-search', [App\Http\Controllers\User\SearchController::class, 'tourSearch'])->name('search');
+    Route::match(['get','post'],'/tour-search', [App\Http\Controllers\User\SearchController::class, 'tourSearch'])->name('search');
 });
