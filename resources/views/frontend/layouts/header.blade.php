@@ -168,10 +168,6 @@
                                
                             </div>
                             <div class="mountainguide-block19 layout">
-                                <div class="mountainguide-block19-item">
-                                    <div class="mountainguide-block20 layout">
-                                        <div class="mountainguide-block20-item">
-
                                             @if (!empty($sitesetting->google))
                                                 <a href="{{ $sitesetting->google }}">
                                                     <i class="fa fa-whatsapp whatsapp"></i>
@@ -183,10 +179,6 @@
                                                     <i class="fa-brands fa-viber viber"></i>
                                                 </a>
                                             @endif
-                                        </div>
-
-                                    </div>
-                                </div>
                                 @if (!empty($getcontact->phone))
                                     <a href="tel:{{ $getcontact->mobile }}" class="mountainguide-highlights layout">{{ $getcontact->mobile }}</a>
                                 @endif

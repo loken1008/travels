@@ -225,7 +225,7 @@ $(window).scroll(function() {
 $(".make-own-trip-subtitle1").click(function() {
     $('html, body').animate({
         scrollTop: $('html').offset().top
-    }, 1000);
+    }, 1300);
 });
 
 $(window).scroll(function() {
@@ -261,7 +261,7 @@ $('[data-toggle="tab"]').click('shown.bs.collapse', function() {
 
 $(document).ready(function() {
     $(".invisible-content").hide();
-    $(document).on('click', '.aboutbtn', function() {
+    $(document).on('click', '.travelbtn', function() {
         var moreLessButton = $(".invisible-content").is(':visible') ? 'Read More' : 'Read Less';
         $(this).text(moreLessButton);
         $(this).parent('.large-content').find(".invisible-content").toggle();

@@ -38,8 +38,8 @@ function getThumbs($url = '')
                 <div class="detailsprice">
                     @if ($getcoupon)
                         <h5 class="details-price ">
-                            <strike><span class="text-strike">${{ $getTourdetails->main_price }}</span></strike>
-                            <span>$</span>{{ $getTourdetails->main_price - ($getcoupon->discount_amount / 100) * $getTourdetails->main_price }}
+                            <strike>${{ $getTourdetails->main_price }}</strike>
+                            ${{ $getTourdetails->main_price - ($getcoupon->discount_amount / 100) * $getTourdetails->main_price }}
 
                         </h5>
                     @else
@@ -87,11 +87,7 @@ function getThumbs($url = '')
         <div class="row scrollheight">
             <div class="reverse-col d-flex">
                 <div class="col-md-8 reverse-first">
-                    <div class="share">
-
-                        <div class="sharethis-inline-share-buttons"></div>
-
-                    </div>
+                    
                     <div class="key-facts">
                         @if(!empty($getTourdetails->country->country_name))
                         <div class="col-md-6 col-sm-12 duration">
@@ -554,10 +550,14 @@ function getThumbs($url = '')
                     @endif
                 </div>
             </div>
-
+            
         </div>
     </div>
+    <div class="share">
 
+        <div class="sharethis-inline-share-buttons"></div>
+
+    </div>
 
 
     <!-- Special Places Section Start -->
