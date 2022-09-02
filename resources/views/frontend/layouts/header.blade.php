@@ -1,11 +1,4 @@
-<div class="top-header">
-    @if(!empty($getcontact->serve_since))
-    <p>{{$getcontact->serve_since}}</p>
-    @endif
-    @if(!empty($getcontact->regd_no))
-    <p>{{$getcontact->regd_no}}</p>
-    @endif
-</div>
+
 <div class=" mountainguide-block2 layout">
     <nav class="navbar navbar-expand-lg mountainguide-block3 layout">
         <div class="container nav-container-large">
@@ -171,7 +164,7 @@
                 <div class="mountainguide-block17 layout">
                     <div class="mountainguide-block17-item">
                         <div class="mountainguide-block18 layout">
-                            <div class="mountainguide-text-body1 layout">Contact us @if(!empty($getcontact->name))({{$getcontact->name}})@endif
+                            <div class="mountainguide-text-body1 layout text-uppercase">Contact us @if(!empty($getcontact->name))({{$getcontact->name}})@endif
                                
                             </div>
                             <div class="mountainguide-block19 layout">
@@ -233,37 +226,3 @@
         </div>
     </div>
 </div>
-{{-- <div class="mobile-view">
-    <div class="mountainguide-text-body1 layout">Contact us (Ram)
-        <img class="profile-image" src="{{ asset('frontend/viber.png') }}" alt="profile">
-
-    </div>
-    <div class="mountainguide-block19 layout">
-        <div class="mountainguide-block19-item">
-            <div class="mountainguide-block20 layout">
-                <div class="mountainguide-block20-item">
-
-                    @if (!empty($sitesetting->google))
-                        <a href="{{ $sitesetting->google }}">
-                            <div class="mountainguide-image4 layout">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                        </a>
-                    @endif
-                    @if (!empty($sitesetting->linkedin))
-                        <a href="{{ $sitesetting->linkedin }}" >
-                            <div class="mountainguide-image4 layout">
-                            <i class="fa-brands fa-viber"></i>  
-                            </div>
-                        </a>
-                    @endif
-                </div>
-
-            </div>
-        </div>
-        <div class="mountainguide-block19-spacer"></div>
-        @if (!empty($getcontact->phone))
-            <h5 class="mountainguide-highlights layout">{{ $getcontact->mobile }}</h5>
-        @endif
-    </div>
-</div> --}}

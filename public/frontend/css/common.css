@@ -897,6 +897,7 @@ button {
   .lb-image{
     width:100% !important;
   }
+ 
 }
 @media screen and (max-width: 676px) {
   .country-main.layout {
@@ -1046,11 +1047,8 @@ button {
   }
   .top-header {
     flex-direction: column !important;
-    align-items: center !important;
   }
-  .top-header p {
-    text-align: center !important;
-  }
+ 
   .onlineimage-section {
     flex-direction: column !important;
     margin-left: 0px !important;

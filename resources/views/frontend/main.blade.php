@@ -10,7 +10,6 @@
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title')" />
@@ -75,8 +74,8 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="body">
+<body >
+    <div class="body"  data-target="#navbar-example2">
         @include('frontend.layouts.header')
         @yield('content')
         <!--footer -->
@@ -122,6 +121,7 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
+        
     </script>
 
     <script>

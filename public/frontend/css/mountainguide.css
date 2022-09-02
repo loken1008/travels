@@ -5,8 +5,6 @@
   height: 100%;
   background: #ffffff;
   overflow-x: hidden;
-
-  /* overflow-y: hidden; */
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
@@ -144,9 +142,10 @@
   float: right !important;
 }
 .profile-image {
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
+  margin-right:20px;
 }
 .desktop-view :hover .dropdown-menu {
   display: block !important;
@@ -160,11 +159,11 @@
 .top-header {
   display: flex;
   justify-content: space-between;
-  background: #fafcff;
-  padding: 10px 170px 0px 170px;
+  padding: 10px 0px 0px 0px;
 }
 .top-header p {
   font-size: 14px;
+  color:white;
 }
 .navbar {
   padding-left: 16px;
@@ -636,8 +635,9 @@
   font-family: 'FontAwesome';
 }
 .viber {
-  margin-left: 46px;
-  margin-top: -10px;
+  margin-left: 40px;
+  margin-right:10px;
+  margin-top: -4px;
   font-size: 26px;
   font-family: 'FontAwesome';
 }
@@ -3428,6 +3428,9 @@
   border-bottom: 1px solid #ffffff26;
   padding-bottom: 30px !important;
   margin: 0px !important;
+}
+.footer-contact{
+  padding-left:0px !important;
 }
 .footer-copyright {
   font-family: 'Poppins';
