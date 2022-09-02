@@ -425,8 +425,8 @@ function getThumbs($url = '')
                         </section>
                     @endif
 
+                    @if ($getTourdetails->itinerary->count() > 0)
                     <section class="mt-4" id="titinery">
-                        @if ($getTourdetails->itinerary->count() > 0)
                             <h4 class="key-heading2"> <i class="fa-solid fa-chart-bar"></i> Itinerary</h4>
                             @foreach ($getTourdetails->itinerary as $itin)
                                 @if ($itin->day_title == !null)
@@ -440,8 +440,8 @@ function getThumbs($url = '')
                                     </div>
                                 @endif
                             @endforeach
-                        @endif
                     </section>
+                    @endif
 
                     @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
                     @else

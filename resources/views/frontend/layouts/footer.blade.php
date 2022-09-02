@@ -93,6 +93,14 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                     @endif
                 </div>
             </div>
+            <div class="top-header">
+                @if(!empty($getcontact->serve_since))
+                <p>{{$getcontact->serve_since}}</p>
+                @endif
+                @if(!empty($getcontact->regd_no))
+                <p>{{$getcontact->regd_no}}</p>
+                @endif
+            </div>
             <div class="row mt-4 footer-last ml-0 mr-0 mb-4">
                 <div class="col-lg-6 col-md-12 footer-copyright m-0">
                     <p>© {{ Carbon\Carbon::now()->format('Y') }}, All Rights Reserved, Design & Developed By: <a
