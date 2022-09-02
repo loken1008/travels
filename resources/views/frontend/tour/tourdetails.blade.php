@@ -535,17 +535,13 @@ function getThumbs($url = '')
                             @foreach ($getTourdetails->fqa as $fqas)
                                 @if ($fqas->question == !null)
                                     <div class="equipment-desc">
-                                        <div class="accordion" id="accordionExample{{ $fqas->id }}">
+                                        <div class="accordion" id="accordionFlushExample{{ $fqas->id }}">
                                             <div class="accordion-header day-title" id="headingOne{{ $fqas->id }}">
-                                                <h2 class="accordion-button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne{{ $fqas->id }}" aria-expanded="true"
-                                                    aria-controls="collapseOne">
+                                                <h2 class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$fqas->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
                                                     <i class="fa-solid fa-hand-point-right"></i>Q.{{ $fqas->question }}
                                                 </h2>
                                             </div>
-                                            <div id="collapseOne{{ $fqas->id }}" class="accordion-collapse collapse "
-                                                aria-labelledby="headingOne{{ $fqas->id }}"
-                                                data-bs-parent="#accordionExample{{ $fqas->id }}">
+                                            <div  id="flush-collapseOne{{$fqas->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample{{$fqas->id}}">
                                                 <div class="accordion-body">
                                                     {!! $fqas->answer !!}
                                                 </div>
