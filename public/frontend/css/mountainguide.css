@@ -1924,7 +1924,8 @@
   position: relative;
   flex: 0 1 353px;
   border-right: 1px solid #9999991a;
-  margin-left: 25px;
+  margin: 0px 14px;
+  padding: 0 20px;
 }
 .mountainguide-block88 {
   display: flex;
