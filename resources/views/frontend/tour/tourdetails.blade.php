@@ -38,12 +38,12 @@ function getThumbs($url = '')
                 <div class="detailsprice">
                     @if ($getcoupon)
                         <h5 class="details-price ">
-                            <strike>${{ $getTourdetails->main_price }}</strike>
+                            <span class="discount-price">${{ $getTourdetails->main_price }}</span>
                             ${{ $getTourdetails->main_price - ($getcoupon->discount_amount / 100) * $getTourdetails->main_price }}
 
                         </h5>
                     @else
-                        <h5 class="details-price"><span>$</span>{{ $getTourdetails->main_price }}</h5>
+                        <h5 class="details-price">${{ $getTourdetails->main_price }}</h5>
                     @endif
                 </div>
             </div>
@@ -624,10 +624,7 @@ function getThumbs($url = '')
                                                             </div>
                                                             @if ($getcoupon)
                                                                 <h4 class="mountainguide-highlights4 layout">
-                                                                    <strike class="text-danger"><span>$
-                                                                        </span>{{ $ctour->main_price }}</strike>
-                                                                    <span>$
-                                                                    </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                    <span class="discount-price">${{ $ctour->main_price }}</span> ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                                 </h4>
                                                             @else
                                                                 <h4 class="mountainguide-highlights4 layout">
