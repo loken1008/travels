@@ -3840,6 +3840,11 @@
   text-decoration-line: line-through;
   color: #999999;
 }
+.discount-price{
+  text-decoration: line-through;
+  text-decoration-color:red;
+  color: #f5a53a;
+}
 .inquiry-title {
   font-family: 'Poppins';
   font-style: normal;

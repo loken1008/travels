@@ -124,10 +124,8 @@ function getThumbs($url = '')
                                                                                 @if ($getcoupon)
                                                                                     <h4
                                                                                         class="mountainguide-highlights4 layout">
-                                                                                        <strike class="text-danger"><span>$
-                                                                                            </span>{{ $ctour->main_price }}</strike>
-                                                                                        <span>$
-                                                                                        </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                                       <span class="discount-price">${{ $ctour->main_price }} </span>
+                                                                                        ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                                                     </h4>
                                                                                 @else
                                                                                     <h4
@@ -247,9 +245,7 @@ function getThumbs($url = '')
                                                         <div class="mountainguide-text-body14 layout">Price</div>
                                                         @if ($getcoupon)
                                                             <h4 class="mountainguide-highlights4 layout">
-                                                                <strike class="text-danger"><span>$
-                                                                    </span>{{ $selltour->main_price }}</strike> <span>$
-                                                                </span>{{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
+                                                               <span class="discount-price">${{ $selltour->main_price }}</span> ${{ $selltour->main_price - ($getcoupon->discount_amount / 100) * $selltour->main_price }}
                                                             </h4>
                                                         @else
                                                             <h4 class="mountainguide-highlights4 layout">
@@ -426,9 +422,7 @@ function getThumbs($url = '')
                                                     <h4 class="mountainguide-text-body14 layout">Price</h4>
                                                     @if ($getcoupon)
                                                         <h4 class="populartrekprice">
-                                                            <strike class="text-danger"><span>$
-                                                                </span>{{ $tour->main_price }}</strike> <span>$
-                                                            </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                            <span class="discount-price">${{ $tour->main_price }}</span> ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                                         </h4>
                                                     @else
                                                         <h4 class="populartrekprice">
@@ -508,9 +502,8 @@ function getThumbs($url = '')
                                                     <div class="mountainguide-text-body14 layout">Price</div>
                                                     @if ($getcoupon)
                                                         <h4 class="mountainguide-highlights4 layout">
-                                                            <strike class="text-danger"><span>$
-                                                                </span>{{ $tour->main_price }}</strike> <span>$
-                                                            </span>{{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                            <span class="discount-price">${{ $tour->main_price }}</span>
+                                                            ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                                         </h4>
                                                     @else
                                                         <h4 class="mountainguide-highlights4 layout">

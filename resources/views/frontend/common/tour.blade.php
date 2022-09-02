@@ -77,10 +77,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                                     </div>
                                                     @if ($getcoupon)
                                                         <h4 class="mountainguide-highlights4 layout">
-                                                            <strike class="text-danger"><span>$
-                                                                </span>{{ $ctour->main_price }}</strike>
-                                                            <span>$
-                                                            </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                            <span class="discount-price">${{ $ctour->main_price }}</span> ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                         </h4>
                                                     @else
                                                         <h4 class="mountainguide-highlights4 layout">
