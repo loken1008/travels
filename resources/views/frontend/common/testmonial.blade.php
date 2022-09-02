@@ -10,8 +10,10 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
             <div class="row">
                 <div class="col-lg-12">
                     <div class="populartrekheading mt-6 mb-4">
+                        <div>
                         <h2 class="populartrektitle layout2">Our Customer Reviews</h2>
                         <div class="chooseus-box layout"></div>
+                        </div>
                     </div>
                     <div id="testimonial-slider" class=" testimonials_slide owl-carousel owl-theme">
                         @forelse($gettestmonial as $testmonial)

@@ -23,13 +23,13 @@
                                             </div>
 
                                             <div class="visible-content">
-                                                {{-- <p class="travel-desc"> {!! Str::limit($chooseus->description, 1050, '') !!}</p> --}}
-                                                <p class="travel-desc"> {!! $chooseus->description !!}</p>
+                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 950, '') !!}</p>
+                                                {{-- <p class="travel-desc"> {!! $chooseus->description !!}</p> --}}
                                             </div>
                                             <div class="invisible-content">
                                                 <p class="travel-desc">{!! $chooseus->description !!}</p>
                                             </div>
-                                            {{-- <button class="travelbtn  more-less">Read More</button> --}}
+                                            <button class="travelbtn  more-less">Read More</button>
 
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                         @else
                             <div class="travels-single">
                                 <div class="row ">
-                                    <div class="col-lg-12 first-travel">
+                                    <div class="col-lg-12 second-travel">
                                        
                                         <div class="col-md-6 content large-content secondtravel-details">
                                             <div class="travel-title">
@@ -46,14 +46,14 @@
                                             </div>
                                          
                                             <div class="visible-content">
-                                                {{-- <p class="travel-desc"> {!! Str::limit($chooseus->description, 1050, '') !!}</p> --}}
-                                                <p class="travel-desc"> {!! $chooseus->description !!}</p>
+                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 950, '') !!}</p>
+                                                {{-- <p class="travel-desc"> {!! $chooseus->description !!}</p> --}}
                                             </div>
                                             <div class="invisible-content"><p class="travel-desc">{!! $chooseus->description !!}</p></div>
-                                            {{-- <button class="travelbtn  more-less">Read More</button> --}}
+                                            <button class="travelbtn  more-less">Read More</button>
                                             
                                         </div>
-                                        <div class="col-md-6 ">
+                                        <div class="col-md-6">
                                             <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}">
                                         </div>
                                     </div>

@@ -45,9 +45,11 @@ function getThumbs($url = '')
             <div class="container network_wrapper col-sm  ">
                 <div class=" country-card">
                     <div class="country-header">
-                        <div class="col-lg-6 countrytabmainheading layout">
+                        <div class="col-lg-12 countrytabmainheading layout">
+                            <div>
                             <h2 class="countrytab-title layout">Where do you want to trek?</h2>
                             <div class="countrytab-box layout"></div>
+                        </div>
                         </div>
                         <ul class="nav country-nav" data-bs-tabs="tabs">
                             @foreach ($getcountry as $key => $cutry)
@@ -341,8 +343,11 @@ function getThumbs($url = '')
         <div class="mountainguide-block85 layout">
             <div class="mountainguide-block86 layout">
                 @if ($chooseus->count() > 0)
+                <div>
                     <h2 class="mountainguide-medium-title layout1">Why choose mountain guide trek</h2>
                     <div class="chooseus-box layout"></div>
+                </div>
+                    
                 @endif
             </div>
         </div>
@@ -369,10 +374,14 @@ function getThumbs($url = '')
     <section class="populartrek_section ">
         @if ($cattrekking)
             <div class="populartrekheading">
-                <h2 class="populartrektitle layout2">Popular trekking places</h2>
-                <div class="chooseus-box layout"></div>
+                <div>
+                    <h2 class="populartrektitle layout2">Popular trekking places</h2>
+                    <div class="chooseus-box layout"></div>
+
+                </div>
             </div>
         @endif
+        
         <div class="container popular-container">
             <div class="populartrek_content">
                 <div id="popular-trek-slider" class="owl-carousel owl-theme">
@@ -533,8 +542,10 @@ function getThumbs($url = '')
     <section class="container-fluid blogs_section ">
         @if ($getblogs->count() > 0)
             <div class="populartrekheading mt-6 mb-4">
+                <div>
                 <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
                 <div class="chooseus-box layout"></div>
+                </div>
             </div>
         @endif
 

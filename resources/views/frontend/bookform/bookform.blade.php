@@ -6,12 +6,13 @@
         <div class="container">
             <div class="booksection-content">
                 <div class="row">
-                    <div class="col-12 mt-4 online-booksection">
+                    <div class="col-12 mt-4 mb-4 online-booksection">
                         <h2 class="populartrektitle layout2">Booking</h2>
                         <div class="chooseus-box layout"></div>
+                       @if(!empty($tour->mainImage))
                         <div class="book-image">
                             <div class="onlineimage-section">
-                                <img src="{{ $tour->mainImage }}" alt="">
+                                <img src="{{ $tour->mainImage }}" alt="{{$tour->tour_name}}">
                                 <div class="booktourdetails">
                                     <h4 class="booktourtitle">{{ $tour->tour_name }}</h4>
                                     <p class="bookdate">Duration: <span>{{ $tour->tour_days }}</span></p>
@@ -33,12 +34,15 @@
                                 @endif
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <form class="booking-form" method="POST" action="{{ route('store.booking') }}" id="bookingForm">
                         @csrf
+                        @if(!empty($tour->id))
                         <input type="hidden" name="tour_id" value="{{ $tour->id }}">
+                        @endif
                         <div class="form-group col-md-6">
                             @if (Auth()->guard('customer')->check() &&
                                 Auth()->guard('customer')->user()->id)

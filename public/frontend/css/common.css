@@ -280,6 +280,7 @@ button {
   .allblogs_item {
     width: 33% !important;
   }
+ 
 }
 @media screen and (min-width: 1192px) {
   .nav-link {
@@ -342,11 +343,10 @@ button {
   .mountainguide-block28.layout {
     width: 60% !important;
   }
-  .populartrekheading {
+  /* .populartrekheading {
     display: flex !important;
     flex-direction: column !important;
-    /* width:100% !important; */
-  }
+  } */
   .populartrektitle.layout2 {
     height: auto !important;
   }
@@ -505,9 +505,6 @@ button {
     color: black !important;
     padding: 0px !important;
   }
-  .countrytabmainheading.layout {
-    padding-left: 25px !important;
-  }
 
   .country-nav .nav-item {
     width: auto !important;
@@ -601,14 +598,12 @@ button {
   #best-sell-slider .mountainguide-block48.layout1 {
     width: 312px !important;
   }
+ 
 }
 @media screen and (max-width: 768px) {
   .country-subtitle,
   .country-subtitle {
     font-size: 16px !important;
-  }
-  .populartrekheading {
-    width: 100% !important;
   }
   .mountainguide-block87 {
     justify-content: flex-start !important;
@@ -676,10 +671,6 @@ button {
   }
   .mountainguide-block74.layout {
     padding: 5px 88px;
-  }
-  .populartrekheading {
-    padding-top: 0px !important;
-    padding-left: 30px !important;
   }
   .populartrektitle.layout2 {
     line-height: 30px !important;
@@ -897,7 +888,23 @@ button {
   .lb-image{
     width:100% !important;
   }
- 
+  .first-travel{
+ flex-direction: column;
+ margin-top:0px;
+  }
+  .second-travel{
+flex-direction: column-reverse;
+margin-top:0px;
+  }
+  .travels-single{
+    margin:0px !important;
+  }
+  .travel-details {
+    padding-left:0px !important;
+  }
+  .secondtravel-details{
+    padding-right:0px !important;
+  }
 }
 @media screen and (max-width: 676px) {
   .country-main.layout {
@@ -1014,6 +1021,13 @@ button {
   }
   .gallery-item img {
     height:150px !important;
+  }
+  .first-travel img,.second-travel img{
+    height:230px;
+  }
+  .travel-title h2{
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 @media screen and (max-width: 462px) {
