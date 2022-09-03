@@ -43,12 +43,10 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#best-sell-slider').owlCarousel({
         loop: true,
-        margin: 100,
+        margin: 10,
         nav: true,
         dots: false,
         autoplay: true,
-        navContainer: '#customNav',
-        navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'],
         responsiveClass: true,
         responsive: {
             0: {
@@ -57,7 +55,10 @@ $(document).ready(function() {
             500: {
                 items: 1
             },
-            768: {
+            600: {
+                items: 2
+            },
+            700: {
                 items: 2
             },
             800: {
@@ -84,12 +85,10 @@ function onChangedCallback(event) {
 $(document).ready(function() {
     $('#challenge-peak-slider').owlCarousel({
         loop: true,
-        margin: 100,
+        margin: 10,
         nav: true,
         dots: false,
-        // autoplay: true,
-        navContainer: '#customNavs',
-        navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'],
+        autoplay: true,
         responsive: {
             0: {
                 items: 1
@@ -97,7 +96,7 @@ $(document).ready(function() {
             600: {
                 items: 1
             },
-            768: {
+            700: {
                 items: 2
             },
             800: {
@@ -213,9 +212,9 @@ $(document).ready(function(){
  });
       
 });
-
+$(document).ready(function(){
 $(window).scroll(function() {
-    if ($(this).scrollTop()) {
+    if ($(this).scrollTop()>600) {
         $('.make-own-trip-subtitle1:hidden').stop(true, true).fadeIn();
     } else {
         $('.make-own-trip-subtitle1').stop(true, true).fadeOut();
@@ -223,9 +222,11 @@ $(window).scroll(function() {
 });
 
 $(".make-own-trip-subtitle1").click(function() {
+
     $('html, body').animate({
         scrollTop: $('html').offset().top
-    }, 1300);
+    }, 0);
+});
 });
 
 $(window).scroll(function() {
@@ -240,7 +241,7 @@ $(window).scroll(function() {
     var sticky = $('.navbar.navbar-expand-lg.mountainguide-block3.layout'),
         scroll1 = $(window).scrollTop();
 
-    if (scroll1 >= 10) sticky.addClass('main-nav-fixed');
+    if (scroll1 >= 1) sticky.addClass('main-nav-fixed');
     else sticky.removeClass('main-nav-fixed');
 });
 
@@ -249,7 +250,7 @@ $(window).scroll(function() {
         height = $('.scrollheight').height();
     scroll = $(window).scrollTop();
 
-    if (scroll >= 10 && scroll <= height) sticky.addClass('bookprice');
+    if (scroll >= 600 && scroll <= height) sticky.addClass('bookprice');
     else sticky.removeClass('bookprice');
 });
 
@@ -282,7 +283,7 @@ $(document).ready(function() {
 $(".closebtn").click(function() {
     $(this).closest("div").hide();
 });
-console.clear();
+// console.clear();
 
 
 

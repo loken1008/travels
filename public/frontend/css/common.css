@@ -219,10 +219,7 @@ button {
 }
 /* button */
 @media screen and (max-width: 1270px) {
-  .mountainguide-highlights2.layout {
-    width: 100% !important;
-    margin: 16px 21% 20px 20% !important;
-  }
+  
   .mountainguide-block29.layout {
     width: 100% !important;
     right: 0px !important;
@@ -280,6 +277,9 @@ button {
   .allblogs_item {
     width: 33% !important;
   }
+  .search{
+    left: 0px !important;
+  }
  
 }
 @media screen and (min-width: 1192px) {
@@ -336,13 +336,9 @@ button {
     box-shadow: none !important;
   }
   .mountainguide-highlights2.layout {
-    width: 100% !important;
-    margin: 16px 21% 20px 22% !important;
     font-size: 14px !important;
   }
-  .mountainguide-block28.layout {
-    width: 60% !important;
-  }
+
   /* .populartrekheading {
     display: flex !important;
     flex-direction: column !important;
@@ -370,7 +366,6 @@ button {
     margin: 53px 0% 0px 0% !important;
   }
   .mountainguide-block77.layout {
-    top: 246px !important;
     width: 100% !important;
     min-width: 100% !important;
   }
@@ -464,21 +459,13 @@ button {
     justify-content: space-between !important;
     align-items: stretch !important;
   }
-  .reverse-col {
-    flex-direction: column !important;
-  }
-  .reverse-first {
-    width: 100% !important;
-  }
-  .reverse-second {
-    width: 100% !important;
-  }
   .bookprice {
-    position: relative;
-    width: 100%;
-    top: 20px !important;
-    margin: 0px !important;
+    width:31%;
   }
+  .tour-search{
+    width: 47% !important;
+  }
+ 
   /* blog */
   .blog-section {
     padding: 0px !important;
@@ -516,6 +503,28 @@ button {
   .get-in-touch {
     flex-direction: column !important;
   }
+  
+.mountainguide-block70.layout{
+  padding: 0 55px !important;
+}
+#best-sell-slider .owl-nav .owl-prev,#challenge-peak-slider .owl-nav .owl-prev{
+  left: -15px !important;
+}
+#best-sell-slider .owl-nav .owl-next,#challenge-peak-slider .owl-nav .owl-next{
+  right: -39px !important;
+}
+.image-flex{
+  flex-direction: column;
+}
+.otherrelated-image{
+  width:100% !important;
+}
+.first-image{
+  width:100% !important;
+}
+#bookprice{
+  margin-left:0px;
+}
 }
 @media screen and (min-width: 992px) {
   .mobile-view1 {
@@ -582,24 +591,9 @@ button {
     top: -8px !important;
     left: 280px !important;
   }
+  
 }
-@media screen and (min-width: 768px) {
-  #challenge-peak-slider .owl-item {
-    margin-right: 113px !important;
-    width: 225px !important;
-  }
-  #best-sell-slider .owl-item {
-    margin-right: 100px !important;
-    width: 225px !important;
-  }
-  #challenge-peak-slider .mountainguide-block48.layout1 {
-    width: 325px !important;
-  }
-  #best-sell-slider .mountainguide-block48.layout1 {
-    width: 312px !important;
-  }
- 
-}
+
 @media screen and (max-width: 768px) {
   .country-subtitle,
   .country-subtitle {
@@ -609,8 +603,6 @@ button {
     justify-content: flex-start !important;
   }
   .mountainguide-highlights2.layout {
-    width: 100% !important;
-    margin: 16px 21% 20px 29% !important;
     font-size: 10px !important;
   }
   .mountainguide-hero-title {
@@ -645,7 +637,7 @@ button {
     margin: 0px !important;
   }
   .mountainguide-block70.layout {
-    padding: 0px !important;
+    padding: 0px 20px !important;
     margin-top: 20px !important;
   }
   .mountainguide-block48.layout1 {
@@ -658,10 +650,10 @@ button {
   .mountainguide-highlights1 {
     font-size: 12px !important;
   }
-  .mountainguide-block28.layout {
+  /* .mountainguide-block28.layout {
     width: 34% !important;
     height: 42px !important;
-  }
+  } */
   .mountainguide-image10.layout {
     width: 100% !important;
     min-width: 100% !important;
@@ -688,7 +680,7 @@ button {
   }
   .mountainguide-block26.layout {
     width: 100% !important;
-    margin: 51px auto 187px !important;
+    margin:70px auto 187px !important;
   }
   .mountainguide-block25.layout {
     height: 230px !important;
@@ -791,8 +783,10 @@ button {
   }
 
   .bookprice {
-    position: initial;
+    position: relative;
     width: 100%;
+    top: 20px !important;
+    margin: 0px !important;
   }
   .book-card {
     margin: 0px !important;
@@ -833,6 +827,13 @@ button {
   .reverse-col {
     flex-direction: column !important;
   }
+  .reverse-first {
+    width: 100% !important;
+  }
+
+  .reverse-second {
+    width: 100% !important;
+  }
   .mountainguide-block77 {
     margin-bottom: 0px !important;
   }
@@ -845,9 +846,7 @@ button {
   .country-card {
     margin-bottom: 0px !important;
   }
-  .allblogs_item {
-    width: 100% !important;
-  }
+  
   .allteam-first {
     flex-direction: column;
   }
@@ -905,6 +904,22 @@ margin-top:0px;
   .secondtravel-details{
     padding-right:0px !important;
   }
+  .trip-div{
+    margin-top:80px !important;
+  }
+  .mountainguide-block27.layout{
+    top:0px;
+  }
+  .mountainguide-block28.layout{
+    top: 0px;
+  }.login-heading{
+    align-items: flex-start;
+  }
+  .reverse-second{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+  }
 }
 @media screen and (max-width: 676px) {
   .country-main.layout {
@@ -946,7 +961,6 @@ margin-top:0px;
   }
   .mountainguide-block16-item {
     flex-direction: column !important;
-    align-items: center !important;
   }
   .search {
     width: 177% !important;
@@ -964,7 +978,7 @@ margin-top:0px;
     font-size: 25px !important;
   }
   .bestsell-content {
-    padding: 0px !important;
+    padding: 60px 0px !important;
   }
   .mountainguide-block15.layout {
     top: 40px !important;
@@ -974,6 +988,9 @@ margin-top:0px;
   }
   .onlinebook-section {
     margin-top: 25px !important;
+  }
+  .allblogs_item {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 576px) {
@@ -998,11 +1015,6 @@ margin-top:0px;
     right: 130px !important;
   }
 
-  .mountainguide-highlights2.layout {
-    width: 100% !important;
-    margin: 16px 21% 20px 22% !important;
-    font-size: 10px !important;
-  }
   .make-own-trip-subtitle1.layout3 {
     margin-top: -7px !important;
   }
@@ -1031,10 +1043,16 @@ margin-top:0px;
     font-size: 20px;
     line-height: 25px;
   }
+  .duration{
+    width:100%;
+  }
+  .mountainguide-block23.layout {
+    left: 0px;
+  }
 }
 @media screen and (max-width: 462px) {
   .detailssection-content {
-    top: 355px !important;
+    top: 270px !important;
   }
   .country-main {
     flex-wrap: wrap !important;
@@ -1069,11 +1087,12 @@ margin-top:0px;
     flex-direction: column !important;
     margin-left: 0px !important;
   }
+ 
 }
 /* topheader */
 @media screen and (max-width: 392px) {
   .detailssection-content {
-    top: 390px !important;
+    top: 320px !important;
   }
   .bestsellicon {
     margin-left: 20px !important;
@@ -1093,6 +1112,7 @@ margin-top:0px;
   }
   .mountainguide-block16-item {
     flex: 0 !important;
+    align-items: center !important;
   }
 
   .mountainguide-block17-item {
@@ -1101,11 +1121,6 @@ margin-top:0px;
   .mountainguide-block3.layout {
     z-index: 2 !important;
     top: 0px !important;
-  }
-  .mountainguide-highlights2.layout {
-    width: 100% !important;
-    margin: 16px 21% 20px 22% !important;
-    font-size: 10px !important;
   }
   .mountainguide-highlights5.layout {
     margin: 0px 0px 0px 13px !important;
@@ -1122,6 +1137,13 @@ margin-top:0px;
   }
   .bestselldetails {
     justify-content: flex-start !important;
+    margin-top:0px !important;
+  }
+  .trip-div{
+    margin-top:0px !important;
+  }
+  .mountainguide-icon1.layout{
+    margin:0px;
   }
 }
 @media screen and (max-width: 298px) {
@@ -1132,4 +1154,13 @@ margin-top:0px;
   .mountainguide-block55 {
     padding: 5px 0px !important;
   }
+  .mountainguide-block26.layout{
+    margin:35px auto 187px !important;
+  }
+  .mountainguide-block17 {
+    flex-direction: column;
+    align-items: center;
+}
+
+
 }

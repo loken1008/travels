@@ -51,7 +51,8 @@
                                 {{ Session::get('success') }}
                             </div>
                         @endif
-                        <div class="d-flex mt-5">
+                        <div class=" mt-5">
+                            <p class="share-text">Share with others</p>
                             <div class="sharethis-inline-share-buttons"></div>
 
                         </div>

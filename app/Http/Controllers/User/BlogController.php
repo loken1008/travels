@@ -44,7 +44,7 @@ class BlogController extends Controller
        }
        public function blogsDetails($slug)
        {
-           $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(12)->get();
+           $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(30)->get();
            $getblogdetails=Blog::where('slug',$slug)->first();
            $getcomments=Comment::with('replies')->where('blog_id',$getblogdetails->id)->where('parent_id','=',NULL)->get();
            return view('frontend.blogs.blogsdetails',compact('getblogdetails','getblogs','getcomments'));
