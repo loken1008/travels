@@ -23,12 +23,13 @@
             <h2 class="populartrektitle layout2">Your Searched Tours</h2>
             <div class="chooseus-box layout"></div>
         </div>
+    </div>
         @endif
-        <div class="mountainguide-block77 layout ">
+        <div class=" row mountainguide-block77 layout d-flex">
             @if ($searchtour)
                 @foreach ($searchtour as $key => $search)
                     @if ($search->status == 1)
-                        <div class="mountainguide-block48 layout1">
+                        <div class="col-md-4 tour-search mountainguide-block48 layout1">
                             <a class="text-decoration-none" href="{{ route('tourdetails', $search->slug) }}">
                                 <div class="mountainguide-block49 layout">
                                     <div class="mountainguide-image8 layout">
@@ -86,8 +87,6 @@
                 @endforeach
             @endif
         </div>
-
-    </div>
 </div>
 <section class="paginate text-center pt-0 pb-70">
     <div class="container">

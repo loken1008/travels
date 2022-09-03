@@ -25,7 +25,8 @@ function getblogThumbs($url = '')
                 </div>
             @endif
         </div>
-            <div class="allblogs">
+        
+            <div class=" allblogs">
                 @forelse($getblogs as $blog)
                     <div class="allblogs_item">
                         <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">

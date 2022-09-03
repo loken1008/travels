@@ -26,6 +26,9 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                 <div class="footer-logo">
                     @if (!empty($sitesetting->footer_logo))
                         <img src="{{ $sitesetting->footer_logo }}" alt="mountainguidelogo">
+                        @if(!empty($getcontact->serve_since))
+                        <p class="text-white">{{$getcontact->serve_since}}</p>
+                        @endif
                     @else
                         <img src="{{ asset('frontend/logo.png') }}" alt="mountainguidelogo">
                     @endif
@@ -87,16 +90,13 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                                 href="tel:{{ $getcontact->fax }}">{{ $getcontact->fax }}</a></li>
                     @endif
                     @if (!empty($getcontact->email))
-                        <li><i class="pe-7s-mail"></i> <a
-                                href="mailto:{{ $getcontact->email }}">{{ $getcontact->email }}</a>
+                        <li><i class="pe-7s-mail"></i> <a class="text-lowercase" href="mailto:{{ $getcontact->email }}">{{ $getcontact->email }}</a>
                         </li>
                     @endif
                 </div>
             </div>
             <div class="top-header">
-                @if(!empty($getcontact->serve_since))
-                <p>{{$getcontact->serve_since}}</p>
-                @endif
+              
                 @if(!empty($getcontact->regd_no))
                 <p>{{$getcontact->regd_no}}</p>
                 @endif

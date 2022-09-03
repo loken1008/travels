@@ -23,7 +23,7 @@
                                             </div>
 
                                             <div class="visible-content">
-                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 950, '') !!}</p>
+                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 630, '') !!}</p>
                                                 {{-- <p class="travel-desc"> {!! $chooseus->description !!}</p> --}}
                                             </div>
                                             <div class="invisible-content">
@@ -46,7 +46,7 @@
                                             </div>
                                          
                                             <div class="visible-content">
-                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 950, '') !!}</p>
+                                                <p class="travel-desc"> {!! Str::limit($chooseus->description, 630, '') !!}</p>
                                                 {{-- <p class="travel-desc"> {!! $chooseus->description !!}</p> --}}
                                             </div>
                                             <div class="invisible-content"><p class="travel-desc">{!! $chooseus->description !!}</p></div>

@@ -164,7 +164,7 @@
                 <div class="mountainguide-block17 layout">
                     <div class="mountainguide-block17-item">
                         <div class="mountainguide-block18 layout">
-                            <div class="mountainguide-text-body1 layout text-uppercase">Contact us @if(!empty($getcontact->name))({{$getcontact->name}})@endif
+                            <div class="mountainguide-text-body1 layout text-uppercase">Contact @if(!empty($getcontact->name))({{$getcontact->name}})@endif
                                
                             </div>
                             <div class="mountainguide-block19 layout">

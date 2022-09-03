@@ -17,6 +17,8 @@ $loginbanner = App\Models\PageBanner::orderBy('id', 'desc')
                     <form class="booking-form" method="POST" action="{{ route('customer.store') }}" id="crform">
                         @csrf
                         <h4> Register Form</h4>
+                        <div class="chooseus-box layout"></div>
+
                         <div class="form-row register-form d-flex" style="flex-wrap: wrap;justify-content:space-between">
 
                             <div class="form-group col-md-5">

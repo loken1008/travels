@@ -27,7 +27,7 @@ function getThumbs($url = '')
 @section('content')
 
     <!-- Inner Section Start -->
-    <section>
+    <section class="detailsbanner">
         <img class="details-image" src="{{ $getTourdetails->mainImage }}" alt="{{ $getTourdetails->img_alt }}">
         <div class="container">
             <div class="detailssection-content">
@@ -51,6 +51,7 @@ function getThumbs($url = '')
     </section>
     <!-- Inner Section End -->
     <div class="container-fluid details-first-nav" id="frames">
+
         <div class="fixeddetails-nav">
             <div class="details-nav" id="navbar-example2">
 
@@ -87,146 +88,146 @@ function getThumbs($url = '')
         <div class="row scrollheight">
             <div class="reverse-col d-flex">
                 <div class="col-md-8 reverse-first">
-                    
-                    <div class="key-facts">
-                        @if(!empty($getTourdetails->country->country_name))
-                        <div class="col-md-6 col-sm-12 duration">
-                            <div class="icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="text">
-                                <h4 class="text-duration">Destination</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->country->country_name }}</h4>
-                            </div>
-                        </div>
-                        @endif
-                        @if(!empty($getTourdetails->activity))
-                        <div class="col-md-6 duration">
-                            <div class="icon">
-                                <i class="fa-solid fa-person-hiking"></i>
-                            </div>
-                            <div class="text">
-                                <h4 class="text-duration">Activity</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->activity }}</h4>
-                            </div>
-                        </div>
-                        @endif
-                        @if(!empty($getTourdetails->region))
-                        <div class="col-md-6 duration">
-                            <div class="icon">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <div class="text">
-                                <h4 class="text-duration">Region</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->region }}</h4>
-                            </div>
-                        </div>
-                        @endif
-                        @if(!empty($getTourdetails->tour_days))
-                        <div class="col-md-6 duration">
-                            <div class="icon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <div class="text">
-                                <h4 class="text-duration">Duration</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->tour_days }}</h4>
-                            </div>
-                        </div>
-                        @endif
-                        @if(!empty($getTourdetails->altitude))
-                        <div class="col-md-6 altitude">
-                            <div class="icon">
-                                <i class="fa fa-arrow-trend-up"></i>
 
+                    <div class="key-facts">
+                        @if (!empty($getTourdetails->country->country_name))
+                            <div class="col-md-6 col-sm-12 col-xsm-12 duration">
+                                <div class="icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Destination</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->country->country_name }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Altitude</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->altitude }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->accomodation))
-                        <div class="col-md-6 accomodation">
-                            <div class="icon">
-                                <i class="fa fa-hotel"></i>
+                        @if (!empty($getTourdetails->activity))
+                            <div class="col-md-6 col-sm-12 duration">
+                                <div class="icon">
+                                    <i class="fa-solid fa-person-hiking"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Activity</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->activity }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Accomodation</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->accomodation }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->meal))
-                        <div class="col-md-6 accomodation">
-                            <div class="icon">
-                                <i class="fa-solid fa-utensils"></i>
+                        @if (!empty($getTourdetails->region))
+                            <div class="col-md-6 col-sm-12 duration">
+                                <div class="icon">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Region</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->region }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Meal</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->meal }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->transport))
-                        <div class="col-md-6 transportation">
-                            <div class="icon">
-                                <i class="fa fa-bus"></i>
+                        @if (!empty($getTourdetails->tour_days))
+                            <div class="col-md-6 col-sm-12 duration">
+                                <div class="icon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Duration</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->tour_days }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Transportation</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->transport }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->start_end))
-                        <div class="col-md-6 transportation">
-                            <div class="icon">
-                                <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                        @if (!empty($getTourdetails->altitude))
+                            <div class="col-md-6 col-sm-12 altitude">
+                                <div class="icon">
+                                    <i class="fa fa-arrow-trend-up"></i>
+
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Altitude</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->altitude }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Start From-End To </h4>
-                                <h4 class="text-value"> {{ $getTourdetails->start_end }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->best_month))
-                        <div class="col-md-6 transportation">
-                            <div class="icon">
-                                <i class="fa-solid fa-cloud"></i>
+                        @if (!empty($getTourdetails->accomodation))
+                            <div class="col-md-6 col-sm-12 accomodation">
+                                <div class="icon">
+                                    <i class="fa fa-hotel"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Accomodation</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->accomodation }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Best Seasons</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->best_month }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->group_size))
-                        <div class="col-md-6 transportation">
-                            <div class="icon">
-                                <i class="fa-solid fa-people-group"></i>
+                        @if (!empty($getTourdetails->meal))
+                            <div class="col-md-6 col-sm-12 accomodation">
+                                <div class="icon">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Meal</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->meal }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Group Size</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->group_size }}</h4>
-                            </div>
-                        </div>
                         @endif
-                        @if(!empty($getTourdetails->grade))
-                        <div class="col-md-6 transportation">
-                            <div class="icon">
-                                <i class="fa-solid fa-route"></i>
+                        @if (!empty($getTourdetails->transport))
+                            <div class="col-md-6 col-sm-12 transportation">
+                                <div class="icon">
+                                    <i class="fa fa-bus"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Transportation</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->transport }}</h4>
+                                </div>
                             </div>
-                            <div class="text">
-                                <h4 class="text-duration">Grade</h4>
-                                <h4 class="text-value"> {{ $getTourdetails->grade }}</h4>
+                        @endif
+                        @if (!empty($getTourdetails->start_end))
+                            <div class="col-md-6 col-sm-12 transportation">
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Start From-End To </h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->start_end }}</h4>
+                                </div>
                             </div>
-                        </div>
+                        @endif
+                        @if (!empty($getTourdetails->best_month))
+                            <div class="col-md-6 col-sm-12 transportation">
+                                <div class="icon">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Best Seasons</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->best_month }}</h4>
+                                </div>
+                            </div>
+                        @endif
+                        @if (!empty($getTourdetails->group_size))
+                            <div class="col-md-6 col-sm-12 transportation">
+                                <div class="icon">
+                                    <i class="fa-solid fa-people-group"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Group Size</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->group_size }}</h4>
+                                </div>
+                            </div>
+                        @endif
+                        @if (!empty($getTourdetails->grade))
+                            <div class="col-md-6 col-sm-12 transportation">
+                                <div class="icon">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="text-duration">Grade</h4>
+                                    <h4 class="text-value"> {{ $getTourdetails->grade }}</h4>
+                                </div>
+                            </div>
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4 reverse-second">
+                <div class="col-lg-4  reverse-second">
                     <div class="book-card" id="bookprice">
-                        <div class="card-body">
+                        <div class="card-body mb-2">
                             <h5 class="book-price-title">price per person</h5>
 
                             @if ($getcoupon)
@@ -260,7 +261,8 @@ function getThumbs($url = '')
                         </div>
                     </div>
                     <div class="offcanvas offcanvas-end book-card mt-2" data-bs-scroll="true" data-bs-backdrop="false"
-                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel"
+                        style="z-index:99999">
                         <div class="card-body">
                             <div class="offcanvas-header">
                                 <h5 class="inquiry-title">Send an inquiry</h5>
@@ -368,7 +370,7 @@ function getThumbs($url = '')
 
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-md-8 col-lg-8">
                 <div class="short-desc">
                     <p>{!! $getTourdetails->short_description !!}</p>
                 </div>
@@ -390,7 +392,7 @@ function getThumbs($url = '')
 
                                 <div class="col-md-12 d-flex image-flex">
 
-                                    <div class="col-md-5 ">
+                                    <div class="col-md-5 first-image">
                                         @if ($imagess)
                                             <a href="{{ $imagess[0] }}" data-lightbox="photos">
                                                 <img class="main-image" src="{{ $imagess[0] }}"
@@ -401,9 +403,9 @@ function getThumbs($url = '')
 
                                     <!-- Image -->
 
-                                    <div class="col-md-7">
+                                    <div class="col-md-7 otherrelated-image">
                                         @foreach ($imagess as $key => $rimages)
-                                            @if ($key > 0 && $key <5)
+                                            @if ($key > 0 && $key < 5)
                                                 @if ($rimages == !null)
                                                     <a href="{{ $rimages }}" data-lightbox="photos">
                                                         <img class="other-image" src="{{ $rimages }}"
@@ -422,7 +424,7 @@ function getThumbs($url = '')
                     @endif
 
                     @if ($getTourdetails->itinerary->count() > 0)
-                    <section class="mt-4" id="titinery">
+                        <section class="mt-4" id="titinery">
                             <h4 class="key-heading2"> <i class="fa-solid fa-chart-bar"></i> Itinerary</h4>
                             @foreach ($getTourdetails->itinerary as $itin)
                                 @if ($itin->day_title == !null)
@@ -436,7 +438,7 @@ function getThumbs($url = '')
                                     </div>
                                 @endif
                             @endforeach
-                    </section>
+                        </section>
                     @endif
 
                     @if ($getTourdetails->cost_include == 'null' || $getTourdetails->cost_exclude == '')
@@ -486,7 +488,7 @@ function getThumbs($url = '')
                             <div class="table-responsive-lg">
                                 <table class="table align-middle" style="width:100% !important">
                                     <thead class="thead-light">
-                                        <tr>
+                                        <tr class="text-center">
                                             <th scope="col">Start Date</th>
                                             <th scope="col">End Date</th>
                                             <th scope="col">Seats Available</th>
@@ -497,7 +499,7 @@ function getThumbs($url = '')
                                     <tbody>
                                         @foreach ($getTourdetails->dateprice as $dateprice)
                                             @if ($dateprice->start_date == !null)
-                                                <tr>
+                                                <tr class="text-center">
                                                     <td>{{ $dateprice->start_date }}</td>
                                                     <td>{{ $dateprice->end_date }}</td>
                                                     <td>{{ $dateprice->seats_available }}</td>
@@ -533,11 +535,15 @@ function getThumbs($url = '')
                                     <div class="equipment-desc">
                                         <div class="accordion" id="accordionFlushExample{{ $fqas->id }}">
                                             <div class="accordion-header day-title" id="headingOne{{ $fqas->id }}">
-                                                <h2 class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$fqas->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                <h2 class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#flush-collapseOne{{ $fqas->id }}"
+                                                    aria-expanded="false" aria-controls="flush-collapseOne">
                                                     <i class="fa-solid fa-hand-point-right"></i>Q.{{ $fqas->question }}
                                                 </h2>
                                             </div>
-                                            <div  id="flush-collapseOne{{$fqas->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample{{$fqas->id}}">
+                                            <div id="flush-collapseOne{{ $fqas->id }}"
+                                                class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                                                data-bs-parent="#accordionFlushExample{{ $fqas->id }}">
                                                 <div class="accordion-body">
                                                     {!! $fqas->answer !!}
                                                 </div>
@@ -550,14 +556,14 @@ function getThumbs($url = '')
                     @endif
                 </div>
             </div>
-            
+            <div class="share">
+                <p class="share-text">Share with others</p>
+                <div class="sharethis-inline-share-buttons"></div>
+
+            </div>
         </div>
     </div>
-    <div class="share">
 
-        <div class="sharethis-inline-share-buttons"></div>
-
-    </div>
 
 
     <!-- Special Places Section Start -->
@@ -566,9 +572,12 @@ function getThumbs($url = '')
         <div class="container network_wrapper col-sm  ">
             <div class=" country-card">
                 <div class="country-header">
-                    <div class="col-lg-6 countrytabmainheading layout">
-                        <h2 class="countrytab-title layout">Related Tour</h2>
-                        <div class="countrytab-box layout"></div>
+                    <div class="countrytabmainheading layout">
+                        <div>
+                            <h2 class="countrytab-title layout">Related Tour</h2>
+                            <div class="countrytab-box layout"></div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -583,22 +592,22 @@ function getThumbs($url = '')
                                             <div class="country-image layout">
                                                 <img src="{{ getThumbs($ctour->mainImage) }}"
                                                     alt="{{ $ctour->img_alt }}">
-                                                    @if(!empty($ctour->type))
+                                                @if (!empty($ctour->type))
                                                     <p class="otherhead-tag">
-                                                       @if($ctour->type=="group")
-                                                       <i class="fa-solid fa-people-group"></i>
-                                                       @elseif($ctour->type=='family')
-                                                       <i class="fa-solid fa-people-roof"></i>
-                                                       @elseif($ctour->type=='bestsell')
-                                                       <i class="fa-solid fa-award"></i>
-                                                       @elseif($ctour->type=='private')
-                                                       <i class="fa-solid fa-lock"></i>
-                                                       @else
-                                                       <i class="fa-solid fa-award"></i>
-                                                       @endif
-                                                       {{$ctour->type}}
-                                                   </p>
-                                                    @endif
+                                                        @if ($ctour->type == 'group')
+                                                            <i class="fa-solid fa-people-group"></i>
+                                                        @elseif($ctour->type == 'family')
+                                                            <i class="fa-solid fa-people-roof"></i>
+                                                        @elseif($ctour->type == 'bestsell')
+                                                            <i class="fa-solid fa-award"></i>
+                                                        @elseif($ctour->type == 'private')
+                                                            <i class="fa-solid fa-lock"></i>
+                                                        @else
+                                                            <i class="fa-solid fa-award"></i>
+                                                        @endif
+                                                        {{ $ctour->type }}
+                                                    </p>
+                                                @endif
                                             </div>
                                             <div class="mountainguide-block50 layout">
                                                 <div class="mountainguide-block51 layout">
@@ -624,7 +633,9 @@ function getThumbs($url = '')
                                                             </div>
                                                             @if ($getcoupon)
                                                                 <h4 class="mountainguide-highlights4 layout">
-                                                                    <span class="discount-price">${{ $ctour->main_price }}</span> ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                    <span
+                                                                        class="discount-price">${{ $ctour->main_price }}</span>
+                                                                    ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                                 </h4>
                                                             @else
                                                                 <h4 class="mountainguide-highlights4 layout">
@@ -660,10 +671,10 @@ function getThumbs($url = '')
 
     @if ($getTourdetails->blog->count() > 0)
         <section class="container-fluid blogs_section ">
-                <div class="populartrekheading mt-6 mb-4">
-                    <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
-                    <div class="chooseus-box layout"></div>
-                </div>
+            <div class="populartrekheading mt-6 mb-4">
+                <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
+                <div class="chooseus-box layout"></div>
+            </div>
 
             <div id="blog-slider" class="owl-carousel owl-theme">
                 @forelse($getTourdetails->blog as $blog)

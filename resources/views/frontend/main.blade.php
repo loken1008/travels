@@ -110,7 +110,6 @@
     <script
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" >
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js" ></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -154,11 +153,7 @@
             }
         @endif
     </script>
-    <script>
-        new CircleType(document.getElementById('demo1'))
-            .radius(340);
-    </script>
-
+   
 </body>
 
 </html>

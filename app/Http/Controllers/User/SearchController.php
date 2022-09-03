@@ -19,7 +19,7 @@ class SearchController extends Controller
         $search = $request->input('search');
         $searchtour = Tour::with('country','place','category')->where('tour_name', 'LIKE', "%{$search}%")
             ->orWhere('description', 'LIKE', "%{$search}%")->where('status', '=', '1')
-            ->paginate(9);
+            ->paginate(10);
         if ($searchtour) {
             return view('frontend.search.search')->with('searchtour', $searchtour);
         } else {
