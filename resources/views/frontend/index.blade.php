@@ -236,7 +236,7 @@ function getThumbs($url = '')
                                                     {{ Str::limit($selltour->tour_name, 22) }}
                                                 </h3>
                                                 <div class="mountainguide-paragraph-body layout">
-                                                    {{ Str::limit($selltour->short_description, 40, '.') }}
+                                                    {{ Str::limit($selltour->short_description, 55, '.') }}
                                                 </div>
                                             </div>
                                             <div class="mountainguide-block52 layout">
@@ -482,7 +482,7 @@ function getThumbs($url = '')
                                                     {{ Str::limit($tour->tour_name, 22) }}
                                                 </h3>
                                                 <div class="mountainguide-paragraph-body layout">
-                                                    {{ Str::limit($tour->short_description, 40, '.') }}
+                                                    {{ Str::limit($tour->short_description, 55, '.') }}
                                                 </div>
                                             </div>
                                             <div class="mountainguide-block52 layout">
