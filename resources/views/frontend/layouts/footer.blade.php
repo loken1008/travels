@@ -54,7 +54,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
             </div>
             <div class="row footer-second">
 
-                <div class="col-lg-4 col-md-6 footer-links">
+                <div class="col-lg-4 col-md-6 col-sm-4 footer-links">
                     <h4>Our Services</h4>
                     <div class="line"></div>
 
@@ -66,7 +66,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                     <li><a href="{{ route('customer.login') }}">Log in account</a></li>
 
                 </div>
-                <div class="col-lg-4 col-md-6 footer-links">
+                <div class="col-lg-4 col-sm-4 col-md-6 footer-links">
                     <h4>Useful Links</h4>
                     <div class="line"></div>
 
@@ -78,7 +78,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                     <li><a href="{{ route('contactus') }}">Contact</a></li>
 
                 </div>
-                <div class="col-lg-4 col-md-6 footer-contact">
+                <div class="col-lg-4 col-sm-4 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <div class="line"></div>
                     @if (!empty($getcontact->phone))
