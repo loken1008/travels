@@ -15,7 +15,7 @@
                                 <div class="row ">
                                     <div class="col-lg-12 first-travel">
                                         <div class="col-md-6 ">
-                                            <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}">
+                                            <img srcset="{{ $chooseus->image }}" alt="{{ $chooseus->title }}">
                                         </div>
                                         <div class="col-md-6 content large-content travel-details">
                                             <div class="travel-title">
@@ -54,7 +54,7 @@
                                             
                                         </div>
                                         <div class="col-md-6">
-                                            <img src="{{ $chooseus->image }}" alt="{{ $chooseus->title }}">
+                                            <img srcset="{{ $chooseus->image }}" alt="{{ $chooseus->title }}">
                                         </div>
                                     </div>
                                 </div>

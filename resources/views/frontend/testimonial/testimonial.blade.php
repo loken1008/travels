@@ -20,22 +20,22 @@
                                     <h5 class="testimonial-title"> <small>"{{ $testmonial->message_title }}</small>
                                     </h5>
                                     @if ($testmonial->type == 'tripadvisor')
-                                        <img src="{{ asset('tripadvisor.svg') }}" class="testimonial-icon"
+                                        <img srcset="{{ asset('tripadvisor.svg') }}" class="testimonial-icon"
                                             alt="testicon" title="{{ $testmonial->type }}">
                                     @elseif($testmonial->type == 'google')
-                                        <img src="{{ asset('google.webp') }}" class="testimonial-icon"
+                                        <img srcset="{{ asset('google.webp') }}" class="testimonial-icon"
                                             alt="testicon" title="{{ $testmonial->type }}">
                                     @elseif($testmonial->type == 'facebook')
-                                        <img src="{{ asset('facebook.svg') }}" class="testimonial-icon"
+                                        <img srcset="{{ asset('facebook.svg') }}" class="testimonial-icon"
                                             alt="testicon" title="{{ $testmonial->type }}">
                                     @else
-                                        <img src="{{ asset('mg.webp') }}" class="testimonial-icon" alt="testicon"
+                                        <img srcset="{{ asset('mg.webp') }}" class="testimonial-icon" alt="testicon"
                                             title="{{ $testmonial->type }}">
                                     @endif
                                 </div>
 
                                 <div class="testimonial-desc mt-4">
-                                    <img class="testimonial-image " src="{{ $testmonial->image }}" alt="image">
+                                    <img class="testimonial-image " srcset="{{ $testmonial->image }}" alt="image">
                                     <p class="testimonial-message ">
                                         {{ Str::limit($testmonial->message_description, 150) }}</p>
                                 </div>

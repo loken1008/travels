@@ -28,7 +28,7 @@ function getThumbs($url = '')
 
     <!-- Inner Section Start -->
     <section class="detailsbanner">
-        <img class="details-image" src="{{ $getTourdetails->mainImage }}" alt="{{ $getTourdetails->img_alt }}">
+        <img class="details-image" srcset="{{ $getTourdetails->mainImage }}" alt="{{ $getTourdetails->img_alt }}">
         <div class="container">
             <div class="detailssection-content">
                 <div class="detailsheading">
@@ -252,7 +252,7 @@ function getThumbs($url = '')
                             <div class="tripmap">
                                 <h5 class="inquiry-title">Trip Map</h5>
                                 <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
-                                        src="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}"></a>
+                                        srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}"></a>
                             </div>
                         @endif
                         <div class="quickinquery">
@@ -395,7 +395,7 @@ function getThumbs($url = '')
                                     <div class="col-md-5 first-image">
                                         @if ($imagess)
                                             <a href="{{ $imagess[0] }}" data-lightbox="photos">
-                                                <img class="main-image" src="{{ $imagess[0] }}"
+                                                <img class="main-image" srcset="{{ $imagess[0] }}"
                                                     alt="{{ $getTourdetails->img_alt }}" />
                                             </a>
                                         @endif
@@ -408,7 +408,7 @@ function getThumbs($url = '')
                                             @if ($key > 0 && $key < 5)
                                                 @if ($rimages == !null)
                                                     <a href="{{ $rimages }}" data-lightbox="photos">
-                                                        <img class="other-image" src="{{ $rimages }}"
+                                                        <img class="other-image" srcset="{{ $rimages }}"
                                                             alt="{{ $getTourdetails->img_alt }}" />
                                                     </a>
                                                 @endif
@@ -590,7 +590,7 @@ function getThumbs($url = '')
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $ctour->slug) }}">
                                         <div class="mountainguide-block49 layout">
                                             <div class="country-image layout">
-                                                <img src="{{ getThumbs($ctour->mainImage) }}"
+                                                <img srcset="{{ getThumbs($ctour->mainImage) }}"
                                                     alt="{{ $ctour->img_alt }}">
                                                 @if (!empty($ctour->type))
                                                     <p class="otherhead-tag">
@@ -681,7 +681,7 @@ function getThumbs($url = '')
                     <div class="blogs_item">
                         <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">
                             <div class="blogs_image">
-                                <img class="img-fluid" src="{{ getThumbs($blog->blog_image) }}"
+                                <img class="img-fluid" srcset="{{ getThumbs($blog->blog_image) }}"
                                     alt="{{ $blog->img_alt }}">
                             </div>
                             <div class="blogs_details">

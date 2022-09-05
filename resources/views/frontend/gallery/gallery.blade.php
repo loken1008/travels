@@ -19,7 +19,7 @@
             @foreach($images as $gal)
             <div class="col-md-4">
                 <div class="gallery-item">
-                      <a href="{{$gal}}" data-lightbox="photos"><img src="{{$gal}}" alt="mountainguideinfo-image"></a>
+                      <a href="{{$gal}}" data-lightbox="photos"><img srcset="{{$gal}}" alt="mountainguideinfo-image"></a>
                 </div>
             </div>
           @endforeach

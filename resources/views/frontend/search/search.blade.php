@@ -33,7 +33,7 @@
                             <a class="text-decoration-none" href="{{ route('tourdetails', $search->slug) }}">
                                 <div class="mountainguide-block49 layout">
                                     <div class="mountainguide-image8 layout">
-                                        <img class="best-sell-image" src="{{ getThumbs($search->mainImage) }}"
+                                        <img class="best-sell-image" srcset="{{ getThumbs($search->mainImage) }}"
                                             alt="{{ $search->img_alt }}">
                                     </div>
                                     <div class="mountainguide-block50 layout">

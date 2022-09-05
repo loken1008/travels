@@ -18,10 +18,10 @@
                         @if (empty(
                             Auth()->guard('customer')->user()->provider_id
                         ))
-                            <img src="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
+                            <img srcset="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
                                 style="height:370px;width:100% !important" alt="mountainguideinfo-profile">
                         @else
-                            <img src="{{ Auth()->guard('customer')->user()->image }}" style="height:370px" alt="mountainguideinfo-profile">
+                            <img srcset="{{ Auth()->guard('customer')->user()->image }}" style="height:370px" alt="mountainguideinfo-profile">
                         @endif
                         <!-- Upload image input-->
                         <div class="input-group mb-3 px-2 py-2  bg-white shadow-sm">
@@ -41,7 +41,7 @@
                             </form>
                         </div>
                     @else
-                        <img src="{{ asset('frontend/images/profil.png') }}">
+                        <img srcset="{{ asset('frontend/images/profil.png') }}">
 
 
                         <!-- Upload image input-->
