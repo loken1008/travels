@@ -479,6 +479,7 @@ function getThumbs($url = '')
                                             <div class="mountainguide-image8 layout">
                                                 <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
                                                     alt="{{ $tour->img_alt }}">
+                                                    <p class="head-tag">
                                                 @if ($tour->type == 'group')
                                                     <i class="fa-solid fa-people-group"></i> Group
                                                 @elseif($tour->type == 'family')
@@ -491,6 +492,7 @@ function getThumbs($url = '')
                                                     <i class="fa-solid fa-award"></i> Trip Of The Month
                                                 @else
                                                 @endif
+                                            </p>
                                             </div>
                                             <div class="mountainguide-block50 layout">
                                                 <div class="mountainguide-block51 layout">
