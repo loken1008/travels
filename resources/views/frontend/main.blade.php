@@ -110,6 +110,7 @@
     <script
         src="https://platform-api.sharethis.com/js/sharethis.js#property=62ac9ea93538ec001973353d&product=inline-share-buttons" >
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/1.0.9/browser-image-compression.js" integrity="sha512-8ZZABMxONy31dC8IlKGRbB3Dk14Ghapvgav9yvX1hXXwoSihen1WdHf6V9jDxeJNvobkMxht2iPUrvkgG1jJXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 

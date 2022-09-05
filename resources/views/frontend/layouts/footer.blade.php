@@ -25,12 +25,12 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
             <div class="footer-first-section">
                 <div class="footer-logo">
                     @if (!empty($sitesetting->footer_logo))
-                        <img src="{{ $sitesetting->footer_logo }}" alt="mountainguidelogo">
+                        <img srcset="{{ $sitesetting->footer_logo }}" alt="mountainguidelogo">
                         @if(!empty($getcontact->serve_since))
                         <p class="text-white">{{$getcontact->serve_since}}</p>
                         @endif
                     @else
-                        <img src="{{ asset('frontend/logo.png') }}" alt="mountainguidelogo">
+                        <img srcset="{{ asset('frontend/logo.png') }}" alt="mountainguidelogo">
                     @endif
 
                 </div>
@@ -114,7 +114,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                         <div class="d-flex associated-image">
                             @foreach ($affilated as $affilate)
                                 @if ($affilate->type == 'affilated-member')
-                                    <img src="{{ $affilate->image }}" alt="associated">
+                                    <img srcset="{{ $affilate->image }}" alt="associated">
                                 @endif
                             @endforeach
                         </div>
@@ -125,7 +125,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                         <div class="d-flex pay-image">
                             @foreach ($affilated as $affilate)
                                 @if ($affilate->type == 'pay-method')
-                                    <img src="{{ $affilate->image }}" alt="pay">
+                                    <img srcset="{{ $affilate->image }}" alt="pay">
                                 @endif
                             @endforeach
                         </div>
