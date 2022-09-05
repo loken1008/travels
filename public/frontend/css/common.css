@@ -191,6 +191,7 @@ button {
 *::after {
   box-sizing: border-box;
 }
+
 @media screen and (min-width: 1394px) {
   .mountainguide-block16.layout {
     width: 100% !important;
@@ -207,7 +208,7 @@ button {
     padding: 0px 108px !important;
   }
   .mountainguide-block48.layout1 {
-    width: 410px !important;
+    width:100% !important;
   }
   .mountainguide-block74.layout {
     display: flex !important;
@@ -860,7 +861,6 @@ button {
     font-size: 18px;
   }
   .top-header {
-    justify-content: space-evenly !important;
     padding: 10px 0 0 0 !important;
   }
   .aboutus-img {
@@ -926,9 +926,7 @@ margin-top:0px;
     width: 100% !important;
     margin: 0px !important;
   }
-  .footer-first-section {
-    flex-direction: column !important;
-  }
+ 
   .footer-associated {
     flex-direction: column !important;
   }
@@ -1049,10 +1047,19 @@ margin-top:0px;
   .mountainguide-block23.layout {
     left: 0px;
   }
+  .footer-first-section{
+    align-items: flex-start;
+  }
+  .mountainguide-block23.layout {
+    left: -25px;
+  }
 }
 @media screen and (max-width: 462px) {
   .detailssection-content {
     top: 270px !important;
+  }
+  .footer-first-section {
+    flex-direction: column !important;
   }
   .country-main {
     flex-wrap: wrap !important;
@@ -1087,6 +1094,13 @@ margin-top:0px;
     flex-direction: column !important;
     margin-left: 0px !important;
   }
+  .social-link{
+    padding-left: 0px !important;
+  }
+  .mountainguide-block16.layout{
+    width:100%;
+  }
+  
  
 }
 /* topheader */
@@ -1144,6 +1158,9 @@ margin-top:0px;
   }
   .mountainguide-icon1.layout{
     margin:0px;
+  }
+  #frames{
+    z-index: 1;
   }
 }
 @media screen and (max-width: 298px) {

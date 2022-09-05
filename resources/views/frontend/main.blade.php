@@ -5,9 +5,9 @@
     <!-- Required meta tags -->
     <title>MountainGuideInfo|@yield('title')</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="height=device-height,width=device-width">
-    <meta name="viewport"
-        content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width,height=device-height">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width,height=device-height">
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">

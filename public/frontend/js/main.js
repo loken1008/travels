@@ -43,7 +43,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#best-sell-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 40,
         nav: true,
         dots: false,
         autoplay: true,
@@ -56,10 +56,10 @@ $(document).ready(function() {
                 items: 1
             },
             600: {
-                items: 2
+                items: 1
             },
             700: {
-                items: 2
+                items: 1
             },
             800: {
                 items: 2
@@ -85,7 +85,7 @@ function onChangedCallback(event) {
 $(document).ready(function() {
     $('#challenge-peak-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin:40,
         nav: true,
         dots: false,
         autoplay: true,
@@ -97,7 +97,7 @@ $(document).ready(function() {
                 items: 1
             },
             700: {
-                items: 2
+                items: 1
             },
             800: {
                 items: 2
@@ -171,7 +171,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#blog-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 20,
         nav: true,
         autoplay: true,
         responsiveClass: true,
