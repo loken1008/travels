@@ -148,7 +148,7 @@
                 @if (!empty($sitesetting->logo))
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <div class="mountainguide-image2 layout">
-                            <img src="{{ $sitesetting->logo }}" alt="mountainguidelogo">
+                            <img srcset="{{ $sitesetting->logo }}" alt="mountainguidelogo">
                         </div>
                     </a>
                 @endif
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                             @if(!empty($getcontact->profile_image))
-                            <img class="profile-image" src="{{ asset($getcontact->profile_image) }}" alt="profile">
+                            <img class="profile-image" srcset="{{ asset($getcontact->profile_image) }}" alt="profile">
                               @endif
                     </div>
                     <div class="mountainguide-block17-spacer"></div>
