@@ -17,7 +17,6 @@
 .bestsell-content {
   position: absolute;
   top: 48px;
-  width: 100%;
   padding: 65px 180px;
 }
 .bestselldetailsheading {
@@ -44,8 +43,7 @@
 .trip-title {
   text-align: center;
   font-size: 50px;
-  font-family: system-ui;
-  font-style: oblique;
+  font-family: "Poppins";
   color: white;
   font-weight: bold;
   text-shadow: 1px 6px #131312;
@@ -151,6 +149,7 @@
   height: 45px;
   border-radius: 100%;
   margin-right:20px;
+  margin-top:2px;
 }
 .desktop-view :hover .dropdown-menu {
   display: block !important;
@@ -601,7 +600,7 @@
 }
 .mountainguide-text-body1.layout {
   position: relative;
-  margin: 5px 0px 0px 62px;
+  margin: 5px 0px 0px 38px;
 }
 .mountainguide-block19 {
   display: flex;
@@ -777,7 +776,7 @@
 }
 .mountainguide-highlights1.layout {
   position: relative;
-  margin: 11px 0px 0px;
+  margin:0px 0px 0px;
 }
 .mountainguide-block28 {
   background-color: white;
@@ -928,8 +927,8 @@
 }
 .country-nav {
   display: flex;
-  justify-content: space-evenly;
-  margin: 60px 0 60px 0;
+  justify-content: space-between;
+  margin: 60px 28px;
 }
 .country-card {
   background: #fafcff !important;
@@ -1208,12 +1207,14 @@
 .owl-theme .owl-nav {
   margin-top: 0px !important;
 }
+
 .mountainguide-block48 {
   width:100%;
   background-color: white;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.0470588235);
   border-radius: 3px 3px 3px 3px;
 }
+
 #best-sell-slider .owl-nav .owl-prev,#best-sell-slider .owl-nav .owl-next,#challenge-peak-slider .owl-nav .owl-prev,#challenge-peak-slider .owl-nav .owl-next{
   color: white !important;
 }
@@ -1235,6 +1236,7 @@
   position: relative;
   flex-grow: 1;
   margin: 15px 15px 20px;
+  padding-top:15px;
 }
 .country-image {
   border-radius: 3px 3px 3px 3px;
@@ -1525,7 +1527,7 @@
 .explore-us {
   display: flex;
   align-items: center;
-  padding: 30px 142px;
+  padding: 30px 20px;
   /* background: #fafcff !important; */
   margin-top: 12px;
 }
@@ -1657,12 +1659,12 @@
 color: #0e4e93;
 font-weight: bold;
 }
-
-.mountainguide-block70.layout {
+.best-sell-section{
   background-color: #0f4e93;
-  position: relative;
-  margin: 12px 0px 0px;
-  padding: 0px 128px;
+
+}
+.mountainguide-block70.layout {
+  padding: 0px 0px;
 }
 .mountainguide-block71 {
   display: flex;
@@ -1985,6 +1987,7 @@ font-weight: bold;
   font-size: 16px;
   line-height:30px;
   color: #999999 !important;
+  margin-top:15px;
 }
 .mountainguide-subtitle4.layout {
   position: relative;
@@ -2270,7 +2273,6 @@ font-weight: bold;
 }
 .populartrek_details .duration {
   height: 22px;
-
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -3125,9 +3127,7 @@ font-weight: bold;
 #blog-slider .owl-nav {
   display: block !important;
 }
-#blog-slider {
-  padding: 9px 116px 5px 116px;
-}
+
 
 .blog-container {
   margin-right: 195px !important;
@@ -3574,6 +3574,7 @@ font-weight: bold;
 .transportation {
   display: flex;
   margin-top: 14px;
+  margin-left: 10px;
 }
 .icon i {
   font-size: 30px;

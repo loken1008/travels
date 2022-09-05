@@ -112,11 +112,11 @@ class SiteSettingController extends Controller
             'mobile'=>'required',
             'serve_since'=>'required',
             'regd_no'=>'required',
-            'profile_image'=>'required',
+            // 'profile_image'=>'required',
             'name'=>'required'
         ]);
         $updatecontact=Contact::findOrFail($id);
-        $updatecontact->profile_image=$request->profile_image?$request->profile_image:$updatecontact->profile_image;
+        $updatecontact->profile_image=$request->profile_image?? $updatecontact->profile_image=$updatecontact->profile_image;
         $updatecontact->name=$request->name;
         $updatecontact->serve_since=$request->serve_since;
         $updatecontact->regd_no=$request->regd_no;

@@ -191,12 +191,7 @@ button {
 *::after {
   box-sizing: border-box;
 }
-@media (min-width:4103px) and (max-width:5464px)
-{
-  #challenge-peak-slider{
-    padding: 0px 2200px !important;
-  }
-}
+
 @media screen and (min-width: 1394px) {
   .mountainguide-block16.layout {
     width: 100% !important;
@@ -1055,6 +1050,9 @@ margin-top:0px;
   .footer-first-section{
     align-items: flex-start;
   }
+  .mountainguide-block23.layout {
+    left: -25px;
+  }
 }
 @media screen and (max-width: 462px) {
   .detailssection-content {
@@ -1099,6 +1097,10 @@ margin-top:0px;
   .social-link{
     padding-left: 0px !important;
   }
+  .mountainguide-block16.layout{
+    width:100%;
+  }
+  
  
 }
 /* topheader */
@@ -1156,6 +1158,9 @@ margin-top:0px;
   }
   .mountainguide-icon1.layout{
     margin:0px;
+  }
+  #frames{
+    z-index: 1;
   }
 }
 @media screen and (max-width: 298px) {
