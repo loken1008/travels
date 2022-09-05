@@ -16,7 +16,7 @@
 
     <!-- Inner Section Start -->
     <section class="blogs-details-image">
-        <img src="{{ $getblogdetails->blog_image }}" alt="{{ $getblogdetails->img_alt }}">
+        <img srcset="{{ $getblogdetails->blog_image }}" alt="{{ $getblogdetails->img_alt }}">
     </section>
     <!-- Inner Section End -->
 

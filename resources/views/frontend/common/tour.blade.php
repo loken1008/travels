@@ -37,7 +37,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                             <a class="text-decoration-none" href="{{ route('tourdetails', $ctour->slug) }}">
                                 <div class="mountainguide-block49 layout">
                                     <div class="country-image layout">
-                                        <img src="{{ getThumbs($ctour->mainImage) }}"
+                                        <img srcset="{{ getThumbs($ctour->mainImage) }}"
                                             alt="{{ $ctour->img_alt }}">
                                             @if(!empty($ctour->type))
                                             <p class="otherhead-tag">

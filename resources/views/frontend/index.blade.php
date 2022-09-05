@@ -78,7 +78,7 @@ function getThumbs($url = '')
                                                             href="{{ route('tourdetails', $ctour->slug) }}">
                                                             <div class="mountainguide-block49 layout">
                                                                 <div class="country-image layout">
-                                                                    <img src="{{ getThumbs($ctour->mainImage) }}"
+                                                                    <img srcset="{{ getThumbs($ctour->mainImage) }}"
                                                                         alt="{{ $ctour->img_alt }}">
                                                                     @if (!empty($ctour->type))
                                                                         <p class="otherhead-tag">
@@ -174,11 +174,11 @@ function getThumbs($url = '')
             <div class="mountainguide-block65-item">
                 <div class="mountainguide-block66 layout">
                     <div class="mountainguide-image10 layout">
-                        <img class="explore-main-image" src="{{ getThumbs($homepage->main_image) }}"
+                        <img class="explore-main-image" srcset="{{ getThumbs($homepage->main_image) }}"
                             alt="{{ $homepage->img_alt }}">
                     </div>
                     <div class="mountainguide-image11 layout">
-                        <img class="explore-image" src="{{ getThumbs($homepage->image) }}" alt="{{ $homepage->img_alt }}">
+                        <img class="explore-image" srcset="{{ getThumbs($homepage->image) }}" alt="{{ $homepage->img_alt }}">
 
                     </div>
                 </div>
@@ -224,7 +224,7 @@ function getThumbs($url = '')
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $selltour->slug) }}">
                                         <div class="mountainguide-block49 layout">
                                             <div class="mountainguide-image8 layout">
-                                                <img class="best-sell-image" src="{{ getThumbs($selltour->mainImage) }}"
+                                                <img class="best-sell-image" srcset="{{ getThumbs($selltour->mainImage) }}"
                                                     alt="{{ $selltour->img_alt }}">
                                                 <p class="head-tag"><i class="fa-solid fa-award"></i> Best Seller</p>
                                             </div>
@@ -288,10 +288,10 @@ function getThumbs($url = '')
         <section class="best-sell-month">
 
             <div class="best-tag">
-                <img src="{{ asset($bestsell->mainImage) }}" alt="{{ $bestsell->img_alt }}">
+                <img srcset="{{ asset($bestsell->mainImage) }}" alt="{{ $bestsell->img_alt }}">
                 <p class="month-head-tag"><i class="fa-solid fa-award"></i> Best Seller</p>
             </div>
-            <div class="container">
+            <div class="container best-month-container">
                 <div class="bestsell-content">
                     <h3 class="trip-title" id="demo1">Trip Of The Month</h3>
                     <div class="trip-div">
@@ -365,7 +365,7 @@ function getThumbs($url = '')
                 <div class="mountainguide-block87-item">
                     <div class="mountainguide-block88 layout">
                         <div class="mountainguide-icon3 layout">
-                            <img class="chooseimage" src="{{ getThumbs($choose->image) }}" alt="{{ $choose->title }}">
+                            <img class="chooseimage" srcset="{{ getThumbs($choose->image) }}" alt="{{ $choose->title }}">
                         </div>
                         <div class="mountainguide-block89 layout">
                             <h3 class="chooseus-title"><a href="{{ route('travelwithus') }}"
@@ -400,7 +400,7 @@ function getThumbs($url = '')
                                 <div class="populartrek_item">
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
                                         <div class="populartrek_image">
-                                            <img class="img-fluid" src="{{ getThumbs($tour->mainImage) }}"
+                                            <img class="img-fluid" srcset="{{ getThumbs($tour->mainImage) }}"
                                                 alt="{{ $tour->img_alt }}">
                                             @if (!empty($tour->type))
                                                 <p class="popularhead-tag">
@@ -477,7 +477,7 @@ function getThumbs($url = '')
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
                                         <div class="mountainguide-block49 layout">
                                             <div class="mountainguide-image8 layout">
-                                                <img class="best-sell-image" src="{{ getThumbs($tour->mainImage) }}"
+                                                <img class="best-sell-image" srcset="{{ getThumbs($tour->mainImage) }}"
                                                     alt="{{ $tour->img_alt }}">
                                                     <p class="head-tag">
                                                 @if ($tour->type == 'group')
@@ -566,7 +566,7 @@ function getThumbs($url = '')
                     <div class="blogs_item">
                         <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">
                             <div class="blogs_image">
-                                <img class="img-fluid" src="{{ getThumbs($blog->blog_image) }}"
+                                <img class="img-fluid" srcset="{{ getThumbs($blog->blog_image) }}"
                                     alt="{{ $blog->img_alt }}">
                             </div>
                             <div class="blogs_details">

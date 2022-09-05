@@ -12,7 +12,7 @@
                        @if(!empty($tour->mainImage))
                         <div class="book-image">
                             <div class="onlineimage-section">
-                                <img src="{{ $tour->mainImage }}" alt="{{$tour->tour_name}}">
+                                <img srcset="{{ $tour->mainImage }}" alt="{{$tour->tour_name}}">
                                 <div class="booktourdetails">
                                     <h4 class="booktourtitle">{{ $tour->tour_name }}</h4>
                                     <p class="bookdate">Duration: <span>{{ $tour->tour_days }}</span></p>

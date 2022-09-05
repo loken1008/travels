@@ -17,7 +17,7 @@
             @foreach($allgallery as $gal)
             <div class="col-md-4">
                 <div class="gallery-item">
-                      <a href="{{$gal->cover_image}}" data-lightbox="photos"><img src="{{$gal->cover_image}}" alt="mountainguideinfo-image"></a>
+                      <a href="{{$gal->cover_image}}" data-lightbox="photos"><img srcset="{{$gal->cover_image}}" alt="mountainguideinfo-image"></a>
                 </div>
                     <div class="view-gallery mr-1">
                         <a href="{{route('gallery.details',Str::slug($gal->gallery_title))}}" class="text-decoration-none text-capitalize">

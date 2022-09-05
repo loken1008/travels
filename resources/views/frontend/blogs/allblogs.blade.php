@@ -31,7 +31,7 @@ function getblogThumbs($url = '')
                     <div class="allblogs_item">
                         <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">
                             <div class="allblogs_image">
-                                <img class="img-fluid" src="{{ getblogThumbs($blog->blog_image) }}"
+                                <img class="img-fluid" srcset="{{ getblogThumbs($blog->blog_image) }}"
                                     alt="{{ $blog->img_alt }}">
                             </div>
                             <div class="blogs_details">

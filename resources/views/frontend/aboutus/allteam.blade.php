@@ -17,7 +17,7 @@
                     <div class="row ">
                         <div class="col-md-12 allteam-first">
                             <div class="col-md-6">
-                                <img class="team-image" src="{{ $teamdetails->image }}" alt="{{ $teamdetails->name }}" >
+                                <img class="team-image" srcset="{{ $teamdetails->image }}" alt="{{ $teamdetails->name }}" >
                             </div>
                                     <div class="col-md-6 team-content">
                                             <h6 class="team-post" > {{ $teamdetails->post }}
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img class="team-image" src="{{ $teamdetails->image }}" alt="{{ $teamdetails->name }}" >
+                                    <img class="team-image" srcset="{{ $teamdetails->image }}" alt="{{ $teamdetails->name }}" >
                                 </div>
                     </div>
                     

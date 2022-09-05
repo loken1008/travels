@@ -11,7 +11,6 @@
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
-
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title')" />
     <meta property="og:description" content="@yield('og_description')" />
@@ -56,6 +55,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link el="preload" as="font" type="font/woff2" crossorigin  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/webfonts/fa-solid-900.woff2">
     <link rel="preload" as="style" onload="this.rel='stylesheet'"
         href="{{ asset('frontend/css/mountainguide.css') }}" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ asset('frontend/css/common.css') }}" />
@@ -88,7 +88,7 @@
         @include('frontend.layouts.footer')
         <!--endfooter-->
     </div>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" ></script>
+    <script  crossorigin="anonymous" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" ></script>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

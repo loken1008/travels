@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         @if(isset($introduction->aboutus_image))
-                        <img class="aboutus-img" src="{{ $introduction->aboutus_image }}" alt="{{ $introduction->aboutus_title }}">
+                        <img class="aboutus-img" srcset="{{ $introduction->aboutus_image }}" alt="{{ $introduction->aboutus_title }}">
                         @endif
                         @if(isset($introduction->aboutus_description))
                         <p >{!! $introduction->aboutus_description !!}</p>
