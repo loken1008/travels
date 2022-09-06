@@ -152,15 +152,12 @@
                         </div>
                     </a>
                 @endif
-                <div class="search">
-                    <form role="search" class="search-box " method="post" action="{{ route('search') }}">
+                    <form role="search" class="search search-box " method="post" action="{{ route('search') }}">
                         @csrf
                         <input type="text" class="form-control" name="search" placeholder="Search...">
                         <button class="search-icon"> <i class="fa fa-search"></i></button>
                     </form>
-                </div>
             </div>
-            <div class=" mountainguide-block16-item1">
                 <div class="mountainguide-block17 layout">
                     <div class="mountainguide-block17-item">
                         <div class="mountainguide-block18 layout">
@@ -213,7 +210,6 @@
                             </ul>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

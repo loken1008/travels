@@ -526,6 +526,12 @@ button {
 #bookprice{
   margin-left:0px;
 }
+.mountainguide-block16.layout{
+  width:100%;
+}
+.mountainguide-block23.layout{
+  left:0px;
+}
 }
 @media screen and (min-width: 992px) {
   .mobile-view1 {
@@ -920,6 +926,9 @@ margin-top:0px;
     justify-content: center;
     margin: 10px 0px;
   }
+  .mountainguide-block23.layout {
+    left:0px;
+  }
 }
 @media screen and (max-width: 676px) {
   .country-main.layout {
@@ -1010,7 +1019,7 @@ margin-top:0px;
     right: -19px !important;
   }
   .mountainguide-block66.layout {
-    right: 130px !important;
+    right: 0px !important;
   }
 
   .make-own-trip-subtitle1.layout3 {
@@ -1051,7 +1060,10 @@ margin-top:0px;
     align-items: flex-start;
   }
   .mountainguide-block23.layout {
-    left: -25px;
+    left: -17px;
+  }
+  .mountainguide-block17.layout{
+    margin:6px 0px 0px 0px;
   }
 }
 @media screen and (max-width: 462px) {
@@ -1067,9 +1079,7 @@ margin-top:0px;
   .explore-us {
     padding: 15px 44px !important;
   }
-  .mountainguide-block66.layout {
-    right: 27px !important;
-  }
+  
   .explore-image {
     width: 124px !important;
     height: 184px !important;
@@ -1082,9 +1092,6 @@ margin-top:0px;
     top: 85px !important;
     height: 233px !important;
     left: 90px !important;
-  }
-  .mountainguide-block65-item1 {
-    display: block !important;
   }
   .top-header {
     flex-direction: column !important;

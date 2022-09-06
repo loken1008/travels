@@ -573,19 +573,14 @@
   width: 111px;
   min-width: 111px;
 }
-.mountainguide-block16-item1 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  /* flex: 0 1 1021px; */
-}
+
 .mountainguide-block17 {
   display: flex;
 }
 .mountainguide-block17.layout {
   position: relative;
   flex-grow: 1;
-  margin: 8px 0px;
+  margin: 6px 0px 0px 105px;
 }
 .mountainguide-block17-item {
   display: flex;
@@ -1610,15 +1605,7 @@
   position: relative;
   flex: 0 1 603px;
 }
-.mountainguide-block67 {
-  display: flex;
-  flex-direction: column;
-}
-.mountainguide-block67.layout {
-  position: relative;
-  flex-grow: 1;
-  margin: 7px 0px 6px;
-}
+
 .mountainguide-block68 {
   display: flex;
   flex-direction: column;
@@ -2340,7 +2327,7 @@ font-weight: bold;
   justify-content: space-between;
 }
 #popular-trek-slider .owl-dots {
-  margin-top: 40px;
+  margin:10px 0px;
 }
 #testimonial-slider .owl-dots {
   margin-top: 50px;
