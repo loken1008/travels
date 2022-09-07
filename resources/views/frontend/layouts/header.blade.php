@@ -1,4 +1,3 @@
-
 <div class=" mountainguide-block2 layout">
     <nav class="navbar navbar-expand-lg mountainguide-block3 layout">
         <div class="container nav-container-large">
@@ -9,19 +8,19 @@
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0 navbar">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside">Trekking</a>
                         <ul class="container-fluid dropdown-menu trekking-subcategory ">
-                            <div class="row d-flex trek-flex">
+                            <div class="d-lg-none row d-flex trek-flex">
                                 @foreach ($category as $cat)
                                     @if ($cat->category_type == 'trekking')
                                         @foreach ($subcategory as $subcat)
                                             @if ($subcat->category_id == $cat->id)
-                                                <div class=" col-lg-3 col-sm-6">
-                                                    <a href={{ route('tripdetails', $subcat->sub_category_slug) }}
+                                                <div class=" col-md-12 col-sm-12">
+                                                    <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
                                                         class="treksubcategory">{{ $subcat->sub_category_name }}</a>
                                                     <span data-toggle="collapse"
                                                         href="#collapseExample{{ $subcat->id }}"
@@ -42,8 +41,52 @@
                                         @endforeach
                                     @endif
                                 @endforeach
+
                             </div>
+                            <div class="megamenutab d-lg-flex d-none">
+                                <div class="col-lg-3 mega-tab">
+                                    @foreach ($category as $cat)
+                                        @if ($cat->category_type == 'trekking')
+                                            @foreach ($subcategory as $subcat)
+                                                @if ($subcat->category_id == $cat->id)
+                                                    <a class="tablinks "
+                                                        href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
+                                                        onmouseover="openCity(event, '{{ $subcat->sub_category_name }}')">{{ $subcat->sub_category_name }}
+                                                        <i class="fa-solid fa-angle-right mega-icon"></i></a>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <div class="col-lg-9 tab-content">
+                                    @foreach ($category as $cat)
+                                        @if ($cat->category_type == 'trekking')
+                                            @foreach ($subcategory as $subcat)
+                                                @if ($subcat->category_id == $cat->id)
+                                                    <div id="{{ $subcat->sub_category_name }}" class="tabcontent">
+                                                        @foreach ($subcat->tour as $tours)
+                                                            @if ($tours->status == '1')
+                                                                <ul>
+                                                                    <li >
+                                                                        <a
+                                                                            href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
+
+                                                                    </li>
+                                                                </ul>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+
                         </ul>
+
                     </li>
                     @foreach ($category as $cat)
                         @if ($cat->category_type != 'trekking')
@@ -70,8 +113,8 @@
                                                     id="dropdownMenuButton2">{{ $subcat->sub_category_name }}
                                                     @foreach ($subcat->tour->take(1) as $t)
                                                         @if ($subcat->id == $t->subcategory_id)
-                                                                <i class="fa fas fa-angle-right mt-1"
-                                                                    style="float:right"></i>
+                                                            <i class="fa fas fa-angle-right mt-1"
+                                                                style="float:right"></i>
                                                         @endif
                                                     @endforeach
                                                 </a>
@@ -86,22 +129,22 @@
                                                     @endforeach
                                                 </ul>
                                                 <!-- for mobile!-->
-                                                
+
                                                 <div class="mobile-view">
                                                     <a class=""
                                                         href="{{ route('tripdetails', $subcat->sub_category_slug) }}">{{ $subcat->sub_category_name }}
-                                                    </a>             
+                                                    </a>
                                                 </div>
                                                 <div class="mobile-view1 dropdown-item " data-bs-toggle="dropdown"
-                                                aria-expanded="false" id="dropdownMenuButton1">
+                                                    aria-expanded="false" id="dropdownMenuButton1">
 
-                                                @foreach ($subcat->tour->take(1) as $t)
-                                                    @if ($subcat->id == $t->subcategory_id)
+                                                    @foreach ($subcat->tour->take(1) as $t)
+                                                        @if ($subcat->id == $t->subcategory_id)
                                                             <i class="fa fas fa-angle-right mt-1"
                                                                 style="float:right"></i>
-                                                    @endif
-                                                @endforeach
-                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
                                                 {{-- <ul class="dropdown-menu  mobile-view"
                                                 aria-labelledby="dropdownMenuButton2">
                                                 @foreach ($subcat->tour as $tour)
@@ -130,8 +173,10 @@
                             <li><a class="dropdown-item" href="{{ route('travelwithus') }}">Why Travels With Us</a>
                             </li>
                             <li><a class="dropdown-item" href="{{ route('paymentmethod') }}">Payment Method</a></li>
-                            <li><a class="dropdown-item" href="{{ route('privacypolicy') }}">Privacy Policies</a></li>
-                            <li><a class="dropdown-item" href="{{ route('termsconditions') }}">Terms and Condition</a>
+                            <li><a class="dropdown-item" href="{{ route('privacypolicy') }}">Privacy Policies</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('termsconditions') }}">Terms and
+                                    Condition</a>
                             </li>
 
                         </ul>
@@ -152,64 +197,67 @@
                         </div>
                     </a>
                 @endif
-                    <form role="search" class="search search-box " method="post" action="{{ route('search') }}">
-                        @csrf
-                        <input type="text" class="form-control" name="search" placeholder="Search...">
-                        <button class="search-icon"> <i class="fa fa-search"></i></button>
-                    </form>
+                <form role="search" class="search search-box " method="post" action="{{ route('search') }}">
+                    @csrf
+                    <input type="text" class="form-control" name="search" placeholder="Search...">
+                    <button class="search-icon"> <i class="fa fa-search"></i></button>
+                </form>
             </div>
-                <div class="mountainguide-block17 layout">
-                    <div class="mountainguide-block17-item">
-                        <div class="mountainguide-block18 layout">
-                            <div class="mountainguide-text-body1 layout text-uppercase">Contact @if(!empty($getcontact->name))({{$getcontact->name}})@endif
-                               
-                            </div>
-                            <div class="mountainguide-block19 layout">
-                                            @if (!empty($sitesetting->google))
-                                                <a href="{{ $sitesetting->google }}">
-                                                    <i class="fa fa-whatsapp whatsapp"></i>
-                                                </a>
-                                            @endif
-                                            @if (!empty($sitesetting->linkedin))
-                                                <a href="{{ $sitesetting->linkedin }}">
+            <div class="mountainguide-block17 layout">
+                <div class="mountainguide-block17-item">
+                    <div class="mountainguide-block18 layout">
+                        <div class="mountainguide-text-body1 layout text-uppercase">Contact @if (!empty($getcontact->name))
+                                ({{ $getcontact->name }})
+                            @endif
 
-                                                    <i class="fa-brands fa-viber viber"></i>
-                                                </a>
-                                            @endif
-                                @if (!empty($getcontact->phone))
-                                    <a href="tel:{{ $getcontact->mobile }}" class="mountainguide-highlights layout">{{ $getcontact->mobile }}</a>
-                                @endif
-                            </div>
                         </div>
-                            @if(!empty($getcontact->profile_image))
-                            <img class="profile-image" srcset="{{ asset($getcontact->profile_image) }}" alt="profile">
-                              @endif
-                    </div>
-                    <div class="mountainguide-block17-spacer"></div>
-                    <div class="mountainguide-block17-item1 dropdown">
-                        <div class="mountainguide-block23 layout ">
-                            <a href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div style="--src:url(/assetss/06384088d7834281ad51b73c8b2cd9d5.png)"
-                                    class="mountainguide-icon1 layout dropdown" data-toggle="dropdown"></div>
-                            </a>
-                            <ul class="dropdown-menu logindropdown" aria-labelledby="dropdownMenuLink">
-                                @if (!empty(Auth()->guard('customer')->user()
-                                ))
-                                    <li class="dropdown-item"><a
-                                            href="#">{{ Auth()->guard('customer')->user()->first_name }}</a>
-                                    </li>
-                                    <li><a class="dropdown-item"
-                                            href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a>
-                                    </li>
-                                @else
-                                    <li><a class="dropdown-item" href="{{ route('customer.login') }}">Login</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('customer.register') }}">Register</a>
-                                    </li>
-                                @endif
-                            </ul>
+                        <div class="mountainguide-block19 layout">
+                            @if (!empty($sitesetting->google))
+                                <a href="{{ $sitesetting->google }}">
+                                    <i class="fa fa-whatsapp whatsapp"></i>
+                                </a>
+                            @endif
+                            @if (!empty($sitesetting->linkedin))
+                                <a href="{{ $sitesetting->linkedin }}">
+
+                                    <i class="fa-brands fa-viber viber"></i>
+                                </a>
+                            @endif
+                            @if (!empty($getcontact->phone))
+                                <a href="tel:{{ $getcontact->mobile }}"
+                                    class="mountainguide-highlights layout">{{ $getcontact->mobile }}</a>
+                            @endif
                         </div>
                     </div>
+                    @if (!empty($getcontact->profile_image))
+                        <img class="profile-image" srcset="{{ asset($getcontact->profile_image) }}" alt="profile">
+                    @endif
+                </div>
+                <div class="mountainguide-block17-spacer"></div>
+                <div class="mountainguide-block17-item1 dropdown">
+                    <div class="mountainguide-block23 layout ">
+                        <a href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div style="--src:url(/assetss/06384088d7834281ad51b73c8b2cd9d5.png)"
+                                class="mountainguide-icon1 layout dropdown" data-toggle="dropdown"></div>
+                        </a>
+                        <ul class="dropdown-menu logindropdown" aria-labelledby="dropdownMenuLink">
+                            @if (!empty(Auth()->guard('customer')->user()
+                            ))
+                                <li class="dropdown-item"><a
+                                        href="#">{{ Auth()->guard('customer')->user()->first_name }}</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a>
+                                </li>
+                            @else
+                                <li><a class="dropdown-item" href="{{ route('customer.login') }}">Login</a></li>
+                                <li><a class="dropdown-item" href="{{ route('customer.register') }}">Register</a>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

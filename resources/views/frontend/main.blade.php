@@ -51,8 +51,7 @@
             width: 23%;
         }
     </style>
-    <link rel="preload" as="style" onload="this.rel='stylesheet'"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link el="preload" as="font" type="font/woff2" crossorigin  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/webfonts/fa-solid-900.woff2">
@@ -60,6 +59,7 @@
         href="{{ asset('frontend/css/mountainguide.css') }}" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ asset('frontend/css/common.css') }}" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ asset('frontend/css/fonts.css') }}" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' >
     <!-- CSS only -->
     <link rel="preload" as="script" onload="this.rel=''" href="{{ asset('frontend/js/main.js') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"

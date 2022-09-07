@@ -224,13 +224,13 @@
 }
 
 .dropdown-item {
-  height: 35px !important;
   font-family: 'Poppins' !important;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 14px !important;
   line-height: 24px !important;
   color: #828282 !important;
+  white-space: initial !important;
 }
 
 .mobile-view a {
@@ -626,6 +626,11 @@
   margin-top: -5px;
   font-size: 26px;
   font-family: 'FontAwesome';
+}
+.details-footer-fixed .phones{
+  margin-top: -5px;
+  font-size: 22px;
+  font-family: 'FontAwesome'; 
 }
 
 .mountainguide-image3.layout {
@@ -1225,6 +1230,9 @@
 }
 #challenge-peak-slider .owl-nav{
   display: block !important;
+}
+#natural-trek-slider .owl-nav{
+  display: block;
 }
 .mountainguide-block48.layout {
   position: relative;
@@ -4482,4 +4490,72 @@ a:hover {
 .all-testimonials_slide .testimonials-item{
   width:100%;
   margin:10px 0px;
+}
+
+.mega-tab {
+  float: left;
+  border-right: 1px solid #ccc;
+  background-color:white;
+  height:auto;
+}
+
+/* Style the buttons inside the tab */
+.mega-tab a {
+  display: block;
+  background-color: white;
+  color: black;
+  padding:5px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Change background color of buttons on hover */
+.mega-tab a:hover {
+  background-color: #0e4e93;
+}
+
+/* Create an active/current "tab button" class */
+.mega-tab a.active {
+  background-color: #0e4e93;
+  color: #f5a53a;
+}
+
+/* Style the tab content */
+.tab-content{
+  padding: 0px 12px;
+}
+.tab-content ul{
+  padding-left:1rem;
+}
+.tabcontent {
+  float: left;
+  
+  border-left: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tabcontent ul li{
+  width:220px;
+  padding:3px;
+}
+.tabcontent a{
+  text-decoration: none;
+font-size: 14px;
+font-weight: normal;
+color:#828282 ;
+}
+.mega-icon{
+  line-height:25px !important;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }

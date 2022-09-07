@@ -219,6 +219,11 @@ button {
   }
 }
 /* button */
+@media screen and (max-width: 1294px) {
+  .mega-tab {
+    padding-left:70px;
+  }
+}
 @media screen and (max-width: 1270px) {
   
   .mountainguide-block29.layout {
@@ -236,6 +241,12 @@ button {
   .details-tourname {
     font-size: 35px !important;
     line-height: 70px !important;
+  }
+  .mega-tab {
+    padding-left:70px;
+  }
+  .tab-content{
+    padding:0px 40px;
   }
 }
 
@@ -281,6 +292,10 @@ button {
   .search{
     left: 0px !important;
   }
+  .mega-tab {
+    padding-left:105px;
+  }
+  
  
 }
 @media screen and (min-width: 1192px) {
@@ -415,6 +430,7 @@ button {
     overflow: scroll !important;
   }
   .trek-flex {
+    flex-direction:column;
     flex-wrap: wrap !important;
     padding: 22px 31px !important;
   }
@@ -738,6 +754,13 @@ button {
   }
   #popular-trek-slider .owl-dots {
     margin-top: 14px !important;
+    display: none;
+  }
+  #blog-slider .owl-dots{
+    display: none;
+  }
+  #testimonial-slider .owl-dots{
+    display: none;
   }
   #customNav .owl-prev,
   #customNav .owl-next {
@@ -781,12 +804,31 @@ button {
   .fixeddetails-nav {
     justify-content: space-between !important;
   }
-  .details-book {
+  /* .details-book {
     position: fixed;
     bottom: 0px;
     left: 0px;
     height: 39px;
     padding: 6px;
+    border-radius:0px;
+  } */
+  .details-footer-fixed{
+    position: fixed;
+    right: 0px;
+    bottom:0px;
+    z-index: 1;
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .details-footer-fixed .profile-image{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+  }
+  .details-footer-fixed .details-book{
+    padding: 6px 15px;
   }
 
   .bookprice {
@@ -1024,7 +1066,12 @@ margin-top:0px;
 
   .make-own-trip-subtitle1.layout3 {
     margin-top: -7px !important;
-  }
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0px;
+    text-align: center;
+    left:-2px;
+}
   #country-slide .owl-dots {
     display: none !important;
   }
@@ -1107,7 +1154,9 @@ margin-top:0px;
   .mountainguide-block16.layout{
     width:100%;
   }
-  
+  #country-slide.owl-carousel,#testimonial-slider.owl-carousel{
+    z-index:auto;
+  }
  
 }
 /* topheader */

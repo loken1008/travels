@@ -712,5 +712,32 @@ function getThumbs($url = '')
     @include('frontend.common.testmonial')
     <!-- Testimonials Section End -->
 
-
+    <div class="details-footer-fixed mountainguide-block17-item">
+       
+        <div class="mountainguide-block18 layout">
+            
+            <div class="mountainguide-block19 layout">
+                @if (!empty($sitesetting->google))
+                    <a href="{{ $sitesetting->google }}">
+                        <i class="fa fa-whatsapp whatsapp"></i>
+                    </a>
+                @endif
+                @if (!empty($sitesetting->linkedin))
+                    <a href="{{ $sitesetting->linkedin }}">
+    
+                        <i class="fa-brands fa-viber viber"></i>
+                    </a>
+                @endif
+                @if (!empty($getcontact->phone))
+                    <a href="tel:{{ $getcontact->mobile }}" class="mountainguide-highlights layout"><i class="fa-solid fa-phone phones"></i></a>
+                @endif
+            </div>
+        </div>
+        @if (!empty($getcontact->profile_image))
+            <img class="profile-image" srcset="{{ asset($getcontact->profile_image) }}" alt="profile">
+        @endif
+        <div class="details-book">
+            <a href="{{ route('booking', $getTourdetails->slug) }}">Book Now</a>
+        </div>
+    </div>
 @endsection

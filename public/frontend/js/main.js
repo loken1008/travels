@@ -148,6 +148,33 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
+    $('#natural-trek-slider').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        // autoplay:true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            500: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            800: {
+                items: 2
+            },
+            1100: {
+                items: 3
+            }
+        },
+
+
+    });
+});
+$(document).ready(function() {
     $('#testimonial-slider').owlCarousel({
         loop: true,
         margin: 10,
@@ -285,5 +312,19 @@ $(".closebtn").click(function() {
 });
 // console.clear();
 
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "flex";
+    evt.currentTarget.className += "active";
+    $(evt[0]).addClass("active");
+  }
 
 

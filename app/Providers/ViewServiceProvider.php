@@ -41,7 +41,7 @@ class ViewServiceProvider extends ServiceProvider
         $category = Category::with('tour', 'subcategory')
             ->orderBy('created_at', 'asc')
             ->get();
-        $subcategory=SubCategory::with('tour')->orderBy('created_at', 'asc')->get();
+        $subcategory=SubCategory::with('tour')->orderBy('sub_category_name', 'asc')->get();
         $tour = Tour::with(
             'country',
             'place',
