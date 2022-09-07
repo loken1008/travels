@@ -103,10 +103,8 @@ function getThumbs($url = '')
                                                                 <div class="mountainguide-block51 layout">
                                                                     <div class="mountainguide-text-body2-box layout">
                                                                         <div class="mountainguide-text-body2">
-                                                                            <span
-                                                                                class="mountainguide-text-body2-span0">Duration:
-                                                                            </span><span
-                                                                                class="mountainguide-text-body2-span1">{{ $ctour->tour_days }}
+                                                                            <span class="mountainguide-text-body2-span0">Duration:
+                                                                            </span><span class="mountainguide-text-body2-span1">{{ $ctour->tour_days }}
                                                                                 days</span>
                                                                         </div>
                                                                     </div>
@@ -393,7 +391,7 @@ function getThumbs($url = '')
             <div class="populartrek_content">
                 <div id="popular-trek-slider" class="owl-carousel owl-theme">
                     @if ($cattrekking)
-                        @foreach ($cattrekking->tour->shuffle() as $key => $tour)
+                        @foreach ($cattrekking->tour->sortByDesc('id') as $key => $tour)
                             @if ($tour->status == 1)
                                 <div class="populartrek_item">
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
@@ -537,6 +535,86 @@ function getThumbs($url = '')
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="populartrek_section ">
+        @if ($catnature)
+            <div class="populartrekheading">
+                <div>
+                    <h2 class="populartrektitle layout2">Best For Natural Realism</h2>
+                    <div class="chooseus-box layout"></div>
+
+                </div>
+            </div>
+        @endif
+
+        <div class="container popular-container">
+            <div class="populartrek_content">
+                <div id="natural-trek-slider" class="owl-carousel owl-theme">
+                    @if ($catnature)
+                        @foreach ($catnature->tour->sortByDesc('id') as $key => $tour)
+                            @if ($tour->status == 1)
+                                <div class="populartrek_item">
+                                    <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
+                                        <div class="populartrek_image">
+                                            <img class="img-fluid" srcset="{{ getThumbs($tour->mainImage) }}"
+                                                alt="{{ $tour->img_alt }}">
+                                            @if (!empty($tour->type))
+                                                <p class="popularhead-tag">
+                                                    @if ($tour->type == 'group')
+                                                        <i class="fa-solid fa-people-group"></i> Group
+                                                    @elseif($tour->type == 'family')
+                                                        <i class="fa-solid fa-people-roof"></i> Family
+                                                    @elseif($tour->type == 'bestsell')
+                                                        <i class="fa-solid fa-award"></i> Best Sell
+                                                    @elseif($tour->type == 'private')
+                                                        <i class="fa-solid fa-lock"></i> Private
+                                                    @elseif($tour->type == 'tripofthemonth')
+                                                        <i class="fa-solid fa-award"></i> Trip Of The Month
+                                                    @else
+                                                    @endif
+                                                </p>
+                                            @endif
+                                        </div>
+                                        <div class="populartrek_details">
+                                            <div class="mt-3 mb-3">
+                                                <span class="bestduration">Duration:</span> <span
+                                                    class="days">{{ $tour->tour_days }} Days</span>
+                                            </div>
+
+                                            <div class="populartrek_title">
+                                                <h5>{{ Str::limit($tour->tour_name, 22) }}</h5>
+                                            </div>
+
+                                            <p>{{ Str::limit($tour->short_description, 40, '.') }}</p>
+                                            <div class="pbtn">
+                                                <div class="mb-2">
+                                                    <h4 class="mountainguide-text-body14 layout">Price</h4>
+                                                    @if ($getcoupon)
+                                                        <h4 class="populartrekprice">
+                                                            <span class="discount-price">${{ $tour->main_price }}</span>
+                                                            ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                        </h4>
+                                                    @else
+                                                        <h4 class="populartrekprice">
+                                                            ${{ $tour->main_price }}</h4>
+                                                    @endif
+                                                </div>
+
+
+                                                <a href="{{ route('booking', $tour->slug) }}"
+                                                    class="populartrekbtn text-decoration-none">Book
+                                                    Now</a>
+                                            </div>
+
                                         </div>
                                     </a>
                                 </div>
