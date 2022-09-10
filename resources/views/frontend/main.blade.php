@@ -61,7 +61,6 @@
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ asset('frontend/css/fonts.css') }}" />
     <link rel="preload" as="style" onload="this.rel='stylesheet'" href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' >
     <!-- CSS only -->
-    <link rel="preload" as="script" onload="this.rel=''" href="{{ asset('frontend/js/main.js') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
         integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -88,6 +87,8 @@
         @include('frontend.layouts.footer')
         <!--endfooter-->
     </div>
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
+
     <script  crossorigin="anonymous" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" ></script>
 
     <!-- JavaScript Bundle with Popper -->
@@ -101,7 +102,6 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-dropdown-hover/4.2.0/jquery.bootstrap-dropdown-hover.min.js" >
     </script>
-    <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
