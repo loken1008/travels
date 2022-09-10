@@ -14,12 +14,12 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside">Trekking</a>
                         <ul class="container-fluid dropdown-menu trekking-subcategory ">
-                            <div class="row d-flex trek-flex">
+                            <div class="d-lg-none row d-flex trek-flex">
                                 @foreach ($category as $cat)
                                     @if ($cat->category_type == 'trekking')
                                         @foreach ($subcategory as $subcat)
                                             @if ($subcat->category_id == $cat->id)
-                                                <div class=" col-md-4 col-sm-12">
+                                                <div class=" col-md-12 col-sm-12">
                                                     <a href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
                                                         class="treksubcategory">{{ $subcat->sub_category_name }}</a>
                                                     <span data-toggle="collapse"
@@ -43,6 +43,48 @@
                                 @endforeach
 
                             </div>
+                            <div class="megamenutab d-lg-flex d-none">
+                                <div class="col-lg-3 mega-tab">
+                                    @foreach ($category as $cat)
+                                        @if ($cat->category_type == 'trekking')
+                                            @foreach ($subcategory as $subcat)
+                                                @if ($subcat->category_id == $cat->id)
+                                                    <a class="tablinks "
+                                                        href="{{ route('tripdetails', $subcat->sub_category_slug) }}"
+                                                        onmouseover="openCity(event, '{{ $subcat->sub_category_name }}')">{{ $subcat->sub_category_name }}
+                                                        <i class="fa-solid fa-angle-right mega-icon"></i></a>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <div class="col-lg-9 tab-content">
+                                    @foreach ($category as $cat)
+                                        @if ($cat->category_type == 'trekking')
+                                            @foreach ($subcategory as $subcat)
+                                                @if ($subcat->category_id == $cat->id)
+                                                    <div id="{{ $subcat->sub_category_name }}" class="tabcontent">
+                                                        @foreach ($subcat->tour as $tours)
+                                                            @if ($tours->status == '1')
+                                                                <ul>
+                                                                    <li >
+                                                                        <a
+                                                                            href="{{ url('tourdetails', $tours->slug) }}">{{ $tours->tour_name }}</a>
+
+                                                                    </li>
+                                                                </ul>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+
                         </ul>
 
                     </li>
