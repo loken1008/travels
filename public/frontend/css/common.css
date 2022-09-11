@@ -305,6 +305,15 @@ button {
 }
 /* navbar */
 @media screen and (max-width: 992px) {
+  .mobile-flex{
+    display: flex;
+  }
+  .mobile-view1{
+    padding:15px 0px !important;
+  }
+  .mobile-view1 i{
+    margin-top:-3px !important;
+  }
   .desktop-view {
     display: none !important;
   }
@@ -393,6 +402,9 @@ button {
   #blog-slider {
     padding: 0px !important;
   }
+  .blog-right-side{
+    padding:20px 0px 0px 0px !important;
+  }
   .mountainguide-medium-title.layout1 {
     height: auto !important;
   }
@@ -456,12 +468,13 @@ button {
   }
   .navbar-nav .dropdown-menu {
     position: absolute !important;
+    top:40px !important;
   }
   .dropdown-item:focus,
   .dropdown-item:hover {
     background-color: #0f4e93 !important;
     color: white !important;
-    padding-top: 7px !important ;
+    padding-top:15px !important ;
   }
   .dropdown-item:focus .mobile-view,
   .dropdown-item:hover .mobile-view {
@@ -550,6 +563,16 @@ button {
 }
 }
 @media screen and (min-width: 992px) {
+ 
+  .nav-item{
+    padding:7px 0px;
+  }
+  .blog-right-side{
+    padding:20px 0px 10px 25px !important;
+  }
+  .blog-left-side{
+    margin-right: 25px !important;
+  }
   .mobile-view1 {
     display: none !important;
   }
@@ -570,8 +593,10 @@ button {
     border: none !important;
     border-radius: 0px !important;
     background: #ffffff;
-    top: 28px !important;
+    top:32px !important;
     left: 22px !important;
+    display: none;
+
   }
   .dropdown.sdt:hover .other-subsubcategory {
     display: block !important;
@@ -589,11 +614,12 @@ button {
     width: 1351px !important;
     left: -200px !important;
     height: 623px;
-    top: 28px !important;
+    top: 32px !important;
     border: none !important;
     border-radius: 0px !important;
     background: #ffffff;
     overflow: scroll;
+    display: none;
   }
   .other-subcategory {
     position: absolute !important;
@@ -601,10 +627,17 @@ button {
     border: none !important;
     border-radius: 0px !important;
     background: #ffffff;
-    top: 28px !important;
+    top:32px !important;
     left: 22px !important;
-  }
+    display: none;
 
+  }
+  .dropdown:hover .about-subcategory,.dropdown:hover .other-subcategory{
+    display: block;
+  }
+  .dropdown:hover .trekking-subcategory{
+    display: block;
+  }
   .other-subsubcategory {
     position: absolute !important;
     width: 281px;
@@ -1043,6 +1076,10 @@ margin-top:0px;
   }
 }
 @media screen and (max-width: 576px) {
+  .explore-section,.best-sell-section,.choose-us-section,.populartrek_section,.best-sell-month,.testimonials-section,.blogs_section{
+    margin-top:0px !important;
+  }
+
   .mountainguide-block87 {
     flex-wrap: wrap !important;
   }

@@ -6,21 +6,36 @@ $(document).ready(function() {
             dots: true,
             nav: true,
             margin: 10,
+            autoWidth: true,
             responsive: {
                 0: {
-                    items: 1
+                    dotsEach: 3,
+                    items: 1,
+                    autoWidth: false
                 },
                 500: {
-                    items: 1
+                    dotsEach: 3,
+                    items: 1,
+                    autoWidth: false
+
                 },
                 768: {
-                    items: 2
+                    dotsEach: 3,
+                    items: 2,
+                    autoWidth: false
+
                 },
                 1100: {
-                    items: 2
+                    dotsEach: 3,
+                    items: 2,
+                    autoWidth: false
+
                 },
                 1200: {
-                    items: 3
+                    dotsEach: 3,
+                    items: 3,
+                    autoWidth: false
+                    
                 }
             },
         }
@@ -43,28 +58,34 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#best-sell-slider').owlCarousel({
         loop: true,
-        margin: 40,
+        margin: 30,
         nav: true,
         dots: false,
         autoplay: true,
         responsiveClass: true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             500: {
+                dotsEach: 3,
                 items: 1
             },
             600: {
+                dotsEach: 3,
                 items: 1
             },
             700: {
+                dotsEach: 3,
                 items: 1
             },
             800: {
+                dotsEach: 3,
                 items: 2
             },
             1000: {
+                dotsEach: 3,
                 items: 3
             }
         },
@@ -85,24 +106,29 @@ function onChangedCallback(event) {
 $(document).ready(function() {
     $('#challenge-peak-slider').owlCarousel({
         loop: true,
-        margin:40,
+        margin:30,
         nav: true,
         dots: false,
         autoplay: true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             600: {
+                dotsEach: 3,
                 items: 1
             },
             700: {
+                dotsEach: 3,
                 items: 1
             },
             800: {
+                dotsEach: 3,
                 items: 2
             },
             1000: {
+                dotsEach: 3,
                 items: 3
             }
         },
@@ -123,23 +149,28 @@ function onChangedCallback(event) {
 $(document).ready(function() {
     $('#popular-trek-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 40,
         nav: true,
         // autoplay:true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             500: {
+                dotsEach: 3,
                 items: 1
             },
             768: {
+                dotsEach: 3,
                 items: 2
             },
             800: {
+                dotsEach: 3,
                 items: 2
             },
             1100: {
+                dotsEach: 3,
                 items: 2
             }
         },
@@ -150,23 +181,28 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#natural-trek-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 30,
         nav: true,
-        // autoplay:true,
+        autoplay:true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             500: {
+                dotsEach: 3,
                 items: 1
             },
             768: {
+                dotsEach: 3,
                 items: 2
             },
             800: {
+                dotsEach: 3,
                 items: 2
             },
             1100: {
+                dotsEach: 3,
                 items: 3
             }
         },
@@ -177,17 +213,20 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#testimonial-slider').owlCarousel({
         loop: true,
-        margin: 10,
+        margin:30,
         nav: false,
         autoplay: true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             600: {
+                dotsEach: 3,
                 items: 1
             },
             1000: {
+                dotsEach: 3,
                 items: 2
             }
         },
@@ -198,27 +237,32 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#blog-slider').owlCarousel({
         loop: true,
-        margin: 20,
+        margin:30,
         nav: true,
         autoplay: true,
         responsiveClass: true,
         responsive: {
             0: {
+                dotsEach: 3,
                 items: 1
             },
             500: {
+                dotsEach: 3,
                 items: 1
             },
             700: {
+                dotsEach: 3,
                 items: 2
             },
             900: {
                 items: 2
             },
             1100: {
+                dotsEach: 3,
                 items: 2
             },
             1200:{
+                dotsEach: 3,
                 items:3
             }
         },
@@ -226,7 +270,6 @@ $(document).ready(function() {
 
     });
 });
-
 
 $(document).ready(function(){
   document.addEventListener('DOMContentLoaded', function () {

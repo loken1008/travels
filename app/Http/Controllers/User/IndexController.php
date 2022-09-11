@@ -27,14 +27,14 @@ class IndexController extends Controller
     public function homePage()
     {
         $getcountry=Country::with('tours')->orderBy('id','asc')->where('status','=','1')->get();
-        $getTour=Tour::with('country','place','category','subcategory')->where(['status'=>'1','is_best_selling'=>'1'])->orderBy('id','desc')->get();
+        $getTour=Tour::with('country','place','category','subcategory')->where(['status'=>'1','is_best_selling'=>'1'])->orderBy('id','desc')->limit(15)->get();
         $bestsell=Tour::with('country','place','category','subcategory')->where(['status'=>'1','type'=>'tripofthemonth'])->first();
         $cattrekking=Category::with('tour','subcategory')->where('category_type','trekking')->first();
         $catnature=Category::with('tour','subcategory')->where('category_type','natural')->first();
         $catadventure=Category::with('tour','subcategory')->where('category_type','adventure')->first();
         $catpeak=Category::with('tour','subcategory')->where('category_type','peakclimbing')->first();
         $getbanner=Banner::orderBy('id','desc')->where('status','=','1')->first();
-        $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(3)->get();
+        $getblogs=Blog::orderBy('id','desc')->where('status','=','1')->limit(15)->get();
         $chooseus=ChooseUs::orderBy('id','asc')->limit(3)->get();
         $homepage=HomePage::orderBy('id','desc')->first();
         return view('frontend.index',compact('getTour','getcountry','getbanner','getblogs','chooseus','cattrekking','catadventure','catnature','catpeak','homepage','bestsell'));

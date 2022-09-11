@@ -39,9 +39,9 @@ class ViewServiceProvider extends ServiceProvider
             ->where('status', '=', '1')
             ->get();
         $category = Category::with('tour', 'subcategory')
-            ->orderBy('created_at', 'asc')
+            ->orderBy('sort_id', 'asc')
             ->get();
-        $subcategory=SubCategory::with('tour')->orderBy('sub_category_name', 'asc')->get();
+        $subcategory=SubCategory::with('tour')->orderBy('sort_id', 'asc')->get();
         $tour = Tour::with(
             'country',
             'place',
@@ -54,7 +54,8 @@ class ViewServiceProvider extends ServiceProvider
             'fqa',
             'blog'
         )
-            ->where('status', '=', '1')
+            ->where('status', '=', '1')->limit(15)
+            ->orderBy('id','desc')
             ->get();
         $place = Place::orderBy('place_name', 'asc')->get();
         $sitesetting = SiteSetting::orderBy('id', 'desc')->first();

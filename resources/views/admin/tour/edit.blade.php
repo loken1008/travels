@@ -266,13 +266,15 @@
                         </div>
                             <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="firstName5"
+                                <input type="url" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
 
                             </div>
                             <div class="form-group">
                                 <label for="firstName5">Short Description :<span class="text-danger">*</span></label>
-                                <textarea  class="form-control" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
+                                <textarea  class="form-control" maxlength="130" id="short_desc" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
+                            <span id="rchars">130</span> Character(s) Remaining
+                               
                                 @error('short_description')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -734,7 +736,13 @@
     {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
     <script src="{{asset('assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
  
-   
+    <script>
+        var maxLength =130;
+$('#short_desc').keyup(function() {
+  var textlen = maxLength - $(this).val().length;
+  $('#rchars').text(textlen);
+});
+    </script>
 <script>
   var i = 0;
 $("#dynamic-ar").click(function() {
@@ -816,7 +824,10 @@ $(document).on('click', '.remove_field', function() {
 </script>
 <script type='text/javascript'>
     CKEDITOR.replaceAll();
-    if (CKEDITOR.instances['meta_description']) {
+    if (CKEDITOR.instances['short_desc']) {
+   CKEDITOR.instances['short_desc'].destroy(true);
+}
+  if (CKEDITOR.instances['meta_description']) {
    CKEDITOR.instances['meta_description'].destroy(true);
 }
 if (CKEDITOR.instances['short_description']) {

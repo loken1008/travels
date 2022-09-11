@@ -1,6 +1,17 @@
 @php
 use App\Models\Affilated;
 $affilated = Affilated::orderBy('id', 'desc')->get();
+function getfooterThumbs($url = '')
+{
+    $base = basename($url);
+    if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+        return str_replace($base, 'thumbs/' . $base, $url);
+    } else {
+        $preUrl = 'storage/';
+        $beforeBase = str_replace($base, '', $url);
+        return $preUrl . $beforeBase . 'thumbs/' . $base;
+    }
+}
 @endphp
 <footer id="footer">
     <div class="footer-newsletter">
@@ -114,7 +125,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                         <div class="d-flex associated-image">
                             @foreach ($affilated as $affilate)
                                 @if ($affilate->type == 'affilated-member')
-                                    <img srcset="{{ $affilate->image }}" alt="associated">
+                                    <img srcset="{{ getfooterThumbs($affilate->image) }}" alt="associated">
                                 @endif
                             @endforeach
                         </div>
@@ -125,7 +136,7 @@ $affilated = Affilated::orderBy('id', 'desc')->get();
                         <div class="d-flex pay-image">
                             @foreach ($affilated as $affilate)
                                 @if ($affilate->type == 'pay-method')
-                                    <img srcset="{{ $affilate->image }}" alt="pay">
+                                    <img srcset="{{ getfooterThumbs($affilate->image) }}" alt="pay">
                                 @endif
                             @endforeach
                         </div>

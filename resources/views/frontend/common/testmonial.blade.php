@@ -1,9 +1,20 @@
 @php
 $gettestmonial = App\Models\Testmonial::where('status', 1)
-    ->orderBy('id', 'desc')
+    ->orderBy('id', 'desc')->limit(15)
     ->get();
-
+    function gettestThumbs($url = '')
+{
+    $base = basename($url);
+    if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+        return str_replace($base, 'thumbs/' . $base, $url);
+    } else {
+        $preUrl = 'storage/';
+        $beforeBase = str_replace($base, '', $url);
+        return $preUrl . $beforeBase . 'thumbs/' . $base;
+    }
+}
 @endphp
+
 @if ($gettestmonial->count() > 0)
     <section class="testimonials-section">
         <div class="container">
@@ -40,7 +51,7 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                     </div>
 
                                     <div class="testimonial-desc mt-4">
-                                        <img class="testimonial-image " srcset="{{ $testmonial->image }}" alt="image">
+                                        <img class="testimonial-image " srcset="{{ gettestThumbs($testmonial->image) }}" alt="image">
                                         <p class="testimonial-message ">
                                             {{ Str::limit($testmonial->message_description, 150) }}</p>
                                     </div>

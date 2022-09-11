@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function CategoryView()
     {
-        $categories=Category::latest()->get();
+        $categories=Category::orderBy('sort_id','asc')->get();
         return view('admin.category.category_view',compact('categories'));
     }
 
@@ -64,5 +64,20 @@ class CategoryController extends Controller
             'alert-type'=>'success'
         );
         return back()->with($notification);
+    }
+    public function CategoryReorder(Request $request)
+    {
+        // $category=Category::all();
+        // foreach ($category as $tc) {
+        //     foreach ($request->order as $order) {
+        //         if ($order['id'] == $tc->id) {
+        //             $tc->update(['sort_id' => $order['position']]);
+        //         }
+        //     }
+        // }
+        foreach ($request->order as $key => $order) {
+            $category = Category::find($order['id'])->update(['sort_id' => $order['order']]);
+        }
+        return response('Update Successfully.', 200);
     }
 }
