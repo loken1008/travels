@@ -238,7 +238,7 @@
                        
                         <div class="form-group">
                             <label for="mapurl"> Map Url :</label>
-                            <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
+                            <input type="url" class="form-control" id="mapurl" value="{{ old('map_url') }}"
                                 name="map_url">
                         </div>
 

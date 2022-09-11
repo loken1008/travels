@@ -266,7 +266,7 @@
                         </div>
                             <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="firstName5"
+                                <input type="url" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
 
                             </div>
