@@ -14,6 +14,6 @@ class CountryController extends Controller
     {
         $getcountrydetails=Country::with('place')->where('country_name',$country_name)->first();
         $gettour=Tour::with('country','place','category')->where('country_id',$getcountrydetails->id)->where('status','=','1')->get();
-        return view('frontend.country.countrydetails',compact('getcountrydetails','gettour'));
+        return view('frontend.trip.countrytrip',compact('getcountrydetails','gettour'));
     }
 }

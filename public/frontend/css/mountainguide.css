@@ -12,7 +12,7 @@
 }
 .best-sell-month {
   position: relative;
-  margin: 1px 0px;
+  margin: 60px 0px 0px 0px;
 }
 .best-month-container{
   display: flex;
@@ -615,9 +615,9 @@
 .whatsapp {
   position: absolute;
   left: 7.25%;
-  top: -5px;
+  top: -7px;
   color: #4fce5d;
-  font-size: 28px;
+  font-size:30px;
   font-family: 'FontAwesome';
 }
 .viber {
@@ -920,8 +920,15 @@
   min-width: 18px;
   margin: 2px 0px 0px 2px;
 }
+.country-icon{
+  margin:3px 0px 0px 10px;
+  color: #0e4e93;
+}
 #country-slide.owl-carousel {
   display: block !important;
+}
+#country-slide .owl-dots{
+  margin-top:20px;
 }
 .country-subtitle.layout.active {
   color: #0e4e93;
@@ -1160,7 +1167,7 @@
   /* display: flex;
   flex-direction: column; */
   position: relative;
-  /* box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05); */
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   margin: 0 10px 0 10px;
 }
@@ -1222,9 +1229,9 @@
   border-radius: 3px 3px 3px 3px;
 }
 
-#best-sell-slider .owl-nav .owl-prev,#best-sell-slider .owl-nav .owl-next,#challenge-peak-slider .owl-nav .owl-prev,#challenge-peak-slider .owl-nav .owl-next{
+/* #best-sell-slider .owl-nav .owl-prev,#best-sell-slider .owl-nav .owl-next,#challenge-peak-slider .owl-nav .owl-prev,#challenge-peak-slider .owl-nav .owl-next{
   color: white !important;
-}
+} */
 #best-sell-slider .owl-nav [class*='owl-']:hover,#challenge-peak-slider .owl-nav [class*='owl-']:hover{
   background-color: unset !important;
 }
@@ -1279,14 +1286,10 @@
 }
 .mountainguide-text-body2 {
   font: 14px/1.57 'Poppins', Helvetica, Arial, serif;
-  color: black;
-  letter-spacing: 0px;
-}
-.mountainguide-text-body2-span0 {
-  font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
   color: #999999ff;
   letter-spacing: 0px;
 }
+
 .mountainguide-text-body2-span1 {
   font: 1em/1.57 'Poppins', Helvetica, Arial, serif;
   color: #45484dff;
@@ -1534,6 +1537,10 @@
 .mountainguide-block63-spacer {
   flex: 0 1 10px;
 }
+.explore-section{
+  margin-top:60px;
+  background-color:#FAFCFF;
+}
 .explore-us {
   display: flex;
   align-items: center;
@@ -1622,8 +1629,9 @@
 }
 .mountainguide-subtitle3 {
   font: 500 22px/1.2 'Poppins', Helvetica, Arial, serif;
-  color: #f5a53a;
+  color:#0E4E93;
   letter-spacing: 0px;
+  text-transform: uppercase;
 }
 .mountainguide-subtitle3.layout {
   position: relative;
@@ -1651,7 +1659,7 @@
   font: 500 16px/1.2 'Poppins', Helvetica, Arial, serif;
   color: #0e4e93;
   letter-spacing: 0px;
-  padding: 16px 14px 20px 30px;
+  padding: 16px 14px 20px 40px;
   margin: 20px 70.15% 0px 0%;
   border: 1.5px solid #0e4e93;
   border-radius: 28px 28px 28px 28px;
@@ -1662,7 +1670,8 @@ color: #0e4e93;
 font-weight: bold;
 }
 .best-sell-section{
-  background-color: #0f4e93;
+  margin-top:60px;
+  background-color: #FAFCFF;
 
 }
 .mountainguide-block70.layout {
@@ -1672,9 +1681,7 @@ font-weight: bold;
   display: flex;
   flex-direction: column;
 }
-.mountainguide-block71.layout {
-  margin-bottom: 10px;
-}
+
 .mountainguide-block72 {
   display: flex;
   flex-direction: column;
@@ -1705,7 +1712,7 @@ font-weight: bold;
 }
 .mountainguide-hero-title11 {
   font: 700 46px/1.23 'Poppins', Helvetica, Arial, serif;
-  color: white;
+  color: black;
   letter-spacing: 0px;
 }
 .mountainguide-hero-title11.layout {
@@ -1774,6 +1781,10 @@ font-weight: bold;
   transform: scale(1.5);
 }
 
+.choose-us-section{
+  margin-top:60px;
+  background: #FAFCFF;
+}
 .chooseimage {
   position: absolute;
   width: 47px;
@@ -1876,7 +1887,6 @@ font-weight: bold;
 }
 .mountainguide-block84.layout {
   position: relative;
-  margin: 12px 1px 0px;
 }
 .mountainguide-block85 {
   display: flex;
@@ -1916,7 +1926,7 @@ font-weight: bold;
 .mountainguide-block87.layout {
   position: relative;
   width: 100%;
-  margin-top: 30px !important;
+  margin-top:40px !important;
 }
 .chooseus-box {
   width: 37px;
@@ -2214,10 +2224,11 @@ font-weight: bold;
   margin: 90px 0px 0px;
 }
 .populartrek_section {
-  margin-top: 12px !important;
+  margin-top:60px !important;
+  background: #FFFFFF;
 }
 .popular-container {
-  margin-left: 95px;
+  margin-top:30px;
 }
 .populartrekheading {
  display: flex;
@@ -2264,7 +2275,6 @@ font-weight: bold;
   border-radius: 3px;
 }
 .populartrek_details p {
-  height: 43px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -2346,7 +2356,7 @@ font-weight: bold;
 .testimonials-section {
   height: 510px;
   background: #fafcff;
-  margin-top: 12px;
+  margin-top:60px;
 }
 
 .testmonial-head-section {
@@ -3126,6 +3136,9 @@ font-weight: bold;
   margin: 50px auto;
 }
 /* our vlogs */
+.blogs_section {
+  margin-top:60px;
+}
 #blog-slider .owl-nav {
   display: block !important;
 }
@@ -3208,7 +3221,7 @@ font-weight: bold;
 .allblogs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .allblogs-heading {
   display: flex;
@@ -3479,6 +3492,7 @@ font-weight: bold;
   width: 100%;
   padding: 0px 110px;
 }
+
 .details-country {
   font-family: 'Poppins';
   font-style: normal;
@@ -3639,6 +3653,7 @@ font-weight: bold;
   line-height: 29px;
   text-transform: capitalize;
   color: #4f4f4f;
+  text-align: justify;
 }
 .fixeddetails-nav .details-nav a.active {
   color: #0e4e93 !important;
@@ -3956,6 +3971,7 @@ a:hover {
 .details-tag {
   display: flex;
   padding-left: 0px;
+  margin-left:-11px;
 }
 .details-tag li {
   font-family: 'Poppins';
@@ -3964,7 +3980,7 @@ a:hover {
   font-size: 16px;
   line-height: 22px;
   text-transform: capitalize;
-  color: #999999;
+  color: #999999 !important;
 }
 .details-content ul li {
   font-family: 'Poppins';
@@ -3989,8 +4005,8 @@ a:hover {
   font-weight: 300;
   font-size: 16px;
   line-height: 29px;
-  text-transform: capitalize;
   color: #4f4f4f;
+  text-align: justify;
 }
 .details-tag li::before {
   content: '' !important;
@@ -4139,7 +4155,9 @@ a:hover {
   margin-top: 40px;
 }
 .related-blog {
-  margin-top: 20px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #f3efef;
+  width:105%;
 }
 .related-blog a {
   font-family: 'Poppins';

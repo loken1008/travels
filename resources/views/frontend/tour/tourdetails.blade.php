@@ -371,9 +371,9 @@ function getThumbs($url = '')
             </div>
 
             <div class="col-md-8 col-lg-8">
-                <div class="short-desc">
+                {{-- <div class="short-desc">
                     <p>{!! $getTourdetails->short_description !!}</p>
-                </div>
+                </div> --}}
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
                     tabindex="0">
                     <section class="mt-4" id="toverview">

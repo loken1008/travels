@@ -103,6 +103,8 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'CategoryEdit'])->name('edit.category');
         Route::post('/update', [App\Http\Controllers\Admin\CategoryController::class, 'CategoryUpdate'])->name('update.category');
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'CategoryDelete'])->name('delete.category');
+        Route::post('/reorder-category', [App\Http\Controllers\Admin\CategoryController::class, 'CategoryReorder'])->name('reorder.category');
+
     });
 
     //
@@ -116,6 +118,8 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\SubCategoryController::class, 'SubCategoryEdit'])->name('edit.subcategory');
         Route::post('/update', [App\Http\Controllers\Admin\SubCategoryController::class, 'SubCategoryUpdate'])->name('update.subcategory');
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\SubCategoryController::class, 'SubCategoryDelete'])->name('delete.subcategory');
+        Route::post('/reorder-subcategory', [App\Http\Controllers\Admin\SubCategoryController::class, 'SubCategoryReorder'])->name('reorder.subcategory');
+
     });
 
     // tour place
