@@ -719,7 +719,7 @@ function getThumbs($url = '')
             <div class="mountainguide-block19 layout">
                 @if (!empty($sitesetting->google))
                     <a href="{{ $sitesetting->google }}">
-                        <i class="fa fa-whatsapp whatsapp"></i>
+                        <i class="fa-brands fa-whatsapp whatsapp"></i>
                     </a>
                 @endif
                 @if (!empty($sitesetting->linkedin))

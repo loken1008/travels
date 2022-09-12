@@ -627,6 +627,9 @@
   font-size: 26px;
   font-family: 'FontAwesome';
 }
+.details-footer-fixed{
+  display: none;
+}
 .details-footer-fixed .phones{
   margin-top: -5px;
   font-size: 22px;
