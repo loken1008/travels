@@ -34,7 +34,7 @@ function getThumbs($url = '')
                         <h5 class="mountainguide-highlights1 layout">{{ $getbanner->sub_title }}</h5>
                         </h5>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-6 mountainguide-block28 layout">
+                    <div class="col-md-2 col-lg-2 col-sm-2 col-6 mountainguide-block28 layout">
                         <a href="{{ $getbanner->url }}" class="mountainguide-highlights2 layout">Explore More</a>
                     </div>
                 </div>
