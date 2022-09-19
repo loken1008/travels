@@ -3482,6 +3482,7 @@ font-weight: bold;
   height: 561px;
   position: relative;
   filter: brightness(0.7);
+  object-fit: cover;
 }
 
 .detailssection-content {
