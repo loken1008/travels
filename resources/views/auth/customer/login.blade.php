@@ -61,13 +61,14 @@ $loginbanner = App\Models\PageBanner::orderBy('id', 'desc')
                                     Password</a>
                                 <div class="login-button" style="margin:20px 0px">
                                     <button class="loginbtn mb-4" type="submit" value="Submit Form">Login</button>
-                                    <a href="{{ url('/auth/google/customer') }}" class="text-decoration-none"><button
-                                            class="google-btn">
+                                    <div class="google-btn">
+                                        <a href="{{ url('/auth/google/customer') }}" class="text-decoration-none ">
                                             Sign In With Google <i class="fa-brands fa-google-plus"></i>
-                                        </button>
                                     </a>
+                                    </div>
+                                    
                                 </div>
-
+                               
                             </div>
 
                             <div id="form-messages2"><a class="text-decoration-none" href="{{ route('customer.register') }}">Don't Have Account Yet?

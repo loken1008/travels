@@ -54,7 +54,7 @@ class ViewServiceProvider extends ServiceProvider
             'fqa',
             'blog'
         )
-            ->where('status', '=', '1')->limit(15)
+            ->where('status', '=', '1')
             ->orderBy('id','desc')
             ->get();
         $place = Place::orderBy('place_name', 'asc')->get();

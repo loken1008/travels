@@ -670,7 +670,7 @@ function getThumbs($url = '')
     <!-- Blog Section Start -->
 
     @if ($getTourdetails->blog->count() > 0)
-        <section class="container-fluid blogs_section ">
+        <section class="container blogs_section ">
             <div class="populartrekheading mt-6 mb-4">
                 <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
                 <div class="chooseus-box layout"></div>
