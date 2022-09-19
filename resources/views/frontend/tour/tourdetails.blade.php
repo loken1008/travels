@@ -72,9 +72,9 @@ function getThumbs($url = '')
                 @if ($getTourdetails->dateprice->count() > 0)
                     <a class="item1 tdateprice" href="#tdateprice">Date & Price</a>
                 @endif
-                @if ($getTourdetails->map_url != null)
+                {{-- @if ($getTourdetails->map_url != null)
                     <a class="item1 tmap" href="#tmap">Map</a>
-                @endif
+                @endif --}}
                 @if ($getTourdetails->fqa->count() > 0)
                     <a class="item1 tfaq" href="#tfaq">FAq</a>
                 @endif
@@ -516,7 +516,7 @@ function getThumbs($url = '')
                             </div>
                         </section>
                     @endif
-                    @if (!empty($getTourdetails->map_url))
+                    {{-- @if (!empty($getTourdetails->map_url))
                         <section class="mt-4" id="tmap">
                             <h4 class="key-heading6"> <i class="fa-solid fa-chart-bar"></i>Map</h4>
                             <div class="equipment-desc">
@@ -526,7 +526,7 @@ function getThumbs($url = '')
 
                             </div>
                         </section>
-                    @endif
+                    @endif --}}
                     @if ($getTourdetails->fqa->count() > 0)
                         <section class="mt-4" id="tfaq">
                             <h4 class="key-heading7"> <i class="fa-solid fa-chart-bar"></i>FAQ's</h4>

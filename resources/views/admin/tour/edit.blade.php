@@ -264,12 +264,12 @@
                             <img id="holder2"  src={{ $edittour->trip_map }} style="margin-top:15px;max-height:100px;">
                             @endif
                         </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
                                 <input type="url" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
 
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="firstName5">Short Description :<span class="text-danger">*</span></label>
                                 <textarea  class="form-control" maxlength="130" id="short_desc" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
