@@ -679,11 +679,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
+        'host' => 'smtp-relay.sendinblue.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'info@mountainguidetrek.com',
-        'password' => 'xxxxxx',
+        'username' => 'binod.paneru@dristicode.com',
+        'password' => 'G1vcN2pKVMWUJwb3',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),

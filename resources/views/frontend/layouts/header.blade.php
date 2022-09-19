@@ -169,7 +169,7 @@ function getheaderThumbs($url = '')
                 <form role="search" class="search search-box " method="post" action="{{ route('search') }}">
                     @csrf
                     <input type="text" class="form-control" name="search" placeholder="Search...">
-                    <button class="search-icon"> <i class="fa fa-search"></i></button>
+                    <button type="submit" class="search-icon"> <i class="fa fa-search"></i></button>
                 </form>
             </div>
             <div class="mountainguide-block17 layout">

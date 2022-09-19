@@ -3,7 +3,7 @@ $(document).ready(function() {
         var sliderConfig = {
             loop: true,
             autoplay: true,
-            dots: true,
+            dots: false,
             nav: true,
             margin: 10,
             autoWidth: true,
