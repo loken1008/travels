@@ -45,7 +45,7 @@ class IndexController extends Controller
         
         $getTourdetails=Tour::with('country','place','category','dateprice','equipment','itinerary','images','fqa','blog')->where('status','1')->where('slug',$slug)->first();
         // dd($getTourdetails);
-         $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('slug','!=',$slug)->where('category_id',$getTourdetails->category_id)->limit(9)->get();
+         $getTour=Tour::with('country','place','category')->orderBy('id','desc')->where('status','=','1')->where('slug','!=',$slug)->where('subcategory_id',$getTourdetails->subcategory_id)->limit(9)->get();
         return view('frontend.tour.tourdetails',compact('getTourdetails','getTour'));
     }
     public function tourMap($slug)

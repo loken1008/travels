@@ -69,8 +69,8 @@ function getThumbs($url = '')
                         <div class="mountainguide-block45-item1 tab-pane {{ $loop->first ? 'active' : '' }}"
                             id="country{{ $countrys->country_name }}">
                             <div id="country-slide" class="country-details owl-carousel owl-theme">
-                                @forelse ($tour->shuffle() as $key2 => $ctour)
-                                    @if ($ctour->status ==1)
+                                @forelse ($tour->take(15)->shuffle() as $key2 => $ctour)
+                                    @if ($ctour->status ==1 && $ctour->category->category_type!='natural')
                                         @if ($ctour->country_id == $countrys->id)
                                             <div class="country-details-item">
                                                 <div class="mountainguide-block48 layout ">
