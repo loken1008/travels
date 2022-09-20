@@ -3637,7 +3637,7 @@ font-weight: bold;
 }
 #toverview p img,
 #toverview img {
-  width: 100%;
+  width: 100% !important;
 }
 #itinerary-desc p span span {
   font-family: 'Poppins' !important;
