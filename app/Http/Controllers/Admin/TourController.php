@@ -237,7 +237,7 @@ if($request->images){
 
         $uimages = Images::where('tour_id', $id)->first();
         Images::where('tour_id', $id)->update([
-            'images' => $request->images ? $request->images :$uimages->images??'',
+            'images' => $request->images ? $request->images :$uimages->images,
             'updated_at' => Carbon::now(),
         ]);
 
