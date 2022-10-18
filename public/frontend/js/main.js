@@ -1,44 +1,22 @@
-$(document).ready(function() {
-    function initSliders() {
-        var sliderConfig = {
-            loop: true,
-            autoplay: true,
-            dots: true,
-            nav: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                500: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                800: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            },
+jQuery(document).ready(function($){
+    $('#country-slide').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      autoplay: true,
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:2
+        },
+        1000:{
+          items:2
         }
-        var firstOwlCarousel = $('.mountainguide-block45-item1 #country-slide').owlCarousel(sliderConfig);
-
-        function initFirstSlider() {
-            $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function(e) {
-                firstOwlCarousel.trigger('refresh.owl.carousel');
-            })
-        }
-        initFirstSlider()
-
-    }
-    $(window).ready(initSliders)
-    $(window).resize(initSliders);
-})
-
-
+      }
+    })
+  })
 
 $(document).ready(function() {
     $('#best-sell-slider').owlCarousel({

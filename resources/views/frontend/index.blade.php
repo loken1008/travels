@@ -50,13 +50,7 @@ function getThumbs($url = '')
                             <div class="countrytab-box layout"></div>
                         </div>
                         <ul class="nav country-nav" data-bs-tabs="tabs">
-                            @foreach ($getcountry as $key => $cutry)
-                                <li class="nav-item {{ $loop->first ? 'active' : '' }}">
-                                    <a class="{{ $loop->first ? 'active' : '' }} country-subtitle layout"
-                                        aria-current="true" data-bs-toggle="tab"
-                                        href="#country{{ $cutry->country_name }}">{{ $cutry->country_name }}</a>
-                                </li>
-                            @endforeach
+            
                             <a href="{{ route('online.book') }}" class="make-own-trip-subtitle1 layout3" id="own-trip">Make
                                 your
                                 own trip</a>
