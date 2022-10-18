@@ -88,28 +88,37 @@
         @include('frontend.layouts.footer')
         <!--endfooter-->
     </div>
-  
-    <div class="fb-customerchat"
- page_id="100083483943617"
- minimized="true">
-</div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '100083483943617',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-  };
-(function(d, s, id){
+ <!-- Messenger Chat Plugin Code -->
+ <div id="fb-root"></div>
+ <!-- Your Chat Plugin code -->
+ <div id="fb-customer-chat" class="fb-customerchat">
+ </div>
+ <script>
+   var chatbox = document.getElementById('fb-customer-chat');
+   chatbox.setAttribute("page_id", "107596975332764");
+   chatbox.setAttribute("attribution", "biz_inbox");
+ </script>
+ <!-- Your SDK code -->
+ <script>
+   window.fbAsyncInit = function() {
+     FB.init({
+       xfbml            : true,
+       version          : 'v15.0'
+     });
+   };
+   (function(d, s, id) {
      var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
+     if (d.getElementById(id)) return;
      js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
+ </script>
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
