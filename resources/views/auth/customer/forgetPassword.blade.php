@@ -4,20 +4,6 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
 @extends('frontend.main')
 @section('title', 'User Password Reset')
 @section('content')
-    <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" @if(!empty($loginbanner->page_banner))data-background="{{asset($loginbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Reset Password</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Inner Section End -->
-
     <!-- Contact Section Start -->
     <section class="contact-section pt-90 pb-20">
         <div class="container">
@@ -26,16 +12,11 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
 
                     <form class="booking-form" method="POST" action="{{ route('forget.password.post') }}">
                         @csrf
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-packagesbk"
-                                    aria-selected="false">Reset Password </a>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
+                            <div>
+                               <h4>Reset Password </h4> 
 
-                            <!-- item start -->
-                            <div class=" " id="" role="" aria-labelledby="nav-packagesbk-tab">
+                            </div>
+                      
                                 <div class="form-row">
 
 
@@ -53,8 +34,8 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
                                     <div class="form-group col-md-12 d-flex" >
                                         <div class="col-6">
                                             
-                                            <div class="contact-textarea  d-flex" style="align-items:center;">
-                                                <button class="btn btn-theme" type="submit"
+                                            <div class="contact-textarea d-flex mt-4" style="align-items:center;">
+                                                <button class="loginbtn" type="submit"
                                                     value="Submit Form">Send Password Reset Link</button>
                                                     
                                             </div>
@@ -65,11 +46,6 @@ $loginbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','log
 
                                     <div id="form-messages2"></div>
                                 </div>
-                            </div>
-                            <!-- item end -->
-
-
-                        </div>
                     </form>
 
                 </div>

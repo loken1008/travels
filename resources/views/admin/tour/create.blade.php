@@ -74,6 +74,8 @@
                                         <option value="bestsell" >Best Seller</option>
                                         <option value="private" >Private</option>
                                         <option value="family" >Family</option>
+                                        <option value="helireturn"  >Trek & Heli Return</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -236,16 +238,16 @@
                             </div>
                         </div>
                        
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="mapurl"> Map Url :</label>
-                            <input type="text" class="form-control" id="mapurl" value="{{ old('map_url') }}"
+                            <input type="url" class="form-control" id="mapurl" value="{{ old('map_url') }}"
                                 name="map_url">
-                        </div>
+                        </div> --}}
 
                         <div class="form-group ">
                             <label for="description">Short Description :<span class="text-danger">*</span></label>
-                            <textarea class="form-control " name="short_description" value={{ old('short_description') }}>{{ old('short_description') }}</textarea>
-
+                            <textarea class="form-control" id="short_desc" maxlength="130" name="short_description" value={{ old('short_description') }}>{{ old('short_description') }}</textarea>
+                            <span id="rchars">130</span> Character(s) Remaining
                             @error('short_description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -462,6 +464,13 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 
     {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
+    <script>
+        var maxLength =130;
+$('#short_desc').keyup(function() {
+  var textlen = maxLength - $(this).val().length;
+  $('#rchars').text(textlen);
+});
+    </script>
     <script>
         var options = {
             filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',

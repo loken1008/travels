@@ -9,15 +9,20 @@
                 <h4 class="box-title">Update Tour Place</h4>
                 <a class="btn btn-primary " href="{{ route('tour.viewdetails', $edittour->id) }}" style="width:5rem"
                     title="edit"><i class="fa fa-eye"></i></a>
+                    
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
                 <form action="{{ route('tour.update', $edittour->id) }}" method="post" class="tab-wizard wizard-circle"
                     enctype="multipart/form-data" id="edittourForm">
                     @csrf
-
+                    
                     <section>
+                        
                         <div class="row">
+                            <div class="update-top col-12">
+                                <input type="submit" class="btn btn-rounded btn-info pull-right" value="Update Tour">
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
@@ -87,6 +92,7 @@
                                         <option value="bestsell" {{$edittour->type=='bestsell'?'selected':''}}>Best Seller</option>
                                         <option value="private" {{$edittour->type=='private'?'selected':''}}>Private</option>
                                         <option value="family" {{$edittour->type=='family'?'selected':''}}>Family</option>
+                                        <option value="helireturn" {{$edittour->type=='helireturn'?'selected':''}}>Trek & Heli Return</option>
                                     </select>
                                 </div>
                             </div>
@@ -226,14 +232,16 @@
                                 <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <a id="elfm" data-input="thumbnail" data-preview="holder"
+                                        <a id="elfm" data-input="ethumbnail" data-preview="holder"
                                             class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
-                                    <input id="thumbnail" class="form-control" type="text" name="images">
+                                    <input id="ethumbnail" class="form-control" type="text" name="images">
                                 </div>
                                 @forelse($edittour->images as $image)
+                                <input type="hidden" name="images_id" value="{{ $image->id }}">
+
                                     @php
                                         $imagess = explode(',', $image->images);
                                         
@@ -264,15 +272,17 @@
                             <img id="holder2"  src={{ $edittour->trip_map }} style="margin-top:15px;max-height:100px;">
                             @endif
                         </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="firstName5"> Map Url :<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="firstName5"
+                                <input type="url" class="form-control" id="firstName5"
                                     value="{{ $edittour->map_url }}" name="map_url">
 
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="firstName5">Short Description :<span class="text-danger">*</span></label>
-                                <textarea  class="form-control" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
+                                <textarea  class="form-control" maxlength="130" id="short_desc" name="short_description" value="{{ $edittour->short_description }}">{{ $edittour->short_description }}</textarea>
+                            <span id="rchars">130</span> Character(s) Remaining
+                               
                                 @error('short_description')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -734,7 +744,13 @@
     {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
     <script src="{{asset('assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
  
-   
+    <script>
+        var maxLength =130;
+$('#short_desc').keyup(function() {
+  var textlen = maxLength - $(this).val().length;
+  $('#rchars').text(textlen);
+});
+    </script>
 <script>
   var i = 0;
 $("#dynamic-ar").click(function() {
@@ -816,7 +832,10 @@ $(document).on('click', '.remove_field', function() {
 </script>
 <script type='text/javascript'>
     CKEDITOR.replaceAll();
-    if (CKEDITOR.instances['meta_description']) {
+    if (CKEDITOR.instances['short_desc']) {
+   CKEDITOR.instances['short_desc'].destroy(true);
+}
+  if (CKEDITOR.instances['meta_description']) {
    CKEDITOR.instances['meta_description'].destroy(true);
 }
 if (CKEDITOR.instances['short_description']) {

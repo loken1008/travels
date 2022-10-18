@@ -13,7 +13,7 @@ class SubCategoryController extends Controller
     public function SubCategoryView()
     {
         $category=Category::get();
-        $subcategories=SubCategory::orderBy('id','desc')->latest()->get();
+        $subcategories=SubCategory::with('category')->orderBy('sort_id','asc')->latest()->get();
         return view('admin.subcategory.sub_category_view',compact('subcategories','category'));
     }
 
@@ -74,6 +74,12 @@ class SubCategoryController extends Controller
     {
         $subcategory=SubCategory::where('category_id',$category_id)->get();
         return response()->json($subcategory);
+    }
+    public function SubCategoryReorder(Request $request){
+        foreach ($request->order as $key => $order) {
+            $subcategory = SubCategory::find($order['id'])->update(['sort_id' => $order['order']]);
+        }
+        return response('Update Successfully.', 200);
     }
 
 }

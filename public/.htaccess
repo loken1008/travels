@@ -2,7 +2,9 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^localhost$ [NC]
+    RewriteRule ^(.*)$ public/$1 [L,NC] 
 RewriteEngine On
 
     # Handle Authorization Header

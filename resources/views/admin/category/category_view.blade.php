@@ -15,19 +15,21 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="example1" class="table table-bordered table-striped categorydatatable">
                                 <thead>
                                     <tr>
                                         <th>SN</th>
+                                        <th>Order</th>
                                         <th>Category Name</th>
                                         <th>Category Type</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tablecontents" >
                                     @forelse($categories as $key=> $category)
-                                        <tr>
+                                        <tr class="row1" data-id="{{ $category->id }}">
                                             <td>{{$key+1}}</td>
+                                            <td ><i class="fa fa-sort"></i></td>
                                             <td>{{ $category->category_name }}</td>
                                             <td>{{$category->category_type}}</td>
                                             <td>

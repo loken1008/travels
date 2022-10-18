@@ -16,7 +16,7 @@
 
     <!-- Inner Section Start -->
     <section class="blogs-details-image">
-        <img src="{{ $getblogdetails->blog_image }}" alt="{{ $getblogdetails->img_alt }}">
+        <img srcset="{{ $getblogdetails->blog_image }}" alt="{{ $getblogdetails->img_alt }}">
     </section>
     <!-- Inner Section End -->
 
@@ -24,7 +24,7 @@
     <section class="blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-lg-8">
+                <div class="col-lg-8 blog-left-side">
                     <div class="blog-details">
                         <h4 class="blog-title">{{ $getblogdetails->blog_title }}</h4>
 
@@ -51,7 +51,8 @@
                                 {{ Session::get('success') }}
                             </div>
                         @endif
-                        <div class="d-flex mt-5">
+                        <div class=" mt-5">
+                            <p class="share-text">Share with others</p>
                             <div class="sharethis-inline-share-buttons"></div>
 
                         </div>
@@ -206,11 +207,11 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-4">
+                <div class="col-lg-3 blog-right-side">
                     <div class="blogsearch">
-                        <form role="search" class="search-box " method="get" action="{{ route('blogsearch') }}">
+                        <form role="search" class="search-box " method="post" action="{{ route('blogsearch') }}">
                             @csrf
-                            <input type="text" class="form-control" name="search" placeholder="Blog Search...">
+                            <input type="text" class="form-control" name="blog_search" placeholder="Blog Search...">
                             <button class="blogsearch-icon"> <i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -218,8 +219,8 @@
                         <h3 class="recent-post">Recent posts</h3>
 
                         @foreach ($getblogs as $getblog)
-                            <h5 class="related-blog"><a
-                                    href="{{ route('blogsdetails', $getblog->slug) }}">{{ $getblog->blog_title }}</a></h5>
+                            <h6 class="related-blog"><a
+                                    href="{{ route('blogsdetails', $getblog->slug) }}">{{ $getblog->blog_title }}</a></h6>
                         @endforeach
                     </div>
 

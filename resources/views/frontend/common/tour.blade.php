@@ -19,9 +19,12 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
  <div class="container network_wrapper col-sm  ">
     <div class=" country-card">
         <div class="country-header">
-            <div class="col-lg-6 countrytabmainheading layout">
-                <h2 class="countrytab-title layout">Related Tour</h2>
-                <div class="countrytab-box layout"></div>
+            <div class="countrytabmainheading layout">
+                <div>
+                    <h2 class="countrytab-title layout">Popular Trekking Places</h2>
+                    <div class="countrytab-box layout"></div>
+                </div>
+               
             </div>
 
         </div>
@@ -34,8 +37,24 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                             <a class="text-decoration-none" href="{{ route('tourdetails', $ctour->slug) }}">
                                 <div class="mountainguide-block49 layout">
                                     <div class="country-image layout">
-                                        <img src="{{ getThumbs($ctour->mainImage) }}"
+                                        <img srcset="{{ getThumbs($ctour->mainImage) }}"
                                             alt="{{ $ctour->img_alt }}">
+                                            @if(!empty($ctour->type))
+                                            <p class="otherhead-tag">
+                                               @if($ctour->type=="group")
+                                               <i class="fa-solid fa-people-group"></i>
+                                               @elseif($ctour->type=='family')
+                                               <i class="fa-solid fa-people-roof"></i>
+                                               @elseif($ctour->type=='bestsell')
+                                               <i class="fa-solid fa-award"></i>
+                                               @elseif($ctour->type=='private')
+                                               <i class="fa-solid fa-lock"></i>
+                                               @else
+                                               <i class="fa-solid fa-award"></i>
+                                               @endif
+                                               {{$ctour->type}}
+                                           </p>
+                                            @endif
                                     </div>
                                     <div class="mountainguide-block50 layout">
                                         <div class="mountainguide-block51 layout">
@@ -61,10 +80,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                                     </div>
                                                     @if ($getcoupon)
                                                         <h4 class="mountainguide-highlights4 layout">
-                                                            <strike class="text-danger"><span>$
-                                                                </span>{{ $ctour->main_price }}</strike>
-                                                            <span>$
-                                                            </span>{{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                            <span class="discount-price">${{ $ctour->main_price }}</span> ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
                                                         </h4>
                                                     @else
                                                         <h4 class="mountainguide-highlights4 layout">

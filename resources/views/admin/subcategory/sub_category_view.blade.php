@@ -18,15 +18,17 @@
                                     <thead>
                                         <tr>
                                             <th>SN</th>
+                                            <th>Order</th>
                                             <th>Category</th>
                                             <th>Sub Category Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="subtablecontents">
                                         @forelse($subcategories as $key=> $subcategory)
-                                            <tr>
+                                            <tr class="row1" data-id="{{ $subcategory->id }}">
                                                 <td>{{$key+1}}</td>
+                                            <td ><i class="fa fa-sort"></i></td>
                                                 <td>@if(!empty($subcategory->category->category_name)){{ $subcategory->category->category_name }}@endif</td>
                                                 <td>{{ $subcategory->sub_category_name }}</td>
                                                 <td>

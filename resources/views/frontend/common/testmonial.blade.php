@@ -1,17 +1,30 @@
 @php
 $gettestmonial = App\Models\Testmonial::where('status', 1)
-    ->orderBy('id', 'desc')
+    ->orderBy('id', 'desc')->limit(15)
     ->get();
-
+    function gettestThumbs($url = '')
+{
+    $base = basename($url);
+    if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+        return str_replace($base, 'thumbs/' . $base, $url);
+    } else {
+        $preUrl = 'storage/';
+        $beforeBase = str_replace($base, '', $url);
+        return $preUrl . $beforeBase . 'thumbs/' . $base;
+    }
+}
 @endphp
+
 @if ($gettestmonial->count() > 0)
     <section class="testimonials-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="populartrekheading mt-6 mb-4">
+                        <div>
                         <h2 class="populartrektitle layout2">Our Customer Reviews</h2>
                         <div class="chooseus-box layout"></div>
+                        </div>
                     </div>
                     <div id="testimonial-slider" class=" testimonials_slide owl-carousel owl-theme">
                         @forelse($gettestmonial as $testmonial)
@@ -23,22 +36,22 @@ $gettestmonial = App\Models\Testmonial::where('status', 1)
                                         <h5 class="testimonial-title"> <small>"{{ $testmonial->message_title }}</small>
                                         </h5>
                                         @if ($testmonial->type == 'tripadvisor')
-                                            <img src="{{ asset('tripadvisor.svg') }}" class="testimonial-icon"
+                                            <img srcset="{{ asset('tripadvisor.svg') }}" class="testimonial-icon"
                                                 alt="testicon" title="{{ $testmonial->type }}">
                                         @elseif($testmonial->type == 'google')
-                                            <img src="{{ asset('google.webp') }}" class="testimonial-icon"
+                                            <img srcset="{{ asset('google.webp') }}" class="testimonial-icon"
                                                 alt="testicon" title="{{ $testmonial->type }}">
                                         @elseif($testmonial->type == 'facebook')
-                                            <img src="{{ asset('facebook.svg') }}" class="testimonial-icon"
+                                            <img srcset="{{ asset('facebook.svg') }}" class="testimonial-icon"
                                                 alt="testicon" title="{{ $testmonial->type }}">
                                         @else
-                                            <img src="{{ asset('mg.webp') }}" class="testimonial-icon" alt="testicon"
+                                            <img srcset="{{ asset('mg.webp') }}" class="testimonial-icon" alt="testicon"
                                                 title="{{ $testmonial->type }}">
                                         @endif
                                     </div>
 
                                     <div class="testimonial-desc mt-4">
-                                        <img class="testimonial-image " src="{{ $testmonial->image }}" alt="image">
+                                        <img class="testimonial-image " srcset="{{ gettestThumbs($testmonial->image) }}" alt="image">
                                         <p class="testimonial-message ">
                                             {{ Str::limit($testmonial->message_description, 150) }}</p>
                                     </div>

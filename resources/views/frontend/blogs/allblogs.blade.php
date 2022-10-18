@@ -1,65 +1,65 @@
 @php
- function getblogThumbs($url=""){
-            $base = basename($url);
-            if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
-                return str_replace($base, "thumbs/".$base, $url);
-            }else{
-                $preUrl = "storage/";
-                $beforeBase = str_replace($base, "",$url);
-                return $preUrl.$beforeBase.'thumbs/'.$base;
-            }
-        }
+function getblogThumbs($url = '')
+{
+    $base = basename($url);
+    if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+        return str_replace($base, 'thumbs/' . $base, $url);
+    } else {
+        $preUrl = 'storage/';
+        $beforeBase = str_replace($base, '', $url);
+        return $preUrl . $beforeBase . 'thumbs/' . $base;
+    }
+}
 @endphp
 @extends('frontend.main')
 @section('title', 'All Blogs')
 @section('content')
 
 
-    <!-- Inner Section Start -->
-    <section class="inner-area parallax-bg" @if(!empty($blogbanner->page_banner))data-background="{{asset($blogbanner->page_banner)}}" @endif data-type="parallax" data-speed="3">
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-12">
-                        <h4> All Blog</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Inner Section End -->
-
-    <!-- Blog Section Start -->
-    <section class="blog-section pb-10">
+    <section class=" allblogs_section">
         <div class="container">
             <div class="row">
-                @foreach ($getblogs as $getblog)
-                <div class="col-md-4 col-lg-4">
-                    <div class="blog-post">
-                        <a href="{{ route('blogsdetails', $getblog->slug) }}">
-                            <div class="thumb">
-                                <img src="{{ getblogThumbs($getblog->blog_image) }}" style="height:227px"
-                                    alt="{{ $getblog->img_alt }}">
-                                <div class="content">
-                                    
-                                    
-                                </div>
-                            </div>
-                        </a>
-                        <a href="{{ route('blogsdetails', $getblog->slug) }}" class="read-btn">
-                           
-                            <h3>{{ $getblog->blog_title }}</h3>
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
+                @if ($getblogs->count() > 0)
+                    <div class="allblogs-heading mt-6 mb-4">
+                        <h2 class="populartrektitle layout2">Our Latest Blogs</h2>
+                        <div class="chooseus-box layout"></div>
                     </div>
+                @endif
+                <div class="allblogs">
+                    @forelse($getblogs as $blog)
+                        <div class="col-md-6 col-lg-4 allblogs_item">
+                            <a class="text-decoration-none" href="{{ route('blogsdetails', $blog->slug) }}">
+                                <div class="allblogs_image">
+                                    <img class="img-fluid" srcset="{{ getblogThumbs($blog->blog_image) }}"
+                                        alt="{{ $blog->img_alt }}">
+                                </div>
+                                <div class="blogs_details">
+                                    <div class="mt-3 mb-3">
+                                        <span class="blogs_date">{{ $blog->created_at->format('Y-M-d') }}</span>
+                                    </div>
+                                    <h5 class="blogs_title">{{ Str::limit($blog->blog_title, 25) }}</h5>
+    
+                                    <div class="blogs_details">{!! Str::limit($blog->blog_description, 70) !!}</div>
+                                    <div class="bbtn">
+    
+                                        <a href="{{ route('blogsdetails', $blog->slug) }}"
+                                            class="blogsbtn text-decoration-none">Read
+                                            More</a>
+                                    </div>
+    
+                                </div>
+                            </a>
+                        </div>
+    
+                    @empty
+                    @endforelse
+    
                 </div>
-                @endforeach
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
 
-    <section class="text-center pt-0 pb-70">
+    <section class="paginate text-center pt-0 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
