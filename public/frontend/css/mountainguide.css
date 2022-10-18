@@ -232,6 +232,9 @@
   color: #828282 !important;
   white-space: initial !important;
 }
+.mountainguide-image8 .first-section-image{
+  height:300px;
+}
 
 .mobile-view a {
   height: 35px !important;
@@ -1235,6 +1238,14 @@
 /* #best-sell-slider .owl-nav .owl-prev,#best-sell-slider .owl-nav .owl-next,#challenge-peak-slider .owl-nav .owl-prev,#challenge-peak-slider .owl-nav .owl-next{
   color: white !important;
 } */
+.first-section-price{
+  position: absolute;
+  top:260px;
+  left:0px;
+  background-color:#0E4E93;
+  padding:2px;
+  color:white; 
+}
 .best-sell-day{
   position: absolute;
   top:182px;
@@ -1969,7 +1980,7 @@ font-weight: bold;
   flex-direction: column;
   position: relative;
   flex: 0 1 353px;
-  border-right: 1px solid #9999991a;
+  border-right: 1px solid #414040dc;
   margin: 0px 14px;
   padding: 0 20px;
 }
@@ -1997,10 +2008,11 @@ font-weight: bold;
 }
 .mountainguide-block89.layout {
   position: relative;
-  margin:50px 10px 30px;
+  margin:0px 10px 0px 30px;
 }
 .chooseus-title {
-  padding-right: 25px !important;
+  /* padding-right: 25px !important; */
+  text-align: center;
 }
 .mountainguide-paragraph-body1 {
   font: 14px/1.59 'Poppins', Helvetica, Arial, serif;
@@ -2028,8 +2040,9 @@ font-weight: bold;
   font-weight: 400;
   font-size: 16px;
   line-height:30px;
-  color: #999999 !important;
+  color: #4c4a4a !important;
   margin-top:15px ;
+  text-align: center;
 }
 .mountainguide-subtitle4.layout {
   position: relative;
@@ -4020,6 +4033,8 @@ a:hover {
   line-height: 35px;
   text-transform: capitalize;
   color: #403d3d;
+  display:flex;
+  flex-wrap: wrap;
 }
 .details-tag li i {
   color: #0e4e93;

@@ -1,15 +1,15 @@
 @php
-function getThumbs($url = '')
-{
-    $base = basename($url);
-    if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
-        return str_replace($base, 'thumbs/' . $base, $url);
-    } else {
-        $preUrl = 'storage/';
-        $beforeBase = str_replace($base, '', $url);
-        return $preUrl . $beforeBase . 'thumbs/' . $base;
+    function getThumbs($url = '')
+    {
+        $base = basename($url);
+        if (strpos($url, 'https://') !== false or strpos($url, 'http://') !== false) {
+            return str_replace($base, 'thumbs/' . $base, $url);
+        } else {
+            $preUrl = 'storage/';
+            $beforeBase = str_replace($base, '', $url);
+            return $preUrl . $beforeBase . 'thumbs/' . $base;
+        }
     }
-}
 @endphp
 @extends('frontend.main')
 @section('title', 'Explore-With-Us|Home')
@@ -49,6 +49,12 @@ function getThumbs($url = '')
                             <h2 class="countrytab-title layout">Where do you want to trek?</h2>
                             <div class="countrytab-box layout"></div>
                         </div>
+                        <ul class="nav country-nav" data-bs-tabs="tabs">
+
+                            <a href="{{ route('online.book') }}" class="make-own-trip-subtitle1 layout3" id="own-trip">Make
+                                your
+                                own trip</a>
+                        </ul>
                     </div>
                     <ul class="nav country-nav" data-bs-tabs="tabs">
                         {{-- @foreach ($getcountry as $key => $cutry)
@@ -64,101 +70,72 @@ function getThumbs($url = '')
                     </ul>
                 </div>
                 <div class=" tab-content mt-4">
-                    @forelse($getcountry as $key1=> $countrys)
-                        <div class="mountainguide-block45-item1 tab-pane {{ $loop->first ? 'active' : '' }}"
-                            id="country{{ $countrys->country_name }}">
+                        <div class="mountainguide-block45-item1 "id="country">
                             <div id="country-slide" class="country-details owl-carousel owl-theme">
-                                @forelse ($tour->shuffle() as $key2 => $ctour)
-                                    @if ($ctour->country_id == $countrys->id)
-                                        @if ($ctour->status == 1 && $ctour->category->category_type != 'natural')
-                                            <div class="country-details-item">
-                                                <div class="mountainguide-block48 layout ">
-                                                    <a class="text-decoration-none"
-                                                        href="{{ route('tourdetails', $ctour->slug) }}">
-                                                        <div class="mountainguide-block49 layout">
-                                                            <div class="country-image layout">
-                                                                <img srcset="{{ getThumbs($ctour->mainImage) }}"
-                                                                    alt="{{ $ctour->img_alt }}">
-                                                                @if (!empty($ctour->type))
-                                                                    <p class="otherhead-tag">
-                                                                        @if ($ctour->type == 'group')
-                                                                            <i class="fa-solid fa-people-group"></i>
-                                                                            Group
-                                                                        @elseif($ctour->type == 'family')
-                                                                            <i class="fa-solid fa-people-roof"></i>
-                                                                            Family
-                                                                        @elseif($ctour->type == 'bestsell')
-                                                                            <i class="fa-solid fa-award"></i> Best Sell
-                                                                        @elseif($ctour->type == 'private')
-                                                                            <i class="fa-solid fa-lock"></i> Private
-                                                                        @elseif($ctour->type == 'tripofthemonth')
-                                                                            <i class="fa-solid fa-award"></i> Trip Of
-                                                                            The Month
-                                                                        @else
-                                                                        @endif
-                                                                    </p>
+                                @forelse ($helitour as $key2 => $ctour)
+                                        <div class="mountainguide-block48 layout1">
+                                            <a class="text-decoration-none" href="{{ route('tourdetails', $ctour->slug) }}">
+                                                <div class="mountainguide-block49 layout">
+                                                    <div class="mountainguide-image8 layout">
+                                                        <img class="first-section-image"
+                                                            srcset="{{ getThumbs($ctour->mainImage) }}"
+                                                            alt="{{ $ctour->img_alt }}">
+                                                            @if (!empty($ctour->type))
+                                                            <p class="popularhead-tag">
+                                                                @if ($ctour->type == 'group')
+                                                                    <i class="fa-solid fa-people-group"></i> Group
+                                                                @elseif($ctour->type == 'family')
+                                                                    <i class="fa-solid fa-people-roof"></i> Family
+                                                                @elseif($ctour->type == 'bestsell')
+                                                                    <i class="fa-solid fa-award"></i> Best Sell
+                                                                @elseif($ctour->type == 'private')
+                                                                    <i class="fa-solid fa-lock"></i> Private
+                                                                @elseif($ctour->type == 'tripofthemonth')
+                                                                    <i class="fa-solid fa-award"></i> Trip Of The Month
+                                                                    @elseif($ctour->type == 'helireturn')
+                                                                    <i class="fa-solid fa-award"></i> Heli Tour & Return
+                                                                @else 
                                                                 @endif
-                                                            </div>
-                                                            <div class="mountainguide-block50 layout">
-                                                                <div class="mountainguide-block51 layout">
-                                                                    <div class="mountainguide-text-body2-box layout">
-                                                                        <div class="mountainguide-text-body2">Duration:<span
-                                                                                class="mountainguide-text-body2-span1">{{ $ctour->tour_days }}
-                                                                                days</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3 class="mountainguide-subtitle2 layout">
-                                                                        {{ Str::limit($ctour->tour_name, 22) }}</h3>
-                                                                    <div class="mountainguide-paragraph-body layout">
-                                                                        {{ $ctour->short_description }}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mountainguide-block52 layout">
-                                                                    <div class="mountainguide-block52-item">
-                                                                        <div class="mountainguide-block53 layout">
-                                                                            <div class="mountainguide-text-body11 layout">
-                                                                                Price
-                                                                            </div>
-                                                                            @if ($getcoupon)
-                                                                                <h4
-                                                                                    class="mountainguide-highlights4 layout">
-                                                                                    <span
-                                                                                        class="discount-price">${{ $ctour->main_price }}
-                                                                                    </span>
-                                                                                    ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
-                                                                                </h4>
-                                                                            @else
-                                                                                <h4
-                                                                                    class="mountainguide-highlights4 layout">
-                                                                                    ${{ $ctour->main_price }}</h4>
-                                                                            @endif
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="mountainguide-block52-spacer"></div>
-                                                                    <div class="mountainguide-block52-item1">
-                                                                        <div class="mountainguide-block54 layout">
-                                                                            <div class="mountainguide-block55 layout">
-                                                                                <a href="{{ route('booking', $ctour->slug) }}"
-                                                                                    class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                                                    Now</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            </p>
+                                                        @endif
+                                                        <div class="first-section-price">
+                                                            @if ($getcoupon)
+                                                                <h4 class="mountainguide-highlights4 layout">
+                                                                    <span class="discount-price">${{ $ctour->main_price }}</span>
+                                                                    ${{ $ctour->main_price - ($getcoupon->discount_amount / 100) * $ctour->main_price }}
+                                                                </h4>
+                                                            @else
+                                                                <h4 class="mountainguide-highlights4 layout">
+                                                                    $ {{ $ctour->main_price }}</h4>
+                                                            @endif
                                                         </div>
-                                                    </a>
+                                                    </div>
+                                                    <div class="mountainguide-block50 layout">
+                                                        <div class="mountainguide-block51 layout">
+        
+                                                            <h3 class="mountainguide-subtitle2 layout">
+                                                                {{$ctour->tour_name }}
+                                                            </h3>
+                                                        </div>
+                                                        <div class="mountainguide-block52 layout">
+                                                            <h4 class="text-value"><i class="fa-solid fa-route"></i>
+                                                                {{ $ctour->grade }}</h4>
+                                                            <h4 class="text-value d-flex"><img
+                                                                    src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                                    class="altitude-img">
+                                                                {{ $ctour->altitude }}</h4>
+                                                            <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
+                                                                {{ $ctour->tour_days }}
+                                                                days</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                            </div>
-                                        @endif
-                                    @endif
+                                            </a>
+                                        </div>
                                 @empty
                                 @endforelse
                             </div>
                         </div>
-                    @empty
-                    @endforelse
                 </div>
             </div>
         </div>
@@ -220,7 +197,8 @@ function getThumbs($url = '')
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $selltour->slug) }}">
                                         <div class="mountainguide-block49 layout">
                                             <div class="mountainguide-image8 layout">
-                                                <img class="best-sell-image" srcset="{{ getThumbs($selltour->mainImage) }}"
+                                                <img class="best-sell-image"
+                                                    srcset="{{ getThumbs($selltour->mainImage) }}"
                                                     alt="{{ $selltour->img_alt }}">
                                                 <p class="head-tag"><i class="fa-solid fa-award"></i> Best Seller</p>
                                                 {{-- <span class="best-sell-day"><i class="fa-solid fa-calendar-days"></i>
@@ -241,41 +219,21 @@ function getThumbs($url = '')
                                             </div>
                                             <div class="mountainguide-block50 layout">
                                                 <div class="mountainguide-block51 layout">
-                                                    {{-- <div class="mountainguide-text-body2-box layout">
-                                                        <div class="mountainguide-text-body2">
-                                                            <span class="mountainguide-text-body21-span0">Duration:
-                                                            </span><span
-                                                                class="mountainguide-text-body21-span1">{{ $selltour->tour_days }}
-                                                                days</span>
-                                                        </div>
-                                                    </div> --}}
+
                                                     <h3 class="mountainguide-subtitle2 layout">
                                                         {{ Str::limit($selltour->tour_name, 22) }}
                                                     </h3>
-                                                    {{-- <div class="mountainguide-paragraph-body layout">
-                                                        {{ Str::limit($selltour->short_description, 50) }}
-                                                    </div> --}}
                                                 </div>
                                                 <div class="mountainguide-block52 layout">
                                                     <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                         {{ $selltour->grade }}</h4>
-                                                        <h4 class="text-value d-flex"><img src="{{asset('frontend/altitude.png')}}" alt="" class="altitude-img" >
-                                                            {{ $selltour->altitude }}</h4>
-                                                            <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
-                                                                {{ $selltour->tour_days }}
-                                                                days</span>
-                                                            
-                                                    {{-- <div class="mountainguide-block52-item1">
-                                                       
-
-                                                        <div class="mountainguide-block54 layout">
-                                                            <div class="mountainguide-block55 layout">
-                                                                <a href="{{ route('booking', $selltour->slug) }}"
-                                                                    class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                                    Now</a>
-                                                            </div>
-                                                        </div>
-                                                    </div> --}}
+                                                    <h4 class="text-value d-flex"><img
+                                                            src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                            class="altitude-img">
+                                                        {{ $selltour->altitude }}</h4>
+                                                    <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
+                                                        {{ $selltour->tour_days }}
+                                                        days</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -304,10 +262,7 @@ function getThumbs($url = '')
                 @foreach ($chooseus as $key => $choose)
                     <div class="mountainguide-block87-item">
                         <div class="mountainguide-block88 layout">
-                            <div class="mountainguide-icon3 layout">
-                                <img class="chooseimage" srcset="{{ getThumbs($choose->image) }}"
-                                    alt="{{ $choose->title }}">
-                            </div>
+                           
                             <div class="mountainguide-block89 layout">
                                 <h3 class="chooseus-title"><a href="{{ route('travelwithus') }}"
                                         class="text-decoration-none">{{ $choose->title }}</a></h3>
@@ -336,13 +291,15 @@ function getThumbs($url = '')
                     @if ($catpeak)
                         @foreach ($catpeak->tour->sortByDesc('id')->take(15) as $key => $tour)
                             @if ($tour->status == 1)
-                                <div class="mountainguide-block48 layout1">
-                                    <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
-                                        <div class="mountainguide-block49 layout">
-                                            <div class="mountainguide-image8 layout">
-                                                <img class="best-sell-image" srcset="{{ getThumbs($tour->mainImage) }}"
-                                                    alt="{{ $tour->img_alt }}">
-                                                <p class="head-tag">
+                            <div class="mountainguide-block48 layout1">
+                                <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
+                                    <div class="mountainguide-block49 layout">
+                                        <div class="mountainguide-image8 layout">
+                                            <img class="best-sell-image"
+                                                srcset="{{ getThumbs($tour->mainImage) }}"
+                                                alt="{{ $tour->img_alt }}">
+                                                @if (!empty($tour->type))
+                                                <p class="popularhead-tag">
                                                     @if ($tour->type == 'group')
                                                         <i class="fa-solid fa-people-group"></i> Group
                                                     @elseif($tour->type == 'family')
@@ -356,55 +313,42 @@ function getThumbs($url = '')
                                                     @else
                                                     @endif
                                                 </p>
-                                            </div>
-                                            <div class="mountainguide-block50 layout">
-                                                <div class="mountainguide-block51 layout">
-                                                    <div class="mountainguide-text-body2-box layout">
-                                                        <div class="mountainguide-text-body2">
-                                                            <span class="mountainguide-text-body21-span0">Duration:
-                                                            </span><span
-                                                                class="mountainguide-text-body21-span1">{{ $tour->tour_days }}
-                                                                days</span>
-                                                        </div>
-                                                    </div>
-                                                    <h3 class="mountainguide-subtitle2 layout">
-                                                        {{ Str::limit($tour->tour_name, 22) }}
-                                                    </h3>
-                                                    <div class="mountainguide-paragraph-body layout">
-                                                        {{ $tour->short_description, 55 }}
-                                                    </div>
-                                                </div>
-                                                <div class="mountainguide-block52 layout">
-                                                    <div class="mountainguide-block52-item">
-                                                        <div class="mountainguide-block53 layout">
-                                                            <div class="mountainguide-text-body14 layout">Price</div>
-                                                            @if ($getcoupon)
-                                                                <h4 class="mountainguide-highlights4 layout">
-                                                                    <span
-                                                                        class="discount-price">${{ $tour->main_price }}</span>
-                                                                    ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                                </h4>
-                                                            @else
-                                                                <h4 class="mountainguide-highlights4 layout">
-                                                                    $ {{ $tour->main_price }}</h4>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                    <div class="mountainguide-block52-spacer"></div>
-                                                    <div class="mountainguide-block52-item1">
-                                                        <div class="mountainguide-block54 layout">
-                                                            <div class="mountainguide-block55 layout">
-                                                                <a href="{{ route('booking', $tour->slug) }}"
-                                                                    class="mountainguide-highlights5 layout text-decoration-none">Book
-                                                                    Now</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            @endif
+                                            <div class="best-sell-price">
+                                                @if ($getcoupon)
+                                                    <h4 class="mountainguide-highlights4 layout">
+                                                        <span
+                                                            class="discount-price">${{ $tour->main_price }}</span>
+                                                        ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </h4>
+                                                @else
+                                                    <h4 class="mountainguide-highlights4 layout">
+                                                        $ {{ $tour->main_price }}</h4>
+                                                @endif
                                             </div>
                                         </div>
-                                    </a>
-                                </div>
+                                        <div class="mountainguide-block50 layout">
+                                            <div class="mountainguide-block51 layout">
+
+                                                <h3 class="mountainguide-subtitle2 layout">
+                                                    {{ Str::limit($tour->tour_name, 22) }}
+                                                </h3>
+                                            </div>
+                                            <div class="mountainguide-block52 layout">
+                                                <h4 class="text-value"><i class="fa-solid fa-route"></i>
+                                                    {{ $tour->grade }}</h4>
+                                                <h4 class="text-value d-flex"><img
+                                                        src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                        class="altitude-img">
+                                                    {{ $tour->altitude }}</h4>
+                                                <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
+                                                    {{ $tour->tour_days }}
+                                                    days</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                             @endif
                         @endforeach
                     @endif
@@ -496,12 +440,14 @@ function getThumbs($url = '')
                     @if ($cattrekking)
                         @foreach ($cattrekking->tour->sortByDesc('id')->take(15) as $key => $tour)
                             @if ($tour->status == 1)
-                                <div class="populartrek_item">
-                                    <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
-                                        <div class="populartrek_image">
-                                            <img class="img-fluid" srcset="{{ getThumbs($tour->mainImage) }}"
+                            <div class="mountainguide-block48 layout1">
+                                <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
+                                    <div class="mountainguide-block49 layout">
+                                        <div class="mountainguide-image8 layout">
+                                            <img class="first-section-image"
+                                                srcset="{{ getThumbs($tour->mainImage) }}"
                                                 alt="{{ $tour->img_alt }}">
-                                            @if (!empty($tour->type))
+                                                @if (!empty($tour->type))
                                                 <p class="popularhead-tag">
                                                     @if ($tour->type == 'group')
                                                         <i class="fa-solid fa-people-group"></i> Group
@@ -517,41 +463,41 @@ function getThumbs($url = '')
                                                     @endif
                                                 </p>
                                             @endif
+                                            <div class="first-section-price">
+                                                @if ($getcoupon)
+                                                    <h4 class="mountainguide-highlights4 layout">
+                                                        <span
+                                                            class="discount-price">${{ $tour->main_price }}</span>
+                                                        ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
+                                                    </h4>
+                                                @else
+                                                    <h4 class="mountainguide-highlights4 layout">
+                                                        $ {{ $tour->main_price }}</h4>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="populartrek_details">
-                                            <div class="mt-3 mb-3">
-                                                <span class="bestduration">Duration:</span> <span
-                                                    class="days">{{ $tour->tour_days }} Days</span>
+                                        <div class="mountainguide-block50 layout">
+                                            <div class="mountainguide-block51 layout">
+
+                                                <h3 class="mountainguide-subtitle2 layout">
+                                                    {{ $tour->tour_name }}
+                                                </h3>
                                             </div>
-
-                                            <div class="populartrek_title">
-                                                <h5>{{ Str::limit($tour->tour_name, 22) }}</h5>
+                                            <div class="mountainguide-block52 layout">
+                                                <h4 class="text-value"><i class="fa-solid fa-route"></i>
+                                                    {{ $tour->grade }}</h4>
+                                                <h4 class="text-value d-flex"><img
+                                                        src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                        class="altitude-img">
+                                                    {{ $tour->altitude }}</h4>
+                                                <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
+                                                    {{ $tour->tour_days }}
+                                                    days</span>
                                             </div>
-
-                                            <p>{{ $tour->short_description, 40 }}</p>
-                                            <div class="pbtn">
-                                                <div class="mb-2">
-                                                    <h4 class="mountainguide-text-body14 layout">Price</h4>
-                                                    @if ($getcoupon)
-                                                        <h4 class="populartrekprice">
-                                                            <span class="discount-price">${{ $tour->main_price }}</span>
-                                                            ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
-                                                        </h4>
-                                                    @else
-                                                        <h4 class="populartrekprice">
-                                                            ${{ $tour->main_price }}</h4>
-                                                    @endif
-                                                </div>
-
-
-                                                <a href="{{ route('booking', $tour->slug) }}"
-                                                    class="populartrekbtn text-decoration-none">Book
-                                                    Now</a>
-                                            </div>
-
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
+                            </div>
                             @endif
                         @endforeach
                     @endif
@@ -576,59 +522,62 @@ function getThumbs($url = '')
                     @if ($catnature)
                         @foreach ($catnature->tour->sortByDesc('id')->take(15) as $key => $tour)
                             @if ($tour->status == 1)
-                                <div class="populartrek_item">
+                               
+                                <div class="mountainguide-block48 layout1">
                                     <a class="text-decoration-none" href="{{ route('tourdetails', $tour->slug) }}">
-                                        <div class="populartrek_image">
-                                            <img class="img-fluid" srcset="{{ getThumbs($tour->mainImage) }}"
-                                                alt="{{ $tour->img_alt }}">
-                                            @if (!empty($tour->type))
-                                                <p class="popularhead-tag">
-                                                    @if ($tour->type == 'group')
-                                                        <i class="fa-solid fa-people-group"></i> Group
-                                                    @elseif($tour->type == 'family')
-                                                        <i class="fa-solid fa-people-roof"></i> Family
-                                                    @elseif($tour->type == 'bestsell')
-                                                        <i class="fa-solid fa-award"></i> Best Sell
-                                                    @elseif($tour->type == 'private')
-                                                        <i class="fa-solid fa-lock"></i> Private
-                                                    @elseif($tour->type == 'tripofthemonth')
-                                                        <i class="fa-solid fa-award"></i> Trip Of The Month
-                                                    @else
-                                                    @endif
-                                                </p>
-                                            @endif
-                                        </div>
-                                        <div class="populartrek_details">
-                                            <div class="mt-3 mb-3">
-                                                <span class="bestduration">Duration:</span> <span
-                                                    class="days">{{ $tour->tour_days }} Days</span>
-                                            </div>
-
-                                            <div class="populartrek_title">
-                                                <h5>{{ Str::limit($tour->tour_name, 22) }}</h5>
-                                            </div>
-
-                                            <p>{{ $tour->short_description, 40 }}</p>
-                                            <div class="pbtn">
-                                                <div class="mb-2">
-                                                    <h4 class="mountainguide-text-body14 layout">Price</h4>
+                                        <div class="mountainguide-block49 layout">
+                                            <div class="mountainguide-image8 layout">
+                                                <img class="best-sell-image"
+                                                    srcset="{{ getThumbs($tour->mainImage) }}"
+                                                    alt="{{ $tour->img_alt }}">
+                                                    @if (!empty($tour->type))
+                                                    <p class="popularhead-tag">
+                                                        @if ($tour->type == 'group')
+                                                            <i class="fa-solid fa-people-group"></i> Group
+                                                        @elseif($tour->type == 'family')
+                                                            <i class="fa-solid fa-people-roof"></i> Family
+                                                        @elseif($tour->type == 'bestsell')
+                                                            <i class="fa-solid fa-award"></i> Best Sell
+                                                        @elseif($tour->type == 'private')
+                                                            <i class="fa-solid fa-lock"></i> Private
+                                                        @elseif($tour->type == 'tripofthemonth')
+                                                            <i class="fa-solid fa-award"></i> Trip Of The Month
+                                                        @else
+                                                        @endif
+                                                    </p>
+                                                @endif
+                                                <div class="best-sell-price">
                                                     @if ($getcoupon)
-                                                        <h4 class="populartrekprice">
-                                                            <span class="discount-price">${{ $tour->main_price }}</span>
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            <span
+                                                                class="discount-price">${{ $tour->main_price }}</span>
                                                             ${{ $tour->main_price - ($getcoupon->discount_amount / 100) * $tour->main_price }}
                                                         </h4>
                                                     @else
-                                                        <h4 class="populartrekprice">
-                                                            ${{ $tour->main_price }}</h4>
+                                                        <h4 class="mountainguide-highlights4 layout">
+                                                            $ {{ $tour->main_price }}</h4>
                                                     @endif
                                                 </div>
-
-
-                                                <a href="{{ route('booking', $tour->slug) }}"
-                                                    class="populartrekbtn text-decoration-none">Book
-                                                    Now</a>
                                             </div>
-
+                                            <div class="mountainguide-block50 layout">
+                                                <div class="mountainguide-block51 layout">
+    
+                                                    <h3 class="mountainguide-subtitle2 layout">
+                                                        {{ Str::limit($tour->tour_name, 22) }}
+                                                    </h3>
+                                                </div>
+                                                <div class="mountainguide-block52 layout">
+                                                    <h4 class="text-value"><i class="fa-solid fa-route"></i>
+                                                        {{ $tour->grade }}</h4>
+                                                    <h4 class="text-value d-flex"><img
+                                                            src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                            class="altitude-img">
+                                                        {{ $tour->altitude }}</h4>
+                                                    <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
+                                                        {{ $tour->tour_days }}
+                                                        days</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>

@@ -234,12 +234,18 @@ if($request->images){
             'meta_keywords' => $request->meta_keywords,
             'updated_at' => Carbon::now(),
         ]);
-
-        $uimages = Images::where('tour_id', $id)->first();
-        Images::where('tour_id', $id)->update([
-            'images' => $request->images ? $request->images :$uimages->images,
+if($request->images_id){
+        Images::where('id', $request->images_id)->update([
+            'images' => $request->images,
             'updated_at' => Carbon::now(),
         ]);
+    }else{
+        Images::insert([
+            'tour_id' => $id,
+            'images' => $request->images,
+            'created_at' => Carbon::now(),
+        ]);
+    }
 
         if ($request->dateid) {
             foreach ($request->dateid as $key => $value) {

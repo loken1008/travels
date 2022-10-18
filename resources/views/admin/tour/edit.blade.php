@@ -9,15 +9,20 @@
                 <h4 class="box-title">Update Tour Place</h4>
                 <a class="btn btn-primary " href="{{ route('tour.viewdetails', $edittour->id) }}" style="width:5rem"
                     title="edit"><i class="fa fa-eye"></i></a>
+                    
             </div>
             <!-- /.box-header -->
             <div class="box-body wizard-content">
                 <form action="{{ route('tour.update', $edittour->id) }}" method="post" class="tab-wizard wizard-circle"
                     enctype="multipart/form-data" id="edittourForm">
                     @csrf
-
+                    
                     <section>
+                        
                         <div class="row">
+                            <div class="update-top col-12">
+                                <input type="submit" class="btn btn-rounded btn-info pull-right" value="Update Tour">
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Country Name :<span class="text-danger">*</span></label>
@@ -87,6 +92,7 @@
                                         <option value="bestsell" {{$edittour->type=='bestsell'?'selected':''}}>Best Seller</option>
                                         <option value="private" {{$edittour->type=='private'?'selected':''}}>Private</option>
                                         <option value="family" {{$edittour->type=='family'?'selected':''}}>Family</option>
+                                        <option value="helireturn" {{$edittour->type=='helireturn'?'selected':''}}>Trek & Heli Return</option>
                                     </select>
                                 </div>
                             </div>
@@ -226,14 +232,16 @@
                                 <label for="firstName5"> Related Images :</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <a id="elfm" data-input="thumbnail" data-preview="holder"
+                                        <a id="elfm" data-input="ethumbnail" data-preview="holder"
                                             class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i> Choose
                                         </a>
                                     </span>
-                                    <input id="thumbnail" class="form-control" type="text" name="images">
+                                    <input id="ethumbnail" class="form-control" type="text" name="images">
                                 </div>
                                 @forelse($edittour->images as $image)
+                                <input type="hidden" name="images_id" value="{{ $image->id }}">
+
                                     @php
                                         $imagess = explode(',', $image->images);
                                         

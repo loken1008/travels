@@ -1150,8 +1150,25 @@ margin-top:0px;
   .mountainguide-block17.layout{
     margin:6px 0px 0px 0px;
   }
+  .mountainguide-image8 .first-section-image{
+    height:200px;
+  }
+  .first-section-price{
+    top:180px;
+  }
+  .mountainguide-block87-item {
+    border-right:0px;
+  }
 }
 @media screen and (max-width: 462px) {
+  .whatsapp-home i {
+    font-size:50px;
+  }
+  .whatsapp-home {
+    bottom:83px;
+    right:81px;
+  }
+
   .detailssection-content {
     top: 270px !important;
   }
