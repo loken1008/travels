@@ -411,6 +411,7 @@ function getThumbs($url = '')
                                                         <img class="other-image" srcset="{{ $rimages }}"
                                                             alt="{{ $getTourdetails->img_alt }}" />
                                                     </a>
+                                                @else 
                                                 @endif
                                             @endif
                                         @endforeach

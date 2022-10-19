@@ -213,6 +213,7 @@ Route::group(['prefix' => 'mgiadmin', 'middleware' => ['auth']],function () {
         Route::post('/ourteam/update/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'TeamUpdate'])->name('update.team');
         Route::get('/ourteam/delete/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'TeamDelete'])->name('delete.team');
         Route::get('/ourteam/changeStatus', [App\Http\Controllers\Admin\AboutUsController::class, 'TeamChangeStatus']);
+        Route::post('/reorder-team', [App\Http\Controllers\Admin\AboutUsController::class, 'TeamReorder'])->name('reorder.team');
     });
 
     // Admin testomonial all route

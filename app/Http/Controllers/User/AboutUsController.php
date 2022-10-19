@@ -26,7 +26,7 @@ class AboutUsController extends Controller
    public function allTeam()
    {
       $team = OurTeam::count();
-       $getteamdetails=OurTeam::where('status','=','1')->paginate(10);
+       $getteamdetails=OurTeam::orderBy('sort_id','asc')->where('status','=','1')->paginate(10);
        $teambanner=PageBanner::orderBy('id','desc')->where('page_name','team')->first();
        return view('frontend.aboutus.allteam',compact('getteamdetails','team','teambanner'));
    }
