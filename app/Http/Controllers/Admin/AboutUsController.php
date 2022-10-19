@@ -202,7 +202,7 @@ public function ChooseUpdate(Request $request,$id)
     // Our Team
     public function TeamView()
     {
-        $ourteam=OurTeam::orderBy('id','desc')->get();
+        $ourteam=OurTeam::orderBy('sort_id','asc')->get();
         return view('admin.aboutus.team.team-view',compact('ourteam'));
     }
 
@@ -285,5 +285,13 @@ public function ChooseUpdate(Request $request,$id)
         $teamstatus->status=$request->status;
         $teamstatus->save();
         return response()->json(['success'=>'Status Change Successfully']);
+    }
+    public function TeamReorder(Request $request)
+    {
+        foreach ($request->order as $key => $order) {
+            $teamorder = OurTeam::find($order['id'])
+            ->update(['sort_id' => $order['order']]);
+        }
+        return response('Update Successfully.', 200);
     }
 }

@@ -22,28 +22,20 @@
                                 <thead>
                                     <tr>
                                         <th>Sn</th>
+                                        <th>Order</th>
                                         <th> Name</th>
                                         <th>Post </th>
-                                        <th>Language</th>
-                                        <th>Experiences</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="teamcontents">
                                     @forelse($ourteam as $key=> $team)
-                                        <tr>
+                                        <tr class="row1" data-id="{{ $team->id }}">
                                             <th>{{$key+1}}</th>
+                                            <td ><i class="fa fa-sort"></i></td>
                                             <td>{{ $team->name }}</td>
                                             <td>{{ $team->post }}</td>
-                                            <td>{{ $team->language }}</td>
-                                            <td>{{ $team->experiences }}</td>
-                                            <td>{!! Str::limit($team->description,80) !!}</td>
-                                            <td><img src="{{ asset($team->image) }}" style="height:100px;width:100px"
-                                                    alt="">
-                                            </td>
                                             <td>
                                                 <input type="checkbox" class="team-input" data-toggle="toggle"
                                                 data-id="{{ $team->id }}" {{ $team->status ? 'checked' : '' }}
@@ -54,10 +46,10 @@
                                                 <a href="#" class="btn btn-primary" data-toggle="modal"
                                                     data-target="#exampleModal{{ $team->id }}"
                                                     style="width:5rem" title="view"><i class="fa fa-eye"></i></a>
-                                                <a href="{{ route('edit.team', $team->id) }}" class="btn btn-info mt-2"
+                                                <a href="{{ route('edit.team', $team->id) }}" class="btn btn-info "
                                                     style="width:5rem" title="edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="{{ route('delete.team', $team->id) }}"
-                                                    class="btn btn-danger mt-2" style="width:5rem" id="delete"
+                                                    class="btn btn-danger " style="width:5rem" id="delete"
                                                     title="delete"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>

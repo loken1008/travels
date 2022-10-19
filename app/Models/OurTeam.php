@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class OurTeam extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'post', 'language', 'experiences', 'type', 'description', 'image'];
+    protected $fillable = ['sort_id','name', 'post', 'language', 'experiences', 'type', 'description', 'image'];
 }

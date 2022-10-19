@@ -21,11 +21,8 @@
                                     <thead>
                                         <tr>
                                             <th>Reviewer Name</th>
-                                            <th>Review Title</th>
-                                            <th>Review</th>
                                             <th>Review rating</th>
                                             <th>Type</th>
-                                            <th>Image</th>
                                             <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
@@ -34,8 +31,6 @@
                                         @forelse($testmonials as $testmonial)
                                             <tr>
                                                 <td>{{ $testmonial->name }} , {{$testmonial->country}}</td>
-                                                <td>{{ $testmonial->message_title }}</td>
-                                                <td>{{ Str::limit($testmonial->message_description,30)}}</td>
                                                 <td>{{$testmonial->rating}}
                                                     @for($i=1; $i<=$testmonial->rating; $i++) 
                                                     <span><i class="fa fa-star text-warning"></i></span>
@@ -56,9 +51,6 @@
                                                     style="height:50px;width:50px" alt="">
                                                     @endif
                                                 </td>
-                                                <td><img src="{{asset($testmonial->image)}}"
-                                                        style="height:100px;width:100px" alt="">
-                                                    </td>
                                                     <td>
                                                         @if($testmonial->status==  1)
                                                     <span class="badge badge-info">Active</span>
