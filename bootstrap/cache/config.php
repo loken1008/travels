@@ -3,7 +3,7 @@
   array (
     'name' => 'MountainTour',
     'env' => 'local',
-    'debug' => false,
+    'debug' => true,
     'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',

@@ -72,9 +72,9 @@ function getThumbs($url = '')
                 @if ($getTourdetails->dateprice->count() > 0)
                     <a class="item1 tdateprice" href="#tdateprice">Date & Price</a>
                 @endif
-                {{-- @if ($getTourdetails->map_url != null)
+                @if ($getTourdetails->trip_map != null)
                     <a class="item1 tmap" href="#tmap">Map</a>
-                @endif --}}
+                @endif
                 @if ($getTourdetails->fqa->count() > 0)
                     <a class="item1 tfaq" href="#tfaq">FAq</a>
                 @endif
@@ -248,13 +248,13 @@ function getThumbs($url = '')
                                 <a href="{{ route('online.book') }}" class="owntrip-book">Make Your Own Trip</a>
                             </div>
                         </div>
-                        @if (!empty($getTourdetails->trip_map))
+                        {{-- @if (!empty($getTourdetails->trip_map))
                             <div class="tripmap">
                                 <h5 class="inquiry-title">Trip Map</h5>
                                 <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
                                         srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}"></a>
                             </div>
-                        @endif
+                        @endif --}}
                         <div class="quickinquery">
                             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
                                 aria-controls="offcanvasScrolling">Quick Inquiry for Trip</a>
@@ -517,17 +517,17 @@ function getThumbs($url = '')
                             </div>
                         </section>
                     @endif
-                    {{-- @if (!empty($getTourdetails->map_url))
+                    @if (!empty($getTourdetails->trip_map))
                         <section class="mt-4" id="tmap">
                             <h4 class="key-heading6"> <i class="fa-solid fa-chart-bar"></i>Map</h4>
                             <div class="equipment-desc">
 
-                                <iframe src="{{ $getTourdetails->map_url }}" width="100%" height="600"
-                                    frameborder="0"></iframe>
+                               <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
+                                        srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}" width="100%"></a>
 
                             </div>
                         </section>
-                    @endif --}}
+                    @endif
                     @if ($getTourdetails->fqa->count() > 0)
                         <section class="mt-4" id="tfaq">
                             <h4 class="key-heading7"> <i class="fa-solid fa-chart-bar"></i>FAQ's</h4>

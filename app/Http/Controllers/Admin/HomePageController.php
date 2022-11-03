@@ -88,7 +88,7 @@ class HomePageController extends Controller
 
     public function siteMap()
     {
-        $path=public_path('sitemap.xml');
+    $path=public_path('sitemap.xml');
     SitemapGenerator::create('https://mountainguideinfo.com')->writeToFile($path);
     $notification=array(
         'message'=>'Sitemap Generated Successfully',

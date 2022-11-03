@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
     {
         $user = User::create([
             'name' => 'MountainguideInfo Tour', 
-            'email' => 'admin@gmail.com',
+            'email' => 'admin@mountainguideinfotrek.com',
             // 'admin_type'=>'admin',
             'password'=>Hash::make('@#Dristicode#@2022') //password
         ]);

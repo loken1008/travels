@@ -481,6 +481,7 @@ $('#short_desc').keyup(function() {
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
+        
     </script>
 
     <script>
