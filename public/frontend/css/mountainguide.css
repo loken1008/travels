@@ -2323,7 +2323,6 @@ font-weight: bold;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  text-transform: capitalize;
   color: #999999;
 }
 .populartrek_details .duration {
@@ -3694,7 +3693,6 @@ font-weight: bold;
   font-weight: 300;
   font-size: 16px;
   line-height: 29px;
-  text-transform: capitalize;
   color: #4f4f4f;
   text-align: justify;
 }
@@ -3792,7 +3790,6 @@ font-weight: bold;
   font-weight: 300;
   font-size: 16px;
   line-height: 29px;
-  text-transform: capitalize;
   color: #4f4f4f;
 }
 
@@ -4025,7 +4022,6 @@ a:hover {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  text-transform: capitalize;
   color: #999999 !important;
 }
 .details-content ul li {
@@ -4034,7 +4030,6 @@ a:hover {
   font-weight: 300;
   font-size: 16px;
   line-height: 35px;
-  text-transform: capitalize;
   color: #403d3d;
   display:flex;
 }
@@ -4361,7 +4356,6 @@ a:hover {
   font-weight: 400;
   font-size: 16px;
   line-height:32px;
-  text-transform: capitalize;
   color: #999999 !important;
 }
 .teambtn {
@@ -4443,7 +4437,6 @@ a:hover {
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
-  text-transform: capitalize;
   color: #999999;
 }
 .travel-details {
