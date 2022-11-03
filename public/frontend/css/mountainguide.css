@@ -3744,13 +3744,16 @@ font-weight: bold;
   margin-left: 10px;
   margin-top: 10px;
 }
+.lb-container {
+  padding: 0px !important;
+}
 .lb-image {
   width:1200px !important;
-  height:500px !important;
+  height:750px !important;
 }
 .lb-outerContainer {
   width:1200px !important;
-  height:500px !important;
+  height:750px !important;
 }
 .day-title,
 #tdateprice table th {
@@ -4034,7 +4037,6 @@ a:hover {
   text-transform: capitalize;
   color: #403d3d;
   display:flex;
-  flex-wrap: wrap;
 }
 .details-tag li i {
   color: #0e4e93;

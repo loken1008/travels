@@ -2,1081 +2,1579 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://mountainguideinfo.com</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:03+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/</loc>
-        <lastmod>2022-07-11T08:21:59+00:00</lastmod>
+        <lastmod>2022-10-20T10:05:59+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/allblogs</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:55+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/allblogs?page=1</loc>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/allblogs?page=3</loc>
+        <lastmod>2022-10-20T10:08:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/auth/google/customer</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/blogsdetails/trekking-departure-to-everest-base-camp-on-october-2020-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/5-most-popular-glaciers-of-nepal</loc>
+        <lastmod>2022-10-20T10:07:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/annapurna-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/a-cultural-trek-to-everest</loc>
+        <lastmod>2022-10-20T10:07:03+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/annapurna-circuit-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/a-jungle-safari-in-nepal-a-connection-to-the-natural-world</loc>
+        <lastmod>2022-10-20T10:08:07+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bardia-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/altitude-sickness-prevention-and-treatment</loc>
+        <lastmod>2022-10-20T10:07:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-cultural-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/ama-dablam-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:03+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-details-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/annapurna-circuit-trek-a-spellbound-views</loc>
+        <lastmod>2022-10-20T10:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-religious-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/bandipur-village-trek</loc>
+        <lastmod>2022-10-20T10:07:04+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-tour-6-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/bardia-national-park-safari</loc>
+        <lastmod>2022-10-20T10:08:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-tour-7-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/chisapani-nagarkot-hiking</loc>
+        <lastmod>2022-10-20T10:07:54+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-tour-8-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/chitwan-national-park-safari</loc>
+        <lastmod>2022-10-20T10:08:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bhutan-tour-9-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/complete-guide-to-annapurna-base-camp</loc>
+        <lastmod>2022-10-20T10:07:01+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/bungee-jumping-in-bhotekoshi-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/dhaulagiri-circuit-trek</loc>
+        <lastmod>2022-10-20T10:07:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/chisapani-nagarkot-dhulikhel-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/ecology-found-on-mt-everest</loc>
+        <lastmod>2022-10-20T10:07:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/chitwan-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/favourable-season-for-exploring-nepal</loc>
+        <lastmod>2022-10-20T10:07:01+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/chitwan-national-park-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/gokyo-lakes-trek-a-panorama-alternative</loc>
+        <lastmod>2022-10-20T10:07:11+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/chulu-east-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/health-and-safety-during-trekking</loc>
+        <lastmod>2022-10-20T10:07:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/chulu-west-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/highlights-of-the-langtang-valley-trek</loc>
+        <lastmod>2022-10-20T10:07:01+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/dhampus-sarankot-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/highly-recommended-side-trips-in-manaslu-trek</loc>
+        <lastmod>2022-10-20T10:06:59+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/major-attractions-of-langtang-region-trek</loc>
+        <lastmod>2022-10-20T10:07:25+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/everest-three-passes-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/manaslu-circuit-trek-and-lakes-within-the-region</loc>
+        <lastmod>2022-10-20T10:06:59+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/everest-view-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/manaslu-circuit-weather</loc>
+        <lastmod>2022-10-20T10:07:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/ghorepani-poonhill-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/popular-annapurna-circuit-hill-stations</loc>
+        <lastmod>2022-10-20T10:07:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/gokyo-lake-chola-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/rara-lake-trek</loc>
+        <lastmod>2022-10-20T10:07:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/gokyo-lake-everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/reasons-to-do-everest-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/gokyo-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/tea-house-accommodation-in-nepal</loc>
+        <lastmod>2022-10-20T10:07:04+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/gokyo-valley-renjo-la-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/the-greatest-way-to-discover-makalu-circuit-trek</loc>
+        <lastmod>2022-10-20T10:07:27+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/island-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/the-jomsom-muktinath-trek</loc>
+        <lastmod>2022-10-20T10:07:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/jomsom-to-muktinath-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/top-5-best-treks-in-the-everest-region</loc>
+        <lastmod>2022-10-20T10:07:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/koshi-tappu-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/top-ten-popular-destination-to-visit-in-nepal</loc>
+        <lastmod>2022-10-20T10:07:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/koshi-tappu-wildlife-reserve-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/why-island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:02+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/langtang-ganja-la-pass-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/why-the-trek-to-mustang</loc>
+        <lastmod>2022-10-20T10:07:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/langtang-gosainkunda-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/why-trek-to-manaslu</loc>
+        <lastmod>2022-10-20T10:07:23+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/langtang-helambu-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/blogsdetails/why-trek-to-mardi-himal</loc>
+        <lastmod>2022-10-20T10:07:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/langtang-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/1n2d-island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:47+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/makalu-base-camp-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/1n2d-lobuche-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/mardi-himal-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/1n2d-mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:48+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/mera-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/2n3d-island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:47+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/nar-phu-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/2n3d-lobuche-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/paragliding-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/2n3d-mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:49+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/pisang-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/3-nights-4-days-tibet-tour</loc>
+        <lastmod>2022-10-20T10:07:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/rafting-on-trishuli-river-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/4-night-5-days-tibet-tour</loc>
+        <lastmod>2022-10-20T10:07:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/rock-climbing-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/abc-short-trek</loc>
+        <lastmod>2022-10-20T10:07:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/rolwaling-tashi-lapcha-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/abc-trek-with-helicopter-return</loc>
+        <lastmod>2022-10-20T10:07:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/short-bhutan-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/annapurna-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:11+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/sikkim-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/annapurna-circuit-trek</loc>
+        <lastmod>2022-10-20T10:07:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/throng-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/annapurna-sanctuary-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:07:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/tilicho-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/bandipur-village-trek</loc>
+        <lastmod>2022-10-20T10:07:50+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/booking/yala-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/booking/bardia-bird-watching</loc>
+        <lastmod>2022-10-20T10:07:55+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bardiya-national-park</loc>
+        <lastmod>2022-10-20T10:08:07+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-cultural-tour</loc>
+        <lastmod>2022-10-20T10:07:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-details-tour</loc>
+        <lastmod>2022-10-20T10:07:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-tour</loc>
+        <lastmod>2022-10-20T10:07:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-tour-6-days</loc>
+        <lastmod>2022-10-20T10:07:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-tour-7-days</loc>
+        <lastmod>2022-10-20T10:07:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bhutan-tour-8-days</loc>
+        <lastmod>2022-10-20T10:07:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/bungee-jumping-in-bhotekoshi</loc>
+        <lastmod>2022-10-20T10:07:53+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chisapani-nagarkot-dhulikhel-hiking</loc>
+        <lastmod>2022-10-20T10:07:53+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chisapani-nagarkot-dhulikhel-trek</loc>
+        <lastmod>2022-10-20T10:07:50+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chisapani-nagarkot-trek</loc>
+        <lastmod>2022-10-20T10:07:49+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chitwan-bird-watching</loc>
+        <lastmod>2022-10-20T10:08:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chitwan-national-park</loc>
+        <lastmod>2022-10-20T10:08:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chulu-east-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/chulu-west-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/dhampus-sarankot-hiking</loc>
+        <lastmod>2022-10-20T10:07:53+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/dhampus-sarankot-trekking</loc>
+        <lastmod>2022-10-20T10:07:51+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/dhaulagiri-region-trekking</loc>
+        <lastmod>2022-10-20T10:07:26+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-helicopter-tour-7-day</loc>
+        <lastmod>2022-10-20T10:07:33+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-short-trek</loc>
+        <lastmod>2022-10-20T10:07:51+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-three-passes-trek</loc>
+        <lastmod>2022-10-20T10:07:08+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-trek-with-helicopter-return</loc>
+        <lastmod>2022-10-20T10:07:09+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/everest-view-trek</loc>
+        <lastmod>2022-10-20T10:07:07+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/ganesh-himal-trek</loc>
+        <lastmod>2022-10-20T10:07:26+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/ghandruk-village-trek</loc>
+        <lastmod>2022-10-20T10:07:50+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/ghorepani-poonhill-short-trek</loc>
+        <lastmod>2022-10-20T10:07:16+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/ghorepani-poonhill-trek</loc>
+        <lastmod>2022-10-20T10:07:14+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/gokyo-lake-chola-pass-trek</loc>
+        <lastmod>2022-10-20T10:07:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/gokyo-lake-everest-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:07+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/gokyo-lake-trek</loc>
+        <lastmod>2022-10-20T10:07:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/gokyo-valley-renjo-la-pass-trek</loc>
+        <lastmod>2022-10-20T10:07:08+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:47+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/jomsom-to-muktinath-trek</loc>
+        <lastmod>2022-10-20T10:07:14+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/kanchenjunga-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:26+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/koshi-tappu-bird-watching</loc>
+        <lastmod>2022-10-20T10:07:55+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/koshi-tappu-wildlife-reserve</loc>
+        <lastmod>2022-10-20T10:08:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/langtang-ganja-la-pass-trek</loc>
+        <lastmod>2022-10-20T10:07:24+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/langtang-gosainkunda-trek</loc>
+        <lastmod>2022-10-20T10:07:24+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/langtang-helambu-trek</loc>
+        <lastmod>2022-10-20T10:07:25+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/langtang-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:07:33+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/langtang-valley-trek</loc>
+        <lastmod>2022-10-20T10:07:24+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/lower-dolpo-trek</loc>
+        <lastmod>2022-10-20T10:07:30+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/makalu-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:07:27+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/manaslu-and-tsum-valley-trek</loc>
+        <lastmod>2022-10-20T10:07:22+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/manaslu-circuit-trek</loc>
+        <lastmod>2022-10-20T10:07:23+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/manaslu-larkya-la-pass-circuit-trek</loc>
+        <lastmod>2022-10-20T10:07:22+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/manaslu-rupina-la-pass-circuit</loc>
+        <lastmod>2022-10-20T10:07:20+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/mardi-himal-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:48+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/namo-budhha-hiking</loc>
+        <lastmod>2022-10-20T10:07:54+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/nar-phu-valley-trek</loc>
+        <lastmod>2022-10-20T10:07:15+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/nepal-bhutan-cultural-tour</loc>
+        <lastmod>2022-10-20T10:07:31+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/nepal-tibet-cultural-tour</loc>
+        <lastmod>2022-10-20T10:07:31+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/nepal-world-heritage-site-tour</loc>
+        <lastmod>2022-10-20T10:07:31+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/nirekha-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:46+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/paragliding-in-nepal</loc>
+        <lastmod>2022-10-20T10:07:52+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/parsa-wildlife-reserve-safari</loc>
+        <lastmod>2022-10-20T10:08:06+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/pharchamo-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/pisang-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/rafting-on-trishuli-river</loc>
+        <lastmod>2022-10-20T10:07:52+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/rara-lake-trek</loc>
+        <lastmod>2022-10-20T10:07:30+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/rock-climbing-in-nepal</loc>
+        <lastmod>2022-10-20T10:07:51+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/rolwaling-tashi-lapcha-pass-trek</loc>
+        <lastmod>2022-10-20T10:07:09+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/shivapuri-chisapani-nagarkot-trekking</loc>
+        <lastmod>2022-10-20T10:07:49+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/shivapuri-hiking</loc>
+        <lastmod>2022-10-20T10:07:54+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/short-bhutan-tour</loc>
+        <lastmod>2022-10-20T10:07:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/sikkim-tour</loc>
+        <lastmod>2022-10-20T10:07:34+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/special-vip-hikingtour-7n8d</loc>
+        <lastmod>2022-10-20T10:07:30+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/thorong-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/tilicho-lake-trek</loc>
+        <lastmod>2022-10-20T10:07:15+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/upper-dolpo-trek</loc>
+        <lastmod>2022-10-20T10:07:27+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/upper-mustang-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:07:34+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/upper-mustang-trek</loc>
+        <lastmod>2022-10-20T10:07:15+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/booking/yala-peak-climbing</loc>
+        <lastmod>2022-10-20T10:07:40+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/contact-us</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:07:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/custom-booking</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:59+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/customer-loginform</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/customer-register</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/forget-password</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/gallery</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <lastmod>2022-10-20T10:07:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/gallery/details/annupurna</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/gallery/details/bhutan</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/gallery/details/everest</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/gallery/details/goyako</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/gallery/details/ktm</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/gallery/details/langtan</loc>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/gallery/details/other</loc>
-        <lastmod>2022-07-11T08:22:05+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/gallery/details/mounatins</loc>
+        <lastmod>2022-10-20T10:08:09+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/gallery/details/mustang</loc>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/introduction</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:56+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/ourteam</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:56+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/payment-method</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:57+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/privacy-policy</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:57+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/reviews</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <lastmod>2022-10-20T10:07:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/terms-conditions</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/annapurna-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/1n2d-island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/annapurna-circuit-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/1n2d-lobuche-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bardia-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/1n2d-mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-cultural-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/2n3d-island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:42+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-details-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/2n3d-lobuche-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:41+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-religious-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/2n3d-mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-6-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/3-nights-4-days-tibet-tour</loc>
+        <lastmod>2022-10-20T10:06:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-7-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/4-night-5-days-tibet-tour</loc>
+        <lastmod>2022-10-20T10:06:21+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-8-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/abc-short-trek</loc>
+        <lastmod>2022-10-20T10:06:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-9-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/abc-trek-with-helicopter-return</loc>
+        <lastmod>2022-10-20T10:06:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/bungee-jumping-in-bhotekoshi-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/annapurna-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:07+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/chisapani-nagarkot-dhulikhel-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/annapurna-circuit-trek</loc>
+        <lastmod>2022-10-20T10:06:07+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/chitwan-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/annapurna-sanctuary-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:06:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/chitwan-national-park-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bandipur-village-trek</loc>
+        <lastmod>2022-10-20T10:06:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/chulu-east-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bardia-bird-watching</loc>
+        <lastmod>2022-10-20T10:06:53+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/chulu-west-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bardiya-national-park</loc>
+        <lastmod>2022-10-20T10:06:55+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/dhampus-sarankot-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-cultural-tour</loc>
+        <lastmod>2022-10-20T10:06:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-details-tour</loc>
+        <lastmod>2022-10-20T10:06:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/everest-three-passes-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour</loc>
+        <lastmod>2022-10-20T10:06:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/everest-view-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-6-days</loc>
+        <lastmod>2022-10-20T10:06:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/ghorepani-poonhill-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-7-days</loc>
+        <lastmod>2022-10-20T10:06:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-chola-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bhutan-tour-8-days</loc>
+        <lastmod>2022-10-20T10:06:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/bungee-jumping-in-bhotekoshi</loc>
+        <lastmod>2022-10-20T10:06:48+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chisapani-nagarkot-dhulikhel-hiking</loc>
+        <lastmod>2022-10-20T10:06:51+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/gokyo-valley-renjo-la-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chisapani-nagarkot-dhulikhel-trek</loc>
+        <lastmod>2022-10-20T10:06:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/island-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chisapani-nagarkot-trek</loc>
+        <lastmod>2022-10-20T10:06:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/jomsom-to-muktinath-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chitwan-bird-watching</loc>
+        <lastmod>2022-10-20T10:06:53+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/koshi-tappu-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chitwan-national-park</loc>
+        <lastmod>2022-10-20T10:06:54+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/koshi-tappu-wildlife-reserve-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chulu-east-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/langtang-ganja-la-pass-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/chulu-west-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/langtang-gosainkunda-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/dhampus-sarankot-hiking</loc>
+        <lastmod>2022-10-20T10:06:51+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/langtang-helambu-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/dhampus-sarankot-trekking</loc>
+        <lastmod>2022-10-20T10:06:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/langtang-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/dhaulagiri-region-trekking</loc>
+        <lastmod>2022-10-20T10:06:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/makalu-base-camp-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:03+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/mardi-himal-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-helicopter-tour-7-day</loc>
+        <lastmod>2022-10-20T10:06:28+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/mera-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-short-trek</loc>
+        <lastmod>2022-10-20T10:06:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/nar-phu-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-three-passes-trek</loc>
+        <lastmod>2022-10-20T10:06:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/paragliding-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-trek-with-helicopter-return</loc>
+        <lastmod>2022-10-20T10:06:06+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/pisang-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/everest-view-trek</loc>
+        <lastmod>2022-10-20T10:06:04+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/rafting-on-trishuli-river-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/ganesh-himal-trek</loc>
+        <lastmod>2022-10-20T10:06:15+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/rock-climbing-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/ghandruk-village-trek</loc>
+        <lastmod>2022-10-20T10:06:46+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/rolwaling-tashi-lapcha-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/ghorepani-poonhill-short-trek</loc>
+        <lastmod>2022-10-20T10:06:10+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/short-bhutan-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/ghorepani-poonhill-trek</loc>
+        <lastmod>2022-10-20T10:06:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/sikkim-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-chola-pass-trek</loc>
+        <lastmod>2022-10-20T10:06:04+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/throng-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-everest-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/tilicho-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/gokyo-lake-trek</loc>
+        <lastmod>2022-10-20T10:06:04+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourdetails/yala-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/gokyo-valley-renjo-la-pass-trek</loc>
+        <lastmod>2022-10-20T10:06:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/annapurna-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/island-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:41+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/annapurna-circuit-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/jomsom-to-muktinath-trek</loc>
+        <lastmod>2022-10-20T10:06:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bardia-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/kanchenjunga-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-cultural-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/koshi-tappu-bird-watching</loc>
+        <lastmod>2022-10-20T10:06:53+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-details-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/koshi-tappu-wildlife-reserve</loc>
+        <lastmod>2022-10-20T10:06:54+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-religious-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/langtang-ganja-la-pass-trek</loc>
+        <lastmod>2022-10-20T10:06:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-tour-6-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/langtang-gosainkunda-trek</loc>
+        <lastmod>2022-10-20T10:06:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-tour-7-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/langtang-helambu-trek</loc>
+        <lastmod>2022-10-20T10:06:14+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-tour-8-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/langtang-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:06:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bhutan-tour-9-days-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/langtang-valley-trek</loc>
+        <lastmod>2022-10-20T10:06:13+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/bungee-jumping-in-bhotekoshi-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/lower-dolpo-trek</loc>
+        <lastmod>2022-10-20T10:06:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/chisapani-nagarkot-dhulikhel-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/makalu-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/chitwan-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/manaslu-and-tsum-valley-trek</loc>
+        <lastmod>2022-10-20T10:06:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/chitwan-national-park-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/manaslu-circuit-trek</loc>
+        <lastmod>2022-10-20T10:06:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/chulu-east-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/manaslu-larkya-la-pass-circuit-trek</loc>
+        <lastmod>2022-10-20T10:06:11+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/chulu-west-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/manaslu-rupina-la-pass-circuit</loc>
+        <lastmod>2022-10-20T10:06:11+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/dhampus-sarankot-hiking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/mardi-himal-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/mera-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:43+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/everest-three-passes-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/namo-budhha-hiking</loc>
+        <lastmod>2022-10-20T10:06:51+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/everest-view-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/nar-phu-valley-trek</loc>
+        <lastmod>2022-10-20T10:06:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/ghorepani-poonhill-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/nepal-bhutan-cultural-tour</loc>
+        <lastmod>2022-10-20T10:06:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/gokyo-lake-chola-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/nepal-tibet-cultural-tour</loc>
+        <lastmod>2022-10-20T10:06:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/gokyo-lake-everest-base-camp-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/nepal-world-heritage-site-tour</loc>
+        <lastmod>2022-10-20T10:06:20+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/gokyo-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/nirekha-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/gokyo-valley-renjo-la-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/paragliding-in-nepal</loc>
+        <lastmod>2022-10-20T10:06:47+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/island-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/parsa-wildlife-reserve-safari</loc>
+        <lastmod>2022-10-20T10:06:55+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/jomsom-to-muktinath-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/pharchamo-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:37+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/koshi-tappu-bird-watching-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/pisang-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/koshi-tappu-wildlife-reserve-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/rafting-on-trishuli-river</loc>
+        <lastmod>2022-10-20T10:06:48+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/langtang-ganja-la-pass-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/rara-lake-trek</loc>
+        <lastmod>2022-10-20T10:06:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/langtang-gosainkunda-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/rock-climbing-in-nepal</loc>
+        <lastmod>2022-10-20T10:06:47+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/langtang-helambu-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/rolwaling-tashi-lapcha-pass-trek</loc>
+        <lastmod>2022-10-20T10:06:06+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/langtang-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/shivapuri-chisapani-nagarkot-trekking</loc>
+        <lastmod>2022-10-20T10:06:44+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/makalu-base-camp-trekking-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/shivapuri-hiking</loc>
+        <lastmod>2022-10-20T10:06:52+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/mardi-himal-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/short-bhutan-tour</loc>
+        <lastmod>2022-10-20T10:06:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/mera-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/sikkim-tour</loc>
+        <lastmod>2022-10-20T10:06:30+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/nar-phu-valley-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/special-vip-hikingtour-7n8d</loc>
+        <lastmod>2022-10-20T10:06:19+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/paragliding-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/thorong-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:37+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/pisang-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/tilicho-lake-trek</loc>
+        <lastmod>2022-10-20T10:06:08+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/rafting-on-trishuli-river-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/upper-dolpo-trek</loc>
+        <lastmod>2022-10-20T10:06:18+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/rock-climbing-in-nepal-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/upper-mustang-helicopter-tour</loc>
+        <lastmod>2022-10-20T10:06:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/rolwaling-tashi-lapcha-pass-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/upper-mustang-trek</loc>
+        <lastmod>2022-10-20T10:06:09+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tourmap/short-bhutan-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tourmap/sikkim-tour-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tourmap/throng-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tourmap/tilicho-lake-trek-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:03+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tourmap/yala-peak-climbing-mountain-guide-info</loc>
-        <lastmod>2022-07-11T08:22:04+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tourdetails/yala-peak-climbing</loc>
+        <lastmod>2022-10-20T10:06:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/travel-with-us</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tripdetails/1654703219bhutan-tours</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:57+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1654754342everest-region-trek</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:03+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1654761780annapurna-region-trek</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:07+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1654761780annapurna-region-trek?page=1</loc>
+        <lastmod>2022-10-20T10:08:10+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1654761780annapurna-region-trek?page=2</loc>
+        <lastmod>2022-10-20T10:07:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1654846919india-tours</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:29+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1655487759hiking-in-nepal</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tripdetails/1655977555langtang-region-trekking</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://mountainguideinfo.com/tripdetails/1655998503makalu-base-camp-trekking</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:48+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1656131517more-venture</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:47+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1656654907jungle-safari</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:54+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mountainguideinfo.com/tripdetails/1656654942bird-watching</loc>
-        <lastmod>2022-07-11T08:22:02+00:00</lastmod>
+        <lastmod>2022-10-20T10:06:52+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tripdetails/adventure</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tripdetails/1657880980makalu-base-camp-trek</loc>
+        <lastmod>2022-10-20T10:06:17+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tripdetails/mountaineering</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tripdetails/1657880991langtang-region-trek</loc>
+        <lastmod>2022-10-20T10:06:12+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tripdetails/natural-realisms</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tripdetails/1658032240manaslu-circuit-trek</loc>
+        <lastmod>2022-10-20T10:06:11+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tripdetails/tours</loc>
-        <lastmod>2022-07-11T08:22:01+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tripdetails/1659865987dhaulagiri-region-trekking</loc>
+        <lastmod>2022-10-20T10:06:16+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mountainguideinfo.com/tripdetails/trekking</loc>
-        <lastmod>2022-07-11T08:22:00+00:00</lastmod>
+        <loc>https://mountainguideinfo.com/tripdetails/1659869356kanchenjunga-base-camp-trekking</loc>
+        <lastmod>2022-10-20T10:06:15+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1659968334dolpa-region-trek</loc>
+        <lastmod>2022-10-20T10:06:17+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1660196947ganesh-himal-trek</loc>
+        <lastmod>2022-10-20T10:06:14+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1660292057helicopter-tour</loc>
+        <lastmod>2022-10-20T10:06:22+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1660360431tibet-tours</loc>
+        <lastmod>2022-10-20T10:06:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1660360624cultural-tour</loc>
+        <lastmod>2022-10-20T10:06:19+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1662451535short-and-easy-trek</loc>
+        <lastmod>2022-10-20T10:06:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1663165083bhutan-tours</loc>
+        <lastmod>2022-10-20T10:06:30+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1665917057mera-peak</loc>
+        <lastmod>2022-10-20T10:06:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1666083892island-peak</loc>
+        <lastmod>2022-10-20T10:06:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mountainguideinfo.com/tripdetails/1666178472lobuche-peak</loc>
+        <lastmod>2022-10-20T10:06:38+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
