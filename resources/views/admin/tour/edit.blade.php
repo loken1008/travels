@@ -289,7 +289,7 @@
                             </div>
                         <div class="form-group">
                             <label for="firstName5"> Description :<span class="text-danger">*</span></label>
-                            <textarea id="my-editor" class="form-control" name="description" value="{{ $edittour->description }}">{{ $edittour->description }}</textarea>
+                            <textarea id="my-editor" class="editor form-control" name="description" value="{{ $edittour->description }}">{{ $edittour->description }}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -301,7 +301,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
+                                    <textarea id="editor1" class="editor" name="cost_include" rows="10" cols="80" value="{{$edittour->cost_include}}">
                                         {{$edittour->cost_include}}
                                     </textarea>
                                   
@@ -311,7 +311,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName5">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
+                                    <textarea id="editor2" class="editor" name="cost_exclude" rows="10" cols="80" value="{{$edittour->cost_exclude}}">
                                         {{$edittour->cost_exclude}}
                                   </textarea>
                                    
@@ -391,7 +391,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstName5"> Description :</label>
-                                        <textarea id="editor5" class="editor5" name="equipment_description[]" rows="10" cols="80"
+                                        <textarea id="editor5{{ $key+1 }}" class="editor" name="equipment_description[]" rows="10" cols="80"
                                             value="{{ $equipment->equipment_description }}">
                                         {{ $equipment->equipment_description }}
                                     </textarea>
@@ -426,7 +426,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="firstName6"> Long Description :</label>
-                                        <textarea id="editor6" name="long_description[]" rows="10" cols="80"
+                                        <textarea id="editor6{{ $key+1 }}" class="editor" name="long_description[]" rows="10" cols="80"
                                             value="{{ $itineries->long_description }}">
                                         {{ $itineries->long_description }}
                                     </textarea>
@@ -462,7 +462,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="answer"> Answer :</label>
-                                        <textarea name="answer[]" rows="10" cols="80" value="{{ $fqas->answer }}">
+                                        <textarea id="editor77{{ $key+1 }}" name="answer[]" class="editor" rows="10" cols="80" value="{{ $fqas->answer }}">
                                         {{ $fqas->answer }}
                                     </textarea>
 
@@ -603,7 +603,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="firstName5"> Description :</label>
-                                                <textarea id="editor5" class="editor5" name="equipment_description[]" rows="10" cols="80">
+                                                <textarea id="editor5" class="editor" name="equipment_description[]" rows="10" cols="80">
                                     
                                         </textarea>
 
@@ -656,7 +656,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="firstName6"> Long Description :</label>
-                                                <textarea id="editor6" name="long_description[]" rows="10" cols="80">
+                                                <textarea id="editor6" class="editor" name="long_description[]" rows="10" cols="80">
                                           
                                         </textarea>
 
@@ -709,7 +709,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="answer"> Answer :</label>
-                                                <textarea name="answer[]" rows="10" cols="80">
+                                                <textarea id="editor77" name="answer[]" class="editor" rows="10" cols="80">
                                            
                                         </textarea>
 
@@ -777,7 +777,7 @@ var editorId = "editor5" + i;
 $("#equipmentAdd").append(
     '<div class="box-body wizard-content"> <section><div class="row editequipmentCopy"> <div class="col-md-12">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-12"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="' +
     editorId +
-    '"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
+    '"  name="equipment_description[]" class="editor" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
 );
 CKEDITOR.replace(editorId);
 });
@@ -799,7 +799,7 @@ $("#itineraryAdd").append(
 
     '<div class="box-body wizard-content"><section><div class="row eitineraryCopy"><div class="col-md-12"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-12"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="' +
     editorId2 +
-    '" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
+    '" name="long_description[]" class="editor" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
 );
 CKEDITOR.replace(editorId2);
 
@@ -815,12 +815,14 @@ $(this).parents('.eitineraryCopy').remove();
       var x = 1;
 $("#faq-add").click(function(e) {
     x++;
+var editorId22 = "editor6" + x;
+
     $("#faqAdd").append(
         '<div class="box-body wizard-content"><section><div class="row efaqcopy"> <div class="col-md-12"> <div class="form-group"> <label for="question">Question</label><input type="text" name="question[]"  id="id_ct' +
         x +
         '" class="form-control"> </div></div> <div class="col-md-12"> <div class="form-group"> <label for="answer"> Answer :</label> <textarea id="id_ct' +
-        x +
-        '" class="form-control" name="answer[]" rows="10" cols="10"></textarea></div> </div><div class=""><a href="#" class="remove_field btn btn-rounded btn-danger pull-right">Remove</a> </div></div>  </section> </div>'
+        editorId22 +
+        '" class="editor form-control" name="answer[]" rows="10" cols="10"></textarea></div> </div><div class=""><a href="#" class="remove_field btn btn-rounded btn-danger pull-right">Remove</a> </div></div>  </section> </div>'
     ); //add input box
 
 });
@@ -831,7 +833,7 @@ $(document).on('click', '.remove_field', function() {
 });
 </script>
 <script type='text/javascript'>
-    CKEDITOR.replaceAll();
+    // CKEDITOR.replaceAll();
     if (CKEDITOR.instances['short_desc']) {
    CKEDITOR.instances['short_desc'].destroy(true);
 }
@@ -859,16 +861,16 @@ if (CKEDITOR.instances['short_description']) {
     $('#tlfms').filemanager('images', {
             prefix: route_prefix
         });
-    var options = {
+</script>
+<script>
+     var options = {
         filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',
         filebrowserImageUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Files',
         filebrowserUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Files&_token='
     };
-
-  
-</script>
-<script>
-CKEDITOR.replace('my-editor',options);
+ $('.editor').each(function () {
+        CKEDITOR.replace($(this).prop('id'),options);
+    });
 </script>
 @endsection

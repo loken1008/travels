@@ -254,7 +254,7 @@
                         </div>
                         <div class="form-group ">
                             <label for="description"> Description :<span class="text-danger">*</span></label>
-                            <textarea id="my-editor" class="form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
+                            <textarea id="my-editor" class="editor form-control " name="description" value={{ old('description') }}>{{ old('description') }}</textarea>
 
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
@@ -267,7 +267,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="costinclude">Cost Include :</label>
-                                    <textarea id="editor1" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
+                                    <textarea id="editor1" class="editor" name="cost_include" rows="10" cols="80" value={{ old('cost_include') }}>
                                         {{ old('cost_include') }}
                                     </textarea>
 
@@ -277,7 +277,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="costexclude">Cost Exclude :</label>
-                                    <textarea id="editor2" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
+                                    <textarea id="editor2" class="editor" name="cost_exclude" rows="10" cols="80" value={{ old('cost_exclude') }}>
                                         {{ old('cost_exclude') }}
                                   </textarea>
 
@@ -348,7 +348,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="edescription"> Description :</label>
-                                        <textarea id="editor3" name="equipment_description[]" rows="10" cols="80">
+                                        <textarea id="editor3" class="editor" name="equipment_description[]" rows="10" cols="80">
 
                                     </textarea>
 
@@ -379,7 +379,7 @@
                                     <div class="form-group">
                                         <label for="longdescription"> Long Description :<span
                                                 class="text-danger">*</span></label>
-                                        <textarea id="editor4" name="long_description[]" rows="10" cols="80">
+                                        <textarea id="editor4" class="editor" name="long_description[]" rows="10" cols="80">
 
                                     </textarea>
 
@@ -471,16 +471,17 @@ $('#short_desc').keyup(function() {
   $('#rchars').text(textlen);
 });
     </script>
+   
     <script>
-        var options = {
-            filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Files',
-            filebrowserUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Files&_token='
-        };
-    </script>
-    <script>
-        CKEDITOR.replace('my-editor', options);
+           var options = {
+        filebrowserImageBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/mgiadmin/mountainguide-filemanager?type=Files',
+        filebrowserUploadUrl: '/mgiadmin/mountainguide-filemanager/upload?type=Files&_token='
+    };
+ $('.editor').each(function () {
+        CKEDITOR.replace($(this).prop('id'),options);
+    });
         
     </script>
 
@@ -520,13 +521,13 @@ $('#short_desc').keyup(function() {
         $("#addequipment").click(function(e) {
 
             i++;
-            var editorId = "editor3" + i;
+            var editorId = "editor33" + i;
             $("#equipment").append(
                 '<div class="box-body wizard-content"> <section><div class="row equipmentCopy"> <div class="col-md-6">  <div class="form-group"> <label for="firstName5">Equipment Name :</label> <input type="text" class="form-control" id="firstName5" name="equipment_name[]"></div></div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Description :</label> <textarea id="' +
                 editorId +
-                '"  name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
+                '"  class="editor" name="equipment_description[]" rows="10" cols="80"></textarea></div> </div><div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right remove-equipment-field">Remove</a></div> </div> </section></div>'
             );
-            CKEDITOR.replace(editorId);
+            CKEDITOR.replace(editorId,options);
         });
 
         $(document).on('click', '.remove-equipment-field', function() {
@@ -537,14 +538,14 @@ $('#short_desc').keyup(function() {
         $("#addMoreitinerary").click(function(e) {
 
             i++;
-            var editorId1 = "editor4" + i;
+            var editorId1 = "editor44" + i;
             $("#itinerary").append(
 
                 '<div class="box-body wizard-content"><section><div class="row itineraryCopy"><div class="col-md-6"><div class="form-group"><label for="firstName5">Day Title :</label><input type="text" class="form-control" id="firstName5" name="day_title[]"></div>  </div><div class="col-md-6"><div class="form-group"><label for="firstName5"> Long Description :</label><textarea id="' +
                 editorId1 +
-                '" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
+                '" class="editor" name="long_description[]" rows="10" cols="80"> </textarea></div></div>  <div class=""> <a href="javascript:void(0)" class="btn btn-rounded btn-danger pull-right removeitinerary">Remove</a></div></div></section> </div>'
             );
-            CKEDITOR.replace(editorId1);
+            CKEDITOR.replace(editorId1,options);
 
         });
 
