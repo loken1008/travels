@@ -377,7 +377,7 @@ function getThumbs($url = '')
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
                     tabindex="0">
                     <section class="mt-4" id="toverview">
-                        <h4 class="key-heading"><i class="fa-solid fa-eye"></i> Overview</h4>
+                        <h6 id="key-heading"><i class="fa-solid fa-eye"></i> Overview</h6>
                         <p>{!! $getTourdetails->description !!}</p>
                     </section>
                     @if ($getTourdetails->images->count() > 0)

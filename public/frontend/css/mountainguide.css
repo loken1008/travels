@@ -3644,7 +3644,7 @@ font-weight: bold;
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
-  color: #999999;
+  color: #0E4E93;
 }
 .text-value,.best-day{
   font-family: 'Poppins';
@@ -3682,7 +3682,9 @@ font-weight: bold;
   font-family: 'Poppins' !important;
   font-size: 16px !important;
 }
-
+.itinerary-desc p img,.equipment-desc p img{
+ width:100% !important;
+}
 .short-desc p,
 #toverview p,
 #titinery p,
@@ -3693,9 +3695,20 @@ font-weight: bold;
   font-weight: 300;
   font-size: 16px;
   line-height: 29px;
-  color: #4f4f4f;
+  color: #000000;
   text-align: justify;
 }
+.short-desc strong,
+#toverview strong,
+#titinery strong,
+.equipment-desc strong{
+  color: #0a77ef;
+}
+#toverview h3,#toverview h4,#toverview h2{
+  color: #0E4E93;
+  font-size:20px;
+}
+
 .fixeddetails-nav .details-nav a.active {
   color: #0e4e93 !important;
   transition: 0.3s ease color;
@@ -3704,7 +3717,7 @@ font-weight: bold;
   text-decoration-color: #0e4e93;
   text-decoration-thickness: 2px;
 }
-.key-heading,
+#key-heading,
 .key-heading1,
 .key-heading2,
 .key-heading3,
@@ -3718,9 +3731,9 @@ font-weight: bold;
   font-size: 26px;
   line-height: 39px;
   text-transform: capitalize;
-  color: #000000;
+  color: #0e4e93;
 }
-.key-heading i,
+#key-heading i,
 .key-heading1 i,
 .key-heading2 i,
 .key-heading3 i,
