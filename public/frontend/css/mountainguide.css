@@ -3705,7 +3705,7 @@ font-weight: bold;
   color: #0a77ef;
 }
 #toverview h3,#toverview h4,#toverview h2,#toverview h2 span,#toverview h2 span span#toverview h3 span,#toverview h3 span span,#toverview h4 span,#toverview h4 span span{
-  color: #0E4E93;
+  color: #0E4E93 !important;
   font-size:20px;
 }
 
