@@ -3704,7 +3704,7 @@ font-weight: bold;
 .equipment-desc strong{
   color: #0a77ef;
 }
-#toverview h3,#toverview h4,#toverview h2{
+#toverview h3,#toverview h4,#toverview h2,#toverview h2 span,#toverview h2 span span#toverview h3 span,#toverview h3 span span,#toverview h4 span,#toverview h4 span span{
   color: #0E4E93;
   font-size:20px;
 }
@@ -3759,11 +3759,11 @@ font-weight: bold;
   padding: 0px !important;
 }
 .lb-image {
-  width:1200px !important;
+  width:800px !important;
   height:750px !important;
 }
 .lb-outerContainer {
-  width:1200px !important;
+  width:800px !important;
   height:750px !important;
 }
 .day-title,
@@ -4036,6 +4036,12 @@ a:hover {
   font-size: 16px;
   line-height: 22px;
   color: #999999 !important;
+}
+.details-content h1,.details-content h2,.details-content h3{
+  color: #0E4E93;
+}
+.details-content h1 a,.details-content h2 a,.details-content h3 a{
+  color:#E79B36;
 }
 .details-content ul li {
   font-family: 'Poppins';

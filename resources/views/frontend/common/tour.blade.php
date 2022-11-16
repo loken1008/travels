@@ -37,7 +37,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                         <div class="mountainguide-block49 layout">
                             <div class="mountainguide-image8 layout">
                                 <img class="first-section-image"
-                                    srcset="{{ getThumbs($ctour->mainImage) }}"
+                                    srcset="{{ $ctour->mainImage }}"
                                     alt="{{ $ctour->img_alt }}">
                                     @if (!empty($ctour->type))
                                     <p class="popularhead-tag">

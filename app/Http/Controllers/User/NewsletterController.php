@@ -17,9 +17,17 @@ class NewsletterController extends Controller
         if ( ! Newsletter::isSubscribed($request->email) ) 
         {
             Newsletter::subscribePending($request->email);
-            return redirect()->back()->with('success', 'Thanks For Subscribe');
+            $notification = array(
+                'message' => 'Thanks For Subscribe Us, We will contact you soon',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
         }
-        return redirect()->back()->with('failure', 'Sorry! You have already subscribed ');
+        $notification = array(
+            'message' => 'Sorry! You have already subscribed',
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
             
     }
     public function contactMessage(Request $request)

@@ -1079,6 +1079,15 @@ margin-top:0px;
   }
 }
 @media screen and (max-width: 576px) {
+  .lb-outerContainer {
+    height:370px !important;
+    padding: 20px;
+  }
+  .lb-image{
+    height:330px !important;
+    width: 90%, i !important;;
+
+  }
   .explore-section,.best-sell-section,.choose-us-section,.populartrek_section,.best-sell-month,.testimonials-section,.blogs_section{
     margin-top:0px !important;
   }

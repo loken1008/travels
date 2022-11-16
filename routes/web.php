@@ -347,7 +347,7 @@ Route::group(['middleware' => ['XSS','get.expire']], function () {
     Route::get('/reviews', [App\Http\Controllers\User\BlogController::class, 'viewTestimonials'])->name('all.reviews');
     // newsletter
 
-    Route::post('newsletter', 'App\Http\Controllers\User\NewsletterController@store');
+    Route::post('newsletter', 'App\Http\Controllers\User\NewsletterController@store')->name('newsletter');
     // user message
     Route::get('/contact-us', function () {
         return view('frontend.contact.contact');
