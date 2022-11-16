@@ -489,7 +489,7 @@ function getThumbs($url = '')
                             <div class="table-responsive-lg">
                                 <table class="table align-middle" style="width:100% !important">
                                     <thead class="thead-light">
-                                        <tr class="text-center">
+                                        <tr >
                                             <th scope="col">Start Date</th>
                                             <th scope="col">End Date</th>
                                             <th scope="col">Seats Available</th>
@@ -500,7 +500,7 @@ function getThumbs($url = '')
                                     <tbody>
                                         @foreach ($getTourdetails->dateprice as $dateprice)
                                             @if ($dateprice->start_date == !null)
-                                                <tr class="text-center">
+                                                <tr >
                                                     <td>{{ $dateprice->start_date }}</td>
                                                     <td>{{ $dateprice->end_date }}</td>
                                                     <td>{{ $dateprice->seats_available }}</td>
