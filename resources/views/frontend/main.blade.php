@@ -53,8 +53,8 @@
         }
        
     </style>
-    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/common.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css?v=1') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/common.css?v=1') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -115,7 +115,15 @@
    }(document, 'script', 'facebook-jssdk'));
  </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ97BX1J7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-BZ97BX1J7G');
+</script>
 
 
 
@@ -144,29 +152,6 @@
         integrity="sha512-8ZZABMxONy31dC8IlKGRbB3Dk14Ghapvgav9yvX1hXXwoSihen1WdHf6V9jDxeJNvobkMxht2iPUrvkgG1jJXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
-
-    {{-- <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5EJF8NFWL9');
-
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/5c5e75576cb1ff3c14cbbbe8/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script> --}}
 
     <script>
         @if (Session::has('message'))

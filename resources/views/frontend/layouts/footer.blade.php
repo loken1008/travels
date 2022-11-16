@@ -22,7 +22,8 @@ function getfooterThumbs($url = '')
                     <p class="newsletter-para text-center">Subscribe to our news letter and we’ll keep you up to date on
                         our products and services.</p>
                    <div class="col-md-6 col-sm-12 newsletter-suscribe">
-                        <form action="" method="post">
+                        <form action="{{ route('newsletter') }}" method="post">
+                            @csrf
                         <input class="newsletter-input" type="email" name="email" placeholder="Newsletter">
                         <button class="news-btn"><i class="fa fa-arrow-right"></i></button>
                     </form>
