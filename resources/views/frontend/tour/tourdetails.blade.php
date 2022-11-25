@@ -523,7 +523,7 @@ function getThumbs($url = '')
                             <div class="equipment-desc">
 
                                <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
-                                        srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->img_alt }}" width="100%"></a>
+                                        srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->tour_name }} Map" width="100%"></a>
 
                             </div>
                         </section>
