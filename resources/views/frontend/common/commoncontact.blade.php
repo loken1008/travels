@@ -78,8 +78,8 @@
                         </span>
                     @enderror
                 </div>
-                <button class="loginbtn mt-4 mb-4" type="submit" value="Submit Form">Send
-                    Message</button>
+                {{-- <button class="loginbtn mt-4 mb-4" type="submit" value="Submit Form">Send
+                    Message</button> --}}
         </div>
 
         <div id="form-messages"></div>
