@@ -38,10 +38,10 @@ class NewsletterController extends Controller
             'phone'=>'required',
             'country'=>'required',
             'message'=>'required',
-           'g-recaptcha-response'=>'required|captcha'
+        //    'g-recaptcha-response'=>'required|captcha'
 
         ]);
-        \App\Models\ContactMessage::create($request->except('_token'));
+        // \App\Models\ContactMessage::create($request->except('_token'));
         $notification = array(
             'message' => 'Thanks For Contact Us, We will contact you soon',
             'alert-type' => 'success'

@@ -11,7 +11,9 @@
         }
 @endphp
 @extends('frontend.main')
-@section('title', 'Mountain Guide Trekking')
+@section('title', $getsubcat->sub_category_name )
+@section('meta_title', $getsubcat->sub_category_name)
+@section('meta_description', $getsubcat->sub_category_name .' Where You Get From Mountain guide Info')
 @section('content')
 
 
