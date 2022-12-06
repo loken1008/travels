@@ -3,7 +3,7 @@
 
 <head>
     <!-- Required meta tags -->
-    <title>MountainGuideInfo|@yield('title')</title>
+    <title>@yield('title')-MountainGuideInfo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="height=device-height,width=device-width">
@@ -53,8 +53,8 @@
         }
        
     </style>
-    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css?v=1.2') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/common.css?v=1') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css?v=1.3') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/common.css?v=1.3') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -75,6 +75,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
@@ -151,6 +152,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/1.0.9/browser-image-compression.js"
         integrity="sha512-8ZZABMxONy31dC8IlKGRbB3Dk14Ghapvgav9yvX1hXXwoSihen1WdHf6V9jDxeJNvobkMxht2iPUrvkgG1jJXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
     <script>
@@ -172,8 +175,23 @@
                     break;
             }
         @endif
+ 
     </script>
-
+  <script>
+    $('[data-fancybox="gallery"]').fancybox({
+   buttons: [
+     "slideShow",
+     "thumbs",
+     "zoom",
+     "fullScreen",
+     "share",
+     "close"
+   ],
+   loop: true,
+   protect: true
+   
+ });
+     </script>
 </body>
 
 </html>

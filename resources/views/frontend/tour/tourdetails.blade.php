@@ -394,7 +394,7 @@ function getThumbs($url = '')
 
                                     <div class="col-md-5 first-image">
                                         @if ($imagess)
-                                            <a href="{{ $imagess[0] }}" data-lightbox="photos">
+                                            <a  href="{{ $imagess[0] }}" data-fancybox="gallery">
                                                 <img class="main-image" srcset="{{ $imagess[0] }}"
                                                     alt="{{ $getTourdetails->img_alt }}" />
                                             </a>
@@ -407,7 +407,7 @@ function getThumbs($url = '')
                                         @foreach ($imagess as $key => $rimages)
                                             @if ($key > 0 && $key < 5)
                                                 @if ($rimages == !null)
-                                                    <a href="{{ $rimages }}" data-lightbox="photos">
+                                                    <a href="{{ $rimages }}" data-fancybox="gallery">
                                                         <img class="other-image" srcset="{{ $rimages }}"
                                                             alt="{{ $getTourdetails->img_alt }}" />
                                                     </a>
@@ -522,7 +522,7 @@ function getThumbs($url = '')
                             <h4 class="key-heading6"> <i class="fa-solid fa-chart-bar"></i>Map</h4>
                             <div class="equipment-desc">
 
-                               <a href="{{ $getTourdetails->trip_map }}" data-lightbox="photos"><img
+                               <a href="{{ $getTourdetails->trip_map }}" data-fancybox="gallery"><img
                                         srcset="{{ $getTourdetails->trip_map }}" alt="{{ $getTourdetails->tour_name }} Map" width="100%"></a>
 
                             </div>
@@ -727,4 +727,5 @@ function getThumbs($url = '')
             <a href="{{ route('booking', $getTourdetails->slug) }}">Book Now</a>
         </div>
     </div>
+  
 @endsection

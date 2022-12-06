@@ -3755,16 +3755,27 @@ font-weight: bold;
   margin-left: 10px;
   margin-top: 10px;
 }
-.lb-container {
+/* .lb-container {
   padding: 0px !important;
 }
 .lb-image {
-  width:800px !important;
-  height:750px !important;
+  width:100% !important;
+  height:100% !important;
 }
 .lb-outerContainer {
-  width:800px !important;
-  height:750px !important;
+  width:100% !important;
+  height:100% !important;
+} */
+.fancybox-content{
+  transform: translateY(0%) !important;
+  width: 100% !important;
+  height:93% !important;
+}
+.fancybox-inner{
+  top:41px !important;
+}
+.fancybox-button{
+  z-index: 99999;
 }
 .day-title,
 #tdateprice table th {
