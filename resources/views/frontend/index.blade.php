@@ -12,7 +12,7 @@
     }
 @endphp
 @extends('frontend.main')
-@section('title', 'Explore-With-Us|Home')
+@section('title', 'Explore-With-Us-Home')
 @section('meta_title', $homepage->meta_title)
 @section('meta_keywords', $homepage->meta_keywords)
 @section('meta_description', $homepage->meta_description)
