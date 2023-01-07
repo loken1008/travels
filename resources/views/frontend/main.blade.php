@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <title>@yield('title')-MountainGuideInfo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="viewport" content="height=device-height,width=device-width">
-    <meta name="viewport"
-        content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width,height=device-height">
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
@@ -53,8 +49,8 @@
         }
        
     </style>
-    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css?v=1.3') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/common.css?v=1.3') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/mountainguide.css?v=1.4') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/common.css?v=1.4') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />

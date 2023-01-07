@@ -302,7 +302,7 @@ Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordControlle
 
 // frontend
 
-Route::group(['middleware' => ['XSS','get.expire']], function () {
+Route::group(['middleware' => ['XSS','get.expire','RemoveIndexPhp']], function () {
     // customer register/login
     Route::get('customer-register', [App\Http\Controllers\Auth\CustomerController::class, 'customerRegister'])->name('customer.register');
     Route::post('customer-store', [App\Http\Controllers\Auth\CustomerController::class, 'customerStore'])->name('customer.store');

@@ -152,6 +152,11 @@
 .fa-angle-right {
   float: right !important;
 }
+.profile-dropdown{
+  background-image:url(../../assetss/06384088d7834281ad51b73c8b2cd9d5.png) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
 .profile-image {
   width: 45px;
   height: 45px;
@@ -736,7 +741,6 @@
 .mountainguide-block25 {
   display: flex;
   flex-direction: column;
-  background: var(--src) center center/cover no-repeat;
 }
 .mountainguide-block25::before {
   content: '';
@@ -3282,6 +3286,10 @@ font-weight: bold;
   width: 100%;
   border-radius: 3px;
 }
+.comment-icon{
+  font-size:18px;
+  margin-right:5px;
+}
 .paginate {
   margin-top: 20px;
 }
@@ -4001,6 +4009,9 @@ a:hover {
 .offcanvas {
   overflow: scroll !important;
 }
+.d-offcanvas{
+  z-index:99999
+}
 .send-message {
   padding: 10px 20px;
   width: 100%;
@@ -4068,8 +4079,24 @@ a:hover {
   margin-right: 8px;
   font-size: 16px;
 }
-.blog-item {
+.blog-item:not(:first-child) {
   padding-left: 12px;
+}
+.blog-item{
+  display: flex;
+  align-items: center;
+}
+.get-in-touch{
+  justify-content:space-around;flex-wrap:wrap
+}
+.profile-table{
+  width:112% 
+}
+.profile-table tbody{
+  color:black
+}
+.icon-angle{
+  float:right
 }
 .details-content p {
   font-family: 'Poppins';

@@ -260,9 +260,8 @@ function getThumbs($url = '')
                                 aria-controls="offcanvasScrolling">Quick Inquiry for Trip</a>
                         </div>
                     </div>
-                    <div class="offcanvas offcanvas-end book-card mt-2" data-bs-scroll="true" data-bs-backdrop="false"
-                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel"
-                        style="z-index:99999">
+                    <div class="d-offcanvas offcanvas offcanvas-end book-card mt-2" data-bs-scroll="true" data-bs-backdrop="false"
+                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                         <div class="card-body">
                             <div class="offcanvas-header">
                                 <h5 class="inquiry-title">Send an inquiry</h5>
@@ -296,10 +295,10 @@ function getThumbs($url = '')
                                             Auth()->guard('customer')->user()->email)
                                             <input type="email" name="email" id="email" class="form-control"
                                                 value="{{ Auth()->guard('customer')->user()->email }}" readonly
-                                                style="opacity:1 !important">
+                                                >
                                         @else
                                             <input type="email" name="email" id="email" class="form-control"
-                                                placeholder="Your Email" required style="opacity:1 !important">
+                                                placeholder="Your Email" required >
                                         @endif
                                         @error('email')
                                             <span class="text-danger">
@@ -312,10 +311,10 @@ function getThumbs($url = '')
                                             Auth()->guard('customer')->user()->mobile)
                                             <input type="text" name="phone" id="phone" class="form-control"
                                                 value="{{ Auth()->guard('customer')->user()->mobile }}" readonly
-                                                style="opacity:1 !important">
+                                                >
                                         @else
                                             <input type="number" name="phone" id="phone" class="form-control"
-                                                placeholder="Your Contact Number" required style="opacity:1 !important">
+                                                placeholder="Your Contact Number" required >
                                         @endif
                                         @error('phone')
                                             <span class="text-danger">
@@ -487,7 +486,7 @@ function getThumbs($url = '')
                         <section class="mt-4" id="tdateprice">
                             <h4 class="key-heading5"> <i class="fa-solid fa-chart-bar"></i>Dates & Price</h4>
                             <div class="table-responsive-lg">
-                                <table class="table align-middle" style="width:100% !important">
+                                <table class="table align-middle w-100">
                                     <thead class="thead-light">
                                         <tr >
                                             <th scope="col">Start Date</th>
@@ -633,7 +632,7 @@ function getThumbs($url = '')
                                                 <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                     {{ $ctour->grade }}</h4>
                                                 <h4 class="text-value d-flex"><img
-                                                        src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                        src="{{ asset('frontend/altitude.png') }}" alt="mountainguide-altitude image"
                                                         class="altitude-img">
                                                     {{ $ctour->altitude }}</h4>
                                                 <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
@@ -715,9 +714,9 @@ function getThumbs($url = '')
                         <i class="fa-brands fa-viber viber"></i>
                     </a>
                 @endif
-                @if (!empty($getcontact->phone))
+                {{-- @if (!empty($getcontact->phone))
                     <a href="tel:{{ $getcontact->mobile }}" class="mountainguide-highlights layout"><i class="fa-solid fa-phone phones"></i></a>
-                @endif
+                @endif --}}
             </div>
         </div>
         @if (!empty($getcontact->profile_image))

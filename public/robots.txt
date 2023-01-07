@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
+Disallow: /mountain-guide/login
+Disallow: /mgiadmin
 
 Sitemap: https://mountainguideinfo.com/sitemap.xml

@@ -21,10 +21,10 @@
             @if (Auth()->guard('customer')->check() &&
                 Auth()->guard('customer')->user()->email)
                 <input type="email" name="email" id="email" class="form-control"
-                    value="{{ Auth()->guard('customer')->user()->email }}" readonly style="opacity:1 !important"> 
+                    value="{{ Auth()->guard('customer')->user()->email }}" readonly > 
             @else
                 <input type="email" name="email" id="email" class="form-control"
-                    placeholder="Your Email" required style="opacity:1 !important">
+                    placeholder="Your Email" required >
             @endif
             @error('email')
                 <span class="text-danger">
@@ -36,10 +36,10 @@
             @if (Auth()->guard('customer')->check() &&
                 Auth()->guard('customer')->user()->mobile)
                 <input type="text" name="phone" id="phone" class="form-control"
-                    value="{{ Auth()->guard('customer')->user()->mobile }}" readonly style="opacity:1 !important">
+                    value="{{ Auth()->guard('customer')->user()->mobile }}" readonly >
             @else
                 <input type="number" name="phone" id="phone" class="form-control"
-                    placeholder="Your Contact Number" required style="opacity:1 !important">
+                    placeholder="Your Contact Number" required >
             @endif
             @error('phone')
                 <span class="text-danger">

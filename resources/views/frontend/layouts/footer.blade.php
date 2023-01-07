@@ -49,11 +49,11 @@ function getfooterThumbs($url = '')
                 @endif
                     @if (!empty($getcontact->phone))
                         <li><i class="pe-7s-call"></i> <a
-                                href="tel:{{ $getcontact->phone }}">{{ $getcontact->phone }}</a></li>
+                                href="#">{{ $getcontact->phone }}</a></li>
                     @endif
                     @if (!empty($getcontact->fax))
                         <li><i class="pe-7s-print"></i> <a
-                                href="tel:{{ $getcontact->fax }}">{{ $getcontact->fax }}</a></li>
+                                href="#">{{ $getcontact->fax }}</a></li>
                     @endif
                     @if (!empty($getcontact->email))
                         <li><i class="pe-7s-mail"></i> <a class="text-lowercase" href="mailto:{{ $getcontact->email }}">{{ $getcontact->email }}</a>

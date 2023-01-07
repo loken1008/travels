@@ -82,8 +82,7 @@ function getheaderThumbs($url = '')
                                                     id="dropdownMenuButton2">{{ $subcat->sub_category_name }}
                                                     @foreach ($subcat->tour->take(1) as $t)
                                                         @if ($subcat->id == $t->subcategory_id)
-                                                            <i class="fa fas fa-angle-right mt-1"
-                                                                style="float:right"></i>
+                                                            <i class="fa fas fa-angle-right mt-1 icon-angle"></i>
                                                         @endif
                                                     @endforeach
                                                 </a>
@@ -99,8 +98,7 @@ function getheaderThumbs($url = '')
 
                                                         @foreach ($subcat->tour->take(1) as $t)
                                                             @if ($subcat->id == $t->subcategory_id)
-                                                                <i class="fa fas fa-angle-right"
-                                                                    style="float:right"></i>
+                                                                <i class="fa fas fa-angle-right icon-angle"></i>
                                                             @endif
                                                         @endforeach
                                                     </div>
@@ -193,7 +191,7 @@ function getheaderThumbs($url = '')
                                 </a>
                             @endif
                             @if (!empty($getcontact->phone))
-                                <a href="tel:{{ $getcontact->mobile }}"
+                                <a href="#"
                                     class="mountainguide-highlights layout">{{ $getcontact->mobile }}</a>
                             @endif
                         </div>
@@ -207,8 +205,7 @@ function getheaderThumbs($url = '')
                 <div class="mountainguide-block17-item1 dropdown">
                     <div class="mountainguide-block23 layout ">
                         <a href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div style="--src:url(/assetss/06384088d7834281ad51b73c8b2cd9d5.png)"
-                                class="mountainguide-icon1 layout dropdown" data-toggle="dropdown"></div>
+                            <div class="mountainguide-icon1 profile-dropdown layout dropdown" data-toggle="dropdown"></div>
                         </a>
                         <ul class="dropdown-menu logindropdown" aria-labelledby="dropdownMenuLink">
                             @if (!empty(Auth()->guard('customer')->user()

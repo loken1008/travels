@@ -25,9 +25,15 @@
 @section('twitter_image', asset('frontend/twitter.webp'))
 @section('twitter_url', url()->current())
 @section('content')
+<style>
+    .mountainguide-block25{
+  background: url({{$getbanner->banner_image}}) center center/cover no-repeat;
+
+    }
+</style>
     <div class="mountainguide-block24 layout">
         @if (!empty($getbanner))
-            <div style="--src:url({{ $getbanner->banner_image }})" class="mountainguide-block25 layout">
+            <div class="mountainguide-block25 layout">
                 <div class="mountainguide-block26 layout">
                     <div class="mountainguide-block27 layout">
                         <h1 class="mountainguide-hero-title layout">{{ $getbanner->title }}</h1>
@@ -228,7 +234,7 @@
                                                     <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                         {{ $selltour->grade }}</h4>
                                                     <h4 class="text-value d-flex"><img
-                                                            src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                            src="{{ asset('frontend/altitude.png') }}" alt="mountainguide-altitude image"
                                                             class="altitude-img">
                                                         {{ $selltour->altitude }}</h4>
                                                     <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
@@ -338,7 +344,7 @@
                                                 <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                     {{ $tour->grade }}</h4>
                                                 <h4 class="text-value d-flex"><img
-                                                        src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                        src="{{ asset('frontend/altitude.png') }}" alt="mountainguide altitude-img"
                                                         class="altitude-img">
                                                     {{ $tour->altitude }}</h4>
                                                 <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
@@ -487,7 +493,7 @@
                                                 <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                     {{ $tour->grade }}</h4>
                                                 <h4 class="text-value d-flex"><img
-                                                        src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                        src="{{ asset('frontend/altitude.png') }}" alt="mountainguide altitude-img"
                                                         class="altitude-img">
                                                     {{ $tour->altitude }}</h4>
                                                 <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
@@ -570,7 +576,7 @@
                                                     <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                         {{ $tour->grade }}</h4>
                                                     <h4 class="text-value d-flex"><img
-                                                            src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                            src="{{ asset('frontend/altitude.png') }}" alt="mountainguide altitude-img"
                                                             class="altitude-img">
                                                         {{ $tour->altitude }}</h4>
                                                     <span class="best-day"><i class="fa-solid fa-calendar-days"></i>

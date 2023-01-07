@@ -31,7 +31,7 @@
                         <div class="details-content ">
                             <ul class="details-tag ">
 
-                                <li><i class="fa-solid fa-newspaper"></i>{{ $getblogdetails->blog_type }}</li>
+                                <li class="blog-item"><i class="fa-solid fa-newspaper"></i>{{ $getblogdetails->blog_type }}</li>
                                 <li class="blog-item"><i
                                         class="fa-solid fa-calendar-days"></i></i>{{ $getblogdetails->created_at->format('M,d,Y') }}
                                 </li>
@@ -65,10 +65,11 @@
                         @foreach ($getcomments as $getcomment)
                             <div class="row blog-comments">
                                 <div class="col-sm-10">
-                                    <i class="fa-solid fa-circle-user" style="font-size:18px;margin-right:5px"></i>
 
                                     <div class="comment">
                                         <h5 class="comment-user">
+                                    <i class="fa-solid fa-circle-user comment-icon" ></i>
+
                                             {{ $getcomment->name }}
                                             <span>-{{ $getcomment->created_at->diffForHumans() }} / <a
                                                     data-bs-toggle="collapse" href="#collapseExample{{ $getcomment->id }}"
@@ -129,10 +130,9 @@
                             @foreach ($getcomment->replies as $getreply)
                                 <div class="row blog-comments blog-comments-reply ">
                                     <div class="col-sm-10 d-flex">
-                                        <i class="fa fa-reply" style="font-size:18px;margin-right:5px"></i>
-
                                         <div class="comment">
                                             <h5 class="comment-user">
+                                                <i class="fa fa-reply comment-icon"></i>
                                                 {{ $getreply->name }}
                                                 <span>{{ $getreply->created_at->diffForHumans() }}</span>
                                             </h5>
