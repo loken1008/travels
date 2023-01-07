@@ -127,7 +127,7 @@
                                                             <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                                                 {{ $ctour->grade }}</h4>
                                                             <h4 class="text-value d-flex"><img
-                                                                    src="{{ asset('frontend/altitude.png') }}" alt=""
+                                                                    src="{{ asset('frontend/altitude.png') }}" alt="altitude-image mountainguide"
                                                                     class="altitude-img">
                                                                 {{ $ctour->altitude }}</h4>
                                                             <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
