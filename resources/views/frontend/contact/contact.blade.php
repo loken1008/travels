@@ -17,7 +17,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6" >
                         <h3 class="title">Get in Touch</h3>
                         <div class="chooseus-box layout"></div>
-                        <div class="d-flex get-in-touch" style="justify-content:space-around;flex-wrap:wrap">
+                        <div class="d-flex get-in-touch">
                             <div class="col-md-6 col-sm-12 contact-icon">
                                 <i class="fa-solid fa-address-card"></i>
                                 <div class="content">
@@ -42,7 +42,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 <div class="content">
                                     <h5>Phone</h5>
                                     @if (isset($getcontact->phone))
-                                       <a class="text-decoration-none" href="{{ $getcontact->phone }}">{{ $getcontact->phone }}</a> 
+                                       <a class="text-decoration-none" href="#">{{ $getcontact->phone }}</a> 
                                     @endif
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 <div class="content">
                                     <h5>Fax</h5>
                                     @if (isset($getcontact->fax))
-                                       <a class="text-decoration-none" href="{{ $getcontact->fax }}">{{ $getcontact->fax }}</a> 
+                                       <a class="text-decoration-none" href="#">{{ $getcontact->fax }}</a> 
                                     @endif
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ $contactbanner=App\Models\PageBanner::orderBy('id','desc')->where('page_name','c
                                 <div class="content">
                                     <h5>GPO Box</h5>
                                     @if (isset($getcontact->gpo_box))
-                                       <a class="text-decoration-none" href="{{ $getcontact->gpo_box }}">{{ $getcontact->gpo_box }}</a> 
+                                       <a class="text-decoration-none" href="#">{{ $getcontact->gpo_box }}</a> 
                                     @endif
                                 </div>
                             </div>

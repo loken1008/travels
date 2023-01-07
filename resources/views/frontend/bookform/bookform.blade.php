@@ -191,7 +191,7 @@
                                 @endif
                                 <div class="form-group col-md-12">
                                     <label for="tourName">Message </label>
-                                    <textarea name="message" id="message" class="form-control" value="" style="height:200px"></textarea>
+                                    <textarea name="message" id="message" class="form-control" value=""  rows="5"></textarea>
 
                                 </div>
                                 <div class="form-group col-md-12 mt-2">

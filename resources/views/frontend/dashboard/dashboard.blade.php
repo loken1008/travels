@@ -19,9 +19,9 @@
                             Auth()->guard('customer')->user()->provider_id
                         ))
                             <img srcset="{{ asset('frontend/images/users/' .Auth()->guard('customer')->user()->image) }}"
-                                style="height:370px;width:100% !important" alt="mountainguideinfo-profile">
+                                height="370px" width="100%" alt="mountainguideinfo-profile">
                         @else
-                            <img srcset="{{ Auth()->guard('customer')->user()->image }}" style="height:370px" alt="mountainguideinfo-profile">
+                            <img srcset="{{ Auth()->guard('customer')->user()->image }}" height="370px" alt="mountainguideinfo-profile">
                         @endif
                         <!-- Upload image input-->
                         <div class="input-group mb-3 px-2 py-2  bg-white shadow-sm">
@@ -112,7 +112,7 @@
                         <div class="tab-pane">
 
                        
-                        <table class="table table-responsive" style="width:112% ">
+                        <table class="table table-responsive profile-table" >
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Sn</th>
@@ -126,7 +126,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody style="color:black">
+                            <tbody >
                                 @forelse($bookings as $key=> $booking)
                                     <tr>
                                         <th scope="row">{{ $key + 1 }}</th>
@@ -210,7 +210,7 @@
                                                             <h6 class="font-weight-bold">Book Date:</h6>
                                                             <p>{{ $booking->created_at->format('Y-M-d') }}</p>
                                                         </div>
-                                                        <div class="col-md-12" style="overflow: scroll">
+                                                        <div class="col-md-12" >
                                                             <h6 class="font-weight-bold">Message:</h6>
                                                             <p>{{ $booking->message }}</p>
                                                         </div>

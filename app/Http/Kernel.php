@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'customers' => \App\Http\Middleware\CustomerMiddleware::class,
         'XSS' => \App\Http\Middleware\XSS::class,
         'get.expire'=>\App\Http\Middleware\ExpireHeader::class,
+        'RemoveIndexPhp' => \App\Http\Middleware\RemoveIndexPhp::class,
     ];
 }

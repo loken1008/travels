@@ -79,7 +79,7 @@ $getTour=App\Models\Tour::with('country','place','category')->orderBy('id','desc
                                     <h4 class="text-value"><i class="fa-solid fa-route"></i>
                                         {{ $ctour->grade }}</h4>
                                     <h4 class="text-value d-flex"><img
-                                            src="{{ asset('frontend/altitude.png') }}" alt=""
+                                            src="{{ asset('frontend/altitude.png') }}" alt="mountainguide altitude-img"
                                             class="altitude-img">
                                         {{ $ctour->altitude }}</h4>
                                     <span class="best-day"><i class="fa-solid fa-calendar-days"></i>
