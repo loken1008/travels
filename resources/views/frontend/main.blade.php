@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <title>@yield('title')-MountainGuideInfo</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="MountainGuideInfo|@yield('meta_title')">
     <meta name="keywords" content="@yield('meta_keywords', 'some default keywords')">
     <meta name="description" content="@yield('meta_description', 'default description')">
