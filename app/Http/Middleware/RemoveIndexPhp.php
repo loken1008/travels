@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Redirect;
 
 class RemoveIndexPhp
 {
@@ -16,11 +17,21 @@ class RemoveIndexPhp
      */
     public function handle(Request $request, Closure $next)
     {
-        $searchFor="index.php";
-        $strPosition=strpos($request->fullUrl(), $searchFor);
-        if ($strPosition!==false) {
-            $url= substr($request->fullUrl(), $strPosition+strlen($searchFor));
-            return redirect(config('app.url') .$url, 301);
+        if(config('app.env') == 'production'){
+
+            $host = $request->header('host');
+            if (substr($host, 0, 4) != 'www.') {
+                if(!$request->secure()){
+                    $request->server->set('HTTPS', true);
+                }
+                $request->headers->set('host', 'www.'.$host);
+                return Redirect::to($request->path(),301);
+            }else{
+                if(!$request->secure()){
+                    $request->server->set('HTTPS', true);
+                    return Redirect::to($request->path(),301);
+                }
+            }
         }
         return $next($request);
     }
