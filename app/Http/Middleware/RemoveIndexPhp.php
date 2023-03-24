@@ -17,22 +17,22 @@ class RemoveIndexPhp
      */
     public function handle(Request $request, Closure $next)
     {
-        if(config('app.env') == 'production'){
+        // if(config('app.env') == 'production'){
 
-            $host = $request->header('host');
-            if (substr($host, 0, 4) != 'www.') {
-                if(!$request->secure()){
-                    $request->server->set('HTTPS', true);
-                }
-                $request->headers->set('host', 'www.'.$host);
-                return Redirect::to($request->path(),301);
-            }else{
-                if(!$request->secure()){
-                    $request->server->set('HTTPS', true);
-                    return Redirect::to($request->path(),301);
-                }
-            }
-        }
+        //     $host = $request->header('host');
+        //     if (substr($host, 0, 4) != 'www.') {
+        //         if(!$request->secure()){
+        //             $request->server->set('HTTPS', true);
+        //         }
+        //         $request->headers->set('host', 'www.'.$host);
+        //         return Redirect::to($request->path(),301);
+        //     }else{
+        //         if(!$request->secure()){
+        //             $request->server->set('HTTPS', true);
+        //             return Redirect::to($request->path(),301);
+        //         }
+        //     }
+        // }
         return $next($request);
     }
 }
